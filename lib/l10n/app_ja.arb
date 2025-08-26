@@ -1,0 +1,128 @@
+{
+  "@@locale": "ja",
+  "appTitle": "FocusMint",
+  "abmTraining": "ABMトレーニング",
+  "welcomeMessage": "注意バイアス修正（ABM）のポジティブ検索トレーニングへようこそ！\n5分間の集中トレーニングでポジティブ刺激への注意力を鍛えましょう。",
+  "startTraining": "トレーニング開始",
+  "startTrainingDescription": "5分間のトレーニングセッションを開始します",
+  "startButton": "スタート",
+  "aboutTraining": "トレーニングについて",
+  "sessionTime": "セッション時間",
+  "sessionDuration": "5分間",
+  "trialCount": "試行数",
+  "trialRange": "120-160回",
+  "difficultyAdjustment": "難易度調整",
+  "difficultyMethod": "自動調整（1-up/2-down）",
+  "scoreEvaluation": "スコア評価",
+  "bisScore": "BIS（Balanced Integration Score）",
+  "noRecentSessions": "過去のセッションはありません",
+  "startFirstSession": "最初のトレーニングセッションを始めてみましょう！",
+  "recentSessions": "過去のセッション",
+  "moreSessionsCount": "他{count}件のセッション",
+  "@moreSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "today": "今日",
+  "yesterday": "昨日",
+  "daysAgo": "{days}日前",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "trialUnit": "試行",
+  "dataLoadError": "データの読み込みに失敗しました",
+  
+  "training": "トレーニング",
+  "trialCountLabel": "試行: {count}",
+  "@trialCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "difficultyLabel": "難易度: {level}",
+  "@difficultyLabel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "recentAccuracyLabel": "最近の正答率: {accuracy}%",
+  "@recentAccuracyLabel": {
+    "placeholders": {
+      "accuracy": {
+        "type": "String"
+      }
+    }
+  },
+  "preparingSession": "セッションを準備中...",
+  "trainingStart": "トレーニング開始",
+  "findSmileyInstruction": "笑顔を素早く見つけてタップしてください",
+  "sessionComplete": "セッション完了！",
+  "showingResults": "結果を表示しています...",
+  "sessionAborted": "セッションが中断されました",
+  "canStartNewSession": "いつでも新しいセッションを開始できます",
+  "returnHome": "ホームに戻る",
+  "trainingInterruption": "トレーニング中断",
+  "interruptionMessage": "トレーニングを中断しますか？\n進行状況は保存されません。",
+  "continueButton": "続行",
+  "interruptButton": "中断",
+  
+  "sessionResults": "セッション結果",
+  "sessionScore": "セッションスコア",
+  "bisScoreLabel": "BISスコア: {score}",
+  "@bisScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "performanceStats": "パフォーマンス統計",
+  "accuracy": "正答率",
+  "trials": "試行数",
+  "reactionTime": "反応時間",
+  "consecutiveCorrect": "連続正答",
+  "sessionDetails": "セッション詳細",
+  "startTime": "開始時刻",
+  "endTime": "終了時刻",
+  "sessionDurationLabel": "セッション時間",
+  "minutesUnit": "分",
+  "avgReactionTime": "平均反応時間",
+  "iesScore": "IESスコア",
+  "difficultyBreakdown": "難易度別試行数",
+  "easy": "Easy",
+  "medium": "Medium",
+  "hard": "Hard",
+  "trialsSuffix": "試行",
+  "startNewSession": "新しいセッションを開始",
+  "goHome": "ホームに戻る",
+  "excellentResult": "素晴らしい結果です！",
+  "goodJob": "よくできました！",
+  "keepPracticing": "練習を続けましょう",
+  "takeYourTime": "ゆっくり確実に",
+  
+  "noStimuliAvailable": "刺激が利用できません",
+  "invalidGridSize": "無効なグリッドサイズ",
+  "happy": "Happy",
+  "angry": "Angry",
+  "fear": "Fear",
+  "sad": "Sad",
+  "unknown": "?",
+  
+  "gettingStarted": "スタート中...",
+  "excellentPerformance": "素晴らしいパフォーマンス！",
+  "greatJob": "よくできました！",
+  "goodPerformance": "良いパフォーマンス",
+  "keepPracticingFeedback": "練習を続けてください",
+  "takeYourTimeFeedback": "ゆっくり確実に"
+}

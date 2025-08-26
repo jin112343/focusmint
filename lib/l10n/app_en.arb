@@ -1,0 +1,128 @@
+{
+  "@@locale": "en",
+  "appTitle": "FocusMint",
+  "abmTraining": "ABM Training",
+  "welcomeMessage": "Welcome to Attention Bias Modification (ABM) positive search training!\nTrain your attention towards positive stimuli with a focused 5-minute session.",
+  "startTraining": "Start Training",
+  "startTrainingDescription": "Begin a 5-minute training session",
+  "startButton": "Start",
+  "aboutTraining": "About Training",
+  "sessionTime": "Session Time",
+  "sessionDuration": "5 minutes",
+  "trialCount": "Trials",
+  "trialRange": "120-160 trials",
+  "difficultyAdjustment": "Difficulty Adjustment",
+  "difficultyMethod": "Adaptive (1-up/2-down)",
+  "scoreEvaluation": "Score Evaluation",
+  "bisScore": "BIS (Balanced Integration Score)",
+  "noRecentSessions": "No recent sessions",
+  "startFirstSession": "Start your first training session!",
+  "recentSessions": "Recent Sessions",
+  "moreSessionsCount": "{count} more sessions",
+  "@moreSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "daysAgo": "{days} days ago",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "trialUnit": "trials",
+  "dataLoadError": "Failed to load data",
+  
+  "training": "Training",
+  "trialCountLabel": "Trial: {count}",
+  "@trialCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "difficultyLabel": "Difficulty: {level}",
+  "@difficultyLabel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "recentAccuracyLabel": "Recent Accuracy: {accuracy}%",
+  "@recentAccuracyLabel": {
+    "placeholders": {
+      "accuracy": {
+        "type": "String"
+      }
+    }
+  },
+  "preparingSession": "Preparing session...",
+  "trainingStart": "Training Start",
+  "findSmileyInstruction": "Find and tap the happy face quickly",
+  "sessionComplete": "Session Complete!",
+  "showingResults": "Showing results...",
+  "sessionAborted": "Session was interrupted",
+  "canStartNewSession": "You can start a new session anytime",
+  "returnHome": "Return Home",
+  "trainingInterruption": "Training Interruption",
+  "interruptionMessage": "Do you want to interrupt the training?\nProgress will not be saved.",
+  "continueButton": "Continue",
+  "interruptButton": "Interrupt",
+  
+  "sessionResults": "Session Results",
+  "sessionScore": "Session Score",
+  "bisScoreLabel": "BIS Score: {score}",
+  "@bisScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "performanceStats": "Performance Statistics",
+  "accuracy": "Accuracy",
+  "trials": "Trials",
+  "reactionTime": "Reaction Time",
+  "consecutiveCorrect": "Consecutive Correct",
+  "sessionDetails": "Session Details",
+  "startTime": "Start Time",
+  "endTime": "End Time",
+  "sessionDurationLabel": "Session Duration",
+  "minutesUnit": "min",
+  "avgReactionTime": "Average Reaction Time",
+  "iesScore": "IES Score",
+  "difficultyBreakdown": "Trials by Difficulty",
+  "easy": "Easy",
+  "medium": "Medium", 
+  "hard": "Hard",
+  "trialsSuffix": "trials",
+  "startNewSession": "Start New Session",
+  "goHome": "Go Home",
+  "excellentResult": "Excellent result!",
+  "goodJob": "Well done!",
+  "keepPracticing": "Keep practicing",
+  "takeYourTime": "Take your time",
+  
+  "noStimuliAvailable": "No stimuli available",
+  "invalidGridSize": "Invalid grid size",
+  "happy": "Happy",
+  "angry": "Angry", 
+  "fear": "Fear",
+  "sad": "Sad",
+  "unknown": "?",
+  
+  "gettingStarted": "Getting started...",
+  "excellentPerformance": "Excellent performance!",
+  "greatJob": "Great job!",
+  "goodPerformance": "Good performance",
+  "keepPracticingFeedback": "Keep practicing",
+  "takeYourTimeFeedback": "Take your time"
+}
