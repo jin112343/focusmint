@@ -5,6 +5,7 @@ import 'package:logger/logger.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/models/trial_log.dart' as models;
 import 'package:focusmint/constants/training_constants.dart';
+import 'package:focusmint/constants/placeholder_images.dart';
 import 'package:focusmint/services/difficulty_manager.dart';
 import 'package:focusmint/services/score_calculator.dart';
 import 'package:focusmint/services/database_service.dart';

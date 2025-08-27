@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:focusmint/models/session_summary.dart';
 import 'package:focusmint/constants/app_colors.dart';
-import 'package:focusmint/services/database_service.dart';
 import 'package:focusmint/services/speed_score_service.dart';
 import 'package:logger/logger.dart';
 
@@ -25,6 +24,7 @@ class _ResultPageState extends ConsumerState<ResultPage> {
   
   double _bestScore = 0.0;
   double _totalTimeMinutes = 0.0;
+  double _totalScore = 0.0;
   bool _isLoading = true;
   late final SpeedScoreService _speedScoreService;
 
@@ -39,14 +39,16 @@ class _ResultPageState extends ConsumerState<ResultPage> {
     try {
       final bestScore = await _speedScoreService.getBestScore();
       final totalTimeMinutes = await _speedScoreService.getTotalTimeMinutes();
+      final totalScore = await _speedScoreService.getTotalScore();
       
       setState(() {
         _bestScore = bestScore;
         _totalTimeMinutes = totalTimeMinutes;
+        _totalScore = totalScore;
         _isLoading = false;
       });
       
-      _logger.i('Statistics loaded: bestScore=$bestScore, totalTime=${totalTimeMinutes.toStringAsFixed(1)}min');
+      _logger.i('Statistics loaded: bestScore=$bestScore, totalTime=${totalTimeMinutes.toStringAsFixed(1)}min, totalScore=$totalScore');
     } catch (e, stackTrace) {
       _logger.e('Failed to load statistics', error: e, stackTrace: stackTrace);
       setState(() {
@@ -151,6 +153,8 @@ class _ResultPageState extends ConsumerState<ResultPage> {
                 Column(
                   children: [
                     _buildInfoRow('BEST SCORE', _bestScore.toStringAsFixed(2)),
+                    const SizedBox(height: 16),
+                    _buildInfoRow('TOTAL SCORE', _totalScore.toStringAsFixed(2)),
                     const SizedBox(height: 16),
                     _buildInfoRow('TOTAL SESSION TIME', _formatTime(_totalTimeMinutes)),
                     const SizedBox(height: 32),

@@ -36,7 +36,7 @@ class StimulusGrid extends StatelessWidget {
     final aspectRatio = gridLayout['aspectRatio'] as double;
     
     final effectiveGridSize = gridSize ?? 
-        (MediaQuery.of(context).size.width * 0.85);
+        (MediaQuery.of(context).size.width * 0.95);
 
     return Center(
       child: Container(
@@ -49,8 +49,8 @@ class StimulusGrid extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: columns,
-              mainAxisSpacing: 8,
-              crossAxisSpacing: 8,
+              mainAxisSpacing: 6,
+              crossAxisSpacing: 6,
               childAspectRatio: 1.0,
             ),
             itemCount: stimuli.length,

@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:focusmint/pages/training_page.dart';
 import 'package:focusmint/pages/result_page.dart';
 import 'package:focusmint/pages/settings_page.dart';
+import 'package:focusmint/pages/history_page.dart';
 import 'package:focusmint/constants/app_colors.dart';
-import 'package:focusmint/widgets/circular_progress_widget.dart';
 import 'package:focusmint/services/speed_score_service.dart';
 import 'package:fl_chart/fl_chart.dart';
 
@@ -15,7 +15,7 @@ class HomePage extends ConsumerStatefulWidget {
   ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver {
   final SpeedScoreService _speedScoreService = SpeedScoreService();
   double _totalScore = 0.0;
   int _goalPoints = 1000;
@@ -24,7 +24,23 @@ class _HomePageState extends ConsumerState<HomePage> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _loadData();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    // アプリがフォアグラウンドに戻った際にデータを再読み込み
+    if (state == AppLifecycleState.resumed) {
+      _loadData();
+    }
   }
 
   Future<void> _loadData() async {
@@ -123,7 +139,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  '5 mins per day',
+                  '1 min per day',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey[600],
@@ -151,20 +167,28 @@ class _HomePageState extends ConsumerState<HomePage> {
     }
   }
 
-  void _showStatsPage(BuildContext context, WidgetRef ref) {
-    Navigator.of(context).push(
+  void _showStatsPage(BuildContext context, WidgetRef ref) async {
+    await Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const ResultPage(),
+        builder: (context) => const HistoryPage(),
       ),
     );
+    // 履歴画面から戻った際にデータを再読み込み
+    if (mounted) {
+      _loadData();
+    }
   }
 
-  void _startTraining(BuildContext context, WidgetRef ref) {
-    Navigator.of(context).push(
+  void _startTraining(BuildContext context, WidgetRef ref) async {
+    await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const TrainingPage(),
       ),
     );
+    // トレーニング画面から戻った際にデータを再読み込み
+    if (mounted) {
+      _loadData();
+    }
   }
 
   Widget _buildTotalScoreChart() {

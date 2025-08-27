@@ -62,10 +62,13 @@ class _SettingsPageState extends State<SettingsPage> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('目標ポイントを${newGoal}に設定しました'),
+            content: Text('目標ポイントを$newGoalに設定しました'),
             backgroundColor: AppColors.mintGreen,
           ),
         );
+        
+        // 自動でホーム画面に遷移
+        Navigator.of(context).popUntil((route) => route.isFirst);
       }
     } catch (e, stackTrace) {
       _logger.e('Failed to save goal points', error: e, stackTrace: stackTrace);
@@ -92,20 +95,25 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
-      appBar: AppBar(
-        title: const Text('設定'),
+    return GestureDetector(
+      onTap: () {
+        // テキストフィールド以外をタップした時にフォーカスを外す
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
         backgroundColor: AppColors.backgroundColor,
-        elevation: 0,
-      ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+        appBar: AppBar(
+          title: const Text('設定'),
+          backgroundColor: AppColors.backgroundColor,
+          elevation: 0,
+        ),
+        body: _isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                   // 目標ポイント設定セクション
                   Card(
                     elevation: 2,
@@ -224,9 +232,43 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                     ),
                   ),
-                ],
+                  
+                  const Spacer(),
+                  
+                  // ホームへ戻るボタン
+                  SizedBox(
+                    width: double.infinity,
+                    height: 56,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.of(context).popUntil((route) => route.isFirst);
+                      },
+                      icon: const Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      label: const Text(
+                        'ホームへ戻る',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textPrimary,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(28),
+                        ),
+                        elevation: 2,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  ],
+                ),
               ),
-            ),
+      ),
     );
   }
 }

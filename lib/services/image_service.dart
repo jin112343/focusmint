@@ -1,4 +1,6 @@
 import 'dart:math';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/constants/training_constants.dart';
 
@@ -7,126 +9,118 @@ class ImageService {
   factory ImageService() => _instance;
   
   late final Random _random;
-  
-  // TODO: 実際の画像に変更する際は、この値をtrueに変更してください
-  static const bool useRealImages = false;
+  final Map<ImageGroup, List<String>> _positiveImageCache = {};
+  final Map<ImageGroup, List<String>> _negativeImageCache = {};
   
   ImageService._internal() {
     _random = Random();
   }
 
-  /// よい画像グループ（positive：笑顔・幸せな表情）
-  final List<ImageStimulus> _positiveImages = [
-    ImageStimulus(
-      id: 'happy_001',
-      assetPath: '${PlaceholderImages.facesPath}happy_001.png',
-      valence: Valence.positive,
-      emotion: Emotion.happiness,
-    ),
-    ImageStimulus(
-      id: 'happy_002',
-      assetPath: '${PlaceholderImages.facesPath}happy_002.png',
-      valence: Valence.positive,
-      emotion: Emotion.happiness,
-    ),
-    ImageStimulus(
-      id: 'happy_003',
-      assetPath: '${PlaceholderImages.facesPath}happy_003.png',
-      valence: Valence.positive,
-      emotion: Emotion.happiness,
-    ),
-    ImageStimulus(
-      id: 'happy_004',
-      assetPath: '${PlaceholderImages.facesPath}happy_004.png',
-      valence: Valence.positive,
-      emotion: Emotion.happiness,
-    ),
-    ImageStimulus(
-      id: 'happy_005',
-      assetPath: '${PlaceholderImages.facesPath}happy_005.png',
-      valence: Valence.positive,
-      emotion: Emotion.happiness,
-    ),
-  ];
+  /// アセットフォルダ内の画像ファイル一覧を取得
+  Future<List<String>> _loadImageFilenames(String assetPath) async {
+    try {
+      final manifestContent = await rootBundle.loadString('AssetManifest.json');
+      final Map<String, dynamic> manifestMap = 
+          const JsonDecoder().convert(manifestContent) as Map<String, dynamic>;
+      
+      final imagePaths = manifestMap.keys
+          .where((String key) => key.startsWith(assetPath))
+          .where((String key) => key.toLowerCase().endsWith('.jpg') || 
+                                key.toLowerCase().endsWith('.jpeg') || 
+                                key.toLowerCase().endsWith('.png'))
+          .toList();
+      
+      return imagePaths;
+    } catch (e) {
+      return [];
+    }
+  }
 
-  /// よくない画像グループ（negative：怒り・恐怖・悲しみの表情）
-  final List<ImageStimulus> _negativeImages = [
-    ImageStimulus(
-      id: 'angry_001',
-      assetPath: '${PlaceholderImages.facesPath}angry_001.png',
-      valence: Valence.negative,
-      emotion: Emotion.anger,
-    ),
-    ImageStimulus(
-      id: 'angry_002',
-      assetPath: '${PlaceholderImages.facesPath}angry_002.png',
-      valence: Valence.negative,
-      emotion: Emotion.anger,
-    ),
-    ImageStimulus(
-      id: 'fear_001',
-      assetPath: '${PlaceholderImages.facesPath}fear_001.png',
-      valence: Valence.negative,
-      emotion: Emotion.fear,
-    ),
-    ImageStimulus(
-      id: 'fear_002',
-      assetPath: '${PlaceholderImages.facesPath}fear_002.png',
-      valence: Valence.negative,
-      emotion: Emotion.fear,
-    ),
-    ImageStimulus(
-      id: 'sad_001',
-      assetPath: '${PlaceholderImages.facesPath}sad_001.png',
-      valence: Valence.negative,
-      emotion: Emotion.sadness,
-    ),
-    ImageStimulus(
-      id: 'sad_002',
-      assetPath: '${PlaceholderImages.facesPath}sad_002.png',
-      valence: Valence.negative,
-      emotion: Emotion.sadness,
-    ),
-  ];
+  /// 指定されたグループの正の画像一覧を取得（キャッシュ付き）
+  Future<List<String>> _getPositiveImages(ImageGroup group) async {
+    if (_positiveImageCache[group] != null) {
+      return _positiveImageCache[group]!;
+    }
+    
+    final images = await _loadImageFilenames(group.positiveFolder);
+    _positiveImageCache[group] = images;
+    return images;
+  }
 
-  /// ランダムでよくない画像3枚と良い画像1枚を選択して返す
-  List<ImageStimulus> getRandomStimuliSet() {
+  /// 指定されたグループの負の画像一覧を取得（キャッシュ付き）
+  Future<List<String>> _getNegativeImages(ImageGroup group) async {
+    if (_negativeImageCache[group] != null) {
+      return _negativeImageCache[group]!;
+    }
+    
+    final images = await _loadImageFilenames(group.negativeFolder);
+    _negativeImageCache[group] = images;
+    return images;
+  }
+
+  /// 指定されたグループでランダムによくない画像3枚と良い画像1枚を選択して返す
+  Future<List<ImageStimulus>> getRandomStimuliSet(ImageGroup group) async {
     final List<ImageStimulus> stimuliSet = [];
     
-    // よくない画像から3枚をランダム選択
-    final negativeShuffled = List<ImageStimulus>.from(_negativeImages);
-    negativeShuffled.shuffle(_random);
-    stimuliSet.addAll(negativeShuffled.take(3));
+    // 負の画像から3枚をランダム選択
+    final negativeImages = await _getNegativeImages(group);
+    if (negativeImages.isNotEmpty) {
+      final negativeShuffled = List<String>.from(negativeImages);
+      negativeShuffled.shuffle(_random);
+      final selectedNegative = negativeShuffled.take(3);
+      
+      for (int i = 0; i < selectedNegative.length; i++) {
+        final imagePath = selectedNegative.elementAt(i);
+        stimuliSet.add(ImageStimulus(
+          id: 'negative_${group.name}_${i + 1}',
+          assetPath: imagePath,
+          valence: Valence.negative,
+          emotion: _getEmotionFromGroup(group, false),
+        ));
+      }
+    }
     
-    // よい画像から1枚をランダム選択
-    final positiveShuffled = List<ImageStimulus>.from(_positiveImages);
-    positiveShuffled.shuffle(_random);
-    stimuliSet.addAll(positiveShuffled.take(1));
+    // 正の画像から1枚をランダム選択
+    final positiveImages = await _getPositiveImages(group);
+    if (positiveImages.isNotEmpty) {
+      final positiveShuffled = List<String>.from(positiveImages);
+      positiveShuffled.shuffle(_random);
+      final selectedPositive = positiveShuffled.first;
+      
+      stimuliSet.add(ImageStimulus(
+        id: 'positive_${group.name}_1',
+        assetPath: selectedPositive,
+        valence: Valence.positive,
+        emotion: _getEmotionFromGroup(group, true),
+      ));
+    }
     
     // 全体をシャッフルして位置をランダム化
     stimuliSet.shuffle(_random);
     
     return stimuliSet;
   }
-
-  /// 良い画像のリストを取得
-  List<ImageStimulus> get positiveImages => List.unmodifiable(_positiveImages);
   
-  /// よくない画像のリストを取得
-  List<ImageStimulus> get negativeImages => List.unmodifiable(_negativeImages);
-  
-  /// 全ての画像を取得
-  List<ImageStimulus> get allImages => [
-    ..._positiveImages,
-    ..._negativeImages,
-  ];
-  
-  /// 指定されたIDの画像を取得
-  ImageStimulus? getImageById(String id) {
-    try {
-      return allImages.firstWhere((image) => image.id == id);
-    } catch (e) {
-      return null;
+  /// グループから適切な感情を取得
+  Emotion _getEmotionFromGroup(ImageGroup group, bool isPositive) {
+    switch (group) {
+      case ImageGroup.emotions:
+        return isPositive ? Emotion.happiness : Emotion.sadness;
+      case ImageGroup.food:
+      case ImageGroup.health:
+        return isPositive ? Emotion.happiness : Emotion.anger;
     }
+  }
+  
+  /// ランダムなグループを選択
+  ImageGroup getRandomGroup() {
+    final groups = ImageGroup.values;
+    return groups[_random.nextInt(groups.length)];
+  }
+
+  /// キャッシュをクリア
+  void clearCache() {
+    _positiveImageCache.clear();
+    _negativeImageCache.clear();
   }
 }

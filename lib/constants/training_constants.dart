@@ -108,28 +108,43 @@ enum DifficultyLevel {
   }
 }
 
-class PlaceholderImages {
-  static const String facesPath = 'assets/images/faces/';
-  static const String placeholdersPath = 'assets/images/placeholders/';
+enum ImageGroup {
+  emotions,
+  food,
+  health;
   
-  // Placeholder image filenames (will be replaced with actual images)
-  static const List<String> positiveImages = [
-    'happy_001.png',
-    'happy_002.png',
-    'happy_003.png',
-    'happy_004.png',
-    'happy_005.png',
-  ];
+  String get positiveFolder {
+    switch (this) {
+      case ImageGroup.emotions:
+        return 'assets/images/smile/';
+      case ImageGroup.food:
+        return 'assets/images/vegetables/';
+      case ImageGroup.health:
+        return 'assets/images/health/';
+    }
+  }
   
-  static const List<String> negativeImages = [
-    'angry_001.png',
-    'angry_002.png',
-    'fear_001.png',
-    'fear_002.png',
-    'sad_001.png',
-    'sad_002.png',
-  ];
+  String get negativeFolder {
+    switch (this) {
+      case ImageGroup.emotions:
+        return 'assets/images/sad/';
+      case ImageGroup.food:
+        return 'assets/images/badfood/';
+      case ImageGroup.health:
+        return 'assets/images/bad/';
+    }
+  }
   
+  String get label {
+    switch (this) {
+      case ImageGroup.emotions:
+        return '感情';
+      case ImageGroup.food:
+        return '食べ物';
+      case ImageGroup.health:
+        return '健康';
+    }
+  }
 }
 
 class TrainingLayouts {

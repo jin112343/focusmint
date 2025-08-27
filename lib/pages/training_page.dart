@@ -27,7 +27,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   bool _showingPointOverlay = false;
   double _lastEarnedPoints = 0.0;
   bool _lastWasCorrect = false;
-  static const int maxTrainingTimeSeconds = 300; // 5分 = 300秒
+  static const int maxTrainingTimeSeconds = 60; // 1分 = 60秒
   
   @override
   void initState() {
@@ -44,18 +44,21 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
         _elapsedSeconds++;
       });
       
-      // 5分経過で結果画面に遷移
+      // 1分経過で結果画面に遷移
       if (_elapsedSeconds >= maxTrainingTimeSeconds) {
         timer.cancel();
-        _saveSessionData();
-        _navigateToResult();
+        _saveSessionData().then((_) {
+          _navigateToResult();
+        });
       }
     });
   }
   
-  void _generateNewStimuliSet() {
+  void _generateNewStimuliSet() async {
+    final randomGroup = _imageService.getRandomGroup();
+    final stimuli = await _imageService.getRandomStimuliSet(randomGroup);
     setState(() {
-      _currentStimuli = _imageService.getRandomStimuliSet();
+      _currentStimuli = stimuli;
     });
     // 新しい刺激が表示されたときに反応時間の測定を開始
     _speedScoreService.startStimulus();
@@ -80,6 +83,10 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   @override
   void dispose() {
     _timer?.cancel();
+    // アプリが予期せず終了する場合に備えてデータを保存
+    if (_elapsedSeconds > 0) {
+      _saveSessionData();
+    }
     super.dispose();
   }
 
@@ -90,7 +97,13 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.close),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () async {
+            _timer?.cancel();
+            await _saveSessionData();
+            if (mounted) {
+              Navigator.of(context).pop();
+            }
+          },
         ),
         title: const Text('フォーカス・ミント'),
         actions: [
@@ -116,7 +129,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                       ? StimulusGrid(
                           stimuli: _currentStimuli,
                           onStimulusSelected: _onStimulusSelected,
-                          showPlaceholders: !ImageService.useRealImages, // 絵文字で表示（実際の画像に変更する際はImageService.useRealImages = trueに変更）
+                          showPlaceholders: false, // 実際の画像を表示
                         )
                       : const Center(
                           child: Column(
@@ -170,8 +183,11 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   }
 
   void _onStimulusSelected(String stimulusId) {
-    final selectedStimulus = _imageService.getImageById(stimulusId);
-    if (selectedStimulus == null) return;
+    // 現在の刺激リストから選択された画像を見つける
+    final selectedStimulus = _currentStimuli.firstWhere(
+      (stimulus) => stimulus.id == stimulusId,
+      orElse: () => throw Exception('Selected stimulus not found'),
+    );
     
     // 良い画像（positive）が選択されたかチェック
     final isCorrect = selectedStimulus.valence == Valence.positive;
@@ -187,15 +203,6 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
     });
     
     // ポイントオーバーレイの完了はコールバックで処理
-    
-    // 一定ポイントで結果画面に遷移（ただし5分制限を優先）
-    if (_currentPoints >= 100) {
-      _timer?.cancel();
-      Future.delayed(const Duration(milliseconds: 2100), () {
-        _saveSessionData();
-        _navigateToResult();
-      });
-    }
   }
 
   void _onPointOverlayComplete() {

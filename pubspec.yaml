@@ -94,8 +94,12 @@ flutter:
 
   # アセット（画像ファイル）
   assets:
-    - assets/images/faces/
-    - assets/images/placeholders/
+    - assets/images/smile/
+    - assets/images/sad/
+    - assets/images/vegetables/
+    - assets/images/badfood/
+    - assets/images/health/
+    - assets/images/bad/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
