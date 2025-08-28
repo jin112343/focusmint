@@ -27,6 +27,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   double _lastEarnedPoints = 0.0;
   bool _lastWasCorrect = false;
   String? _selectedStimulusId; // 選択されたボタンのID
+  bool _gameInputLocked = false; // ゲーム入力のロック状態
   static const int maxTrainingTimeSeconds = 60; // 1分 = 60秒
   
   @override
@@ -59,6 +60,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
     final stimuli = await _imageService.getRandomStimuliSet(randomGroup);
     setState(() {
       _currentStimuli = stimuli;
+      _gameInputLocked = false; // 新しい刺激が表示されるときに入力ロックを解除
     });
     // 新しい刺激が表示されたときに反応時間の測定を開始
     _speedScoreService.startStimulus();
@@ -123,9 +125,10 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                   : _currentStimuli.isNotEmpty
                       ? StimulusGrid(
                           stimuli: _currentStimuli,
-                          onStimulusSelected: _onStimulusSelected,
+                          onStimulusSelected: _gameInputLocked ? null : _onStimulusSelected, // 入力ロック時はnullを渡す
                           showPlaceholders: false, // 実際の画像を表示
                           selectedStimulusId: _selectedStimulusId, // 選択状態を渡す
+                          inputLocked: _gameInputLocked, // 入力ロック状態を渡す
                         )
                       : const Center(
                           child: Column(
@@ -184,6 +187,16 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   }
 
   void _onStimulusSelected(String stimulusId) {
+    // 入力がロックされている場合は何もしない
+    if (_gameInputLocked) {
+      return;
+    }
+    
+    // 最初のボタンが押された時点で入力をロック
+    setState(() {
+      _gameInputLocked = true;
+    });
+    
     // 現在の刺激リストから選択された画像を見つける
     final selectedStimulus = _currentStimuli.firstWhere(
       (stimulus) => stimulus.id == stimulusId,

@@ -9,6 +9,7 @@ class StimulusGrid extends StatelessWidget {
   final double? gridSize;
   final bool showPlaceholders;
   final String? selectedStimulusId; // 選択されたボタンのID
+  final bool inputLocked; // 入力ロック状態
   
   const StimulusGrid({
     super.key,
@@ -17,6 +18,7 @@ class StimulusGrid extends StatelessWidget {
     this.gridSize,
     this.showPlaceholders = true,
     this.selectedStimulusId, // 追加
+    this.inputLocked = false, // 追加
   });
 
   @override
@@ -78,6 +80,7 @@ class StimulusItem extends StatefulWidget {
   final VoidCallback? onTap;
   final bool showPlaceholder;
   final bool isSelected; // 選択状態
+  final bool inputLocked; // 入力ロック状態
   
   const StimulusItem({
     super.key,
@@ -85,6 +88,7 @@ class StimulusItem extends StatefulWidget {
     this.onTap,
     this.showPlaceholder = true,
     this.isSelected = false, // 追加
+    this.inputLocked = false, // 追加
   });
 
   @override
@@ -200,7 +204,9 @@ class _StimulusItemState extends State<StimulusItem>
   Widget _buildPlaceholderFace() {
     final isPositive = widget.stimulus.valence == Valence.positive;
     final backgroundColor = isPositive ? Colors.yellow.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3);
-    final iconColor = isPositive ? Colors.orange : Colors.red;
+    final iconColor = widget.inputLocked && !widget.isSelected 
+        ? (isPositive ? Colors.orange.withValues(alpha: 0.4) : Colors.red.withValues(alpha: 0.4))
+        : (isPositive ? Colors.orange : Colors.red);
     final icon = _getEmotionIcon();
 
     return Container(

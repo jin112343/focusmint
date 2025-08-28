@@ -90,21 +90,6 @@ class _ResultPageState extends ConsumerState<ResultPage> {
           padding: const EdgeInsets.all(24),
           child: Column(
             children: [
-              // 上部の閉じるボタン
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    icon: const Icon(
-                      Icons.keyboard_arrow_down,
-                      size: 32,
-                      color: AppColors.textSecondary,
-                    ),
-                    onPressed: () => Navigator.of(context).pop(),
-                  ),
-                ],
-              ),
-              
               const SizedBox(height: 40),
               
               // メインスコア
@@ -122,7 +107,7 @@ class _ResultPageState extends ConsumerState<ResultPage> {
                     ),
                     const SizedBox(height: 8),
                     const Text(
-                      'YOUR SCORE',
+                      'あなたのスコア',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -152,11 +137,11 @@ class _ResultPageState extends ConsumerState<ResultPage> {
               else
                 Column(
                   children: [
-                    _buildInfoRow('BEST SCORE', _bestScore.toStringAsFixed(2)),
+                    _buildInfoRow('ベストスコア', _bestScore.toStringAsFixed(2)),
                     const SizedBox(height: 16),
-                    _buildInfoRow('TOTAL SCORE', _totalScore.toStringAsFixed(2)),
+                    _buildInfoRow('総合スコア', _totalScore.toStringAsFixed(2)),
                     const SizedBox(height: 16),
-                    _buildInfoRow('TOTAL SESSION TIME', _formatTime(_totalTimeMinutes)),
+                    _buildInfoRow('総プレイ時間', _formatTime(_totalTimeMinutes)),
                     const SizedBox(height: 32),
                     // ホームへ戻るボタン
                     SizedBox(

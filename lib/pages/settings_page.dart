@@ -51,8 +51,8 @@ class _SettingsPageState extends State<SettingsPage> {
     }
 
     final newGoal = int.tryParse(newGoalText);
-    if (newGoal == null || newGoal <= 0) {
-      _showErrorMessage('正しい数値を入力してください（1以上）');
+    if (newGoal == null || newGoal <= 0 || newGoal > 99999999) {
+      _showErrorMessage('正しい数値を入力してください（1から99999999の範囲）');
       return;
     }
 
