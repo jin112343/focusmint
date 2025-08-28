@@ -155,7 +155,9 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '残り時間: ${_remainingSeconds ~/ 60}分${_remainingSeconds % 60}秒',
+                    _remainingSeconds >= 60 
+                        ? '残り時間: ${_remainingSeconds ~/ 60}分${_remainingSeconds % 60}秒'
+                        : '残り時間: ${_remainingSeconds}秒',
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

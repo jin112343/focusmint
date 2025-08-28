@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:focusmint/widgets/app_introduction_widget.dart';
+import 'package:logger/logger.dart';
 
 class TutorialServiceNew {
   static const String _tutorialCompletedKey = 'tutorial_completed';
+  static final Logger _logger = Logger();
   
   /// チュートリアルが完了済みかチェック
   static Future<bool> isTutorialCompleted() async {
@@ -31,6 +33,7 @@ class TutorialServiceNew {
     required GlobalKey settingsButtonKey,
     required GlobalKey chartKey,
   }) {
+    _logger.d('Tutorial: Creating targets with keys - chart: $chartKey, start: $startButtonKey, stats: $statsButtonKey, settings: $settingsButtonKey');
     return [
       // 1. 円グラフの説明
       TargetFocus(
@@ -38,6 +41,7 @@ class TutorialServiceNew {
         keyTarget: chartKey,
         shape: ShapeLightFocus.Circle,
         radius: 15,
+        enableOverlayTab: true,
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
@@ -55,7 +59,7 @@ class TutorialServiceNew {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  '外側が目標、内側が合計ポイント。目標に近づくほど円が満ちていきます。\n\n※ フォーカスされた部分をタップして次に進みます',
+                  '外側が目標、内側が合計ポイント。目標に近づくほど円が満ちていきます。',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white,
@@ -73,6 +77,7 @@ class TutorialServiceNew {
         identify: "start_button",
         keyTarget: startButtonKey,
         shape: ShapeLightFocus.Circle,
+        enableOverlayTab: true,
         contents: [
           TargetContent(
             align: ContentAlign.top,
@@ -90,7 +95,7 @@ class TutorialServiceNew {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  '押すと1分間のゲーム開始。4択からポジティブな画像や良い習慣を選びます。\n\n※ フォーカスされた部分をタップして次に進みます',
+                  '押すと1分間のゲーム開始。4択からポジティブな画像や良い習慣を選びます。',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white,
@@ -108,6 +113,8 @@ class TutorialServiceNew {
         identify: "stats_button",
         keyTarget: statsButtonKey,
         shape: ShapeLightFocus.Circle,
+        radius: 8, // AppBarボタン用により小さい半径を設定
+        enableOverlayTab: true,
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
@@ -125,7 +132,7 @@ class TutorialServiceNew {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'これまでの獲得スコアの詳細を確認できます。\n\n※ 右側の設定ボタンをタップして次に進みます',
+                  'これまでの獲得スコアの詳細を確認できます。',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white,
@@ -143,6 +150,8 @@ class TutorialServiceNew {
         identify: "settings_button",
         keyTarget: settingsButtonKey,
         shape: ShapeLightFocus.Circle,
+        radius: 8, // AppBarボタン用により小さい半径を設定
+        enableOverlayTab: true,
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
@@ -160,7 +169,7 @@ class TutorialServiceNew {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  '目標値の変更、アプリ情報やデータリセットができます。\n\n※ これで説明は終了です。フォーカスされた部分をタップしてチュートリアルを完了してください。',
+                  '目標値の変更、アプリ情報やデータリセットができます。',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white,
@@ -209,19 +218,21 @@ class TutorialServiceNew {
       alignSkip: Alignment.bottomRight,
       // 実際のボタンタップを誘導する設定
       onClickTarget: (target) {
+        _logger.d('Tutorial: Target clicked - ${target.identify}');
         // ターゲット要素（実際のボタン）がクリックされた場合のみ次に進む
         // これにより実際のボタンをタップするように誘導
         tutorialCoachMark.next();
       },
       onClickTargetWithTapPosition: (target, tapDetails) {
+        _logger.d('Tutorial: Target with position clicked - ${target.identify}');
         // 実際のボタンがタップされた場合に次に進む
         tutorialCoachMark.next();
       },
-      onClickOverlay: (target) {
-        // オーバーレイ（グレー部分）がタップされた場合も次に進む
-        // ユーザビリティを考慮してどこをタップしても進むようにする
-        tutorialCoachMark.next();
-      },
+      // onClickOverlay は無効化し、各TargetFocusのenableOverlayTabに任せる
+      // onClickOverlay: (target) {
+      //   _logger.d('Tutorial: Overlay clicked - ${target.identify}');
+      //   tutorialCoachMark.next();
+      // },
       onFinish: () {
         markTutorialCompleted();
         onComplete?.call();
