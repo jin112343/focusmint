@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:focusmint/pages/training_page.dart';
-import 'package:focusmint/pages/result_page.dart';
 import 'package:focusmint/pages/settings_page.dart';
 import 'package:focusmint/pages/history_page.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
 import 'package:focusmint/services/tutorial_service_new.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -89,6 +89,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
       statsButtonKey: _statsButtonKey,
       settingsButtonKey: _settingsButtonKey,
       chartKey: _chartKey,
+      context: context,
     );
     
     TutorialServiceNew.showFullTutorial(
@@ -108,7 +109,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        title: const Text('FOCUS MINT'),
+        title: Text(AppLocalizations.of(context)!.focusMintTitle),
         actions: [
           IconButton(
             key: _statsButtonKey,
@@ -156,9 +157,9 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                           elevation: 6,
                           shadowColor: AppColors.shadowColor,
                         ),
-                        child: const Text(
-                          'START',
-                          style: TextStyle(
+                        child: Text(
+                          AppLocalizations.of(context)!.startButtonText,
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.2,
@@ -171,11 +172,11 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
               ),
             ),
             // 下部の説明テキスト（オプション）
-            const Padding(
-              padding: EdgeInsets.only(bottom: 16),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
               child: Text(
-                'ストレスを軽減し、気分を向上させます。',
-                style: TextStyle(
+                AppLocalizations.of(context)!.stressReductionMessage,
+                style: const TextStyle(
                   fontSize: 16,
                   color: AppColors.textSecondary,
                   fontWeight: FontWeight.w500,
@@ -280,9 +281,9 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                   color: AppColors.textPrimary,
                 ),
               ),
-              const Text(
-                '現在のポイント',
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.currentPoints,
+                style: const TextStyle(
                   fontSize: 12,
                   color: AppColors.textSecondary,
                   letterSpacing: 1.0,
@@ -290,8 +291,8 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
               ),
               const SizedBox(height: 4),
               Text(
-                '目標: $_goalPoints',
-                style: TextStyle(
+                AppLocalizations.of(context)!.goalLabel(_goalPoints),
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: AppColors.mintGreen,
@@ -299,16 +300,16 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
               ),
               if (remainingScore > 0)
                 Text(
-                  '残り: $remainingScore',
+                  AppLocalizations.of(context)!.remainingLabel(remainingScore),
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.grey[600],
                   ),
                 )
               else
-                const Text(
-                  '🎉 目標達成！',
-                  style: TextStyle(
+                Text(
+                  AppLocalizations.of(context)!.goalAchieved,
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Colors.orange,
                     fontWeight: FontWeight.bold,

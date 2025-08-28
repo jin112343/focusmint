@@ -4,6 +4,7 @@ import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
 import 'package:focusmint/services/database_service.dart';
 import 'package:focusmint/pages/web_view_page.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -46,13 +47,13 @@ class _SettingsPageState extends State<SettingsPage> {
   Future<void> _saveGoalPoints() async {
     final newGoalText = _goalPointsController.text.trim();
     if (newGoalText.isEmpty) {
-      _showErrorMessage('目標ポイントを入力してください');
+      _showErrorMessage(AppLocalizations.of(context)!.enterGoalPoints);
       return;
     }
 
     final newGoal = int.tryParse(newGoalText);
     if (newGoal == null || newGoal <= 0 || newGoal > 99999999) {
-      _showErrorMessage('正しい数値を入力してください（1から99999999の範囲）');
+      _showErrorMessage(AppLocalizations.of(context)!.enterValidNumber);
       return;
     }
 
@@ -65,7 +66,7 @@ class _SettingsPageState extends State<SettingsPage> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('目標ポイントを$newGoalに設定しました'),
+            content: Text(AppLocalizations.of(context)!.goalSetTo(newGoal)),
             backgroundColor: AppColors.mintGreen,
           ),
         );
@@ -75,7 +76,7 @@ class _SettingsPageState extends State<SettingsPage> {
       }
     } catch (e, stackTrace) {
       _logger.e('Failed to save goal points', error: e, stackTrace: stackTrace);
-      _showErrorMessage('保存に失敗しました');
+      _showErrorMessage(AppLocalizations.of(context)!.saveFailed);
     }
   }
 
@@ -105,12 +106,12 @@ class _SettingsPageState extends State<SettingsPage> {
       if (await canLaunchUrl(emailUri)) {
         await launchUrl(emailUri);
       } else {
-        _showErrorMessage('メールアプリを開けませんでした');
+        _showErrorMessage(AppLocalizations.of(context)!.emailOpenFailed);
       }
     } catch (e, stackTrace) {
       _logger.e('Failed to launch email', 
           error: e, stackTrace: stackTrace);
-      _showErrorMessage('メールアプリを開けませんでした');
+      _showErrorMessage(AppLocalizations.of(context)!.emailOpenFailed);
     }
   }
 
@@ -127,7 +128,7 @@ class _SettingsPageState extends State<SettingsPage> {
     } catch (e, stackTrace) {
       _logger.e('Failed to open WebView', 
           error: e, stackTrace: stackTrace);
-      _showErrorMessage('ページを開けませんでした');
+      _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
     }
   }
 
@@ -137,23 +138,23 @@ class _SettingsPageState extends State<SettingsPage> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text(
-            'データ削除',
-            style: TextStyle(
+          title: Text(
+            AppLocalizations.of(context)!.deleteDataConfirmTitle,
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
-          content: const Text(
-            '本当に全てのデータを削除しますか？\n\n※目標ポイントは保持されます',
-            style: TextStyle(
+          content: Text(
+            AppLocalizations.of(context)!.deleteDataConfirmMessage,
+            style: const TextStyle(
               fontSize: 16,
             ),
           ),
           actions: <Widget>[
             TextButton(
-              child: const Text(
-                'キャンセル',
-                style: TextStyle(
+              child: Text(
+                AppLocalizations.of(context)!.cancel,
+                style: const TextStyle(
                   color: AppColors.textSecondary,
                 ),
               ),
@@ -162,9 +163,9 @@ class _SettingsPageState extends State<SettingsPage> {
               },
             ),
             TextButton(
-              child: const Text(
-                '削除',
-                style: TextStyle(
+              child: Text(
+                AppLocalizations.of(context)!.delete,
+                style: const TextStyle(
                   color: Colors.red,
                   fontWeight: FontWeight.bold,
                 ),
@@ -196,8 +197,8 @@ class _SettingsPageState extends State<SettingsPage> {
       
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('データを削除しました'),
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.dataDeleted),
             backgroundColor: AppColors.mintGreen,
           ),
         );
@@ -205,7 +206,7 @@ class _SettingsPageState extends State<SettingsPage> {
     } catch (e, stackTrace) {
       _logger.e('Failed to delete all data', 
           error: e, stackTrace: stackTrace);
-      _showErrorMessage('データ削除に失敗しました');
+      _showErrorMessage(AppLocalizations.of(context)!.dataDeleteFailed);
     }
   }
 
@@ -219,7 +220,7 @@ class _SettingsPageState extends State<SettingsPage> {
     } catch (e, stackTrace) {
       _logger.e('Failed to show tutorial', 
           error: e, stackTrace: stackTrace);
-      _showErrorMessage('チュートリアルの表示に失敗しました');
+      _showErrorMessage(AppLocalizations.of(context)!.tutorialDisplayFailed);
     }
   }
 
@@ -302,8 +303,8 @@ class _SettingsPageState extends State<SettingsPage> {
       child: Scaffold(
         backgroundColor: AppColors.backgroundColor,
         appBar: AppBar(
-          title: const Text('設定'),
-          backgroundColor: AppColors.backgroundColor,
+          title: Text(AppLocalizations.of(context)!.settingsTitle),
+          backgroundColor: AppColors.mintGreen,
           elevation: 0,
         ),
         body: _isLoading
@@ -329,9 +330,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                 size: 24,
                               ),
                               const SizedBox(width: 8),
-                              const Text(
-                                '目標ポイント設定',
-                                style: TextStyle(
+                              Text(
+                                AppLocalizations.of(context)!.goalPointsSetting,
+                                style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -341,7 +342,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            '現在の目標: $_currentGoalPoints ポイント',
+                            AppLocalizations.of(context)!.currentGoalPoints(_currentGoalPoints),
                             style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.textSecondary,
@@ -351,12 +352,12 @@ class _SettingsPageState extends State<SettingsPage> {
                           TextField(
                             controller: _goalPointsController,
                             decoration: InputDecoration(
-                              labelText: '新しい目標ポイント',
-                              hintText: '1000',
+                              labelText: AppLocalizations.of(context)!.newGoalPointsLabel,
+                              hintText: AppLocalizations.of(context)!.goalPointsHint,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              suffixText: 'ポイント',
+                              suffixText: AppLocalizations.of(context)!.pointsUnit2,
                             ),
                             keyboardType: TextInputType.number,
                             inputFormatters: [
@@ -375,9 +376,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                               ),
-                              child: const Text(
-                                '目標を保存',
-                                style: TextStyle(
+                              child: Text(
+                                AppLocalizations.of(context)!.saveGoalButton,
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -408,9 +409,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                 size: 24,
                               ),
                               const SizedBox(width: 8),
-                              const Text(
-                                'アプリ情報・サポート',
-                                style: TextStyle(
+                              Text(
+                                AppLocalizations.of(context)!.appInfoSupport,
+                                style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -423,8 +424,8 @@ class _SettingsPageState extends State<SettingsPage> {
                           // お問い合わせボタン
                           _buildSettingItem(
                             icon: Icons.email_outlined,
-                            title: 'お問い合わせ',
-                            subtitle: 'ご意見・ご質問をお聞かせください',
+                            title: AppLocalizations.of(context)!.contactUs,
+                            subtitle: AppLocalizations.of(context)!.contactUsSubtitle,
                             onTap: _launchEmail,
                           ),
                           
@@ -433,11 +434,11 @@ class _SettingsPageState extends State<SettingsPage> {
                           // 利用規約
                           _buildSettingItem(
                             icon: Icons.description_outlined,
-                            title: '利用規約',
-                            subtitle: 'アプリの利用規約をご確認ください',
+                            title: AppLocalizations.of(context)!.termsOfService,
+                            subtitle: AppLocalizations.of(context)!.termsSubtitle,
                             onTap: () => _openWebView(
                               'https://jinpost.wordpress.com/2025/08/28/focusmint-%e5%88%a9%e7%94%a8%e8%a6%8f%e7%b4%84/',
-                              '利用規約',
+                              AppLocalizations.of(context)!.termsOfService,
                             ),
                           ),
                           
@@ -446,11 +447,11 @@ class _SettingsPageState extends State<SettingsPage> {
                           // プライバシーポリシー
                           _buildSettingItem(
                             icon: Icons.privacy_tip_outlined,
-                            title: 'プライバシーポリシー',
-                            subtitle: 'プライバシー情報の取り扱いについて',
+                            title: AppLocalizations.of(context)!.privacyPolicy,
+                            subtitle: AppLocalizations.of(context)!.privacySubtitle,
                             onTap: () => _openWebView(
                               'https://jinpost.wordpress.com/2025/08/28/focusmint-%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc/',
-                              'プライバシーポリシー',
+                              AppLocalizations.of(context)!.privacyPolicy,
                             ),
                           ),
                           
@@ -459,8 +460,8 @@ class _SettingsPageState extends State<SettingsPage> {
                           // チュートリアル
                           _buildSettingItem(
                             icon: Icons.help_outline,
-                            title: 'チュートリアル',
-                            subtitle: 'アプリの使い方を確認する',
+                            title: AppLocalizations.of(context)!.tutorialTitle,
+                            subtitle: AppLocalizations.of(context)!.tutorialSubtitle,
                             onTap: _showTutorial,
                           ),
                         ],
@@ -486,9 +487,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                 size: 24,
                               ),
                               const SizedBox(width: 8),
-                              const Text(
-                                'データ管理',
-                                style: TextStyle(
+                              Text(
+                                AppLocalizations.of(context)!.dataManagement,
+                                style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -501,8 +502,8 @@ class _SettingsPageState extends State<SettingsPage> {
                           // データ削除ボタン
                           _buildSettingItem(
                             icon: Icons.delete_outline,
-                            title: 'データ削除',
-                            subtitle: '全ての記録を削除します（目標ポイントは除く）',
+                            title: AppLocalizations.of(context)!.deleteData,
+                            subtitle: AppLocalizations.of(context)!.deleteDataSubtitle,
                             onTap: _showDeleteDataDialog,
                             isDestructive: true,
                           ),
@@ -529,9 +530,9 @@ class _SettingsPageState extends State<SettingsPage> {
                                 size: 20,
                               ),
                               const SizedBox(width: 8),
-                              const Text(
-                                'ヒント',
-                                style: TextStyle(
+                              Text(
+                                AppLocalizations.of(context)!.tips,
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -540,9 +541,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             ],
                           ),
                           const SizedBox(height: 12),
-                          const Text(
-                            '• 目標ポイントはホーム画面の円グラフに反映されます\n• 小さな目標から始めて、達成したら徐々に上げていきましょう\n• 1回のセッションで最大6ポイント獲得できます',
-                            style: TextStyle(
+                          Text(
+                            AppLocalizations.of(context)!.tipsContent,
+                            style: const TextStyle(
                               fontSize: 14,
                               color: AppColors.textSecondary,
                               height: 1.5,
@@ -567,9 +568,9 @@ class _SettingsPageState extends State<SettingsPage> {
                         Icons.home,
                         color: Colors.white,
                       ),
-                      label: const Text(
-                        'ホームへ戻る',
-                        style: TextStyle(
+                      label: Text(
+                        AppLocalizations.of(context)!.backToHome,
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

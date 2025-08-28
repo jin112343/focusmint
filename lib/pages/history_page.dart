@@ -4,6 +4,7 @@ import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
 import 'package:logger/logger.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 
 class HistoryPage extends ConsumerStatefulWidget {
   const HistoryPage({super.key});
@@ -60,22 +61,22 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     }
   }
 
-  String _formatTime(double minutes) {
+  String _formatTime(double minutes, AppLocalizations l10n) {
     if (minutes < 1) {
       final seconds = (minutes * 60).round();
-      return '${seconds}秒';
+      return '$seconds${l10n.secondsUnit}';
     } else if (minutes < 60) {
       final mins = minutes.floor();
       final secs = ((minutes - mins) * 60).round();
-      return secs > 0 ? '${mins}分 ${secs}秒' : '${mins}分';
+      return secs > 0 ? '$mins${l10n.minutesUnit} $secs${l10n.secondsUnit}' : '$mins${l10n.minutesUnit}';
     } else {
       final hours = (minutes / 60).floor();
       final mins = (minutes % 60).floor();
       final secs = ((minutes % 1) * 60).round();
       
-      String result = '${hours}時間';
-      if (mins > 0) result += ' ${mins}分';
-      if (secs > 0 && hours == 0) result += ' ${secs}秒';
+      String result = '$hours${l10n.hoursUnit}';
+      if (mins > 0) result += ' $mins${l10n.minutesUnit}';
+      if (secs > 0 && hours == 0) result += ' $secs${l10n.secondsUnit}';
       
       return result;
     }
@@ -88,6 +89,8 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -100,9 +103,9 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
           ),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text(
-          'これまでの記録',
-          style: TextStyle(
+        title: Text(
+          l10n.historyPageTitle,
+          style: const TextStyle(
             color: AppColors.textPrimary,
             fontWeight: FontWeight.bold,
           ),
@@ -110,15 +113,15 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
         centerTitle: true,
       ),
       body: _isLoading
-          ? const Center(
+          ? Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircularProgressIndicator(),
-                  SizedBox(height: 16),
+                  const CircularProgressIndicator(),
+                  const SizedBox(height: 16),
                   Text(
-                    'データを読み込み中...',
-                    style: TextStyle(
+                    l10n.dataLoading,
+                    style: const TextStyle(
                       color: AppColors.textSecondary,
                       fontSize: 16,
                     ),
@@ -132,30 +135,30 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // 目標達成率カード
-                  _buildAchievementCard(),
+                  _buildAchievementCard(l10n),
                   const SizedBox(height: 24),
                   
                   // 履歴チャート
-                  _buildHistoryChart(),
+                  _buildHistoryChart(l10n),
                   const SizedBox(height: 24),
                   
                   // スコア統計カード
-                  _buildScoreStatsCard(),
+                  _buildScoreStatsCard(l10n),
                   const SizedBox(height: 24),
                   
                   // 時間統計カード
-                  _buildTimeStatsCard(),
+                  _buildTimeStatsCard(l10n),
                   const SizedBox(height: 24),
                   
                   // 詳細統計
-                  _buildDetailedStatsCard(),
+                  _buildDetailedStatsCard(l10n),
                 ],
               ),
             ),
     );
   }
 
-  Widget _buildHistoryChart() {
+  Widget _buildHistoryChart(AppLocalizations l10n) {
     final currentData = _showWeeklyChart ? _weeklyHistory : _monthlyHistory;
     
     return Container(
@@ -178,9 +181,9 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'ポイント獲得履歴',
-                style: TextStyle(
+              Text(
+                l10n.pointsHistory,
+                style: const TextStyle(
                   color: AppColors.textPrimary,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -189,13 +192,13 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
               Row(
                 children: [
                   _buildChartToggleButton(
-                    '週ごと',
+                    l10n.weekly,
                     _showWeeklyChart,
                     () => setState(() => _showWeeklyChart = true),
                   ),
                   const SizedBox(width: 8),
                   _buildChartToggleButton(
-                    '月ごと',
+                    l10n.monthly,
                     !_showWeeklyChart,
                     () => setState(() => _showWeeklyChart = false),
                   ),
@@ -207,10 +210,10 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
           SizedBox(
             height: 200,
             child: currentData.isEmpty
-                ? const Center(
+                ? Center(
                     child: Text(
-                      'データがありません',
-                      style: TextStyle(
+                      l10n.noDataAvailable,
+                      style: const TextStyle(
                         color: AppColors.textSecondary,
                         fontSize: 14,
                       ),
@@ -323,6 +326,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     final entries = data.entries.toList();
     if (index >= entries.length) return const SizedBox.shrink();
     
+    final l10n = AppLocalizations.of(context)!;
     final key = entries[index].key;
     String displayText;
     
@@ -330,7 +334,15 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       // 週表示の場合、曜日を表示
       try {
         final date = DateTime.parse(key);
-        final weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+        final weekdays = [
+          l10n.sundayShort,
+          l10n.mondayShort,
+          l10n.tuesdayShort,
+          l10n.wednesdayShort,
+          l10n.thursdayShort,
+          l10n.fridayShort,
+          l10n.saturdayShort,
+        ];
         displayText = weekdays[date.weekday % 7];
       } catch (e) {
         // パースエラーの場合は日付の日の部分のみ表示
@@ -343,7 +355,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       }
     } else {
       // 月表示の場合、月の部分のみ表示（2024-03 -> 03）
-      displayText = '${key.split('-').last}月';
+      displayText = '${key.split('-').last}${l10n.monthSuffix}';
     }
     
     return Text(
@@ -356,7 +368,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     );
   }
 
-  Widget _buildAchievementCard() {
+  Widget _buildAchievementCard(AppLocalizations l10n) {
     final achievementRate = _calculateAchievementRate();
     
     return Container(
@@ -383,9 +395,9 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            '目標達成率',
-            style: TextStyle(
+          Text(
+            l10n.goalAchievementRate,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -402,7 +414,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
           ),
           const SizedBox(height: 8),
           Text(
-            '${_totalScore.toStringAsFixed(0)} / $_goalPoints ポイント',
+            '${_totalScore.toStringAsFixed(0)} / $_goalPoints ${l10n.pointsUnit}',
             style: const TextStyle(
               color: Colors.white70,
               fontSize: 14,
@@ -420,7 +432,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     );
   }
 
-  Widget _buildScoreStatsCard() {
+  Widget _buildScoreStatsCard(AppLocalizations l10n) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
@@ -438,9 +450,9 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'スコア統計',
-            style: TextStyle(
+          Text(
+            l10n.scoreStatistics,
+            style: const TextStyle(
               color: AppColors.textPrimary,
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -451,7 +463,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
             children: [
               Expanded(
                 child: _buildStatItem(
-                  'ベストスコア',
+                  l10n.bestScore,
                   _bestScore.toStringAsFixed(2),
                   Icons.stars,
                   Colors.orange,
@@ -460,7 +472,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
               const SizedBox(width: 16),
               Expanded(
                 child: _buildStatItem(
-                  '合計スコア',
+                  l10n.totalScore,
                   _totalScore.toStringAsFixed(0),
                   Icons.score,
                   AppColors.mintGreen,
@@ -473,7 +485,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     );
   }
 
-  Widget _buildTimeStatsCard() {
+  Widget _buildTimeStatsCard(AppLocalizations l10n) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
@@ -491,9 +503,9 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'トレーニング時間',
-            style: TextStyle(
+          Text(
+            l10n.trainingTime,
+            style: const TextStyle(
               color: AppColors.textPrimary,
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -501,8 +513,8 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
           ),
           const SizedBox(height: 16),
           _buildStatItem(
-            '累計トレーニング時間',
-            _formatTime(_totalTimeMinutes),
+            l10n.totalTrainingTime,
+            _formatTime(_totalTimeMinutes, l10n),
             Icons.timer,
             Colors.blue,
           ),
@@ -511,7 +523,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     );
   }
 
-  Widget _buildDetailedStatsCard() {
+  Widget _buildDetailedStatsCard(AppLocalizations l10n) {
     final averageScore = _totalTimeMinutes > 0 ? _totalScore / _totalTimeMinutes : 0.0;
     
     return Container(
@@ -531,20 +543,20 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            '詳細統計',
-            style: TextStyle(
+          Text(
+            l10n.detailedStatistics,
+            style: const TextStyle(
               color: AppColors.textPrimary,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 16),
-          _buildDetailRow('1分あたりの平均スコア', '${averageScore.toStringAsFixed(1)} pt'),
+          _buildDetailRow(l10n.averageScorePerMinute, '${averageScore.toStringAsFixed(1)} pt'),
           const SizedBox(height: 12),
-          _buildDetailRow('目標まで残り', '${(_goalPoints - _totalScore).toStringAsFixed(0)} pt'),
+          _buildDetailRow(l10n.pointsToGoal, '${(_goalPoints - _totalScore).toStringAsFixed(0)} pt'),
           const SizedBox(height: 12),
-          _buildDetailRow('目標設定', '$_goalPoints pt'),
+          _buildDetailRow(l10n.goalSetting, '$_goalPoints pt'),
         ],
       ),
     );

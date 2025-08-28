@@ -1,122 +1,58 @@
 {
   "@@locale": "ja",
-  "appTitle": "FocusMint",
-  "abmTraining": "ABMトレーニング",
-  "welcomeMessage": "注意バイアス修正（ABM）のポジティブ検索トレーニングへようこそ！\n5分間の集中トレーニングでポジティブ刺激への注意力を鍛えましょう。",
-  "startTraining": "トレーニング開始",
-  "startTrainingDescription": "5分間のトレーニングセッションを開始します",
-  "startButton": "スタート",
-  "aboutTraining": "トレーニングについて",
-  "sessionTime": "セッション時間",
-  "sessionDuration": "5分間",
-  "trialCount": "試行数",
-  "trialRange": "120-160回",
-  "difficultyAdjustment": "難易度調整",
-  "difficultyMethod": "自動調整（1-up/2-down）",
-  "scoreEvaluation": "スコア評価",
-  "bisScore": "BIS（Balanced Integration Score）",
-  "noRecentSessions": "過去のセッションはありません",
-  "startFirstSession": "最初のトレーニングセッションを始めてみましょう！",
-  "recentSessions": "過去のセッション",
-  "moreSessionsCount": "他{count}件のセッション",
-  "@moreSessionsCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "today": "今日",
-  "yesterday": "昨日",
-  "daysAgo": "{days}日前",
-  "@daysAgo": {
-    "placeholders": {
-      "days": {
-        "type": "int"
-      }
-    }
-  },
-  "trialUnit": "試行",
-  "dataLoadError": "データの読み込みに失敗しました",
   
-  "training": "トレーニング",
-  "trialCountLabel": "試行: {count}",
-  "@trialCountLabel": {
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "現在のポイント",
+  "goalLabel": "目標: {goal}",
+  "@goalLabel": {
     "placeholders": {
-      "count": {
+      "goal": {
         "type": "int"
       }
     }
   },
-  "difficultyLabel": "難易度: {level}",
-  "@difficultyLabel": {
+  "remainingLabel": "残り: {remaining}",
+  "@remainingLabel": {
     "placeholders": {
-      "level": {
-        "type": "String"
+      "remaining": {
+        "type": "int"
       }
     }
   },
-  "recentAccuracyLabel": "最近の正答率: {accuracy}%",
-  "@recentAccuracyLabel": {
+  "goalAchieved": "🎉 目標達成！",
+  "startButtonText": "START",
+  "stressReductionMessage": "ストレスを軽減し、気分を向上させます。",
+  "remainingTimeMinutes": "残り時間: {minutes}分{seconds}秒",
+  "@remainingTimeMinutes": {
     "placeholders": {
-      "accuracy": {
-        "type": "String"
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
       }
     }
   },
-  "preparingSession": "セッションを準備中...",
-  "trainingStart": "トレーニング開始",
-  "findSmileyInstruction": "笑顔を素早く見つけてタップしてください",
-  "sessionComplete": "セッション完了！",
-  "showingResults": "結果を表示しています...",
-  "sessionAborted": "セッションが中断されました",
-  "canStartNewSession": "いつでも新しいセッションを開始できます",
-  "returnHome": "ホームに戻る",
-  "trainingInterruption": "トレーニング中断",
-  "interruptionMessage": "トレーニングを中断しますか？\n進行状況は保存されません。",
-  "continueButton": "続行",
-  "interruptButton": "中断",
-  
-  "sessionResults": "セッション結果",
-  "sessionScore": "セッションスコア",
-  "bisScoreLabel": "BISスコア: {score}",
-  "@bisScoreLabel": {
+  "remainingTimeSeconds": "残り時間: {seconds}秒",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "スコア: {score} ポイント",
+  "@scoreLabel": {
     "placeholders": {
       "score": {
         "type": "String"
       }
     }
   },
-  "performanceStats": "パフォーマンス統計",
-  "accuracy": "正答率",
-  "trials": "試行数",
-  "reactionTime": "反応時間",
-  "consecutiveCorrect": "連続正答",
-  "sessionDetails": "セッション詳細",
-  "startTime": "開始時刻",
-  "endTime": "終了時刻",
-  "sessionDurationLabel": "セッション時間",
-  "minutesUnit": "分",
-  "avgReactionTime": "平均反応時間",
-  "iesScore": "IESスコア",
-  "difficultyBreakdown": "難易度別試行数",
-  "easy": "Easy",
-  "medium": "Medium",
-  "hard": "Hard",
-  "trialsSuffix": "試行",
-  "startNewSession": "新しいセッションを開始",
-  "goHome": "ホームに戻る",
-  "excellentResult": "素晴らしい結果です！",
-  "goodJob": "よくできました！",
-  "keepPracticing": "練習を続けましょう",
-  "takeYourTime": "ゆっくり確実に",
+  "imagePreparationMessage": "画像を準備中...",
   
   "noStimuliAvailable": "刺激が利用できません",
   "invalidGridSize": "無効なグリッドサイズ",
-  "happy": "Happy",
-  "angry": "Angry",
-  "fear": "Fear",
-  "sad": "Sad",
   "unknown": "?",
   
   "gettingStarted": "スタート中...",
@@ -124,5 +60,119 @@
   "greatJob": "よくできました！",
   "goodPerformance": "良いパフォーマンス",
   "keepPracticingFeedback": "練習を続けてください",
-  "takeYourTimeFeedback": "ゆっくり確実に"
+  "takeYourTimeFeedback": "ゆっくり確実に",
+  
+  "happy": "Happy",
+  "angry": "Angry",
+  "fear": "Fear",
+  "sad": "Sad",
+  
+  "historyPageTitle": "これまでの記録",
+  "dataLoading": "データを読み込み中...",
+  "pointsHistory": "ポイント獲得履歴",
+  "weekly": "週ごと",
+  "monthly": "月ごと",
+  "noDataAvailable": "データがありません",
+  "goalAchievementRate": "目標達成率",
+  "scoreStatistics": "スコア統計",
+  "bestScore": "ベストスコア",
+  "totalScore": "合計スコア",
+  "trainingTime": "トレーニング時間",
+  "totalTrainingTime": "累計トレーニング時間",
+  "detailedStatistics": "詳細統計",
+  "averageScorePerMinute": "1分あたりの平均スコア",
+  "pointsToGoal": "目標まで残り",
+  "goalSetting": "目標設定",
+  "secondsUnit": "秒",
+  "minutesUnit": "分",
+  "hoursUnit": "時間",
+  "pointsUnit": "ポイント",
+  "monthSuffix": "月",
+  "sundayShort": "日",
+  "mondayShort": "月",
+  "tuesdayShort": "火",
+  "wednesdayShort": "水",
+  "thursdayShort": "木",
+  "fridayShort": "金",
+  "saturdayShort": "土",
+  
+  "settingsTitle": "設定",
+  "goalPointsSetting": "目標ポイント設定",
+  "currentGoalPoints": "現在の目標: {points} ポイント",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "新しい目標ポイント",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "ポイント",
+  "saveGoalButton": "目標を保存",
+  "goalSetTo": "目標ポイントを{points}に設定しました",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "目標ポイントを入力してください",
+  "enterValidNumber": "正しい数値を入力してください（1から99999999の範囲）",
+  "saveFailed": "保存に失敗しました",
+  "emailOpenFailed": "メールアプリを開けませんでした",
+  "pageOpenFailed": "ページを開けませんでした",
+  "appInfoSupport": "アプリ情報・サポート",
+  "contactUs": "お問い合わせ",
+  "contactUsSubtitle": "ご意見・ご質問をお聞かせください",
+  "termsOfService": "利用規約",
+  "termsSubtitle": "アプリの利用規約をご確認ください",
+  "privacyPolicy": "プライバシーポリシー",
+  "privacySubtitle": "プライバシー情報の取り扱いについて",
+  "tutorialTitle": "チュートリアル",
+  "tutorialSubtitle": "アプリの使い方を確認する",
+  "dataManagement": "データ管理",
+  "deleteData": "データ削除",
+  "deleteDataSubtitle": "全ての記録を削除します（目標ポイントは除く）",
+  "deleteDataConfirmTitle": "データ削除",
+  "deleteDataConfirmMessage": "本当に全てのデータを削除しますか？\n\n※目標ポイントは保持されます",
+  "cancel": "キャンセル",
+  "delete": "削除",
+  "dataDeleted": "データを削除しました",
+  "dataDeleteFailed": "データ削除に失敗しました",
+  "tutorialDisplayFailed": "チュートリアルの表示に失敗しました",
+  "tips": "ヒント",
+  "tipsContent": "• 目標ポイントはホーム画面の円グラフに反映されます\n• 小さな目標から始めて、達成したら徐々に上げていきましょう\n• 1回のセッションで最大6ポイント獲得できます",
+  "backToHome": "ホームへ戻る",
+  
+  "tutorialSkip": "スキップ",
+  "tutorialGoalAndPoints": "目標と現在のポイント",
+  "tutorialGoalDescription": "外側が目標、内側が合計ポイント。目標に近づくほど円が満ちていきます。",
+  "tutorialOneMinuteTraining": "1分トレーニング",
+  "tutorialTrainingDescription": "押すと1分間のゲーム開始。4択からポジティブな画像や良い習慣を選びます。",
+  "tutorialScoreProgress": "スコアの推移",
+  "tutorialScoreDescription": "これまでの獲得スコアの詳細を確認できます。",
+  "tutorialSettingsAndData": "設定とデータ管理",
+  "tutorialSettingsDescription": "目標値の変更、アプリ情報やデータリセットができます。",
+  
+  "appIntroAttentionBiasTitle": "注意バイアスについて",
+  "appIntroAttentionBiasContent": "不安が強いと、無意識にネガティブなものばかりに目がいきやすくなります。",
+  "appIntroFocusMintRoleTitle": "FocusMint の役割",
+  "appIntroFocusMintRoleContent": "ポジティブな画像を選ぶ練習で、自然と良いほうに注意を向けられるようになります。",
+  "appIntroScientificEvidenceTitle": "科学的根拠",
+  "appIntroScientificEvidenceContent": "25分のトレーニングで不安・ストレスが大きく減少することが研究で確認されています。\n\n（例：Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin）",
+  "appIntroExpectedEffectsTitle": "期待できる効果",
+  "appIntroEffect1": "不安や緊張の軽減",
+  "appIntroEffect2": "周囲の笑顔に気づきやすくなる",
+  "appIntroEffect3": "人付き合いが楽になる",
+  "appIntroHowToUse": "使い方を見る",
+  
+  "pointsEarned": "ポイント獲得！",
+  "yourScore": "あなたのスコア",
+  "bestScore": "ベストスコア",
+  "totalScore": "総合スコア",
+  "totalPlayTime": "総プレイ時間",
+  "backToHome": "ホームへ戻る",
+  "dataLoading": "データを読み込み中..."
 }

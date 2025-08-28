@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:focusmint/constants/app_colors.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 
 class PointEarnedOverlay extends StatefulWidget {
   final double points;
@@ -99,9 +100,9 @@ class _PointEarnedOverlayState extends State<PointEarnedOverlay>
                       ),
                     ),
                     const SizedBox(height: 8), // 間隔を短く
-                    const Text(
-                      'ポイント獲得！',
-                      style: TextStyle(
+                    Text(
+                      AppLocalizations.of(context)!.pointsEarned,
+                      style: const TextStyle(
                         fontSize: 16, // フォントサイズを小さく
                         fontWeight: FontWeight.w500,
                         color: AppColors.textSecondary,

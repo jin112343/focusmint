@@ -8,6 +8,7 @@ import 'package:focusmint/services/speed_score_service.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/widgets/stimulus_grid.dart';
 import 'package:focusmint/widgets/point_earned_overlay.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 
 class TrainingPage extends ConsumerStatefulWidget {
   const TrainingPage({super.key});
@@ -108,7 +109,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
             }
           },
         ),
-        title: const Text('FOCUS MINT'),
+        title: Text(AppLocalizations.of(context)!.focusMintTitle),
       ),
       body: Column(
         children: [
@@ -130,13 +131,13 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                           selectedStimulusId: _selectedStimulusId, // 選択状態を渡す
                           inputLocked: _gameInputLocked, // 入力ロック状態を渡す
                         )
-                      : const Center(
+                      : Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              CircularProgressIndicator(),
-                              SizedBox(height: 16),
-                              Text('画像を準備中...'),
+                              const CircularProgressIndicator(),
+                              const SizedBox(height: 16),
+                              Text(AppLocalizations.of(context)!.imagePreparationMessage),
                             ],
                           ),
                         ),
@@ -161,8 +162,8 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                 children: [
                   Text(
                     _remainingSeconds >= 60 
-                        ? '残り時間: ${_remainingSeconds ~/ 60}分${_remainingSeconds % 60}秒'
-                        : '残り時間: ${_remainingSeconds}秒',
+                        ? AppLocalizations.of(context)!.remainingTimeMinutes(_remainingSeconds ~/ 60, _remainingSeconds % 60)
+                        : AppLocalizations.of(context)!.remainingTimeSeconds(_remainingSeconds),
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -170,7 +171,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                     ),
                   ),
                   Text(
-                    'スコア: ${_currentPoints.toStringAsFixed(2)} ポイント',
+                    AppLocalizations.of(context)!.scoreLabel(_currentPoints.toStringAsFixed(2)),
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

@@ -3,6 +3,7 @@ import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:focusmint/widgets/app_introduction_widget.dart';
 import 'package:logger/logger.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 
 class TutorialServiceNew {
   static const String _tutorialCompletedKey = 'tutorial_completed';
@@ -32,7 +33,9 @@ class TutorialServiceNew {
     required GlobalKey statsButtonKey,
     required GlobalKey settingsButtonKey,
     required GlobalKey chartKey,
+    required BuildContext context,
   }) {
+    final l10n = AppLocalizations.of(context)!;
     _logger.d('Tutorial: Creating targets with keys - chart: $chartKey, start: $startButtonKey, stats: $statsButtonKey, settings: $settingsButtonKey');
     return [
       // 1. 円グラフの説明
@@ -45,22 +48,22 @@ class TutorialServiceNew {
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '📊 目標と現在のポイント',
-                  style: TextStyle(
+                  '📊 ${l10n.tutorialGoalAndPoints}',
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '外側が目標、内側が合計ポイント。目標に近づくほど円が満ちていきます。',
-                  style: TextStyle(
+                  l10n.tutorialGoalDescription,
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.white,
                     height: 1.5,
@@ -81,22 +84,22 @@ class TutorialServiceNew {
         contents: [
           TargetContent(
             align: ContentAlign.top,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '🎯 1分トレーニング',
-                  style: TextStyle(
+                  '🎯 ${l10n.tutorialOneMinuteTraining}',
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '押すと1分間のゲーム開始。4択からポジティブな画像や良い習慣を選びます。',
-                  style: TextStyle(
+                  l10n.tutorialTrainingDescription,
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.white,
                     height: 1.5,
@@ -118,22 +121,22 @@ class TutorialServiceNew {
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '📈 スコアの推移',
-                  style: TextStyle(
+                  '📈 ${l10n.tutorialScoreProgress}',
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  'これまでの獲得スコアの詳細を確認できます。',
-                  style: TextStyle(
+                  l10n.tutorialScoreDescription,
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.white,
                     height: 1.5,
@@ -155,22 +158,22 @@ class TutorialServiceNew {
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '⚙️ 設定とデータ管理',
-                  style: TextStyle(
+                  '⚙️ ${l10n.tutorialSettingsAndData}',
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '目標値の変更、アプリ情報やデータリセットができます。',
-                  style: TextStyle(
+                  l10n.tutorialSettingsDescription,
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.white,
                     height: 1.5,
@@ -206,12 +209,13 @@ class TutorialServiceNew {
     required List<TargetFocus> targets,
     VoidCallback? onComplete,
   }) {
+    final l10n = AppLocalizations.of(context)!;
     late TutorialCoachMark tutorialCoachMark;
     
     tutorialCoachMark = TutorialCoachMark(
       targets: targets,
       colorShadow: Colors.black,
-      textSkip: "スキップ",
+      textSkip: l10n.tutorialSkip,
       paddingFocus: 10,
       opacityShadow: 0.75,
       hideSkip: false,

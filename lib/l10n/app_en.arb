@@ -1,122 +1,58 @@
 {
   "@@locale": "en",
-  "appTitle": "FocusMint",
-  "abmTraining": "ABM Training",
-  "welcomeMessage": "Welcome to Attention Bias Modification (ABM) positive search training!\nTrain your attention towards positive stimuli with a focused 5-minute session.",
-  "startTraining": "Start Training",
-  "startTrainingDescription": "Begin a 5-minute training session",
-  "startButton": "Start",
-  "aboutTraining": "About Training",
-  "sessionTime": "Session Time",
-  "sessionDuration": "5 minutes",
-  "trialCount": "Trials",
-  "trialRange": "120-160 trials",
-  "difficultyAdjustment": "Difficulty Adjustment",
-  "difficultyMethod": "Adaptive (1-up/2-down)",
-  "scoreEvaluation": "Score Evaluation",
-  "bisScore": "BIS (Balanced Integration Score)",
-  "noRecentSessions": "No recent sessions",
-  "startFirstSession": "Start your first training session!",
-  "recentSessions": "Recent Sessions",
-  "moreSessionsCount": "{count} more sessions",
-  "@moreSessionsCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "today": "Today",
-  "yesterday": "Yesterday",
-  "daysAgo": "{days} days ago",
-  "@daysAgo": {
-    "placeholders": {
-      "days": {
-        "type": "int"
-      }
-    }
-  },
-  "trialUnit": "trials",
-  "dataLoadError": "Failed to load data",
   
-  "training": "Training",
-  "trialCountLabel": "Trial: {count}",
-  "@trialCountLabel": {
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Current Points",
+  "goalLabel": "Goal: {goal}",
+  "@goalLabel": {
     "placeholders": {
-      "count": {
+      "goal": {
         "type": "int"
       }
     }
   },
-  "difficultyLabel": "Difficulty: {level}",
-  "@difficultyLabel": {
+  "remainingLabel": "Remaining: {remaining}",
+  "@remainingLabel": {
     "placeholders": {
-      "level": {
-        "type": "String"
+      "remaining": {
+        "type": "int"
       }
     }
   },
-  "recentAccuracyLabel": "Recent Accuracy: {accuracy}%",
-  "@recentAccuracyLabel": {
+  "goalAchieved": "🎉 Goal Achieved!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Reduce stress and improve your mood.",
+  "remainingTimeMinutes": "Time left: {minutes}m {seconds}s",
+  "@remainingTimeMinutes": {
     "placeholders": {
-      "accuracy": {
-        "type": "String"
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
       }
     }
   },
-  "preparingSession": "Preparing session...",
-  "trainingStart": "Training Start",
-  "findSmileyInstruction": "Find and tap the happy face quickly",
-  "sessionComplete": "Session Complete!",
-  "showingResults": "Showing results...",
-  "sessionAborted": "Session was interrupted",
-  "canStartNewSession": "You can start a new session anytime",
-  "returnHome": "Return Home",
-  "trainingInterruption": "Training Interruption",
-  "interruptionMessage": "Do you want to interrupt the training?\nProgress will not be saved.",
-  "continueButton": "Continue",
-  "interruptButton": "Interrupt",
-  
-  "sessionResults": "Session Results",
-  "sessionScore": "Session Score",
-  "bisScoreLabel": "BIS Score: {score}",
-  "@bisScoreLabel": {
+  "remainingTimeSeconds": "Time left: {seconds}s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Score: {score} Points",
+  "@scoreLabel": {
     "placeholders": {
       "score": {
         "type": "String"
       }
     }
   },
-  "performanceStats": "Performance Statistics",
-  "accuracy": "Accuracy",
-  "trials": "Trials",
-  "reactionTime": "Reaction Time",
-  "consecutiveCorrect": "Consecutive Correct",
-  "sessionDetails": "Session Details",
-  "startTime": "Start Time",
-  "endTime": "End Time",
-  "sessionDurationLabel": "Session Duration",
-  "minutesUnit": "min",
-  "avgReactionTime": "Average Reaction Time",
-  "iesScore": "IES Score",
-  "difficultyBreakdown": "Trials by Difficulty",
-  "easy": "Easy",
-  "medium": "Medium", 
-  "hard": "Hard",
-  "trialsSuffix": "trials",
-  "startNewSession": "Start New Session",
-  "goHome": "Go Home",
-  "excellentResult": "Excellent result!",
-  "goodJob": "Well done!",
-  "keepPracticing": "Keep practicing",
-  "takeYourTime": "Take your time",
+  "imagePreparationMessage": "Preparing images...",
   
   "noStimuliAvailable": "No stimuli available",
   "invalidGridSize": "Invalid grid size",
-  "happy": "Happy",
-  "angry": "Angry", 
-  "fear": "Fear",
-  "sad": "Sad",
   "unknown": "?",
   
   "gettingStarted": "Getting started...",
@@ -124,5 +60,119 @@
   "greatJob": "Great job!",
   "goodPerformance": "Good performance",
   "keepPracticingFeedback": "Keep practicing",
-  "takeYourTimeFeedback": "Take your time"
+  "takeYourTimeFeedback": "Take your time",
+  
+  "happy": "Happy",
+  "angry": "Angry",
+  "fear": "Fear",
+  "sad": "Sad",
+  
+  "historyPageTitle": "Training History",
+  "dataLoading": "Loading data...",
+  "pointsHistory": "Points History",
+  "weekly": "Weekly",
+  "monthly": "Monthly",
+  "noDataAvailable": "No data available",
+  "goalAchievementRate": "Goal Achievement Rate",
+  "scoreStatistics": "Score Statistics",
+  "bestScore": "Best Score",
+  "totalScore": "Total Score",
+  "trainingTime": "Training Time",
+  "totalTrainingTime": "Total Training Time",
+  "detailedStatistics": "Detailed Statistics",
+  "averageScorePerMinute": "Average score per minute",
+  "pointsToGoal": "Points to goal",
+  "goalSetting": "Goal setting",
+  "secondsUnit": "s",
+  "minutesUnit": "m",
+  "hoursUnit": "h",
+  "pointsUnit": "points",
+  "monthSuffix": "",
+  "sundayShort": "Sun",
+  "mondayShort": "Mon",
+  "tuesdayShort": "Tue",
+  "wednesdayShort": "Wed",
+  "thursdayShort": "Thu",
+  "fridayShort": "Fri",
+  "saturdayShort": "Sat",
+  
+  "settingsTitle": "Settings",
+  "goalPointsSetting": "Goal Points Setting",
+  "currentGoalPoints": "Current goal: {points} points",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "New goal points",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "points",
+  "saveGoalButton": "Save Goal",
+  "goalSetTo": "Goal set to {points} points",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Please enter goal points",
+  "enterValidNumber": "Please enter a valid number (1 to 99999999)",
+  "saveFailed": "Failed to save",
+  "emailOpenFailed": "Could not open email app",
+  "pageOpenFailed": "Could not open page",
+  "appInfoSupport": "App Info & Support",
+  "contactUs": "Contact Us",
+  "contactUsSubtitle": "Share your feedback and questions",
+  "termsOfService": "Terms of Service",
+  "termsSubtitle": "Review the app's terms of service",
+  "privacyPolicy": "Privacy Policy",
+  "privacySubtitle": "About privacy information handling",
+  "tutorialTitle": "Tutorial",
+  "tutorialSubtitle": "Learn how to use the app",
+  "dataManagement": "Data Management",
+  "deleteData": "Delete Data",
+  "deleteDataSubtitle": "Delete all records (except goal points)",
+  "deleteDataConfirmTitle": "Delete Data",
+  "deleteDataConfirmMessage": "Are you sure you want to delete all data?\n\n*Goal points will be preserved",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "dataDeleted": "Data deleted",
+  "dataDeleteFailed": "Failed to delete data",
+  "tutorialDisplayFailed": "Failed to display tutorial",
+  "tips": "Tips",
+  "tipsContent": "• Goal points are reflected in the pie chart on the home screen\n• Start with small goals and gradually increase them when achieved\n• You can earn up to 6 points in a single session",
+  "backToHome": "Back to Home",
+  
+  "tutorialSkip": "Skip",
+  "tutorialGoalAndPoints": "Goal and Current Points",
+  "tutorialGoalDescription": "The outer circle shows your goal, the inner circle shows total points. The circle fills as you approach your goal.",
+  "tutorialOneMinuteTraining": "1-Minute Training",
+  "tutorialTrainingDescription": "Start a 1-minute game. Choose positive images or good habits from 4 options.",
+  "tutorialScoreProgress": "Score Progress",
+  "tutorialScoreDescription": "View detailed information about your earned scores.",
+  "tutorialSettingsAndData": "Settings and Data Management",
+  "tutorialSettingsDescription": "Change goal values, view app information, and reset data.",
+  
+  "appIntroAttentionBiasTitle": "About Attention Bias",
+  "appIntroAttentionBiasContent": "When anxiety is high, we unconsciously tend to focus only on negative things.",
+  "appIntroFocusMintRoleTitle": "FocusMint's Role",
+  "appIntroFocusMintRoleContent": "By practicing selecting positive images, you'll naturally learn to focus your attention on the good side.",
+  "appIntroScientificEvidenceTitle": "Scientific Evidence",
+  "appIntroScientificEvidenceContent": "Research has confirmed that 25 minutes of training significantly reduces anxiety and stress.\n\n(e.g., Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin)",
+  "appIntroExpectedEffectsTitle": "Expected Effects",
+  "appIntroEffect1": "Reduction of anxiety and tension",
+  "appIntroEffect2": "Better awareness of smiles around you",
+  "appIntroEffect3": "Easier social interactions",
+  "appIntroHowToUse": "See How to Use",
+  
+  "pointsEarned": "Points Earned!",
+  "yourScore": "Your Score",
+  "bestScore": "Best Score",
+  "totalScore": "Total Score",
+  "totalPlayTime": "Total Play Time",
+  "backToHome": "Back to Home",
+  "dataLoading": "Loading data..."
 }

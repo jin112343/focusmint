@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:focusmint/constants/app_colors.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 
 class AppIntroductionDialog {
   static Future<void> show(BuildContext context, VoidCallback onNext) {
@@ -54,6 +55,8 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
   
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    
     return Dialog(
       backgroundColor: Colors.transparent,
       child: Container(
@@ -83,10 +86,10 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                         // アプリタイトル
-                        const Center(
+                        Center(
                           child: Text(
-                            'FOCUS MINT',
-                            style: TextStyle(
+                            l10n.focusMintTitle,
+                            style: const TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
                               color: AppColors.mintGreen,
@@ -98,8 +101,8 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
                         // 注意バイアスについて
                         _buildSection(
                           icon: Icons.visibility,
-                          title: '注意バイアスについて',
-                          content: '不安が強いと、無意識にネガティブなものばかりに目がいきやすくなります。',
+                          title: l10n.appIntroAttentionBiasTitle,
+                          content: l10n.appIntroAttentionBiasContent,
                         ),
                         
                         const SizedBox(height: 20),
@@ -107,8 +110,8 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
                         // FocusMintの役割
                         _buildSection(
                           icon: Icons.psychology,
-                          title: 'FocusMint の役割',
-                          content: 'ポジティブな画像を選ぶ練習で、自然と良いほうに注意を向けられるようになります。',
+                          title: l10n.appIntroFocusMintRoleTitle,
+                          content: l10n.appIntroFocusMintRoleContent,
                         ),
                         
                         const SizedBox(height: 20),
@@ -116,8 +119,8 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
                         // 科学的根拠
                         _buildSection(
                           icon: Icons.science,
-                          title: '科学的根拠',
-                          content: '25分のトレーニングで不安・ストレスが大きく減少することが研究で確認されています。\n\n（例：Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin）',
+                          title: l10n.appIntroScientificEvidenceTitle,
+                          content: l10n.appIntroScientificEvidenceContent,
                         ),
                         
                         const SizedBox(height: 20),
@@ -125,14 +128,14 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
                         // 期待できる効果
                         _buildSection(
                           icon: Icons.favorite,
-                          title: '期待できる効果',
+                          title: l10n.appIntroExpectedEffectsTitle,
                           content: '',
                           customContent: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              _buildEffectItem('不安や緊張の軽減'),
-                              _buildEffectItem('周囲の笑顔に気づきやすくなる'),
-                              _buildEffectItem('人付き合いが楽になる'),
+                              _buildEffectItem(l10n.appIntroEffect1),
+                              _buildEffectItem(l10n.appIntroEffect2),
+                              _buildEffectItem(l10n.appIntroEffect3),
                             ],
                           ),
                         ),
@@ -196,9 +199,9 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
                         ),
                         elevation: 2,
                       ),
-                      child: const Text(
-                        '使い方を見る',
-                        style: TextStyle(
+                      child: Text(
+                        l10n.appIntroHowToUse,
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),

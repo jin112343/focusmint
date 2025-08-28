@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:focusmint/models/session_summary.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
 
 class ResultPage extends ConsumerStatefulWidget {
@@ -106,8 +107,8 @@ class _ResultPageState extends ConsumerState<ResultPage> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      'あなたのスコア',
+                    Text(
+                      AppLocalizations.of(context)!.yourScore,
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -121,27 +122,27 @@ class _ResultPageState extends ConsumerState<ResultPage> {
               
               // 下部情報ブロック
               if (_isLoading)
-                const Column(
+                Column(
                   children: [
-                    CircularProgressIndicator(),
-                    SizedBox(height: 16),
+                    const CircularProgressIndicator(),
+                    const SizedBox(height: 16),
                     Text(
-                      'データを読み込み中...',
-                      style: TextStyle(
+                      AppLocalizations.of(context)!.dataLoading,
+                      style: const TextStyle(
                         color: AppColors.textSecondary,
                       ),
                     ),
-                    SizedBox(height: 32),
+                    const SizedBox(height: 32),
                   ],
                 )
               else
                 Column(
                   children: [
-                    _buildInfoRow('ベストスコア', _bestScore.toStringAsFixed(2)),
+                    _buildInfoRow(AppLocalizations.of(context)!.bestScore, _bestScore.toStringAsFixed(2)),
                     const SizedBox(height: 16),
-                    _buildInfoRow('総合スコア', _totalScore.toStringAsFixed(2)),
+                    _buildInfoRow(AppLocalizations.of(context)!.totalScore, _totalScore.toStringAsFixed(2)),
                     const SizedBox(height: 16),
-                    _buildInfoRow('総プレイ時間', _formatTime(_totalTimeMinutes)),
+                    _buildInfoRow(AppLocalizations.of(context)!.totalPlayTime, _formatTime(_totalTimeMinutes)),
                     const SizedBox(height: 32),
                     // ホームへ戻るボタン
                     SizedBox(
@@ -155,8 +156,8 @@ class _ResultPageState extends ConsumerState<ResultPage> {
                           Icons.home,
                           color: Colors.white,
                         ),
-                        label: const Text(
-                          'ホームへ戻る',
+                        label: Text(
+                          AppLocalizations.of(context)!.backToHome,
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,

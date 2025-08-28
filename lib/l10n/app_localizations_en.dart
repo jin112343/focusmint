@@ -9,234 +9,53 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'FocusMint';
+  String get focusMintTitle => 'FOCUS MINT';
 
   @override
-  String get abmTraining => 'ABM Training';
+  String get currentPoints => 'Current Points';
 
   @override
-  String get welcomeMessage =>
-      'Welcome to Attention Bias Modification (ABM) positive search training!\nTrain your attention towards positive stimuli with a focused 5-minute session.';
-
-  @override
-  String get startTraining => 'Start Training';
-
-  @override
-  String get startTrainingDescription => 'Begin a 5-minute training session';
-
-  @override
-  String get startButton => 'Start';
-
-  @override
-  String get aboutTraining => 'About Training';
-
-  @override
-  String get sessionTime => 'Session Time';
-
-  @override
-  String get sessionDuration => '5 minutes';
-
-  @override
-  String get trialCount => 'Trials';
-
-  @override
-  String get trialRange => '120-160 trials';
-
-  @override
-  String get difficultyAdjustment => 'Difficulty Adjustment';
-
-  @override
-  String get difficultyMethod => 'Adaptive (1-up/2-down)';
-
-  @override
-  String get scoreEvaluation => 'Score Evaluation';
-
-  @override
-  String get bisScore => 'BIS (Balanced Integration Score)';
-
-  @override
-  String get noRecentSessions => 'No recent sessions';
-
-  @override
-  String get startFirstSession => 'Start your first training session!';
-
-  @override
-  String get recentSessions => 'Recent Sessions';
-
-  @override
-  String moreSessionsCount(int count) {
-    return '$count more sessions';
+  String goalLabel(int goal) {
+    return 'Goal: $goal';
   }
 
   @override
-  String get today => 'Today';
-
-  @override
-  String get yesterday => 'Yesterday';
-
-  @override
-  String daysAgo(int days) {
-    return '$days days ago';
+  String remainingLabel(int remaining) {
+    return 'Remaining: $remaining';
   }
 
   @override
-  String get trialUnit => 'trials';
+  String get goalAchieved => '🎉 Goal Achieved!';
 
   @override
-  String get dataLoadError => 'Failed to load data';
+  String get startButtonText => 'START';
 
   @override
-  String get training => 'Training';
+  String get stressReductionMessage => 'Reduce stress and improve your mood.';
 
   @override
-  String trialCountLabel(int count) {
-    return 'Trial: $count';
+  String remainingTimeMinutes(int minutes, int seconds) {
+    return 'Time left: ${minutes}m ${seconds}s';
   }
 
   @override
-  String difficultyLabel(String level) {
-    return 'Difficulty: $level';
+  String remainingTimeSeconds(int seconds) {
+    return 'Time left: ${seconds}s';
   }
 
   @override
-  String recentAccuracyLabel(String accuracy) {
-    return 'Recent Accuracy: $accuracy%';
+  String scoreLabel(String score) {
+    return 'Score: $score Points';
   }
 
   @override
-  String get preparingSession => 'Preparing session...';
-
-  @override
-  String get trainingStart => 'Training Start';
-
-  @override
-  String get findSmileyInstruction => 'Find and tap the happy face quickly';
-
-  @override
-  String get sessionComplete => 'Session Complete!';
-
-  @override
-  String get showingResults => 'Showing results...';
-
-  @override
-  String get sessionAborted => 'Session was interrupted';
-
-  @override
-  String get canStartNewSession => 'You can start a new session anytime';
-
-  @override
-  String get returnHome => 'Return Home';
-
-  @override
-  String get trainingInterruption => 'Training Interruption';
-
-  @override
-  String get interruptionMessage =>
-      'Do you want to interrupt the training?\nProgress will not be saved.';
-
-  @override
-  String get continueButton => 'Continue';
-
-  @override
-  String get interruptButton => 'Interrupt';
-
-  @override
-  String get sessionResults => 'Session Results';
-
-  @override
-  String get sessionScore => 'Session Score';
-
-  @override
-  String bisScoreLabel(String score) {
-    return 'BIS Score: $score';
-  }
-
-  @override
-  String get performanceStats => 'Performance Statistics';
-
-  @override
-  String get accuracy => 'Accuracy';
-
-  @override
-  String get trials => 'Trials';
-
-  @override
-  String get reactionTime => 'Reaction Time';
-
-  @override
-  String get consecutiveCorrect => 'Consecutive Correct';
-
-  @override
-  String get sessionDetails => 'Session Details';
-
-  @override
-  String get startTime => 'Start Time';
-
-  @override
-  String get endTime => 'End Time';
-
-  @override
-  String get sessionDurationLabel => 'Session Duration';
-
-  @override
-  String get minutesUnit => 'min';
-
-  @override
-  String get avgReactionTime => 'Average Reaction Time';
-
-  @override
-  String get iesScore => 'IES Score';
-
-  @override
-  String get difficultyBreakdown => 'Trials by Difficulty';
-
-  @override
-  String get easy => 'Easy';
-
-  @override
-  String get medium => 'Medium';
-
-  @override
-  String get hard => 'Hard';
-
-  @override
-  String get trialsSuffix => 'trials';
-
-  @override
-  String get startNewSession => 'Start New Session';
-
-  @override
-  String get goHome => 'Go Home';
-
-  @override
-  String get excellentResult => 'Excellent result!';
-
-  @override
-  String get goodJob => 'Well done!';
-
-  @override
-  String get keepPracticing => 'Keep practicing';
-
-  @override
-  String get takeYourTime => 'Take your time';
+  String get imagePreparationMessage => 'Preparing images...';
 
   @override
   String get noStimuliAvailable => 'No stimuli available';
 
   @override
   String get invalidGridSize => 'Invalid grid size';
-
-  @override
-  String get happy => 'Happy';
-
-  @override
-  String get angry => 'Angry';
-
-  @override
-  String get fear => 'Fear';
-
-  @override
-  String get sad => 'Sad';
 
   @override
   String get unknown => '?';
@@ -258,4 +77,287 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get takeYourTimeFeedback => 'Take your time';
+
+  @override
+  String get happy => 'Happy';
+
+  @override
+  String get angry => 'Angry';
+
+  @override
+  String get fear => 'Fear';
+
+  @override
+  String get sad => 'Sad';
+
+  @override
+  String get historyPageTitle => 'Training History';
+
+  @override
+  String get dataLoading => 'Loading data...';
+
+  @override
+  String get pointsHistory => 'Points History';
+
+  @override
+  String get weekly => 'Weekly';
+
+  @override
+  String get monthly => 'Monthly';
+
+  @override
+  String get noDataAvailable => 'No data available';
+
+  @override
+  String get goalAchievementRate => 'Goal Achievement Rate';
+
+  @override
+  String get scoreStatistics => 'Score Statistics';
+
+  @override
+  String get bestScore => 'Best Score';
+
+  @override
+  String get totalScore => 'Total Score';
+
+  @override
+  String get trainingTime => 'Training Time';
+
+  @override
+  String get totalTrainingTime => 'Total Training Time';
+
+  @override
+  String get detailedStatistics => 'Detailed Statistics';
+
+  @override
+  String get averageScorePerMinute => 'Average score per minute';
+
+  @override
+  String get pointsToGoal => 'Points to goal';
+
+  @override
+  String get goalSetting => 'Goal setting';
+
+  @override
+  String get secondsUnit => 's';
+
+  @override
+  String get minutesUnit => 'm';
+
+  @override
+  String get hoursUnit => 'h';
+
+  @override
+  String get pointsUnit => 'points';
+
+  @override
+  String get monthSuffix => '';
+
+  @override
+  String get sundayShort => 'Sun';
+
+  @override
+  String get mondayShort => 'Mon';
+
+  @override
+  String get tuesdayShort => 'Tue';
+
+  @override
+  String get wednesdayShort => 'Wed';
+
+  @override
+  String get thursdayShort => 'Thu';
+
+  @override
+  String get fridayShort => 'Fri';
+
+  @override
+  String get saturdayShort => 'Sat';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get goalPointsSetting => 'Goal Points Setting';
+
+  @override
+  String currentGoalPoints(int points) {
+    return 'Current goal: $points points';
+  }
+
+  @override
+  String get newGoalPointsLabel => 'New goal points';
+
+  @override
+  String get goalPointsHint => '1000';
+
+  @override
+  String get pointsUnit2 => 'points';
+
+  @override
+  String get saveGoalButton => 'Save Goal';
+
+  @override
+  String goalSetTo(int points) {
+    return 'Goal set to $points points';
+  }
+
+  @override
+  String get enterGoalPoints => 'Please enter goal points';
+
+  @override
+  String get enterValidNumber => 'Please enter a valid number (1 to 99999999)';
+
+  @override
+  String get saveFailed => 'Failed to save';
+
+  @override
+  String get emailOpenFailed => 'Could not open email app';
+
+  @override
+  String get pageOpenFailed => 'Could not open page';
+
+  @override
+  String get appInfoSupport => 'App Info & Support';
+
+  @override
+  String get contactUs => 'Contact Us';
+
+  @override
+  String get contactUsSubtitle => 'Share your feedback and questions';
+
+  @override
+  String get termsOfService => 'Terms of Service';
+
+  @override
+  String get termsSubtitle => 'Review the app\'s terms of service';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get privacySubtitle => 'About privacy information handling';
+
+  @override
+  String get tutorialTitle => 'Tutorial';
+
+  @override
+  String get tutorialSubtitle => 'Learn how to use the app';
+
+  @override
+  String get dataManagement => 'Data Management';
+
+  @override
+  String get deleteData => 'Delete Data';
+
+  @override
+  String get deleteDataSubtitle => 'Delete all records (except goal points)';
+
+  @override
+  String get deleteDataConfirmTitle => 'Delete Data';
+
+  @override
+  String get deleteDataConfirmMessage =>
+      'Are you sure you want to delete all data?\n\n*Goal points will be preserved';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get dataDeleted => 'Data deleted';
+
+  @override
+  String get dataDeleteFailed => 'Failed to delete data';
+
+  @override
+  String get tutorialDisplayFailed => 'Failed to display tutorial';
+
+  @override
+  String get tips => 'Tips';
+
+  @override
+  String get tipsContent =>
+      '• Goal points are reflected in the pie chart on the home screen\n• Start with small goals and gradually increase them when achieved\n• You can earn up to 6 points in a single session';
+
+  @override
+  String get backToHome => 'Back to Home';
+
+  @override
+  String get tutorialSkip => 'Skip';
+
+  @override
+  String get tutorialGoalAndPoints => 'Goal and Current Points';
+
+  @override
+  String get tutorialGoalDescription =>
+      'The outer circle shows your goal, the inner circle shows total points. The circle fills as you approach your goal.';
+
+  @override
+  String get tutorialOneMinuteTraining => '1-Minute Training';
+
+  @override
+  String get tutorialTrainingDescription =>
+      'Start a 1-minute game. Choose positive images or good habits from 4 options.';
+
+  @override
+  String get tutorialScoreProgress => 'Score Progress';
+
+  @override
+  String get tutorialScoreDescription =>
+      'View detailed information about your earned scores.';
+
+  @override
+  String get tutorialSettingsAndData => 'Settings and Data Management';
+
+  @override
+  String get tutorialSettingsDescription =>
+      'Change goal values, view app information, and reset data.';
+
+  @override
+  String get appIntroAttentionBiasTitle => 'About Attention Bias';
+
+  @override
+  String get appIntroAttentionBiasContent =>
+      'When anxiety is high, we unconsciously tend to focus only on negative things.';
+
+  @override
+  String get appIntroFocusMintRoleTitle => 'FocusMint\'s Role';
+
+  @override
+  String get appIntroFocusMintRoleContent =>
+      'By practicing selecting positive images, you\'ll naturally learn to focus your attention on the good side.';
+
+  @override
+  String get appIntroScientificEvidenceTitle => 'Scientific Evidence';
+
+  @override
+  String get appIntroScientificEvidenceContent =>
+      'Research has confirmed that 25 minutes of training significantly reduces anxiety and stress.\n\n(e.g., Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin)';
+
+  @override
+  String get appIntroExpectedEffectsTitle => 'Expected Effects';
+
+  @override
+  String get appIntroEffect1 => 'Reduction of anxiety and tension';
+
+  @override
+  String get appIntroEffect2 => 'Better awareness of smiles around you';
+
+  @override
+  String get appIntroEffect3 => 'Easier social interactions';
+
+  @override
+  String get appIntroHowToUse => 'See How to Use';
+
+  @override
+  String get pointsEarned => 'Points Earned!';
+
+  @override
+  String get yourScore => 'Your Score';
+
+  @override
+  String get totalPlayTime => 'Total Play Time';
 }
