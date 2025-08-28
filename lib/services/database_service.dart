@@ -413,6 +413,29 @@ LazyDatabase _openConnection() {
   });
 }
 
+// DatabaseService wrapper class
+class DatabaseService {
+  static final DatabaseService _instance = DatabaseService._internal();
+  static DatabaseService get instance => _instance;
+  
+  final AppDatabase _database = AppDatabase();
+  static final Logger _logger = Logger();
+  
+  DatabaseService._internal();
+
+  Future<void> clearAllData() async {
+    try {
+      await _database.delete(_database.trialLogs).go();
+      await _database.delete(_database.sessionSummaries).go();
+      
+      _logger.i('All data cleared from database');
+    } catch (e, stackTrace) {
+      _logger.e('Failed to clear all data', error: e, stackTrace: stackTrace);
+      rethrow;
+    }
+  }
+}
+
 // Riverpod Provider for AppDatabase
 final databaseProvider = Provider<AppDatabase>((ref) {
   return AppDatabase();

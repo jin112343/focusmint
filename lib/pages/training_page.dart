@@ -17,8 +17,7 @@ class TrainingPage extends ConsumerStatefulWidget {
 }
 
 class _TrainingPageState extends ConsumerState<TrainingPage> {
-  bool _isMuted = false;
-  int _elapsedSeconds = 0;
+  int _remainingSeconds = 60;
   double _currentPoints = 0.0;
   late final ImageService _imageService;
   late final SpeedScoreService _speedScoreService;
@@ -41,11 +40,11 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
-        _elapsedSeconds++;
+        _remainingSeconds--;
       });
       
-      // 1分経過で結果画面に遷移
-      if (_elapsedSeconds >= maxTrainingTimeSeconds) {
+      // 残り時間が0になったら結果画面に遷移
+      if (_remainingSeconds <= 0) {
         timer.cancel();
         _saveSessionData().then((_) {
           _navigateToResult();
@@ -65,8 +64,9 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   }
 
   Future<void> _saveSessionData() async {
+    final elapsedSeconds = maxTrainingTimeSeconds - _remainingSeconds;
     await _speedScoreService.saveBestScore(_currentPoints);
-    await _speedScoreService.addTotalTime(_elapsedSeconds);
+    await _speedScoreService.addTotalTime(elapsedSeconds);
     await _speedScoreService.addTotalScore(_currentPoints);
   }
 
@@ -84,7 +84,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   void dispose() {
     _timer?.cancel();
     // アプリが予期せず終了する場合に備えてデータを保存
-    if (_elapsedSeconds > 0) {
+    if (_remainingSeconds < maxTrainingTimeSeconds) {
       _saveSessionData();
     }
     super.dispose();
@@ -105,13 +105,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
             }
           },
         ),
-        title: const Text('フォーカス・ミント'),
-        actions: [
-          IconButton(
-            icon: Icon(_isMuted ? Icons.volume_off : Icons.volume_up),
-            onPressed: () => setState(() => _isMuted = !_isMuted),
-          ),
-        ],
+        title: const Text('FOCUS MINT'),
       ),
       body: Column(
         children: [
@@ -144,37 +138,40 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
             ),
           ),
           // フッター情報バー
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: const BoxDecoration(
-              color: AppColors.backgroundColor,
-              border: Border(
-                top: BorderSide(
-                  color: AppColors.textDisabled,
-                  width: 0.5,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                color: AppColors.backgroundColor,
+                border: Border(
+                  top: BorderSide(
+                    color: AppColors.textDisabled,
+                    width: 0.5,
+                  ),
                 ),
               ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  '経過時間: ${_elapsedSeconds ~/ 60}分${_elapsedSeconds % 60}秒',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.textSecondary,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '残り時間: ${_remainingSeconds ~/ 60}分${_remainingSeconds % 60}秒',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textSecondary,
+                    ),
                   ),
-                ),
-                Text(
-                  'スコア: ${_currentPoints.toStringAsFixed(2)} ポイント',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
+                  Text(
+                    'スコア: ${_currentPoints.toStringAsFixed(2)} ポイント',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textPrimary,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

@@ -10,6 +10,7 @@ class SpeedScoreService {
   static const String _goalPointsKey = 'goal_points';
   static const String _weeklyHistoryKey = 'weekly_history';
   static const String _monthlyHistoryKey = 'monthly_history';
+  static const String _dailyHistoryKey = 'daily_history';
   static final Logger _logger = Logger();
   
   DateTime? _stimulusStartTime;
@@ -111,9 +112,10 @@ class SpeedScoreService {
       final currentTotal = prefs.getDouble(_totalScoreKey) ?? 0.0;
       await prefs.setDouble(_totalScoreKey, currentTotal + score);
       
-      // 週次・月次履歴にもポイントを追加
+      // 週次・月次・日次履歴にもポイントを追加
       await _addToWeeklyHistory(score);
       await _addToMonthlyHistory(score);
+      await _addToDailyHistory(score);
       
       _logger.i('Total score updated: ${currentTotal + score}');
     } catch (e, stackTrace) {
@@ -165,6 +167,11 @@ class SpeedScoreService {
     return '${date.year}-${date.month.toString().padLeft(2, '0')}';
   }
 
+  // 日のキーを生成する（例: "2024-03-15"）
+  String _getDayKey(DateTime date) {
+    return '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
+  }
+
   Future<void> _addToWeeklyHistory(double score) async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -203,21 +210,44 @@ class SpeedScoreService {
     }
   }
 
+  Future<void> _addToDailyHistory(double score) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final now = DateTime.now();
+      final dayKey = _getDayKey(now);
+      
+      final historyJson = prefs.getString(_dailyHistoryKey) ?? '{}';
+      final Map<String, dynamic> history = json.decode(historyJson);
+      
+      final currentScore = (history[dayKey] as double?) ?? 0.0;
+      history[dayKey] = currentScore + score;
+      
+      await prefs.setString(_dailyHistoryKey, json.encode(history));
+      _logger.i('Daily history updated for day $dayKey: ${history[dayKey]}');
+    } catch (e, stackTrace) {
+      _logger.e('Failed to update daily history', error: e, stackTrace: stackTrace);
+    }
+  }
+
   Future<Map<String, int>> getWeeklyHistory() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final historyJson = prefs.getString(_weeklyHistoryKey) ?? '{}';
+      final historyJson = prefs.getString(_dailyHistoryKey) ?? '{}';
       final Map<String, dynamic> rawHistory = json.decode(historyJson);
       
-      // 過去8週間のデータを取得
+      // 今週の月曜日から日曜日のデータを取得
       final result = <String, int>{};
       final now = DateTime.now();
       
-      for (int i = 7; i >= 0; i--) {
-        final targetDate = now.subtract(Duration(days: i * 7));
-        final weekKey = _getWeekKey(targetDate);
-        final score = (rawHistory[weekKey] as double?) ?? 0.0;
-        result[weekKey] = score.toInt();
+      // 今週の月曜日を求める
+      final mondayOfThisWeek = now.subtract(Duration(days: now.weekday - 1));
+      
+      // 月曜日から日曜日までの7日間
+      for (int i = 0; i < 7; i++) {
+        final targetDate = mondayOfThisWeek.add(Duration(days: i));
+        final dayKey = _getDayKey(targetDate);
+        final score = (rawHistory[dayKey] as double?) ?? 0.0;
+        result[dayKey] = score.toInt();
       }
       
       return result;
@@ -273,5 +303,32 @@ class SpeedScoreService {
       return '${year}年 ${month}月';
     }
     return monthKey;
+  }
+  
+  /// 目標ポイント以外の全てのデータをクリアする
+  Future<void> clearAllDataExceptGoal() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      
+      // 削除するキーのリスト
+      final keysToRemove = [
+        _bestScoreKey,
+        _totalTimeKey,
+        _totalScoreKey,
+        _weeklyHistoryKey,
+        _monthlyHistoryKey,
+        _dailyHistoryKey,
+      ];
+      
+      // 各キーを削除
+      for (final key in keysToRemove) {
+        await prefs.remove(key);
+      }
+      
+      _logger.i('All SpeedScoreService data cleared except goal points');
+    } catch (e, stackTrace) {
+      _logger.e('Failed to clear SpeedScoreService data', error: e, stackTrace: stackTrace);
+      rethrow;
+    }
   }
 }

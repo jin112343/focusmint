@@ -6,6 +6,7 @@ import 'package:focusmint/pages/settings_page.dart';
 import 'package:focusmint/pages/history_page.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
+import 'package:focusmint/services/tutorial_service_new.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -20,6 +21,15 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
   double _totalScore = 0.0;
   int _goalPoints = 1000;
   bool _isLoading = true;
+  
+  // チュートリアル用のキー
+  final GlobalKey _startButtonKey = GlobalKey();
+  final GlobalKey _statsButtonKey = GlobalKey();
+  final GlobalKey _settingsButtonKey = GlobalKey();
+  final GlobalKey _chartKey = GlobalKey();
+  
+  // チュートリアル状態管理
+  bool _isTutorialMode = false;
 
   @override
   void initState() {
@@ -51,6 +61,45 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
       _goalPoints = goalPoints;
       _isLoading = false;
     });
+    
+    // データ読み込み完了後にチュートリアルをチェック
+    _checkAndShowTutorial();
+  }
+  
+  /// チュートリアルが初回かチェックして表示
+  Future<void> _checkAndShowTutorial() async {
+    final isCompleted = await TutorialServiceNew.isTutorialCompleted();
+    if (!isCompleted && mounted) {
+      // 少し遅延させてウィジェットが完全に描画されるまで待つ
+      await Future.delayed(const Duration(milliseconds: 500));
+      if (mounted) {
+        _showTutorial();
+      }
+    }
+  }
+  
+  /// チュートリアルを表示
+  void _showTutorial() {
+    setState(() {
+      _isTutorialMode = true;
+    });
+    
+    final targets = TutorialServiceNew.createHomeTutorialTargets(
+      startButtonKey: _startButtonKey,
+      statsButtonKey: _statsButtonKey,
+      settingsButtonKey: _settingsButtonKey,
+      chartKey: _chartKey,
+    );
+    
+    TutorialServiceNew.showFullTutorial(
+      context: context,
+      targets: targets,
+      onComplete: () {
+        setState(() {
+          _isTutorialMode = false;
+        });
+      },
+    );
   }
 
   @override
@@ -59,15 +108,17 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.settings),
-          onPressed: () => _showSettingsDialog(context),
-        ),
-        title: const Text('MOOD MINT'),
+        title: const Text('FOCUS MINT'),
         actions: [
           IconButton(
+            key: _statsButtonKey,
             icon: const Icon(Icons.bar_chart),
-            onPressed: () => _showStatsPage(context, ref),
+            onPressed: () => _isTutorialMode ? null : _showStatsPage(context, ref),
+          ),
+          IconButton(
+            key: _settingsButtonKey,
+            icon: const Icon(Icons.settings),
+            onPressed: () => _isTutorialMode ? null : _showSettingsDialog(context),
           ),
         ],
       ),
@@ -86,14 +137,18 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                     // 合計得点円グラフ
                     _isLoading
                         ? const CircularProgressIndicator()
-                        : _buildTotalScoreChart(),
+                        : Container(
+                            key: _chartKey,
+                            child: _buildTotalScoreChart(),
+                          ),
                     const SizedBox(height: 60),
                     // STARTボタン
                     SizedBox(
+                      key: _startButtonKey,
                       width: 120,
                       height: 120,
                       child: ElevatedButton(
-                        onPressed: () => _startTraining(context, ref),
+                        onPressed: () => _isTutorialMode ? null : _startTraining(context, ref),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.mintGreen,
                           foregroundColor: Colors.white,
@@ -119,7 +174,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
             const Padding(
               padding: EdgeInsets.only(bottom: 16),
               child: Text(
-                'Reduce stress and boost your mood.',
+                'ストレスを軽減し、気分を向上させます。',
                 style: TextStyle(
                   fontSize: 16,
                   color: AppColors.textSecondary,
@@ -127,26 +182,6 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                 ),
                 textAlign: TextAlign.center,
               ),
-            ),
-            // 5 mins per day
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.timer,
-                  size: 20,
-                  color: AppColors.textSecondary,
-                ),
-                const SizedBox(width: 8),
-                Text(
-                  '1 min per day',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
             ),
           ],
         ),
@@ -161,9 +196,18 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
       ),
     );
     
-    // 設定画面から戻ってきたときにデータを再読み込み
-    if (result != null || mounted) {
-      _loadData();
+    // 設定画面から戻ってきたときの処理
+    if (mounted) {
+      if (result == 'show_tutorial') {
+        // チュートリアル表示の要求があった場合
+        await Future.delayed(const Duration(milliseconds: 300));
+        if (mounted) {
+          _showTutorial();
+        }
+      } else {
+        // 通常の戻り処理：データを再読み込み
+        _loadData();
+      }
     }
   }
 
@@ -237,7 +281,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                 ),
               ),
               const Text(
-                'CURRENT POINTS',
+                '現在のポイント',
                 style: TextStyle(
                   fontSize: 12,
                   color: AppColors.textSecondary,
@@ -246,7 +290,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
               ),
               const SizedBox(height: 4),
               Text(
-                'Goal: $_goalPoints',
+                '目標: $_goalPoints',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
@@ -255,7 +299,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
               ),
               if (remainingScore > 0)
                 Text(
-                  'Remaining: $remainingScore',
+                  '残り: $remainingScore',
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.grey[600],
@@ -263,7 +307,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                 )
               else
                 const Text(
-                  '🎉 Goal Achieved!',
+                  '🎉 目標達成！',
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.orange,

@@ -216,37 +216,43 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
                       ),
                     ),
                   )
-                : BarChart(
-                    BarChartData(
-                      alignment: BarChartAlignment.spaceAround,
-                      maxY: _calculateMaxY(currentData),
-                      barTouchData: BarTouchData(enabled: true),
-                      titlesData: FlTitlesData(
-                        show: true,
-                        rightTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false),
-                        ),
-                        topTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false),
-                        ),
-                        leftTitles: const AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: true,
-                            reservedSize: 40,
+                : SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: SizedBox(
+                      width: _calculateChartWidth(currentData),
+                      child: BarChart(
+                        BarChartData(
+                          alignment: BarChartAlignment.spaceAround,
+                          maxY: _calculateMaxY(currentData),
+                          barTouchData: BarTouchData(enabled: true),
+                          titlesData: FlTitlesData(
+                            show: true,
+                            rightTitles: const AxisTitles(
+                              sideTitles: SideTitles(showTitles: false),
+                            ),
+                            topTitles: const AxisTitles(
+                              sideTitles: SideTitles(showTitles: false),
+                            ),
+                            leftTitles: const AxisTitles(
+                              sideTitles: SideTitles(
+                                showTitles: true,
+                                reservedSize: 40,
+                              ),
+                            ),
+                            bottomTitles: AxisTitles(
+                              sideTitles: SideTitles(
+                                showTitles: true,
+                                reservedSize: 30,
+                                getTitlesWidget: (value, meta) {
+                                  return _buildBottomTitle(value.toInt(), currentData);
+                                },
+                              ),
+                            ),
                           ),
-                        ),
-                        bottomTitles: AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: true,
-                            reservedSize: 30,
-                            getTitlesWidget: (value, meta) {
-                              return _buildBottomTitle(value.toInt(), currentData);
-                            },
-                          ),
+                          borderData: FlBorderData(show: false),
+                          barGroups: _buildBarGroups(currentData),
                         ),
                       ),
-                      borderData: FlBorderData(show: false),
-                      barGroups: _buildBarGroups(currentData),
                     ),
                   ),
           ),
@@ -282,6 +288,14 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     return (maxValue * 1.2).ceilToDouble();
   }
 
+  double _calculateChartWidth(Map<String, int> data) {
+    if (data.isEmpty) return 300.0;
+    // 各バーに80pxの幅を割り当て、最小幅を300pxに設定
+    final barWidth = 80.0;
+    final calculatedWidth = data.length * barWidth;
+    return calculatedWidth < 300.0 ? 300.0 : calculatedWidth;
+  }
+
   List<BarChartGroupData> _buildBarGroups(Map<String, int> data) {
     final entries = data.entries.toList();
     return entries.asMap().entries.map((entry) {
@@ -313,8 +327,20 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     String displayText;
     
     if (_showWeeklyChart) {
-      // 週表示の場合、最後の2文字（W01 -> 01）のみ表示
-      displayText = key.split('-W').last;
+      // 週表示の場合、曜日を表示
+      try {
+        final date = DateTime.parse(key);
+        final weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+        displayText = weekdays[date.weekday % 7];
+      } catch (e) {
+        // パースエラーの場合は日付の日の部分のみ表示
+        final dateParts = key.split('-');
+        if (dateParts.length == 3) {
+          displayText = dateParts[2];
+        } else {
+          displayText = key;
+        }
+      }
     } else {
       // 月表示の場合、月の部分のみ表示（2024-03 -> 03）
       displayText = '${key.split('-').last}月';
