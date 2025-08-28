@@ -8,6 +8,7 @@ class StimulusGrid extends StatelessWidget {
   final Function(String stimulusId)? onStimulusSelected;
   final double? gridSize;
   final bool showPlaceholders;
+  final String? selectedStimulusId; // 選択されたボタンのID
   
   const StimulusGrid({
     super.key,
@@ -15,6 +16,7 @@ class StimulusGrid extends StatelessWidget {
     this.onStimulusSelected,
     this.gridSize,
     this.showPlaceholders = true,
+    this.selectedStimulusId, // 追加
   });
 
   @override
@@ -61,6 +63,7 @@ class StimulusGrid extends StatelessWidget {
                     ? () => onStimulusSelected!(stimuli[index].id)
                     : null,
                 showPlaceholder: showPlaceholders,
+                isSelected: selectedStimulusId == stimuli[index].id, // 選択状態を渡す
               );
             },
           ),
@@ -74,12 +77,14 @@ class StimulusItem extends StatefulWidget {
   final ImageStimulus stimulus;
   final VoidCallback? onTap;
   final bool showPlaceholder;
+  final bool isSelected; // 選択状態
   
   const StimulusItem({
     super.key,
     required this.stimulus,
     this.onTap,
     this.showPlaceholder = true,
+    this.isSelected = false, // 追加
   });
 
   @override
@@ -154,8 +159,10 @@ class _StimulusItemState extends State<StimulusItem>
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: Colors.grey.withValues(alpha: 0.3),
-                  width: 1,
+                  color: widget.isSelected 
+                      ? Colors.green.withValues(alpha: 0.8)
+                      : Colors.grey.withValues(alpha: 0.3),
+                  width: widget.isSelected ? 3 : 1,
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -167,9 +174,21 @@ class _StimulusItemState extends State<StimulusItem>
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(11),
-                child: widget.showPlaceholder
-                    ? _buildPlaceholderFace()
-                    : _buildImageFace(),
+                child: Stack(
+                  children: [
+                    widget.showPlaceholder
+                        ? _buildPlaceholderFace()
+                        : _buildImageFace(),
+                    // 選択時の半透明緑オーバーレイ
+                    if (widget.isSelected)
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.green.withValues(alpha: 0.4),
+                          borderRadius: BorderRadius.circular(11),
+                        ),
+                      ),
+                  ],
+                ),
               ),
             ),
           );

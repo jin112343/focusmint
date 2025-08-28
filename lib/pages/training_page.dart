@@ -26,6 +26,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   bool _showingPointOverlay = false;
   double _lastEarnedPoints = 0.0;
   bool _lastWasCorrect = false;
+  String? _selectedStimulusId; // 選択されたボタンのID
   static const int maxTrainingTimeSeconds = 60; // 1分 = 60秒
   
   @override
@@ -124,6 +125,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                           stimuli: _currentStimuli,
                           onStimulusSelected: _onStimulusSelected,
                           showPlaceholders: false, // 実際の画像を表示
+                          selectedStimulusId: _selectedStimulusId, // 選択状態を渡す
                         )
                       : const Center(
                           child: Column(
@@ -193,15 +195,23 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
     // スピードベースのスコア計算を使用
     final pointsToAdd = _speedScoreService.calculateScore(isCorrect);
     
-    // ポイント獲得画面を表示
+    // まず選択されたボタンを緑色にする
     setState(() {
-      _currentPoints += pointsToAdd;
-      _showingPointOverlay = true;
-      _lastEarnedPoints = pointsToAdd;
-      _lastWasCorrect = isCorrect;
+      _selectedStimulusId = stimulusId;
     });
     
-    // ポイントオーバーレイの完了はコールバックで処理
+    // 短時間待ってからポイント獲得画面を表示
+    Timer(const Duration(milliseconds: 150), () {
+      if (mounted) {
+        setState(() {
+          _currentPoints += pointsToAdd;
+          _showingPointOverlay = true;
+          _lastEarnedPoints = pointsToAdd;
+          _lastWasCorrect = isCorrect;
+          _selectedStimulusId = null; // 選択状態をリセット
+        });
+      }
+    });
   }
 
   void _onPointOverlayComplete() {
