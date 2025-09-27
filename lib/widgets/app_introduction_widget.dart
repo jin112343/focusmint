@@ -187,8 +187,10 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
                     width: double.infinity,
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         Navigator.of(context).pop();
+                        // ダイアログが完全に閉じるまで少し待つ
+                        await Future.delayed(const Duration(milliseconds: 100));
                         widget.onNext();
                       },
                       style: ElevatedButton.styleFrom(

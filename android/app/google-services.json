@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1069601768015",
+    "project_id": "focusmint-analytics",
+    "storage_bucket": "focusmint-analytics.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069601768015:android:57f92c1da0866f9016603a",
+        "android_client_info": {
+          "package_name": "com.FocusMint.focusmint"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiw75PTLI2koWvFJAD1nBlie3liBaFulw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

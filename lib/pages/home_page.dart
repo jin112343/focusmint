@@ -6,6 +6,8 @@ import 'package:focusmint/pages/history_page.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
 import 'package:focusmint/services/tutorial_service_new.dart';
+import 'package:focusmint/services/download_tracker_service.dart';
+import 'package:focusmint/widgets/download_counter_widget.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 
@@ -36,11 +38,16 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _loadData();
+    
+    // セッション開始を追跡
+    DownloadTrackerService.trackSessionStart();
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    // セッション終了を追跡
+    DownloadTrackerService.trackSessionEnd();
     super.dispose();
   }
 
@@ -171,6 +178,12 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                 ),
               ),
             ),
+            // ダウンロード数表示
+            const DownloadCounterWidget(),
+            const SizedBox(height: 16),
+            // アプリ統計表示
+            const AppStatsWidget(),
+            const SizedBox(height: 16),
             // 下部の説明テキスト（オプション）
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
