@@ -116,22 +116,22 @@ enum ImageGroup {
   String get positiveFolder {
     switch (this) {
       case ImageGroup.emotions:
-        return 'assets/images/smile/';
+        return 'assets/images/';
       case ImageGroup.food:
-        return 'assets/images/vegetables/';
+        return 'assets/images/';
       case ImageGroup.health:
-        return 'assets/images/health/';
+        return 'assets/images/';
     }
   }
-  
+
   String get negativeFolder {
     switch (this) {
       case ImageGroup.emotions:
-        return 'assets/images/sad/';
+        return 'assets/images/';
       case ImageGroup.food:
-        return 'assets/images/badfood/';
+        return 'assets/images/';
       case ImageGroup.health:
-        return 'assets/images/bad/';
+        return 'assets/images/';
     }
   }
   

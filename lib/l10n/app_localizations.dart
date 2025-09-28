@@ -877,6 +877,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap to toggle image visibility. You can hide up to 15 images.'**
   String get imageManagementHint;
+
+  /// No description provided for @unsaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved'**
+  String get unsaved;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @hiddenImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Hidden'**
+  String get hiddenImages;
+
+  /// No description provided for @noHiddenImages.
+  ///
+  /// In en, this message translates to:
+  /// **'No hidden images'**
+  String get noHiddenImages;
 }
 
 class _AppLocalizationsDelegate

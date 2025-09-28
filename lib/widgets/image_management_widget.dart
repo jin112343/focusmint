@@ -31,7 +31,22 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
     'sad': PlaceholderImages.negativeImages.where((img) => img.contains('sad')).map((img) => 'assets/images/$img').toList(),
     'badfood': PlaceholderImages.negativeImages.where((img) => img.contains('badfood')).map((img) => 'assets/images/$img').toList(),
     'bad': PlaceholderImages.negativeImages.where((img) => img.contains('bad')).map((img) => 'assets/images/$img').toList(),
+    'hidden': [], // 非表示画像カテゴリー
   };
+
+  // カテゴリーの表示順序を定義
+  final List<String> _categoryOrder = [
+    'all',
+    'hidden',
+    'positive',
+    'negative',
+    'smile',
+    'vegetables',
+    'health',
+    'sad',
+    'badfood',
+    'bad',
+  ];
 
   @override
   void initState() {
@@ -209,6 +224,8 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
         return AppLocalizations.of(context)!.badFoodImages;
       case 'bad':
         return AppLocalizations.of(context)!.badImages;
+      case 'hidden':
+        return AppLocalizations.of(context)!.hiddenImages;
       default:
         return category;
     }
@@ -237,8 +254,14 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
   }
 
   Widget _buildContent() {
+    // 現在のカテゴリーに応じて表示する画像を決定
+    List<String> currentImages;
+    if (_selectedCategory == 'hidden') {
+      currentImages = _hiddenImages.toList();
+    } else {
+      currentImages = _imageCategories[_selectedCategory] ?? [];
+    }
 
-    final currentImages = _imageCategories[_selectedCategory] ?? [];
     final hiddenCount = _hiddenImages.length;
     final maxHidden = 15;
 
@@ -282,9 +305,9 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
                               color: Colors.orange,
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: const Text(
-                              '未保存',
-                              style: TextStyle(
+                            child: Text(
+                              AppLocalizations.of(context)!.unsaved,
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
@@ -309,7 +332,7 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
                 ElevatedButton.icon(
                   onPressed: _saveChanges,
                   icon: const Icon(Icons.save, size: 16),
-                  label: const Text('保存'),
+                  label: Text(AppLocalizations.of(context)!.save),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.mintGreen,
                     foregroundColor: Colors.white,
@@ -326,7 +349,7 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: _imageCategories.keys.map((category) {
+            children: _categoryOrder.map((category) {
               final isSelected = category == _selectedCategory;
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
@@ -350,21 +373,43 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
         
         // 画像グリッド
         Expanded(
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-              childAspectRatio: 1,
-            ),
-            itemCount: currentImages.length,
+          child: currentImages.isEmpty && _selectedCategory == 'hidden'
+              ? Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.visibility_off,
+                        size: 64,
+                        color: AppColors.textSecondary,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        AppLocalizations.of(context)!.noHiddenImages,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              : GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8,
+                    childAspectRatio: 1,
+                  ),
+                  itemCount: currentImages.length,
             itemBuilder: (context, index) {
               final imagePath = currentImages[index];
               final isHidden = _hiddenImages.contains(imagePath);
-              final isMaxReached = hiddenCount >= maxHidden && !isHidden;
-              
+              final isHiddenCategory = _selectedCategory == 'hidden';
+              final isMaxReached = hiddenCount >= maxHidden && !isHidden && !isHiddenCategory;
+
               return GestureDetector(
-                onTap: isMaxReached ? null : () => _toggleImageVisibility(imagePath),
+                onTap: (isMaxReached && !isHiddenCategory) ? null : () => _toggleImageVisibility(imagePath),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),

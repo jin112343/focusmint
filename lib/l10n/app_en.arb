@@ -207,5 +207,9 @@
   "sadImages": "Sad",
   "badFoodImages": "Bad Food",
   "badImages": "Bad",
-  "imageManagementHint": "Tap to toggle image visibility. You can hide up to 15 images."
+  "imageManagementHint": "Tap to toggle image visibility. You can hide up to 15 images.",
+  "unsaved": "Unsaved",
+  "save": "Save",
+  "hiddenImages": "Hidden",
+  "noHiddenImages": "No hidden images"
 }

@@ -207,5 +207,9 @@
   "sadImages": "悲しい",
   "badFoodImages": "不健康な食べ物",
   "badImages": "悪い",
-  "imageManagementHint": "タップして画像の表示/非表示を切り替えられます。最大15枚まで非表示にできます。"
+  "imageManagementHint": "タップして画像の表示/非表示を切り替えられます。最大15枚まで非表示にできます。",
+  "unsaved": "未保存",
+  "save": "保存",
+  "hiddenImages": "非表示",
+  "noHiddenImages": "非表示にした画像はありません"
 }

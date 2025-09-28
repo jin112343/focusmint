@@ -422,4 +422,16 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get imageManagementHint => 'タップして画像の表示/非表示を切り替えられます。最大15枚まで非表示にできます。';
+
+  @override
+  String get unsaved => '未保存';
+
+  @override
+  String get save => '保存';
+
+  @override
+  String get hiddenImages => '非表示';
+
+  @override
+  String get noHiddenImages => '非表示にした画像はありません';
 }

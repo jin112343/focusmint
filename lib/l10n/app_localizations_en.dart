@@ -428,4 +428,16 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get imageManagementHint =>
       'Tap to toggle image visibility. You can hide up to 15 images.';
+
+  @override
+  String get unsaved => 'Unsaved';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get hiddenImages => 'Hidden';
+
+  @override
+  String get noHiddenImages => 'No hidden images';
 }
