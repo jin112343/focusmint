@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.1.0+1
 
 environment:
   sdk: ^3.9.0
@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   
   # 状態管理
-  flutter_riverpod: ^2.5.1
+  flutter_riverpod: ^2.6.1
   
   # データベース
   drift: ^2.16.0
@@ -51,7 +51,7 @@ dependencies:
   shared_preferences: ^2.3.2
   
   # グラフ表示
-  fl_chart: ^0.69.0
+  fl_chart: ^1.1.1
   
   # 多言語対応
   flutter_localizations:
@@ -68,8 +68,9 @@ dependencies:
   tutorial_coach_mark: ^1.3.1
   
   # Firebase Analytics（プライバシーに配慮した分析）
-  firebase_core: ^3.6.0
-  firebase_analytics: ^11.3.3
+  firebase_core: ^4.1.1
+  firebase_analytics: ^12.0.2
+  cloud_firestore: ^6.0.2
 
 dev_dependencies:
   flutter_test:
@@ -80,7 +81,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   
   # コード生成（Drift用）
   build_runner: ^2.4.9
@@ -110,12 +111,7 @@ flutter:
 
   # アセット（画像ファイル）
   assets:
-    - assets/images/smile/
-    - assets/images/sad/
-    - assets/images/vegetables/
-    - assets/images/badfood/
-    - assets/images/health/
-    - assets/images/bad/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

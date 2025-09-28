@@ -10,16 +10,22 @@ import 'package:focusmint/services/download_tracker_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
-  // Firebase初期化
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  
-  // 初回起動とアプリ起動を追跡
-  await DownloadTrackerService.trackFirstLaunch();
-  await DownloadTrackerService.trackAppLaunch();
-  
+
+  try {
+    // Firebase初期化（重複実行を防ぐ）
+    if (Firebase.apps.isEmpty) {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    }
+
+    // 初回ダウンロードのみを追跡
+    await DownloadTrackerService.trackFirstLaunch();
+  } catch (e) {
+    // 初期化エラーの場合でもアプリを起動する
+    print('Firebase初期化エラー: $e');
+  }
+
   runApp(const ProviderScope(child: FocusMintApp()));
 }
 

@@ -5,9 +5,9 @@ import 'package:focusmint/pages/settings_page.dart';
 import 'package:focusmint/pages/history_page.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
+import 'package:focusmint/services/image_service.dart';
 import 'package:focusmint/services/tutorial_service_new.dart';
 import 'package:focusmint/services/download_tracker_service.dart';
-import 'package:focusmint/widgets/download_counter_widget.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 
@@ -20,6 +20,7 @@ class HomePage extends ConsumerStatefulWidget {
 
 class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver {
   final SpeedScoreService _speedScoreService = SpeedScoreService();
+  final ImageService _imageService = ImageService();
   double _totalScore = 0.0;
   int _goalPoints = 1000;
   bool _isLoading = true;
@@ -39,15 +40,13 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
     WidgetsBinding.instance.addObserver(this);
     _loadData();
     
-    // セッション開始を追跡
-    DownloadTrackerService.trackSessionStart();
+    // セッション追跡は削除（初回ダウンロードのみ）
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
-    // セッション終了を追跡
-    DownloadTrackerService.trackSessionEnd();
+    // セッション追跡は削除（初回ダウンロードのみ）
     super.dispose();
   }
 
@@ -178,13 +177,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                 ),
               ),
             ),
-            // ダウンロード数表示
-            const DownloadCounterWidget(),
-            const SizedBox(height: 16),
-            // アプリ統計表示
-            const AppStatsWidget(),
-            const SizedBox(height: 16),
-            // 下部の説明テキスト（オプション）
+            // 
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: Text(
@@ -212,6 +205,9 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
     
     // 設定画面から戻ってきたときの処理
     if (mounted) {
+      // 設定画面から戻った時にImageServiceのキャッシュをクリア
+      _imageService.refreshCache();
+      
       if (result == 'show_tutorial') {
         // チュートリアル表示の要求があった場合
         await Future.delayed(const Duration(milliseconds: 300));
@@ -238,6 +234,9 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
   }
 
   void _startTraining(BuildContext context, WidgetRef ref) async {
+    // トレーニング開始前にImageServiceのキャッシュをクリア
+    _imageService.refreshCache();
+    
     await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const TrainingPage(),

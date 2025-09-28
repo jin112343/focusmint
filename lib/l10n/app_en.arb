@@ -174,5 +174,38 @@
   "totalScore": "Total Score",
   "totalPlayTime": "Total Play Time",
   "backToHome": "Back to Home",
-  "dataLoading": "Loading data..."
+  "dataLoading": "Loading data...",
+  
+  "imageManagement": "Image Management",
+  "hiddenImagesCount": "Hidden images: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "You have unsaved changes",
+  "unsavedChangesMessage": "You have {count} unsaved changes to image display settings.",
+  "unsavedChangesWarning": "Changes will be lost if you close this screen now.",
+  "cancel": "Cancel",
+  "discardChanges": "Discard Changes",
+  "saveAndExit": "Save and Exit",
+  "settingsSaved": "Saved {count} settings",
+  "saveFailed": "Failed to save some settings",
+  "saveError": "An error occurred while saving settings",
+  "imageSettingsUpdated": "Image settings have been updated",
+  "allImages": "All",
+  "positiveImages": "Positive",
+  "negativeImages": "Negative",
+  "smileImages": "Smile",
+  "vegetableImages": "Vegetables",
+  "healthImages": "Health",
+  "sadImages": "Sad",
+  "badFoodImages": "Bad Food",
+  "badImages": "Bad",
+  "imageManagementHint": "Tap to toggle image visibility. You can hide up to 15 images."
 }

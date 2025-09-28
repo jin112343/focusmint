@@ -53,20 +53,20 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'your-android-api-key',
-    appId: 'your-android-app-id',
-    messagingSenderId: 'your-sender-id',
-    projectId: 'your-project-id',
-    storageBucket: 'your-project-id.appspot.com',
+    apiKey: 'AIzaSyDiw75PTLI2koWvFJAD1nBlie3liBaFulw',
+    appId: '1:1069601768015:android:57f92c1da0866f9016603a',
+    messagingSenderId: '1069601768015',
+    projectId: 'focusmint-analytics',
+    storageBucket: 'focusmint-analytics.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'your-ios-api-key',
-    appId: 'your-ios-app-id',
-    messagingSenderId: 'your-sender-id',
-    projectId: 'your-project-id',
-    storageBucket: 'your-project-id.appspot.com',
-    iosBundleId: 'com.example.focusmint',
+    apiKey: 'AIzaSyCjT_i7Mr8IRqqJLUJzPYW9ac-agvSxLl8',
+    appId: '1:1069601768015:ios:284cbe06f625e78216603a',
+    messagingSenderId: '1069601768015',
+    projectId: 'focusmint-analytics',
+    storageBucket: 'focusmint-analytics.firebasestorage.app',
+    iosBundleId: 'com.FocusMint.focusmint',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(

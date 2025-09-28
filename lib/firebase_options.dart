@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'focusmint-analytics.firebasestorage.app',
     measurementId: 'G-XBY5B5DWNX',
   );
+
 }

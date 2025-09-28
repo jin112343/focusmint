@@ -473,7 +473,7 @@ abstract class AppLocalizations {
   /// No description provided for @saveFailed.
   ///
   /// In en, this message translates to:
-  /// **'Failed to save'**
+  /// **'Failed to save some settings'**
   String get saveFailed;
 
   /// No description provided for @emailOpenFailed.
@@ -757,6 +757,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Total Play Time'**
   String get totalPlayTime;
+
+  /// No description provided for @imageManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Image Management'**
+  String get imageManagement;
+
+  /// No description provided for @hiddenImagesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Hidden images: {count}/{max}'**
+  String hiddenImagesCount(int count, int max);
+
+  /// No description provided for @unsavedChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'You have unsaved changes'**
+  String get unsavedChanges;
+
+  /// No description provided for @unsavedChangesMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You have {count} unsaved changes to image display settings.'**
+  String unsavedChangesMessage(Object count);
+
+  /// No description provided for @unsavedChangesWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Changes will be lost if you close this screen now.'**
+  String get unsavedChangesWarning;
+
+  /// No description provided for @discardChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard Changes'**
+  String get discardChanges;
+
+  /// No description provided for @saveAndExit.
+  ///
+  /// In en, this message translates to:
+  /// **'Save and Exit'**
+  String get saveAndExit;
+
+  /// No description provided for @settingsSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved {count} settings'**
+  String settingsSaved(Object count);
+
+  /// No description provided for @saveError.
+  ///
+  /// In en, this message translates to:
+  /// **'An error occurred while saving settings'**
+  String get saveError;
+
+  /// No description provided for @imageSettingsUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Image settings have been updated'**
+  String get imageSettingsUpdated;
+
+  /// No description provided for @allImages.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get allImages;
+
+  /// No description provided for @positiveImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Positive'**
+  String get positiveImages;
+
+  /// No description provided for @negativeImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Negative'**
+  String get negativeImages;
+
+  /// No description provided for @smileImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Smile'**
+  String get smileImages;
+
+  /// No description provided for @vegetableImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Vegetables'**
+  String get vegetableImages;
+
+  /// No description provided for @healthImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get healthImages;
+
+  /// No description provided for @sadImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Sad'**
+  String get sadImages;
+
+  /// No description provided for @badFoodImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Bad Food'**
+  String get badFoodImages;
+
+  /// No description provided for @badImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Bad'**
+  String get badImages;
+
+  /// No description provided for @imageManagementHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to toggle image visibility. You can hide up to 15 images.'**
+  String get imageManagementHint;
 }
 
 class _AppLocalizationsDelegate

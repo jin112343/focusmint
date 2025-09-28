@@ -209,7 +209,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get enterValidNumber => '正しい数値を入力してください（1から99999999の範囲）';
 
   @override
-  String get saveFailed => '保存に失敗しました';
+  String get saveFailed => '一部の設定の保存に失敗しました';
 
   @override
   String get emailOpenFailed => 'メールアプリを開けませんでした';
@@ -356,4 +356,70 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get totalPlayTime => '総プレイ時間';
+
+  @override
+  String get imageManagement => '画像管理';
+
+  @override
+  String hiddenImagesCount(int count, int max) {
+    return '非表示画像: $count/$max';
+  }
+
+  @override
+  String get unsavedChanges => '未保存の変更があります';
+
+  @override
+  String unsavedChangesMessage(Object count) {
+    return '画像の表示設定に$count件の未保存の変更があります。';
+  }
+
+  @override
+  String get unsavedChangesWarning => 'このまま画面を閉じると変更が失われます。';
+
+  @override
+  String get discardChanges => '変更を破棄';
+
+  @override
+  String get saveAndExit => '保存して終了';
+
+  @override
+  String settingsSaved(Object count) {
+    return '$count件の設定を保存しました';
+  }
+
+  @override
+  String get saveError => '設定の保存中にエラーが発生しました';
+
+  @override
+  String get imageSettingsUpdated => '画像設定が更新されました';
+
+  @override
+  String get allImages => '全て';
+
+  @override
+  String get positiveImages => 'ポジティブ';
+
+  @override
+  String get negativeImages => 'ネガティブ';
+
+  @override
+  String get smileImages => '笑顔';
+
+  @override
+  String get vegetableImages => '野菜';
+
+  @override
+  String get healthImages => '健康';
+
+  @override
+  String get sadImages => '悲しい';
+
+  @override
+  String get badFoodImages => '不健康な食べ物';
+
+  @override
+  String get badImages => '悪い';
+
+  @override
+  String get imageManagementHint => 'タップして画像の表示/非表示を切り替えられます。最大15枚まで非表示にできます。';
 }

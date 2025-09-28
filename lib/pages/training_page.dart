@@ -57,6 +57,9 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   }
   
   void _generateNewStimuliSet() async {
+    // ImageServiceのキャッシュをクリアして最新の非表示設定を反映
+    _imageService.refreshCache();
+    
     final randomGroup = _imageService.getRandomGroup();
     final stimuli = await _imageService.getRandomStimuliSet(randomGroup);
     setState(() {

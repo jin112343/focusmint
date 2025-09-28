@@ -3,7 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
 import 'package:focusmint/services/database_service.dart';
+import 'package:focusmint/services/image_service.dart';
 import 'package:focusmint/pages/web_view_page.dart';
+import 'package:focusmint/widgets/image_management_widget.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -18,6 +20,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   static final Logger _logger = Logger();
   final SpeedScoreService _speedScoreService = SpeedScoreService();
+  final ImageService _imageService = ImageService();
   final TextEditingController _goalPointsController = TextEditingController();
   int _currentGoalPoints = 1000;
   bool _isLoading = true;
@@ -221,6 +224,32 @@ class _SettingsPageState extends State<SettingsPage> {
       _logger.e('Failed to show tutorial', 
           error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.tutorialDisplayFailed);
+    }
+  }
+
+  /// 画像管理画面を表示
+  void _showImageManagement() async {
+    try {
+      await Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Scaffold(
+            appBar: AppBar(
+              title: Text(AppLocalizations.of(context)!.imageManagement),
+              backgroundColor: AppColors.mintGreen,
+              elevation: 0,
+            ),
+            body: const ImageManagementWidget(),
+          ),
+        ),
+      );
+      
+      // 画像管理画面から戻った時にImageServiceのキャッシュをクリア
+      _imageService.refreshCache();
+      
+    } catch (e, stackTrace) {
+      _logger.e('Failed to show image management', 
+          error: e, stackTrace: stackTrace);
+      _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
     }
   }
 
@@ -498,6 +527,16 @@ class _SettingsPageState extends State<SettingsPage> {
                             ],
                           ),
                           const SizedBox(height: 16),
+                          
+                          // 画像管理ボタン
+                          _buildSettingItem(
+                            icon: Icons.photo_library_outlined,
+                            title: AppLocalizations.of(context)!.imageManagement,
+                            subtitle: AppLocalizations.of(context)!.imageManagementHint,
+                            onTap: _showImageManagement,
+                          ),
+                          
+                          const Divider(height: 24),
                           
                           // データ削除ボタン
                           _buildSettingItem(

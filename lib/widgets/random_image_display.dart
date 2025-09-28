@@ -14,9 +14,9 @@ class RandomImageNotifier extends StateNotifier<List<String>> {
   RandomImageNotifier() : super([]);
   
   /// 新しいランダム画像セットを生成
-  void generateNewImageSet() {
+  Future<void> generateNewImageSet() async {
     try {
-      final newImages = RandomImageService.selectRandomImages();
+      final newImages = await RandomImageService.selectRandomImages();
       state = newImages;
       
       _logger.i('generateNewImageSet', 
@@ -81,8 +81,8 @@ class RandomImageDisplay extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
-                onPressed: () {
-                  ref.read(randomImageProvider.notifier).generateNewImageSet();
+                onPressed: () async {
+                  await ref.read(randomImageProvider.notifier).generateNewImageSet();
                 },
                 child: const Text('新しい画像セット'),
               ),

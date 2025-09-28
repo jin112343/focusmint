@@ -209,7 +209,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterValidNumber => 'Please enter a valid number (1 to 99999999)';
 
   @override
-  String get saveFailed => 'Failed to save';
+  String get saveFailed => 'Failed to save some settings';
 
   @override
   String get emailOpenFailed => 'Could not open email app';
@@ -360,4 +360,72 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get totalPlayTime => 'Total Play Time';
+
+  @override
+  String get imageManagement => 'Image Management';
+
+  @override
+  String hiddenImagesCount(int count, int max) {
+    return 'Hidden images: $count/$max';
+  }
+
+  @override
+  String get unsavedChanges => 'You have unsaved changes';
+
+  @override
+  String unsavedChangesMessage(Object count) {
+    return 'You have $count unsaved changes to image display settings.';
+  }
+
+  @override
+  String get unsavedChangesWarning =>
+      'Changes will be lost if you close this screen now.';
+
+  @override
+  String get discardChanges => 'Discard Changes';
+
+  @override
+  String get saveAndExit => 'Save and Exit';
+
+  @override
+  String settingsSaved(Object count) {
+    return 'Saved $count settings';
+  }
+
+  @override
+  String get saveError => 'An error occurred while saving settings';
+
+  @override
+  String get imageSettingsUpdated => 'Image settings have been updated';
+
+  @override
+  String get allImages => 'All';
+
+  @override
+  String get positiveImages => 'Positive';
+
+  @override
+  String get negativeImages => 'Negative';
+
+  @override
+  String get smileImages => 'Smile';
+
+  @override
+  String get vegetableImages => 'Vegetables';
+
+  @override
+  String get healthImages => 'Health';
+
+  @override
+  String get sadImages => 'Sad';
+
+  @override
+  String get badFoodImages => 'Bad Food';
+
+  @override
+  String get badImages => 'Bad';
+
+  @override
+  String get imageManagementHint =>
+      'Tap to toggle image visibility. You can hide up to 15 images.';
 }
