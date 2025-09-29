@@ -43,5 +43,9 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>このアプリでは学習用のカスタム画像を追加するためにフォトライブラリにアクセスします。</string>
+	<key>NSCameraUsageDescription</key>
+	<string>このアプリでは学習用のカスタム画像を追加するためにカメラにアクセスします。</string>
 </dict>
 </plist>

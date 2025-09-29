@@ -6,6 +6,8 @@ import 'package:focusmint/services/database_service.dart';
 import 'package:focusmint/services/image_service.dart';
 import 'package:focusmint/pages/web_view_page.dart';
 import 'package:focusmint/widgets/image_management_widget.dart';
+import 'package:focusmint/pages/settings/customize_settings_page.dart';
+import 'package:focusmint/repositories/custom_image_repository.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,6 +23,7 @@ class _SettingsPageState extends State<SettingsPage> {
   static final Logger _logger = Logger();
   final SpeedScoreService _speedScoreService = SpeedScoreService();
   final ImageService _imageService = ImageService();
+  final CustomImageRepository _customImageRepository = CustomImageRepository.instance;
   final TextEditingController _goalPointsController = TextEditingController();
   int _currentGoalPoints = 1000;
   bool _isLoading = true;
@@ -188,16 +191,19 @@ class _SettingsPageState extends State<SettingsPage> {
     try {
       final databaseService = DatabaseService.instance;
       final currentGoal = await _speedScoreService.getGoalPoints();
-      
+
       // データベースのデータを削除
       await databaseService.clearAllData();
-      
+
       // SpeedScoreServiceのデータも削除（目標ポイント以外）
       await _speedScoreService.clearAllDataExceptGoal();
-      
+
+      // カスタム画像のデータも削除
+      await _customImageRepository.clearAllCustomImages();
+
       // 目標ポイントを再設定
       await _speedScoreService.setGoalPoints(currentGoal);
-      
+
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -207,7 +213,7 @@ class _SettingsPageState extends State<SettingsPage> {
         );
       }
     } catch (e, stackTrace) {
-      _logger.e('Failed to delete all data', 
+      _logger.e('Failed to delete all data',
           error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.dataDeleteFailed);
     }
@@ -217,8 +223,8 @@ class _SettingsPageState extends State<SettingsPage> {
   void _showTutorial() async {
     try {
       // ホーム画面に戻って結果を受け取る
-      final result = Navigator.of(context).pop('show_tutorial');
-      
+      Navigator.of(context).pop('show_tutorial');
+
       // 設定ページから戻る際に'show_tutorial'を返すことで、ホーム画面でチュートリアルを表示
     } catch (e, stackTrace) {
       _logger.e('Failed to show tutorial', 
@@ -242,12 +248,27 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
         ),
       );
-      
+
       // 画像管理画面から戻った時にImageServiceのキャッシュをクリア
       _imageService.refreshCache();
-      
+
     } catch (e, stackTrace) {
-      _logger.e('Failed to show image management', 
+      _logger.e('Failed to show image management',
+          error: e, stackTrace: stackTrace);
+      _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
+    }
+  }
+
+  /// カスタマイズ設定画面を表示
+  void _showCustomizeSettings() async {
+    try {
+      await Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const CustomizeSettingsPage(),
+        ),
+      );
+    } catch (e, stackTrace) {
+      _logger.e('Failed to show customize settings',
           error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
     }
@@ -338,9 +359,11 @@ class _SettingsPageState extends State<SettingsPage> {
         ),
         body: _isLoading
             ? const Center(child: CircularProgressIndicator())
-            : SingleChildScrollView(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
+            : Scrollbar(
+                thumbVisibility: true,
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                   // 目標ポイント設定セクション
@@ -535,7 +558,17 @@ class _SettingsPageState extends State<SettingsPage> {
                             subtitle: AppLocalizations.of(context)!.imageManagementHint,
                             onTap: _showImageManagement,
                           ),
-                          
+
+                          const Divider(height: 24),
+
+                          // カスタム画像設定ボタン
+                          _buildSettingItem(
+                            icon: Icons.image_outlined,
+                            title: AppLocalizations.of(context)!.customImageTitle,
+                            subtitle: AppLocalizations.of(context)!.customImageSubtitle,
+                            onTap: _showCustomizeSettings,
+                          ),
+
                           const Divider(height: 24),
                           
                           // データ削除ボタン
@@ -626,6 +659,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                   const SizedBox(height: 16),
                   ],
+                  ),
                 ),
               ),
       ),

@@ -434,4 +434,64 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get noHiddenImages => '非表示にした画像はありません';
+
+  @override
+  String get settingsLoadFailed => '設定の読み込みに失敗しました';
+
+  @override
+  String imagesAdded(int count) {
+    return '$count枚の画像を追加しました';
+  }
+
+  @override
+  String get imageAddFailed => '画像の追加に失敗しました';
+
+  @override
+  String get imageSelectionFailed => '画像の選択に失敗しました';
+
+  @override
+  String get settingsChangeFailed => '設定の変更に失敗しました';
+
+  @override
+  String groupTitle(String name) {
+    return 'グループ: $name';
+  }
+
+  @override
+  String get displayToggle => '表示切り替え';
+
+  @override
+  String imageCount(int count) {
+    return '$count枚';
+  }
+
+  @override
+  String get noticeTitle => '注意事項';
+
+  @override
+  String get notice1 => 'カスタム画像機能を追加しました！';
+
+  @override
+  String get notice2 => '設定画面から自分の画像を追加できます';
+
+  @override
+  String get notice3 => '詳細は設定画面をご確認ください';
+
+  @override
+  String get customImageTitle => 'カスタム画像';
+
+  @override
+  String get customImageSubtitle => '自分の画像を追加・管理';
+
+  @override
+  String get addCustomImages => 'カスタム画像を追加';
+
+  @override
+  String get selectImages => '画像を選択';
+
+  @override
+  String get unknownImage => '不明な画像';
+
+  @override
+  String get customImageSettings => 'カスタム画像設定';
 }

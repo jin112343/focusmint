@@ -289,7 +289,7 @@ class SpeedScoreService {
     if (parts.length == 2) {
       final year = parts[0];
       final week = parts[1];
-      return '${year}年 第${week}週';
+      return '$year年 第$week週';
     }
     return weekKey;
   }
@@ -300,7 +300,7 @@ class SpeedScoreService {
     if (parts.length == 2) {
       final year = parts[0];
       final month = parts[1];
-      return '${year}年 ${month}月';
+      return '$year年 $month月';
     }
     return monthKey;
   }

@@ -4,6 +4,7 @@ import 'package:focusmint/constants/placeholder_images.dart';
 import 'package:focusmint/services/hidden_image_service.dart';
 import 'package:focusmint/services/image_service.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
+import 'package:logger/logger.dart';
 
 /// 画像管理用のウィジェット
 class ImageManagementWidget extends StatefulWidget {
@@ -14,10 +15,11 @@ class ImageManagementWidget extends StatefulWidget {
 }
 
 class _ImageManagementWidgetState extends State<ImageManagementWidget> {
+  final Logger _logger = Logger();
   final HiddenImageService _hiddenImageService = HiddenImageService();
   final ImageService _imageService = ImageService();
   Set<String> _hiddenImages = {};
-  Set<String> _pendingChanges = {}; // 未保存の変更を追跡
+  final Set<String> _pendingChanges = {}; // 未保存の変更を追跡
   bool _isLoading = true;
   String _selectedCategory = 'all';
   
@@ -69,32 +71,32 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
   }
 
   Future<void> _toggleImageVisibility(String imagePath) async {
-    print('_toggleImageVisibility: Toggling image: $imagePath');
+    _logger.d('_toggleImageVisibility: Toggling image: $imagePath');
     setState(() {
       if (_hiddenImages.contains(imagePath)) {
         _hiddenImages.remove(imagePath);
-        print('_toggleImageVisibility: Removed from hidden: $imagePath');
+        _logger.d('_toggleImageVisibility: Removed from hidden: $imagePath');
       } else {
         _hiddenImages.add(imagePath);
-        print('_toggleImageVisibility: Added to hidden: $imagePath');
+        _logger.d('_toggleImageVisibility: Added to hidden: $imagePath');
       }
       // 変更を追跡
       _pendingChanges.add(imagePath);
-      print('_toggleImageVisibility: Pending changes: $_pendingChanges');
+      _logger.d('_toggleImageVisibility: Pending changes: $_pendingChanges');
     });
   }
 
   Future<void> _saveChanges() async {
     if (_pendingChanges.isEmpty) return;
 
-    print('_saveChanges: Saving ${_pendingChanges.length} changes: $_pendingChanges');
+    _logger.d('_saveChanges: Saving ${_pendingChanges.length} changes: $_pendingChanges');
 
     try {
       bool allSuccess = true;
       for (String imagePath in _pendingChanges) {
-        print('_saveChanges: Toggling visibility for: $imagePath');
+        _logger.d('_saveChanges: Toggling visibility for: $imagePath');
         final success = await _hiddenImageService.toggleImageVisibility(imagePath);
-        print('_saveChanges: Toggle result for $imagePath: $success');
+        _logger.d('_saveChanges: Toggle result for $imagePath: $success');
         if (!success) {
           allSuccess = false;
         }
@@ -111,10 +113,10 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
         // Firebaseに統計を送信
         _hiddenImageService.sendHiddenImageStats();
 
-        print('_saveChanges: All changes saved successfully');
+        _logger.d('_saveChanges: All changes saved successfully');
 
       } else {
-        print('_saveChanges: Some changes failed to save');
+        _logger.w('_saveChanges: Some changes failed to save');
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -125,7 +127,7 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
         }
       }
     } catch (e) {
-      print('_saveChanges: Error occurred: $e');
+      _logger.e('_saveChanges: Error occurred', error: e);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -238,16 +240,24 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
     }
 
     // 戻るボタンの処理を追加
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) async {
+        if (didPop) return;
+
         if (_pendingChanges.isNotEmpty) {
           final shouldPop = await _showSaveDialog();
           if (shouldPop) {
             await _saveChanges();
+            if (context.mounted) {
+              Navigator.of(context).pop();
+            }
           }
-          return shouldPop;
+        } else {
+          if (context.mounted) {
+            Navigator.of(context).pop();
+          }
         }
-        return true;
       },
       child: _buildContent(),
     );

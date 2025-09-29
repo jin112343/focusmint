@@ -7,6 +7,9 @@ import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:focusmint/pages/home_page.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/download_tracker_service.dart';
+import 'package:logger/logger.dart';
+
+final logger = Logger();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,9 +24,9 @@ void main() async {
 
     // 初回ダウンロードのみを追跡
     await DownloadTrackerService.trackFirstLaunch();
-  } catch (e) {
+  } catch (e, stackTrace) {
     // 初期化エラーの場合でもアプリを起動する
-    print('Firebase初期化エラー: $e');
+    logger.e('Firebase初期化エラー', error: e, stackTrace: stackTrace);
   }
 
   runApp(const ProviderScope(child: FocusMintApp()));

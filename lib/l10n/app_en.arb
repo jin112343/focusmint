@@ -211,5 +211,45 @@
   "unsaved": "Unsaved",
   "save": "Save",
   "hiddenImages": "Hidden",
-  "noHiddenImages": "No hidden images"
+  "noHiddenImages": "No hidden images",
+
+  "settingsLoadFailed": "Failed to load settings",
+  "imagesAdded": "Added {count} images",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Failed to add images",
+  "imageSelectionFailed": "Failed to select images",
+  "settingsChangeFailed": "Failed to change settings",
+  "groupTitle": "Group: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Display Toggle",
+  "imageCount": "{count} images",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Important Notes",
+  "notice1": "Custom image feature has been added!",
+  "notice2": "You can add your own images from the settings screen",
+  "notice3": "Please check the settings screen for details",
+  "customImageTitle": "Custom Images",
+  "customImageSubtitle": "Add and manage your own images",
+  "addCustomImages": "Add Custom Images",
+  "selectImages": "Select Images",
+  "unknownImage": "Unknown Image",
+  "customImageSettings": "Custom Image Settings"
 }

@@ -901,6 +901,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No hidden images'**
   String get noHiddenImages;
+
+  /// No description provided for @settingsLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load settings'**
+  String get settingsLoadFailed;
+
+  /// No description provided for @imagesAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Added {count} images'**
+  String imagesAdded(int count);
+
+  /// No description provided for @imageAddFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to add images'**
+  String get imageAddFailed;
+
+  /// No description provided for @imageSelectionFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to select images'**
+  String get imageSelectionFailed;
+
+  /// No description provided for @settingsChangeFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to change settings'**
+  String get settingsChangeFailed;
+
+  /// No description provided for @groupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Group: {name}'**
+  String groupTitle(String name);
+
+  /// No description provided for @displayToggle.
+  ///
+  /// In en, this message translates to:
+  /// **'Display Toggle'**
+  String get displayToggle;
+
+  /// No description provided for @imageCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} images'**
+  String imageCount(int count);
+
+  /// No description provided for @noticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Important Notes'**
+  String get noticeTitle;
+
+  /// No description provided for @notice1.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom image feature has been added!'**
+  String get notice1;
+
+  /// No description provided for @notice2.
+  ///
+  /// In en, this message translates to:
+  /// **'You can add your own images from the settings screen'**
+  String get notice2;
+
+  /// No description provided for @notice3.
+  ///
+  /// In en, this message translates to:
+  /// **'Please check the settings screen for details'**
+  String get notice3;
+
+  /// No description provided for @customImageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom Images'**
+  String get customImageTitle;
+
+  /// No description provided for @customImageSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add and manage your own images'**
+  String get customImageSubtitle;
+
+  /// No description provided for @addCustomImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Custom Images'**
+  String get addCustomImages;
+
+  /// No description provided for @selectImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Images'**
+  String get selectImages;
+
+  /// No description provided for @unknownImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown Image'**
+  String get unknownImage;
+
+  /// No description provided for @customImageSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom Image Settings'**
+  String get customImageSettings;
 }
 
 class _AppLocalizationsDelegate

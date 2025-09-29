@@ -440,4 +440,64 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noHiddenImages => 'No hidden images';
+
+  @override
+  String get settingsLoadFailed => 'Failed to load settings';
+
+  @override
+  String imagesAdded(int count) {
+    return 'Added $count images';
+  }
+
+  @override
+  String get imageAddFailed => 'Failed to add images';
+
+  @override
+  String get imageSelectionFailed => 'Failed to select images';
+
+  @override
+  String get settingsChangeFailed => 'Failed to change settings';
+
+  @override
+  String groupTitle(String name) {
+    return 'Group: $name';
+  }
+
+  @override
+  String get displayToggle => 'Display Toggle';
+
+  @override
+  String imageCount(int count) {
+    return '$count images';
+  }
+
+  @override
+  String get noticeTitle => 'Important Notes';
+
+  @override
+  String get notice1 => 'Custom image feature has been added!';
+
+  @override
+  String get notice2 => 'You can add your own images from the settings screen';
+
+  @override
+  String get notice3 => 'Please check the settings screen for details';
+
+  @override
+  String get customImageTitle => 'Custom Images';
+
+  @override
+  String get customImageSubtitle => 'Add and manage your own images';
+
+  @override
+  String get addCustomImages => 'Add Custom Images';
+
+  @override
+  String get selectImages => 'Select Images';
+
+  @override
+  String get unknownImage => 'Unknown Image';
+
+  @override
+  String get customImageSettings => 'Custom Image Settings';
 }

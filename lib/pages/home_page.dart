@@ -7,7 +7,6 @@ import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/speed_score_service.dart';
 import 'package:focusmint/services/image_service.dart';
 import 'package:focusmint/services/tutorial_service_new.dart';
-import 'package:focusmint/services/download_tracker_service.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 

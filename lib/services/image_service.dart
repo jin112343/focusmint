@@ -4,16 +4,18 @@ import 'package:flutter/services.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/constants/training_constants.dart';
 import 'package:focusmint/services/hidden_image_service.dart';
+import 'package:logger/logger.dart';
 
 class ImageService {
   static final ImageService _instance = ImageService._internal();
   factory ImageService() => _instance;
-  
+
   late final Random _random;
   final Map<ImageGroup, List<String>> _positiveImageCache = {};
   final Map<ImageGroup, List<String>> _negativeImageCache = {};
   final HiddenImageService _hiddenImageService = HiddenImageService();
-  
+  final Logger _logger = Logger();
+
   ImageService._internal() {
     _random = Random();
   }
@@ -33,12 +35,12 @@ class ImageService {
           .where((String key) => key.contains(prefix))
           .toList();
       
-      print('_loadImageFilenames: Prefix: $prefix');
-      print('_loadImageFilenames: Found ${imagePaths.length} images: $imagePaths');
+      _logger.d('_loadImageFilenames: Prefix: $prefix');
+      _logger.d('_loadImageFilenames: Found ${imagePaths.length} images: $imagePaths');
       
       return imagePaths;
     } catch (e) {
-      print('_loadImageFilenames: Error: $e');
+      _logger.e('_loadImageFilenames: Error', error: e);
       return [];
     }
   }
@@ -46,19 +48,19 @@ class ImageService {
   /// 指定されたグループの正の画像一覧を取得（キャッシュ付き、非表示画像を除外）
   Future<List<String>> _getPositiveImages(ImageGroup group) async {
     if (_positiveImageCache[group] != null) {
-      print('_getPositiveImages: Using cached images for ${group.name}');
+      _logger.d('_getPositiveImages: Using cached images for ${group.name}');
       return _positiveImageCache[group]!;
     }
     
     final prefix = _getPositivePrefix(group);
     final images = await _loadImageFilenames(prefix);
     final hiddenImages = await _hiddenImageService.getHiddenImages();
-    print('_getPositiveImages: Group: ${group.name}, Total images: ${images.length}, Hidden: ${hiddenImages.length}');
-    print('_getPositiveImages: Hidden images: $hiddenImages');
+    _logger.d('_getPositiveImages: Group: ${group.name}, Total images: ${images.length}, Hidden: ${hiddenImages.length}');
+    _logger.d('_getPositiveImages: Hidden images: $hiddenImages');
     
     final availableImages = images.where((image) => !hiddenImages.contains(image)).toList();
-    print('_getPositiveImages: Available images after filtering: ${availableImages.length}');
-    print('_getPositiveImages: Available images: $availableImages');
+    _logger.d('_getPositiveImages: Available images after filtering: ${availableImages.length}');
+    _logger.d('_getPositiveImages: Available images: $availableImages');
     
     _positiveImageCache[group] = availableImages;
     return availableImages;
@@ -67,19 +69,19 @@ class ImageService {
   /// 指定されたグループの負の画像一覧を取得（キャッシュ付き、非表示画像を除外）
   Future<List<String>> _getNegativeImages(ImageGroup group) async {
     if (_negativeImageCache[group] != null) {
-      print('_getNegativeImages: Using cached images for ${group.name}');
+      _logger.d('_getNegativeImages: Using cached images for ${group.name}');
       return _negativeImageCache[group]!;
     }
     
     final prefix = _getNegativePrefix(group);
     final images = await _loadImageFilenames(prefix);
     final hiddenImages = await _hiddenImageService.getHiddenImages();
-    print('_getNegativeImages: Group: ${group.name}, Total images: ${images.length}, Hidden: ${hiddenImages.length}');
-    print('_getNegativeImages: Hidden images: $hiddenImages');
+    _logger.d('_getNegativeImages: Group: ${group.name}, Total images: ${images.length}, Hidden: ${hiddenImages.length}');
+    _logger.d('_getNegativeImages: Hidden images: $hiddenImages');
     
     final availableImages = images.where((image) => !hiddenImages.contains(image)).toList();
-    print('_getNegativeImages: Available images after filtering: ${availableImages.length}');
-    print('_getNegativeImages: Available images: $availableImages');
+    _logger.d('_getNegativeImages: Available images after filtering: ${availableImages.length}');
+    _logger.d('_getNegativeImages: Available images: $availableImages');
     
     _negativeImageCache[group] = availableImages;
     return availableImages;
@@ -89,11 +91,11 @@ class ImageService {
   Future<List<ImageStimulus>> getRandomStimuliSet(ImageGroup group) async {
     final List<ImageStimulus> stimuliSet = [];
     
-    print('getRandomStimuliSet: Starting for group ${group.name}');
+    _logger.d('getRandomStimuliSet: Starting for group ${group.name}');
     
     // 負の画像から3枚をランダム選択
     final negativeImages = await _getNegativeImages(group);
-    print('getRandomStimuliSet: Available negative images: ${negativeImages.length}');
+    _logger.d('getRandomStimuliSet: Available negative images: ${negativeImages.length}');
     
     if (negativeImages.isNotEmpty) {
       final negativeShuffled = List<String>.from(negativeImages);
@@ -102,7 +104,7 @@ class ImageService {
       
       for (int i = 0; i < selectedNegative.length; i++) {
         final imagePath = selectedNegative.elementAt(i);
-        print('getRandomStimuliSet: Adding negative image: $imagePath');
+        _logger.d('getRandomStimuliSet: Adding negative image: $imagePath');
         stimuliSet.add(ImageStimulus(
           id: 'negative_${group.name}_${i + 1}',
           assetPath: imagePath,
@@ -111,19 +113,19 @@ class ImageService {
         ));
       }
     } else {
-      print('getRandomStimuliSet: WARNING - No negative images available for group ${group.name}');
+      _logger.w('getRandomStimuliSet: WARNING - No negative images available for group ${group.name}');
     }
     
     // 正の画像から1枚をランダム選択
     final positiveImages = await _getPositiveImages(group);
-    print('getRandomStimuliSet: Available positive images: ${positiveImages.length}');
+    _logger.d('getRandomStimuliSet: Available positive images: ${positiveImages.length}');
     
     if (positiveImages.isNotEmpty) {
       final positiveShuffled = List<String>.from(positiveImages);
       positiveShuffled.shuffle(_random);
       final selectedPositive = positiveShuffled.first;
       
-      print('getRandomStimuliSet: Adding positive image: $selectedPositive');
+      _logger.d('getRandomStimuliSet: Adding positive image: $selectedPositive');
       stimuliSet.add(ImageStimulus(
         id: 'positive_${group.name}_1',
         assetPath: selectedPositive,
@@ -131,13 +133,13 @@ class ImageService {
         emotion: _getEmotionFromGroup(group, true),
       ));
     } else {
-      print('getRandomStimuliSet: WARNING - No positive images available for group ${group.name}');
+      _logger.w('getRandomStimuliSet: WARNING - No positive images available for group ${group.name}');
     }
     
     // 全体をシャッフルして位置をランダム化
     stimuliSet.shuffle(_random);
     
-    print('getRandomStimuliSet: Final stimuli count: ${stimuliSet.length}');
+    _logger.d('getRandomStimuliSet: Final stimuli count: ${stimuliSet.length}');
     return stimuliSet;
   }
   
@@ -191,6 +193,6 @@ class ImageService {
   /// 非表示画像設定が変更された時にキャッシュをクリア
   void refreshCache() {
     clearCache();
-    print('ImageService: Cache cleared, hidden images will be re-evaluated');
+    _logger.d('ImageService: Cache cleared, hidden images will be re-evaluated');
   }
 }

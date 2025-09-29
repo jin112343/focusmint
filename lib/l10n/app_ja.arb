@@ -211,5 +211,45 @@
   "unsaved": "未保存",
   "save": "保存",
   "hiddenImages": "非表示",
-  "noHiddenImages": "非表示にした画像はありません"
+  "noHiddenImages": "非表示にした画像はありません",
+
+  "settingsLoadFailed": "設定の読み込みに失敗しました",
+  "imagesAdded": "{count}枚の画像を追加しました",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "画像の追加に失敗しました",
+  "imageSelectionFailed": "画像の選択に失敗しました",
+  "settingsChangeFailed": "設定の変更に失敗しました",
+  "groupTitle": "グループ: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "表示切り替え",
+  "imageCount": "{count}枚",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "注意事項",
+  "notice1": "カスタム画像機能を追加しました！",
+  "notice2": "設定画面から自分の画像を追加できます",
+  "notice3": "詳細は設定画面をご確認ください",
+  "customImageTitle": "カスタム画像",
+  "customImageSubtitle": "自分の画像を追加・管理",
+  "addCustomImages": "カスタム画像を追加",
+  "selectImages": "画像を選択",
+  "unknownImage": "不明な画像",
+  "customImageSettings": "カスタム画像設定"
 }
