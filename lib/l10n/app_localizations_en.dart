@@ -248,17 +248,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dataManagement => 'Data Management';
 
   @override
-  String get deleteData => 'Delete Data';
+  String get deleteHistory => 'Delete History';
 
   @override
-  String get deleteDataSubtitle => 'Delete all records (except goal points)';
+  String get deleteHistorySubtitle =>
+      'Delete training history only (goal points preserved)';
 
   @override
-  String get deleteDataConfirmTitle => 'Delete Data';
+  String get deleteHistoryAndGoal => 'Delete History & Goal';
 
   @override
-  String get deleteDataConfirmMessage =>
-      'Are you sure you want to delete all data?\n\n*Goal points will be preserved';
+  String get deleteHistoryAndGoalSubtitle =>
+      'Delete all history and goal points';
+
+  @override
+  String get deleteHistoryConfirmTitle => 'Delete History';
+
+  @override
+  String get deleteHistoryConfirmMessage =>
+      'Are you sure you want to delete all training history?\n\n*Goal points will be preserved';
+
+  @override
+  String get deleteHistoryAndGoalConfirmTitle => 'Delete History & Goal';
+
+  @override
+  String get deleteHistoryAndGoalConfirmMessage =>
+      'Are you sure you want to delete all history and goal points?\n\n*This action cannot be undone';
 
   @override
   String get cancel => 'Cancel';
@@ -267,10 +282,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get delete => 'Delete';
 
   @override
-  String get dataDeleted => 'Data deleted';
+  String get historyDeleted => 'History deleted';
 
   @override
-  String get dataDeleteFailed => 'Failed to delete data';
+  String get historyAndGoalDeleted => 'History and goal deleted';
+
+  @override
+  String get historyDeleteFailed => 'Failed to delete history';
+
+  @override
+  String get historyAndGoalDeleteFailed => 'Failed to delete history and goal';
 
   @override
   String get tutorialDisplayFailed => 'Failed to display tutorial';
@@ -500,4 +521,94 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get customImageSettings => 'Custom Image Settings';
+
+  @override
+  String get useCustomImages => 'Use Custom Images';
+
+  @override
+  String get useCustomImagesDescription =>
+      'When ON, existing images will not be used and only custom images will be used for learning and display';
+
+  @override
+  String get groupSettings => 'Group Settings';
+
+  @override
+  String get minOneGroupRequired => 'At least one group must be enabled';
+
+  @override
+  String get settingsLoadFailedMessage => 'Failed to load settings';
+
+  @override
+  String get customImageNotice1 =>
+      'When groups are enabled, images are displayed randomly for each group.';
+
+  @override
+  String get customImageNotice2 =>
+      'Images uploaded and set by users are not shared with developers or third parties and are stored only in the app\'s area on the device.';
+
+  @override
+  String get customImageNotice3 => 'This allows offline use.';
+
+  @override
+  String get customImageNotice4 =>
+      'We are not responsible for customized images. Registering too many images may increase device load and cause malfunctions or poor performance. Please uninstall if the app stops working normally.';
+
+  @override
+  String get customImageNotice5 =>
+      'When you delete the app, the set images will be deleted.';
+
+  @override
+  String get customImageRequirementNotMet =>
+      'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.';
+
+  @override
+  String get customImageRequirement =>
+      'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.';
+
+  @override
+  String get sunnyWeather => 'Good';
+
+  @override
+  String get rainyWeather => 'Not good';
+
+  @override
+  String get addImages => 'Add Images';
+
+  @override
+  String get imageDeleted => 'Image deleted';
+
+  @override
+  String get imageDeleteFailed => 'Failed to delete image';
+
+  @override
+  String get deleteImageTitle => 'Delete Image';
+
+  @override
+  String get deleteImageMessage =>
+      'Do you want to delete this image? This action cannot be undone.';
+
+  @override
+  String groupImageTitle(int groupId, String weather) {
+    return 'Group $groupId $weather Images';
+  }
+
+  @override
+  String registeredCount(int count) {
+    return 'Registered: $count images';
+  }
+
+  @override
+  String get noImagesRegistered => 'No images registered';
+
+  @override
+  String get imagePreview => 'Image Preview';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get contactEmailSubject => 'FocusMint - Contact';
+
+  @override
+  String get contactEmailBody => 'Please share your feedback and questions.';
 }

@@ -16,13 +16,15 @@ class ImageStimulus {
   final Valence valence;
   final Emotion emotion;
   final int arousal;
-  
+  final bool isCustomImage;
+
   const ImageStimulus({
     required this.id,
     required this.assetPath,
     required this.valence,
     required this.emotion,
     this.arousal = 3,
+    this.isCustomImage = false,
   });
   
   bool get isPositive => valence == Valence.positive;
@@ -47,6 +49,7 @@ class ImageStimulus {
     Valence? valence,
     Emotion? emotion,
     int? arousal,
+    bool? isCustomImage,
   }) {
     return ImageStimulus(
       id: id ?? this.id,
@@ -54,6 +57,7 @@ class ImageStimulus {
       valence: valence ?? this.valence,
       emotion: emotion ?? this.emotion,
       arousal: arousal ?? this.arousal,
+      isCustomImage: isCustomImage ?? this.isCustomImage,
     );
   }
 }

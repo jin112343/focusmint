@@ -10,11 +10,13 @@ import 'package:logger/logger.dart';
 class CustomAlbumPickerPage extends StatefulWidget {
   final int groupId;
   final WeatherType weather;
+  final void Function(int)? onImageCountChanged;
 
   const CustomAlbumPickerPage({
     super.key,
     required this.groupId,
     required this.weather,
+    this.onImageCountChanged,
   });
 
   @override
@@ -79,6 +81,9 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
             _imagePaths.add(imagePath);
           });
 
+          // 親画面にリアルタイムで画像枚数の変更を通知
+          widget.onImageCountChanged?.call(_imagePaths.length);
+
           hasSuccessful = true;
           successCount++;
         } catch (e, stackTrace) {
@@ -114,45 +119,17 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
         _imagePaths.remove(imagePath);
       });
 
-      _showSuccessMessage('画像を削除しました');
+      // 親画面にリアルタイムで画像枚数の変更を通知
+      widget.onImageCountChanged?.call(_imagePaths.length);
+
+      _showSuccessMessage(AppLocalizations.of(context)!.imageDeleted);
     } catch (e, stackTrace) {
       _logger.e('画像の削除に失敗しました',
           error: e, stackTrace: stackTrace);
-      _showErrorMessage('画像の削除に失敗しました');
+      _showErrorMessage(AppLocalizations.of(context)!.imageDeleteFailed);
     }
   }
 
-  Future<void> _showDeleteConfirmDialog(String imagePath) async {
-    final result = await showDialog<bool>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('画像を削除'),
-          content: const Text('この画像を削除しますか？この操作は元に戻せません。'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: const Text(
-                'キャンセル',
-                style: TextStyle(color: AppColors.textSecondary),
-              ),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(true),
-              child: const Text(
-                '削除',
-                style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (result == true) {
-      await _removeImage(imagePath);
-    }
-  }
 
   void _showErrorMessage(String message) {
     if (mounted) {
@@ -177,7 +154,9 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
   }
 
   String get _weatherDisplayName {
-    return widget.weather == WeatherType.sunny ? '晴れ' : '雨';
+    return widget.weather == WeatherType.sunny
+        ? AppLocalizations.of(context)!.sunnyWeather
+        : AppLocalizations.of(context)!.rainyWeather;
   }
 
   IconData get _weatherIcon {
@@ -201,7 +180,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
           children: [
             Icon(_weatherIcon, color: _weatherColor, size: 20),
             const SizedBox(width: 8),
-            Text('グループ${widget.groupId} $_weatherDisplayName画像'),
+            Text(AppLocalizations.of(context)!.groupImageTitle(widget.groupId, _weatherDisplayName)),
           ],
         ),
         backgroundColor: AppColors.mintGreen,
@@ -211,7 +190,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
             IconButton(
               icon: const Icon(Icons.add_photo_alternate),
               onPressed: _addImages,
-              tooltip: '画像を追加',
+              tooltip: AppLocalizations.of(context)!.addImages,
             ),
         ],
       ),
@@ -234,7 +213,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                           Icon(_weatherIcon, color: _weatherColor, size: 24),
                           const SizedBox(width: 8),
                           Text(
-                            'グループ${widget.groupId} $_weatherDisplayName画像',
+                            AppLocalizations.of(context)!.groupImageTitle(widget.groupId, _weatherDisplayName),
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -245,7 +224,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        '登録枚数: ${_imagePaths.length}枚',
+                        AppLocalizations.of(context)!.registeredCount(_imagePaths.length),
                         style: const TextStyle(
                           fontSize: 14,
                           color: AppColors.textSecondary,
@@ -268,9 +247,9 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                                 color: AppColors.textSecondary,
                               ),
                               const SizedBox(height: 16),
-                              const Text(
-                                '画像が登録されていません',
-                                style: TextStyle(
+                              Text(
+                                AppLocalizations.of(context)!.noImagesRegistered,
+                                style: const TextStyle(
                                   fontSize: 16,
                                   color: AppColors.textSecondary,
                                 ),
@@ -279,7 +258,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                               ElevatedButton.icon(
                                 onPressed: _addImages,
                                 icon: const Icon(Icons.add_photo_alternate),
-                                label: const Text('画像を追加'),
+                                label: Text(AppLocalizations.of(context)!.addImages),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: AppColors.mintGreen,
                                   foregroundColor: Colors.white,
@@ -356,7 +335,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
               top: 4,
               right: 4,
               child: GestureDetector(
-                onTap: () => _showDeleteConfirmDialog(imagePath),
+                onTap: () => _removeImage(imagePath),
                 child: Container(
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
@@ -385,7 +364,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             AppBar(
-              title: const Text('画像プレビュー'),
+              title: Text(AppLocalizations.of(context)!.imagePreview),
               backgroundColor: AppColors.mintGreen,
               automaticallyImplyLeading: false,
               actions: [
@@ -411,12 +390,12 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                   TextButton.icon(
                     onPressed: () {
                       Navigator.of(context).pop();
-                      _showDeleteConfirmDialog(imagePath);
+                      _removeImage(imagePath);
                     },
                     icon: const Icon(Icons.delete, color: Colors.red),
-                    label: const Text(
-                      '削除',
-                      style: TextStyle(color: Colors.red),
+                    label: Text(
+                      AppLocalizations.of(context)!.delete,
+                      style: const TextStyle(color: Colors.red),
                     ),
                   ),
                   ElevatedButton(
@@ -424,9 +403,9 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.mintGreen,
                     ),
-                    child: const Text(
-                      '閉じる',
-                      style: TextStyle(color: Colors.white),
+                    child: Text(
+                      AppLocalizations.of(context)!.close,
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ],

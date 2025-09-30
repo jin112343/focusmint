@@ -548,29 +548,53 @@ abstract class AppLocalizations {
   /// **'Data Management'**
   String get dataManagement;
 
-  /// No description provided for @deleteData.
+  /// No description provided for @deleteHistory.
   ///
   /// In en, this message translates to:
-  /// **'Delete Data'**
-  String get deleteData;
+  /// **'Delete History'**
+  String get deleteHistory;
 
-  /// No description provided for @deleteDataSubtitle.
+  /// No description provided for @deleteHistorySubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Delete all records (except goal points)'**
-  String get deleteDataSubtitle;
+  /// **'Delete training history only (goal points preserved)'**
+  String get deleteHistorySubtitle;
 
-  /// No description provided for @deleteDataConfirmTitle.
+  /// No description provided for @deleteHistoryAndGoal.
   ///
   /// In en, this message translates to:
-  /// **'Delete Data'**
-  String get deleteDataConfirmTitle;
+  /// **'Delete History & Goal'**
+  String get deleteHistoryAndGoal;
 
-  /// No description provided for @deleteDataConfirmMessage.
+  /// No description provided for @deleteHistoryAndGoalSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Are you sure you want to delete all data?\n\n*Goal points will be preserved'**
-  String get deleteDataConfirmMessage;
+  /// **'Delete all history and goal points'**
+  String get deleteHistoryAndGoalSubtitle;
+
+  /// No description provided for @deleteHistoryConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete History'**
+  String get deleteHistoryConfirmTitle;
+
+  /// No description provided for @deleteHistoryConfirmMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete all training history?\n\n*Goal points will be preserved'**
+  String get deleteHistoryConfirmMessage;
+
+  /// No description provided for @deleteHistoryAndGoalConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete History & Goal'**
+  String get deleteHistoryAndGoalConfirmTitle;
+
+  /// No description provided for @deleteHistoryAndGoalConfirmMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete all history and goal points?\n\n*This action cannot be undone'**
+  String get deleteHistoryAndGoalConfirmMessage;
 
   /// No description provided for @cancel.
   ///
@@ -584,17 +608,29 @@ abstract class AppLocalizations {
   /// **'Delete'**
   String get delete;
 
-  /// No description provided for @dataDeleted.
+  /// No description provided for @historyDeleted.
   ///
   /// In en, this message translates to:
-  /// **'Data deleted'**
-  String get dataDeleted;
+  /// **'History deleted'**
+  String get historyDeleted;
 
-  /// No description provided for @dataDeleteFailed.
+  /// No description provided for @historyAndGoalDeleted.
   ///
   /// In en, this message translates to:
-  /// **'Failed to delete data'**
-  String get dataDeleteFailed;
+  /// **'History and goal deleted'**
+  String get historyAndGoalDeleted;
+
+  /// No description provided for @historyDeleteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to delete history'**
+  String get historyDeleteFailed;
+
+  /// No description provided for @historyAndGoalDeleteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to delete history and goal'**
+  String get historyAndGoalDeleteFailed;
 
   /// No description provided for @tutorialDisplayFailed.
   ///
@@ -1009,6 +1045,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Custom Image Settings'**
   String get customImageSettings;
+
+  /// No description provided for @useCustomImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Custom Images'**
+  String get useCustomImages;
+
+  /// No description provided for @useCustomImagesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'When ON, existing images will not be used and only custom images will be used for learning and display'**
+  String get useCustomImagesDescription;
+
+  /// No description provided for @groupSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Group Settings'**
+  String get groupSettings;
+
+  /// No description provided for @minOneGroupRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'At least one group must be enabled'**
+  String get minOneGroupRequired;
+
+  /// No description provided for @settingsLoadFailedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load settings'**
+  String get settingsLoadFailedMessage;
+
+  /// No description provided for @customImageNotice1.
+  ///
+  /// In en, this message translates to:
+  /// **'When groups are enabled, images are displayed randomly for each group.'**
+  String get customImageNotice1;
+
+  /// No description provided for @customImageNotice2.
+  ///
+  /// In en, this message translates to:
+  /// **'Images uploaded and set by users are not shared with developers or third parties and are stored only in the app\'s area on the device.'**
+  String get customImageNotice2;
+
+  /// No description provided for @customImageNotice3.
+  ///
+  /// In en, this message translates to:
+  /// **'This allows offline use.'**
+  String get customImageNotice3;
+
+  /// No description provided for @customImageNotice4.
+  ///
+  /// In en, this message translates to:
+  /// **'We are not responsible for customized images. Registering too many images may increase device load and cause malfunctions or poor performance. Please uninstall if the app stops working normally.'**
+  String get customImageNotice4;
+
+  /// No description provided for @customImageNotice5.
+  ///
+  /// In en, this message translates to:
+  /// **'When you delete the app, the set images will be deleted.'**
+  String get customImageNotice5;
+
+  /// No description provided for @customImageRequirementNotMet.
+  ///
+  /// In en, this message translates to:
+  /// **'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.'**
+  String get customImageRequirementNotMet;
+
+  /// No description provided for @customImageRequirement.
+  ///
+  /// In en, this message translates to:
+  /// **'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.'**
+  String get customImageRequirement;
+
+  /// No description provided for @sunnyWeather.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get sunnyWeather;
+
+  /// No description provided for @rainyWeather.
+  ///
+  /// In en, this message translates to:
+  /// **'Not good'**
+  String get rainyWeather;
+
+  /// No description provided for @addImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Images'**
+  String get addImages;
+
+  /// No description provided for @imageDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Image deleted'**
+  String get imageDeleted;
+
+  /// No description provided for @imageDeleteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to delete image'**
+  String get imageDeleteFailed;
+
+  /// No description provided for @deleteImageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Image'**
+  String get deleteImageTitle;
+
+  /// No description provided for @deleteImageMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to delete this image? This action cannot be undone.'**
+  String get deleteImageMessage;
+
+  /// No description provided for @groupImageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Group {groupId} {weather} Images'**
+  String groupImageTitle(int groupId, String weather);
+
+  /// No description provided for @registeredCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Registered: {count} images'**
+  String registeredCount(int count);
+
+  /// No description provided for @noImagesRegistered.
+  ///
+  /// In en, this message translates to:
+  /// **'No images registered'**
+  String get noImagesRegistered;
+
+  /// No description provided for @imagePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Image Preview'**
+  String get imagePreview;
+
+  /// No description provided for @close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// No description provided for @contactEmailSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'FocusMint - Contact'**
+  String get contactEmailSubject;
+
+  /// No description provided for @contactEmailBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Please share your feedback and questions.'**
+  String get contactEmailBody;
 }
 
 class _AppLocalizationsDelegate

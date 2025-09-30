@@ -309,7 +309,7 @@ class SpeedScoreService {
   Future<void> clearAllDataExceptGoal() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // 削除するキーのリスト
       final keysToRemove = [
         _bestScoreKey,
@@ -319,15 +319,43 @@ class SpeedScoreService {
         _monthlyHistoryKey,
         _dailyHistoryKey,
       ];
-      
+
       // 各キーを削除
       for (final key in keysToRemove) {
         await prefs.remove(key);
       }
-      
+
       _logger.i('All SpeedScoreService data cleared except goal points');
     } catch (e, stackTrace) {
       _logger.e('Failed to clear SpeedScoreService data', error: e, stackTrace: stackTrace);
+      rethrow;
+    }
+  }
+
+  /// 目標ポイントを含む全てのデータをクリアする
+  Future<void> clearAllDataIncludingGoal() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+
+      // 削除するキーのリスト（目標ポイントも含む）
+      final keysToRemove = [
+        _bestScoreKey,
+        _totalTimeKey,
+        _totalScoreKey,
+        _goalPointsKey,
+        _weeklyHistoryKey,
+        _monthlyHistoryKey,
+        _dailyHistoryKey,
+      ];
+
+      // 各キーを削除
+      for (final key in keysToRemove) {
+        await prefs.remove(key);
+      }
+
+      _logger.i('All SpeedScoreService data cleared including goal points');
+    } catch (e, stackTrace) {
+      _logger.e('Failed to clear all SpeedScoreService data', error: e, stackTrace: stackTrace);
       rethrow;
     }
   }

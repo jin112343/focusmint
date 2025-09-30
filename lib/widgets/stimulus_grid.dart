@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/constants/training_constants.dart';
@@ -236,13 +237,25 @@ class _StimulusItemState extends State<StimulusItem>
   }
 
   Widget _buildImageFace() {
-    return Image.asset(
-      widget.stimulus.assetPath,
-      fit: BoxFit.cover,
-      errorBuilder: (context, error, stackTrace) {
-        return _buildPlaceholderFace();
-      },
-    );
+    if (widget.stimulus.isCustomImage) {
+      // カスタム画像の場合はFile.imageを使用
+      return Image.file(
+        File(widget.stimulus.assetPath),
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          return _buildPlaceholderFace();
+        },
+      );
+    } else {
+      // アセット画像の場合はImage.assetを使用
+      return Image.asset(
+        widget.stimulus.assetPath,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          return _buildPlaceholderFace();
+        },
+      );
+    }
   }
 
   IconData _getEmotionIcon() {

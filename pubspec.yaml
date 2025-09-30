@@ -75,6 +75,9 @@ dependencies:
   # 画像選択
   image_picker: ^1.1.2
 
+  # 画像処理
+  image: ^4.1.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

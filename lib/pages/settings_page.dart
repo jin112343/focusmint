@@ -99,8 +99,8 @@ class _SettingsPageState extends State<SettingsPage> {
 
   Future<void> _launchEmail() async {
     const String email = 'mizoijin.0201@gmail.com';
-    const String subject = 'FocusMint-お問い合わせ';
-    const String body = 'ご意見・お問い合わせをお書きください。';
+    final String subject = AppLocalizations.of(context)!.contactEmailSubject;
+    final String body = AppLocalizations.of(context)!.contactEmailBody;
     
     final Uri emailUri = Uri(
       scheme: 'mailto',
@@ -138,20 +138,80 @@ class _SettingsPageState extends State<SettingsPage> {
     }
   }
 
-  Future<void> _showDeleteDataDialog() async {
+  Future<void> _showDeleteOptionsDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            AppLocalizations.of(context)!.dataManagement,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // 履歴のみ削除オプション
+              ListTile(
+                leading: const Icon(Icons.history, color: Colors.orange),
+                title: Text(AppLocalizations.of(context)!.deleteHistory),
+                subtitle: Text(AppLocalizations.of(context)!.deleteHistorySubtitle),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  _showDeleteConfirmDialog(isHistoryOnly: true);
+                },
+              ),
+              const Divider(),
+              // 履歴と目標削除オプション
+              ListTile(
+                leading: const Icon(Icons.delete_forever, color: Colors.red),
+                title: Text(AppLocalizations.of(context)!.deleteHistoryAndGoal),
+                subtitle: Text(AppLocalizations.of(context)!.deleteHistoryAndGoalSubtitle),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  _showDeleteConfirmDialog(isHistoryOnly: false);
+                },
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text(
+                AppLocalizations.of(context)!.cancel,
+                style: const TextStyle(
+                  color: AppColors.textSecondary,
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _showDeleteConfirmDialog({required bool isHistoryOnly}) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            AppLocalizations.of(context)!.deleteDataConfirmTitle,
+            isHistoryOnly
+                ? AppLocalizations.of(context)!.deleteHistoryConfirmTitle
+                : AppLocalizations.of(context)!.deleteHistoryAndGoalConfirmTitle,
             style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
           content: Text(
-            AppLocalizations.of(context)!.deleteDataConfirmMessage,
+            isHistoryOnly
+                ? AppLocalizations.of(context)!.deleteHistoryConfirmMessage
+                : AppLocalizations.of(context)!.deleteHistoryAndGoalConfirmMessage,
             style: const TextStyle(
               fontSize: 16,
             ),
@@ -178,7 +238,11 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               onPressed: () async {
                 Navigator.of(context).pop();
-                await _deleteAllData();
+                if (isHistoryOnly) {
+                  await _deleteHistoryOnly();
+                } else {
+                  await _deleteHistoryAndGoal();
+                }
               },
             ),
           ],
@@ -187,7 +251,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Future<void> _deleteAllData() async {
+  Future<void> _deleteHistoryOnly() async {
     try {
       final databaseService = DatabaseService.instance;
       final currentGoal = await _speedScoreService.getGoalPoints();
@@ -207,15 +271,49 @@ class _SettingsPageState extends State<SettingsPage> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.dataDeleted),
+            content: Text(AppLocalizations.of(context)!.historyDeleted),
             backgroundColor: AppColors.mintGreen,
           ),
         );
       }
     } catch (e, stackTrace) {
-      _logger.e('Failed to delete all data',
+      _logger.e('Failed to delete history data',
           error: e, stackTrace: stackTrace);
-      _showErrorMessage(AppLocalizations.of(context)!.dataDeleteFailed);
+      _showErrorMessage(AppLocalizations.of(context)!.historyDeleteFailed);
+    }
+  }
+
+  Future<void> _deleteHistoryAndGoal() async {
+    try {
+      final databaseService = DatabaseService.instance;
+
+      // データベースのデータを削除
+      await databaseService.clearAllData();
+
+      // SpeedScoreServiceのデータを全て削除（目標ポイントも含む）
+      await _speedScoreService.clearAllDataIncludingGoal();
+
+      // カスタム画像のデータも削除
+      await _customImageRepository.clearAllCustomImages();
+
+      // 目標ポイントをデフォルト値にリセット
+      setState(() {
+        _currentGoalPoints = 1000;
+        _goalPointsController.text = '1000';
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.historyAndGoalDeleted),
+            backgroundColor: AppColors.mintGreen,
+          ),
+        );
+      }
+    } catch (e, stackTrace) {
+      _logger.e('Failed to delete history and goal data',
+          error: e, stackTrace: stackTrace);
+      _showErrorMessage(AppLocalizations.of(context)!.historyAndGoalDeleteFailed);
     }
   }
 
@@ -361,6 +459,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ? const Center(child: CircularProgressIndicator())
             : Scrollbar(
                 thumbVisibility: true,
+                thickness: 12,
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.all(24.0),
                   child: Column(
@@ -574,9 +673,9 @@ class _SettingsPageState extends State<SettingsPage> {
                           // データ削除ボタン
                           _buildSettingItem(
                             icon: Icons.delete_outline,
-                            title: AppLocalizations.of(context)!.deleteData,
-                            subtitle: AppLocalizations.of(context)!.deleteDataSubtitle,
-                            onTap: _showDeleteDataDialog,
+                            title: AppLocalizations.of(context)!.deleteHistory,
+                            subtitle: AppLocalizations.of(context)!.deleteHistorySubtitle,
+                            onTap: _showDeleteOptionsDialog,
                             isDestructive: true,
                           ),
                         ],

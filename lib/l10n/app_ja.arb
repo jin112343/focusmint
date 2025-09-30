@@ -133,14 +133,20 @@
   "tutorialTitle": "チュートリアル",
   "tutorialSubtitle": "アプリの使い方を確認する",
   "dataManagement": "データ管理",
-  "deleteData": "データ削除",
-  "deleteDataSubtitle": "全ての記録を削除します（目標ポイントは除く）",
-  "deleteDataConfirmTitle": "データ削除",
-  "deleteDataConfirmMessage": "本当に全てのデータを削除しますか？\n\n※目標ポイントは保持されます",
+  "deleteHistory": "履歴の削除",
+  "deleteHistorySubtitle": "トレーニング履歴のみを削除します（目標ポイントは保持）",
+  "deleteHistoryAndGoal": "履歴と目標の削除",
+  "deleteHistoryAndGoalSubtitle": "全ての履歴と目標ポイントを削除します",
+  "deleteHistoryConfirmTitle": "履歴の削除",
+  "deleteHistoryConfirmMessage": "本当に全てのトレーニング履歴を削除しますか？\n\n※目標ポイントは保持されます",
+  "deleteHistoryAndGoalConfirmTitle": "履歴と目標の削除",
+  "deleteHistoryAndGoalConfirmMessage": "本当に全ての履歴と目標ポイントを削除しますか？\n\n※この操作は元に戻せません",
   "cancel": "キャンセル",
   "delete": "削除",
-  "dataDeleted": "データを削除しました",
-  "dataDeleteFailed": "データ削除に失敗しました",
+  "historyDeleted": "履歴を削除しました",
+  "historyAndGoalDeleted": "履歴と目標を削除しました",
+  "historyDeleteFailed": "履歴の削除に失敗しました",
+  "historyAndGoalDeleteFailed": "履歴と目標の削除に失敗しました",
   "tutorialDisplayFailed": "チュートリアルの表示に失敗しました",
   "tips": "ヒント",
   "tipsContent": "• 目標ポイントはホーム画面の円グラフに反映されます\n• 小さな目標から始めて、達成したら徐々に上げていきましょう\n• 1回のセッションで最大6ポイント獲得できます",
@@ -251,5 +257,52 @@
   "addCustomImages": "カスタム画像を追加",
   "selectImages": "画像を選択",
   "unknownImage": "不明な画像",
-  "customImageSettings": "カスタム画像設定"
+  "customImageSettings": "カスタム画像設定",
+
+  "useCustomImages": "自分のカスタム画像を使う",
+  "useCustomImagesDescription": "ONにすると既存の画像は使用されず、カスタム画像のみが学習・表示に使われます",
+  "groupSettings": "グループ別設定",
+  "minOneGroupRequired": "最低1つのグループは有効にしておく必要があります",
+  "settingsLoadFailedMessage": "設定の読み込みに失敗しました",
+
+  "customImageNotice1": "各グループでオンの場合はそのグループごとにランダムで表示される。",
+  "customImageNotice2": "ユーザーがアップロードしてセットした画像は開発者や第三者に共有されず、端末のアプリ領域にのみ保存される。",
+  "customImageNotice3": "そのためオフラインでも使えます。",
+  "customImageNotice4": "カスタマイズされた画像については責任は持てません。登録しすぎると端末の負荷が高まり、不具合や動作不良が発生する可能性があります。通常に動かなくなる場合はアンインストールしてください。",
+  "customImageNotice5": "アプリを消すと、セットされた画像は消去されます。",
+  "customImageRequirementNotMet": "カスタム画像を使用するには、有効なグループに良い画像1枚以上、よくない画像3枚以上が必要です。",
+  "customImageRequirement": "カスタム画像を使用するには、有効なグループに良い画像1枚以上、よくない画像3枚以上が必要です。",
+
+  "sunnyWeather": "良い",
+  "rainyWeather": "よくない",
+  "addImages": "画像を追加",
+  "imageDeleted": "画像を削除しました",
+  "imageDeleteFailed": "画像の削除に失敗しました",
+  "deleteImageTitle": "画像を削除",
+  "deleteImageMessage": "この画像を削除しますか？この操作は元に戻せません。",
+  "groupImageTitle": "グループ{groupId} {weather}画像",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "登録枚数: {count}枚",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "画像が登録されていません",
+  "imagePreview": "画像プレビュー",
+  "close": "閉じる",
+  
+  "contactEmailSubject": "FocusMint-お問い合わせ",
+  "contactEmailBody": "ご意見・お問い合わせをお書きください。"
 }

@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:logger/logger.dart';
+import 'package:image/image.dart' as img;
 import '../models/custom_image_models.dart';
 
 class CustomImageRepository {
@@ -86,6 +88,56 @@ class CustomImageRepository {
     return groupWeatherDir;
   }
 
+  /// 画像を250px正方形にトリミングする
+  Future<Uint8List> _cropImageToSquare(String sourceImagePath) async {
+    try {
+      final sourceFile = File(sourceImagePath);
+      final bytes = await sourceFile.readAsBytes();
+
+      // 画像をデコード
+      final originalImage = img.decodeImage(bytes);
+      if (originalImage == null) {
+        throw Exception('画像のデコードに失敗しました: $sourceImagePath');
+      }
+
+      // 正方形の短辺を決定（元画像の短い方の辺）
+      final minDimension = originalImage.width < originalImage.height
+          ? originalImage.width
+          : originalImage.height;
+
+      // 中央部分を正方形にクロップ
+      final centerX = originalImage.width ~/ 2;
+      final centerY = originalImage.height ~/ 2;
+      final halfSize = minDimension ~/ 2;
+
+      final croppedImage = img.copyCrop(
+        originalImage,
+        x: centerX - halfSize,
+        y: centerY - halfSize,
+        width: minDimension,
+        height: minDimension,
+      );
+
+      // 250pxにリサイズ
+      final resizedImage = img.copyResize(
+        croppedImage,
+        width: 250,
+        height: 250,
+        interpolation: img.Interpolation.linear,
+      );
+
+      // JPEGとしてエンコード（品質90%）
+      final processedBytes = img.encodeJpg(resizedImage, quality: 90);
+
+      _logger.d('CustomImageRepository._cropImageToSquare: 画像を250px正方形にトリミングしました');
+      return Uint8List.fromList(processedBytes);
+    } catch (e, stackTrace) {
+      _logger.e('CustomImageRepository._cropImageToSquare: 画像のトリミングに失敗しました',
+          error: e, stackTrace: stackTrace);
+      rethrow;
+    }
+  }
+
   /// 画像を追加
   Future<String> addImage(int groupId, WeatherType weather, String sourceImagePath) async {
     try {
@@ -95,10 +147,15 @@ class CustomImageRepository {
       }
 
       final targetDir = await _getGroupWeatherDirectory(groupId, weather);
-      final fileName = '${DateTime.now().millisecondsSinceEpoch}.${sourceImagePath.split('.').last}';
+      final fileName = '${DateTime.now().millisecondsSinceEpoch}.jpg'; // JPEGで保存
       final targetPath = '${targetDir.path}/$fileName';
 
-      await sourceFile.copy(targetPath);
+      // 画像を250px正方形にトリミング
+      final processedImageBytes = await _cropImageToSquare(sourceImagePath);
+
+      // トリミング済み画像を保存
+      final targetFile = File(targetPath);
+      await targetFile.writeAsBytes(processedImageBytes);
 
       // 設定を更新
       final settings = await getSettings();
@@ -111,7 +168,7 @@ class CustomImageRepository {
         await saveSettings(settings.updateGroup(updatedGroup));
       }
 
-      _logger.i('CustomImageRepository.addImage: 画像を追加しました - グループ$groupId/${weather.value}: $targetPath');
+      _logger.i('CustomImageRepository.addImage: 画像を追加しました（250px正方形にトリミング済み） - グループ$groupId/${weather.value}: $targetPath');
       return targetPath;
     } catch (e, stackTrace) {
       _logger.e('CustomImageRepository.addImage: 画像の追加に失敗しました',
@@ -149,17 +206,32 @@ class CustomImageRepository {
     }
   }
 
-  /// グループの有効/無効を切り替え
-  Future<void> toggleGroupEnabled(int groupId) async {
+  /// グループの有効/無効を切り替え（バリデーション付き）
+  Future<bool> toggleGroupEnabled(int groupId) async {
     try {
       final settings = await getSettings();
       final group = settings.getGroup(groupId);
-      if (group != null) {
-        final updatedGroup = group.copyWith(enabled: !group.enabled);
-        await saveSettings(settings.updateGroup(updatedGroup));
-
-        _logger.i('CustomImageRepository.toggleGroupEnabled: グループ$groupIdの有効状態を切り替えました: ${updatedGroup.enabled}');
+      if (group == null) {
+        return false;
       }
+
+      // 無効にしようとした場合、他に有効なグループがあるかチェック
+      if (group.enabled) {
+        final otherEnabledGroups = settings.groups
+            .where((g) => g.id != groupId && g.enabled)
+            .toList();
+
+        if (otherEnabledGroups.isEmpty) {
+          _logger.w('CustomImageRepository.toggleGroupEnabled: 最後の有効グループを無効にしようとしました: グループ$groupId');
+          return false; // 最後の有効グループは無効にできない
+        }
+      }
+
+      final updatedGroup = group.copyWith(enabled: !group.enabled);
+      await saveSettings(settings.updateGroup(updatedGroup));
+
+      _logger.i('CustomImageRepository.toggleGroupEnabled: グループ$groupIdの有効状態を切り替えました: ${updatedGroup.enabled}');
+      return true;
     } catch (e, stackTrace) {
       _logger.e('CustomImageRepository.toggleGroupEnabled: グループの有効状態切り替えに失敗しました',
           error: e, stackTrace: stackTrace);
@@ -167,16 +239,47 @@ class CustomImageRepository {
     }
   }
 
-  /// カスタム画像の使用有効/無効を切り替え
-  Future<void> toggleUseCustomImages() async {
+  /// カスタム画像の使用有効/無効を切り替え（バリデーション付き）
+  Future<bool> toggleUseCustomImages() async {
     try {
       final settings = await getSettings();
+
+      // オンにしようとした場合、条件を満たしているかチェック
+      if (!settings.useCustomImages && !settings.canUseCustomImages) {
+        _logger.w('CustomImageRepository.toggleUseCustomImages: カスタム画像の条件を満たしていないためオンにできません');
+        return false; // 条件を満たしていない場合はオンにできない
+      }
+
       final updatedSettings = settings.copyWith(useCustomImages: !settings.useCustomImages);
       await saveSettings(updatedSettings);
 
       _logger.i('CustomImageRepository.toggleUseCustomImages: カスタム画像の使用を切り替えました: ${updatedSettings.useCustomImages}');
+      return true;
     } catch (e, stackTrace) {
       _logger.e('CustomImageRepository.toggleUseCustomImages: カスタム画像の使用切り替えに失敗しました',
+          error: e, stackTrace: stackTrace);
+      rethrow;
+    }
+  }
+
+  /// オリジナル画像のみ使用の有効/無効を切り替え（バリデーション付き）
+  Future<bool> toggleUseOriginalImagesOnly() async {
+    try {
+      final settings = await getSettings();
+
+      // オンにしようとした場合、条件を満たしているかチェック
+      if (!settings.useOriginalImagesOnly && !settings.canUseCustomImages) {
+        _logger.w('CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像の条件を満たしていないためオンにできません');
+        return false; // 条件を満たしていない場合はオンにできない
+      }
+
+      final updatedSettings = settings.copyWith(useOriginalImagesOnly: !settings.useOriginalImagesOnly);
+      await saveSettings(updatedSettings);
+
+      _logger.i('CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像のみ使用を切り替えました: ${updatedSettings.useOriginalImagesOnly}');
+      return true;
+    } catch (e, stackTrace) {
+      _logger.e('CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像のみ使用切り替えに失敗しました',
           error: e, stackTrace: stackTrace);
       rethrow;
     }

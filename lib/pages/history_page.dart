@@ -129,9 +129,12 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
                 ],
               ),
             )
-          : SingleChildScrollView(
-              padding: const EdgeInsets.all(24),
-              child: Column(
+          : Scrollbar(
+              thumbVisibility: true,
+              thickness: 12,
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(24),
+                child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // 目標達成率カード
@@ -153,6 +156,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
                   // 詳細統計
                   _buildDetailedStatsCard(l10n),
                 ],
+                ),
               ),
             ),
     );

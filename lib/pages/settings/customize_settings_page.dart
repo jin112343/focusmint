@@ -20,6 +20,9 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
   CustomImageSettings? _settings;
   bool _isLoading = true;
 
+  // 画像枚数のキャッシュ - パフォーマンス向上のため
+  final Map<String, int> _imageCountCache = {};
+
   @override
   void initState() {
     super.initState();
@@ -29,6 +32,10 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
   Future<void> _loadSettings() async {
     try {
       final settings = await _repository.getSettings();
+
+      // 全グループの画像枚数を一括取得してキャッシュ
+      await _loadAllImageCounts(settings.groups);
+
       setState(() {
         _settings = settings;
         _isLoading = false;
@@ -43,14 +50,47 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
     }
   }
 
+  /// 全グループの画像枚数を一括読み込みしてキャッシュ
+  Future<void> _loadAllImageCounts(List<CustomImageGroup> groups) async {
+    final futures = <Future<void>>[];
+
+    for (final group in groups) {
+      // 良い画像の枚数
+      futures.add(_loadImageCount(group.id, WeatherType.sunny));
+      // よくない画像の枚数
+      futures.add(_loadImageCount(group.id, WeatherType.rainy));
+    }
+
+    await Future.wait(futures);
+    _logger.d('全画像枚数の読み込みが完了しました');
+  }
+
+  /// 特定のグループ・天気の画像枚数を取得してキャッシュ
+  Future<void> _loadImageCount(int groupId, WeatherType weather) async {
+    try {
+      final count = await _repository.getImageCount(groupId, weather);
+      final key = '${groupId}_${weather.value}';
+      _imageCountCache[key] = count;
+    } catch (e) {
+      _logger.e('画像枚数の取得に失敗しました: グループ$groupId/${weather.value}', error: e);
+      final key = '${groupId}_${weather.value}';
+      _imageCountCache[key] = 0;
+    }
+  }
+
   Future<void> _toggleUseCustomImages(bool value) async {
     if (_settings == null) return;
 
     try {
-      await _repository.toggleUseCustomImages();
-      setState(() {
-        _settings = _settings!.copyWith(useCustomImages: value);
-      });
+      final success = await _repository.toggleUseCustomImages();
+      if (success) {
+        setState(() {
+          _settings = _settings!.copyWith(useCustomImages: value);
+        });
+      } else {
+        // 条件を満たしていない場合のエラーメッセージ
+        _showErrorMessage(AppLocalizations.of(context)!.customImageRequirementNotMet);
+      }
     } catch (e, stackTrace) {
       _logger.e('カスタム画像使用設定の変更に失敗しました',
           error: e, stackTrace: stackTrace);
@@ -58,17 +98,23 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
     }
   }
 
+
   Future<void> _toggleGroupEnabled(int groupId, bool value) async {
     if (_settings == null) return;
 
     try {
-      await _repository.toggleGroupEnabled(groupId);
-      final group = _settings!.getGroup(groupId);
-      if (group != null) {
-        final updatedGroup = group.copyWith(enabled: value);
-        setState(() {
-          _settings = _settings!.updateGroup(updatedGroup);
-        });
+      final success = await _repository.toggleGroupEnabled(groupId);
+      if (success) {
+        final group = _settings!.getGroup(groupId);
+        if (group != null) {
+          final updatedGroup = group.copyWith(enabled: value);
+          setState(() {
+            _settings = _settings!.updateGroup(updatedGroup);
+          });
+        }
+      } else {
+        // 最後の有効グループを無効にしようとした場合
+        _showErrorMessage(AppLocalizations.of(context)!.minOneGroupRequired);
       }
     } catch (e, stackTrace) {
       _logger.e('グループ有効設定の変更に失敗しました',
@@ -83,13 +129,33 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         builder: (context) => CustomAlbumPickerPage(
           groupId: groupId,
           weather: weather,
+          onImageCountChanged: (int newCount) {
+            // 画像枚数が変更された時にリアルタイムでキャッシュを更新
+            final key = '${groupId}_${weather.value}';
+            setState(() {
+              _imageCountCache[key] = newCount;
+            });
+          },
         ),
       ),
     );
 
-    // アルバムピッカーから戻った場合は設定を再読み込み
+    // アルバムピッカーから戻った場合は設定と該当する画像枚数のみを更新
     if (result == true) {
-      await _loadSettings();
+      try {
+        final settings = await _repository.getSettings();
+
+        // 変更されたグループ・天気の画像枚数のみを更新
+        await _loadImageCount(groupId, weather);
+
+        setState(() {
+          _settings = settings;
+        });
+      } catch (e, stackTrace) {
+        _logger.e('アルバムピッカー後の設定更新に失敗しました',
+            error: e, stackTrace: stackTrace);
+        _showErrorMessage(AppLocalizations.of(context)!.settingsLoadFailed);
+      }
     }
   }
 
@@ -104,8 +170,20 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
     }
   }
 
-  Future<int> _getImageCount(int groupId, WeatherType weather) async {
-    return await _repository.getImageCount(groupId, weather);
+  /// キャッシュから画像枚数を取得（高速化のため）
+  int _getImageCount(int groupId, WeatherType weather) {
+    final key = '${groupId}_${weather.value}';
+    return _imageCountCache[key] ?? 0;
+  }
+
+  /// スイッチを有効にするかどうかチェック
+  bool get _canEnableCustomImages {
+    return _settings?.canUseCustomImages ?? false;
+  }
+
+  /// 条件を満たしていない場合の説明メッセージを取得
+  String get _requirementMessage {
+    return AppLocalizations.of(context)!.customImageRequirement;
   }
 
   Widget _buildGroupSection(CustomImageGroup group) {
@@ -128,35 +206,23 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
             const SizedBox(height: 12),
             Row(
               children: [
-                // 晴れ画像ボタン
+                // 良い画像ボタン
                 Expanded(
-                  child: FutureBuilder<int>(
-                    future: _getImageCount(group.id, WeatherType.sunny),
-                    builder: (context, snapshot) {
-                      final count = snapshot.data ?? 0;
-                      return _buildWeatherButton(
-                        weather: WeatherType.sunny,
-                        count: count,
-                        icon: Icons.wb_sunny,
-                        onTap: () => _openAlbumPicker(group.id, WeatherType.sunny),
-                      );
-                    },
+                  child: _buildWeatherButton(
+                    weather: WeatherType.sunny,
+                    count: _getImageCount(group.id, WeatherType.sunny),
+                    icon: Icons.wb_sunny,
+                    onTap: () => _openAlbumPicker(group.id, WeatherType.sunny),
                   ),
                 ),
                 const SizedBox(width: 12),
-                // 雨画像ボタン
+                // よくない画像ボタン
                 Expanded(
-                  child: FutureBuilder<int>(
-                    future: _getImageCount(group.id, WeatherType.rainy),
-                    builder: (context, snapshot) {
-                      final count = snapshot.data ?? 0;
-                      return _buildWeatherButton(
-                        weather: WeatherType.rainy,
-                        count: count,
-                        icon: Icons.water_drop,
-                        onTap: () => _openAlbumPicker(group.id, WeatherType.rainy),
-                      );
-                    },
+                  child: _buildWeatherButton(
+                    weather: WeatherType.rainy,
+                    count: _getImageCount(group.id, WeatherType.rainy),
+                    icon: Icons.water_drop,
+                    onTap: () => _openAlbumPicker(group.id, WeatherType.rainy),
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -171,12 +237,15 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                       ),
                     ),
                     const SizedBox(height: 4),
-                    Switch(
-                      value: group.enabled,
-                      onChanged: (value) => _toggleGroupEnabled(group.id, value),
-                      activeTrackColor: AppColors.mintGreen,
-                      activeThumbColor: AppColors.mintGreen,
-                    ),
+                     Switch(
+                       value: group.enabled,
+                       onChanged: (value) => _toggleGroupEnabled(group.id, value),
+                       activeColor: Colors.white,
+                       activeTrackColor: AppColors.mintGreen,
+                       inactiveThumbColor: Colors.grey[600],
+                       inactiveTrackColor: Colors.grey[300],
+                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                     ),
                   ],
                 ),
               ],
@@ -254,48 +323,48 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
               ],
             ),
             const SizedBox(height: 16),
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '・各グループでオンの場合はそのグループごとにランダムで表示される。',
-                  style: TextStyle(
+                  '・${AppLocalizations.of(context)!.customImageNotice1}',
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                     height: 1.5,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '・ユーザーがアップロードしてセットした画像は開発者や第三者に共有されず、端末のアプリ領域にのみ保存される。',
-                  style: TextStyle(
+                  '・${AppLocalizations.of(context)!.customImageNotice2}',
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                     height: 1.5,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '・そのためオフラインでも使えます。',
-                  style: TextStyle(
+                  '・${AppLocalizations.of(context)!.customImageNotice3}',
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                     height: 1.5,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '・カスタマイズされた画像については責任は持てません。登録しすぎると端末の負荷が高まり、不具合や動作不良が発生する可能性があります。通常に動かなくなる場合はアンインストールしてください。',
-                  style: TextStyle(
+                  '・${AppLocalizations.of(context)!.customImageNotice4}',
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                     height: 1.5,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '・アプリを消すと、セットされた画像は消去されます。',
-                  style: TextStyle(
+                  '・${AppLocalizations.of(context)!.customImageNotice5}',
+                  style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                     height: 1.5,
@@ -321,14 +390,15 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _settings == null
-              ? const Center(
+              ? Center(
                   child: Text(
-                    '設定の読み込みに失敗しました',
-                    style: TextStyle(color: Colors.red),
+                    AppLocalizations.of(context)!.settingsLoadFailedMessage,
+                    style: const TextStyle(color: Colors.red),
                   ),
                 )
               : Scrollbar(
                   thumbVisibility: true,
+                  thickness: 12,
                   child: SingleChildScrollView(
                     padding: const EdgeInsets.all(16),
                     child: Column(
@@ -339,39 +409,83 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                         elevation: 2,
                         child: Padding(
                           padding: const EdgeInsets.all(20),
-                          child: Row(
+                          child: Column(
                             children: [
-                              const Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '自分のカスタム画像を使う',
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: AppColors.textPrimary,
-                                      ),
+                              // カスタム画像スイッチ
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          AppLocalizations.of(context)!.useCustomImages,
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.textPrimary,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        Text(
+                                          AppLocalizations.of(context)!.useCustomImagesDescription,
+                                          style: const TextStyle(
+                                            fontSize: 14,
+                                            color: AppColors.textSecondary,
+                                            height: 1.4,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                    SizedBox(height: 8),
-                                    Text(
-                                      'ONにすると既存の画像は使用されず、カスタム画像のみが学習・表示に使われます',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        color: AppColors.textSecondary,
-                                        height: 1.4,
+                                  ),
+                                  const SizedBox(width: 16),
+                                   Switch(
+                                     value: _settings!.useCustomImages,
+                                     onChanged: _canEnableCustomImages || _settings!.useCustomImages
+                                         ? _toggleUseCustomImages
+                                         : null,
+                                     activeColor: Colors.white,
+                                     activeTrackColor: AppColors.mintGreen,
+                                     inactiveThumbColor: Colors.grey[600],
+                                     inactiveTrackColor: Colors.grey[300],
+                                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                   ),
+                                ],
+                              ),
+
+
+                              // 条件を満たしていない場合の警告メッセージ
+                              if (!_canEnableCustomImages && !_settings!.useCustomImages) ...[
+                                const SizedBox(height: 12),
+                                Container(
+                                  padding: const EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    color: Colors.orange.withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(color: Colors.orange.withOpacity(0.3)),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.warning_amber_rounded,
+                                        color: Colors.orange,
+                                        size: 20,
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: Text(
+                                          _requirementMessage,
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            color: Colors.orange.shade700,
+                                            height: 1.3,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(width: 16),
-                              Switch(
-                                value: _settings!.useCustomImages,
-                                onChanged: _toggleUseCustomImages,
-                                activeTrackColor: AppColors.mintGreen,
-                                activeThumbColor: AppColors.mintGreen,
-                              ),
+                              ],
                             ],
                           ),
                         ),
@@ -380,9 +494,9 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                       const SizedBox(height: 24),
 
                       // グループ別設定セクション
-                      const Text(
-                        'グループ別設定',
-                        style: TextStyle(
+                      Text(
+                        AppLocalizations.of(context)!.groupSettings,
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,

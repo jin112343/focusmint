@@ -41,6 +41,14 @@ class CustomImageGroup {
     return imagePaths.values.fold(0, (sum, paths) => sum + paths.length);
   }
 
+  /// カスタム画像を使用するための条件を満たしているかチェック
+  /// 良い画像1枚以上、よくない画像3枚以上が必要
+  bool get hasValidImageCount {
+    final sunnyCount = getImageCount(WeatherType.sunny);
+    final rainyCount = getImageCount(WeatherType.rainy);
+    return sunnyCount >= 1 && rainyCount >= 3;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -89,19 +97,23 @@ class CustomImageGroup {
 /// カスタム画像の設定
 class CustomImageSettings {
   final bool useCustomImages;
+  final bool useOriginalImagesOnly;
   final List<CustomImageGroup> groups;
 
   const CustomImageSettings({
     required this.useCustomImages,
+    required this.useOriginalImagesOnly,
     required this.groups,
   });
 
   CustomImageSettings copyWith({
     bool? useCustomImages,
+    bool? useOriginalImagesOnly,
     List<CustomImageGroup>? groups,
   }) {
     return CustomImageSettings(
       useCustomImages: useCustomImages ?? this.useCustomImages,
+      useOriginalImagesOnly: useOriginalImagesOnly ?? this.useOriginalImagesOnly,
       groups: groups ?? this.groups,
     );
   }
@@ -127,6 +139,7 @@ class CustomImageSettings {
   Map<String, dynamic> toJson() {
     return {
       'useCustomImages': useCustomImages,
+      'useOriginalImagesOnly': useOriginalImagesOnly,
       'groups': groups.map((group) => group.toJson()).toList(),
     };
   }
@@ -139,6 +152,7 @@ class CustomImageSettings {
 
     return CustomImageSettings(
       useCustomImages: json['useCustomImages'] as bool? ?? false,
+      useOriginalImagesOnly: json['useOriginalImagesOnly'] as bool? ?? false,
       groups: groups,
     );
   }
@@ -147,6 +161,7 @@ class CustomImageSettings {
   factory CustomImageSettings.defaultSettings() {
     return CustomImageSettings(
       useCustomImages: false,
+      useOriginalImagesOnly: false,
       groups: [
         CustomImageGroup.empty(1),
         CustomImageGroup.empty(2),
@@ -168,5 +183,11 @@ class CustomImageSettings {
     }
 
     return allPaths;
+  }
+
+  /// カスタム画像を使用可能かチェック
+  /// 有効なグループの中に条件を満たすものがあるかどうか
+  bool get canUseCustomImages {
+    return groups.any((group) => group.enabled && group.hasValidImageCount);
   }
 }

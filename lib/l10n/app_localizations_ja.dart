@@ -248,16 +248,30 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dataManagement => 'データ管理';
 
   @override
-  String get deleteData => 'データ削除';
+  String get deleteHistory => '履歴の削除';
 
   @override
-  String get deleteDataSubtitle => '全ての記録を削除します（目標ポイントは除く）';
+  String get deleteHistorySubtitle => 'トレーニング履歴のみを削除します（目標ポイントは保持）';
 
   @override
-  String get deleteDataConfirmTitle => 'データ削除';
+  String get deleteHistoryAndGoal => '履歴と目標の削除';
 
   @override
-  String get deleteDataConfirmMessage => '本当に全てのデータを削除しますか？\n\n※目標ポイントは保持されます';
+  String get deleteHistoryAndGoalSubtitle => '全ての履歴と目標ポイントを削除します';
+
+  @override
+  String get deleteHistoryConfirmTitle => '履歴の削除';
+
+  @override
+  String get deleteHistoryConfirmMessage =>
+      '本当に全てのトレーニング履歴を削除しますか？\n\n※目標ポイントは保持されます';
+
+  @override
+  String get deleteHistoryAndGoalConfirmTitle => '履歴と目標の削除';
+
+  @override
+  String get deleteHistoryAndGoalConfirmMessage =>
+      '本当に全ての履歴と目標ポイントを削除しますか？\n\n※この操作は元に戻せません';
 
   @override
   String get cancel => 'キャンセル';
@@ -266,10 +280,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get delete => '削除';
 
   @override
-  String get dataDeleted => 'データを削除しました';
+  String get historyDeleted => '履歴を削除しました';
 
   @override
-  String get dataDeleteFailed => 'データ削除に失敗しました';
+  String get historyAndGoalDeleted => '履歴と目標を削除しました';
+
+  @override
+  String get historyDeleteFailed => '履歴の削除に失敗しました';
+
+  @override
+  String get historyAndGoalDeleteFailed => '履歴と目標の削除に失敗しました';
 
   @override
   String get tutorialDisplayFailed => 'チュートリアルの表示に失敗しました';
@@ -494,4 +514,91 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get customImageSettings => 'カスタム画像設定';
+
+  @override
+  String get useCustomImages => '自分のカスタム画像を使う';
+
+  @override
+  String get useCustomImagesDescription =>
+      'ONにすると既存の画像は使用されず、カスタム画像のみが学習・表示に使われます';
+
+  @override
+  String get groupSettings => 'グループ別設定';
+
+  @override
+  String get minOneGroupRequired => '最低1つのグループは有効にしておく必要があります';
+
+  @override
+  String get settingsLoadFailedMessage => '設定の読み込みに失敗しました';
+
+  @override
+  String get customImageNotice1 => '各グループでオンの場合はそのグループごとにランダムで表示される。';
+
+  @override
+  String get customImageNotice2 =>
+      'ユーザーがアップロードしてセットした画像は開発者や第三者に共有されず、端末のアプリ領域にのみ保存される。';
+
+  @override
+  String get customImageNotice3 => 'そのためオフラインでも使えます。';
+
+  @override
+  String get customImageNotice4 =>
+      'カスタマイズされた画像については責任は持てません。登録しすぎると端末の負荷が高まり、不具合や動作不良が発生する可能性があります。通常に動かなくなる場合はアンインストールしてください。';
+
+  @override
+  String get customImageNotice5 => 'アプリを消すと、セットされた画像は消去されます。';
+
+  @override
+  String get customImageRequirementNotMet =>
+      'カスタム画像を使用するには、有効なグループに良い画像1枚以上、よくない画像3枚以上が必要です。';
+
+  @override
+  String get customImageRequirement =>
+      'カスタム画像を使用するには、有効なグループに良い画像1枚以上、よくない画像3枚以上が必要です。';
+
+  @override
+  String get sunnyWeather => '良い';
+
+  @override
+  String get rainyWeather => 'よくない';
+
+  @override
+  String get addImages => '画像を追加';
+
+  @override
+  String get imageDeleted => '画像を削除しました';
+
+  @override
+  String get imageDeleteFailed => '画像の削除に失敗しました';
+
+  @override
+  String get deleteImageTitle => '画像を削除';
+
+  @override
+  String get deleteImageMessage => 'この画像を削除しますか？この操作は元に戻せません。';
+
+  @override
+  String groupImageTitle(int groupId, String weather) {
+    return 'グループ$groupId $weather画像';
+  }
+
+  @override
+  String registeredCount(int count) {
+    return '登録枚数: $count枚';
+  }
+
+  @override
+  String get noImagesRegistered => '画像が登録されていません';
+
+  @override
+  String get imagePreview => '画像プレビュー';
+
+  @override
+  String get close => '閉じる';
+
+  @override
+  String get contactEmailSubject => 'FocusMint-お問い合わせ';
+
+  @override
+  String get contactEmailBody => 'ご意見・お問い合わせをお書きください。';
 }
