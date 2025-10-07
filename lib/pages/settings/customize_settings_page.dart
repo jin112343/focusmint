@@ -135,6 +135,9 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
             setState(() {
               _imageCountCache[key] = newCount;
             });
+
+            // カスタム画像の条件チェックを即座に実行
+            _checkAndUpdateCustomImagesAvailability();
           },
         ),
       ),
@@ -151,11 +154,37 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         setState(() {
           _settings = settings;
         });
+
+        // カスタム画像の条件チェックを再実行してUIを即座に更新
+        _checkAndUpdateCustomImagesAvailability();
       } catch (e, stackTrace) {
         _logger.e('アルバムピッカー後の設定更新に失敗しました',
             error: e, stackTrace: stackTrace);
         _showErrorMessage(AppLocalizations.of(context)!.settingsLoadFailed);
       }
+    }
+  }
+
+  /// カスタム画像の利用可能性をチェックして、必要に応じてUIを更新
+  Future<void> _checkAndUpdateCustomImagesAvailability() async {
+    if (_settings == null) return;
+
+    try {
+      final settings = await _repository.getSettings();
+
+      // 条件を満たしているかチェック
+      final canUse = settings.canUseCustomImages;
+
+      // 現在のUIの状態と実際の条件が異なる場合のみ更新
+      if (canUse != _canEnableCustomImages) {
+        setState(() {
+          _settings = settings;
+        });
+        _logger.d('_checkAndUpdateCustomImagesAvailability: UI updated, canUseCustomImages: $canUse');
+      }
+    } catch (e, stackTrace) {
+      _logger.e('カスタム画像の利用可能性チェックに失敗しました',
+          error: e, stackTrace: stackTrace);
     }
   }
 

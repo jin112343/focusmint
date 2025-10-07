@@ -109,9 +109,40 @@ flutter pub get
 # コード生成（Drift使用）
 dart run build_runner build
 
-# アプリ実行
+# アプリ実行（開発用）
 flutter run
 ```
+
+## 📦 ビルドコマンド
+
+### 開発用（自分でテスト）
+```bash
+flutter run
+```
+→ データ送信なし
+
+### テスター配布用（TestFlightや内部テスト）
+```bash
+# Android
+flutter build apk --release
+flutter build appbundle --release  # Google Play内部テスト用
+
+# iOS
+flutter build ios --release
+```
+→ データ送信なし（テスターのインストールはカウントされません）
+
+### ストア配布用（本番リリース）
+```bash
+# Android（Google Play）
+flutter build appbundle --release --dart-define=PRODUCTION=true
+
+# iOS（App Store）
+flutter build ios --release --dart-define=PRODUCTION=true
+```
+→ データ送信あり（実際のユーザーのインストール数のみカウント）
+
+詳細は `FIREBASE_SETUP.md` を参照してください。
 
 ## 🎨 画像管理機能
 

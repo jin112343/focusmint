@@ -133,8 +133,14 @@ class HiddenImageService {
   /// Firebaseに非表示画像の統計を送信
   Future<void> sendHiddenImageStats() async {
     try {
+      _logger.d('sendHiddenImageStats: Starting Firebase stats send');
       final hiddenImages = await getHiddenImages();
-      if (hiddenImages.isEmpty) return;
+      _logger.d('sendHiddenImageStats: Found ${hiddenImages.length} hidden images');
+      
+      if (hiddenImages.isEmpty) {
+        _logger.d('sendHiddenImageStats: No hidden images to send, skipping');
+        return;
+      }
       
       final firestore = FirebaseFirestore.instance;
       final timestamp = Timestamp.now();
@@ -150,13 +156,17 @@ class HiddenImageService {
         },
       };
       
-      // Firestoreに送信
-      await firestore.collection('hidden_image_stats').add(statsData);
+      _logger.d('sendHiddenImageStats: Sending data to Firebase: $statsData');
       
-      _logger.i('Hidden image stats sent to Firebase: ${hiddenImages.length} images');
-      _logger.i('Hidden images: $hiddenImages');
+      // Firestoreに送信
+      final docRef = await firestore.collection('hidden_image_stats').add(statsData);
+      
+      _logger.i('sendHiddenImageStats: Successfully sent to Firebase with document ID: ${docRef.id}');
+      _logger.i('sendHiddenImageStats: Hidden image count: ${hiddenImages.length}');
+      _logger.i('sendHiddenImageStats: Hidden images: $hiddenImages');
     } catch (e, stackTrace) {
-      _logger.e('Failed to send hidden image stats to Firebase', error: e, stackTrace: stackTrace);
+      _logger.e('sendHiddenImageStats: Failed to send hidden image stats to Firebase', error: e, stackTrace: stackTrace);
+      rethrow; // エラーを再スローして呼び出し元で処理できるようにする
     }
   }
   

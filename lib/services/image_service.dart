@@ -90,24 +90,6 @@ class ImageService {
     return availableImages;
   }
 
-  /// オリジナル画像のみが利用可能かチェック（最低枚数制約を含む）
-  Future<bool> _canUseOriginalImagesOnly() async {
-    try {
-      final settings = await _customImageRepository.getSettings();
-      _logger.d('_canUseOriginalImagesOnly: settings.useOriginalImagesOnly = ${settings.useOriginalImagesOnly}');
-
-      if (!settings.useOriginalImagesOnly) {
-        _logger.d('_canUseOriginalImagesOnly: useOriginalImagesOnly is false, returning false');
-        return false;
-      }
-
-      return settings.canUseCustomImages;
-    } catch (e, stackTrace) {
-      _logger.e('_canUseOriginalImagesOnly: Error checking original images availability',
-          error: e, stackTrace: stackTrace);
-      return false;
-    }
-  }
 
   /// カスタム画像が利用可能かチェック（最低枚数制約を含む）
   Future<bool> _canUseCustomImages() async {
@@ -207,26 +189,15 @@ class ImageService {
   Future<List<ImageStimulus>> getRandomStimuliSet(ImageGroup group) async {
     _logger.d('getRandomStimuliSet: Starting for group ${group.name}');
 
-    // オリジナル画像のみモードかチェック
-    final canUseOriginalImagesOnly = await _canUseOriginalImagesOnly();
-    _logger.d('getRandomStimuliSet: canUseOriginalImagesOnly = $canUseOriginalImagesOnly');
-
-    if (canUseOriginalImagesOnly) {
-      _logger.d('getRandomStimuliSet: Using original images only mode');
-      final originalStimuli = await _getCustomStimuliSet();
-      _logger.d('getRandomStimuliSet: Original stimuli count: ${originalStimuli.length}');
-      return originalStimuli;
-    }
-
     // カスタム画像が利用可能かチェック
     final canUseCustomImages = await _canUseCustomImages();
     _logger.d('getRandomStimuliSet: canUseCustomImages = $canUseCustomImages');
 
     if (canUseCustomImages) {
-      _logger.d('getRandomStimuliSet: Using mixed mode (asset + custom images)');
-      final mixedStimuli = await _getMixedStimuliSet(group);
-      _logger.d('getRandomStimuliSet: Mixed stimuli count: ${mixedStimuli.length}');
-      return mixedStimuli;
+      _logger.d('getRandomStimuliSet: Using custom images only mode (no asset images)');
+      final customStimuli = await _getCustomStimuliSet();
+      _logger.d('getRandomStimuliSet: Custom stimuli count: ${customStimuli.length}');
+      return customStimuli;
     }
 
     // 従来のアセット画像を使用
@@ -236,87 +207,6 @@ class ImageService {
     return assetStimuli;
   }
 
-  /// 混合モード: アセット画像とカスタム画像を組み合わせた刺激セットを生成
-  Future<List<ImageStimulus>> _getMixedStimuliSet(ImageGroup group) async {
-    final List<ImageStimulus> stimuliSet = [];
-
-    _logger.d('_getMixedStimuliSet: Starting mixed mode for group ${group.name}');
-
-    try {
-      final settings = await _customImageRepository.getSettings();
-
-      // アセット画像から負の画像を1-2枚選択
-      final negativeImages = await _getNegativeImages(group);
-      _logger.d('_getMixedStimuliSet: Available negative images: ${negativeImages.length}');
-
-      if (negativeImages.isNotEmpty) {
-        final negativeShuffled = List<String>.from(negativeImages);
-        negativeShuffled.shuffle(_random);
-        final selectedNegative = negativeShuffled.take(2);
-
-        for (int i = 0; i < selectedNegative.length; i++) {
-          final imagePath = selectedNegative.elementAt(i);
-          _logger.d('_getMixedStimuliSet: Adding negative asset image: $imagePath');
-          stimuliSet.add(ImageStimulus(
-            id: 'mixed_negative_asset_${group.name}_${i + 1}',
-            assetPath: imagePath,
-            valence: Valence.negative,
-            emotion: _getEmotionFromGroup(group, false),
-          ));
-        }
-      }
-
-      // カスタム画像から負の画像を1枚選択
-      final enabledGroups = settings.groups.where((g) => g.enabled).toList();
-      if (enabledGroups.isNotEmpty) {
-        final selectedGroup = enabledGroups[_random.nextInt(enabledGroups.length)];
-        final groupRainyImages = selectedGroup.imagePaths[WeatherType.rainy] ?? [];
-
-        if (groupRainyImages.isNotEmpty) {
-          final rainyShuffled = List<String>.from(groupRainyImages);
-          rainyShuffled.shuffle(_random);
-          final selectedRainy = rainyShuffled.first;
-
-          _logger.d('_getMixedStimuliSet: Adding custom negative image: $selectedRainy');
-          stimuliSet.add(ImageStimulus(
-            id: 'mixed_negative_custom_${selectedGroup.id}',
-            assetPath: selectedRainy,
-            valence: Valence.negative,
-            emotion: Emotion.sadness,
-            isCustomImage: true,
-          ));
-        }
-      }
-
-      // アセット画像から正の画像を1枚選択
-      final positiveImages = await _getPositiveImages(group);
-      _logger.d('_getMixedStimuliSet: Available positive images: ${positiveImages.length}');
-
-      if (positiveImages.isNotEmpty) {
-        final positiveShuffled = List<String>.from(positiveImages);
-        positiveShuffled.shuffle(_random);
-        final selectedPositive = positiveShuffled.first;
-
-        _logger.d('_getMixedStimuliSet: Adding positive asset image: $selectedPositive');
-        stimuliSet.add(ImageStimulus(
-          id: 'mixed_positive_asset_${group.name}',
-          assetPath: selectedPositive,
-          valence: Valence.positive,
-          emotion: _getEmotionFromGroup(group, true),
-        ));
-      }
-
-      // 全体をシャッフルして位置をランダム化
-      stimuliSet.shuffle(_random);
-
-      _logger.d('_getMixedStimuliSet: Final mixed stimuli count: ${stimuliSet.length}');
-      return stimuliSet;
-    } catch (e, stackTrace) {
-      _logger.e('_getMixedStimuliSet: Error generating mixed stimuli set',
-          error: e, stackTrace: stackTrace);
-      return [];
-    }
-  }
 
   /// アセット画像から刺激セットを生成（既存のロジック）
   Future<List<ImageStimulus>> _getAssetStimuliSet(ImageGroup group) async {

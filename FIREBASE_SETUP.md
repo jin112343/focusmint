@@ -79,6 +79,7 @@ flutter pub get
 - **集計データのみ**：ダウンロード数や使用状況の統計のみを取得
 - **匿名化**：Firebase Analytics が自動的にデータを匿名化
 - **透明性**：アプリ内でデータ収集について明示
+- **開発者・テスターを除外**：リリースビルドでのみデータ送信（デバッグビルドは送信されない）
 
 ## 8. ストア審査への対応
 
@@ -103,9 +104,61 @@ flutter pub get
 await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
 ```
 
-## 10. 注意事項
+## 10. 開発者・テスター向けの情報
+
+### ビルドの種類とデータ送信
+
+アプリのビルドには**開発用**、**テスター配布用**、**ストア配布用**の3種類があります：
+
+| 用途 | コマンド例 | データ送信 |
+|------|-----------|-----------|
+| 🧪 **開発用** | `flutter run` | ❌ 送信しない |
+| 👥 **テスター配布** | `flutter build apk --release` | ❌ 送信しない |
+| 🏪 **ストア配布** | `flutter build apk --release --dart-define=PRODUCTION=true` | ✅ **送信する** |
+
+### テスター向けビルド（TestFlight、内部テスト等）
+
+テスターに配布する場合は、以下のコマンドを使用します：
+
+```bash
+# Android（テスター用）
+flutter build apk --release
+
+# Android（Google Play内部テスト用）
+flutter build appbundle --release
+
+# iOS（TestFlight用）
+flutter build ios --release
+```
+
+これらのビルドは**データを送信しません**。
+
+### ストア配布用ビルド（本番のみ）
+
+Google PlayやApp Storeに公開する最終ビルドには、`--dart-define=PRODUCTION=true`を追加します：
+
+```bash
+# Android（Google Play本番配布）
+flutter build appbundle --release --dart-define=PRODUCTION=true
+
+# iOS（App Store本番配布）
+flutter build ios --release --dart-define=PRODUCTION=true
+```
+
+このビルドのみが**実際のユーザーのインストール数をカウント**します。
+
+### 動作確認
+
+アプリのログで動作を確認できます：
+
+- 開発中：「デバッグモードのため、追跡をスキップしました」
+- テスト配布：「テスト環境のため、追跡をスキップしました（テスター用）」  
+- 本番配布：「初回起動を追跡しました（本番環境）」
+
+## 11. 注意事項
 
 - 本実装は個人情報を収集しません
 - ストアの審査や規約に違反しません
 - サービスの向上目的でのみ使用されます
 - ユーザーのプライバシーを最大限に尊重します
+- デバッグビルドでは開発者・テスターのデータは送信されません

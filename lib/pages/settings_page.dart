@@ -7,7 +7,6 @@ import 'package:focusmint/services/image_service.dart';
 import 'package:focusmint/pages/web_view_page.dart';
 import 'package:focusmint/widgets/image_management_widget.dart';
 import 'package:focusmint/pages/settings/customize_settings_page.dart';
-import 'package:focusmint/repositories/custom_image_repository.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -23,7 +22,6 @@ class _SettingsPageState extends State<SettingsPage> {
   static final Logger _logger = Logger();
   final SpeedScoreService _speedScoreService = SpeedScoreService();
   final ImageService _imageService = ImageService();
-  final CustomImageRepository _customImageRepository = CustomImageRepository.instance;
   final TextEditingController _goalPointsController = TextEditingController();
   int _currentGoalPoints = 1000;
   bool _isLoading = true;
@@ -262,9 +260,6 @@ class _SettingsPageState extends State<SettingsPage> {
       // SpeedScoreServiceのデータも削除（目標ポイント以外）
       await _speedScoreService.clearAllDataExceptGoal();
 
-      // カスタム画像のデータも削除
-      await _customImageRepository.clearAllCustomImages();
-
       // 目標ポイントを再設定
       await _speedScoreService.setGoalPoints(currentGoal);
 
@@ -292,9 +287,6 @@ class _SettingsPageState extends State<SettingsPage> {
 
       // SpeedScoreServiceのデータを全て削除（目標ポイントも含む）
       await _speedScoreService.clearAllDataIncludingGoal();
-
-      // カスタム画像のデータも削除
-      await _customImageRepository.clearAllCustomImages();
 
       // 目標ポイントをデフォルト値にリセット
       setState(() {

@@ -111,7 +111,13 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
         _imageService.refreshCache();
         
         // Firebaseに統計を送信
-        _hiddenImageService.sendHiddenImageStats();
+        try {
+          await _hiddenImageService.sendHiddenImageStats();
+          _logger.d('_saveChanges: Firebase stats sent successfully');
+        } catch (e) {
+          _logger.e('_saveChanges: Failed to send Firebase stats', error: e);
+          // Firebase送信の失敗はユーザーに通知しない（非表示画像の保存は成功しているため）
+        }
 
         _logger.d('_saveChanges: All changes saved successfully');
 
