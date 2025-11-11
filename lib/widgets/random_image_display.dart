@@ -122,9 +122,10 @@ class _ImageCard extends StatelessWidget {
               imagePath,
               fit: BoxFit.cover,
               width: double.infinity,
+              height: double.infinity,
               errorBuilder: (context, error, stackTrace) {
-                Logger().e('Image loading error', 
-                    error: error, 
+                Logger().e('Image loading error',
+                    error: error,
                     stackTrace: stackTrace);
                 Logger().e('画像パス: $imagePath');
                 return Container(

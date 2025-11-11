@@ -98,22 +98,26 @@ class CustomImageGroup {
 class CustomImageSettings {
   final bool useCustomImages;
   final bool useOriginalImagesOnly;
+  final bool mixWithOriginalImages;
   final List<CustomImageGroup> groups;
 
   const CustomImageSettings({
     required this.useCustomImages,
     required this.useOriginalImagesOnly,
+    required this.mixWithOriginalImages,
     required this.groups,
   });
 
   CustomImageSettings copyWith({
     bool? useCustomImages,
     bool? useOriginalImagesOnly,
+    bool? mixWithOriginalImages,
     List<CustomImageGroup>? groups,
   }) {
     return CustomImageSettings(
       useCustomImages: useCustomImages ?? this.useCustomImages,
       useOriginalImagesOnly: useOriginalImagesOnly ?? this.useOriginalImagesOnly,
+      mixWithOriginalImages: mixWithOriginalImages ?? this.mixWithOriginalImages,
       groups: groups ?? this.groups,
     );
   }
@@ -140,6 +144,7 @@ class CustomImageSettings {
     return {
       'useCustomImages': useCustomImages,
       'useOriginalImagesOnly': useOriginalImagesOnly,
+      'mixWithOriginalImages': mixWithOriginalImages,
       'groups': groups.map((group) => group.toJson()).toList(),
     };
   }
@@ -153,6 +158,7 @@ class CustomImageSettings {
     return CustomImageSettings(
       useCustomImages: json['useCustomImages'] as bool? ?? false,
       useOriginalImagesOnly: json['useOriginalImagesOnly'] as bool? ?? false,
+      mixWithOriginalImages: json['mixWithOriginalImages'] as bool? ?? false,
       groups: groups,
     );
   }
@@ -162,6 +168,7 @@ class CustomImageSettings {
     return CustomImageSettings(
       useCustomImages: false,
       useOriginalImagesOnly: false,
+      mixWithOriginalImages: false,
       groups: [
         CustomImageGroup.empty(1),
         CustomImageGroup.empty(2),

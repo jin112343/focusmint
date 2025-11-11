@@ -242,6 +242,8 @@ class _StimulusItemState extends State<StimulusItem>
       return Image.file(
         File(widget.stimulus.assetPath),
         fit: BoxFit.cover,
+        width: double.infinity,
+        height: double.infinity,
         errorBuilder: (context, error, stackTrace) {
           return _buildPlaceholderFace();
         },
@@ -251,6 +253,8 @@ class _StimulusItemState extends State<StimulusItem>
       return Image.asset(
         widget.stimulus.assetPath,
         fit: BoxFit.cover,
+        width: double.infinity,
+        height: double.infinity,
         errorBuilder: (context, error, stackTrace) {
           return _buildPlaceholderFace();
         },

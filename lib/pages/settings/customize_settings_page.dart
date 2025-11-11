@@ -98,6 +98,26 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
     }
   }
 
+  Future<void> _toggleMixWithOriginalImages(bool value) async {
+    if (_settings == null) return;
+
+    try {
+      final success = await _repository.toggleMixWithOriginalImages();
+      if (success) {
+        setState(() {
+          _settings = _settings!.copyWith(mixWithOriginalImages: value);
+        });
+      } else {
+        // 条件を満たしていない場合のエラーメッセージ
+        _showErrorMessage(AppLocalizations.of(context)!.customImageRequirementNotMet);
+      }
+    } catch (e, stackTrace) {
+      _logger.e('ミックス使用設定の変更に失敗しました',
+          error: e, stackTrace: stackTrace);
+      _showErrorMessage(AppLocalizations.of(context)!.settingsChangeFailed);
+    }
+  }
+
 
   Future<void> _toggleGroupEnabled(int groupId, bool value) async {
     if (_settings == null) return;
@@ -482,6 +502,52 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                                 ],
                               ),
 
+                              // ミックス使用スイッチ
+                              if (_settings!.useCustomImages) ...[
+                                const SizedBox(height: 20),
+                                const Divider(height: 1),
+                                const SizedBox(height: 20),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            '既存の画像とミックス使用',
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                              color: AppColors.textPrimary,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 8),
+                                          Text(
+                                            '既存の画像と自分の画像を混ぜて使用します',
+                                            style: const TextStyle(
+                                              fontSize: 14,
+                                              color: AppColors.textSecondary,
+                                              height: 1.4,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(width: 16),
+                                     Switch(
+                                       value: _settings!.mixWithOriginalImages,
+                                       onChanged: _canEnableCustomImages || _settings!.mixWithOriginalImages
+                                           ? _toggleMixWithOriginalImages
+                                           : null,
+                                       activeColor: Colors.white,
+                                       activeTrackColor: AppColors.mintGreen,
+                                       inactiveThumbColor: Colors.grey[600],
+                                       inactiveTrackColor: Colors.grey[300],
+                                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                     ),
+                                  ],
+                                ),
+                              ],
 
                               // 条件を満たしていない場合の警告メッセージ
                               if (!_canEnableCustomImages && !_settings!.useCustomImages) ...[

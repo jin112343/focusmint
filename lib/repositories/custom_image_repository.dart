@@ -285,6 +285,29 @@ class CustomImageRepository {
     }
   }
 
+  /// 既存画像とカスタム画像のミックス使用の有効/無効を切り替え（バリデーション付き）
+  Future<bool> toggleMixWithOriginalImages() async {
+    try {
+      final settings = await getSettings();
+
+      // オンにしようとした場合、条件を満たしているかチェック
+      if (!settings.mixWithOriginalImages && !settings.canUseCustomImages) {
+        _logger.w('CustomImageRepository.toggleMixWithOriginalImages: ミックス使用の条件を満たしていないためオンにできません');
+        return false; // 条件を満たしていない場合はオンにできない
+      }
+
+      final updatedSettings = settings.copyWith(mixWithOriginalImages: !settings.mixWithOriginalImages);
+      await saveSettings(updatedSettings);
+
+      _logger.i('CustomImageRepository.toggleMixWithOriginalImages: ミックス使用を切り替えました: ${updatedSettings.mixWithOriginalImages}');
+      return true;
+    } catch (e, stackTrace) {
+      _logger.e('CustomImageRepository.toggleMixWithOriginalImages: ミックス使用切り替えに失敗しました',
+          error: e, stackTrace: stackTrace);
+      rethrow;
+    }
+  }
+
   /// 指定グループ・天気の画像パスのリストを取得
   Future<List<String>> getImagePaths(int groupId, WeatherType weather) async {
     try {
