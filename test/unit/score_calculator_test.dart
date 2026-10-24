@@ -118,7 +118,7 @@ void main() {
       // z(accuracy) = (0.5 - 0.7) / 0.1 = -2.0
       // z(RT) = (1300 - 1500) / 200 = -1.0
       // BIS = -2.0 - (-1.0) = -1.0
-      expect(bis, equals(-1.0));
+      expect(bis, closeTo(-1.0, 1e-12));
     });
 
     test('calculateIes should compute inverse efficiency score', () {

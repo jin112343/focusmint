@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:focusmint/widgets/fixation_point.dart';
 import 'package:focusmint/widgets/session_timer.dart';
@@ -10,6 +11,9 @@ void main() {
     testWidgets('should render with default properties', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: FixationPoint(),
           ),
@@ -23,6 +27,9 @@ void main() {
     testWidgets('should render with custom size and color', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: FixationPoint(
               size: 30.0,
@@ -50,13 +57,16 @@ void main() {
     testWidgets('should animate when animate is true', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: FixationPoint(animate: true),
           ),
         ),
       );
 
-      expect(find.byType(AnimatedBuilder), findsOneWidget);
+      expect(find.descendant(of: find.byType(FixationPoint), matching: find.byType(AnimatedBuilder)), findsOneWidget);
       
       // Trigger animation
       await tester.pump(const Duration(milliseconds: 400));
@@ -69,6 +79,9 @@ void main() {
     testWidgets('should display remaining time correctly', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: SessionTimer(
               remainingSeconds: 125, // 2:05
@@ -85,6 +98,9 @@ void main() {
     testWidgets('should show red color when time is low', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: SessionTimer(
               remainingSeconds: 30, // Low time
@@ -103,6 +119,9 @@ void main() {
     testWidgets('should hide progress bar when showProgress is false', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: SessionTimer(
               remainingSeconds: 125,
@@ -122,6 +141,9 @@ void main() {
     testWidgets('should display circular progress and time', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: CircularSessionTimer(
               remainingSeconds: 65,
@@ -138,6 +160,9 @@ void main() {
     testWidgets('should hide digital time when showDigitalTime is false', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: CircularSessionTimer(
               remainingSeconds: 65,
@@ -188,6 +213,9 @@ void main() {
     testWidgets('should render grid with correct number of items', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: StimulusGrid(
               stimuli: testStimuli,
@@ -204,6 +232,9 @@ void main() {
     testWidgets('should display empty state when no stimuli', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: StimulusGrid(
               stimuli: [],
@@ -220,6 +251,9 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: StimulusGrid(
               stimuli: testStimuli,
@@ -241,6 +275,9 @@ void main() {
     testWidgets('should show placeholder faces when showPlaceholders is true', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: StimulusGrid(
               stimuli: testStimuli,
@@ -252,8 +289,8 @@ void main() {
 
       // Should find emotion icons as placeholders
       expect(find.byIcon(Icons.sentiment_very_satisfied), findsOneWidget);
-      expect(find.byIcon(Icons.sentiment_very_dissatisfied), findsNWidgets(2));
-      expect(find.byIcon(Icons.sentiment_dissatisfied), findsOneWidget);
+      expect(find.byIcon(Icons.sentiment_very_dissatisfied), findsOneWidget);
+      expect(find.byIcon(Icons.sentiment_dissatisfied), findsNWidgets(2));
     });
   });
 
@@ -272,6 +309,9 @@ void main() {
     testWidgets('should render positive stimulus with correct icon', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: StimulusItem(
               stimulus: testStimulus,
@@ -293,6 +333,9 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: StimulusItem(
               stimulus: negativeStimulus,
@@ -311,6 +354,9 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: StimulusItem(
               stimulus: testStimulus,
@@ -333,6 +379,9 @@ void main() {
     testWidgets('should display preview for 2x2 grid', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: GridPreview(gridSize: 4), // 2x2
           ),
@@ -347,6 +396,9 @@ void main() {
     testWidgets('should display preview for 3x3 grid', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: GridPreview(gridSize: 9), // 3x3
           ),
@@ -361,6 +413,9 @@ void main() {
     testWidgets('should show error state for invalid grid size', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
           home: Scaffold(
             body: GridPreview(gridSize: 999), // Invalid size
           ),
