@@ -61,6 +61,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
   Future<void> _loadData() async {
     final totalScore = await _speedScoreService.getTotalScore();
     final goalPoints = await _speedScoreService.getGoalPoints();
+    if (!mounted) return;
     setState(() {
       _totalScore = totalScore;
       _goalPoints = goalPoints;
@@ -137,7 +138,9 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
             // メインコンテンツ：円グラフ
             Expanded(
               child: Center(
-                child: Column(
+                child: SingleChildScrollView(
+                  child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // 合計得点円グラフ
@@ -173,6 +176,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                       ),
                     ),
                   ],
+                  ),
                 ),
               ),
             ),
