@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/constants/training_constants.dart';
@@ -26,11 +25,11 @@ class ImageService {
   /// アセットフォルダ内の画像ファイル一覧を取得
   Future<List<String>> _loadImageFilenames(String prefix) async {
     try {
-      final manifestContent = await rootBundle.loadString('AssetManifest.json');
-      final Map<String, dynamic> manifestMap = 
-          const JsonDecoder().convert(manifestContent) as Map<String, dynamic>;
-      
-      final imagePaths = manifestMap.keys
+      // AssetManifest.json は Flutter 3.38 以降生成されないため、AssetManifest API を使う
+      final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+
+      final imagePaths = manifest
+          .listAssets()
           .where((String key) => key.startsWith('assets/images/'))
           .where((String key) => key.toLowerCase().endsWith('.jpg') || 
                                 key.toLowerCase().endsWith('.jpeg') || 
