@@ -74,6 +74,12 @@ class HiddenImageService {
   }
   
   /// 非表示画像の設定を保存
+  Future<bool> setHiddenImages(Set<String> hiddenImages) async {
+    if (hiddenImages.length > _maxHiddenImages) return false;
+    return _saveHiddenImages(hiddenImages);
+  }
+
+  /// 非表示画像の設定を保存
   Future<bool> _saveHiddenImages(Set<String> hiddenImages) async {
     try {
       final prefs = await SharedPreferences.getInstance();

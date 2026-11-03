@@ -11,7 +11,7 @@ import 'package:logger/logger.dart';
 
 final logger = Logger();
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   try {

@@ -40,6 +40,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
   Future<void> _loadImages() async {
     try {
       final imagePaths = await _repository.getImagePaths(widget.groupId, widget.weather);
+      if (!mounted) return;
       setState(() {
         _imagePaths = imagePaths;
         _isLoading = false;
@@ -47,6 +48,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
     } catch (e, stackTrace) {
       _logger.e('画像の読み込みに失敗しました',
           error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
@@ -56,11 +58,11 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
 
   Future<void> _addImages() async {
     try {
-      final List<XFile> images = await _picker.pickMultipleMedia(
+      final List<XFile> images = await _picker.pickMultiImage(
         imageQuality: 80,
       );
 
-      if (images.isEmpty) return;
+      if (!mounted || images.isEmpty) return;
 
       setState(() {
         _isLoading = true;
@@ -76,6 +78,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
             widget.weather,
             image.path,
           );
+          if (!mounted) return;
 
           setState(() {
             _imagePaths.add(imagePath);
@@ -104,6 +107,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
     } catch (e, stackTrace) {
       _logger.e('画像選択でエラーが発生しました',
           error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
@@ -114,6 +118,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
   Future<void> _removeImage(String imagePath) async {
     try {
       await _repository.removeImage(widget.groupId, widget.weather, imagePath);
+      if (!mounted) return;
 
       setState(() {
         _imagePaths.remove(imagePath);
@@ -126,6 +131,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
     } catch (e, stackTrace) {
       _logger.e('画像の削除に失敗しました',
           error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.imageDeleteFailed);
     }
   }

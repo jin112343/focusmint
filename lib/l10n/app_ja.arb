@@ -260,7 +260,7 @@
   "customImageSettings": "カスタム画像設定",
 
   "useCustomImages": "自分のカスタム画像を使う",
-  "useCustomImagesDescription": "ONにすると既存の画像は使用されず、カスタム画像のみが学習・表示に使われます",
+  "useCustomImagesDescription": "自分の画像をトレーニングに使用します。下のミックス設定で既存の画像も使用できます。",
   "groupSettings": "グループ別設定",
   "minOneGroupRequired": "最低1つのグループは有効にしておく必要があります",
   "settingsLoadFailedMessage": "設定の読み込みに失敗しました",
@@ -304,5 +304,7 @@
   "close": "閉じる",
   
   "contactEmailSubject": "FocusMint-お問い合わせ",
-  "contactEmailBody": "ご意見・お問い合わせをお書きください。"
+  "contactEmailBody": "ご意見・お問い合わせをお書きください。",
+  "mixWithBuiltInImages": "既存の画像とミックス使用",
+  "mixWithBuiltInImagesDescription": "既存の画像と自分の画像を混ぜて使用します"
 }

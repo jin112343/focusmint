@@ -1055,7 +1055,7 @@ abstract class AppLocalizations {
   /// No description provided for @useCustomImagesDescription.
   ///
   /// In en, this message translates to:
-  /// **'When ON, existing images will not be used and only custom images will be used for learning and display'**
+  /// **'Use your own images for training. Enable mixing below to include built-in images.'**
   String get useCustomImagesDescription;
 
   /// No description provided for @groupSettings.
@@ -1201,6 +1201,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please share your feedback and questions.'**
   String get contactEmailBody;
+
+  /// No description provided for @mixWithBuiltInImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Mix with built-in images'**
+  String get mixWithBuiltInImages;
+
+  /// No description provided for @mixWithBuiltInImagesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a mix of built-in images and your own images'**
+  String get mixWithBuiltInImagesDescription;
 }
 
 class _AppLocalizationsDelegate

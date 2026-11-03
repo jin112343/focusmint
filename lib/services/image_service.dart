@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/constants/training_constants.dart';
@@ -34,7 +35,7 @@ class ImageService {
           .where((String key) => key.toLowerCase().endsWith('.jpg') || 
                                 key.toLowerCase().endsWith('.jpeg') || 
                                 key.toLowerCase().endsWith('.png'))
-          .where((String key) => key.contains(prefix))
+          .where((String key) => key.split('/').last.startsWith('${prefix}_'))
           .toList();
       
       _logger.d('_loadImageFilenames: Prefix: $prefix');
@@ -119,7 +120,18 @@ class ImageService {
       final settings = await _customImageRepository.getSettings();
 
       // 有効なグループを取得
-      final enabledGroups = settings.groups.where((group) => group.enabled).toList();
+      final enabledGroups = <CustomImageGroup>[];
+      for (final group in settings.groups.where((group) => group.enabled && group.hasValidImageCount)) {
+        final existingPaths = <WeatherType, List<String>>{};
+        for (final weather in WeatherType.values) {
+          existingPaths[weather] = [];
+          for (final path in group.imagePaths[weather] ?? <String>[]) {
+            if (await File(path).exists()) existingPaths[weather]!.add(path);
+          }
+        }
+        final availableGroup = group.copyWith(imagePaths: existingPaths);
+        if (availableGroup.hasValidImageCount) enabledGroups.add(availableGroup);
+      }
       _logger.d('_getCustomStimuliSet: Enabled groups: ${enabledGroups.map((g) => g.id).toList()}');
 
       if (enabledGroups.isEmpty) {
@@ -196,7 +208,13 @@ class ImageService {
       _logger.d('getRandomStimuliSet: Using custom images only mode (no asset images)');
       final customStimuli = await _getCustomStimuliSet();
       _logger.d('getRandomStimuliSet: Custom stimuli count: ${customStimuli.length}');
-      return customStimuli;
+      if (customStimuli.length == 4) {
+        final settings = await _customImageRepository.getSettings();
+        if (!settings.mixWithOriginalImages) return customStimuli;
+        final assetStimuli = await _getAssetStimuliSet(group);
+        if (assetStimuli.length != 4) return customStimuli;
+        return _mixStimuli(customStimuli, assetStimuli);
+      }
     }
 
     // 従来のアセット画像を使用
@@ -206,6 +224,23 @@ class ImageService {
     return assetStimuli;
   }
 
+
+  List<ImageStimulus> _mixStimuli(
+    List<ImageStimulus> customStimuli,
+    List<ImageStimulus> assetStimuli,
+  ) {
+    final positives = [...customStimuli, ...assetStimuli]
+        .where((s) => s.valence == Valence.positive).toList()..shuffle(_random);
+    final customNegatives = customStimuli
+        .where((s) => s.valence == Valence.negative).toList()..shuffle(_random);
+    final assetNegatives = assetStimuli
+        .where((s) => s.valence == Valence.negative).toList()..shuffle(_random);
+    final remaining = [...customNegatives.skip(1), ...assetNegatives.skip(1)]
+        ..shuffle(_random);
+    // 正解1枚・不正解3枚を保ち、両方の画像を含める。
+    return [positives.first, customNegatives.first, assetNegatives.first,
+        remaining.first]..shuffle(_random);
+  }
 
   /// アセット画像から刺激セットを生成（既存のロジック）
   Future<List<ImageStimulus>> _getAssetStimuliSet(ImageGroup group) async {

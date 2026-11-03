@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/constants/placeholder_images.dart';
@@ -19,6 +20,9 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
   final HiddenImageService _hiddenImageService = HiddenImageService();
   final ImageService _imageService = ImageService();
   Set<String> _hiddenImages = {};
+  Set<String> _savedHiddenImages = {};
+  bool _isSaving = false;
+  bool _exitDialogOpen = false;
   final Set<String> _pendingChanges = {}; // 未保存の変更を追跡
   bool _isLoading = true;
   String _selectedCategory = 'all';
@@ -59,11 +63,14 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
   Future<void> _loadHiddenImages() async {
     try {
       final hiddenImages = await _hiddenImageService.getHiddenImages();
+      if (!mounted) return;
       setState(() {
         _hiddenImages = hiddenImages;
+        _savedHiddenImages = Set.of(hiddenImages);
         _isLoading = false;
       });
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
@@ -71,6 +78,7 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
   }
 
   Future<void> _toggleImageVisibility(String imagePath) async {
+    if (_isSaving) return;
     _logger.d('_toggleImageVisibility: Toggling image: $imagePath');
     setState(() {
       if (_hiddenImages.contains(imagePath)) {
@@ -81,45 +89,44 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
         _logger.d('_toggleImageVisibility: Added to hidden: $imagePath');
       }
       // 変更を追跡
-      _pendingChanges.add(imagePath);
+      if (_hiddenImages.contains(imagePath) == _savedHiddenImages.contains(imagePath)) {
+        _pendingChanges.remove(imagePath);
+      } else {
+        _pendingChanges.add(imagePath);
+      }
       _logger.d('_toggleImageVisibility: Pending changes: $_pendingChanges');
     });
   }
 
-  Future<void> _saveChanges() async {
-    if (_pendingChanges.isEmpty) return;
+  Future<bool> _saveChanges() async {
+    if (_pendingChanges.isEmpty) return true;
+    if (_isSaving) return false;
+    setState(() => _isSaving = true);
+    final desiredImages = Set<String>.of(_hiddenImages);
 
     _logger.d('_saveChanges: Saving ${_pendingChanges.length} changes: $_pendingChanges');
 
     try {
-      bool allSuccess = true;
-      for (String imagePath in _pendingChanges) {
-        _logger.d('_saveChanges: Toggling visibility for: $imagePath');
-        final success = await _hiddenImageService.toggleImageVisibility(imagePath);
-        _logger.d('_saveChanges: Toggle result for $imagePath: $success');
-        if (!success) {
-          allSuccess = false;
-        }
-      }
+      final allSuccess = await _hiddenImageService.setHiddenImages(desiredImages);
 
       if (allSuccess) {
-        setState(() {
-          _pendingChanges.clear();
-        });
+        if (mounted) {
+          setState(() {
+            _savedHiddenImages = desiredImages;
+            _pendingChanges.clear();
+          });
+        }
         
         // ImageServiceのキャッシュをクリアして非表示設定を反映
         _imageService.refreshCache();
         
         // Firebaseに統計を送信
-        try {
-          await _hiddenImageService.sendHiddenImageStats();
-          _logger.d('_saveChanges: Firebase stats sent successfully');
-        } catch (e) {
+        unawaited(_hiddenImageService.sendHiddenImageStats().catchError((Object e) {
           _logger.e('_saveChanges: Failed to send Firebase stats', error: e);
-          // Firebase送信の失敗はユーザーに通知しない（非表示画像の保存は成功しているため）
-        }
+        }));
 
         _logger.d('_saveChanges: All changes saved successfully');
+        return true;
 
       } else {
         _logger.w('_saveChanges: Some changes failed to save');
@@ -132,6 +139,7 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
           );
         }
       }
+      return false;
     } catch (e) {
       _logger.e('_saveChanges: Error occurred', error: e);
       if (mounted) {
@@ -142,6 +150,9 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
           ),
         );
       }
+      return false;
+    } finally {
+      if (mounted) setState(() => _isSaving = false);
     }
   }
 
@@ -196,8 +207,8 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
             ),
             ElevatedButton.icon(
               onPressed: () async {
-                await _saveChanges();
-                Navigator.of(context).pop(true);
+                final saved = await _saveChanges();
+                if (saved && context.mounted) Navigator.of(context).pop(true);
               },
               icon: const Icon(Icons.save, size: 18),
               label: Text(AppLocalizations.of(context)!.saveAndExit),
@@ -250,11 +261,13 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
+        if (_isSaving || _exitDialogOpen) return;
 
         if (_pendingChanges.isNotEmpty) {
+          _exitDialogOpen = true;
           final shouldPop = await _showSaveDialog();
+          _exitDialogOpen = false;
           if (shouldPop) {
-            await _saveChanges();
             if (context.mounted) {
               Navigator.of(context).pop();
             }
@@ -346,7 +359,7 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
               ),
               if (_pendingChanges.isNotEmpty)
                 ElevatedButton.icon(
-                  onPressed: _saveChanges,
+                  onPressed: _isSaving ? null : _saveChanges,
                   icon: const Icon(Icons.save, size: 16),
                   label: Text(AppLocalizations.of(context)!.save),
                   style: ElevatedButton.styleFrom(
@@ -425,7 +438,7 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
               final isMaxReached = hiddenCount >= maxHidden && !isHidden && !isHiddenCategory;
 
               return GestureDetector(
-                onTap: (isMaxReached && !isHiddenCategory) ? null : () => _toggleImageVisibility(imagePath),
+                onTap: _isSaving || (isMaxReached && !isHiddenCategory) ? null : () => _toggleImageVisibility(imagePath),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),

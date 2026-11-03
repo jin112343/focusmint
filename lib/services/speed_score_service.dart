@@ -181,7 +181,7 @@ class SpeedScoreService {
       final historyJson = prefs.getString(_weeklyHistoryKey) ?? '{}';
       final Map<String, dynamic> history = json.decode(historyJson);
       
-      final currentScore = (history[weekKey] as double?) ?? 0.0;
+      final currentScore = (history[weekKey] as num?)?.toDouble() ?? 0.0;
       history[weekKey] = currentScore + score;
       
       await prefs.setString(_weeklyHistoryKey, json.encode(history));
@@ -200,7 +200,7 @@ class SpeedScoreService {
       final historyJson = prefs.getString(_monthlyHistoryKey) ?? '{}';
       final Map<String, dynamic> history = json.decode(historyJson);
       
-      final currentScore = (history[monthKey] as double?) ?? 0.0;
+      final currentScore = (history[monthKey] as num?)?.toDouble() ?? 0.0;
       history[monthKey] = currentScore + score;
       
       await prefs.setString(_monthlyHistoryKey, json.encode(history));
@@ -219,7 +219,7 @@ class SpeedScoreService {
       final historyJson = prefs.getString(_dailyHistoryKey) ?? '{}';
       final Map<String, dynamic> history = json.decode(historyJson);
       
-      final currentScore = (history[dayKey] as double?) ?? 0.0;
+      final currentScore = (history[dayKey] as num?)?.toDouble() ?? 0.0;
       history[dayKey] = currentScore + score;
       
       await prefs.setString(_dailyHistoryKey, json.encode(history));
@@ -246,7 +246,7 @@ class SpeedScoreService {
       for (int i = 0; i < 7; i++) {
         final targetDate = mondayOfThisWeek.add(Duration(days: i));
         final dayKey = _getDayKey(targetDate);
-        final score = (rawHistory[dayKey] as double?) ?? 0.0;
+        final score = (rawHistory[dayKey] as num?)?.toDouble() ?? 0.0;
         result[dayKey] = score.toInt();
       }
       
@@ -272,7 +272,7 @@ class SpeedScoreService {
         final targetMonth = now.month - i > 0 ? now.month - i : 12 + (now.month - i);
         final targetDate = DateTime(targetYear, targetMonth, 1);
         final monthKey = _getMonthKey(targetDate);
-        final score = (rawHistory[monthKey] as double?) ?? 0.0;
+        final score = (rawHistory[monthKey] as num?)?.toDouble() ?? 0.0;
         result[monthKey] = score.toInt();
       }
       

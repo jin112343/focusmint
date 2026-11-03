@@ -32,15 +32,18 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
   Future<void> _loadSettings() async {
     try {
       final settings = await _repository.getSettings();
+      if (!mounted) return;
 
       // 全グループの画像枚数を一括取得してキャッシュ
       await _loadAllImageCounts(settings.groups);
+      if (!mounted) return;
 
       setState(() {
         _settings = settings;
         _isLoading = false;
       });
     } catch (e, stackTrace) {
+      if (!mounted) return;
       _logger.e('カスタマイズ設定の読み込みに失敗しました',
           error: e, stackTrace: stackTrace);
       setState(() {
@@ -83,6 +86,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
 
     try {
       final success = await _repository.toggleUseCustomImages();
+      if (!mounted) return;
       if (success) {
         setState(() {
           _settings = _settings!.copyWith(useCustomImages: value);
@@ -92,6 +96,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         _showErrorMessage(AppLocalizations.of(context)!.customImageRequirementNotMet);
       }
     } catch (e, stackTrace) {
+      if (!mounted) return;
       _logger.e('カスタム画像使用設定の変更に失敗しました',
           error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.settingsChangeFailed);
@@ -103,6 +108,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
 
     try {
       final success = await _repository.toggleMixWithOriginalImages();
+      if (!mounted) return;
       if (success) {
         setState(() {
           _settings = _settings!.copyWith(mixWithOriginalImages: value);
@@ -112,6 +118,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         _showErrorMessage(AppLocalizations.of(context)!.customImageRequirementNotMet);
       }
     } catch (e, stackTrace) {
+      if (!mounted) return;
       _logger.e('ミックス使用設定の変更に失敗しました',
           error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.settingsChangeFailed);
@@ -124,6 +131,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
 
     try {
       final success = await _repository.toggleGroupEnabled(groupId);
+      if (!mounted) return;
       if (success) {
         final group = _settings!.getGroup(groupId);
         if (group != null) {
@@ -137,6 +145,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         _showErrorMessage(AppLocalizations.of(context)!.minOneGroupRequired);
       }
     } catch (e, stackTrace) {
+      if (!mounted) return;
       _logger.e('グループ有効設定の変更に失敗しました',
           error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.settingsChangeFailed);
@@ -150,6 +159,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
           groupId: groupId,
           weather: weather,
           onImageCountChanged: (int newCount) {
+            if (!mounted) return;
             // 画像枚数が変更された時にリアルタイムでキャッシュを更新
             final key = '${groupId}_${weather.value}';
             setState(() {
@@ -167,9 +177,11 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
     if (result == true) {
       try {
         final settings = await _repository.getSettings();
+      if (!mounted) return;
 
         // 変更されたグループ・天気の画像枚数のみを更新
         await _loadImageCount(groupId, weather);
+        if (!mounted) return;
 
         setState(() {
           _settings = settings;
@@ -178,6 +190,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         // カスタム画像の条件チェックを再実行してUIを即座に更新
         _checkAndUpdateCustomImagesAvailability();
       } catch (e, stackTrace) {
+      if (!mounted) return;
         _logger.e('アルバムピッカー後の設定更新に失敗しました',
             error: e, stackTrace: stackTrace);
         _showErrorMessage(AppLocalizations.of(context)!.settingsLoadFailed);
@@ -191,6 +204,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
 
     try {
       final settings = await _repository.getSettings();
+      if (!mounted) return;
 
       // 条件を満たしているかチェック
       final canUse = settings.canUseCustomImages;
@@ -203,6 +217,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         _logger.d('_checkAndUpdateCustomImagesAvailability: UI updated, canUseCustomImages: $canUse');
       }
     } catch (e, stackTrace) {
+      if (!mounted) return;
       _logger.e('カスタム画像の利用可能性チェックに失敗しました',
           error: e, stackTrace: stackTrace);
     }
@@ -514,7 +529,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            '既存の画像とミックス使用',
+                                            AppLocalizations.of(context)!.mixWithBuiltInImages,
                                             style: const TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.bold,
@@ -523,7 +538,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                                           ),
                                           const SizedBox(height: 8),
                                           Text(
-                                            '既存の画像と自分の画像を混ぜて使用します',
+                                            AppLocalizations.of(context)!.mixWithBuiltInImagesDescription,
                                             style: const TextStyle(
                                               fontSize: 14,
                                               color: AppColors.textSecondary,

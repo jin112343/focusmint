@@ -35,6 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Future<void> _loadCurrentGoal() async {
     try {
       final goalPoints = await _speedScoreService.getGoalPoints();
+      if (!mounted) return;
       setState(() {
         _currentGoalPoints = goalPoints;
         _goalPointsController.text = goalPoints.toString();
@@ -42,6 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
       });
     } catch (e, stackTrace) {
       _logger.e('Failed to load goal points', error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
@@ -63,6 +65,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
     try {
       await _speedScoreService.setGoalPoints(newGoal);
+      if (!mounted) return;
       setState(() {
         _currentGoalPoints = newGoal;
       });
@@ -80,6 +83,7 @@ class _SettingsPageState extends State<SettingsPage> {
       }
     } catch (e, stackTrace) {
       _logger.e('Failed to save goal points', error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.saveFailed);
     }
   }
@@ -107,14 +111,14 @@ class _SettingsPageState extends State<SettingsPage> {
     );
 
     try {
-      if (await canLaunchUrl(emailUri)) {
-        await launchUrl(emailUri);
-      } else {
+      if (!await launchUrl(emailUri)) {
+        if (!mounted) return;
         _showErrorMessage(AppLocalizations.of(context)!.emailOpenFailed);
       }
     } catch (e, stackTrace) {
       _logger.e('Failed to launch email', 
           error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.emailOpenFailed);
     }
   }
@@ -274,6 +278,7 @@ class _SettingsPageState extends State<SettingsPage> {
     } catch (e, stackTrace) {
       _logger.e('Failed to delete history data',
           error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.historyDeleteFailed);
     }
   }
@@ -287,6 +292,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
       // SpeedScoreServiceのデータを全て削除（目標ポイントも含む）
       await _speedScoreService.clearAllDataIncludingGoal();
+      if (!mounted) return;
 
       // 目標ポイントをデフォルト値にリセット
       setState(() {
@@ -305,6 +311,7 @@ class _SettingsPageState extends State<SettingsPage> {
     } catch (e, stackTrace) {
       _logger.e('Failed to delete history and goal data',
           error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.historyAndGoalDeleteFailed);
     }
   }
@@ -345,6 +352,7 @@ class _SettingsPageState extends State<SettingsPage> {
     } catch (e, stackTrace) {
       _logger.e('Failed to show image management',
           error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
     }
   }
@@ -360,6 +368,7 @@ class _SettingsPageState extends State<SettingsPage> {
     } catch (e, stackTrace) {
       _logger.e('Failed to show customize settings',
           error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
     }
   }

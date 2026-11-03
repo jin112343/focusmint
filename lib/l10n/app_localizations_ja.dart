@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -520,7 +521,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get useCustomImagesDescription =>
-      'ONにすると既存の画像は使用されず、カスタム画像のみが学習・表示に使われます';
+      '自分の画像をトレーニングに使用します。下のミックス設定で既存の画像も使用できます。';
 
   @override
   String get groupSettings => 'グループ別設定';
@@ -601,4 +602,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get contactEmailBody => 'ご意見・お問い合わせをお書きください。';
+
+  @override
+  String get mixWithBuiltInImages => '既存の画像とミックス使用';
+
+  @override
+  String get mixWithBuiltInImagesDescription => '既存の画像と自分の画像を混ぜて使用します';
 }

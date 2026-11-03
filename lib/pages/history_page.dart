@@ -41,6 +41,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       final goalPoints = await _speedScoreService.getGoalPoints();
       final weeklyHistory = await _speedScoreService.getWeeklyHistory();
       final monthlyHistory = await _speedScoreService.getMonthlyHistory();
+      if (!mounted) return;
       
       setState(() {
         _bestScore = bestScore;
@@ -55,6 +56,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       _logger.i('History statistics loaded: bestScore=$bestScore, totalTime=${totalTimeMinutes.toStringAsFixed(1)}min, totalScore=$totalScore');
     } catch (e, stackTrace) {
       _logger.e('Failed to load history statistics', error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
       });

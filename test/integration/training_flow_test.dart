@@ -7,6 +7,7 @@ import 'package:focusmint/pages/home_page.dart';
 import 'package:focusmint/pages/training_page.dart';
 import 'package:focusmint/pages/settings_page.dart';
 import 'package:focusmint/pages/history_page.dart';
+import 'package:focusmint/widgets/stimulus_grid.dart';
 
 Future<void> launch(WidgetTester tester, {String language = 'en'}) async {
   SharedPreferences.setMockInitialValues({'tutorial_completed': true});
@@ -17,6 +18,22 @@ Future<void> launch(WidgetTester tester, {String language = 'en'}) async {
 }
 
 void main() {
+  testWidgets('training fits a narrow phone with English labels', (tester) async {
+    tester.view.physicalSize = const Size(375, 667);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await launch(tester);
+    await tester.tap(find.text('START'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
+    expect(find.byType(StimulusGrid), findsOneWidget);
+    expect(find.byType(Image), findsNWidgets(4));
+    expect(tester.takeException(), isNull);
+    await tester.tap(find.byIcon(Icons.close));
+    await tester.pumpAndSettle();
+  });
+
   testWidgets(
     'training starts and can be closed without losing the home route',
     (tester) async {
@@ -25,6 +42,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
       expect(find.byType(TrainingPage), findsOneWidget);
+      expect(find.byType(StimulusGrid), findsOneWidget);
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      expect(find.byType(Image), findsNWidgets(4));
       await tester.tap(find.byIcon(Icons.close));
       await tester.pumpAndSettle();
       expect(find.byType(HomePage), findsOneWidget);

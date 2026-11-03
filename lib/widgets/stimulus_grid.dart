@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/constants/training_constants.dart';
@@ -43,10 +44,13 @@ class StimulusGrid extends StatelessWidget {
     final effectiveGridSize = gridSize ?? 
         (MediaQuery.of(context).size.width * 0.95);
 
-    return Center(
+    return LayoutBuilder(builder: (context, constraints) {
+      final side = math.min(effectiveGridSize,
+          math.min(constraints.maxWidth, constraints.maxHeight));
+      return Center(
       child: Container(
-        width: effectiveGridSize,
-        height: effectiveGridSize,
+        width: side,
+        height: side,
         padding: const EdgeInsets.all(8),
         child: AspectRatio(
           aspectRatio: aspectRatio,
@@ -67,12 +71,14 @@ class StimulusGrid extends StatelessWidget {
                     : null,
                 showPlaceholder: showPlaceholders,
                 isSelected: selectedStimulusId == stimuli[index].id, // 選択状態を渡す
+                inputLocked: inputLocked,
               );
             },
           ),
         ),
       ),
     );
+    });
   }
 }
 

@@ -41,6 +41,7 @@ class _ResultPageState extends ConsumerState<ResultPage> {
       final bestScore = await _speedScoreService.getBestScore();
       final totalTimeMinutes = await _speedScoreService.getTotalTimeMinutes();
       final totalScore = await _speedScoreService.getTotalScore();
+      if (!mounted) return;
       
       setState(() {
         _bestScore = bestScore;
@@ -52,6 +53,7 @@ class _ResultPageState extends ConsumerState<ResultPage> {
       _logger.i('Statistics loaded: bestScore=$bestScore, totalTime=${totalTimeMinutes.toStringAsFixed(1)}min, totalScore=$totalScore');
     } catch (e, stackTrace) {
       _logger.e('Failed to load statistics', error: e, stackTrace: stackTrace);
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
       });

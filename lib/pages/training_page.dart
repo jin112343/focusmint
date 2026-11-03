@@ -24,6 +24,10 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   late final SpeedScoreService _speedScoreService;
   List<ImageStimulus> _currentStimuli = [];
   Timer? _timer;
+  Timer? _selectionTimer;
+  Future<void>? _sessionSave;
+  bool _sessionEnded = false;
+  bool _imageLoadFailed = false;
   bool _showingPointOverlay = false;
   double _lastEarnedPoints = 0.0;
   bool _lastWasCorrect = false;
@@ -37,10 +41,10 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
     _imageService = ImageService();
     _speedScoreService = SpeedScoreService();
     _generateNewStimuliSet();
-    _startTimer();
   }
   
   void _startTimer() {
+    if (_timer != null || _sessionEnded) return;
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         _remainingSeconds--;
@@ -49,6 +53,8 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
       // 残り時間が0になったら結果画面に遷移
       if (_remainingSeconds <= 0) {
         timer.cancel();
+        _sessionEnded = true;
+        _selectionTimer?.cancel();
         _saveSessionData().then((_) {
           _navigateToResult();
         });
@@ -62,15 +68,21 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
     
     final randomGroup = _imageService.getRandomGroup();
     final stimuli = await _imageService.getRandomStimuliSet(randomGroup);
+    if (!mounted || _sessionEnded) return;
     setState(() {
-      _currentStimuli = stimuli;
-      _gameInputLocked = false; // 新しい刺激が表示されるときに入力ロックを解除
+      _currentStimuli = stimuli.length == 4 ? stimuli : [];
+      _imageLoadFailed = stimuli.length != 4;
+      _gameInputLocked = _imageLoadFailed;
     });
+    if (_imageLoadFailed) return;
+    _startTimer();
     // 新しい刺激が表示されたときに反応時間の測定を開始
     _speedScoreService.startStimulus();
   }
 
-  Future<void> _saveSessionData() async {
+  Future<void> _saveSessionData() => _sessionSave ??= _persistSessionData();
+
+  Future<void> _persistSessionData() async {
     final elapsedSeconds = maxTrainingTimeSeconds - _remainingSeconds;
     await _speedScoreService.saveBestScore(_currentPoints);
     await _speedScoreService.addTotalTime(elapsedSeconds);
@@ -90,8 +102,10 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   @override
   void dispose() {
     _timer?.cancel();
+    _selectionTimer?.cancel();
+    _sessionEnded = true;
     // アプリが予期せず終了する場合に備えてデータを保存
-    if (_remainingSeconds < maxTrainingTimeSeconds) {
+    if (_remainingSeconds < maxTrainingTimeSeconds || _currentPoints > 0) {
       _saveSessionData();
     }
     super.dispose();
@@ -105,9 +119,12 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: () async {
+            if (_sessionEnded) return;
+            _sessionEnded = true;
             _timer?.cancel();
+            _selectionTimer?.cancel();
             await _saveSessionData();
-            if (mounted) {
+            if (context.mounted) {
               Navigator.of(context).pop();
             }
           },
@@ -138,9 +155,11 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const CircularProgressIndicator(),
+                              if (!_imageLoadFailed) const CircularProgressIndicator(),
                               const SizedBox(height: 16),
-                              Text(AppLocalizations.of(context)!.imagePreparationMessage),
+                              Text(_imageLoadFailed
+                                  ? AppLocalizations.of(context)!.noStimuliAvailable
+                                  : AppLocalizations.of(context)!.imagePreparationMessage),
                             ],
                           ),
                         ),
@@ -150,6 +169,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: Container(
+              width: double.infinity,
               padding: const EdgeInsets.all(20),
               decoration: const BoxDecoration(
                 color: AppColors.backgroundColor,
@@ -160,8 +180,10 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                   ),
                 ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                spacing: 16,
+                runSpacing: 8,
                 children: [
                   Text(
                     _remainingSeconds >= 60 
@@ -192,7 +214,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
 
   void _onStimulusSelected(String stimulusId) {
     // 入力がロックされている場合は何もしない
-    if (_gameInputLocked) {
+    if (_gameInputLocked || _sessionEnded) {
       return;
     }
     
@@ -215,13 +237,14 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
     // まず選択されたボタンを緑色にする
     setState(() {
       _selectedStimulusId = stimulusId;
+      // タップの時点で確定し、終了直前の回答も保存する。
+      _currentPoints += pointsToAdd;
     });
     
     // 短時間待ってからポイント獲得画面を表示
-    Timer(const Duration(milliseconds: 150), () {
-      if (mounted) {
+    _selectionTimer = Timer(const Duration(milliseconds: 150), () {
+      if (mounted && !_sessionEnded) {
         setState(() {
-          _currentPoints += pointsToAdd;
           _showingPointOverlay = true;
           _lastEarnedPoints = pointsToAdd;
           _lastWasCorrect = isCorrect;
@@ -232,7 +255,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   }
 
   void _onPointOverlayComplete() {
-    if (mounted) {
+    if (mounted && !_sessionEnded) {
       setState(() {
         _showingPointOverlay = false;
       });
