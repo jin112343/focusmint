@@ -32,7 +32,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get startButtonText => 'START';
 
   @override
-  String get stressReductionMessage => 'ポジティブな画像を見つける練習をしましょう。';
+  String get stressReductionMessage => 'ポジティブな画像を見つける\n練習をしましょう。';
 
   @override
   String remainingTimeMinutes(int minutes, int seconds) {

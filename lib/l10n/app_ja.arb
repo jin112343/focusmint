@@ -20,7 +20,7 @@
   },
   "goalAchieved": "🎉 目標達成！",
   "startButtonText": "START",
-  "stressReductionMessage": "ポジティブな画像を見つける練習をしましょう。",
+  "stressReductionMessage": "ポジティブな画像を見つける\n練習をしましょう。",
   "remainingTimeMinutes": "残り時間: {minutes}分{seconds}秒",
   "@remainingTimeMinutes": {
     "placeholders": {

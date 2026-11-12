@@ -88,7 +88,10 @@ class _BreathingPageState extends State<BreathingPage>
           child: LayoutBuilder(
             builder: (context, bounds) => SingleChildScrollView(
               child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: bounds.maxHeight),
+                constraints: BoxConstraints(
+                  minWidth: bounds.maxWidth,
+                  minHeight: bounds.maxHeight,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 28,

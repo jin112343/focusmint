@@ -36,6 +36,27 @@ Future<void> showGuide(
 }
 
 void main() {
+  testWidgets('guide stays horizontally centered on phones and tablets', (
+    tester,
+  ) async {
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    for (final size in [const Size(390, 844), const Size(834, 1194)]) {
+      tester.view.physicalSize = size;
+      await showGuide(tester);
+      for (final finder in [
+        find.byKey(const ValueKey('breathing-visual')),
+        find.byKey(const ValueKey('breathing-phase')),
+        find.byType(LinearProgressIndicator),
+      ]) {
+        expect(tester.getCenter(finder).dx, closeTo(size.width / 2, 0.5));
+      }
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox.shrink());
+    }
+  });
+
   testWidgets(
     'inhales for four seconds, exhales for six and completes one breath',
     (tester) async {

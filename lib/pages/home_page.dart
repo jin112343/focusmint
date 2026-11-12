@@ -208,6 +208,7 @@ class _HomePageState extends ConsumerState<HomePage>
                 AppLocalizations.of(context)!.stressReductionMessage,
                 style: const TextStyle(
                   fontSize: 16,
+                  height: 1.5,
                   color: AppColors.textSecondary,
                   fontWeight: FontWeight.w500,
                 ),
