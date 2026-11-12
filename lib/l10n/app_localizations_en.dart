@@ -433,19 +433,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get smileImages => 'Smile';
 
   @override
-  String get vegetableImages => 'Vegetables';
+  String get vegetableImages => 'Nourishing food';
 
   @override
-  String get healthImages => 'Health';
+  String get healthImages => 'Movement & connection';
 
   @override
-  String get sadImages => 'Sad';
+  String get sadImages => 'Anger, sadness & worry';
 
   @override
-  String get badFoodImages => 'Bad Food';
+  String get badFoodImages => 'Junk food & sweets';
 
   @override
-  String get badImages => 'Bad';
+  String get badImages => 'Unhealthy habits';
 
   @override
   String get imageManagementHint =>
@@ -700,4 +700,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get supportPrivacy => 'About contact data';
+
+  @override
+  String get breathingTitle => 'Take a breath';
+
+  @override
+  String get breathingHint =>
+      'Follow the gentle movement\nof the lungs at a comfortable pace.';
+
+  @override
+  String get breathingIn => 'Breathe in';
+
+  @override
+  String get breathingOut => 'Breathe out';
+
+  @override
+  String breathingRound(int current, int total) {
+    return 'Round $current of $total';
+  }
+
+  @override
+  String get breathingProgress => 'Breathing progress';
+
+  @override
+  String get breathingResultHint => 'Your results will appear automatically.';
+
+  @override
+  String get breathingSkip => 'Skip to results';
 }

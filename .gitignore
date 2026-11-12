@@ -46,7 +46,7 @@ app.*.map.json
 /android/app/release
 
 # Local image-generation controller state locks and Python caches
-/StoreAssets/image-review/*.lock
+/StoreAssets/image-review/**/*.lock
 **/__pycache__/
 
 # Local support server state and credentials

@@ -20,7 +20,7 @@ void main() {
   setUp(() => SharedPreferences.setMockInitialValues({}));
 
   test(
-    'all 291 catalog images are bundled square WebP files within the cap',
+    'all 367 catalog images are bundled square WebP files within the cap',
     () async {
       final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
       final bundled = manifest
@@ -31,7 +31,7 @@ void main() {
             ).hasMatch(path),
           )
           .toSet();
-      expect(catalog, hasLength(291));
+      expect(catalog, hasLength(367));
       expect(bundled, catalog.map((name) => 'assets/images/$name').toSet());
       for (final name in catalog) {
         expect(name, endsWith('.webp'));
@@ -107,7 +107,7 @@ void main() {
         expected,
       );
       final available = await hidden.getAvailableImages();
-      expect(available, hasLength(285));
+      expect(available, hasLength(catalog.length - 6));
       expect(
         available.every(
           (path) =>
@@ -169,7 +169,7 @@ void main() {
       final vegetables = PlaceholderImages.positiveImages
           .where((name) => name.startsWith('vegetables_'))
           .toList();
-      expect(vegetables, hasLength(16));
+      expect(vegetables, hasLength(48));
       expect(
         await HiddenImageService().setHiddenImages(
           vegetables.take(15).map((name) => 'assets/images/$name').toSet(),
@@ -180,9 +180,13 @@ void main() {
         ImageGroup.group2,
       );
       expect(food, hasLength(4));
+      final positiveFood = food.where(
+        (path) => path.startsWith('assets/images/vegetables_'),
+      );
+      expect(positiveFood, hasLength(1));
       expect(
-        food.where((path) => path.startsWith('assets/images/vegetables_')),
-        ['assets/images/${vegetables.last}'],
+        vegetables.skip(15).map((name) => 'assets/images/$name'),
+        contains(positiveFood.single),
       );
 
       final workImages = PlaceholderImages.negativeImages

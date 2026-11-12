@@ -5,12 +5,13 @@
 ## 現在の機能
 
 - 表情・生活・食べ物のトレーニングと成績・履歴の表示。
-- 同梱画像291枚、画像の非表示設定、自分の写真の追加。
+- 同梱画像367枚、画像の非表示設定、自分の写真の追加。
 - 縦横比を保つ共通の画像表示と、表示寸法に合わせたデコード。
 - ホーム最下部・設定画面から利用できる匿名のお問い合わせトーク。本文・画像、再試行、未読表示、履歴削除に対応。
 - 問い合わせ受信時に開発者へメール通知。
+- トレーニング後に肺と空気の流れを描く呼吸ガイドを表示し、自動で結果へ移行。スキップ・動きを減らす設定に対応。
 
-1.3.5では同梱画像をすべて新しい512×512のWebPへ置き換え、画像の合計容量を43.4MBから10.3MBへ減らしました。詳細は[画像の確認・軽量化記録](StoreAssets/image-review/README.md)、問い合わせの仕様は[Backend/README.md](Backend/README.md)、提出状態は[1.3.5の提出記録](StoreAssets/1.3.5/release.md)にあります。
+1.3.5では同梱画像を新しい512×512のWebPへ置き換えました。追加の見直しで子どもの表情、魚・果物・ナッツ、運動・交流などを増やしています。容量と採用内容は[画像の確認・軽量化記録](StoreAssets/image-review/README.md)、問い合わせの仕様は[Backend/README.md](Backend/README.md)、提出状態は[1.3.5の提出記録](StoreAssets/1.3.5/release.md)にあります。
 
 ## 開発と検証
 
@@ -27,6 +28,7 @@ flutter analyze
 
 ```sh
 flutter test integration_test/support_flow_test.dart -d DEVICE_ID
+flutter test integration_test/breathing_flow_test.dart -d DEVICE_ID
 ```
 
 Androidのリリース署名には、リポジトリ外で管理するアップロード用キーストアと`KEYSTORE_PASSWORD`・`KEY_PASSWORD`・`KEY_ALIAS`の環境変数が必要です。iOSにはApp Store配布用の署名設定が必要です。

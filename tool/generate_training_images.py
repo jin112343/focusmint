@@ -3,8 +3,10 @@
 
 The ledger records conservative reservations, NOT measured billed spend. Each CLI
 job reserves $0.30 including the SDK's at-most-two automatic retries. Reservations
-are not refunded, including on timeout or failure. A prior-sample allowance of $5
-is included. Fixed settings and bounded prompts are required for this allowance.
+are not refunded, including on timeout or failure. Earlier paid work is carried forward as a conservative fixed allowance: $5 for
+the initial pass, $25 for review, or $88 after the final reconciliation. These are
+phases of the same $100 total budget, not separate budgets. Fixed settings and
+bounded prompts are required for this allowance.
 """
 import argparse
 import fcntl
@@ -20,6 +22,11 @@ import tempfile
 BUDGET_CENTS = 10000
 PRIOR_ALLOWANCE_CENTS = 500
 JOB_RESERVATION_CENTS = 30
+# A second review pass carries forward a fixed $25 allowance after the previous
+# 292 reserved jobs were reconciled against 293 dashboard requests. The private
+# account snapshot is kept outside Git; this allowance includes late-billing room.
+REVIEW_PRIOR_ALLOWANCE_CENTS = 2500
+BALANCE_PRIOR_ALLOWANCE_CENTS = 8800
 EXPECTED = {'model': 'gpt-image-2', 'n': 1, 'size': '1024x1024',
             'quality': 'medium', 'output_format': 'webp', 'output_compression': 95}
 PRICING_SOURCE = 'https://developers.openai.com/api/docs/guides/image-generation#historical-output-costs'
@@ -40,10 +47,14 @@ def validate_jobs(jobs):
         seen.add(name)
 
 
-def new_ledger():
+def new_ledger(phase='initial'):
+    if phase not in ('initial', 'review', 'balance'):
+        raise ValueError('Unknown generation phase.')
     return {
-        'schema': 1, 'budgetCents': BUDGET_CENTS,
-        'priorSampleAllowanceCents': PRIOR_ALLOWANCE_CENTS,
+        'schema': {'initial': 1, 'review': 2, 'balance': 3}[phase], 'budgetCents': BUDGET_CENTS,
+        'priorSampleAllowanceCents': {'initial': PRIOR_ALLOWANCE_CENTS,
+                                     'review': REVIEW_PRIOR_ALLOWANCE_CENTS,
+                                     'balance': BALANCE_PRIOR_ALLOWANCE_CENTS}[phase],
         'jobReservationCents': JOB_RESERVATION_CENTS,
         'pricingSource': PRICING_SOURCE,
         'accounting': 'conservative reservations; not measured API billing',
@@ -53,12 +64,17 @@ def new_ledger():
 
 def reserved_cents(ledger):
     # Never trust a modified budget or lower reservation in a resumed ledger.
+    schema = ledger.get('schema')
+    if schema not in (1, 2, 3):
+        raise ValueError('Unknown budget ledger schema.')
+    prior = {1: PRIOR_ALLOWANCE_CENTS, 2: REVIEW_PRIOR_ALLOWANCE_CENTS,
+             3: BALANCE_PRIOR_ALLOWANCE_CENTS}[schema]
     if (ledger['budgetCents'], ledger['priorSampleAllowanceCents'], ledger['jobReservationCents']) != (
-            BUDGET_CENTS, PRIOR_ALLOWANCE_CENTS, JOB_RESERVATION_CENTS):
+            BUDGET_CENTS, prior, JOB_RESERVATION_CENTS):
         raise ValueError('Budget ledger limits were modified.')
     if any(entry['reservationCents'] != JOB_RESERVATION_CENTS for entry in ledger['jobs']):
         raise ValueError('Budget reservation was modified.')
-    return PRIOR_ALLOWANCE_CENTS + sum(entry['reservationCents'] for entry in ledger['jobs'])
+    return prior + sum(entry['reservationCents'] for entry in ledger['jobs'])
 
 
 def reserve(ledger, jobs):
@@ -70,6 +86,35 @@ def reserve(ledger, jobs):
             'out': job['out'], 'promptSha256': hashlib.sha256(job['prompt'].encode()).hexdigest(),
             'reservationCents': JOB_RESERVATION_CENTS, 'state': 'reserved',
         })
+
+
+def validate_balance_evidence(evidence):
+    """Include dashboard lag and even all possible earlier SDK retries.
+
+    The completed review batch has 233 jobs, at most three calls each. A call
+    allowance of $0.10 covers medium 1024 output plus the bounded text prompt.
+    Unused room in the earlier $25 allowance is also carried forward. Actual
+    account observations stay in a private file outside the repository.
+    """
+    if (evidence.get('project') != 'Default project' or
+            evidence.get('scope') != 'All API keys, all API sources, last 7 days' or
+            evidence.get('completedReviewJobs') != 233):
+        raise ValueError('Cost snapshot does not match the earlier batches.')
+    earlier_requests = evidence.get('earlierRequests', 0)
+    earlier_spend = evidence.get('earlierSpendUSD', -1)
+    requests = evidence.get('displayedRequests', 0)
+    spend = evidence.get('displayedSpendUSD', -1)
+    if (not isinstance(earlier_requests, int) or earlier_requests < 1 or
+            not isinstance(requests, int) or requests < earlier_requests or
+            not 0 <= earlier_spend <= 25 or not earlier_spend <= spend <= 88):
+        raise ValueError('Cost snapshot is incomplete.')
+    observed_calls = min(233 * 3, requests - earlier_requests)
+    possible_unbilled_calls = 233 * 3 - observed_calls
+    earlier_buffer = REVIEW_PRIOR_ALLOWANCE_CENTS - round(earlier_spend * 100)
+    upper_cents = round(spend * 100) + possible_unbilled_calls * 10 + earlier_buffer
+    if upper_cents > BALANCE_PRIOR_ALLOWANCE_CENTS:
+        raise ValueError('Earlier spend plus all possible delayed calls exceeds the carry-forward allowance.')
+    return upper_cents
 
 
 def save_ledger(path, ledger):
@@ -88,6 +133,10 @@ def main():
     parser.add_argument('--input', type=Path, default=Path('StoreAssets/image-review/replacement-jobs.jsonl'))
     parser.add_argument('--out-dir', type=Path, default=Path('output/imagegen/training'))
     parser.add_argument('--ledger', type=Path, default=Path('StoreAssets/image-review/api-budget.json'))
+    parser.add_argument('--phase', choices=('initial', 'review', 'balance'), default='initial',
+                        help='Carry forward earlier work: initial $5, review $25, balance $88; total ceiling stays $100.')
+    parser.add_argument('--cost-evidence', type=Path,
+                        help='Private dashboard snapshot required before the final $88 carry-forward phase.')
     parser.add_argument('--cli', type=Path, default=Path.home() / '.codex/skills/.system/imagegen/scripts/image_gen.py')
     parser.add_argument('--limit', type=int)
     parser.add_argument('--concurrency', type=int, choices=range(1, 9), default=6)
@@ -103,7 +152,9 @@ def main():
     # Serialize controllers, including concurrent invocations from another terminal.
     with args.ledger.with_suffix('.lock').open('w') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        ledger = json.loads(args.ledger.read_text()) if args.ledger.exists() else new_ledger()
+        ledger = json.loads(args.ledger.read_text()) if args.ledger.exists() else new_ledger(args.phase)
+        if ledger.get('schema') != {'initial': 1, 'review': 2, 'balance': 3}[args.phase]:
+            parser.error('Ledger belongs to a different generation phase.')
         previously_reserved = {entry['out'] for entry in ledger['jobs']}
         pending = [job for job in jobs if job['out'] not in previously_reserved]
         if args.limit:
@@ -120,6 +171,15 @@ def main():
         }, indent=2), flush=True)
         if args.dry_run or not pending:
             return 0
+        if args.phase == 'balance':
+            if not args.cost_evidence:
+                parser.error('A reconciled private cost snapshot is required for this phase.')
+            evidence = json.loads(args.cost_evidence.read_text())
+            try:
+                validate_balance_evidence(evidence)
+            except ValueError as error:
+                parser.error(str(error))
+            ledger['costEvidenceSha256'] = hashlib.sha256(args.cost_evidence.read_bytes()).hexdigest()
         if args.env_file:
             for line in args.env_file.read_text().splitlines():
                 match = re.fullmatch(r'\s*(?:export\s+)?OPENAI_API_KEY\s*=\s*(.*?)\s*', line)

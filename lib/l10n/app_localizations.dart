@@ -881,31 +881,31 @@ abstract class AppLocalizations {
   /// No description provided for @vegetableImages.
   ///
   /// In en, this message translates to:
-  /// **'Vegetables'**
+  /// **'Nourishing food'**
   String get vegetableImages;
 
   /// No description provided for @healthImages.
   ///
   /// In en, this message translates to:
-  /// **'Health'**
+  /// **'Movement & connection'**
   String get healthImages;
 
   /// No description provided for @sadImages.
   ///
   /// In en, this message translates to:
-  /// **'Sad'**
+  /// **'Anger, sadness & worry'**
   String get sadImages;
 
   /// No description provided for @badFoodImages.
   ///
   /// In en, this message translates to:
-  /// **'Bad Food'**
+  /// **'Junk food & sweets'**
   String get badFoodImages;
 
   /// No description provided for @badImages.
   ///
   /// In en, this message translates to:
-  /// **'Bad'**
+  /// **'Unhealthy habits'**
   String get badImages;
 
   /// No description provided for @imageManagementHint.
@@ -1351,6 +1351,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'About contact data'**
   String get supportPrivacy;
+
+  /// No description provided for @breathingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a breath'**
+  String get breathingTitle;
+
+  /// No description provided for @breathingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow the gentle movement\nof the lungs at a comfortable pace.'**
+  String get breathingHint;
+
+  /// No description provided for @breathingIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Breathe in'**
+  String get breathingIn;
+
+  /// No description provided for @breathingOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Breathe out'**
+  String get breathingOut;
+
+  /// No description provided for @breathingRound.
+  ///
+  /// In en, this message translates to:
+  /// **'Round {current} of {total}'**
+  String breathingRound(int current, int total);
+
+  /// No description provided for @breathingProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Breathing progress'**
+  String get breathingProgress;
+
+  /// No description provided for @breathingResultHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your results will appear automatically.'**
+  String get breathingResultHint;
+
+  /// No description provided for @breathingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip to results'**
+  String get breathingSkip;
 }
 
 class _AppLocalizationsDelegate

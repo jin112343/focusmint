@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:focusmint/pages/result_page.dart';
+import 'package:focusmint/pages/breathing_page.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/image_service.dart';
 import 'package:focusmint/services/speed_score_service.dart';
@@ -52,13 +52,13 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
         _remainingSeconds--;
       });
 
-      // 残り時間が0になったら結果画面に遷移
+      // 成績を保存してから呼吸ガイドへ進み、その後で結果を表示する。
       if (_remainingSeconds <= 0) {
         timer.cancel();
         _sessionEnded = true;
         _selectionTimer?.cancel();
         _saveSessionData().then((_) {
-          _navigateToResult();
+          _navigateToBreathing();
         });
       }
     });
@@ -88,11 +88,11 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
     await _speedScoreService.addTotalScore(_currentPoints);
   }
 
-  void _navigateToResult() {
+  void _navigateToBreathing() {
     if (mounted) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => ResultPage(currentScore: _currentPoints),
+          builder: (context) => BreathingPage(currentScore: _currentPoints),
         ),
       );
     }

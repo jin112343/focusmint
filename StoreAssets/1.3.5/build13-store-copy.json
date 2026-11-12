@@ -1,0 +1,138 @@
+{
+  "en": [
+    "FocusMint is a one-minute positive image search exercise. Tap positive pictures, add your own photos and review your training history. No ads or account required.\n\nTraining history stays on your device. Optional support chat sends your messages and attachments to the developer. Firebase processes usage and image-selection statistics. This is a self-care exercise, not medical treatment.",
+    "Expanded training images to 367 and improved the variety and clarity of expressions, food and activities. Added a breathing animation after training, followed automatically by results."
+  ],
+  "ja": [
+    "FocusMintは、複数の画像からポジティブな画像を見つけてタップする、1分間のトレーニングアプリです。自分の写真の追加や、トレーニング履歴の確認もできます。広告表示やアカウント登録はありません。\n\nトレーニング履歴は端末内に保存します。任意のお問い合わせトークでは、本文・添付画像を開発者に送信します。利用状況と画像選択の統計にはFirebaseを使用します。セルフケアの練習を目的としており、医療行為や治療を提供するものではありません。",
+    "画像を367枚に拡充し、子どもの表情、食事、運動・交流などを追加・見直しました。トレーニング後に呼吸アニメーションを表示し、終了後は自動で結果に進みます。"
+  ],
+  "de": [
+    "FocusMint bietet eine einminütige Übung zur Suche nach positiven Bildern. Tippe positive Bilder an, füge eigene Fotos hinzu und sieh deinen Trainingsverlauf an. Ohne Werbung und Benutzerkonto.\n\nDer Trainingsverlauf bleibt auf deinem Gerät. Im optionalen Support-Chat werden Nachrichten und Anhänge an den Entwickler gesendet. Firebase verarbeitet Nutzungs- und Bildauswahlstatistiken. Die Übung dient der Selbstfürsorge, nicht der medizinischen Behandlung.",
+    "Die Bildauswahl wurde auf 367 erweitert; Gesichtsausdrücke, Essen und Aktivitäten sind vielfältiger und deutlicher. Nach dem Training folgt eine Atemanimation, danach automatisch das Ergebnis."
+  ],
+  "fr": [
+    "FocusMint propose un exercice d’une minute pour repérer des images positives. Touchez les images positives, ajoutez vos photos et consultez votre historique. Sans publicité ni compte.\n\nL’historique reste sur votre appareil. Le chat d’assistance facultatif transmet vos messages et pièces jointes au développeur. Firebase traite les statistiques d’utilisation et de sélection d’images. Cet exercice de bien-être ne constitue pas un traitement médical.",
+    "La sélection passe à 367 images, avec des expressions, aliments et activités plus variés et lisibles. Une animation de respiration suit l’entraînement, puis les résultats s’affichent automatiquement."
+  ],
+  "es": [
+    "FocusMint ofrece un ejercicio de un minuto para buscar imágenes positivas. Toca imágenes positivas, añade tus fotos y consulta tu historial. Sin anuncios ni registro.\n\nEl historial permanece en tu dispositivo. El chat de ayuda opcional envía tus mensajes y archivos adjuntos al desarrollador. Firebase procesa estadísticas de uso y selección de imágenes. Es un ejercicio de autocuidado, no un tratamiento médico.",
+    "Ampliamos las imágenes a 367 y mejoramos la variedad y claridad de expresiones, alimentos y actividades. Añadimos una animación de respiración tras el entrenamiento y el paso automático a los resultados."
+  ],
+  "pt": [
+    "O FocusMint oferece um exercício de um minuto para encontrar imagens positivas. Toque nas imagens positivas, adicione as suas fotografias e consulte o histórico. Sem anúncios nem conta.\n\nO histórico fica no dispositivo. O chat de apoio opcional envia mensagens e anexos ao programador. O Firebase processa estatísticas de utilização e seleção de imagens. É um exercício de autocuidado, não um tratamento médico.",
+    "A seleção foi ampliada para 367 imagens, com expressões, alimentos e atividades mais variados e claros. Adicionámos uma animação de respiração após o treino, seguida automaticamente dos resultados."
+  ],
+  "pt-BR": [
+    "O FocusMint oferece um exercício de um minuto para encontrar imagens positivas. Toque nas imagens positivas, adicione suas fotos e veja o histórico. Sem anúncios nem cadastro.\n\nO histórico fica no dispositivo. O chat de suporte opcional envia mensagens e anexos ao desenvolvedor. O Firebase processa estatísticas de uso e seleção de imagens. É um exercício de autocuidado, não um tratamento médico.",
+    "Ampliamos a seleção para 367 imagens, com expressões, alimentos e atividades mais variados e claros. Adicionamos uma animação de respiração após o treino, seguida automaticamente dos resultados."
+  ],
+  "it": [
+    "FocusMint propone un esercizio di un minuto per individuare immagini positive. Tocca le immagini positive, aggiungi le tue foto e consulta la cronologia. Senza pubblicità né account.\n\nLa cronologia resta sul dispositivo. La chat di assistenza facoltativa invia messaggi e allegati allo sviluppatore. Firebase elabora statistiche di utilizzo e selezione delle immagini. È un esercizio di cura di sé, non un trattamento medico.",
+    "La raccolta sale a 367 immagini, con espressioni, cibi e attività più vari e riconoscibili. Dopo l’allenamento appare un’animazione per respirare, seguita automaticamente dai risultati."
+  ],
+  "zh-Hans": [
+    "FocusMint 是一款每次一分钟的积极图片搜索练习应用。点击积极的图片，添加自己的照片，并查看训练记录。无需注册，没有广告。\n\n训练记录保存在设备本地。可选的客服聊天会将消息和附件发送给开发者。Firebase 用于处理使用情况和图片选择统计。这是自我关怀练习，不提供医疗诊断或治疗。",
+    "图片扩充至367张，增加并优化了儿童表情、食物、运动和交流等内容。训练结束后新增呼吸动画，完成后自动显示结果。"
+  ],
+  "zh-Hant": [
+    "FocusMint 是一款每次一分鐘的正向圖片搜尋練習應用程式。點選正向圖片，加入自己的照片，並查看訓練紀錄。無需註冊，沒有廣告。\n\n訓練紀錄儲存在裝置本機。選用的客服對話會將訊息與附件傳送給開發者。Firebase 用於處理使用情況與圖片選擇統計。這是自我照顧練習，不提供醫療診斷或治療。",
+    "圖片擴充至367張，增加並改善了兒童表情、食物、運動和交流等內容。訓練結束後新增呼吸動畫，完成後自動顯示結果。"
+  ],
+  "ko": [
+    "FocusMint는 여러 사진 중 긍정적인 사진을 찾아 누르는 1분 훈련 앱입니다. 내 사진을 추가하고 훈련 기록을 확인할 수 있습니다. 광고나 회원가입이 없습니다.\n\n훈련 기록은 기기에 저장됩니다. 선택 사항인 문의 채팅은 메시지와 첨부 이미지를 개발자에게 전송합니다. Firebase로 사용 및 이미지 선택 통계를 처리합니다. 자기 관리 연습을 위한 앱이며 의료 진단이나 치료를 제공하지 않습니다.",
+    "이미지를 367장으로 늘리고 어린이 표정, 음식, 운동과 교류 등 이미지의 다양성과 구분을 개선했습니다. 훈련 후 호흡 애니메이션을 추가했으며, 종료되면 결과로 자동 이동합니다."
+  ],
+  "ar": [
+    "FocusMint تمرين لمدة دقيقة للعثور على الصور الإيجابية. اضغط الصور الإيجابية وأضف صورك وراجع سجل التدريب. بلا إعلانات أو حساب.\n\nيبقى سجل التدريب على جهازك. ترسل محادثة الدعم الاختيارية رسائلك ومرفقاتك إلى المطوّر. يعالج Firebase إحصاءات الاستخدام واختيار الصور. هذا تمرين للعناية بالنفس وليس علاجًا طبيًا.",
+    "زاد عدد الصور إلى 367، مع تنوع ووضوح أكبر للتعابير والأطعمة والأنشطة. أضفنا رسوماً متحركة للتنفس بعد التدريب، ثم تظهر النتائج تلقائياً."
+  ],
+  "he": [
+    "FocusMint מציעה תרגול של דקה לאיתור תמונות חיוביות. הקישו על תמונות חיוביות, הוסיפו תמונות משלכם וצפו בהיסטוריית האימונים. ללא פרסומות או חשבון.\n\nההיסטוריה נשמרת במכשיר. צ׳אט התמיכה האופציונלי שולח הודעות וקבצים מצורפים למפתח. Firebase מעבד נתוני שימוש ובחירת תמונות. זהו תרגול לטיפוח עצמי, ולא טיפול רפואי.",
+    "מבחר התמונות הורחב ל-367, עם הבעות, מאכלים ופעילויות מגוונים וברורים יותר. נוספה אנימציית נשימה לאחר האימון, ולאחריה מעבר אוטומטי לתוצאות."
+  ],
+  "hi": [
+    "FocusMint सकारात्मक तस्वीरें खोजने का एक मिनट का अभ्यास है। सकारात्मक तस्वीरों पर टैप करें, अपनी तस्वीरें जोड़ें और अभ्यास का इतिहास देखें। कोई विज्ञापन या खाता आवश्यक नहीं है।\n\nअभ्यास का इतिहास आपके डिवाइस पर रहता है। वैकल्पिक सहायता चैट आपके संदेश और अटैचमेंट डेवलपर को भेजती है। उपयोग और तस्वीर चयन के आँकड़े Firebase पर संसाधित होते हैं। यह स्वयं की देखभाल का अभ्यास है, चिकित्सा उपचार नहीं।",
+    "तस्वीरों की संख्या 367 की गई और भावों, भोजन व गतिविधियों की विविधता और स्पष्टता बेहतर की गई। अभ्यास के बाद श्वास एनीमेशन जोड़ा गया, जिसके बाद परिणाम अपने आप दिखते हैं।"
+  ],
+  "id": [
+    "FocusMint adalah latihan satu menit untuk menemukan gambar positif. Ketuk gambar positif, tambahkan foto sendiri, dan lihat riwayat latihan. Tanpa iklan atau akun.\n\nRiwayat tetap di perangkat. Chat bantuan opsional mengirim pesan dan lampiran kepada pengembang. Firebase memproses statistik penggunaan dan pilihan gambar. Ini latihan perawatan diri, bukan pengobatan medis.",
+    "Pilihan gambar diperluas menjadi 367 dengan ekspresi, makanan, dan aktivitas yang lebih beragam dan jelas. Animasi pernapasan ditambahkan setelah latihan, lalu hasil ditampilkan secara otomatis."
+  ],
+  "ms": [
+    "FocusMint ialah latihan satu minit untuk mencari imej positif. Ketik imej positif, tambah foto sendiri dan lihat sejarah latihan. Tiada iklan atau akaun diperlukan.\n\nSejarah kekal pada peranti. Sembang sokongan pilihan menghantar mesej dan lampiran kepada pembangun. Firebase memproses statistik penggunaan dan pemilihan imej. Ini latihan penjagaan diri, bukan rawatan perubatan.",
+    "Pilihan imej diperluas kepada 367, dengan ekspresi, makanan dan aktiviti yang lebih pelbagai dan jelas. Animasi pernafasan ditambah selepas latihan, diikuti paparan keputusan secara automatik."
+  ],
+  "th": [
+    "FocusMint คือแบบฝึกค้นหาภาพเชิงบวกครั้งละหนึ่งนาที แตะภาพเชิงบวก เพิ่มรูปของคุณ และดูประวัติการฝึก ไม่มีโฆษณาและไม่ต้องสมัครบัญชี\n\nประวัติการฝึกเก็บไว้ในอุปกรณ์ แชตช่วยเหลือที่เลือกใช้ได้จะส่งข้อความและไฟล์แนบให้ผู้พัฒนา Firebase ประมวลผลสถิติการใช้งานและการเลือกภาพ นี่คือแบบฝึกดูแลตนเอง ไม่ใช่การรักษาทางการแพทย์",
+    "เพิ่มภาพเป็น 367 ภาพ พร้อมปรับความหลากหลายและความชัดเจนของสีหน้า อาหาร และกิจกรรม เพิ่มแอนิเมชันการหายใจหลังฝึก และแสดงผลลัพธ์โดยอัตโนมัติเมื่อจบ"
+  ],
+  "vi": [
+    "FocusMint là bài tập một phút tìm hình ảnh tích cực. Chạm vào ảnh tích cực, thêm ảnh riêng và xem lịch sử luyện tập. Không quảng cáo, không cần tài khoản.\n\nLịch sử được lưu trên thiết bị. Trò chuyện hỗ trợ tùy chọn gửi tin nhắn và tệp đính kèm cho nhà phát triển. Firebase xử lý thống kê sử dụng và lựa chọn ảnh. Đây là bài tập chăm sóc bản thân, không phải điều trị y tế.",
+    "Tăng bộ ảnh lên 367 ảnh với biểu cảm, món ăn và hoạt động đa dạng, dễ nhận biết hơn. Thêm hoạt ảnh hướng dẫn thở sau luyện tập, sau đó tự động hiển thị kết quả."
+  ],
+  "ru": [
+    "FocusMint — минутное упражнение по поиску позитивных изображений. Нажимайте на позитивные картинки, добавляйте свои фото и просматривайте историю тренировок. Без рекламы и регистрации.\n\nИстория хранится на устройстве. Необязательный чат поддержки отправляет сообщения и вложения разработчику. Firebase обрабатывает статистику использования и выбора изображений. Это упражнение для заботы о себе, а не медицинское лечение.",
+    "Набор расширен до 367 изображений: эмоции, еда и занятия стали разнообразнее и понятнее. После тренировки добавлена дыхательная анимация с автоматическим переходом к результатам."
+  ],
+  "uk": [
+    "FocusMint — хвилинна вправа з пошуку позитивних зображень. Натискайте позитивні картинки, додавайте власні фото й переглядайте історію тренувань. Без реклами та реєстрації.\n\nІсторія зберігається на пристрої. Необов’язковий чат підтримки надсилає повідомлення й вкладення розробнику. Firebase обробляє статистику використання та вибору зображень. Це вправа для турботи про себе, а не медичне лікування.",
+    "Набір розширено до 367 зображень: емоції, їжа й заняття стали різноманітнішими та зрозумілішими. Після тренування додано дихальну анімацію з автоматичним переходом до результатів."
+  ],
+  "pl": [
+    "FocusMint to minutowe ćwiczenie wyszukiwania pozytywnych obrazów. Dotykaj pozytywnych zdjęć, dodawaj własne i przeglądaj historię treningów. Bez reklam i konta.\n\nHistoria pozostaje na urządzeniu. Opcjonalny czat pomocy wysyła wiadomości i załączniki do twórcy. Firebase przetwarza statystyki użycia i wyboru obrazów. To ćwiczenie dbania o siebie, a nie leczenie medyczne.",
+    "Rozszerzono zestaw do 367 obrazów, z bardziej różnorodnymi i czytelnymi emocjami, jedzeniem i aktywnościami. Po treningu dodano animację oddechową i automatyczne przejście do wyników."
+  ],
+  "cs": [
+    "FocusMint nabízí minutové cvičení hledání pozitivních obrázků. Klepejte na pozitivní snímky, přidávejte vlastní fotografie a sledujte historii tréninku. Bez reklam a účtu.\n\nHistorie zůstává v zařízení. Volitelný chat podpory posílá zprávy a přílohy vývojáři. Firebase zpracovává statistiky používání a výběru obrázků. Jde o cvičení péče o sebe, nikoli o lékařskou léčbu.",
+    "Sadu jsme rozšířili na 367 obrázků s pestřejšími a zřetelnějšími výrazy, jídlem a aktivitami. Po tréninku následuje dechová animace a automatický přechod na výsledky."
+  ],
+  "sk": [
+    "FocusMint ponúka minútové cvičenie hľadania pozitívnych obrázkov. Ťukajte na pozitívne snímky, pridajte vlastné fotografie a sledujte históriu tréningu. Bez reklám a účtu.\n\nHistória zostáva v zariadení. Voliteľný čet podpory odosiela správy a prílohy vývojárovi. Firebase spracúva štatistiky používania a výberu obrázkov. Ide o cvičenie starostlivosti o seba, nie o lekársku liečbu.",
+    "Súbor sme rozšírili na 367 obrázkov s pestrejšími a zreteľnejšími výrazmi, jedlom a aktivitami. Po tréningu nasleduje dychová animácia a automatický prechod na výsledky."
+  ],
+  "hu": [
+    "A FocusMint egyperces gyakorlat pozitív képek keresésére. Koppints a pozitív képekre, adj hozzá saját fotókat, és nézd meg az edzési előzményeket. Reklámok és fiók nélkül.\n\nAz előzmények az eszközön maradnak. Az opcionális ügyfélszolgálati csevegés üzeneteket és mellékleteket küld a fejlesztőnek. A Firebase használati és képválasztási statisztikákat dolgoz fel. Ez öngondoskodási gyakorlat, nem orvosi kezelés.",
+    "A képkészlet 367 képre bővült, változatosabb és egyértelműbb arckifejezésekkel, ételekkel és tevékenységekkel. Az edzés után légzőanimáció jelenik meg, majd automatikusan az eredmények."
+  ],
+  "ro": [
+    "FocusMint este un exercițiu de un minut pentru găsirea imaginilor pozitive. Atinge imagini pozitive, adaugă fotografii proprii și consultă istoricul antrenamentelor. Fără reclame sau cont.\n\nIstoricul rămâne pe dispozitiv. Chatul de asistență opțional trimite mesaje și atașamente dezvoltatorului. Firebase procesează statistici de utilizare și selecție a imaginilor. Este un exercițiu de îngrijire personală, nu un tratament medical.",
+    "Am extins colecția la 367 de imagini, cu expresii, alimente și activități mai variate și clare. După antrenament urmează o animație de respirație, apoi rezultatele apar automat."
+  ],
+  "hr": [
+    "FocusMint je jednominutna vježba traženja pozitivnih slika. Dodirujte pozitivne slike, dodajte vlastite fotografije i pregledajte povijest treninga. Bez oglasa i računa.\n\nPovijest ostaje na uređaju. Neobavezni razgovor s podrškom šalje poruke i privitke razvojnom programeru. Firebase obrađuje statistiku korištenja i odabira slika. Ovo je vježba brige o sebi, a ne medicinsko liječenje.",
+    "Zbirka je proširena na 367 slika s raznovrsnijim i jasnijim izrazima lica, hranom i aktivnostima. Nakon treninga slijedi animacija disanja, a zatim automatski prikaz rezultata."
+  ],
+  "el": [
+    "Το FocusMint είναι άσκηση ενός λεπτού για αναζήτηση θετικών εικόνων. Πατήστε θετικές εικόνες, προσθέστε δικές σας φωτογραφίες και δείτε το ιστορικό σας. Χωρίς διαφημίσεις ή λογαριασμό.\n\nΤο ιστορικό παραμένει στη συσκευή. Η προαιρετική συνομιλία υποστήριξης στέλνει μηνύματα και συνημμένα στον προγραμματιστή. Το Firebase επεξεργάζεται στατιστικά χρήσης και επιλογής εικόνων. Πρόκειται για άσκηση αυτοφροντίδας, όχι για ιατρική θεραπεία.",
+    "Η συλλογή επεκτάθηκε σε 367 εικόνες, με πιο ποικίλες και ξεκάθαρες εκφράσεις, τρόφιμα και δραστηριότητες. Μετά την άσκηση προστέθηκε κινούμενος οδηγός αναπνοής και αυτόματη μετάβαση στα αποτελέσματα."
+  ],
+  "tr": [
+    "FocusMint, olumlu görselleri bulmak için bir dakikalık alıştırmadır. Olumlu resimlere dokunun, kendi fotoğraflarınızı ekleyin ve geçmişinizi inceleyin. Reklam ve hesap gerektirmez.\n\nAlıştırma geçmişi cihazınızda kalır. İsteğe bağlı destek sohbeti mesajları ve ekleri geliştiriciye gönderir. Firebase kullanım ve görsel seçimi istatistiklerini işler. Bu bir öz bakım alıştırmasıdır, tıbbi tedavi değildir.",
+    "Görsel koleksiyonu 367’ye çıkarıldı; ifadeler, yiyecekler ve etkinlikler daha çeşitli ve anlaşılır hale getirildi. Alıştırma sonrasında nefes animasyonu ve sonuçlara otomatik geçiş eklendi."
+  ],
+  "nl": [
+    "FocusMint is een oefening van één minuut om positieve beelden te vinden. Tik op positieve afbeeldingen, voeg eigen foto's toe en bekijk je trainingsgeschiedenis. Zonder advertenties of account.\n\nJe geschiedenis blijft op je apparaat. De optionele supportchat verstuurt berichten en bijlagen naar de ontwikkelaar. Firebase verwerkt gebruiks- en beeldselectiestatistieken. Dit is een oefening voor zelfzorg, geen medische behandeling.",
+    "De selectie is uitgebreid tot 367 afbeeldingen met meer variatie en duidelijkere emoties, voeding en activiteiten. Na de training volgt een ademhalingsanimatie en daarna automatisch het resultaat."
+  ],
+  "da": [
+    "FocusMint er en øvelse på ét minut i at finde positive billeder. Tryk på positive billeder, tilføj egne fotos, og se din træningshistorik. Uden reklamer eller konto.\n\nHistorikken bliver på din enhed. Den valgfrie supportchat sender beskeder og vedhæftninger til udvikleren. Firebase behandler statistik om brug og billedvalg. Dette er en øvelse i egenomsorg, ikke medicinsk behandling.",
+    "Udvalget er udvidet til 367 billeder med mere varierede og tydelige udtryk, madvarer og aktiviteter. Efter træningen vises en vejrtrækningsanimation, og derefter åbnes resultaterne automatisk."
+  ],
+  "sv": [
+    "FocusMint är en enminutsövning i att hitta positiva bilder. Tryck på positiva bilder, lägg till egna foton och se din träningshistorik. Utan annonser eller konto.\n\nHistoriken stannar på din enhet. Den valfria supportchatten skickar meddelanden och bilagor till utvecklaren. Firebase behandlar statistik om användning och bildval. Detta är en övning i egenvård, inte medicinsk behandling.",
+    "Utbudet har utökats till 367 bilder med mer varierade och tydliga uttryck, livsmedel och aktiviteter. Efter träningen visas en andningsanimation och sedan öppnas resultaten automatiskt."
+  ],
+  "no": [
+    "FocusMint er en øvelse på ett minutt i å finne positive bilder. Trykk på positive bilder, legg til egne bilder og se treningshistorikken. Uten reklame eller konto.\n\nHistorikken blir på enheten. Den valgfrie støttechatten sender meldinger og vedlegg til utvikleren. Firebase behandler statistikk om bruk og bildevalg. Dette er en øvelse i egenomsorg, ikke medisinsk behandling.",
+    "Utvalget er utvidet til 367 bilder med mer varierte og tydelige uttrykk, matvarer og aktiviteter. Etter treningen vises en pusteanimasjon, og deretter åpnes resultatene automatisk."
+  ],
+  "fi": [
+    "FocusMint on minuutin harjoitus myönteisten kuvien löytämiseen. Napauta myönteisiä kuvia, lisää omia valokuvia ja tarkastele harjoitushistoriaasi. Ei mainoksia eikä käyttäjätiliä.\n\nHistoria säilyy laitteellasi. Valinnainen tukikeskustelu lähettää viestit ja liitteet kehittäjälle. Firebase käsittelee käyttö- ja kuvavalintatilastoja. Tämä on itsestä huolehtimisen harjoitus, ei lääketieteellinen hoito.",
+    "Valikoima laajeni 367 kuvaan: ilmeet, ruoat ja aktiviteetit ovat monipuolisempia ja selkeämpiä. Harjoituksen jälkeen lisättiin hengitysanimaatio ja automaattinen siirtyminen tuloksiin."
+  ],
+  "ca": [
+    "FocusMint és un exercici d’un minut per trobar imatges positives. Toca imatges positives, afegeix fotos pròpies i consulta l’historial. Sense anuncis ni compte.\n\nL’historial es desa al dispositiu. El xat d’ajuda opcional envia missatges i fitxers adjunts al desenvolupador. Firebase processa estadístiques d’ús i selecció d’imatges. És un exercici d’autocura, no un tractament mèdic.",
+    "La selecció s’amplia a 367 imatges amb expressions, aliments i activitats més variats i clars. Després de l’entrenament hi ha una animació de respiració i el pas automàtic als resultats."
+  ]
+}

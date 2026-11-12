@@ -1,0 +1,277 @@
+{
+  "schema": 3,
+  "budgetCents": 10000,
+  "priorSampleAllowanceCents": 8800,
+  "jobReservationCents": 30,
+  "pricingSource": "https://developers.openai.com/api/docs/guides/image-generation#historical-output-costs",
+  "accounting": "conservative reservations; not measured API billing",
+  "jobs": [
+    {
+      "out": "sad_01_balanced_v2.webp",
+      "promptSha256": "b8ad2a0a20e27a60a2cbfc40e1e7fe1155e685048a9a66b9f37ff1f21f33a226",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "97a48573d2a1da79398d8e4cd2fe8c11ac7f1792485ef9d4647aadf5f6c2bde0"
+    },
+    {
+      "out": "sad_25_balanced_v2.webp",
+      "promptSha256": "43b348e6d9a50a1be175284463c1f0bec596f252af39026f14a46954de3f8be6",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "b247bab2a37429c674b6e24fe69e6669793e3ad7305c158d67ae28c65faef4be"
+    },
+    {
+      "out": "sad_49_balanced_v2.webp",
+      "promptSha256": "5c75725f6b84921c10e7cad5b379fb30771b862bfc404ccf8b84d3ee6699b07c",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "0e70fed761be348c46997327288998989179dbeb37d32e526252e3c7a8d9aa99"
+    },
+    {
+      "out": "sad_03_balanced_v2.webp",
+      "promptSha256": "4725017adb686135e7fff529bb91ccd393e89b79a12126094260482aa12e138e",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "5271aae3c8325409425bcfe821d713f2bace6f7252e003d4ce2552602b908e9a"
+    },
+    {
+      "out": "sad_05_balanced_v2.webp",
+      "promptSha256": "00e2562569253248ed1e4596f909c8ac34520e1dffe652ef7f24bb2d28465db5",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "6cd10e6691933cde2096ea560c7d6f3bbe79a2ad054177360eb9133f71dfd753"
+    },
+    {
+      "out": "sad_07_balanced_v2.webp",
+      "promptSha256": "69099130eb5df18988efc298d77b26c2126f5a18be38053f8ddbc207203c7e87",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "974ba9dbf9fef97c2414c3eaf0d8a5d215041fe7539bb2ca2e4b250ade968650"
+    },
+    {
+      "out": "sad_09_balanced_v2.webp",
+      "promptSha256": "c1ef195b56c382679630f4f7effcc1c1d2ae247651cafa3343ecbfe6f7404ebb",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "68a887cccf50061142888f1775e30921a8298239a09f00388e420c1e38bda047"
+    },
+    {
+      "out": "sad_11_balanced_v2.webp",
+      "promptSha256": "a5ccdb4eee169a9a3fecca0b7a26591e9bf38e4e517af73a9c79a6c0bbab2e33",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "a990ccc908c3567392fa0032eb43168ad62a92807cdc935092cbe29667db5140"
+    },
+    {
+      "out": "sad_13_balanced_v2.webp",
+      "promptSha256": "13a372ff072840af7bde6bb8c9a5d4b96649834d0030e687042e089e322923c4",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "13b23e3d118a599971f034453147afd93ca1288cb1a8283b64beaa52f03d383d"
+    },
+    {
+      "out": "sad_15_balanced_v2.webp",
+      "promptSha256": "c409dc6fa3e7b11e4fc663a2b0d5eb85e9b9b6d70a1196615cc70d67cc4fe44e",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "2d4b46e8a9a36cbb97e6cb6d32b3e27494d0056bba8f2b68271b2e1facfc3e79"
+    },
+    {
+      "out": "sad_17_balanced_v2.webp",
+      "promptSha256": "77c340e5b74feac3ef0f13538bfc477591cad3a1626bce1e3f4cc191d13cc30c",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "bd0991e18e94b957520fb6c86c416a22e8b0ed23506038d8a3376d1fe1c1e056"
+    },
+    {
+      "out": "sad_19_balanced_v2.webp",
+      "promptSha256": "46abf85d05c7615391bafbb4f2f87c3d146da99b903b5ece3ab7a761a4c448fd",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "73eefc072ec49b67ed9e6176d691127b561a256baac821d044412fc776dd936b"
+    },
+    {
+      "out": "sad_21_balanced_v2.webp",
+      "promptSha256": "52a08d57ff5ffbdc05837201150198fb2de9c677813ae38a4d685c54a8a6d2fe",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "34445d8378081d277ce1b126c1cf9ada7f9075a3c078d9aeaac85f201761be95"
+    },
+    {
+      "out": "sad_23_balanced_v2.webp",
+      "promptSha256": "78e54229d5586267dbd16b4bc82e77fd0da2164101195cdb2a6ba927e548bdfb",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "30fbb05b153e94facf256f1b1edad37c95d0b0f52e8f0b416cb655df9eae90a4"
+    },
+    {
+      "out": "sad_27_balanced_v2.webp",
+      "promptSha256": "12650ba95012b72211797c77e68d2d0ebfc0f01562151142476101c8e428925e",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "5feb07dbb2138ba927ed293af90a4c5a945b077ff80c047ac8381af3795c7283"
+    },
+    {
+      "out": "sad_29_balanced_v2.webp",
+      "promptSha256": "f9bbb7d769623f357c813bdea15d8a5a9a8f3be2d2b0ac3ded54c596e74cc972",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "8a274727375910ae9cfd28f6cef4b6bb016d5b9f07f060bf826fea5d78f03f54"
+    },
+    {
+      "out": "sad_31_balanced_v2.webp",
+      "promptSha256": "59f4a85ebf88b33e89ee05eb243a1ab6130a8032ba9bd5f69862e08fd1a207c5",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "8820c5435905476d6c9582cad5cd3bc8e456d6ddfc72efd3550e71e2525f50d8"
+    },
+    {
+      "out": "sad_33_balanced_v2.webp",
+      "promptSha256": "0b93f01c5c25e242e387c26a51b548b0a8cfadfc610d9b9c4ce3d2775b33b5c8",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "44e9ae17d18eec4da8fb10a5dd0d9637f54f572ee0e2bdf00fee1fbb4f7fbe64"
+    },
+    {
+      "out": "sad_35_balanced_v2.webp",
+      "promptSha256": "25529d30fb57af39f5da18103e07c618774b98e3c54344b119253cb15bef1210",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "a9003a9b584d84b03de05ab41545f1190d8823d80ef4f645e3d706cd47bd617f"
+    },
+    {
+      "out": "sad_37_balanced_v2.webp",
+      "promptSha256": "929a344797b96cc0923f19502f7f0e689c793396e5a8eb325b1db290139d93a9",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "a5cf2a5e29ee1c96f694aed82aaf013cc243ff4b11ee79053561c7ec0ab3f2a4"
+    },
+    {
+      "out": "sad_39_balanced_v2.webp",
+      "promptSha256": "42e5fd735e862b93b86da0373dc4cef9260d2c637f1734f7d7229e1cc7c3556a",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "70af59b647d421d1df38bc02275f4755f99c5c1ae2fe9c7358424a6df7c8b065"
+    },
+    {
+      "out": "sad_41_balanced_v2.webp",
+      "promptSha256": "ea25ce04d1979924aa2fbe98a9e5fcdaed321e13a99f085ebad406ae831412bd",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "eecefcf8dcb0a2b474477bd9ebaaccbb796020e982ce86fc639e79f779a0128e"
+    },
+    {
+      "out": "sad_43_balanced_v2.webp",
+      "promptSha256": "71c875c9c0376bce40c9634156ba21e3594aa702fa8233db20669d8a7fc2f459",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "b18c35be63711a32c4ff503ec25f9f5bc1f7537a843fe41504dbc208c110897b"
+    },
+    {
+      "out": "sad_45_balanced_v2.webp",
+      "promptSha256": "4d52e02685cd28f8a9d22ee6ae144c3bb6994ef665920164c89e4ddb0970e09b",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "0692db0d88cf2346606148fa35ef93b5cafcec88a8cc6c5ce7936d29f23ec0b2"
+    },
+    {
+      "out": "sad_47_balanced_v2.webp",
+      "promptSha256": "299234598c22d4e034b4637de2aed7fec36ab9663d0f28d67f071d77ce7a842c",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "7bf7b3d864d6300eea2cd873ab02510d22b110d1f2c9d44fab95a3cf42b853bc"
+    },
+    {
+      "out": "sad_51_balanced_v2.webp",
+      "promptSha256": "c245181d61992e77b2655103bdde16a547b0e6e9c111934ea956e5cb60075cd5",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "a80a5e533e1f8eccec4627a42feff101d705ae56045f0831d59ef3589ea0c333"
+    },
+    {
+      "out": "sad_53_balanced_v2.webp",
+      "promptSha256": "8b465537fb3bbb4490bbdc82cab8811e9f54e13faf43bbe9d22252bfa4a5316c",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "4099134aaae7a7d06e6f083db2f6678f35f69be1862de34cde22edc07d53b8ea"
+    },
+    {
+      "out": "sad_55_balanced_v2.webp",
+      "promptSha256": "8d922c7a5b7f5a8b21c10a113a6ea925fabb44ca0e936baa9ee4814401420104",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "e8631ec599278ddd2f93e84eb0fb2a2075c089c3eb14ee028a54964268f544c6"
+    },
+    {
+      "out": "sad_57_balanced_v2.webp",
+      "promptSha256": "2ddb04a94faf09ce654ee6803f6b8f6b8c195d6c4bb27c4026f316c4ebafc829",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "97522952ef8aa70e396ed1baf0d1ae24a5049fe41d9eb0a4b2ad3ce70779bafd"
+    },
+    {
+      "out": "sad_59_balanced_v2.webp",
+      "promptSha256": "d89951242334a95398dfa916a6a1eabd57d82246db791d83edded78a5a68d265",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "e385970c1ead50011142165a582677b4040322671f393c0e90f3a629bc5202ab"
+    },
+    {
+      "out": "sad_61_balanced_v2.webp",
+      "promptSha256": "b9f3e24a187dacf9ecb19f6d4b8dfdad98d4f38960a5a1e4efd74a1c5a5b1477",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "e18d0e7ef1f6264257ac5c6d77cb59b6c8c1724376a3b1d1ea1cb402cf08ad67"
+    },
+    {
+      "out": "sad_63_balanced_v2.webp",
+      "promptSha256": "ff2038926fad05e958c1ec48bb63e1f83439e9e325c728854049ada4d58bcadf",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "e3e4aaecfec46b190baa33b16bba46d0a9cee795fa156739fe7ab397eedabbc5"
+    },
+    {
+      "out": "sad_65_balanced_v2.webp",
+      "promptSha256": "9852b8022d1d554aedb61cb8a1a0d6c3ff2a2fc726e6e93b816a83b2af3b3b36",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "353cf5546267288e1f0baa8f2b504d0d7d60cb722bdd8673c40e9a151737a6ab"
+    },
+    {
+      "out": "sad_67_balanced_v2.webp",
+      "promptSha256": "2dd1d30a5d5fe3e005ecf1d219ec29455996096abf8ff43f5dfd20306c71da94",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "75c6530fa2bf354652c1de6f9ba87393e34c19331e6ce2eedd7ee9d050e49e33"
+    },
+    {
+      "out": "sad_69_balanced_v2.webp",
+      "promptSha256": "de2966b6ae7eb2d490387e229cf03092e499b98a859d24b30e19269b4dacff2a",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "ecb025de4eb0e0a56224eccddf733cf76f9949e57cd5c5fbf86dda34355def2a"
+    },
+    {
+      "out": "sad_71_balanced_v2.webp",
+      "promptSha256": "98b36a500de2942f73e077a9aa862fded9d989e3a966f1c978c6ac742623080d",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "6b3442196ffb4724e5cd6411d1a2913052acb6e088efe9686a049279d99f9e9a"
+    },
+    {
+      "out": "badfood_15_clear_v2.webp",
+      "promptSha256": "fb4504b29730cf96d30110b57f187b248423a00d55470f10e354530e59efdf20",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "d4f1921736b700e53dd4375903a71fdb4957f0771c20f5858cf691b8b80225b7"
+    },
+    {
+      "out": "badfood_66_clear_v2.webp",
+      "promptSha256": "6c2571eaf1037f9c1b371d44acac22170b94100a74852fb4a65b4e31105598a6",
+      "reservationCents": 30,
+      "state": "generated-unreviewed",
+      "outputSha256": "11db74792e648c37b9b977fc9ab11c00a635dddd2e8819516e595f32c48b2788"
+    }
+  ],
+  "costEvidenceSha256": "e34febf0a19aa818a750e6ae4906fdca6192e357f9531e350b26e031fa7a73e1"
+}

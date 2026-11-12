@@ -192,11 +192,11 @@
   "positiveImages": "Positive",
   "negativeImages": "Negative",
   "smileImages": "Smile",
-  "vegetableImages": "Vegetables",
-  "healthImages": "Health",
-  "sadImages": "Sad",
-  "badFoodImages": "Bad Food",
-  "badImages": "Bad",
+  "vegetableImages": "Nourishing food",
+  "healthImages": "Movement & connection",
+  "sadImages": "Anger, sadness & worry",
+  "badFoodImages": "Junk food & sweets",
+  "badImages": "Unhealthy habits",
   "imageManagementHint": "Tap to toggle image visibility. You can hide up to 15 images.",
   "unsaved": "Unsaved",
   "save": "Save",
@@ -322,5 +322,23 @@
   },
   "supportGuide": "Information",
   "supportDeveloper": "Developer",
-  "supportPrivacy": "About contact data"
+  "supportPrivacy": "About contact data",
+  "breathingTitle": "Take a breath",
+  "breathingHint": "Follow the gentle movement\nof the lungs at a comfortable pace.",
+  "breathingIn": "Breathe in",
+  "breathingOut": "Breathe out",
+  "breathingRound": "Round {current} of {total}",
+  "breathingProgress": "Breathing progress",
+  "breathingResultHint": "Your results will appear automatically.",
+  "breathingSkip": "Skip to results",
+  "@breathingRound": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  }
 }

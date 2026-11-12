@@ -1,9 +1,40 @@
 import unittest
 
-from generate_training_images import new_ledger, reserve, reserved_cents, validate_jobs, EXPECTED
+from generate_training_images import new_ledger, reserve, reserved_cents, validate_jobs, validate_balance_evidence, EXPECTED
 
 
 class BudgetTest(unittest.TestCase):
+    def test_final_balance_phase_keeps_the_total_ceiling(self):
+        ledger = new_ledger('balance')
+        reserve(ledger, [{'out': str(i), 'prompt': 'photo'} for i in range(40)])
+        self.assertEqual(reserved_cents(ledger), 10000)
+        with self.assertRaises(ValueError):
+            reserve(ledger, [{'out': 'over', 'prompt': 'photo'}])
+        self.assertEqual(len(ledger['jobs']), 40)
+
+    def test_dashboard_lag_still_reserves_every_possible_earlier_retry(self):
+        evidence = {'project': 'Default project',
+                    'scope': 'All API keys, all API sources, last 7 days',
+                    'earlierRequests': 100, 'earlierSpendUSD': 20,
+                    'completedReviewJobs': 233, 'displayedRequests': 300,
+                    'displayedSpendUSD': 30}
+        self.assertEqual(validate_balance_evidence(evidence), 8490)
+        with self.assertRaises(ValueError):
+            validate_balance_evidence({**evidence, 'displayedSpendUSD': 40})
+        with self.assertRaises(ValueError):
+            validate_balance_evidence({**evidence, 'displayedRequests': 150})
+
+    def test_review_carries_prior_cost_and_stops_at_the_same_total_ceiling(self):
+        ledger = new_ledger('review')
+        reserve(ledger, [{'out': str(i), 'prompt': 'photo'} for i in range(250)])
+        self.assertEqual(reserved_cents(ledger), 10000)
+        with self.assertRaises(ValueError):
+            reserve(ledger, [{'out': 'over', 'prompt': 'photo'}])
+        self.assertEqual(len(ledger['jobs']), 250)
+        ledger['priorSampleAllowanceCents'] = 500
+        with self.assertRaises(ValueError):
+            reserved_cents(ledger)
+
     def test_all_291_fit_with_retry_and_prior_sample_reservations(self):
         ledger = new_ledger()
         reserve(ledger, [{'out': f'{i}_v2.webp', 'prompt': 'photo'} for i in range(291)])

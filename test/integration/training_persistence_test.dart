@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/pages/result_page.dart';
+import 'package:focusmint/pages/breathing_page.dart';
 import 'package:focusmint/widgets/stimulus_grid.dart';
 
 import 'training_flow_test.dart' show launch;
@@ -31,6 +32,13 @@ void main() {
     await answerCorrectly(tester);
     await tester.pump(const Duration(milliseconds: 250));
     await tester.pump(const Duration(seconds: 60));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
+    expect(find.byType(BreathingPage), findsOneWidget);
+    expect(find.byType(ResultPage), findsNothing);
+    final beforeBreathing = await SharedPreferences.getInstance();
+    expect(beforeBreathing.getInt('total_time_seconds'), 60);
+    await tester.pump(BreathingPage.duration);
     await tester.pumpAndSettle();
     final result = tester.widget<ResultPage>(find.byType(ResultPage));
     final prefs = await SharedPreferences.getInstance();

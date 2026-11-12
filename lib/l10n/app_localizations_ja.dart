@@ -427,19 +427,19 @@ class AppLocalizationsJa extends AppLocalizations {
   String get smileImages => '笑顔';
 
   @override
-  String get vegetableImages => '野菜';
+  String get vegetableImages => '栄養のある食事';
 
   @override
-  String get healthImages => '健康';
+  String get healthImages => '運動・交流';
 
   @override
-  String get sadImages => '悲しい';
+  String get sadImages => '怒り・悲しみなど';
 
   @override
-  String get badFoodImages => '不健康な食べ物';
+  String get badFoodImages => 'ジャンク・甘いもの';
 
   @override
-  String get badImages => '悪い';
+  String get badImages => '負担のある習慣';
 
   @override
   String get imageManagementHint => 'タップして画像の表示/非表示を切り替えられます。最大15枚まで非表示にできます。';
@@ -683,4 +683,30 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get supportPrivacy => 'お問い合わせのデータについて';
+
+  @override
+  String get breathingTitle => 'ひと呼吸おきましょう';
+
+  @override
+  String get breathingHint => '無理のないペースで、\n肺の動きに合わせて呼吸しましょう。';
+
+  @override
+  String get breathingIn => 'ゆっくり吸って';
+
+  @override
+  String get breathingOut => 'ゆっくり吐いて';
+
+  @override
+  String breathingRound(int current, int total) {
+    return '$current / $total 回';
+  }
+
+  @override
+  String get breathingProgress => '呼吸ガイドの進行状況';
+
+  @override
+  String get breathingResultHint => '終わると自動で結果を表示します';
+
+  @override
+  String get breathingSkip => 'スキップして結果へ';
 }
