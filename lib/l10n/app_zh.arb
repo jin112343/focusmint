@@ -1,0 +1,333 @@
+{
+  "@@locale": "zh",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "当前积分",
+  "goalLabel": "目标：{goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "剩余：{remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 目标达成！",
+  "startButtonText": "START",
+  "stressReductionMessage": "练习关注积极的事物。",
+  "remainingTimeMinutes": "剩余时间：{minutes}分{seconds}秒",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "剩余时间：{seconds}秒",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "得分：{score} 积分",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "正在准备图片...",
+  "noStimuliAvailable": "没有可用的刺激素材",
+  "invalidGridSize": "无效的网格大小",
+  "unknown": "?",
+  "gettingStarted": "正在开始...",
+  "excellentPerformance": "表现出色！",
+  "greatJob": "做得好！",
+  "goodPerformance": "表现不错",
+  "keepPracticingFeedback": "请继续练习",
+  "takeYourTimeFeedback": "请慢慢来",
+  "happy": "开心",
+  "angry": "生气",
+  "fear": "恐惧",
+  "sad": "悲伤",
+  "historyPageTitle": "训练记录",
+  "dataLoading": "正在加载数据...",
+  "pointsHistory": "积分获取记录",
+  "weekly": "每周",
+  "monthly": "每月",
+  "noDataAvailable": "暂无数据",
+  "goalAchievementRate": "目标达成率",
+  "scoreStatistics": "得分统计",
+  "bestScore": "最高得分",
+  "totalScore": "总得分",
+  "trainingTime": "训练时间",
+  "totalTrainingTime": "累计训练时间",
+  "detailedStatistics": "详细统计",
+  "averageScorePerMinute": "每分钟平均得分",
+  "pointsToGoal": "距离目标还差",
+  "goalSetting": "目标设置",
+  "secondsUnit": "秒",
+  "minutesUnit": "分",
+  "hoursUnit": "小时",
+  "pointsUnit": "积分",
+  "monthSuffix": "月",
+  "sundayShort": "日",
+  "mondayShort": "一",
+  "tuesdayShort": "二",
+  "wednesdayShort": "三",
+  "thursdayShort": "四",
+  "fridayShort": "五",
+  "saturdayShort": "六",
+  "settingsTitle": "设置",
+  "goalPointsSetting": "目标积分设置",
+  "currentGoalPoints": "当前目标：{points} 积分",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "新的目标积分",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "积分",
+  "saveGoalButton": "保存目标",
+  "goalSetTo": "目标已设为 {points} 积分",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "请输入目标积分",
+  "enterValidNumber": "请输入有效数字（1 至 99999999）",
+  "saveFailed": "部分设置保存失败",
+  "emailOpenFailed": "无法打开邮件应用",
+  "pageOpenFailed": "无法打开页面",
+  "appInfoSupport": "应用信息与支持",
+  "contactUs": "联系我们",
+  "contactUsSubtitle": "欢迎提出您的意见和问题",
+  "termsOfService": "服务条款",
+  "termsSubtitle": "查看应用的服务条款",
+  "privacyPolicy": "隐私政策",
+  "privacySubtitle": "关于隐私信息的处理",
+  "tutorialTitle": "使用教程",
+  "tutorialSubtitle": "了解应用的使用方法",
+  "dataManagement": "数据管理",
+  "deleteHistory": "删除记录",
+  "deleteHistorySubtitle": "仅删除训练记录（保留目标积分）",
+  "deleteHistoryAndGoal": "删除记录与目标",
+  "deleteHistoryAndGoalSubtitle": "删除所有记录和目标积分",
+  "deleteHistoryConfirmTitle": "删除记录",
+  "deleteHistoryConfirmMessage": "确定要删除所有训练记录吗？\n\n※目标积分将被保留",
+  "deleteHistoryAndGoalConfirmTitle": "删除记录与目标",
+  "deleteHistoryAndGoalConfirmMessage": "确定要删除所有记录和目标积分吗？\n\n※此操作无法撤销",
+  "cancel": "取消",
+  "delete": "删除",
+  "historyDeleted": "记录已删除",
+  "historyAndGoalDeleted": "记录和目标已删除",
+  "historyDeleteFailed": "删除记录失败",
+  "historyAndGoalDeleteFailed": "删除记录和目标失败",
+  "tutorialDisplayFailed": "教程显示失败",
+  "tips": "小贴士",
+  "tipsContent": "• 目标会显示在主页图表中\n• 从小目标开始，按自己的节奏逐步提高\n• 每次正确选择最多可获得6分",
+  "backToHome": "返回主页",
+  "tutorialSkip": "跳过",
+  "tutorialGoalAndPoints": "目标与当前积分",
+  "tutorialGoalDescription": "外圈表示目标，内圈表示总积分。越接近目标，圆环越满。",
+  "tutorialOneMinuteTraining": "1 分钟训练",
+  "tutorialTrainingDescription": "开始 1 分钟小游戏。从 4 个选项中选择积极的图片或好习惯。",
+  "tutorialScoreProgress": "得分变化",
+  "tutorialScoreDescription": "查看已获得分数的详细信息。",
+  "tutorialSettingsAndData": "设置与数据管理",
+  "tutorialSettingsDescription": "可更改目标值、查看应用信息并重置数据。",
+  "appIntroAttentionBiasTitle": "关于注意偏向",
+  "appIntroAttentionBiasContent": "焦虑较强时，我们会不自觉地只关注消极的事物。",
+  "appIntroFocusMintRoleTitle": "FocusMint 的作用",
+  "appIntroFocusMintRoleContent": "通过简短的游戏，练习将注意力转向积极的图片。",
+  "appIntroScientificEvidenceTitle": "关于这项练习",
+  "appIntroScientificEvidenceContent": "练习寻找积极的图片。FocusMint用于日常自我关怀，不提供医疗或治疗服务。每个人的感受和效果可能不同。",
+  "appIntroExpectedEffectsTitle": "可以练习的内容",
+  "appIntroEffect1": "寻找积极的图片",
+  "appIntroEffect2": "留意身边的笑容",
+  "appIntroEffect3": "建立简短的每日习惯",
+  "appIntroHowToUse": "查看使用方法",
+  "pointsEarned": "获得积分！",
+  "yourScore": "您的得分",
+  "totalPlayTime": "总游戏时间",
+  "imageManagement": "图片管理",
+  "hiddenImagesCount": "已隐藏图片：{count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "有未保存的更改",
+  "unsavedChangesMessage": "图片显示设置中有 {count} 项未保存的更改。",
+  "unsavedChangesWarning": "现在关闭此页面将丢失更改。",
+  "discardChanges": "放弃更改",
+  "saveAndExit": "保存并退出",
+  "settingsSaved": "已保存 {count} 项设置",
+  "saveError": "保存设置时发生错误",
+  "imageSettingsUpdated": "图片设置已更新",
+  "allImages": "全部",
+  "positiveImages": "积极",
+  "negativeImages": "消极",
+  "smileImages": "笑容",
+  "vegetableImages": "营养食物",
+  "healthImages": "运动与交流",
+  "sadImages": "愤怒、悲伤与担忧",
+  "badFoodImages": "快餐与甜食",
+  "badImages": "不健康的习惯",
+  "imageManagementHint": "点按可切换图片的显示/隐藏。最多可隐藏 15 张图片。",
+  "unsaved": "未保存",
+  "save": "保存",
+  "hiddenImages": "已隐藏",
+  "noHiddenImages": "没有隐藏的图片",
+  "settingsLoadFailed": "设置加载失败",
+  "imagesAdded": "已添加 {count} 张图片",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "添加图片失败",
+  "imageSelectionFailed": "选择图片失败",
+  "settingsChangeFailed": "更改设置失败",
+  "groupTitle": "分组：{name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "显示切换",
+  "imageCount": "{count} 张",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "注意事项",
+  "notice1": "新增了自定义图片功能！",
+  "notice2": "您可以在设置页面添加自己的图片",
+  "notice3": "详情请查看设置页面",
+  "customImageTitle": "自定义图片",
+  "customImageSubtitle": "添加并管理自己的图片",
+  "addCustomImages": "添加自定义图片",
+  "selectImages": "选择图片",
+  "unknownImage": "未知图片",
+  "customImageSettings": "自定义图片设置",
+  "useCustomImages": "使用自定义图片",
+  "useCustomImagesDescription": "使用自己的图片进行练习。开启下方的混合选项，即可同时使用应用内置图片。",
+  "groupSettings": "分组设置",
+  "minOneGroupRequired": "至少需要启用一个分组",
+  "settingsLoadFailedMessage": "设置加载失败",
+  "customImageNotice1": "启用分组后，图片将在各分组内随机显示。",
+  "customImageNotice2": "用户上传并设置的图片不会与开发者或第三方共享，仅保存在设备上应用的存储空间内。",
+  "customImageNotice3": "因此可以离线使用。",
+  "customImageNotice4": "添加大量图片会占用存储空间。如遇问题，请在设置中关闭自定义图片，或删除不再使用的图片。",
+  "customImageNotice5": "删除应用时，已设置的图片也会被删除。",
+  "customImageRequirementNotMet": "要使用自定义图片，已启用的分组中至少需要 1 张“好”图片和 3 张“不好”图片。",
+  "customImageRequirement": "要使用自定义图片，已启用的分组中至少需要 1 张“好”图片和 3 张“不好”图片。",
+  "sunnyWeather": "好",
+  "rainyWeather": "不好",
+  "addImages": "添加图片",
+  "imageDeleted": "图片已删除",
+  "imageDeleteFailed": "删除图片失败",
+  "deleteImageTitle": "删除图片",
+  "deleteImageMessage": "确定要删除这张图片吗？此操作无法撤销。",
+  "groupImageTitle": "分组 {groupId} {weather}图片",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "已注册：{count} 张",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "尚未注册图片",
+  "imagePreview": "图片预览",
+  "close": "关闭",
+  "contactEmailSubject": "FocusMint - 联系我们",
+  "contactEmailBody": "请写下您的意见或问题。",
+  "mixWithBuiltInImages": "与内置图片混合使用",
+  "mixWithBuiltInImagesDescription": "同时使用内置图片和自己的图片",
+  "supportIntro": "匿名联系开发者，欢迎提出问题或建议。每天可发送3条消息。开发者每次回复后，可发送消息数将恢复为3条。",
+  "supportReceived": "已收到消息。我们通常会在2至3天内回复。",
+  "supportComposer": "输入消息",
+  "supportSend": "发送",
+  "supportRetry": "重试",
+  "supportSent": "已发送",
+  "supportUnsent": "未发送 · 已保存在此设备上",
+  "supportAttach": "添加图片附件",
+  "supportRemoveImage": "移除图片",
+  "supportImage": "附件",
+  "supportClear": "删除记录",
+  "supportClearConfirm": "删除这段对话吗？未发送的草稿和服务器上的记录也会删除。此操作不会恢复可发送消息数。",
+  "supportQuota": "今天的3条消息已用完。请明天或收到开发者回复后再发送。",
+  "supportConnectionError": "无法连接。已保存的草稿尚未发送。",
+  "supportSendError": "发送失败。消息已保存在此设备上，请重试。",
+  "supportStorageError": "保存失败，请重试。",
+  "supportClearError": "无法删除记录。请检查网络连接后重试。",
+  "supportImageError": "无法加载图片。请选择小于30 MB的图片。",
+  "supportRemaining": "今日剩余消息数：{count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "未读回复数：{count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "说明",
+  "supportDeveloper": "开发者",
+  "supportPrivacy": "关于咨询数据",
+  "breathingTitle": "放慢节奏，呼吸一下",
+  "breathingHint": "以舒适的节奏，\n跟随肺部的轻柔变化呼吸。",
+  "breathingIn": "慢慢吸气",
+  "breathingOut": "慢慢呼气",
+  "breathingProgress": "呼吸引导进度",
+  "breathingResultHint": "结束后将自动显示结果。",
+  "breathingSkip": "跳过并查看结果"
+}

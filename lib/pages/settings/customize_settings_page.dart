@@ -4,6 +4,7 @@ import 'package:focusmint/models/custom_image_models.dart';
 import 'package:focusmint/repositories/custom_image_repository.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
+
 import 'custom_album_picker_page.dart';
 
 class CustomizeSettingsPage extends StatefulWidget {
@@ -44,8 +45,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
       });
     } catch (e, stackTrace) {
       if (!mounted) return;
-      _logger.e('カスタマイズ設定の読み込みに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e('カスタマイズ設定の読み込みに失敗しました', error: e, stackTrace: stackTrace);
       setState(() {
         _isLoading = false;
       });
@@ -93,12 +93,13 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         });
       } else {
         // 条件を満たしていない場合のエラーメッセージ
-        _showErrorMessage(AppLocalizations.of(context)!.customImageRequirementNotMet);
+        _showErrorMessage(
+          AppLocalizations.of(context)!.customImageRequirementNotMet,
+        );
       }
     } catch (e, stackTrace) {
       if (!mounted) return;
-      _logger.e('カスタム画像使用設定の変更に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e('カスタム画像使用設定の変更に失敗しました', error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.settingsChangeFailed);
     }
   }
@@ -115,16 +116,16 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         });
       } else {
         // 条件を満たしていない場合のエラーメッセージ
-        _showErrorMessage(AppLocalizations.of(context)!.customImageRequirementNotMet);
+        _showErrorMessage(
+          AppLocalizations.of(context)!.customImageRequirementNotMet,
+        );
       }
     } catch (e, stackTrace) {
       if (!mounted) return;
-      _logger.e('ミックス使用設定の変更に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e('ミックス使用設定の変更に失敗しました', error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.settingsChangeFailed);
     }
   }
-
 
   Future<void> _toggleGroupEnabled(int groupId, bool value) async {
     if (_settings == null) return;
@@ -146,8 +147,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
       }
     } catch (e, stackTrace) {
       if (!mounted) return;
-      _logger.e('グループ有効設定の変更に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e('グループ有効設定の変更に失敗しました', error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.settingsChangeFailed);
     }
   }
@@ -177,7 +177,7 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
     if (result == true) {
       try {
         final settings = await _repository.getSettings();
-      if (!mounted) return;
+        if (!mounted) return;
 
         // 変更されたグループ・天気の画像枚数のみを更新
         await _loadImageCount(groupId, weather);
@@ -190,9 +190,8 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         // カスタム画像の条件チェックを再実行してUIを即座に更新
         _checkAndUpdateCustomImagesAvailability();
       } catch (e, stackTrace) {
-      if (!mounted) return;
-        _logger.e('アルバムピッカー後の設定更新に失敗しました',
-            error: e, stackTrace: stackTrace);
+        if (!mounted) return;
+        _logger.e('アルバムピッカー後の設定更新に失敗しました', error: e, stackTrace: stackTrace);
         _showErrorMessage(AppLocalizations.of(context)!.settingsLoadFailed);
       }
     }
@@ -214,22 +213,20 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         setState(() {
           _settings = settings;
         });
-        _logger.d('_checkAndUpdateCustomImagesAvailability: UI updated, canUseCustomImages: $canUse');
+        _logger.d(
+          '_checkAndUpdateCustomImagesAvailability: UI updated, canUseCustomImages: $canUse',
+        );
       }
     } catch (e, stackTrace) {
       if (!mounted) return;
-      _logger.e('カスタム画像の利用可能性チェックに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e('カスタム画像の利用可能性チェックに失敗しました', error: e, stackTrace: stackTrace);
     }
   }
 
   void _showErrorMessage(String message) {
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(message),
-          backgroundColor: Colors.red,
-        ),
+        SnackBar(content: Text(message), backgroundColor: Colors.red),
       );
     }
   }
@@ -259,13 +256,15 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              AppLocalizations.of(context)!.groupTitle(group.id.toString()),
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textPrimary,
+            SwitchListTile.adaptive(
+              contentPadding: EdgeInsets.zero,
+              title: Text(
+                AppLocalizations.of(context)!.groupTitle(group.id.toString()),
               ),
+              subtitle: Text(AppLocalizations.of(context)!.displayToggle),
+              value: group.enabled,
+              onChanged: (value) => _toggleGroupEnabled(group.id, value),
+              activeTrackColor: AppColors.mintGreen,
             ),
             const SizedBox(height: 12),
             Row(
@@ -288,29 +287,6 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                     icon: Icons.water_drop,
                     onTap: () => _openAlbumPicker(group.id, WeatherType.rainy),
                   ),
-                ),
-                const SizedBox(width: 16),
-                // グループスイッチ
-                Column(
-                  children: [
-                    Text(
-                      AppLocalizations.of(context)!.displayToggle,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: AppColors.textSecondary,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                     Switch(
-                       value: group.enabled,
-                       onChanged: (value) => _toggleGroupEnabled(group.id, value),
-                       activeColor: Colors.white,
-                       activeTrackColor: AppColors.mintGreen,
-                       inactiveThumbColor: Colors.grey[600],
-                       inactiveTrackColor: Colors.grey[300],
-                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                     ),
-                  ],
                 ),
               ],
             ),
@@ -335,24 +311,23 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
           border: Border.all(color: AppColors.textDisabled),
           borderRadius: BorderRadius.circular(8),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               AppLocalizations.of(context)!.imageCount(count),
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
               ),
             ),
-            SizedBox(width: 8),
+            SizedBox(height: 8),
             Icon(
               icon,
               size: 20,
-              color: weather == WeatherType.sunny
-                  ? Colors.orange
-                  : Colors.blue,
+              color: weather == WeatherType.sunny ? Colors.orange : Colors.blue,
             ),
           ],
         ),
@@ -376,12 +351,14 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                   size: 20,
                 ),
                 const SizedBox(width: 8),
-                Text(
-                  AppLocalizations.of(context)!.noticeTitle,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
+                Expanded(
+                  child: Text(
+                    AppLocalizations.of(context)!.noticeTitle,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textPrimary,
+                    ),
                   ),
                 ),
               ],
@@ -454,45 +431,100 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _settings == null
-              ? Center(
-                  child: Text(
-                    AppLocalizations.of(context)!.settingsLoadFailedMessage,
-                    style: const TextStyle(color: Colors.red),
-                  ),
-                )
-              : Scrollbar(
-                  thumbVisibility: true,
-                  thickness: 12,
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                      // 全体スイッチセクション
-                      Card(
-                        elevation: 2,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20),
-                          child: Column(
-                            children: [
-                              // カスタム画像スイッチ
+          ? Center(
+              child: Text(
+                AppLocalizations.of(context)!.settingsLoadFailedMessage,
+                style: const TextStyle(color: Colors.red),
+              ),
+            )
+          : Scrollbar(
+              thumbVisibility: true,
+              thickness: 12,
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // 全体スイッチセクション
+                    Card(
+                      elevation: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            // カスタム画像スイッチ
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        AppLocalizations.of(context)!
+                                            .useCustomImages,
+                                        style: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: AppColors.textPrimary,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      Text(
+                                        AppLocalizations.of(context)!
+                                            .useCustomImagesDescription,
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          color: AppColors.textSecondary,
+                                          height: 1.4,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(width: 16),
+                                Switch(
+                                  value: _settings!.useCustomImages,
+                                  onChanged:
+                                      _canEnableCustomImages ||
+                                          _settings!.useCustomImages
+                                      ? _toggleUseCustomImages
+                                      : null,
+                                  activeColor: Colors.white,
+                                  activeTrackColor: AppColors.mintGreen,
+                                  inactiveThumbColor: Colors.grey[600],
+                                  inactiveTrackColor: Colors.grey[300],
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                ),
+                              ],
+                            ),
+
+                            // ミックス使用スイッチ
+                            if (_settings!.useCustomImages) ...[
+                              const SizedBox(height: 20),
+                              const Divider(height: 1),
+                              const SizedBox(height: 20),
                               Row(
                                 children: [
                                   Expanded(
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          AppLocalizations.of(context)!.useCustomImages,
+                                          AppLocalizations.of(context)!
+                                              .mixWithBuiltInImages,
                                           style: const TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 16,
                                             fontWeight: FontWeight.bold,
                                             color: AppColors.textPrimary,
                                           ),
                                         ),
                                         const SizedBox(height: 8),
                                         Text(
-                                          AppLocalizations.of(context)!.useCustomImagesDescription,
+                                          AppLocalizations.of(context)!
+                                              .mixWithBuiltInImagesDescription,
                                           style: const TextStyle(
                                             fontSize: 14,
                                             color: AppColors.textSecondary,
@@ -503,130 +535,92 @@ class _CustomizeSettingsPageState extends State<CustomizeSettingsPage> {
                                     ),
                                   ),
                                   const SizedBox(width: 16),
-                                   Switch(
-                                     value: _settings!.useCustomImages,
-                                     onChanged: _canEnableCustomImages || _settings!.useCustomImages
-                                         ? _toggleUseCustomImages
-                                         : null,
-                                     activeColor: Colors.white,
-                                     activeTrackColor: AppColors.mintGreen,
-                                     inactiveThumbColor: Colors.grey[600],
-                                     inactiveTrackColor: Colors.grey[300],
-                                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                   ),
+                                  Switch(
+                                    value: _settings!.mixWithOriginalImages,
+                                    onChanged:
+                                        _canEnableCustomImages ||
+                                            _settings!.mixWithOriginalImages
+                                        ? _toggleMixWithOriginalImages
+                                        : null,
+                                    activeColor: Colors.white,
+                                    activeTrackColor: AppColors.mintGreen,
+                                    inactiveThumbColor: Colors.grey[600],
+                                    inactiveTrackColor: Colors.grey[300],
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                  ),
                                 ],
                               ),
+                            ],
 
-                              // ミックス使用スイッチ
-                              if (_settings!.useCustomImages) ...[
-                                const SizedBox(height: 20),
-                                const Divider(height: 1),
-                                const SizedBox(height: 20),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            AppLocalizations.of(context)!.mixWithBuiltInImages,
-                                            style: const TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.bold,
-                                              color: AppColors.textPrimary,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 8),
-                                          Text(
-                                            AppLocalizations.of(context)!.mixWithBuiltInImagesDescription,
-                                            style: const TextStyle(
-                                              fontSize: 14,
-                                              color: AppColors.textSecondary,
-                                              height: 1.4,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    const SizedBox(width: 16),
-                                     Switch(
-                                       value: _settings!.mixWithOriginalImages,
-                                       onChanged: _canEnableCustomImages || _settings!.mixWithOriginalImages
-                                           ? _toggleMixWithOriginalImages
-                                           : null,
-                                       activeColor: Colors.white,
-                                       activeTrackColor: AppColors.mintGreen,
-                                       inactiveThumbColor: Colors.grey[600],
-                                       inactiveTrackColor: Colors.grey[300],
-                                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                     ),
-                                  ],
-                                ),
-                              ],
-
-                              // 条件を満たしていない場合の警告メッセージ
-                              if (!_canEnableCustomImages && !_settings!.useCustomImages) ...[
-                                const SizedBox(height: 12),
-                                Container(
-                                  padding: const EdgeInsets.all(12),
-                                  decoration: BoxDecoration(
-                                    color: Colors.orange.withOpacity(0.1),
-                                    borderRadius: BorderRadius.circular(8),
-                                    border: Border.all(color: Colors.orange.withOpacity(0.3)),
+                            // 条件を満たしていない場合の警告メッセージ
+                            if (!_canEnableCustomImages &&
+                                !_settings!.useCustomImages) ...[
+                              const SizedBox(height: 12),
+                              Container(
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.orange.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(
+                                    color: Colors.orange.withOpacity(0.3),
                                   ),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.warning_amber_rounded,
-                                        color: Colors.orange,
-                                        size: 20,
-                                      ),
-                                      const SizedBox(width: 8),
-                                      Expanded(
-                                        child: Text(
-                                          _requirementMessage,
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            color: Colors.orange.shade700,
-                                            height: 1.3,
-                                          ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.warning_amber_rounded,
+                                      color: Colors.orange,
+                                      size: 20,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Expanded(
+                                      child: Text(
+                                        _requirementMessage,
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          color: Colors.orange.shade700,
+                                          height: 1.3,
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ],
-                          ),
+                          ],
                         ),
                       ),
-
-                      const SizedBox(height: 24),
-
-                      // グループ別設定セクション
-                      Text(
-                        AppLocalizations.of(context)!.groupSettings,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textPrimary,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-
-                      // 各グループのセクション
-                      ..._settings!.groups.map((group) => _buildGroupSection(group)),
-
-                      const SizedBox(height: 24),
-
-                      // 注意事項セクション
-                      _buildNoticeSection(),
-
-                        const SizedBox(height: 24),
-                      ],
                     ),
-                  ),
+
+                    const SizedBox(height: 24),
+
+                    // グループ別設定セクション
+                    Text(
+                      AppLocalizations.of(context)!.groupSettings,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // 各グループのセクション
+                    ..._settings!.groups.map(
+                      (group) => _buildGroupSection(group),
+                    ),
+
+                    const SizedBox(height: 24),
+
+                    // 注意事項セクション
+                    _buildNoticeSection(),
+
+                    const SizedBox(height: 24),
+                  ],
                 ),
+              ),
+            ),
     );
   }
 }

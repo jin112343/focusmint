@@ -1,0 +1,333 @@
+{
+  "@@locale": "el",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Τρέχοντες πόντοι",
+  "goalLabel": "Στόχος: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Απομένουν: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Ο στόχος επιτεύχθηκε!",
+  "startButtonText": "ΕΝΑΡΞΗ",
+  "stressReductionMessage": "Εξασκηθείτε στο να παρατηρείτε το θετικό.",
+  "remainingTimeMinutes": "Υπολειπόμενος χρόνος: {minutes} λ. {seconds} δ.",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Υπολειπόμενος χρόνος: {seconds} δ.",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Σκορ: {score} πόντοι",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Προετοιμασία εικόνων...",
+  "noStimuliAvailable": "Δεν υπάρχουν διαθέσιμα ερεθίσματα",
+  "invalidGridSize": "Μη έγκυρο μέγεθος πλέγματος",
+  "unknown": "?",
+  "gettingStarted": "Ξεκινάμε...",
+  "excellentPerformance": "Εξαιρετική επίδοση!",
+  "greatJob": "Πολύ καλή δουλειά!",
+  "goodPerformance": "Καλή επίδοση",
+  "keepPracticingFeedback": "Συνεχίστε την εξάσκηση",
+  "takeYourTimeFeedback": "Με την ησυχία σας",
+  "happy": "Χαρούμενος",
+  "angry": "Θυμωμένος",
+  "fear": "Φόβος",
+  "sad": "Λυπημένος",
+  "historyPageTitle": "Ιστορικό προπόνησης",
+  "dataLoading": "Φόρτωση δεδομένων...",
+  "pointsHistory": "Ιστορικό πόντων",
+  "weekly": "Εβδομαδιαία",
+  "monthly": "Μηνιαία",
+  "noDataAvailable": "Δεν υπάρχουν δεδομένα",
+  "goalAchievementRate": "Ποσοστό επίτευξης στόχου",
+  "scoreStatistics": "Στατιστικά σκορ",
+  "bestScore": "Καλύτερο σκορ",
+  "totalScore": "Συνολικό σκορ",
+  "trainingTime": "Χρόνος προπόνησης",
+  "totalTrainingTime": "Συνολικός χρόνος προπόνησης",
+  "detailedStatistics": "Αναλυτικά στατιστικά",
+  "averageScorePerMinute": "Μέσο σκορ ανά λεπτό",
+  "pointsToGoal": "Πόντοι έως τον στόχο",
+  "goalSetting": "Ορισμός στόχου",
+  "secondsUnit": "δ.",
+  "minutesUnit": "λ.",
+  "hoursUnit": "ώ.",
+  "pointsUnit": "πόντοι",
+  "monthSuffix": "",
+  "sundayShort": "Κυρ",
+  "mondayShort": "Δευ",
+  "tuesdayShort": "Τρί",
+  "wednesdayShort": "Τετ",
+  "thursdayShort": "Πέμ",
+  "fridayShort": "Παρ",
+  "saturdayShort": "Σάβ",
+  "settingsTitle": "Ρυθμίσεις",
+  "goalPointsSetting": "Ορισμός πόντων στόχου",
+  "currentGoalPoints": "Τρέχων στόχος: {points} πόντοι",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Νέοι πόντοι στόχου",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "πόντοι",
+  "saveGoalButton": "Αποθήκευση στόχου",
+  "goalSetTo": "Ο στόχος ορίστηκε σε {points} πόντους",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Εισαγάγετε τους πόντους στόχου",
+  "enterValidNumber": "Εισαγάγετε έναν έγκυρο αριθμό (1 έως 99999999)",
+  "saveFailed": "Η αποθήκευση ορισμένων ρυθμίσεων απέτυχε",
+  "emailOpenFailed": "Δεν ήταν δυνατό το άνοιγμα της εφαρμογής email",
+  "pageOpenFailed": "Δεν ήταν δυνατό το άνοιγμα της σελίδας",
+  "appInfoSupport": "Πληροφορίες εφαρμογής και υποστήριξη",
+  "contactUs": "Επικοινωνήστε μαζί μας",
+  "contactUsSubtitle": "Μοιραστείτε τα σχόλια και τις ερωτήσεις σας",
+  "termsOfService": "Όροι χρήσης",
+  "termsSubtitle": "Δείτε τους όρους χρήσης της εφαρμογής",
+  "privacyPolicy": "Πολιτική απορρήτου",
+  "privacySubtitle": "Σχετικά με τη διαχείριση των προσωπικών δεδομένων",
+  "tutorialTitle": "Οδηγός χρήσης",
+  "tutorialSubtitle": "Μάθετε πώς να χρησιμοποιείτε την εφαρμογή",
+  "dataManagement": "Διαχείριση δεδομένων",
+  "deleteHistory": "Διαγραφή ιστορικού",
+  "deleteHistorySubtitle": "Διαγραφή μόνο του ιστορικού προπόνησης (οι πόντοι στόχου διατηρούνται)",
+  "deleteHistoryAndGoal": "Διαγραφή ιστορικού και στόχου",
+  "deleteHistoryAndGoalSubtitle": "Διαγραφή όλου του ιστορικού και των πόντων στόχου",
+  "deleteHistoryConfirmTitle": "Διαγραφή ιστορικού",
+  "deleteHistoryConfirmMessage": "Θέλετε σίγουρα να διαγράψετε όλο το ιστορικό προπόνησης;\n\n*Οι πόντοι στόχου θα διατηρηθούν",
+  "deleteHistoryAndGoalConfirmTitle": "Διαγραφή ιστορικού και στόχου",
+  "deleteHistoryAndGoalConfirmMessage": "Θέλετε σίγουρα να διαγράψετε όλο το ιστορικό και τους πόντους στόχου;\n\n*Αυτή η ενέργεια δεν μπορεί να αναιρεθεί",
+  "cancel": "Ακύρωση",
+  "delete": "Διαγραφή",
+  "historyDeleted": "Το ιστορικό διαγράφηκε",
+  "historyAndGoalDeleted": "Το ιστορικό και ο στόχος διαγράφηκαν",
+  "historyDeleteFailed": "Η διαγραφή του ιστορικού απέτυχε",
+  "historyAndGoalDeleteFailed": "Η διαγραφή του ιστορικού και του στόχου απέτυχε",
+  "tutorialDisplayFailed": "Η εμφάνιση του οδηγού απέτυχε",
+  "tips": "Συμβουλές",
+  "tipsContent": "• Ο στόχος σας εμφανίζεται στο γράφημα της αρχικής οθόνης\n• Ξεκινήστε με μικρό στόχο και αυξήστε τον με τον δικό σας ρυθμό\n• Κάθε σωστή επιλογή δίνει έως 6 πόντους",
+  "backToHome": "Επιστροφή στην αρχική",
+  "tutorialSkip": "Παράλειψη",
+  "tutorialGoalAndPoints": "Στόχος και τρέχοντες πόντοι",
+  "tutorialGoalDescription": "Ο εξωτερικός κύκλος δείχνει τον στόχο σας και ο εσωτερικός τους συνολικούς πόντους. Ο κύκλος γεμίζει καθώς πλησιάζετε τον στόχο σας.",
+  "tutorialOneMinuteTraining": "Προπόνηση 1 λεπτού",
+  "tutorialTrainingDescription": "Ξεκινήστε ένα παιχνίδι 1 λεπτού. Επιλέξτε θετικές εικόνες ή καλές συνήθειες από 4 επιλογές.",
+  "tutorialScoreProgress": "Εξέλιξη σκορ",
+  "tutorialScoreDescription": "Δείτε αναλυτικές πληροφορίες για τα σκορ που έχετε κερδίσει.",
+  "tutorialSettingsAndData": "Ρυθμίσεις και διαχείριση δεδομένων",
+  "tutorialSettingsDescription": "Αλλάξτε τις τιμές στόχου, δείτε πληροφορίες για την εφαρμογή και επαναφέρετε τα δεδομένα.",
+  "appIntroAttentionBiasTitle": "Σχετικά με την προκατάληψη προσοχής",
+  "appIntroAttentionBiasContent": "Όταν το άγχος είναι έντονο, τείνουμε ασυναίσθητα να εστιάζουμε μόνο στα αρνητικά.",
+  "appIntroFocusMintRoleTitle": "Ο ρόλος του FocusMint",
+  "appIntroFocusMintRoleContent": "Ένα σύντομο παιχνίδι για εξάσκηση στην εστίαση της προσοχής σε θετικές εικόνες.",
+  "appIntroScientificEvidenceTitle": "Σχετικά με αυτή την άσκηση",
+  "appIntroScientificEvidenceContent": "Εξασκηθείτε στην εύρεση θετικών εικόνων. Το FocusMint είναι εργαλείο αυτοφροντίδας, όχι ιατρική θεραπεία. Τα αποτελέσματα διαφέρουν από άτομο σε άτομο.",
+  "appIntroExpectedEffectsTitle": "Τι μπορείτε να εξασκήσετε",
+  "appIntroEffect1": "Αναζήτηση θετικών εικόνων",
+  "appIntroEffect2": "Παρατήρηση των χαμόγελων γύρω σας",
+  "appIntroEffect3": "Δημιουργία μιας σύντομης καθημερινής συνήθειας",
+  "appIntroHowToUse": "Δείτε πώς λειτουργεί",
+  "pointsEarned": "Κερδίσατε πόντους!",
+  "yourScore": "Το σκορ σας",
+  "totalPlayTime": "Συνολικός χρόνος παιχνιδιού",
+  "imageManagement": "Διαχείριση εικόνων",
+  "hiddenImagesCount": "Κρυφές εικόνες: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Έχετε μη αποθηκευμένες αλλαγές",
+  "unsavedChangesMessage": "Έχετε {count} μη αποθηκευμένες αλλαγές στις ρυθμίσεις εμφάνισης εικόνων.",
+  "unsavedChangesWarning": "Οι αλλαγές θα χαθούν αν κλείσετε τώρα αυτήν την οθόνη.",
+  "discardChanges": "Απόρριψη αλλαγών",
+  "saveAndExit": "Αποθήκευση και έξοδος",
+  "settingsSaved": "Αποθηκεύτηκαν {count} ρυθμίσεις",
+  "saveError": "Παρουσιάστηκε σφάλμα κατά την αποθήκευση των ρυθμίσεων",
+  "imageSettingsUpdated": "Οι ρυθμίσεις εικόνων ενημερώθηκαν",
+  "allImages": "Όλες",
+  "positiveImages": "Θετικές",
+  "negativeImages": "Αρνητικές",
+  "smileImages": "Χαμόγελο",
+  "vegetableImages": "Θρεπτικές τροφές",
+  "healthImages": "Κίνηση και κοινωνική επαφή",
+  "sadImages": "Θυμός, θλίψη και ανησυχία",
+  "badFoodImages": "Γρήγορο φαγητό και γλυκά",
+  "badImages": "Ανθυγιεινές συνήθειες",
+  "imageManagementHint": "Πατήστε για εμφάνιση ή απόκρυψη εικόνας. Μπορείτε να αποκρύψετε έως 15 εικόνες.",
+  "unsaved": "Μη αποθηκευμένο",
+  "save": "Αποθήκευση",
+  "hiddenImages": "Κρυφές",
+  "noHiddenImages": "Δεν υπάρχουν κρυφές εικόνες",
+  "settingsLoadFailed": "Η φόρτωση των ρυθμίσεων απέτυχε",
+  "imagesAdded": "Προστέθηκαν {count} εικόνες",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Η προσθήκη εικόνων απέτυχε",
+  "imageSelectionFailed": "Η επιλογή εικόνων απέτυχε",
+  "settingsChangeFailed": "Η αλλαγή των ρυθμίσεων απέτυχε",
+  "groupTitle": "Ομάδα: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Εναλλαγή εμφάνισης",
+  "imageCount": "{count} εικόνες",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Σημαντικές σημειώσεις",
+  "notice1": "Προστέθηκε η δυνατότητα προσαρμοσμένων εικόνων!",
+  "notice2": "Μπορείτε να προσθέσετε δικές σας εικόνες από την οθόνη ρυθμίσεων",
+  "notice3": "Για λεπτομέρειες, ανατρέξτε στην οθόνη ρυθμίσεων",
+  "customImageTitle": "Προσαρμοσμένες εικόνες",
+  "customImageSubtitle": "Προσθέστε και διαχειριστείτε δικές σας εικόνες",
+  "addCustomImages": "Προσθήκη προσαρμοσμένων εικόνων",
+  "selectImages": "Επιλογή εικόνων",
+  "unknownImage": "Άγνωστη εικόνα",
+  "customImageSettings": "Ρυθμίσεις προσαρμοσμένων εικόνων",
+  "useCustomImages": "Χρήση προσαρμοσμένων εικόνων",
+  "useCustomImagesDescription": "Χρησιμοποιήστε τις δικές σας εικόνες στην άσκηση. Ενεργοποιήστε την ανάμειξη παρακάτω για να συμπεριλάβετε και τις εικόνες της εφαρμογής.",
+  "groupSettings": "Ρυθμίσεις ομάδων",
+  "minOneGroupRequired": "Πρέπει να είναι ενεργοποιημένη τουλάχιστον μία ομάδα",
+  "settingsLoadFailedMessage": "Η φόρτωση των ρυθμίσεων απέτυχε",
+  "customImageNotice1": "Όταν οι ομάδες είναι ενεργοποιημένες, οι εικόνες εμφανίζονται τυχαία για κάθε ομάδα.",
+  "customImageNotice2": "Οι εικόνες που ανεβάζουν και ορίζουν οι χρήστες δεν κοινοποιούνται στους προγραμματιστές ή σε τρίτους και αποθηκεύονται μόνο στον χώρο της εφαρμογής στη συσκευή.",
+  "customImageNotice3": "Έτσι είναι δυνατή η χρήση εκτός σύνδεσης.",
+  "customImageNotice4": "Η προσθήκη πολλών εικόνων καταλαμβάνει αποθηκευτικό χώρο. Αν παρουσιαστεί πρόβλημα, απενεργοποιήστε τις προσωπικές εικόνες ή αφαιρέστε όσες δεν χρησιμοποιείτε από τις ρυθμίσεις.",
+  "customImageNotice5": "Όταν διαγράψετε την εφαρμογή, οι ορισμένες εικόνες θα διαγραφούν.",
+  "customImageRequirementNotMet": "Για να χρησιμοποιήσετε προσαρμοσμένες εικόνες, χρειάζεστε τουλάχιστον 1 καλή εικόνα και 3 όχι καλές εικόνες στις ενεργοποιημένες ομάδες.",
+  "customImageRequirement": "Για να χρησιμοποιήσετε προσαρμοσμένες εικόνες, χρειάζεστε τουλάχιστον 1 καλή εικόνα και 3 όχι καλές εικόνες στις ενεργοποιημένες ομάδες.",
+  "sunnyWeather": "Καλές",
+  "rainyWeather": "Όχι καλές",
+  "addImages": "Προσθήκη εικόνων",
+  "imageDeleted": "Η εικόνα διαγράφηκε",
+  "imageDeleteFailed": "Η διαγραφή της εικόνας απέτυχε",
+  "deleteImageTitle": "Διαγραφή εικόνας",
+  "deleteImageMessage": "Θέλετε να διαγράψετε αυτήν την εικόνα; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
+  "groupImageTitle": "Ομάδα {groupId} – {weather} εικόνες",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Καταχωρισμένες: {count} εικόνες",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Δεν έχουν καταχωριστεί εικόνες",
+  "imagePreview": "Προεπισκόπηση εικόνας",
+  "close": "Κλείσιμο",
+  "contactEmailSubject": "FocusMint - Επικοινωνία",
+  "contactEmailBody": "Μοιραστείτε μαζί μας τα σχόλια και τις ερωτήσεις σας.",
+  "mixWithBuiltInImages": "Ανάμειξη με εικόνες της εφαρμογής",
+  "mixWithBuiltInImagesDescription": "Χρήση των δικών σας εικόνων μαζί με τις εικόνες της εφαρμογής",
+  "supportIntro": "Επικοινωνήστε ανώνυμα με τον προγραμματιστή. Ερωτήσεις και προτάσεις είναι ευπρόσδεκτες. Μπορείτε να στείλετε 3 μηνύματα την ημέρα. Κάθε απάντηση του προγραμματιστή επαναφέρει το διαθέσιμο όριο στα 3.",
+  "supportReceived": "Το μήνυμα ελήφθη. Συνήθως απαντάμε εντός 2–3 ημερών.",
+  "supportComposer": "Γράψτε ένα μήνυμα",
+  "supportSend": "Αποστολή",
+  "supportRetry": "Νέα προσπάθεια",
+  "supportSent": "Εστάλη",
+  "supportUnsent": "Δεν εστάλη · αποθηκεύτηκε σε αυτή τη συσκευή",
+  "supportAttach": "Επισύναψη εικόνας",
+  "supportRemoveImage": "Αφαίρεση εικόνας",
+  "supportImage": "Συνημμένο",
+  "supportClear": "Διαγραφή ιστορικού",
+  "supportClearConfirm": "Να διαγραφεί αυτή η συνομιλία; Θα διαγραφούν επίσης τα μη απεσταλμένα πρόχειρα και το ιστορικό στον διακομιστή. Το όριο μηνυμάτων δεν επαναφέρεται.",
+  "supportQuota": "Χρησιμοποιήσατε τα 3 σημερινά μηνύματα. Στείλτε νέο αύριο ή μετά από απάντηση του προγραμματιστή.",
+  "supportConnectionError": "Η σύνδεση απέτυχε. Τα αποθηκευμένα πρόχειρα δεν έχουν σταλεί.",
+  "supportSendError": "Η αποστολή απέτυχε. Το μήνυμα αποθηκεύτηκε σε αυτή τη συσκευή. Δοκιμάστε ξανά.",
+  "supportStorageError": "Η αποθήκευση απέτυχε. Δοκιμάστε ξανά.",
+  "supportClearError": "Δεν ήταν δυνατή η διαγραφή του ιστορικού. Ελέγξτε τη σύνδεση και δοκιμάστε ξανά.",
+  "supportImageError": "Δεν ήταν δυνατή η φόρτωση της εικόνας. Επιλέξτε εικόνα μικρότερη από 30 MB.",
+  "supportRemaining": "Διαθέσιμα μηνύματα σήμερα: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Μη αναγνωσμένες απαντήσεις: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Πληροφορίες",
+  "supportDeveloper": "Προγραμματιστής",
+  "supportPrivacy": "Δεδομένα επικοινωνίας με την υποστήριξη",
+  "breathingTitle": "Πάρτε μια ήρεμη ανάσα",
+  "breathingHint": "Ακολουθήστε την απαλή κίνηση των πνευμόνων\nμε άνετο ρυθμό.",
+  "breathingIn": "Εισπνεύστε αργά",
+  "breathingOut": "Εκπνεύστε αργά",
+  "breathingProgress": "Πρόοδος της άσκησης αναπνοής",
+  "breathingResultHint": "Τα αποτελέσματά σας θα εμφανιστούν αυτόματα.",
+  "breathingSkip": "Μετάβαση στα αποτελέσματα"
+}

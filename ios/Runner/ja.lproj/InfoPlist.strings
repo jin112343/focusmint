@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "このアプリでは学習用のカスタム画像を追加するためにカメラにアクセスします。";
+"NSPhotoLibraryUsageDescription" = "トレーニング画像の追加や、お問い合わせへの画像添付のために写真を選択します。";

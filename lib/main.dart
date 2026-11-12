@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:focusmint/firebase_options.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
+import 'package:focusmint/l10n/locale_resolution.dart';
 import 'package:focusmint/pages/home_page.dart';
 import 'package:focusmint/constants/app_colors.dart';
 import 'package:focusmint/services/download_tracker_service.dart';
@@ -45,10 +46,8 @@ class FocusMintApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('en'),
-        Locale('ja'),
-      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+      localeListResolutionCallback: resolveAppLocale,
       theme: AppTheme.lightTheme,
       home: const HomePage(),
       debugShowCheckedModeBanner: false,

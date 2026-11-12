@@ -16,34 +16,35 @@ class AppIntroductionDialog {
 
 class _AppIntroductionContent extends StatefulWidget {
   final VoidCallback onNext;
-  
+
   const _AppIntroductionContent({required this.onNext});
-  
+
   @override
-  State<_AppIntroductionContent> createState() => _AppIntroductionContentState();
+  State<_AppIntroductionContent> createState() =>
+      _AppIntroductionContentState();
 }
 
 class _AppIntroductionContentState extends State<_AppIntroductionContent> {
   final ScrollController _scrollController = ScrollController();
   double _scrollProgress = 0.0;
-  
+
   @override
   void initState() {
     super.initState();
     _scrollController.addListener(_onScroll);
   }
-  
+
   @override
   void dispose() {
     _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
     super.dispose();
   }
-  
+
   void _onScroll() {
     final maxScrollExtent = _scrollController.position.maxScrollExtent;
     final currentScroll = _scrollController.offset;
-    
+
     setState(() {
       if (maxScrollExtent > 0) {
         _scrollProgress = (currentScroll / maxScrollExtent).clamp(0.0, 1.0);
@@ -52,245 +53,238 @@ class _AppIntroductionContentState extends State<_AppIntroductionContent> {
       }
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    
+
     return Dialog(
       backgroundColor: Colors.transparent,
       child: Container(
-            constraints: const BoxConstraints(maxHeight: 600),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.shadowColor.withValues(alpha: 0.2),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
-                ),
-              ],
+        constraints: const BoxConstraints(maxHeight: 600),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.shadowColor.withValues(alpha: 0.2),
+              blurRadius: 20,
+              offset: const Offset(0, 10),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Flexible(
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: SingleChildScrollView(
-                          controller: _scrollController,
-                          padding: const EdgeInsets.all(24.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                        // アプリタイトル
-                        Center(
-                          child: Text(
-                            l10n.focusMintTitle,
-                            style: const TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.mintGreen,
+          ],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: SingleChildScrollView(
+                      controller: _scrollController,
+                      padding: const EdgeInsets.all(24.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // アプリタイトル
+                          Center(
+                            child: Text(
+                              l10n.focusMintTitle,
+                              style: const TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.mintGreen,
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 24),
-                        
-                        // 注意バイアスについて
-                        _buildSection(
-                          icon: Icons.visibility,
-                          title: l10n.appIntroAttentionBiasTitle,
-                          content: l10n.appIntroAttentionBiasContent,
-                        ),
-                        
-                        const SizedBox(height: 20),
-                        
-                        // FocusMintの役割
-                        _buildSection(
-                          icon: Icons.psychology,
-                          title: l10n.appIntroFocusMintRoleTitle,
-                          content: l10n.appIntroFocusMintRoleContent,
-                        ),
-                        
-                        const SizedBox(height: 20),
-                        
-                        // 科学的根拠
-                        _buildSection(
-                          icon: Icons.science,
-                          title: l10n.appIntroScientificEvidenceTitle,
-                          content: l10n.appIntroScientificEvidenceContent,
-                        ),
-                        
-                        const SizedBox(height: 20),
-                        
-                        // 期待できる効果
-                        _buildSection(
-                          icon: Icons.favorite,
-                          title: l10n.appIntroExpectedEffectsTitle,
-                          content: '',
-                          customContent: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              _buildEffectItem(l10n.appIntroEffect1),
-                              _buildEffectItem(l10n.appIntroEffect2),
-                              _buildEffectItem(l10n.appIntroEffect3),
-                            ],
+                          const SizedBox(height: 24),
+
+                          // 注意バイアスについて
+                          _buildSection(
+                            icon: Icons.visibility,
+                            title: l10n.appIntroAttentionBiasTitle,
+                            content: l10n.appIntroAttentionBiasContent,
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                      // 縦のスクロールバナー
-                      Container(
-                        width: 8,
-                        margin: const EdgeInsets.only(top: 24.0, bottom: 24.0, right: 16.0),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: LayoutBuilder(
-                          builder: (context, constraints) {
-                            final thumbHeight = constraints.maxHeight * 0.3;
-                            final trackHeight = constraints.maxHeight - thumbHeight;
-                            final thumbPosition = trackHeight * _scrollProgress;
-                            
-                            return Stack(
+
+                          const SizedBox(height: 20),
+
+                          // FocusMintの役割
+                          _buildSection(
+                            icon: Icons.psychology,
+                            title: l10n.appIntroFocusMintRoleTitle,
+                            content: l10n.appIntroFocusMintRoleContent,
+                          ),
+
+                          const SizedBox(height: 20),
+
+                          // 科学的根拠
+                          _buildSection(
+                            icon: Icons.science,
+                            title: l10n.appIntroScientificEvidenceTitle,
+                            content: l10n.appIntroScientificEvidenceContent,
+                          ),
+
+                          const SizedBox(height: 20),
+
+                          // 期待できる効果
+                          _buildSection(
+                            icon: Icons.favorite,
+                            title: l10n.appIntroExpectedEffectsTitle,
+                            content: '',
+                            customContent: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // スクロールサム
-                                Positioned(
-                                  top: thumbPosition,
-                                  child: Container(
-                                    width: 8,
-                                    height: thumbHeight,
-                                    decoration: BoxDecoration(
-                                      color: AppColors.mintGreen,
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                  ),
-                                ),
+                                _buildEffectItem(l10n.appIntroEffect1),
+                                _buildEffectItem(l10n.appIntroEffect2),
+                                _buildEffectItem(l10n.appIntroEffect3),
                               ],
-                            );
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                
-                // ボタン領域
-                Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: 48,
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        Navigator.of(context).pop();
-                        // ダイアログが完全に閉じるまで少し待つ
-                        await Future.delayed(const Duration(milliseconds: 100));
-                        widget.onNext();
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.mintGreen,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        elevation: 2,
-                      ),
-                      child: Text(
-                        l10n.appIntroHowToUse,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ),
-              ],
+                  // 縦のスクロールバナー
+                  Container(
+                    width: 8,
+                    margin: const EdgeInsetsDirectional.only(
+                      top: 24.0,
+                      bottom: 24.0,
+                      end: 16.0,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        final thumbHeight = constraints.maxHeight * 0.3;
+                        final trackHeight = constraints.maxHeight - thumbHeight;
+                        final thumbPosition = trackHeight * _scrollProgress;
+
+                        return Stack(
+                          children: [
+                            // スクロールサム
+                            Positioned(
+                              top: thumbPosition,
+                              child: Container(
+                                width: 8,
+                                height: thumbHeight,
+                                decoration: BoxDecoration(
+                                  color: AppColors.mintGreen,
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        );
+
+            // ボタン領域
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: ElevatedButton(
+                  onPressed: () async {
+                    Navigator.of(context).pop();
+                    // ダイアログが完全に閉じるまで少し待つ
+                    await Future.delayed(const Duration(milliseconds: 100));
+                    widget.onNext();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.mintGreen,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    elevation: 2,
+                  ),
+                  child: Text(
+                    l10n.appIntroHowToUse,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
 Widget _buildSection({
-    required IconData icon,
-    required String title,
-    required String content,
-    Widget? customContent,
-  }) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.backgroundColor.withValues(alpha: 0.3),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(
-                icon,
-                color: AppColors.mintGreen,
-                size: 22,
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
-                  ),
+  required IconData icon,
+  required String title,
+  required String content,
+  Widget? customContent,
+}) {
+  return Container(
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: AppColors.backgroundColor.withValues(alpha: 0.3),
+      borderRadius: BorderRadius.circular(12),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Icon(icon, color: AppColors.mintGreen, size: 22),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimary,
                 ),
               ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          if (customContent != null)
-            customContent
-          else
-            Text(
-              content,
-              style: const TextStyle(
-                fontSize: 14,
-                color: AppColors.textPrimary,
-                height: 1.4,
-              ),
             ),
-        ],
-      ),
-    );
-  }
+          ],
+        ),
+        const SizedBox(height: 10),
+        if (customContent != null)
+          customContent
+        else
+          Text(
+            content,
+            style: const TextStyle(
+              fontSize: 14,
+              color: AppColors.textPrimary,
+              height: 1.4,
+            ),
+          ),
+      ],
+    ),
+  );
+}
 
 Widget _buildEffectItem(String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
-      child: Row(
-        children: [
-          const Icon(
-            Icons.check_circle,
-            color: AppColors.mintGreen,
-            size: 18,
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 2),
+    child: Row(
+      children: [
+        const Icon(Icons.check_circle, color: AppColors.mintGreen, size: 18),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Text(
+            text,
+            style: const TextStyle(fontSize: 14, color: AppColors.textPrimary),
           ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              text,
-              style: const TextStyle(
-                fontSize: 14,
-                color: AppColors.textPrimary,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}

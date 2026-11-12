@@ -1,0 +1,333 @@
+{
+  "@@locale": "ms",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Mata Semasa",
+  "goalLabel": "Sasaran: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Baki: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Sasaran Tercapai!",
+  "startButtonText": "MULA",
+  "stressReductionMessage": "Berlatih memberi perhatian kepada perkara positif.",
+  "remainingTimeMinutes": "Masa berbaki: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Masa berbaki: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Skor: {score} Mata",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Menyediakan imej...",
+  "noStimuliAvailable": "Tiada rangsangan tersedia",
+  "invalidGridSize": "Saiz grid tidak sah",
+  "unknown": "?",
+  "gettingStarted": "Memulakan...",
+  "excellentPerformance": "Prestasi cemerlang!",
+  "greatJob": "Syabas!",
+  "goodPerformance": "Prestasi baik",
+  "keepPracticingFeedback": "Teruskan berlatih",
+  "takeYourTimeFeedback": "Jangan tergesa-gesa",
+  "happy": "Gembira",
+  "angry": "Marah",
+  "fear": "Takut",
+  "sad": "Sedih",
+  "historyPageTitle": "Sejarah Latihan",
+  "dataLoading": "Memuatkan data...",
+  "pointsHistory": "Sejarah Mata",
+  "weekly": "Mingguan",
+  "monthly": "Bulanan",
+  "noDataAvailable": "Tiada data tersedia",
+  "goalAchievementRate": "Kadar Pencapaian Sasaran",
+  "scoreStatistics": "Statistik Skor",
+  "bestScore": "Skor Terbaik",
+  "totalScore": "Jumlah Skor",
+  "trainingTime": "Masa Latihan",
+  "totalTrainingTime": "Jumlah Masa Latihan",
+  "detailedStatistics": "Statistik Terperinci",
+  "averageScorePerMinute": "Purata skor seminit",
+  "pointsToGoal": "Mata ke sasaran",
+  "goalSetting": "Tetapan sasaran",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "j",
+  "pointsUnit": "mata",
+  "monthSuffix": "",
+  "sundayShort": "Ahd",
+  "mondayShort": "Isn",
+  "tuesdayShort": "Sel",
+  "wednesdayShort": "Rab",
+  "thursdayShort": "Kha",
+  "fridayShort": "Jum",
+  "saturdayShort": "Sab",
+  "settingsTitle": "Tetapan",
+  "goalPointsSetting": "Tetapan Mata Sasaran",
+  "currentGoalPoints": "Sasaran semasa: {points} mata",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Mata sasaran baharu",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "mata",
+  "saveGoalButton": "Simpan Sasaran",
+  "goalSetTo": "Sasaran ditetapkan kepada {points} mata",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Sila masukkan mata sasaran",
+  "enterValidNumber": "Sila masukkan nombor yang sah (1 hingga 99999999)",
+  "saveFailed": "Gagal menyimpan sesetengah tetapan",
+  "emailOpenFailed": "Tidak dapat membuka aplikasi e-mel",
+  "pageOpenFailed": "Tidak dapat membuka halaman",
+  "appInfoSupport": "Maklumat Aplikasi & Sokongan",
+  "contactUs": "Hubungi Kami",
+  "contactUsSubtitle": "Kongsikan maklum balas dan pertanyaan anda",
+  "termsOfService": "Terma Perkhidmatan",
+  "termsSubtitle": "Semak terma perkhidmatan aplikasi",
+  "privacyPolicy": "Dasar Privasi",
+  "privacySubtitle": "Mengenai pengendalian maklumat privasi",
+  "tutorialTitle": "Tutorial",
+  "tutorialSubtitle": "Ketahui cara menggunakan aplikasi",
+  "dataManagement": "Pengurusan Data",
+  "deleteHistory": "Padam Sejarah",
+  "deleteHistorySubtitle": "Padam sejarah latihan sahaja (mata sasaran dikekalkan)",
+  "deleteHistoryAndGoal": "Padam Sejarah & Sasaran",
+  "deleteHistoryAndGoalSubtitle": "Padam semua sejarah dan mata sasaran",
+  "deleteHistoryConfirmTitle": "Padam Sejarah",
+  "deleteHistoryConfirmMessage": "Adakah anda pasti mahu memadamkan semua sejarah latihan?\n\n*Mata sasaran akan dikekalkan",
+  "deleteHistoryAndGoalConfirmTitle": "Padam Sejarah & Sasaran",
+  "deleteHistoryAndGoalConfirmMessage": "Adakah anda pasti mahu memadamkan semua sejarah dan mata sasaran?\n\n*Tindakan ini tidak boleh dibuat asal",
+  "cancel": "Batal",
+  "delete": "Padam",
+  "historyDeleted": "Sejarah telah dipadamkan",
+  "historyAndGoalDeleted": "Sejarah dan sasaran telah dipadamkan",
+  "historyDeleteFailed": "Gagal memadamkan sejarah",
+  "historyAndGoalDeleteFailed": "Gagal memadamkan sejarah dan sasaran",
+  "tutorialDisplayFailed": "Gagal memaparkan tutorial",
+  "tips": "Petua",
+  "tipsContent": "• Sasaran anda dipaparkan pada carta di skrin utama\n• Mulakan dengan sasaran kecil dan tingkatkannya mengikut rentak anda\n• Setiap pilihan yang betul memberikan sehingga 6 mata",
+  "backToHome": "Kembali ke Skrin Utama",
+  "tutorialSkip": "Langkau",
+  "tutorialGoalAndPoints": "Sasaran dan Mata Semasa",
+  "tutorialGoalDescription": "Bulatan luar menunjukkan sasaran anda, bulatan dalam menunjukkan jumlah mata. Bulatan akan terisi apabila anda menghampiri sasaran.",
+  "tutorialOneMinuteTraining": "Latihan 1 Minit",
+  "tutorialTrainingDescription": "Mulakan permainan 1 minit. Pilih imej positif atau tabiat baik daripada 4 pilihan.",
+  "tutorialScoreProgress": "Perkembangan Skor",
+  "tutorialScoreDescription": "Lihat maklumat terperinci tentang skor yang diperoleh.",
+  "tutorialSettingsAndData": "Tetapan dan Pengurusan Data",
+  "tutorialSettingsDescription": "Ubah nilai sasaran, lihat maklumat aplikasi dan tetapkan semula data.",
+  "appIntroAttentionBiasTitle": "Mengenai Bias Perhatian",
+  "appIntroAttentionBiasContent": "Apabila kebimbangan tinggi, kita cenderung menumpukan perhatian hanya pada perkara negatif tanpa disedari.",
+  "appIntroFocusMintRoleTitle": "Peranan FocusMint",
+  "appIntroFocusMintRoleContent": "Permainan ringkas untuk berlatih mengarahkan perhatian kepada imej positif.",
+  "appIntroScientificEvidenceTitle": "Tentang latihan ini",
+  "appIntroScientificEvidenceContent": "Berlatih mencari imej positif. FocusMint ialah alat penjagaan diri, bukan rawatan perubatan. Hasil berbeza mengikut individu.",
+  "appIntroExpectedEffectsTitle": "Perkara yang boleh anda latih",
+  "appIntroEffect1": "Mencari imej positif",
+  "appIntroEffect2": "Menyedari senyuman di sekeliling anda",
+  "appIntroEffect3": "Membina rutin harian yang ringkas",
+  "appIntroHowToUse": "Lihat Cara Penggunaan",
+  "pointsEarned": "Mata Diperoleh!",
+  "yourScore": "Skor Anda",
+  "totalPlayTime": "Jumlah Masa Bermain",
+  "imageManagement": "Pengurusan Imej",
+  "hiddenImagesCount": "Imej tersembunyi: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Anda mempunyai perubahan yang belum disimpan",
+  "unsavedChangesMessage": "Anda mempunyai {count} perubahan tetapan paparan imej yang belum disimpan.",
+  "unsavedChangesWarning": "Perubahan akan hilang jika anda menutup skrin ini sekarang.",
+  "discardChanges": "Buang Perubahan",
+  "saveAndExit": "Simpan dan Keluar",
+  "settingsSaved": "{count} tetapan disimpan",
+  "saveError": "Ralat berlaku semasa menyimpan tetapan",
+  "imageSettingsUpdated": "Tetapan imej telah dikemas kini",
+  "allImages": "Semua",
+  "positiveImages": "Positif",
+  "negativeImages": "Negatif",
+  "smileImages": "Senyuman",
+  "vegetableImages": "Makanan berkhasiat",
+  "healthImages": "Pergerakan dan pergaulan",
+  "sadImages": "Marah, sedih dan bimbang",
+  "badFoodImages": "Makanan segera dan manisan",
+  "badImages": "Tabiat tidak sihat",
+  "imageManagementHint": "Ketik untuk menogol keterlihatan imej. Anda boleh menyembunyikan sehingga 15 imej.",
+  "unsaved": "Belum disimpan",
+  "save": "Simpan",
+  "hiddenImages": "Tersembunyi",
+  "noHiddenImages": "Tiada imej tersembunyi",
+  "settingsLoadFailed": "Gagal memuatkan tetapan",
+  "imagesAdded": "{count} imej ditambah",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Gagal menambah imej",
+  "imageSelectionFailed": "Gagal memilih imej",
+  "settingsChangeFailed": "Gagal menukar tetapan",
+  "groupTitle": "Kumpulan: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Togol Paparan",
+  "imageCount": "{count} imej",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Nota Penting",
+  "notice1": "Ciri imej tersuai telah ditambah!",
+  "notice2": "Anda boleh menambah imej sendiri daripada skrin tetapan",
+  "notice3": "Sila semak skrin tetapan untuk butiran lanjut",
+  "customImageTitle": "Imej Tersuai",
+  "customImageSubtitle": "Tambah dan urus imej anda sendiri",
+  "addCustomImages": "Tambah Imej Tersuai",
+  "selectImages": "Pilih Imej",
+  "unknownImage": "Imej Tidak Dikenali",
+  "customImageSettings": "Tetapan Imej Tersuai",
+  "useCustomImages": "Guna Imej Tersuai",
+  "useCustomImagesDescription": "Gunakan imej anda sendiri untuk latihan. Hidupkan pilihan campuran di bawah untuk menyertakan imej terbina dalam.",
+  "groupSettings": "Tetapan Kumpulan",
+  "minOneGroupRequired": "Sekurang-kurangnya satu kumpulan mesti diaktifkan",
+  "settingsLoadFailedMessage": "Gagal memuatkan tetapan",
+  "customImageNotice1": "Apabila kumpulan diaktifkan, imej dipaparkan secara rawak untuk setiap kumpulan.",
+  "customImageNotice2": "Imej yang dimuat naik dan ditetapkan oleh pengguna tidak dikongsi dengan pembangun atau pihak ketiga dan hanya disimpan dalam ruang aplikasi pada peranti.",
+  "customImageNotice3": "Oleh itu, aplikasi boleh digunakan secara luar talian.",
+  "customImageNotice4": "Menambah banyak imej menggunakan ruang storan. Jika timbul masalah, matikan imej peribadi atau padam imej yang tidak digunakan dalam Tetapan.",
+  "customImageNotice5": "Apabila anda memadamkan aplikasi, imej yang ditetapkan akan turut dipadamkan.",
+  "customImageRequirementNotMet": "Untuk menggunakan imej tersuai, anda memerlukan sekurang-kurangnya 1 imej baik dan 3 imej tidak baik dalam kumpulan yang diaktifkan.",
+  "customImageRequirement": "Untuk menggunakan imej tersuai, anda memerlukan sekurang-kurangnya 1 imej baik dan 3 imej tidak baik dalam kumpulan yang diaktifkan.",
+  "sunnyWeather": "Baik",
+  "rainyWeather": "Tidak baik",
+  "addImages": "Tambah Imej",
+  "imageDeleted": "Imej telah dipadamkan",
+  "imageDeleteFailed": "Gagal memadamkan imej",
+  "deleteImageTitle": "Padam Imej",
+  "deleteImageMessage": "Padam imej ini? Tindakan ini tidak boleh dibuat asal.",
+  "groupImageTitle": "Imej {weather} Kumpulan {groupId}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Didaftarkan: {count} imej",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Tiada imej didaftarkan",
+  "imagePreview": "Pratonton Imej",
+  "close": "Tutup",
+  "contactEmailSubject": "FocusMint - Pertanyaan",
+  "contactEmailBody": "Sila kongsikan maklum balas dan pertanyaan anda.",
+  "mixWithBuiltInImages": "Campur dengan imej terbina dalam",
+  "mixWithBuiltInImagesDescription": "Gunakan imej anda dan imej terbina dalam bersama-sama",
+  "supportIntro": "Berbual dengan pembangun tanpa mendedahkan identiti. Soalan dan cadangan dialu-alukan. Anda boleh menghantar 3 mesej sehari. Setiap balasan pembangun memulihkan kuota mesej anda kepada 3.",
+  "supportReceived": "Mesej diterima. Kami biasanya membalas dalam masa 2–3 hari.",
+  "supportComposer": "Tulis mesej",
+  "supportSend": "Hantar",
+  "supportRetry": "Cuba lagi",
+  "supportSent": "Dihantar",
+  "supportUnsent": "Belum dihantar · disimpan pada peranti ini",
+  "supportAttach": "Lampirkan imej",
+  "supportRemoveImage": "Alih keluar imej",
+  "supportImage": "Lampiran",
+  "supportClear": "Padam sejarah",
+  "supportClearConfirm": "Padam perbualan ini? Draf yang belum dihantar dan sejarah pada pelayan juga akan dipadam. Ini tidak menetapkan semula kuota mesej anda.",
+  "supportQuota": "Anda telah menggunakan 3 mesej hari ini. Hantar lagi esok atau selepas pembangun membalas.",
+  "supportConnectionError": "Tidak dapat menyambung. Draf yang disimpan belum dihantar.",
+  "supportSendError": "Tidak dapat menghantar. Mesej anda disimpan pada peranti ini. Sila cuba lagi.",
+  "supportStorageError": "Tidak dapat menyimpan. Sila cuba lagi.",
+  "supportClearError": "Tidak dapat memadam sejarah. Semak sambungan dan cuba lagi.",
+  "supportImageError": "Tidak dapat memuatkan imej. Pilih imej yang berukuran kurang daripada 30 MB.",
+  "supportRemaining": "Baki mesej hari ini: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Balasan belum dibaca: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Maklumat",
+  "supportDeveloper": "Pembangun",
+  "supportPrivacy": "Tentang data pertanyaan",
+  "breathingTitle": "Luangkan masa untuk bernafas",
+  "breathingHint": "Ikuti gerakan lembut paru-paru\npada rentak yang selesa.",
+  "breathingIn": "Tarik nafas perlahan-lahan",
+  "breathingOut": "Hembus nafas perlahan-lahan",
+  "breathingProgress": "Kemajuan latihan pernafasan",
+  "breathingResultHint": "Keputusan anda akan dipaparkan secara automatik.",
+  "breathingSkip": "Terus ke keputusan"
+}

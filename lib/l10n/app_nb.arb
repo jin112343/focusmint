@@ -1,0 +1,333 @@
+{
+  "@@locale": "nb",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Nåværende poeng",
+  "goalLabel": "Mål: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Gjenstår: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Mål oppnådd!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Øv på å legge merke til det positive.",
+  "remainingTimeMinutes": "Tid igjen: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Tid igjen: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Resultat: {score} poeng",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Forbereder bilder...",
+  "noStimuliAvailable": "Ingen stimuli tilgjengelig",
+  "invalidGridSize": "Ugyldig rutenettstørrelse",
+  "unknown": "?",
+  "gettingStarted": "Starter...",
+  "excellentPerformance": "Fremragende prestasjon!",
+  "greatJob": "Godt jobbet!",
+  "goodPerformance": "God prestasjon",
+  "keepPracticingFeedback": "Fortsett å øve",
+  "takeYourTimeFeedback": "Ta deg god tid",
+  "happy": "Glad",
+  "angry": "Sint",
+  "fear": "Frykt",
+  "sad": "Trist",
+  "historyPageTitle": "Treningshistorikk",
+  "dataLoading": "Laster inn data...",
+  "pointsHistory": "Poenghistorikk",
+  "weekly": "Ukentlig",
+  "monthly": "Månedlig",
+  "noDataAvailable": "Ingen data tilgjengelig",
+  "goalAchievementRate": "Måloppnåelse",
+  "scoreStatistics": "Poengstatistikk",
+  "bestScore": "Beste resultat",
+  "totalScore": "Totalt resultat",
+  "trainingTime": "Treningstid",
+  "totalTrainingTime": "Total treningstid",
+  "detailedStatistics": "Detaljert statistikk",
+  "averageScorePerMinute": "Gjennomsnittlig resultat per minutt",
+  "pointsToGoal": "Poeng igjen til målet",
+  "goalSetting": "Målinnstilling",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "t",
+  "pointsUnit": "poeng",
+  "monthSuffix": "",
+  "sundayShort": "søn",
+  "mondayShort": "man",
+  "tuesdayShort": "tir",
+  "wednesdayShort": "ons",
+  "thursdayShort": "tor",
+  "fridayShort": "fre",
+  "saturdayShort": "lør",
+  "settingsTitle": "Innstillinger",
+  "goalPointsSetting": "Innstilling for målpoeng",
+  "currentGoalPoints": "Nåværende mål: {points} poeng",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Nye målpoeng",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "poeng",
+  "saveGoalButton": "Lagre mål",
+  "goalSetTo": "Målet er satt til {points} poeng",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Skriv inn målpoeng",
+  "enterValidNumber": "Skriv inn et gyldig tall (1 til 99999999)",
+  "saveFailed": "Kunne ikke lagre enkelte innstillinger",
+  "emailOpenFailed": "Kunne ikke åpne e-postappen",
+  "pageOpenFailed": "Kunne ikke åpne siden",
+  "appInfoSupport": "Appinfo og støtte",
+  "contactUs": "Kontakt oss",
+  "contactUsSubtitle": "Del tilbakemeldinger og spørsmål",
+  "termsOfService": "Vilkår for bruk",
+  "termsSubtitle": "Les appens vilkår for bruk",
+  "privacyPolicy": "Personvernerklæring",
+  "privacySubtitle": "Om håndtering av personopplysninger",
+  "tutorialTitle": "Veiledning",
+  "tutorialSubtitle": "Lær hvordan appen brukes",
+  "dataManagement": "Databehandling",
+  "deleteHistory": "Slett historikk",
+  "deleteHistorySubtitle": "Sletter kun treningshistorikken (målpoeng beholdes)",
+  "deleteHistoryAndGoal": "Slett historikk og mål",
+  "deleteHistoryAndGoalSubtitle": "Sletter all historikk og alle målpoeng",
+  "deleteHistoryConfirmTitle": "Slett historikk",
+  "deleteHistoryConfirmMessage": "Er du sikker på at du vil slette all treningshistorikk?\n\n*Målpoengene beholdes",
+  "deleteHistoryAndGoalConfirmTitle": "Slett historikk og mål",
+  "deleteHistoryAndGoalConfirmMessage": "Er du sikker på at du vil slette all historikk og alle målpoeng?\n\n*Denne handlingen kan ikke angres",
+  "cancel": "Avbryt",
+  "delete": "Slett",
+  "historyDeleted": "Historikken er slettet",
+  "historyAndGoalDeleted": "Historikk og mål er slettet",
+  "historyDeleteFailed": "Kunne ikke slette historikken",
+  "historyAndGoalDeleteFailed": "Kunne ikke slette historikk og mål",
+  "tutorialDisplayFailed": "Kunne ikke vise veiledningen",
+  "tips": "Tips",
+  "tipsContent": "• Målet ditt vises i diagrammet på startskjermen\n• Begynn med et lite mål og øk det i ditt eget tempo\n• Hvert riktige valg gir opptil 6 poeng",
+  "backToHome": "Tilbake til start",
+  "tutorialSkip": "Hopp over",
+  "tutorialGoalAndPoints": "Mål og nåværende poeng",
+  "tutorialGoalDescription": "Den ytre sirkelen viser målet ditt, den indre viser de totale poengene dine. Sirkelen fylles etter hvert som du nærmer deg målet.",
+  "tutorialOneMinuteTraining": "1-minuttstrening",
+  "tutorialTrainingDescription": "Start et 1-minuttsspill. Velg positive bilder eller gode vaner blant 4 alternativer.",
+  "tutorialScoreProgress": "Poengutvikling",
+  "tutorialScoreDescription": "Se detaljert informasjon om poengene du har tjent.",
+  "tutorialSettingsAndData": "Innstillinger og databehandling",
+  "tutorialSettingsDescription": "Endre målverdier, se appinformasjon og tilbakestill data.",
+  "appIntroAttentionBiasTitle": "Om oppmerksomhetsskjevhet",
+  "appIntroAttentionBiasContent": "Når uroen er sterk, har vi ubevisst en tendens til bare å fokusere på det negative.",
+  "appIntroFocusMintRoleTitle": "FocusMints rolle",
+  "appIntroFocusMintRoleContent": "Et kort spill der du øver på å rette oppmerksomheten mot positive bilder.",
+  "appIntroScientificEvidenceTitle": "Om denne øvelsen",
+  "appIntroScientificEvidenceContent": "Øv på å finne positive bilder. FocusMint er et verktøy for egenomsorg, ikke medisinsk behandling. Resultatene varierer fra person til person.",
+  "appIntroExpectedEffectsTitle": "Dette kan du øve på",
+  "appIntroEffect1": "Lete etter positive bilder",
+  "appIntroEffect2": "Legge merke til smil rundt deg",
+  "appIntroEffect3": "Skape en kort daglig rutine",
+  "appIntroHowToUse": "Se hvordan appen brukes",
+  "pointsEarned": "Poeng opptjent!",
+  "yourScore": "Ditt resultat",
+  "totalPlayTime": "Total spilletid",
+  "imageManagement": "Bildebehandling",
+  "hiddenImagesCount": "Skjulte bilder: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Du har ulagrede endringer",
+  "unsavedChangesMessage": "Du har {count} ulagrede endringer i innstillingene for bildevisning.",
+  "unsavedChangesWarning": "Endringene går tapt hvis du lukker skjermen nå.",
+  "discardChanges": "Forkast endringer",
+  "saveAndExit": "Lagre og avslutt",
+  "settingsSaved": "{count} innstillinger er lagret",
+  "saveError": "Det oppsto en feil under lagring av innstillingene",
+  "imageSettingsUpdated": "Bildeinnstillingene er oppdatert",
+  "allImages": "Alle",
+  "positiveImages": "Positive",
+  "negativeImages": "Negative",
+  "smileImages": "Smil",
+  "vegetableImages": "Næringsrik mat",
+  "healthImages": "Bevegelse og samvær",
+  "sadImages": "Sinne, tristhet og bekymring",
+  "badFoodImages": "Hurtigmat og søtsaker",
+  "badImages": "Usunne vaner",
+  "imageManagementHint": "Trykk for å vise eller skjule et bilde. Du kan skjule opptil 15 bilder.",
+  "unsaved": "Ulagret",
+  "save": "Lagre",
+  "hiddenImages": "Skjulte",
+  "noHiddenImages": "Ingen skjulte bilder",
+  "settingsLoadFailed": "Kunne ikke laste inn innstillingene",
+  "imagesAdded": "{count} bilder er lagt til",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Kunne ikke legge til bilder",
+  "imageSelectionFailed": "Kunne ikke velge bilder",
+  "settingsChangeFailed": "Kunne ikke endre innstillingene",
+  "groupTitle": "Gruppe: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Bytt visning",
+  "imageCount": "{count} bilder",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Viktige merknader",
+  "notice1": "Funksjonen for egne bilder er lagt til!",
+  "notice2": "Du kan legge til dine egne bilder fra innstillingsskjermen",
+  "notice3": "Se innstillingsskjermen for flere detaljer",
+  "customImageTitle": "Egne bilder",
+  "customImageSubtitle": "Legg til og administrer dine egne bilder",
+  "addCustomImages": "Legg til egne bilder",
+  "selectImages": "Velg bilder",
+  "unknownImage": "Ukjent bilde",
+  "customImageSettings": "Innstillinger for egne bilder",
+  "useCustomImages": "Bruk egne bilder",
+  "useCustomImagesDescription": "Bruk dine egne bilder i øvelsen. Slå på blanding nedenfor for også å bruke appens bilder.",
+  "groupSettings": "Gruppeinnstillinger",
+  "minOneGroupRequired": "Minst én gruppe må være aktivert",
+  "settingsLoadFailedMessage": "Kunne ikke laste inn innstillingene",
+  "customImageNotice1": "Når grupper er aktivert, vises bildene tilfeldig for hver gruppe.",
+  "customImageNotice2": "Bilder som brukeren laster opp og angir, deles ikke med utviklere eller tredjeparter og lagres kun i appens område på enheten.",
+  "customImageNotice3": "Derfor kan appen brukes uten nett.",
+  "customImageNotice4": "Mange bilder tar lagringsplass. Hvis du får problemer, kan du slå av egne bilder eller fjerne ubrukte bilder i Innstillinger.",
+  "customImageNotice5": "Når du sletter appen, slettes de angitte bildene.",
+  "customImageRequirementNotMet": "For å bruke egne bilder trenger du minst 1 godt bilde og 3 mindre gode bilder i aktiverte grupper.",
+  "customImageRequirement": "For å bruke egne bilder trenger du minst 1 godt bilde og 3 mindre gode bilder i aktiverte grupper.",
+  "sunnyWeather": "God",
+  "rainyWeather": "Mindre god",
+  "addImages": "Legg til bilder",
+  "imageDeleted": "Bildet er slettet",
+  "imageDeleteFailed": "Kunne ikke slette bildet",
+  "deleteImageTitle": "Slett bilde",
+  "deleteImageMessage": "Vil du slette dette bildet? Denne handlingen kan ikke angres.",
+  "groupImageTitle": "Gruppe {groupId} – {weather} bilder",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Registrert: {count} bilder",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Ingen bilder registrert",
+  "imagePreview": "Forhåndsvisning av bilde",
+  "close": "Lukk",
+  "contactEmailSubject": "FocusMint – Henvendelse",
+  "contactEmailBody": "Del gjerne tilbakemeldinger og spørsmål.",
+  "mixWithBuiltInImages": "Bland med appens bilder",
+  "mixWithBuiltInImagesDescription": "Bruk dine egne bilder og appens bilder sammen",
+  "supportIntro": "Skriv anonymt til utvikleren. Spørsmål og forslag er velkomne. Du kan sende 3 meldinger per dag. Hvert svar fra utvikleren gir deg 3 meldinger igjen.",
+  "supportReceived": "Meldingen er mottatt. Vi svarer vanligvis innen 2–3 dager.",
+  "supportComposer": "Skriv en melding",
+  "supportSend": "Send",
+  "supportRetry": "Prøv igjen",
+  "supportSent": "Sendt",
+  "supportUnsent": "Ikke sendt · lagret på denne enheten",
+  "supportAttach": "Legg ved bilde",
+  "supportRemoveImage": "Fjern bilde",
+  "supportImage": "Vedlegg",
+  "supportClear": "Slett historikk",
+  "supportClearConfirm": "Vil du slette denne samtalen? Usendte utkast og historikken på serveren slettes også. Dette tilbakestiller ikke meldingsgrensen din.",
+  "supportQuota": "Du har brukt dagens 3 meldinger. Send en ny i morgen eller etter et svar fra utvikleren.",
+  "supportConnectionError": "Kunne ikke koble til. Lagrede utkast er ikke sendt.",
+  "supportSendError": "Kunne ikke sende. Meldingen er lagret på denne enheten. Prøv igjen.",
+  "supportStorageError": "Kunne ikke lagre. Prøv igjen.",
+  "supportClearError": "Kunne ikke slette historikken. Sjekk tilkoblingen og prøv igjen.",
+  "supportImageError": "Kunne ikke laste inn bildet. Velg et bilde som er mindre enn 30 MB.",
+  "supportRemaining": "Meldinger igjen i dag: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Uleste svar: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informasjon",
+  "supportDeveloper": "Utvikler",
+  "supportPrivacy": "Data ved henvendelser",
+  "breathingTitle": "Ta et rolig pust",
+  "breathingHint": "Følg lungenes rolige bevegelse\ni et behagelig tempo.",
+  "breathingIn": "Pust rolig inn",
+  "breathingOut": "Pust rolig ut",
+  "breathingProgress": "Fremdrift i pusteøvelsen",
+  "breathingResultHint": "Resultatene vises automatisk.",
+  "breathingSkip": "Gå til resultatene"
+}

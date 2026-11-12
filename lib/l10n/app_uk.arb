@@ -1,0 +1,333 @@
+{
+  "@@locale": "uk",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Поточні бали",
+  "goalLabel": "Ціль: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Залишилося: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Ціль досягнуто!",
+  "startButtonText": "ПОЧАТИ",
+  "stressReductionMessage": "Вчіться помічати позитивне.",
+  "remainingTimeMinutes": "Залишилося часу: {minutes} хв {seconds} с",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Залишилося часу: {seconds} с",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Рахунок: {score} балів",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Підготовка зображень...",
+  "noStimuliAvailable": "Немає доступних стимулів",
+  "invalidGridSize": "Неприпустимий розмір сітки",
+  "unknown": "?",
+  "gettingStarted": "Починаємо...",
+  "excellentPerformance": "Чудовий результат!",
+  "greatJob": "Чудова робота!",
+  "goodPerformance": "Хороший результат",
+  "keepPracticingFeedback": "Продовжуйте тренуватися",
+  "takeYourTimeFeedback": "Не поспішайте",
+  "happy": "Радість",
+  "angry": "Злість",
+  "fear": "Страх",
+  "sad": "Смуток",
+  "historyPageTitle": "Історія тренувань",
+  "dataLoading": "Завантаження даних...",
+  "pointsHistory": "Історія балів",
+  "weekly": "Щотижня",
+  "monthly": "Щомісяця",
+  "noDataAvailable": "Дані відсутні",
+  "goalAchievementRate": "Рівень досягнення цілі",
+  "scoreStatistics": "Статистика рахунку",
+  "bestScore": "Найкращий рахунок",
+  "totalScore": "Загальний рахунок",
+  "trainingTime": "Час тренування",
+  "totalTrainingTime": "Загальний час тренувань",
+  "detailedStatistics": "Детальна статистика",
+  "averageScorePerMinute": "Середній рахунок за хвилину",
+  "pointsToGoal": "Балів до цілі",
+  "goalSetting": "Налаштування цілі",
+  "secondsUnit": "с",
+  "minutesUnit": "хв",
+  "hoursUnit": "год",
+  "pointsUnit": "балів",
+  "monthSuffix": "",
+  "sundayShort": "Нд",
+  "mondayShort": "Пн",
+  "tuesdayShort": "Вт",
+  "wednesdayShort": "Ср",
+  "thursdayShort": "Чт",
+  "fridayShort": "Пт",
+  "saturdayShort": "Сб",
+  "settingsTitle": "Налаштування",
+  "goalPointsSetting": "Налаштування цільових балів",
+  "currentGoalPoints": "Поточна ціль: {points} балів",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Нові цільові бали",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "балів",
+  "saveGoalButton": "Зберегти ціль",
+  "goalSetTo": "Ціль встановлено на {points} балів",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Введіть цільові бали",
+  "enterValidNumber": "Введіть дійсне число (від 1 до 99999999)",
+  "saveFailed": "Не вдалося зберегти деякі налаштування",
+  "emailOpenFailed": "Не вдалося відкрити поштовий застосунок",
+  "pageOpenFailed": "Не вдалося відкрити сторінку",
+  "appInfoSupport": "Інформація про застосунок і підтримка",
+  "contactUs": "Зв'яжіться з нами",
+  "contactUsSubtitle": "Поділіться відгуками та запитаннями",
+  "termsOfService": "Умови використання",
+  "termsSubtitle": "Перегляньте умови використання застосунку",
+  "privacyPolicy": "Політика конфіденційності",
+  "privacySubtitle": "Про обробку конфіденційної інформації",
+  "tutorialTitle": "Посібник",
+  "tutorialSubtitle": "Дізнайтеся, як користуватися застосунком",
+  "dataManagement": "Керування даними",
+  "deleteHistory": "Видалити історію",
+  "deleteHistorySubtitle": "Видалити лише історію тренувань (цільові бали збережуться)",
+  "deleteHistoryAndGoal": "Видалити історію та ціль",
+  "deleteHistoryAndGoalSubtitle": "Видалити всю історію та цільові бали",
+  "deleteHistoryConfirmTitle": "Видалити історію",
+  "deleteHistoryConfirmMessage": "Ви впевнені, що хочете видалити всю історію тренувань?\n\n*Цільові бали буде збережено",
+  "deleteHistoryAndGoalConfirmTitle": "Видалити історію та ціль",
+  "deleteHistoryAndGoalConfirmMessage": "Ви впевнені, що хочете видалити всю історію та цільові бали?\n\n*Цю дію не можна скасувати",
+  "cancel": "Скасувати",
+  "delete": "Видалити",
+  "historyDeleted": "Історію видалено",
+  "historyAndGoalDeleted": "Історію та ціль видалено",
+  "historyDeleteFailed": "Не вдалося видалити історію",
+  "historyAndGoalDeleteFailed": "Не вдалося видалити історію та ціль",
+  "tutorialDisplayFailed": "Не вдалося відобразити посібник",
+  "tips": "Поради",
+  "tipsContent": "• Мета відображається на діаграмі головного екрана\n• Почніть із невеликої мети й підвищуйте її у власному темпі\n• Кожен правильний вибір приносить до 6 балів",
+  "backToHome": "На головну",
+  "tutorialSkip": "Пропустити",
+  "tutorialGoalAndPoints": "Ціль і поточні бали",
+  "tutorialGoalDescription": "Зовнішнє коло показує вашу ціль, внутрішнє — загальні бали. Коло заповнюється в міру наближення до цілі.",
+  "tutorialOneMinuteTraining": "1-хвилинне тренування",
+  "tutorialTrainingDescription": "Розпочніть 1-хвилинну гру. Обирайте позитивні зображення або корисні звички з 4 варіантів.",
+  "tutorialScoreProgress": "Динаміка рахунку",
+  "tutorialScoreDescription": "Переглядайте детальну інформацію про отримані бали.",
+  "tutorialSettingsAndData": "Налаштування та керування даними",
+  "tutorialSettingsDescription": "Змінюйте цільові значення, переглядайте інформацію про застосунок і скидайте дані.",
+  "appIntroAttentionBiasTitle": "Про упередженість уваги",
+  "appIntroAttentionBiasContent": "Коли тривожність висока, ми несвідомо схильні зосереджуватися лише на негативному.",
+  "appIntroFocusMintRoleTitle": "Роль FocusMint",
+  "appIntroFocusMintRoleContent": "Коротка гра для тренування уваги до позитивних зображень.",
+  "appIntroScientificEvidenceTitle": "Про цю вправу",
+  "appIntroScientificEvidenceContent": "Тренуйтеся знаходити позитивні зображення. FocusMint — інструмент турботи про себе, а не медичне лікування. Результати можуть відрізнятися в різних людей.",
+  "appIntroExpectedEffectsTitle": "Що можна практикувати",
+  "appIntroEffect1": "Пошук позитивних зображень",
+  "appIntroEffect2": "Увага до усмішок навколо",
+  "appIntroEffect3": "Коротка щоденна звичка",
+  "appIntroHowToUse": "Як користуватися",
+  "pointsEarned": "Бали отримано!",
+  "yourScore": "Ваш рахунок",
+  "totalPlayTime": "Загальний час гри",
+  "imageManagement": "Керування зображеннями",
+  "hiddenImagesCount": "Приховані зображення: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "У вас є незбережені зміни",
+  "unsavedChangesMessage": "У вас {count} незбережених змін у налаштуваннях відображення зображень.",
+  "unsavedChangesWarning": "Якщо закрити цей екран зараз, зміни буде втрачено.",
+  "discardChanges": "Відхилити зміни",
+  "saveAndExit": "Зберегти й вийти",
+  "settingsSaved": "Збережено налаштувань: {count}",
+  "saveError": "Під час збереження налаштувань сталася помилка",
+  "imageSettingsUpdated": "Налаштування зображень оновлено",
+  "allImages": "Усі",
+  "positiveImages": "Позитивні",
+  "negativeImages": "Негативні",
+  "smileImages": "Усмішка",
+  "vegetableImages": "Поживна їжа",
+  "healthImages": "Рух і спілкування",
+  "sadImages": "Гнів, смуток і занепокоєння",
+  "badFoodImages": "Фастфуд і солодощі",
+  "badImages": "Нездорові звички",
+  "imageManagementHint": "Торкніться, щоб показати або приховати зображення. Можна приховати до 15 зображень.",
+  "unsaved": "Не збережено",
+  "save": "Зберегти",
+  "hiddenImages": "Приховані",
+  "noHiddenImages": "Немає прихованих зображень",
+  "settingsLoadFailed": "Не вдалося завантажити налаштування",
+  "imagesAdded": "Додано зображень: {count}",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Не вдалося додати зображення",
+  "imageSelectionFailed": "Не вдалося вибрати зображення",
+  "settingsChangeFailed": "Не вдалося змінити налаштування",
+  "groupTitle": "Група: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Перемикання відображення",
+  "imageCount": "Зображень: {count}",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Важливі примітки",
+  "notice1": "Додано функцію власних зображень!",
+  "notice2": "Ви можете додати власні зображення на екрані налаштувань",
+  "notice3": "Докладніше див. на екрані налаштувань",
+  "customImageTitle": "Власні зображення",
+  "customImageSubtitle": "Додавайте власні зображення та керуйте ними",
+  "addCustomImages": "Додати власні зображення",
+  "selectImages": "Вибрати зображення",
+  "unknownImage": "Невідоме зображення",
+  "customImageSettings": "Налаштування власних зображень",
+  "useCustomImages": "Використовувати власні зображення",
+  "useCustomImagesDescription": "Використовуйте власні зображення для тренування. Увімкніть змішування нижче, щоб додати зображення застосунку.",
+  "groupSettings": "Налаштування груп",
+  "minOneGroupRequired": "Принаймні одна група має бути ввімкнена",
+  "settingsLoadFailedMessage": "Не вдалося завантажити налаштування",
+  "customImageNotice1": "Якщо групи ввімкнено, зображення відображаються випадково для кожної групи.",
+  "customImageNotice2": "Зображення, які завантажують і встановлюють користувачі, не передаються розробникам чи третім особам і зберігаються лише в області застосунку на пристрої.",
+  "customImageNotice3": "Це дозволяє користуватися застосунком офлайн.",
+  "customImageNotice4": "Велика кількість зображень займає пам’ять. Якщо виникнуть проблеми, вимкніть власні зображення або видаліть непотрібні в налаштуваннях.",
+  "customImageNotice5": "Після видалення застосунку встановлені зображення буде видалено.",
+  "customImageRequirementNotMet": "Щоб використовувати власні зображення, потрібно щонайменше 1 хороше зображення та 3 не хороші зображення в увімкнених групах.",
+  "customImageRequirement": "Щоб використовувати власні зображення, потрібно щонайменше 1 хороше зображення та 3 не хороші зображення в увімкнених групах.",
+  "sunnyWeather": "Хороші",
+  "rainyWeather": "Не хороші",
+  "addImages": "Додати зображення",
+  "imageDeleted": "Зображення видалено",
+  "imageDeleteFailed": "Не вдалося видалити зображення",
+  "deleteImageTitle": "Видалити зображення",
+  "deleteImageMessage": "Видалити це зображення? Цю дію не можна скасувати.",
+  "groupImageTitle": "Група {groupId} — {weather} зображення",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Зареєстровано: {count} зображень",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Зображення не зареєстровано",
+  "imagePreview": "Попередній перегляд зображення",
+  "close": "Закрити",
+  "contactEmailSubject": "FocusMint — Зворотний зв'язок",
+  "contactEmailBody": "Поділіться, будь ласка, своїми відгуками та запитаннями.",
+  "mixWithBuiltInImages": "Змішувати із зображеннями застосунку",
+  "mixWithBuiltInImagesDescription": "Використовувати власні зображення разом із зображеннями застосунку",
+  "supportIntro": "Спілкуйтеся з розробником анонімно. Запитання й пропозиції вітаються. Можна надіслати 3 повідомлення на день. Кожна відповідь розробника відновлює доступну кількість до 3.",
+  "supportReceived": "Повідомлення отримано. Зазвичай ми відповідаємо протягом 2–3 днів.",
+  "supportComposer": "Введіть повідомлення",
+  "supportSend": "Надіслати",
+  "supportRetry": "Повторити",
+  "supportSent": "Надіслано",
+  "supportUnsent": "Не надіслано · збережено на цьому пристрої",
+  "supportAttach": "Прикріпити зображення",
+  "supportRemoveImage": "Прибрати зображення",
+  "supportImage": "Вкладення",
+  "supportClear": "Видалити історію",
+  "supportClearConfirm": "Видалити цю розмову? Ненадіслані чернетки та історію на сервері також буде видалено. Ліміт повідомлень не відновиться.",
+  "supportQuota": "Сьогоднішні 3 повідомлення використано. Надішліть нове завтра або після відповіді розробника.",
+  "supportConnectionError": "Не вдалося підключитися. Збережені чернетки не надіслано.",
+  "supportSendError": "Не вдалося надіслати. Повідомлення збережено на цьому пристрої. Спробуйте ще раз.",
+  "supportStorageError": "Не вдалося зберегти. Спробуйте ще раз.",
+  "supportClearError": "Не вдалося видалити історію. Перевірте з’єднання та спробуйте ще раз.",
+  "supportImageError": "Не вдалося завантажити зображення. Виберіть зображення розміром менше ніж 30 МБ.",
+  "supportRemaining": "Залишилося повідомлень сьогодні: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Непрочитані відповіді: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Інформація",
+  "supportDeveloper": "Розробник",
+  "supportPrivacy": "Про дані звернення",
+  "breathingTitle": "Зробіть спокійний вдих",
+  "breathingHint": "Дихайте відповідно до плавного руху легень\nу зручному для вас темпі.",
+  "breathingIn": "Повільно вдихніть",
+  "breathingOut": "Повільно видихніть",
+  "breathingProgress": "Перебіг дихальної вправи",
+  "breathingResultHint": "Результати з’являться автоматично.",
+  "breathingSkip": "Перейти до результатів"
+}

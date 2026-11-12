@@ -1,0 +1,333 @@
+{
+  "@@locale": "he",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "נקודות נוכחיות",
+  "goalLabel": "יעד: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "נותרו: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 היעד הושג!",
+  "startButtonText": "התחל",
+  "stressReductionMessage": "תרגלו תשומת לב לדברים חיוביים.",
+  "remainingTimeMinutes": "זמן נותר: {minutes} דק׳ {seconds} שנ׳",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "זמן נותר: {seconds} שנ׳",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "ניקוד: {score} נקודות",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "מכין תמונות...",
+  "noStimuliAvailable": "אין גירויים זמינים",
+  "invalidGridSize": "גודל רשת לא חוקי",
+  "unknown": "?",
+  "gettingStarted": "מתחילים...",
+  "excellentPerformance": "ביצועים מצוינים!",
+  "greatJob": "עבודה מצוינת!",
+  "goodPerformance": "ביצועים טובים",
+  "keepPracticingFeedback": "המשיכו להתאמן",
+  "takeYourTimeFeedback": "קחו את הזמן",
+  "happy": "שמח",
+  "angry": "כועס",
+  "fear": "פחד",
+  "sad": "עצוב",
+  "historyPageTitle": "היסטוריית אימונים",
+  "dataLoading": "טוען נתונים...",
+  "pointsHistory": "היסטוריית נקודות",
+  "weekly": "שבועי",
+  "monthly": "חודשי",
+  "noDataAvailable": "אין נתונים זמינים",
+  "goalAchievementRate": "שיעור השגת היעד",
+  "scoreStatistics": "סטטיסטיקת ניקוד",
+  "bestScore": "הניקוד הטוב ביותר",
+  "totalScore": "ניקוד כולל",
+  "trainingTime": "זמן אימון",
+  "totalTrainingTime": "זמן אימון כולל",
+  "detailedStatistics": "סטטיסטיקה מפורטת",
+  "averageScorePerMinute": "ניקוד ממוצע לדקה",
+  "pointsToGoal": "נקודות עד היעד",
+  "goalSetting": "הגדרת יעד",
+  "secondsUnit": "שנ׳",
+  "minutesUnit": "דק׳",
+  "hoursUnit": "שע׳",
+  "pointsUnit": "נקודות",
+  "monthSuffix": "",
+  "sundayShort": "א׳",
+  "mondayShort": "ב׳",
+  "tuesdayShort": "ג׳",
+  "wednesdayShort": "ד׳",
+  "thursdayShort": "ה׳",
+  "fridayShort": "ו׳",
+  "saturdayShort": "ש׳",
+  "settingsTitle": "הגדרות",
+  "goalPointsSetting": "הגדרת נקודות יעד",
+  "currentGoalPoints": "יעד נוכחי: {points} נקודות",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "נקודות יעד חדשות",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "נקודות",
+  "saveGoalButton": "שמור יעד",
+  "goalSetTo": "היעד הוגדר ל-{points} נקודות",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "נא להזין נקודות יעד",
+  "enterValidNumber": "נא להזין מספר חוקי (1 עד 99999999)",
+  "saveFailed": "שמירת חלק מההגדרות נכשלה",
+  "emailOpenFailed": "לא ניתן היה לפתוח את אפליקציית הדוא״ל",
+  "pageOpenFailed": "לא ניתן היה לפתוח את הדף",
+  "appInfoSupport": "מידע על האפליקציה ותמיכה",
+  "contactUs": "צרו קשר",
+  "contactUsSubtitle": "שתפו אותנו במשוב ובשאלות",
+  "termsOfService": "תנאי שימוש",
+  "termsSubtitle": "עיינו בתנאי השימוש של האפליקציה",
+  "privacyPolicy": "מדיניות פרטיות",
+  "privacySubtitle": "על הטיפול במידע פרטי",
+  "tutorialTitle": "מדריך",
+  "tutorialSubtitle": "למדו כיצד להשתמש באפליקציה",
+  "dataManagement": "ניהול נתונים",
+  "deleteHistory": "מחיקת היסטוריה",
+  "deleteHistorySubtitle": "מחיקת היסטוריית האימונים בלבד (נקודות היעד יישמרו)",
+  "deleteHistoryAndGoal": "מחיקת היסטוריה ויעד",
+  "deleteHistoryAndGoalSubtitle": "מחיקת כל ההיסטוריה ונקודות היעד",
+  "deleteHistoryConfirmTitle": "מחיקת היסטוריה",
+  "deleteHistoryConfirmMessage": "האם למחוק את כל היסטוריית האימונים?\n\n*נקודות היעד יישמרו",
+  "deleteHistoryAndGoalConfirmTitle": "מחיקת היסטוריה ויעד",
+  "deleteHistoryAndGoalConfirmMessage": "האם למחוק את כל ההיסטוריה ונקודות היעד?\n\n*לא ניתן לבטל פעולה זו",
+  "cancel": "ביטול",
+  "delete": "מחיקה",
+  "historyDeleted": "ההיסטוריה נמחקה",
+  "historyAndGoalDeleted": "ההיסטוריה והיעד נמחקו",
+  "historyDeleteFailed": "מחיקת ההיסטוריה נכשלה",
+  "historyAndGoalDeleteFailed": "מחיקת ההיסטוריה והיעד נכשלה",
+  "tutorialDisplayFailed": "הצגת המדריך נכשלה",
+  "tips": "טיפים",
+  "tipsContent": "• היעד מופיע בתרשים שבמסך הבית\n• התחילו ביעד קטן והגדילו אותו בקצב שלכם\n• כל בחירה נכונה מזכה בעד 6 נקודות",
+  "backToHome": "חזרה למסך הבית",
+  "tutorialSkip": "דלג",
+  "tutorialGoalAndPoints": "יעד ונקודות נוכחיות",
+  "tutorialGoalDescription": "המעגל החיצוני מציג את היעד, והמעגל הפנימי את סך הנקודות. המעגל מתמלא ככל שמתקרבים ליעד.",
+  "tutorialOneMinuteTraining": "אימון של דקה אחת",
+  "tutorialTrainingDescription": "התחילו משחק של דקה אחת. בחרו תמונות חיוביות או הרגלים טובים מתוך 4 אפשרויות.",
+  "tutorialScoreProgress": "התקדמות הניקוד",
+  "tutorialScoreDescription": "צפו במידע מפורט על הניקוד שצברתם.",
+  "tutorialSettingsAndData": "הגדרות וניהול נתונים",
+  "tutorialSettingsDescription": "שנו את ערכי היעד, צפו במידע על האפליקציה ואפסו נתונים.",
+  "appIntroAttentionBiasTitle": "על הטיה קשבית",
+  "appIntroAttentionBiasContent": "כשהחרדה גבוהה, אנו נוטים באופן לא מודע להתמקד רק בדברים שליליים.",
+  "appIntroFocusMintRoleTitle": "התפקיד של FocusMint",
+  "appIntroFocusMintRoleContent": "משחק קצר לתרגול הפניית תשומת הלב לתמונות חיוביות.",
+  "appIntroScientificEvidenceTitle": "על התרגול הזה",
+  "appIntroScientificEvidenceContent": "תרגלו מציאת תמונות חיוביות. FocusMint הוא כלי לטיפוח עצמי ואינו טיפול רפואי. התוצאות משתנות מאדם לאדם.",
+  "appIntroExpectedEffectsTitle": "מה אפשר לתרגל",
+  "appIntroEffect1": "חיפוש תמונות חיוביות",
+  "appIntroEffect2": "הבחנה בחיוכים סביבכם",
+  "appIntroEffect3": "יצירת שגרה יומית קצרה",
+  "appIntroHowToUse": "ראו כיצד להשתמש",
+  "pointsEarned": "צברתם נקודות!",
+  "yourScore": "הניקוד שלך",
+  "totalPlayTime": "זמן משחק כולל",
+  "imageManagement": "ניהול תמונות",
+  "hiddenImagesCount": "תמונות מוסתרות: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "יש שינויים שלא נשמרו",
+  "unsavedChangesMessage": "יש {count} שינויים שלא נשמרו בהגדרות תצוגת התמונות.",
+  "unsavedChangesWarning": "השינויים יאבדו אם תסגרו את המסך כעת.",
+  "discardChanges": "בטל שינויים",
+  "saveAndExit": "שמור וצא",
+  "settingsSaved": "{count} הגדרות נשמרו",
+  "saveError": "אירעה שגיאה בעת שמירת ההגדרות",
+  "imageSettingsUpdated": "הגדרות התמונות עודכנו",
+  "allImages": "הכול",
+  "positiveImages": "חיוביות",
+  "negativeImages": "שליליות",
+  "smileImages": "חיוך",
+  "vegetableImages": "מזון מזין",
+  "healthImages": "תנועה וקשרים חברתיים",
+  "sadImages": "כעס, עצב ודאגה",
+  "badFoodImages": "מזון מהיר וממתקים",
+  "badImages": "הרגלים לא בריאים",
+  "imageManagementHint": "הקישו כדי להציג או להסתיר תמונה. ניתן להסתיר עד 15 תמונות.",
+  "unsaved": "לא נשמר",
+  "save": "שמירה",
+  "hiddenImages": "מוסתרות",
+  "noHiddenImages": "אין תמונות מוסתרות",
+  "settingsLoadFailed": "טעינת ההגדרות נכשלה",
+  "imagesAdded": "נוספו {count} תמונות",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "הוספת התמונות נכשלה",
+  "imageSelectionFailed": "בחירת התמונות נכשלה",
+  "settingsChangeFailed": "שינוי ההגדרות נכשל",
+  "groupTitle": "קבוצה: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "הצגה/הסתרה",
+  "imageCount": "{count} תמונות",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "הערות חשובות",
+  "notice1": "נוספה תכונת תמונות מותאמות אישית!",
+  "notice2": "ניתן להוסיף תמונות משלכם ממסך ההגדרות",
+  "notice3": "לפרטים נוספים עיינו במסך ההגדרות",
+  "customImageTitle": "תמונות מותאמות אישית",
+  "customImageSubtitle": "הוסיפו ונהלו תמונות משלכם",
+  "addCustomImages": "הוספת תמונות מותאמות אישית",
+  "selectImages": "בחירת תמונות",
+  "unknownImage": "תמונה לא ידועה",
+  "customImageSettings": "הגדרות תמונות מותאמות אישית",
+  "useCustomImages": "שימוש בתמונות מותאמות אישית",
+  "useCustomImagesDescription": "השתמשו בתמונות שלכם לתרגול. הפעילו את אפשרות השילוב למטה כדי לכלול גם את תמונות האפליקציה.",
+  "groupSettings": "הגדרות קבוצות",
+  "minOneGroupRequired": "יש להפעיל לפחות קבוצה אחת",
+  "settingsLoadFailedMessage": "טעינת ההגדרות נכשלה",
+  "customImageNotice1": "כשקבוצות מופעלות, התמונות מוצגות באקראי עבור כל קבוצה.",
+  "customImageNotice2": "תמונות שהמשתמשים מעלים ומגדירים אינן משותפות עם המפתחים או צדדים שלישיים, ונשמרות רק באזור האפליקציה במכשיר.",
+  "customImageNotice3": "כך ניתן להשתמש באפליקציה גם ללא חיבור לאינטרנט.",
+  "customImageNotice4": "הוספת תמונות רבות תופסת מקום אחסון. אם מתעוררת בעיה, כבו את השימוש בתמונות אישיות או הסירו תמונות שאינן בשימוש בהגדרות.",
+  "customImageNotice5": "מחיקת האפליקציה תמחק את התמונות שהוגדרו.",
+  "customImageRequirementNotMet": "כדי להשתמש בתמונות מותאמות אישית, נדרשות לפחות תמונה טובה אחת ו-3 תמונות לא טובות בקבוצות המופעלות.",
+  "customImageRequirement": "כדי להשתמש בתמונות מותאמות אישית, נדרשות לפחות תמונה טובה אחת ו-3 תמונות לא טובות בקבוצות המופעלות.",
+  "sunnyWeather": "טובות",
+  "rainyWeather": "לא טובות",
+  "addImages": "הוספת תמונות",
+  "imageDeleted": "התמונה נמחקה",
+  "imageDeleteFailed": "מחיקת התמונה נכשלה",
+  "deleteImageTitle": "מחיקת תמונה",
+  "deleteImageMessage": "האם למחוק תמונה זו? לא ניתן לבטל פעולה זו.",
+  "groupImageTitle": "קבוצה {groupId} – תמונות {weather}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "רשומות: {count} תמונות",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "לא נרשמו תמונות",
+  "imagePreview": "תצוגה מקדימה של תמונה",
+  "close": "סגירה",
+  "contactEmailSubject": "FocusMint - יצירת קשר",
+  "contactEmailBody": "נשמח לקבל משוב ושאלות.",
+  "mixWithBuiltInImages": "שילוב עם תמונות האפליקציה",
+  "mixWithBuiltInImagesDescription": "שימוש בתמונות שלכם ובתמונות האפליקציה יחד",
+  "supportIntro": "אפשר לשוחח בעילום שם עם המפתח. שאלות והצעות יתקבלו בברכה. ניתן לשלוח 3 הודעות ביום. כל תשובה מהמפתח מחזירה את המכסה הזמינה ל־3.",
+  "supportReceived": "ההודעה התקבלה. בדרך כלל נשיב בתוך יומיים עד שלושה ימים.",
+  "supportComposer": "כתבו הודעה",
+  "supportSend": "שליחה",
+  "supportRetry": "ניסיון חוזר",
+  "supportSent": "נשלח",
+  "supportUnsent": "לא נשלח · נשמר במכשיר הזה",
+  "supportAttach": "צירוף תמונה",
+  "supportRemoveImage": "הסרת תמונה",
+  "supportImage": "קובץ מצורף",
+  "supportClear": "מחיקת היסטוריה",
+  "supportClearConfirm": "למחוק את השיחה? גם הטיוטות שלא נשלחו וההיסטוריה בשרת יימחקו. המכסה הזמינה לא תתאפס.",
+  "supportQuota": "ניצלתם את 3 ההודעות של היום. ניתן לשלוח שוב מחר או לאחר תשובה מהמפתח.",
+  "supportConnectionError": "לא ניתן להתחבר. הטיוטות השמורות לא נשלחו.",
+  "supportSendError": "השליחה נכשלה. ההודעה נשמרה במכשיר הזה. נסו שוב.",
+  "supportStorageError": "השמירה נכשלה. נסו שוב.",
+  "supportClearError": "לא ניתן למחוק את ההיסטוריה. בדקו את החיבור ונסו שוב.",
+  "supportImageError": "לא ניתן לטעון את התמונה. בחרו תמונה שגודלה פחות מ־30 מגה־בייט.",
+  "supportRemaining": "הודעות שנותרו היום: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "תשובות שלא נקראו: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "מידע",
+  "supportDeveloper": "המפתח",
+  "supportPrivacy": "על נתוני הפנייה",
+  "breathingTitle": "קחו רגע לנשום",
+  "breathingHint": "עקבו אחר התנועה העדינה של הריאות\nבקצב שנוח לכם.",
+  "breathingIn": "שאפו לאט",
+  "breathingOut": "נשפו לאט",
+  "breathingProgress": "התקדמות תרגול הנשימה",
+  "breathingResultHint": "התוצאות יוצגו אוטומטית בסיום.",
+  "breathingSkip": "דילוג לתוצאות"
+}

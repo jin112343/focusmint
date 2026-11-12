@@ -5,8 +5,38 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_ar.dart';
+import 'app_localizations_ca.dart';
+import 'app_localizations_cs.dart';
+import 'app_localizations_da.dart';
+import 'app_localizations_de.dart';
+import 'app_localizations_el.dart';
 import 'app_localizations_en.dart';
+import 'app_localizations_es.dart';
+import 'app_localizations_fi.dart';
+import 'app_localizations_fr.dart';
+import 'app_localizations_he.dart';
+import 'app_localizations_hi.dart';
+import 'app_localizations_hr.dart';
+import 'app_localizations_hu.dart';
+import 'app_localizations_id.dart';
+import 'app_localizations_it.dart';
 import 'app_localizations_ja.dart';
+import 'app_localizations_ko.dart';
+import 'app_localizations_ms.dart';
+import 'app_localizations_nb.dart';
+import 'app_localizations_nl.dart';
+import 'app_localizations_pl.dart';
+import 'app_localizations_pt.dart';
+import 'app_localizations_ro.dart';
+import 'app_localizations_ru.dart';
+import 'app_localizations_sk.dart';
+import 'app_localizations_sv.dart';
+import 'app_localizations_th.dart';
+import 'app_localizations_tr.dart';
+import 'app_localizations_uk.dart';
+import 'app_localizations_vi.dart';
+import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
 
@@ -96,6 +126,43 @@ abstract class AppLocalizations {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('ja'),
+    Locale('ar'),
+    Locale('ca'),
+    Locale('cs'),
+    Locale('da'),
+    Locale('de'),
+    Locale('el'),
+    Locale('en', 'AU'),
+    Locale('en', 'CA'),
+    Locale('en', 'GB'),
+    Locale('es'),
+    Locale('es', 'MX'),
+    Locale('fi'),
+    Locale('fr'),
+    Locale('fr', 'CA'),
+    Locale('he'),
+    Locale('hi'),
+    Locale('hr'),
+    Locale('hu'),
+    Locale('id'),
+    Locale('it'),
+    Locale('ko'),
+    Locale('ms'),
+    Locale('nb'),
+    Locale('nl'),
+    Locale('pl'),
+    Locale('pt'),
+    Locale('pt', 'BR'),
+    Locale('ro'),
+    Locale('ru'),
+    Locale('sk'),
+    Locale('sv'),
+    Locale('th'),
+    Locale('tr'),
+    Locale('uk'),
+    Locale('vi'),
+    Locale('zh'),
+    Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
   ];
 
   /// No description provided for @focusMintTitle.
@@ -137,7 +204,7 @@ abstract class AppLocalizations {
   /// No description provided for @stressReductionMessage.
   ///
   /// In en, this message translates to:
-  /// **'Reduce stress and improve your mood.'**
+  /// **'Practice noticing the positive.'**
   String get stressReductionMessage;
 
   /// No description provided for @remainingTimeMinutes.
@@ -647,7 +714,7 @@ abstract class AppLocalizations {
   /// No description provided for @tipsContent.
   ///
   /// In en, this message translates to:
-  /// **'• Goal points are reflected in the pie chart on the home screen\n• Start with small goals and gradually increase them when achieved\n• You can earn up to 6 points in a single session'**
+  /// **'• Your goal appears in the home screen chart\n• Start small and increase your goal at your own pace\n• Each correct choice earns up to 6 points'**
   String get tipsContent;
 
   /// No description provided for @backToHome.
@@ -731,43 +798,43 @@ abstract class AppLocalizations {
   /// No description provided for @appIntroFocusMintRoleContent.
   ///
   /// In en, this message translates to:
-  /// **'By practicing selecting positive images, you\'ll naturally learn to focus your attention on the good side.'**
+  /// **'A short game for practicing how you direct your attention to positive images.'**
   String get appIntroFocusMintRoleContent;
 
   /// No description provided for @appIntroScientificEvidenceTitle.
   ///
   /// In en, this message translates to:
-  /// **'Scientific Evidence'**
+  /// **'About this exercise'**
   String get appIntroScientificEvidenceTitle;
 
   /// No description provided for @appIntroScientificEvidenceContent.
   ///
   /// In en, this message translates to:
-  /// **'Research has confirmed that 25 minutes of training significantly reduces anxiety and stress.\n\n(e.g., Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin)'**
+  /// **'Practice finding positive images. FocusMint is a self-care exercise, not a medical treatment. Results vary from person to person.'**
   String get appIntroScientificEvidenceContent;
 
   /// No description provided for @appIntroExpectedEffectsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Expected Effects'**
+  /// **'What you can practice'**
   String get appIntroExpectedEffectsTitle;
 
   /// No description provided for @appIntroEffect1.
   ///
   /// In en, this message translates to:
-  /// **'Reduction of anxiety and tension'**
+  /// **'Looking for positive images'**
   String get appIntroEffect1;
 
   /// No description provided for @appIntroEffect2.
   ///
   /// In en, this message translates to:
-  /// **'Better awareness of smiles around you'**
+  /// **'Noticing smiles around you'**
   String get appIntroEffect2;
 
   /// No description provided for @appIntroEffect3.
   ///
   /// In en, this message translates to:
-  /// **'Easier social interactions'**
+  /// **'Making time for a short daily routine'**
   String get appIntroEffect3;
 
   /// No description provided for @appIntroHowToUse.
@@ -1097,7 +1164,7 @@ abstract class AppLocalizations {
   /// No description provided for @customImageNotice4.
   ///
   /// In en, this message translates to:
-  /// **'We are not responsible for customized images. Registering too many images may increase device load and cause malfunctions or poor performance. Please uninstall if the app stops working normally.'**
+  /// **'Adding many images uses storage. If you have problems, turn off custom images or remove unused images in Settings.'**
   String get customImageNotice4;
 
   /// No description provided for @customImageNotice5.
@@ -1349,7 +1416,7 @@ abstract class AppLocalizations {
   /// No description provided for @supportPrivacy.
   ///
   /// In en, this message translates to:
-  /// **'About contact data'**
+  /// **'About support data'**
   String get supportPrivacy;
 
   /// No description provided for @breathingTitle.
@@ -1375,12 +1442,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Breathe out'**
   String get breathingOut;
-
-  /// No description provided for @breathingRound.
-  ///
-  /// In en, this message translates to:
-  /// **'Round {current} of {total}'**
-  String breathingRound(int current, int total);
 
   /// No description provided for @breathingProgress.
   ///
@@ -1411,20 +1472,164 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'ja'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+    'ar',
+    'ca',
+    'cs',
+    'da',
+    'de',
+    'el',
+    'en',
+    'es',
+    'fi',
+    'fr',
+    'he',
+    'hi',
+    'hr',
+    'hu',
+    'id',
+    'it',
+    'ja',
+    'ko',
+    'ms',
+    'nb',
+    'nl',
+    'pl',
+    'pt',
+    'ro',
+    'ru',
+    'sk',
+    'sv',
+    'th',
+    'tr',
+    'uk',
+    'vi',
+    'zh',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
-  // Lookup logic when only language code is specified.
+  // Lookup logic when language+script codes are specified.
+  switch (locale.languageCode) {
+    case 'zh':
+      {
+        switch (locale.scriptCode) {
+          case 'Hant':
+            return AppLocalizationsZhHant();
+        }
+        break;
+      }
+  }
+
+  // Lookup logic when language+country codes are specified.
   switch (locale.languageCode) {
     case 'en':
+      {
+        switch (locale.countryCode) {
+          case 'AU':
+            return AppLocalizationsEnAu();
+          case 'CA':
+            return AppLocalizationsEnCa();
+          case 'GB':
+            return AppLocalizationsEnGb();
+        }
+        break;
+      }
+    case 'es':
+      {
+        switch (locale.countryCode) {
+          case 'MX':
+            return AppLocalizationsEsMx();
+        }
+        break;
+      }
+    case 'fr':
+      {
+        switch (locale.countryCode) {
+          case 'CA':
+            return AppLocalizationsFrCa();
+        }
+        break;
+      }
+    case 'pt':
+      {
+        switch (locale.countryCode) {
+          case 'BR':
+            return AppLocalizationsPtBr();
+        }
+        break;
+      }
+  }
+
+  // Lookup logic when only language code is specified.
+  switch (locale.languageCode) {
+    case 'ar':
+      return AppLocalizationsAr();
+    case 'ca':
+      return AppLocalizationsCa();
+    case 'cs':
+      return AppLocalizationsCs();
+    case 'da':
+      return AppLocalizationsDa();
+    case 'de':
+      return AppLocalizationsDe();
+    case 'el':
+      return AppLocalizationsEl();
+    case 'en':
       return AppLocalizationsEn();
+    case 'es':
+      return AppLocalizationsEs();
+    case 'fi':
+      return AppLocalizationsFi();
+    case 'fr':
+      return AppLocalizationsFr();
+    case 'he':
+      return AppLocalizationsHe();
+    case 'hi':
+      return AppLocalizationsHi();
+    case 'hr':
+      return AppLocalizationsHr();
+    case 'hu':
+      return AppLocalizationsHu();
+    case 'id':
+      return AppLocalizationsId();
+    case 'it':
+      return AppLocalizationsIt();
     case 'ja':
       return AppLocalizationsJa();
+    case 'ko':
+      return AppLocalizationsKo();
+    case 'ms':
+      return AppLocalizationsMs();
+    case 'nb':
+      return AppLocalizationsNb();
+    case 'nl':
+      return AppLocalizationsNl();
+    case 'pl':
+      return AppLocalizationsPl();
+    case 'pt':
+      return AppLocalizationsPt();
+    case 'ro':
+      return AppLocalizationsRo();
+    case 'ru':
+      return AppLocalizationsRu();
+    case 'sk':
+      return AppLocalizationsSk();
+    case 'sv':
+      return AppLocalizationsSv();
+    case 'th':
+      return AppLocalizationsTh();
+    case 'tr':
+      return AppLocalizationsTr();
+    case 'uk':
+      return AppLocalizationsUk();
+    case 'vi':
+      return AppLocalizationsVi();
+    case 'zh':
+      return AppLocalizationsZh();
   }
 
   throw FlutterError(

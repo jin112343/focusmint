@@ -144,6 +144,7 @@ class _BreathingPageState extends State<BreathingPage>
                             child: Text(
                               phase,
                               key: const ValueKey('breathing-phase'),
+                              textAlign: TextAlign.center,
                               style: const TextStyle(
                                 fontSize: 26,
                                 fontWeight: FontWeight.w600,

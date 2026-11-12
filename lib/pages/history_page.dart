@@ -15,7 +15,7 @@ class HistoryPage extends ConsumerStatefulWidget {
 
 class _HistoryPageState extends ConsumerState<HistoryPage> {
   static final Logger _logger = Logger();
-  
+
   double _bestScore = 0.0;
   double _totalTimeMinutes = 0.0;
   double _totalScore = 0.0;
@@ -42,7 +42,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       final weeklyHistory = await _speedScoreService.getWeeklyHistory();
       final monthlyHistory = await _speedScoreService.getMonthlyHistory();
       if (!mounted) return;
-      
+
       setState(() {
         _bestScore = bestScore;
         _totalTimeMinutes = totalTimeMinutes;
@@ -52,10 +52,16 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
         _monthlyHistory = monthlyHistory;
         _isLoading = false;
       });
-      
-      _logger.i('History statistics loaded: bestScore=$bestScore, totalTime=${totalTimeMinutes.toStringAsFixed(1)}min, totalScore=$totalScore');
+
+      _logger.i(
+        'History statistics loaded: bestScore=$bestScore, totalTime=${totalTimeMinutes.toStringAsFixed(1)}min, totalScore=$totalScore',
+      );
     } catch (e, stackTrace) {
-      _logger.e('Failed to load history statistics', error: e, stackTrace: stackTrace);
+      _logger.e(
+        'Failed to load history statistics',
+        error: e,
+        stackTrace: stackTrace,
+      );
       if (!mounted) return;
       setState(() {
         _isLoading = false;
@@ -70,16 +76,18 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     } else if (minutes < 60) {
       final mins = minutes.floor();
       final secs = ((minutes - mins) * 60).round();
-      return secs > 0 ? '$mins${l10n.minutesUnit} $secs${l10n.secondsUnit}' : '$mins${l10n.minutesUnit}';
+      return secs > 0
+          ? '$mins${l10n.minutesUnit} $secs${l10n.secondsUnit}'
+          : '$mins${l10n.minutesUnit}';
     } else {
       final hours = (minutes / 60).floor();
       final mins = (minutes % 60).floor();
       final secs = ((minutes % 1) * 60).round();
-      
+
       String result = '$hours${l10n.hoursUnit}';
       if (mins > 0) result += ' $mins${l10n.minutesUnit}';
       if (secs > 0 && hours == 0) result += ' $secs${l10n.secondsUnit}';
-      
+
       return result;
     }
   }
@@ -92,17 +100,14 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    
+
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         backgroundColor: AppColors.backgroundColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: AppColors.textPrimary,
-          ),
+          icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Text(
@@ -137,27 +142,27 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(24),
                 child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // 目標達成率カード
-                  _buildAchievementCard(l10n),
-                  const SizedBox(height: 24),
-                  
-                  // 履歴チャート
-                  _buildHistoryChart(l10n),
-                  const SizedBox(height: 24),
-                  
-                  // スコア統計カード
-                  _buildScoreStatsCard(l10n),
-                  const SizedBox(height: 24),
-                  
-                  // 時間統計カード
-                  _buildTimeStatsCard(l10n),
-                  const SizedBox(height: 24),
-                  
-                  // 詳細統計
-                  _buildDetailedStatsCard(l10n),
-                ],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // 目標達成率カード
+                    _buildAchievementCard(l10n),
+                    const SizedBox(height: 24),
+
+                    // 履歴チャート
+                    _buildHistoryChart(l10n),
+                    const SizedBox(height: 24),
+
+                    // スコア統計カード
+                    _buildScoreStatsCard(l10n),
+                    const SizedBox(height: 24),
+
+                    // 時間統計カード
+                    _buildTimeStatsCard(l10n),
+                    const SizedBox(height: 24),
+
+                    // 詳細統計
+                    _buildDetailedStatsCard(l10n),
+                  ],
                 ),
               ),
             ),
@@ -166,7 +171,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
 
   Widget _buildHistoryChart(AppLocalizations l10n) {
     final currentData = _showWeeklyChart ? _weeklyHistory : _monthlyHistory;
-    
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
@@ -184,8 +189,10 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            spacing: 12,
+            runSpacing: 12,
             children: [
               Text(
                 l10n.pointsHistory,
@@ -195,14 +202,15 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Row(
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
                 children: [
                   _buildChartToggleButton(
                     l10n.weekly,
                     _showWeeklyChart,
                     () => setState(() => _showWeeklyChart = true),
                   ),
-                  const SizedBox(width: 8),
                   _buildChartToggleButton(
                     l10n.monthly,
                     !_showWeeklyChart,
@@ -253,7 +261,10 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
                                 showTitles: true,
                                 reservedSize: 30,
                                 getTitlesWidget: (value, meta) {
-                                  return _buildBottomTitle(value.toInt(), currentData);
+                                  return _buildBottomTitle(
+                                    value.toInt(),
+                                    currentData,
+                                  );
                                 },
                               ),
                             ),
@@ -270,7 +281,11 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     );
   }
 
-  Widget _buildChartToggleButton(String title, bool isSelected, VoidCallback onTap) {
+  Widget _buildChartToggleButton(
+    String title,
+    bool isSelected,
+    VoidCallback onTap,
+  ) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -310,7 +325,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     return entries.asMap().entries.map((entry) {
       final index = entry.key;
       final value = entry.value.value;
-      
+
       return BarChartGroupData(
         x: index,
         barRods: [
@@ -331,11 +346,11 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
   Widget _buildBottomTitle(int index, Map<String, int> data) {
     final entries = data.entries.toList();
     if (index >= entries.length) return const SizedBox.shrink();
-    
+
     final l10n = AppLocalizations.of(context)!;
     final key = entries[index].key;
     String displayText;
-    
+
     if (_showWeeklyChart) {
       // 週表示の場合、曜日を表示
       try {
@@ -363,7 +378,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
       // 月表示の場合、月の部分のみ表示（2024-03 -> 03）
       displayText = '${key.split('-').last}${l10n.monthSuffix}';
     }
-    
+
     return Text(
       displayText,
       style: const TextStyle(
@@ -376,7 +391,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
 
   Widget _buildAchievementCard(AppLocalizations l10n) {
     final achievementRate = _calculateAchievementRate();
-    
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
@@ -421,10 +436,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
           const SizedBox(height: 8),
           Text(
             '${_totalScore.toStringAsFixed(0)} / $_goalPoints ${l10n.pointsUnit}',
-            style: const TextStyle(
-              color: Colors.white70,
-              fontSize: 14,
-            ),
+            style: const TextStyle(color: Colors.white70, fontSize: 14),
           ),
           const SizedBox(height: 12),
           LinearProgressIndicator(
@@ -530,8 +542,10 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
   }
 
   Widget _buildDetailedStatsCard(AppLocalizations l10n) {
-    final averageScore = _totalTimeMinutes > 0 ? _totalScore / _totalTimeMinutes : 0.0;
-    
+    final averageScore = _totalTimeMinutes > 0
+        ? _totalScore / _totalTimeMinutes
+        : 0.0;
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
@@ -558,9 +572,15 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
             ),
           ),
           const SizedBox(height: 16),
-          _buildDetailRow(l10n.averageScorePerMinute, '${averageScore.toStringAsFixed(1)} pt'),
+          _buildDetailRow(
+            l10n.averageScorePerMinute,
+            '${averageScore.toStringAsFixed(1)} pt',
+          ),
           const SizedBox(height: 12),
-          _buildDetailRow(l10n.pointsToGoal, '${(_goalPoints - _totalScore).toStringAsFixed(0)} pt'),
+          _buildDetailRow(
+            l10n.pointsToGoal,
+            '${(_goalPoints - _totalScore).toStringAsFixed(0)} pt',
+          ),
           const SizedBox(height: 12),
           _buildDetailRow(l10n.goalSetting, '$_goalPoints pt'),
         ],
@@ -568,7 +588,12 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     );
   }
 
-  Widget _buildStatItem(String label, String value, IconData icon, Color color) {
+  Widget _buildStatItem(
+    String label,
+    String value,
+    IconData icon,
+    Color color,
+  ) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -580,11 +605,7 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
         children: [
           Row(
             children: [
-              Icon(
-                icon,
-                color: color,
-                size: 20,
-              ),
+              Icon(icon, color: color, size: 20),
               const SizedBox(width: 8),
               Expanded(
                 child: Text(
@@ -613,8 +634,10 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
   }
 
   Widget _buildDetailRow(String label, String value) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Wrap(
+      alignment: WrapAlignment.spaceBetween,
+      spacing: 12,
+      runSpacing: 4,
       children: [
         Text(
           label,

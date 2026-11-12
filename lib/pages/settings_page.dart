@@ -458,13 +458,15 @@ class _SettingsPageState extends State<SettingsPage> {
                                     size: 24,
                                   ),
                                   const SizedBox(width: 8),
-                                  Text(
-                                    AppLocalizations.of(context)!
-                                        .goalPointsSetting,
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.textPrimary,
+                                  Expanded(
+                                    child: Text(
+                                      AppLocalizations.of(context)!
+                                          .goalPointsSetting,
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.textPrimary,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -545,13 +547,15 @@ class _SettingsPageState extends State<SettingsPage> {
                                     size: 24,
                                   ),
                                   const SizedBox(width: 8),
-                                  Text(
-                                    AppLocalizations.of(context)!
-                                        .appInfoSupport,
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.textPrimary,
+                                  Expanded(
+                                    child: Text(
+                                      AppLocalizations.of(context)!
+                                          .appInfoSupport,
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.textPrimary,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -631,13 +635,15 @@ class _SettingsPageState extends State<SettingsPage> {
                                     size: 24,
                                   ),
                                   const SizedBox(width: 8),
-                                  Text(
-                                    AppLocalizations.of(context)!
-                                        .dataManagement,
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.textPrimary,
+                                  Expanded(
+                                    child: Text(
+                                      AppLocalizations.of(context)!
+                                          .dataManagement,
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.textPrimary,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -701,12 +707,14 @@ class _SettingsPageState extends State<SettingsPage> {
                                     size: 20,
                                   ),
                                   const SizedBox(width: 8),
-                                  Text(
-                                    AppLocalizations.of(context)!.tips,
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.textPrimary,
+                                  Expanded(
+                                    child: Text(
+                                      AppLocalizations.of(context)!.tips,
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.textPrimary,
+                                      ),
                                     ),
                                   ),
                                 ],

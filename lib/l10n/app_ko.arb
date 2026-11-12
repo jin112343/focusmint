@@ -1,0 +1,333 @@
+{
+  "@@locale": "ko",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "현재 포인트",
+  "goalLabel": "목표: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "남음: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 목표 달성!",
+  "startButtonText": "START",
+  "stressReductionMessage": "긍정적인 것을 알아차리는 연습을 해 보세요.",
+  "remainingTimeMinutes": "남은 시간: {minutes}분 {seconds}초",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "남은 시간: {seconds}초",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "점수: {score} 포인트",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "이미지를 준비하는 중...",
+  "noStimuliAvailable": "사용할 수 있는 자극이 없습니다",
+  "invalidGridSize": "잘못된 그리드 크기",
+  "unknown": "?",
+  "gettingStarted": "시작하는 중...",
+  "excellentPerformance": "훌륭한 성과입니다!",
+  "greatJob": "잘하셨습니다!",
+  "goodPerformance": "좋은 성과입니다",
+  "keepPracticingFeedback": "계속 연습해 보세요",
+  "takeYourTimeFeedback": "천천히 정확하게 해 보세요",
+  "happy": "기쁨",
+  "angry": "화남",
+  "fear": "두려움",
+  "sad": "슬픔",
+  "historyPageTitle": "트레이닝 기록",
+  "dataLoading": "데이터를 불러오는 중...",
+  "pointsHistory": "포인트 획득 기록",
+  "weekly": "주간",
+  "monthly": "월간",
+  "noDataAvailable": "데이터가 없습니다",
+  "goalAchievementRate": "목표 달성률",
+  "scoreStatistics": "점수 통계",
+  "bestScore": "최고 점수",
+  "totalScore": "총 점수",
+  "trainingTime": "트레이닝 시간",
+  "totalTrainingTime": "누적 트레이닝 시간",
+  "detailedStatistics": "상세 통계",
+  "averageScorePerMinute": "분당 평균 점수",
+  "pointsToGoal": "목표까지 남은 포인트",
+  "goalSetting": "목표 설정",
+  "secondsUnit": "초",
+  "minutesUnit": "분",
+  "hoursUnit": "시간",
+  "pointsUnit": "포인트",
+  "monthSuffix": "월",
+  "sundayShort": "일",
+  "mondayShort": "월",
+  "tuesdayShort": "화",
+  "wednesdayShort": "수",
+  "thursdayShort": "목",
+  "fridayShort": "금",
+  "saturdayShort": "토",
+  "settingsTitle": "설정",
+  "goalPointsSetting": "목표 포인트 설정",
+  "currentGoalPoints": "현재 목표: {points} 포인트",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "새 목표 포인트",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "포인트",
+  "saveGoalButton": "목표 저장",
+  "goalSetTo": "목표를 {points} 포인트로 설정했습니다",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "목표 포인트를 입력해 주세요",
+  "enterValidNumber": "올바른 숫자를 입력해 주세요 (1~99999999)",
+  "saveFailed": "일부 설정을 저장하지 못했습니다",
+  "emailOpenFailed": "메일 앱을 열 수 없습니다",
+  "pageOpenFailed": "페이지를 열 수 없습니다",
+  "appInfoSupport": "앱 정보 및 지원",
+  "contactUs": "문의하기",
+  "contactUsSubtitle": "의견과 질문을 보내 주세요",
+  "termsOfService": "이용약관",
+  "termsSubtitle": "앱 이용약관을 확인하세요",
+  "privacyPolicy": "개인정보 처리방침",
+  "privacySubtitle": "개인정보 취급에 관한 안내",
+  "tutorialTitle": "튜토리얼",
+  "tutorialSubtitle": "앱 사용 방법 알아보기",
+  "dataManagement": "데이터 관리",
+  "deleteHistory": "기록 삭제",
+  "deleteHistorySubtitle": "트레이닝 기록만 삭제합니다 (목표 포인트는 유지)",
+  "deleteHistoryAndGoal": "기록 및 목표 삭제",
+  "deleteHistoryAndGoalSubtitle": "모든 기록과 목표 포인트를 삭제합니다",
+  "deleteHistoryConfirmTitle": "기록 삭제",
+  "deleteHistoryConfirmMessage": "모든 트레이닝 기록을 삭제하시겠습니까?\n\n※목표 포인트는 유지됩니다",
+  "deleteHistoryAndGoalConfirmTitle": "기록 및 목표 삭제",
+  "deleteHistoryAndGoalConfirmMessage": "모든 기록과 목표 포인트를 삭제하시겠습니까?\n\n※이 작업은 되돌릴 수 없습니다",
+  "cancel": "취소",
+  "delete": "삭제",
+  "historyDeleted": "기록을 삭제했습니다",
+  "historyAndGoalDeleted": "기록과 목표를 삭제했습니다",
+  "historyDeleteFailed": "기록을 삭제하지 못했습니다",
+  "historyAndGoalDeleteFailed": "기록과 목표를 삭제하지 못했습니다",
+  "tutorialDisplayFailed": "튜토리얼을 표시하지 못했습니다",
+  "tips": "팁",
+  "tipsContent": "• 목표는 홈 화면 그래프에 표시됩니다\n• 작은 목표부터 시작해 자신의 속도에 맞게 높여 보세요\n• 한 번의 올바른 선택으로 최대 6점을 얻을 수 있습니다",
+  "backToHome": "홈으로 돌아가기",
+  "tutorialSkip": "건너뛰기",
+  "tutorialGoalAndPoints": "목표와 현재 포인트",
+  "tutorialGoalDescription": "바깥쪽 원은 목표, 안쪽 원은 총 포인트를 나타냅니다. 목표에 가까워질수록 원이 채워집니다.",
+  "tutorialOneMinuteTraining": "1분 트레이닝",
+  "tutorialTrainingDescription": "1분 게임을 시작합니다. 4개의 선택지 중에서 긍정적인 이미지나 좋은 습관을 선택하세요.",
+  "tutorialScoreProgress": "점수 추이",
+  "tutorialScoreDescription": "획득한 점수의 상세 정보를 확인할 수 있습니다.",
+  "tutorialSettingsAndData": "설정 및 데이터 관리",
+  "tutorialSettingsDescription": "목표값 변경, 앱 정보 확인, 데이터 초기화를 할 수 있습니다.",
+  "appIntroAttentionBiasTitle": "주의 편향에 대하여",
+  "appIntroAttentionBiasContent": "불안이 높을 때는 무의식적으로 부정적인 것에만 주의가 쏠리기 쉽습니다.",
+  "appIntroFocusMintRoleTitle": "FocusMint의 역할",
+  "appIntroFocusMintRoleContent": "긍정적인 이미지에 주의를 기울이는 연습을 위한 짧은 게임입니다.",
+  "appIntroScientificEvidenceTitle": "이 연습에 대해",
+  "appIntroScientificEvidenceContent": "긍정적인 이미지를 찾는 연습입니다. FocusMint는 일상적인 자기 돌봄을 위한 앱이며 의료 행위나 치료를 제공하지 않습니다. 느끼는 변화는 사람마다 다를 수 있습니다.",
+  "appIntroExpectedEffectsTitle": "연습할 수 있는 것",
+  "appIntroEffect1": "긍정적인 이미지 찾기",
+  "appIntroEffect2": "주변의 미소 알아차리기",
+  "appIntroEffect3": "짧은 일상 습관 만들기",
+  "appIntroHowToUse": "사용 방법 보기",
+  "pointsEarned": "포인트 획득!",
+  "yourScore": "내 점수",
+  "totalPlayTime": "총 플레이 시간",
+  "imageManagement": "이미지 관리",
+  "hiddenImagesCount": "숨긴 이미지: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "저장하지 않은 변경 사항이 있습니다",
+  "unsavedChangesMessage": "이미지 표시 설정에 저장하지 않은 변경 사항이 {count}건 있습니다.",
+  "unsavedChangesWarning": "지금 화면을 닫으면 변경 사항이 사라집니다.",
+  "discardChanges": "변경 사항 버리기",
+  "saveAndExit": "저장 후 나가기",
+  "settingsSaved": "설정 {count}건을 저장했습니다",
+  "saveError": "설정을 저장하는 중 오류가 발생했습니다",
+  "imageSettingsUpdated": "이미지 설정이 업데이트되었습니다",
+  "allImages": "전체",
+  "positiveImages": "긍정",
+  "negativeImages": "부정",
+  "smileImages": "미소",
+  "vegetableImages": "영양이 풍부한 음식",
+  "healthImages": "운동과 교류",
+  "sadImages": "분노·슬픔·걱정",
+  "badFoodImages": "패스트푸드와 단 음식",
+  "badImages": "건강에 부담이 되는 습관",
+  "imageManagementHint": "탭하여 이미지 표시 여부를 전환할 수 있습니다. 최대 15장까지 숨길 수 있습니다.",
+  "unsaved": "저장 안 됨",
+  "save": "저장",
+  "hiddenImages": "숨김",
+  "noHiddenImages": "숨긴 이미지가 없습니다",
+  "settingsLoadFailed": "설정을 불러오지 못했습니다",
+  "imagesAdded": "이미지 {count}장을 추가했습니다",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "이미지를 추가하지 못했습니다",
+  "imageSelectionFailed": "이미지를 선택하지 못했습니다",
+  "settingsChangeFailed": "설정을 변경하지 못했습니다",
+  "groupTitle": "그룹: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "표시 전환",
+  "imageCount": "{count}장",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "주의 사항",
+  "notice1": "커스텀 이미지 기능이 추가되었습니다!",
+  "notice2": "설정 화면에서 나만의 이미지를 추가할 수 있습니다",
+  "notice3": "자세한 내용은 설정 화면을 확인해 주세요",
+  "customImageTitle": "커스텀 이미지",
+  "customImageSubtitle": "나만의 이미지 추가 및 관리",
+  "addCustomImages": "커스텀 이미지 추가",
+  "selectImages": "이미지 선택",
+  "unknownImage": "알 수 없는 이미지",
+  "customImageSettings": "커스텀 이미지 설정",
+  "useCustomImages": "커스텀 이미지 사용",
+  "useCustomImagesDescription": "내 이미지를 연습에 사용합니다. 앱의 기본 이미지도 포함하려면 아래 혼합 옵션을 켜세요.",
+  "groupSettings": "그룹 설정",
+  "minOneGroupRequired": "최소 1개의 그룹은 활성화되어 있어야 합니다",
+  "settingsLoadFailedMessage": "설정을 불러오지 못했습니다",
+  "customImageNotice1": "그룹이 활성화되어 있으면 그룹별로 이미지가 무작위로 표시됩니다.",
+  "customImageNotice2": "사용자가 업로드해 설정한 이미지는 개발자나 제3자와 공유되지 않으며, 기기 내 앱 영역에만 저장됩니다.",
+  "customImageNotice3": "따라서 오프라인에서도 사용할 수 있습니다.",
+  "customImageNotice4": "이미지를 많이 추가하면 저장 공간을 사용합니다. 문제가 생기면 설정에서 사용자 이미지를 끄거나 사용하지 않는 이미지를 삭제하세요.",
+  "customImageNotice5": "앱을 삭제하면 설정한 이미지도 함께 삭제됩니다.",
+  "customImageRequirementNotMet": "커스텀 이미지를 사용하려면 활성화된 그룹에 좋은 이미지 1장 이상과 좋지 않은 이미지 3장 이상이 필요합니다.",
+  "customImageRequirement": "커스텀 이미지를 사용하려면 활성화된 그룹에 좋은 이미지 1장 이상과 좋지 않은 이미지 3장 이상이 필요합니다.",
+  "sunnyWeather": "좋음",
+  "rainyWeather": "좋지 않음",
+  "addImages": "이미지 추가",
+  "imageDeleted": "이미지를 삭제했습니다",
+  "imageDeleteFailed": "이미지를 삭제하지 못했습니다",
+  "deleteImageTitle": "이미지 삭제",
+  "deleteImageMessage": "이 이미지를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+  "groupImageTitle": "그룹 {groupId} {weather} 이미지",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "등록됨: {count}장",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "등록된 이미지가 없습니다",
+  "imagePreview": "이미지 미리보기",
+  "close": "닫기",
+  "contactEmailSubject": "FocusMint - 문의",
+  "contactEmailBody": "의견이나 문의 사항을 적어 주세요.",
+  "mixWithBuiltInImages": "기본 이미지와 혼합",
+  "mixWithBuiltInImagesDescription": "기본 이미지와 내 이미지를 함께 사용합니다",
+  "supportIntro": "개발자에게 익명으로 문의할 수 있습니다. 질문과 제안을 보내 주세요. 하루에 메시지 3개를 보낼 수 있으며 개발자가 답장할 때마다 전송 가능 횟수가 3개로 회복됩니다.",
+  "supportReceived": "메시지를 받았습니다. 보통 2~3일 안에 답변드립니다.",
+  "supportComposer": "메시지 입력",
+  "supportSend": "보내기",
+  "supportRetry": "다시 시도",
+  "supportSent": "전송됨",
+  "supportUnsent": "미전송 · 이 기기에 저장됨",
+  "supportAttach": "이미지 첨부",
+  "supportRemoveImage": "이미지 제거",
+  "supportImage": "첨부 파일",
+  "supportClear": "대화 기록 삭제",
+  "supportClearConfirm": "이 대화를 삭제할까요? 보내지 않은 초안과 서버의 기록도 삭제됩니다. 전송 가능 횟수는 초기화되지 않습니다.",
+  "supportQuota": "오늘의 메시지 3개를 모두 사용했습니다. 내일 또는 개발자의 답장 후에 다시 보낼 수 있습니다.",
+  "supportConnectionError": "연결할 수 없습니다. 저장된 초안은 전송되지 않았습니다.",
+  "supportSendError": "전송하지 못했습니다. 메시지는 이 기기에 저장되어 있습니다. 다시 시도해 주세요.",
+  "supportStorageError": "저장하지 못했습니다. 다시 시도해 주세요.",
+  "supportClearError": "기록을 삭제하지 못했습니다. 연결 상태를 확인하고 다시 시도해 주세요.",
+  "supportImageError": "이미지를 불러올 수 없습니다. 30 MB 미만의 이미지를 선택해 주세요.",
+  "supportRemaining": "오늘 남은 메시지 수: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "읽지 않은 답장 수: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "안내",
+  "supportDeveloper": "개발자",
+  "supportPrivacy": "문의 데이터 안내",
+  "breathingTitle": "잠시 숨을 골라 보세요",
+  "breathingHint": "편안한 속도로\n폐의 부드러운 움직임에 맞춰 호흡하세요.",
+  "breathingIn": "천천히 들이쉬세요",
+  "breathingOut": "천천히 내쉬세요",
+  "breathingProgress": "호흡 안내 진행 상황",
+  "breathingResultHint": "끝나면 결과가 자동으로 표시됩니다.",
+  "breathingSkip": "건너뛰고 결과 보기"
+}

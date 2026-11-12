@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "Cette application accède à l’appareil photo afin d’ajouter des images personnalisées pour l’entraînement.";
+"NSPhotoLibraryUsageDescription" = "Choisissez des photos pour les exercices ou pour les joindre à un message d’assistance.";

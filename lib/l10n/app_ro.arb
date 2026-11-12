@@ -1,0 +1,333 @@
+{
+  "@@locale": "ro",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Puncte actuale",
+  "goalLabel": "Obiectiv: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Rămas: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Obiectiv atins!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Exersează observarea lucrurilor pozitive.",
+  "remainingTimeMinutes": "Timp rămas: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Timp rămas: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Scor: {score} puncte",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Se pregătesc imaginile...",
+  "noStimuliAvailable": "Niciun stimul disponibil",
+  "invalidGridSize": "Dimensiune nevalidă a grilei",
+  "unknown": "?",
+  "gettingStarted": "Se începe...",
+  "excellentPerformance": "Performanță excelentă!",
+  "greatJob": "Foarte bine!",
+  "goodPerformance": "Performanță bună",
+  "keepPracticingFeedback": "Continuați să exersați",
+  "takeYourTimeFeedback": "Nu vă grăbiți",
+  "happy": "Fericit",
+  "angry": "Furios",
+  "fear": "Frică",
+  "sad": "Trist",
+  "historyPageTitle": "Istoricul antrenamentelor",
+  "dataLoading": "Se încarcă datele...",
+  "pointsHistory": "Istoricul punctelor",
+  "weekly": "Săptămânal",
+  "monthly": "Lunar",
+  "noDataAvailable": "Nu există date disponibile",
+  "goalAchievementRate": "Rata de atingere a obiectivului",
+  "scoreStatistics": "Statistici scor",
+  "bestScore": "Cel mai bun scor",
+  "totalScore": "Scor total",
+  "trainingTime": "Timp de antrenament",
+  "totalTrainingTime": "Timp total de antrenament",
+  "detailedStatistics": "Statistici detaliate",
+  "averageScorePerMinute": "Scor mediu pe minut",
+  "pointsToGoal": "Puncte până la obiectiv",
+  "goalSetting": "Setarea obiectivului",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "puncte",
+  "monthSuffix": "",
+  "sundayShort": "Dum",
+  "mondayShort": "Lun",
+  "tuesdayShort": "Mar",
+  "wednesdayShort": "Mie",
+  "thursdayShort": "Joi",
+  "fridayShort": "Vin",
+  "saturdayShort": "Sâm",
+  "settingsTitle": "Setări",
+  "goalPointsSetting": "Setarea punctelor obiectiv",
+  "currentGoalPoints": "Obiectiv actual: {points} puncte",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Puncte obiectiv noi",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "puncte",
+  "saveGoalButton": "Salvați obiectivul",
+  "goalSetTo": "Obiectiv setat la {points} puncte",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Introduceți punctele obiectiv",
+  "enterValidNumber": "Introduceți un număr valid (între 1 și 99999999)",
+  "saveFailed": "Unele setări nu au putut fi salvate",
+  "emailOpenFailed": "Aplicația de e-mail nu a putut fi deschisă",
+  "pageOpenFailed": "Pagina nu a putut fi deschisă",
+  "appInfoSupport": "Informații despre aplicație și asistență",
+  "contactUs": "Contactați-ne",
+  "contactUsSubtitle": "Împărtășiți-ne părerile și întrebările dvs.",
+  "termsOfService": "Termeni și condiții",
+  "termsSubtitle": "Consultați termenii și condițiile aplicației",
+  "privacyPolicy": "Politica de confidențialitate",
+  "privacySubtitle": "Despre gestionarea informațiilor private",
+  "tutorialTitle": "Tutorial",
+  "tutorialSubtitle": "Aflați cum se folosește aplicația",
+  "dataManagement": "Gestionarea datelor",
+  "deleteHistory": "Ștergeți istoricul",
+  "deleteHistorySubtitle": "Șterge doar istoricul antrenamentelor (punctele obiectiv sunt păstrate)",
+  "deleteHistoryAndGoal": "Ștergeți istoricul și obiectivul",
+  "deleteHistoryAndGoalSubtitle": "Șterge tot istoricul și punctele obiectiv",
+  "deleteHistoryConfirmTitle": "Ștergeți istoricul",
+  "deleteHistoryConfirmMessage": "Sigur doriți să ștergeți tot istoricul antrenamentelor?\n\n*Punctele obiectiv vor fi păstrate",
+  "deleteHistoryAndGoalConfirmTitle": "Ștergeți istoricul și obiectivul",
+  "deleteHistoryAndGoalConfirmMessage": "Sigur doriți să ștergeți tot istoricul și punctele obiectiv?\n\n*Această acțiune nu poate fi anulată",
+  "cancel": "Anulare",
+  "delete": "Ștergere",
+  "historyDeleted": "Istoricul a fost șters",
+  "historyAndGoalDeleted": "Istoricul și obiectivul au fost șterse",
+  "historyDeleteFailed": "Ștergerea istoricului a eșuat",
+  "historyAndGoalDeleteFailed": "Ștergerea istoricului și a obiectivului a eșuat",
+  "tutorialDisplayFailed": "Afișarea tutorialului a eșuat",
+  "tips": "Sfaturi",
+  "tipsContent": "• Obiectivul apare în graficul de pe ecranul principal\n• Începe cu un obiectiv mic și mărește-l în ritmul tău\n• Fiecare alegere corectă aduce până la 6 puncte",
+  "backToHome": "Înapoi la ecranul principal",
+  "tutorialSkip": "Omiteți",
+  "tutorialGoalAndPoints": "Obiectivul și punctele actuale",
+  "tutorialGoalDescription": "Cercul exterior arată obiectivul, iar cel interior punctele totale. Cercul se umple pe măsură ce vă apropiați de obiectiv.",
+  "tutorialOneMinuteTraining": "Antrenament de 1 minut",
+  "tutorialTrainingDescription": "Începeți un joc de 1 minut. Alegeți imagini pozitive sau obiceiuri bune din 4 opțiuni.",
+  "tutorialScoreProgress": "Evoluția scorului",
+  "tutorialScoreDescription": "Vizualizați informații detaliate despre scorurile obținute.",
+  "tutorialSettingsAndData": "Setări și gestionarea datelor",
+  "tutorialSettingsDescription": "Modificați obiectivul, consultați informațiile despre aplicație și resetați datele.",
+  "appIntroAttentionBiasTitle": "Despre biasul atențional",
+  "appIntroAttentionBiasContent": "Când anxietatea este ridicată, avem tendința inconștientă de a observa doar lucrurile negative.",
+  "appIntroFocusMintRoleTitle": "Rolul FocusMint",
+  "appIntroFocusMintRoleContent": "Un joc scurt pentru a exersa orientarea atenției către imagini pozitive.",
+  "appIntroScientificEvidenceTitle": "Despre acest exercițiu",
+  "appIntroScientificEvidenceContent": "Exersează găsirea imaginilor pozitive. FocusMint este un instrument de îngrijire personală, nu un tratament medical. Rezultatele pot varia de la o persoană la alta.",
+  "appIntroExpectedEffectsTitle": "Ce poți exersa",
+  "appIntroEffect1": "Căutarea imaginilor pozitive",
+  "appIntroEffect2": "Observarea zâmbetelor din jur",
+  "appIntroEffect3": "Crearea unei scurte rutine zilnice",
+  "appIntroHowToUse": "Vedeți cum se folosește",
+  "pointsEarned": "Puncte câștigate!",
+  "yourScore": "Scorul dvs.",
+  "totalPlayTime": "Timp total de joc",
+  "imageManagement": "Gestionarea imaginilor",
+  "hiddenImagesCount": "Imagini ascunse: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Aveți modificări nesalvate",
+  "unsavedChangesMessage": "Aveți {count} modificări nesalvate la setările de afișare a imaginilor.",
+  "unsavedChangesWarning": "Modificările se vor pierde dacă închideți acest ecran acum.",
+  "discardChanges": "Renunțați la modificări",
+  "saveAndExit": "Salvați și ieșiți",
+  "settingsSaved": "{count} setări salvate",
+  "saveError": "A apărut o eroare la salvarea setărilor",
+  "imageSettingsUpdated": "Setările imaginilor au fost actualizate",
+  "allImages": "Toate",
+  "positiveImages": "Pozitive",
+  "negativeImages": "Negative",
+  "smileImages": "Zâmbete",
+  "vegetableImages": "Alimente hrănitoare",
+  "healthImages": "Mișcare și socializare",
+  "sadImages": "Furie, tristețe și îngrijorare",
+  "badFoodImages": "Fast-food și dulciuri",
+  "badImages": "Obiceiuri nesănătoase",
+  "imageManagementHint": "Atingeți pentru a afișa sau ascunde imaginile. Puteți ascunde până la 15 imagini.",
+  "unsaved": "Nesalvat",
+  "save": "Salvare",
+  "hiddenImages": "Ascunse",
+  "noHiddenImages": "Nicio imagine ascunsă",
+  "settingsLoadFailed": "Încărcarea setărilor a eșuat",
+  "imagesAdded": "{count} imagini adăugate",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Adăugarea imaginilor a eșuat",
+  "imageSelectionFailed": "Selectarea imaginilor a eșuat",
+  "settingsChangeFailed": "Modificarea setărilor a eșuat",
+  "groupTitle": "Grup: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Comutare afișare",
+  "imageCount": "{count} imagini",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Note importante",
+  "notice1": "A fost adăugată funcția de imagini personalizate!",
+  "notice2": "Puteți adăuga propriile imagini din ecranul de setări",
+  "notice3": "Consultați ecranul de setări pentru detalii",
+  "customImageTitle": "Imagini personalizate",
+  "customImageSubtitle": "Adăugați și gestionați propriile imagini",
+  "addCustomImages": "Adăugați imagini personalizate",
+  "selectImages": "Selectați imagini",
+  "unknownImage": "Imagine necunoscută",
+  "customImageSettings": "Setări imagini personalizate",
+  "useCustomImages": "Folosiți imagini personalizate",
+  "useCustomImagesDescription": "Folosește imaginile tale pentru exercițiu. Activează combinarea de mai jos pentru a include și imaginile aplicației.",
+  "groupSettings": "Setări grupuri",
+  "minOneGroupRequired": "Cel puțin un grup trebuie să fie activat",
+  "settingsLoadFailedMessage": "Încărcarea setărilor a eșuat",
+  "customImageNotice1": "Când grupurile sunt activate, imaginile sunt afișate aleatoriu pentru fiecare grup.",
+  "customImageNotice2": "Imaginile încărcate și setate de utilizator nu sunt partajate cu dezvoltatorii sau cu terți și sunt stocate doar în zona aplicației de pe dispozitiv.",
+  "customImageNotice3": "Astfel, aplicația poate fi folosită offline.",
+  "customImageNotice4": "Adăugarea multor imagini ocupă spațiu de stocare. Dacă apar probleme, dezactivează imaginile personale sau șterge imaginile nefolosite din setări.",
+  "customImageNotice5": "Când ștergeți aplicația, imaginile setate vor fi șterse.",
+  "customImageRequirementNotMet": "Pentru a folosi imagini personalizate, aveți nevoie de cel puțin o imagine din categoria „Bune” și 3 imagini din categoria „Mai puțin bune” în grupurile activate.",
+  "customImageRequirement": "Pentru a folosi imagini personalizate, aveți nevoie de cel puțin o imagine din categoria „Bune” și 3 imagini din categoria „Mai puțin bune” în grupurile activate.",
+  "sunnyWeather": "Bune",
+  "rainyWeather": "Mai puțin bune",
+  "addImages": "Adăugați imagini",
+  "imageDeleted": "Imaginea a fost ștearsă",
+  "imageDeleteFailed": "Ștergerea imaginii a eșuat",
+  "deleteImageTitle": "Ștergeți imaginea",
+  "deleteImageMessage": "Doriți să ștergeți această imagine? Această acțiune nu poate fi anulată.",
+  "groupImageTitle": "Grupul {groupId} – imagini „{weather}”",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Înregistrate: {count} imagini",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Nicio imagine înregistrată",
+  "imagePreview": "Previzualizare imagine",
+  "close": "Închidere",
+  "contactEmailSubject": "FocusMint - Contact",
+  "contactEmailBody": "Vă rugăm să ne împărtășiți părerile și întrebările dvs.",
+  "mixWithBuiltInImages": "Combină cu imaginile aplicației",
+  "mixWithBuiltInImagesDescription": "Folosește imaginile tale împreună cu cele ale aplicației",
+  "supportIntro": "Discută anonim cu dezvoltatorul. Întrebările și sugestiile sunt binevenite. Poți trimite 3 mesaje pe zi. Fiecare răspuns al dezvoltatorului restabilește limita disponibilă la 3.",
+  "supportReceived": "Mesaj primit. De obicei răspundem în 2–3 zile.",
+  "supportComposer": "Scrie un mesaj",
+  "supportSend": "Trimite",
+  "supportRetry": "Încearcă din nou",
+  "supportSent": "Trimis",
+  "supportUnsent": "Netrimis · salvat pe acest dispozitiv",
+  "supportAttach": "Atașează o imagine",
+  "supportRemoveImage": "Elimină imaginea",
+  "supportImage": "Atașament",
+  "supportClear": "Șterge istoricul",
+  "supportClearConfirm": "Ștergi această conversație? Vor fi șterse și ciornele netrimise și istoricul de pe server. Limita de mesaje nu se restabilește.",
+  "supportQuota": "Ai folosit cele 3 mesaje de astăzi. Poți trimite altul mâine sau după un răspuns al dezvoltatorului.",
+  "supportConnectionError": "Conectarea nu a reușit. Ciornele salvate nu au fost trimise.",
+  "supportSendError": "Trimiterea nu a reușit. Mesajul este salvat pe acest dispozitiv. Încearcă din nou.",
+  "supportStorageError": "Salvarea nu a reușit. Încearcă din nou.",
+  "supportClearError": "Istoricul nu a putut fi șters. Verifică conexiunea și încearcă din nou.",
+  "supportImageError": "Imaginea nu a putut fi încărcată. Alege o imagine mai mică de 30 MB.",
+  "supportRemaining": "Mesaje disponibile astăzi: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Răspunsuri necitite: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informații",
+  "supportDeveloper": "Dezvoltator",
+  "supportPrivacy": "Despre datele solicitărilor de asistență",
+  "breathingTitle": "Ia o pauză pentru a respira",
+  "breathingHint": "Urmărește mișcarea lină a plămânilor\nîntr-un ritm confortabil.",
+  "breathingIn": "Inspiră încet",
+  "breathingOut": "Expiră încet",
+  "breathingProgress": "Progresul exercițiului de respirație",
+  "breathingResultHint": "Rezultatele vor apărea automat.",
+  "breathingSkip": "Mergi la rezultate"
+}

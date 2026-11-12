@@ -1,0 +1,333 @@
+{
+  "@@locale": "ar",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "النقاط الحالية",
+  "goalLabel": "الهدف: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "المتبقي: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 تم تحقيق الهدف!",
+  "startButtonText": "ابدأ",
+  "stressReductionMessage": "تدرّب على ملاحظة الجوانب الإيجابية.",
+  "remainingTimeMinutes": "الوقت المتبقي: {minutes} د {seconds} ث",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "الوقت المتبقي: {seconds} ث",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "النتيجة: {score} نقطة",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "جارٍ تجهيز الصور...",
+  "noStimuliAvailable": "لا توجد مؤثرات متاحة",
+  "invalidGridSize": "حجم شبكة غير صالح",
+  "unknown": "؟",
+  "gettingStarted": "جارٍ البدء...",
+  "excellentPerformance": "أداء ممتاز!",
+  "greatJob": "عمل رائع!",
+  "goodPerformance": "أداء جيد",
+  "keepPracticingFeedback": "واصل التمرين",
+  "takeYourTimeFeedback": "خذ وقتك",
+  "happy": "سعيد",
+  "angry": "غاضب",
+  "fear": "خوف",
+  "sad": "حزين",
+  "historyPageTitle": "سجل التدريب",
+  "dataLoading": "جارٍ تحميل البيانات...",
+  "pointsHistory": "سجل النقاط",
+  "weekly": "أسبوعي",
+  "monthly": "شهري",
+  "noDataAvailable": "لا توجد بيانات",
+  "goalAchievementRate": "معدل تحقيق الهدف",
+  "scoreStatistics": "إحصاءات النتائج",
+  "bestScore": "أفضل نتيجة",
+  "totalScore": "النتيجة الإجمالية",
+  "trainingTime": "وقت التدريب",
+  "totalTrainingTime": "إجمالي وقت التدريب",
+  "detailedStatistics": "إحصاءات مفصلة",
+  "averageScorePerMinute": "متوسط النتيجة في الدقيقة",
+  "pointsToGoal": "النقاط المتبقية للهدف",
+  "goalSetting": "تحديد الهدف",
+  "secondsUnit": "ث",
+  "minutesUnit": "د",
+  "hoursUnit": "س",
+  "pointsUnit": "نقطة",
+  "monthSuffix": "",
+  "sundayShort": "أحد",
+  "mondayShort": "اثنين",
+  "tuesdayShort": "ثلاثاء",
+  "wednesdayShort": "أربعاء",
+  "thursdayShort": "خميس",
+  "fridayShort": "جمعة",
+  "saturdayShort": "سبت",
+  "settingsTitle": "الإعدادات",
+  "goalPointsSetting": "تحديد نقاط الهدف",
+  "currentGoalPoints": "الهدف الحالي: {points} نقطة",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "نقاط الهدف الجديدة",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "نقطة",
+  "saveGoalButton": "حفظ الهدف",
+  "goalSetTo": "تم تحديد الهدف عند {points} نقطة",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "يرجى إدخال نقاط الهدف",
+  "enterValidNumber": "يرجى إدخال رقم صالح (من 1 إلى 99999999)",
+  "saveFailed": "فشل حفظ بعض الإعدادات",
+  "emailOpenFailed": "تعذّر فتح تطبيق البريد الإلكتروني",
+  "pageOpenFailed": "تعذّر فتح الصفحة",
+  "appInfoSupport": "معلومات التطبيق والدعم",
+  "contactUs": "اتصل بنا",
+  "contactUsSubtitle": "شاركنا ملاحظاتك وأسئلتك",
+  "termsOfService": "شروط الاستخدام",
+  "termsSubtitle": "الاطلاع على شروط استخدام التطبيق",
+  "privacyPolicy": "سياسة الخصوصية",
+  "privacySubtitle": "حول التعامل مع معلومات الخصوصية",
+  "tutorialTitle": "الدليل التعليمي",
+  "tutorialSubtitle": "تعرّف على كيفية استخدام التطبيق",
+  "dataManagement": "إدارة البيانات",
+  "deleteHistory": "حذف السجل",
+  "deleteHistorySubtitle": "حذف سجل التدريب فقط (مع الاحتفاظ بنقاط الهدف)",
+  "deleteHistoryAndGoal": "حذف السجل والهدف",
+  "deleteHistoryAndGoalSubtitle": "حذف كل السجل ونقاط الهدف",
+  "deleteHistoryConfirmTitle": "حذف السجل",
+  "deleteHistoryConfirmMessage": "هل أنت متأكد من حذف كل سجل التدريب؟\n\n*سيتم الاحتفاظ بنقاط الهدف",
+  "deleteHistoryAndGoalConfirmTitle": "حذف السجل والهدف",
+  "deleteHistoryAndGoalConfirmMessage": "هل أنت متأكد من حذف كل السجل ونقاط الهدف؟\n\n*لا يمكن التراجع عن هذا الإجراء",
+  "cancel": "إلغاء",
+  "delete": "حذف",
+  "historyDeleted": "تم حذف السجل",
+  "historyAndGoalDeleted": "تم حذف السجل والهدف",
+  "historyDeleteFailed": "فشل حذف السجل",
+  "historyAndGoalDeleteFailed": "فشل حذف السجل والهدف",
+  "tutorialDisplayFailed": "فشل عرض الدليل التعليمي",
+  "tips": "نصائح",
+  "tipsContent": "• يظهر هدفك في الرسم البياني على الشاشة الرئيسية\n• ابدأ بهدف صغير وزده بالوتيرة التي تناسبك\n• يمنحك كل اختيار صحيح ما يصل إلى 6 نقاط",
+  "backToHome": "العودة إلى الرئيسية",
+  "tutorialSkip": "تخطي",
+  "tutorialGoalAndPoints": "الهدف والنقاط الحالية",
+  "tutorialGoalDescription": "تُظهر الدائرة الخارجية هدفك، وتُظهر الدائرة الداخلية إجمالي النقاط. تمتلئ الدائرة كلما اقتربت من هدفك.",
+  "tutorialOneMinuteTraining": "تدريب لمدة دقيقة واحدة",
+  "tutorialTrainingDescription": "ابدأ لعبة مدتها دقيقة واحدة. اختر الصور الإيجابية أو العادات الجيدة من بين 4 خيارات.",
+  "tutorialScoreProgress": "تطور النتيجة",
+  "tutorialScoreDescription": "اطّلع على معلومات مفصلة حول النتائج التي حصلت عليها.",
+  "tutorialSettingsAndData": "الإعدادات وإدارة البيانات",
+  "tutorialSettingsDescription": "غيّر قيم الهدف، واطّلع على معلومات التطبيق، وأعد تعيين البيانات.",
+  "appIntroAttentionBiasTitle": "حول الانحياز الانتباهي",
+  "appIntroAttentionBiasContent": "عندما يشتد القلق، نميل دون وعي إلى التركيز على الأمور السلبية فقط.",
+  "appIntroFocusMintRoleTitle": "دور FocusMint",
+  "appIntroFocusMintRoleContent": "لعبة قصيرة للتدرّب على توجيه الانتباه إلى الصور الإيجابية.",
+  "appIntroScientificEvidenceTitle": "عن هذا التمرين",
+  "appIntroScientificEvidenceContent": "تدرّب على العثور على صور إيجابية. FocusMint أداة للعناية بالنفس، وليس علاجًا طبيًا. تختلف النتائج من شخص إلى آخر.",
+  "appIntroExpectedEffectsTitle": "ما يمكنك التدرّب عليه",
+  "appIntroEffect1": "البحث عن الصور الإيجابية",
+  "appIntroEffect2": "ملاحظة الابتسامات من حولك",
+  "appIntroEffect3": "تخصيص وقت لعادة يومية قصيرة",
+  "appIntroHowToUse": "عرض طريقة الاستخدام",
+  "pointsEarned": "لقد كسبت نقاطًا!",
+  "yourScore": "نتيجتك",
+  "totalPlayTime": "إجمالي وقت اللعب",
+  "imageManagement": "إدارة الصور",
+  "hiddenImagesCount": "الصور المخفية: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "لديك تغييرات غير محفوظة",
+  "unsavedChangesMessage": "لديك {count} من التغييرات غير المحفوظة في إعدادات عرض الصور.",
+  "unsavedChangesWarning": "ستفقد التغييرات إذا أغلقت هذه الشاشة الآن.",
+  "discardChanges": "تجاهل التغييرات",
+  "saveAndExit": "حفظ وخروج",
+  "settingsSaved": "تم حفظ {count} من الإعدادات",
+  "saveError": "حدث خطأ أثناء حفظ الإعدادات",
+  "imageSettingsUpdated": "تم تحديث إعدادات الصور",
+  "allImages": "الكل",
+  "positiveImages": "إيجابية",
+  "negativeImages": "سلبية",
+  "smileImages": "ابتسامة",
+  "vegetableImages": "أطعمة مغذية",
+  "healthImages": "الحركة والتواصل",
+  "sadImages": "الغضب والحزن والقلق",
+  "badFoodImages": "الوجبات السريعة والحلويات",
+  "badImages": "عادات غير صحية",
+  "imageManagementHint": "انقر لتبديل إظهار الصورة أو إخفائها. يمكنك إخفاء حتى 15 صورة.",
+  "unsaved": "غير محفوظ",
+  "save": "حفظ",
+  "hiddenImages": "مخفية",
+  "noHiddenImages": "لا توجد صور مخفية",
+  "settingsLoadFailed": "فشل تحميل الإعدادات",
+  "imagesAdded": "تمت إضافة {count} من الصور",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "فشلت إضافة الصور",
+  "imageSelectionFailed": "فشل اختيار الصور",
+  "settingsChangeFailed": "فشل تغيير الإعدادات",
+  "groupTitle": "المجموعة: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "تبديل العرض",
+  "imageCount": "{count} صورة",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "ملاحظات مهمة",
+  "notice1": "تمت إضافة ميزة الصور المخصصة!",
+  "notice2": "يمكنك إضافة صورك الخاصة من شاشة الإعدادات",
+  "notice3": "يرجى مراجعة شاشة الإعدادات لمزيد من التفاصيل",
+  "customImageTitle": "الصور المخصصة",
+  "customImageSubtitle": "أضف صورك الخاصة وأدرها",
+  "addCustomImages": "إضافة صور مخصصة",
+  "selectImages": "اختيار الصور",
+  "unknownImage": "صورة غير معروفة",
+  "customImageSettings": "إعدادات الصور المخصصة",
+  "useCustomImages": "استخدام الصور المخصصة",
+  "useCustomImagesDescription": "استخدم صورك الخاصة في التمرين. فعّل المزج أدناه لتضمين صور التطبيق أيضًا.",
+  "groupSettings": "إعدادات المجموعات",
+  "minOneGroupRequired": "يجب تفعيل مجموعة واحدة على الأقل",
+  "settingsLoadFailedMessage": "فشل تحميل الإعدادات",
+  "customImageNotice1": "عند تفعيل المجموعات، تُعرض الصور عشوائيًا لكل مجموعة.",
+  "customImageNotice2": "الصور التي يحمّلها المستخدم ويعيّنها لا تُشارك مع المطورين أو أي طرف ثالث، وتُخزن فقط في منطقة التطبيق على الجهاز.",
+  "customImageNotice3": "هذا يتيح الاستخدام دون اتصال بالإنترنت.",
+  "customImageNotice4": "تستهلك إضافة صور كثيرة مساحة تخزين. إذا واجهت مشكلة، عطّل الصور المخصصة أو احذف الصور غير المستخدمة من الإعدادات.",
+  "customImageNotice5": "عند حذف التطبيق، سيتم حذف الصور المعيّنة.",
+  "customImageRequirementNotMet": "لاستخدام الصور المخصصة، تحتاج إلى صورة جيدة واحدة على الأقل و3 صور غير جيدة على الأقل في المجموعات المفعّلة.",
+  "customImageRequirement": "لاستخدام الصور المخصصة، تحتاج إلى صورة جيدة واحدة على الأقل و3 صور غير جيدة على الأقل في المجموعات المفعّلة.",
+  "sunnyWeather": "جيدة",
+  "rainyWeather": "غير جيدة",
+  "addImages": "إضافة صور",
+  "imageDeleted": "تم حذف الصورة",
+  "imageDeleteFailed": "فشل حذف الصورة",
+  "deleteImageTitle": "حذف الصورة",
+  "deleteImageMessage": "هل تريد حذف هذه الصورة؟ لا يمكن التراجع عن هذا الإجراء.",
+  "groupImageTitle": "المجموعة {groupId} - صور {weather}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "المسجلة: {count} صورة",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "لا توجد صور مسجلة",
+  "imagePreview": "معاينة الصورة",
+  "close": "إغلاق",
+  "contactEmailSubject": "FocusMint - اتصل بنا",
+  "contactEmailBody": "يرجى مشاركة ملاحظاتك وأسئلتك.",
+  "mixWithBuiltInImages": "المزج مع صور التطبيق",
+  "mixWithBuiltInImagesDescription": "استخدام صورك الخاصة وصور التطبيق معًا",
+  "supportIntro": "تواصل مع المطوّر دون الكشف عن هويتك. نرحّب بالأسئلة والاقتراحات. يمكنك إرسال 3 رسائل يوميًا، ويعيد كل رد من المطوّر عدد الرسائل المتاحة إلى 3.",
+  "supportReceived": "تم استلام الرسالة. نردّ عادةً خلال يومين إلى ثلاثة أيام.",
+  "supportComposer": "اكتب رسالة",
+  "supportSend": "إرسال",
+  "supportRetry": "إعادة المحاولة",
+  "supportSent": "تم الإرسال",
+  "supportUnsent": "لم تُرسل · محفوظة على هذا الجهاز",
+  "supportAttach": "إرفاق صورة",
+  "supportRemoveImage": "إزالة الصورة",
+  "supportImage": "مرفق",
+  "supportClear": "حذف السجل",
+  "supportClearConfirm": "هل تريد حذف هذه المحادثة؟ ستُحذف أيضًا المسودات غير المرسلة والسجل على الخادم. لن يعيد ذلك عدد الرسائل المتاحة.",
+  "supportQuota": "استخدمت رسائلك الثلاث لهذا اليوم. يمكنك الإرسال غدًا أو بعد ردّ المطوّر.",
+  "supportConnectionError": "تعذّر الاتصال. لم تُرسل المسودات المحفوظة.",
+  "supportSendError": "تعذّر الإرسال. رسالتك محفوظة على هذا الجهاز. أعد المحاولة.",
+  "supportStorageError": "تعذّر الحفظ. أعد المحاولة.",
+  "supportClearError": "تعذّر حذف السجل. تحقّق من الاتصال وأعد المحاولة.",
+  "supportImageError": "تعذّر تحميل الصورة. اختر صورة يقل حجمها عن 30 ميغابايت.",
+  "supportRemaining": "الرسائل المتبقية اليوم: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "الردود غير المقروءة: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "معلومات",
+  "supportDeveloper": "المطوّر",
+  "supportPrivacy": "حول بيانات المحادثة",
+  "breathingTitle": "خذ نفسًا بهدوء",
+  "breathingHint": "اتبع الحركة اللطيفة للرئتين\nبوتيرة مريحة لك.",
+  "breathingIn": "شهيق ببطء",
+  "breathingOut": "زفير ببطء",
+  "breathingProgress": "تقدّم تمرين التنفّس",
+  "breathingResultHint": "ستظهر نتائجك تلقائيًا عند الانتهاء.",
+  "breathingSkip": "الانتقال إلى النتائج"
+}

@@ -1,0 +1,333 @@
+{
+  "@@locale": "id",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Poin Saat Ini",
+  "goalLabel": "Target: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Sisa: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Target Tercapai!",
+  "startButtonText": "MULAI",
+  "stressReductionMessage": "Berlatihlah memperhatikan hal positif.",
+  "remainingTimeMinutes": "Sisa waktu: {minutes} mnt {seconds} dtk",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Sisa waktu: {seconds} dtk",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Skor: {score} Poin",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Menyiapkan gambar...",
+  "noStimuliAvailable": "Tidak ada stimulus yang tersedia",
+  "invalidGridSize": "Ukuran kisi tidak valid",
+  "unknown": "?",
+  "gettingStarted": "Memulai...",
+  "excellentPerformance": "Performa luar biasa!",
+  "greatJob": "Kerja bagus!",
+  "goodPerformance": "Performa baik",
+  "keepPracticingFeedback": "Terus berlatih",
+  "takeYourTimeFeedback": "Tidak perlu terburu-buru",
+  "happy": "Senang",
+  "angry": "Marah",
+  "fear": "Takut",
+  "sad": "Sedih",
+  "historyPageTitle": "Riwayat Latihan",
+  "dataLoading": "Memuat data...",
+  "pointsHistory": "Riwayat Poin",
+  "weekly": "Mingguan",
+  "monthly": "Bulanan",
+  "noDataAvailable": "Tidak ada data",
+  "goalAchievementRate": "Tingkat Pencapaian Target",
+  "scoreStatistics": "Statistik Skor",
+  "bestScore": "Skor Terbaik",
+  "totalScore": "Total Skor",
+  "trainingTime": "Waktu Latihan",
+  "totalTrainingTime": "Total Waktu Latihan",
+  "detailedStatistics": "Statistik Terperinci",
+  "averageScorePerMinute": "Rata-rata skor per menit",
+  "pointsToGoal": "Poin menuju target",
+  "goalSetting": "Pengaturan target",
+  "secondsUnit": "dtk",
+  "minutesUnit": "mnt",
+  "hoursUnit": "jam",
+  "pointsUnit": "poin",
+  "monthSuffix": "",
+  "sundayShort": "Min",
+  "mondayShort": "Sen",
+  "tuesdayShort": "Sel",
+  "wednesdayShort": "Rab",
+  "thursdayShort": "Kam",
+  "fridayShort": "Jum",
+  "saturdayShort": "Sab",
+  "settingsTitle": "Pengaturan",
+  "goalPointsSetting": "Pengaturan Poin Target",
+  "currentGoalPoints": "Target saat ini: {points} poin",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Poin target baru",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "poin",
+  "saveGoalButton": "Simpan Target",
+  "goalSetTo": "Target diatur ke {points} poin",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Silakan masukkan poin target",
+  "enterValidNumber": "Masukkan angka yang valid (1 hingga 99999999)",
+  "saveFailed": "Gagal menyimpan beberapa pengaturan",
+  "emailOpenFailed": "Tidak dapat membuka aplikasi email",
+  "pageOpenFailed": "Tidak dapat membuka halaman",
+  "appInfoSupport": "Info Aplikasi & Dukungan",
+  "contactUs": "Hubungi Kami",
+  "contactUsSubtitle": "Sampaikan masukan dan pertanyaan Anda",
+  "termsOfService": "Ketentuan Layanan",
+  "termsSubtitle": "Tinjau ketentuan layanan aplikasi",
+  "privacyPolicy": "Kebijakan Privasi",
+  "privacySubtitle": "Tentang penanganan informasi privasi",
+  "tutorialTitle": "Tutorial",
+  "tutorialSubtitle": "Pelajari cara menggunakan aplikasi",
+  "dataManagement": "Manajemen Data",
+  "deleteHistory": "Hapus Riwayat",
+  "deleteHistorySubtitle": "Hanya menghapus riwayat latihan (poin target tetap tersimpan)",
+  "deleteHistoryAndGoal": "Hapus Riwayat & Target",
+  "deleteHistoryAndGoalSubtitle": "Menghapus semua riwayat dan poin target",
+  "deleteHistoryConfirmTitle": "Hapus Riwayat",
+  "deleteHistoryConfirmMessage": "Yakin ingin menghapus semua riwayat latihan?\n\n*Poin target akan tetap tersimpan",
+  "deleteHistoryAndGoalConfirmTitle": "Hapus Riwayat & Target",
+  "deleteHistoryAndGoalConfirmMessage": "Yakin ingin menghapus semua riwayat dan poin target?\n\n*Tindakan ini tidak dapat dibatalkan",
+  "cancel": "Batal",
+  "delete": "Hapus",
+  "historyDeleted": "Riwayat telah dihapus",
+  "historyAndGoalDeleted": "Riwayat dan target telah dihapus",
+  "historyDeleteFailed": "Gagal menghapus riwayat",
+  "historyAndGoalDeleteFailed": "Gagal menghapus riwayat dan target",
+  "tutorialDisplayFailed": "Gagal menampilkan tutorial",
+  "tips": "Kiat",
+  "tipsContent": "• Targetmu muncul pada grafik di layar utama\n• Mulai dari target kecil dan tingkatkan sesuai kemampuanmu\n• Setiap pilihan benar memberi hingga 6 poin",
+  "backToHome": "Kembali ke Beranda",
+  "tutorialSkip": "Lewati",
+  "tutorialGoalAndPoints": "Target dan Poin Saat Ini",
+  "tutorialGoalDescription": "Lingkaran luar menunjukkan target Anda, lingkaran dalam menunjukkan total poin. Lingkaran akan terisi saat Anda mendekati target.",
+  "tutorialOneMinuteTraining": "Latihan 1 Menit",
+  "tutorialTrainingDescription": "Mulai permainan 1 menit. Pilih gambar positif atau kebiasaan baik dari 4 pilihan.",
+  "tutorialScoreProgress": "Perkembangan Skor",
+  "tutorialScoreDescription": "Lihat informasi terperinci tentang skor yang Anda peroleh.",
+  "tutorialSettingsAndData": "Pengaturan dan Manajemen Data",
+  "tutorialSettingsDescription": "Ubah nilai target, lihat informasi aplikasi, dan atur ulang data.",
+  "appIntroAttentionBiasTitle": "Tentang Bias Perhatian",
+  "appIntroAttentionBiasContent": "Saat kecemasan tinggi, kita cenderung tanpa sadar hanya berfokus pada hal-hal negatif.",
+  "appIntroFocusMintRoleTitle": "Peran FocusMint",
+  "appIntroFocusMintRoleContent": "Permainan singkat untuk berlatih mengarahkan perhatian pada gambar positif.",
+  "appIntroScientificEvidenceTitle": "Tentang latihan ini",
+  "appIntroScientificEvidenceContent": "Berlatih menemukan gambar positif. FocusMint adalah sarana perawatan diri, bukan pengobatan medis. Hasil dapat berbeda pada setiap orang.",
+  "appIntroExpectedEffectsTitle": "Yang dapat kamu latih",
+  "appIntroEffect1": "Mencari gambar positif",
+  "appIntroEffect2": "Memperhatikan senyum di sekitarmu",
+  "appIntroEffect3": "Membangun rutinitas harian yang singkat",
+  "appIntroHowToUse": "Lihat Cara Penggunaan",
+  "pointsEarned": "Poin Diperoleh!",
+  "yourScore": "Skor Anda",
+  "totalPlayTime": "Total Waktu Bermain",
+  "imageManagement": "Manajemen Gambar",
+  "hiddenImagesCount": "Gambar tersembunyi: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Ada perubahan yang belum disimpan",
+  "unsavedChangesMessage": "Ada {count} perubahan pengaturan tampilan gambar yang belum disimpan.",
+  "unsavedChangesWarning": "Perubahan akan hilang jika Anda menutup layar ini sekarang.",
+  "discardChanges": "Buang Perubahan",
+  "saveAndExit": "Simpan dan Keluar",
+  "settingsSaved": "{count} pengaturan disimpan",
+  "saveError": "Terjadi kesalahan saat menyimpan pengaturan",
+  "imageSettingsUpdated": "Pengaturan gambar telah diperbarui",
+  "allImages": "Semua",
+  "positiveImages": "Positif",
+  "negativeImages": "Negatif",
+  "smileImages": "Senyum",
+  "vegetableImages": "Makanan bergizi",
+  "healthImages": "Gerak dan interaksi",
+  "sadImages": "Marah, sedih, dan khawatir",
+  "badFoodImages": "Makanan cepat saji dan manisan",
+  "badImages": "Kebiasaan tidak sehat",
+  "imageManagementHint": "Ketuk untuk mengubah visibilitas gambar. Anda dapat menyembunyikan hingga 15 gambar.",
+  "unsaved": "Belum disimpan",
+  "save": "Simpan",
+  "hiddenImages": "Tersembunyi",
+  "noHiddenImages": "Tidak ada gambar tersembunyi",
+  "settingsLoadFailed": "Gagal memuat pengaturan",
+  "imagesAdded": "{count} gambar ditambahkan",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Gagal menambahkan gambar",
+  "imageSelectionFailed": "Gagal memilih gambar",
+  "settingsChangeFailed": "Gagal mengubah pengaturan",
+  "groupTitle": "Grup: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Alihkan Tampilan",
+  "imageCount": "{count} gambar",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Catatan Penting",
+  "notice1": "Fitur gambar kustom telah ditambahkan!",
+  "notice2": "Anda dapat menambahkan gambar sendiri dari layar pengaturan",
+  "notice3": "Silakan periksa layar pengaturan untuk detailnya",
+  "customImageTitle": "Gambar Kustom",
+  "customImageSubtitle": "Tambahkan dan kelola gambar Anda sendiri",
+  "addCustomImages": "Tambah Gambar Kustom",
+  "selectImages": "Pilih Gambar",
+  "unknownImage": "Gambar Tidak Dikenal",
+  "customImageSettings": "Pengaturan Gambar Kustom",
+  "useCustomImages": "Gunakan Gambar Kustom",
+  "useCustomImagesDescription": "Gunakan gambarmu sendiri untuk berlatih. Aktifkan pencampuran di bawah untuk menyertakan gambar bawaan.",
+  "groupSettings": "Pengaturan Grup",
+  "minOneGroupRequired": "Minimal satu grup harus diaktifkan",
+  "settingsLoadFailedMessage": "Gagal memuat pengaturan",
+  "customImageNotice1": "Saat grup diaktifkan, gambar ditampilkan secara acak untuk setiap grup.",
+  "customImageNotice2": "Gambar yang diunggah dan diatur oleh pengguna tidak dibagikan kepada pengembang atau pihak ketiga, dan hanya disimpan di area aplikasi pada perangkat.",
+  "customImageNotice3": "Dengan demikian, aplikasi dapat digunakan secara offline.",
+  "customImageNotice4": "Menambahkan banyak gambar memakai ruang penyimpanan. Jika ada masalah, nonaktifkan gambar pribadi atau hapus gambar yang tidak dipakai di Pengaturan.",
+  "customImageNotice5": "Saat aplikasi dihapus, gambar yang telah diatur juga akan terhapus.",
+  "customImageRequirementNotMet": "Untuk menggunakan gambar kustom, diperlukan minimal 1 gambar baik dan 3 gambar tidak baik di grup yang diaktifkan.",
+  "customImageRequirement": "Untuk menggunakan gambar kustom, diperlukan minimal 1 gambar baik dan 3 gambar tidak baik di grup yang diaktifkan.",
+  "sunnyWeather": "Baik",
+  "rainyWeather": "Tidak baik",
+  "addImages": "Tambah Gambar",
+  "imageDeleted": "Gambar telah dihapus",
+  "imageDeleteFailed": "Gagal menghapus gambar",
+  "deleteImageTitle": "Hapus Gambar",
+  "deleteImageMessage": "Hapus gambar ini? Tindakan ini tidak dapat dibatalkan.",
+  "groupImageTitle": "Gambar {weather} Grup {groupId}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Terdaftar: {count} gambar",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Belum ada gambar yang terdaftar",
+  "imagePreview": "Pratinjau Gambar",
+  "close": "Tutup",
+  "contactEmailSubject": "FocusMint - Pertanyaan",
+  "contactEmailBody": "Silakan sampaikan masukan dan pertanyaan Anda.",
+  "mixWithBuiltInImages": "Campur dengan gambar bawaan",
+  "mixWithBuiltInImagesDescription": "Gunakan gambar bawaan dan gambarmu sendiri bersama-sama",
+  "supportIntro": "Hubungi pengembang secara anonim. Pertanyaan dan saran diterima. Kamu dapat mengirim 3 pesan per hari. Setiap balasan pengembang mengembalikan jatah pesanmu menjadi 3.",
+  "supportReceived": "Pesan diterima. Kami biasanya membalas dalam 2–3 hari.",
+  "supportComposer": "Tulis pesan",
+  "supportSend": "Kirim",
+  "supportRetry": "Coba lagi",
+  "supportSent": "Terkirim",
+  "supportUnsent": "Belum terkirim · tersimpan di perangkat ini",
+  "supportAttach": "Lampirkan gambar",
+  "supportRemoveImage": "Hapus gambar",
+  "supportImage": "Lampiran",
+  "supportClear": "Hapus riwayat",
+  "supportClearConfirm": "Hapus percakapan ini? Draf yang belum dikirim dan riwayat di server juga akan dihapus. Ini tidak mengatur ulang jatah pesanmu.",
+  "supportQuota": "Jatah 3 pesan hari ini sudah habis. Kirim lagi besok atau setelah pengembang membalas.",
+  "supportConnectionError": "Tidak dapat terhubung. Draf yang tersimpan belum dikirim.",
+  "supportSendError": "Tidak dapat mengirim. Pesanmu tersimpan di perangkat ini. Silakan coba lagi.",
+  "supportStorageError": "Tidak dapat menyimpan. Silakan coba lagi.",
+  "supportClearError": "Tidak dapat menghapus riwayat. Periksa koneksi dan coba lagi.",
+  "supportImageError": "Tidak dapat memuat gambar. Pilih gambar berukuran di bawah 30 MB.",
+  "supportRemaining": "Sisa pesan hari ini: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Balasan belum dibaca: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informasi",
+  "supportDeveloper": "Pengembang",
+  "supportPrivacy": "Tentang data permintaan bantuan",
+  "breathingTitle": "Luangkan waktu untuk bernapas",
+  "breathingHint": "Ikuti gerakan lembut paru-paru\ndengan ritme yang nyaman.",
+  "breathingIn": "Tarik napas perlahan",
+  "breathingOut": "Buang napas perlahan",
+  "breathingProgress": "Progres latihan pernapasan",
+  "breathingResultHint": "Hasilmu akan muncul secara otomatis.",
+  "breathingSkip": "Langsung ke hasil"
+}

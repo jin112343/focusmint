@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "此应用需要访问相机，以添加用于学习的自定义图片。";
+"NSPhotoLibraryUsageDescription" = "选择照片以添加训练图片，或作为咨询消息的附件。";

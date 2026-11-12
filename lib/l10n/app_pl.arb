@@ -1,0 +1,333 @@
+{
+  "@@locale": "pl",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Aktualne punkty",
+  "goalLabel": "Cel: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Pozostało: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Cel osiągnięty!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Ćwicz zauważanie tego, co pozytywne.",
+  "remainingTimeMinutes": "Pozostały czas: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Pozostały czas: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Wynik: {score} pkt",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Przygotowywanie obrazów...",
+  "noStimuliAvailable": "Brak dostępnych bodźców",
+  "invalidGridSize": "Nieprawidłowy rozmiar siatki",
+  "unknown": "?",
+  "gettingStarted": "Rozpoczynanie...",
+  "excellentPerformance": "Znakomity wynik!",
+  "greatJob": "Świetna robota!",
+  "goodPerformance": "Dobry wynik",
+  "keepPracticingFeedback": "Ćwicz dalej",
+  "takeYourTimeFeedback": "Nie spiesz się",
+  "happy": "Radość",
+  "angry": "Złość",
+  "fear": "Strach",
+  "sad": "Smutek",
+  "historyPageTitle": "Historia treningów",
+  "dataLoading": "Wczytywanie danych...",
+  "pointsHistory": "Historia punktów",
+  "weekly": "Tygodniowo",
+  "monthly": "Miesięcznie",
+  "noDataAvailable": "Brak danych",
+  "goalAchievementRate": "Stopień realizacji celu",
+  "scoreStatistics": "Statystyki wyników",
+  "bestScore": "Najlepszy wynik",
+  "totalScore": "Łączny wynik",
+  "trainingTime": "Czas treningu",
+  "totalTrainingTime": "Łączny czas treningu",
+  "detailedStatistics": "Szczegółowe statystyki",
+  "averageScorePerMinute": "Średni wynik na minutę",
+  "pointsToGoal": "Punkty do celu",
+  "goalSetting": "Ustawienie celu",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "godz.",
+  "pointsUnit": "pkt",
+  "monthSuffix": "",
+  "sundayShort": "niedz.",
+  "mondayShort": "pon.",
+  "tuesdayShort": "wt.",
+  "wednesdayShort": "śr.",
+  "thursdayShort": "czw.",
+  "fridayShort": "pt.",
+  "saturdayShort": "sob.",
+  "settingsTitle": "Ustawienia",
+  "goalPointsSetting": "Ustawienie punktów celu",
+  "currentGoalPoints": "Aktualny cel: {points} pkt",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Nowe punkty celu",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "pkt",
+  "saveGoalButton": "Zapisz cel",
+  "goalSetTo": "Ustawiono cel na {points} pkt",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Wprowadź punkty celu",
+  "enterValidNumber": "Wprowadź prawidłową liczbę (od 1 do 99999999)",
+  "saveFailed": "Nie udało się zapisać niektórych ustawień",
+  "emailOpenFailed": "Nie udało się otworzyć aplikacji e-mail",
+  "pageOpenFailed": "Nie udało się otworzyć strony",
+  "appInfoSupport": "Informacje o aplikacji i pomoc",
+  "contactUs": "Skontaktuj się z nami",
+  "contactUsSubtitle": "Podziel się opinią i pytaniami",
+  "termsOfService": "Regulamin",
+  "termsSubtitle": "Zapoznaj się z regulaminem aplikacji",
+  "privacyPolicy": "Polityka prywatności",
+  "privacySubtitle": "Informacje o przetwarzaniu danych osobowych",
+  "tutorialTitle": "Samouczek",
+  "tutorialSubtitle": "Dowiedz się, jak korzystać z aplikacji",
+  "dataManagement": "Zarządzanie danymi",
+  "deleteHistory": "Usuń historię",
+  "deleteHistorySubtitle": "Usuwa tylko historię treningów (punkty celu zostaną zachowane)",
+  "deleteHistoryAndGoal": "Usuń historię i cel",
+  "deleteHistoryAndGoalSubtitle": "Usuwa całą historię i punkty celu",
+  "deleteHistoryConfirmTitle": "Usuń historię",
+  "deleteHistoryConfirmMessage": "Czy na pewno chcesz usunąć całą historię treningów?\n\n*Punkty celu zostaną zachowane",
+  "deleteHistoryAndGoalConfirmTitle": "Usuń historię i cel",
+  "deleteHistoryAndGoalConfirmMessage": "Czy na pewno chcesz usunąć całą historię i punkty celu?\n\n*Tej operacji nie można cofnąć",
+  "cancel": "Anuluj",
+  "delete": "Usuń",
+  "historyDeleted": "Historia została usunięta",
+  "historyAndGoalDeleted": "Historia i cel zostały usunięte",
+  "historyDeleteFailed": "Nie udało się usunąć historii",
+  "historyAndGoalDeleteFailed": "Nie udało się usunąć historii i celu",
+  "tutorialDisplayFailed": "Nie udało się wyświetlić samouczka",
+  "tips": "Wskazówki",
+  "tipsContent": "• Twój cel jest widoczny na wykresie na ekranie głównym\n• Zacznij od małego celu i zwiększaj go we własnym tempie\n• Każdy poprawny wybór daje do 6 punktów",
+  "backToHome": "Powrót do ekranu głównego",
+  "tutorialSkip": "Pomiń",
+  "tutorialGoalAndPoints": "Cel i aktualne punkty",
+  "tutorialGoalDescription": "Zewnętrzny okrąg pokazuje Twój cel, a wewnętrzny — łączną liczbę punktów. Okrąg wypełnia się w miarę zbliżania się do celu.",
+  "tutorialOneMinuteTraining": "Trening 1-minutowy",
+  "tutorialTrainingDescription": "Rozpocznij 1-minutową grę. Wybieraj pozytywne obrazy lub dobre nawyki spośród 4 opcji.",
+  "tutorialScoreProgress": "Postępy wyników",
+  "tutorialScoreDescription": "Zobacz szczegółowe informacje o zdobytych punktach.",
+  "tutorialSettingsAndData": "Ustawienia i zarządzanie danymi",
+  "tutorialSettingsDescription": "Zmieniaj wartości celu, przeglądaj informacje o aplikacji i resetuj dane.",
+  "appIntroAttentionBiasTitle": "O tendencyjności uwagi",
+  "appIntroAttentionBiasContent": "Gdy lęk jest silny, nieświadomie skupiamy się wyłącznie na rzeczach negatywnych.",
+  "appIntroFocusMintRoleTitle": "Rola FocusMint",
+  "appIntroFocusMintRoleContent": "Krótka gra do ćwiczenia kierowania uwagi na pozytywne obrazy.",
+  "appIntroScientificEvidenceTitle": "O tym ćwiczeniu",
+  "appIntroScientificEvidenceContent": "Ćwicz znajdowanie pozytywnych obrazów. FocusMint to narzędzie dbania o siebie, a nie leczenie medyczne. Efekty mogą różnić się u poszczególnych osób.",
+  "appIntroExpectedEffectsTitle": "Co możesz ćwiczyć",
+  "appIntroEffect1": "Szukanie pozytywnych obrazów",
+  "appIntroEffect2": "Zauważanie uśmiechów wokół siebie",
+  "appIntroEffect3": "Tworzenie krótkiej codziennej rutyny",
+  "appIntroHowToUse": "Zobacz, jak korzystać",
+  "pointsEarned": "Punkty zdobyte!",
+  "yourScore": "Twój wynik",
+  "totalPlayTime": "Łączny czas gry",
+  "imageManagement": "Zarządzanie obrazami",
+  "hiddenImagesCount": "Ukryte obrazy: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Masz niezapisane zmiany",
+  "unsavedChangesMessage": "Masz {count} niezapisanych zmian w ustawieniach wyświetlania obrazów.",
+  "unsavedChangesWarning": "Jeśli zamkniesz teraz ten ekran, zmiany zostaną utracone.",
+  "discardChanges": "Odrzuć zmiany",
+  "saveAndExit": "Zapisz i wyjdź",
+  "settingsSaved": "Zapisano ustawienia: {count}",
+  "saveError": "Wystąpił błąd podczas zapisywania ustawień",
+  "imageSettingsUpdated": "Ustawienia obrazów zostały zaktualizowane",
+  "allImages": "Wszystkie",
+  "positiveImages": "Pozytywne",
+  "negativeImages": "Negatywne",
+  "smileImages": "Uśmiech",
+  "vegetableImages": "Pożywne jedzenie",
+  "healthImages": "Ruch i kontakty z innymi",
+  "sadImages": "Złość, smutek i zmartwienie",
+  "badFoodImages": "Fast food i słodycze",
+  "badImages": "Niezdrowe nawyki",
+  "imageManagementHint": "Dotknij, aby pokazać lub ukryć obraz. Możesz ukryć maksymalnie 15 obrazów.",
+  "unsaved": "Niezapisane",
+  "save": "Zapisz",
+  "hiddenImages": "Ukryte",
+  "noHiddenImages": "Brak ukrytych obrazów",
+  "settingsLoadFailed": "Nie udało się wczytać ustawień",
+  "imagesAdded": "Dodano obrazy: {count}",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Nie udało się dodać obrazów",
+  "imageSelectionFailed": "Nie udało się wybrać obrazów",
+  "settingsChangeFailed": "Nie udało się zmienić ustawień",
+  "groupTitle": "Grupa: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Przełącz widoczność",
+  "imageCount": "Obrazy: {count}",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Ważne uwagi",
+  "notice1": "Dodano funkcję własnych obrazów!",
+  "notice2": "Możesz dodać własne obrazy na ekranie ustawień",
+  "notice3": "Szczegóły znajdziesz na ekranie ustawień",
+  "customImageTitle": "Własne obrazy",
+  "customImageSubtitle": "Dodawaj własne obrazy i zarządzaj nimi",
+  "addCustomImages": "Dodaj własne obrazy",
+  "selectImages": "Wybierz obrazy",
+  "unknownImage": "Nieznany obraz",
+  "customImageSettings": "Ustawienia własnych obrazów",
+  "useCustomImages": "Używaj własnych obrazów",
+  "useCustomImagesDescription": "Używaj własnych obrazów do ćwiczeń. Włącz poniżej mieszanie, aby dodać obrazy z aplikacji.",
+  "groupSettings": "Ustawienia grup",
+  "minOneGroupRequired": "Co najmniej jedna grupa musi być włączona",
+  "settingsLoadFailedMessage": "Nie udało się wczytać ustawień",
+  "customImageNotice1": "Gdy grupy są włączone, obrazy są wyświetlane losowo w ramach każdej grupy.",
+  "customImageNotice2": "Obrazy przesłane i ustawione przez użytkownika nie są udostępniane deweloperom ani osobom trzecim i są przechowywane wyłącznie w obszarze aplikacji na urządzeniu.",
+  "customImageNotice3": "Dzięki temu aplikacja działa również offline.",
+  "customImageNotice4": "Duża liczba obrazów zajmuje pamięć. W razie problemów wyłącz własne obrazy lub usuń nieużywane w ustawieniach.",
+  "customImageNotice5": "Po usunięciu aplikacji ustawione obrazy zostaną usunięte.",
+  "customImageRequirementNotMet": "Aby korzystać z własnych obrazów, we włączonych grupach musi się znajdować co najmniej 1 dobry obraz i 3 mniej dobre obrazy.",
+  "customImageRequirement": "Aby korzystać z własnych obrazów, we włączonych grupach musi się znajdować co najmniej 1 dobry obraz i 3 mniej dobre obrazy.",
+  "sunnyWeather": "Dobre",
+  "rainyWeather": "Mniej dobre",
+  "addImages": "Dodaj obrazy",
+  "imageDeleted": "Obraz został usunięty",
+  "imageDeleteFailed": "Nie udało się usunąć obrazu",
+  "deleteImageTitle": "Usuń obraz",
+  "deleteImageMessage": "Czy chcesz usunąć ten obraz? Tej operacji nie można cofnąć.",
+  "groupImageTitle": "Grupa {groupId} – obrazy: {weather}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Zarejestrowane obrazy: {count}",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Brak zarejestrowanych obrazów",
+  "imagePreview": "Podgląd obrazu",
+  "close": "Zamknij",
+  "contactEmailSubject": "FocusMint – Kontakt",
+  "contactEmailBody": "Prosimy o przesłanie opinii i pytań.",
+  "mixWithBuiltInImages": "Mieszaj z obrazami aplikacji",
+  "mixWithBuiltInImagesDescription": "Używaj jednocześnie własnych obrazów i obrazów aplikacji",
+  "supportIntro": "Pisz anonimowo do twórcy aplikacji. Pytania i sugestie są mile widziane. Możesz wysłać 3 wiadomości dziennie. Każda odpowiedź twórcy przywraca limit do 3.",
+  "supportReceived": "Wiadomość odebrana. Zwykle odpowiadamy w ciągu 2–3 dni.",
+  "supportComposer": "Wpisz wiadomość",
+  "supportSend": "Wyślij",
+  "supportRetry": "Ponów",
+  "supportSent": "Wysłano",
+  "supportUnsent": "Niewysłane · zapisane na tym urządzeniu",
+  "supportAttach": "Dołącz obraz",
+  "supportRemoveImage": "Usuń obraz",
+  "supportImage": "Załącznik",
+  "supportClear": "Usuń historię",
+  "supportClearConfirm": "Usunąć tę rozmowę? Niewysłane wersje robocze i historia na serwerze też zostaną usunięte. Limit wiadomości nie zostanie przywrócony.",
+  "supportQuota": "Dzisiejszy limit 3 wiadomości został wykorzystany. Wyślij kolejną jutro lub po odpowiedzi twórcy.",
+  "supportConnectionError": "Nie udało się połączyć. Zapisane wersje robocze nie zostały wysłane.",
+  "supportSendError": "Nie udało się wysłać. Wiadomość jest zapisana na tym urządzeniu. Spróbuj ponownie.",
+  "supportStorageError": "Nie udało się zapisać. Spróbuj ponownie.",
+  "supportClearError": "Nie udało się usunąć historii. Sprawdź połączenie i spróbuj ponownie.",
+  "supportImageError": "Nie udało się wczytać obrazu. Wybierz obraz mniejszy niż 30 MB.",
+  "supportRemaining": "Pozostałe wiadomości na dziś: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Nieprzeczytane odpowiedzi: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informacje",
+  "supportDeveloper": "Twórca aplikacji",
+  "supportPrivacy": "O danych kontaktu z pomocą",
+  "breathingTitle": "Weź spokojny oddech",
+  "breathingHint": "Podążaj za łagodnym ruchem płuc\nw wygodnym dla siebie tempie.",
+  "breathingIn": "Powoli wdychaj",
+  "breathingOut": "Powoli wydychaj",
+  "breathingProgress": "Postęp ćwiczenia oddechowego",
+  "breathingResultHint": "Wyniki pojawią się automatycznie.",
+  "breathingSkip": "Przejdź do wyników"
+}

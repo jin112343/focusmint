@@ -1,0 +1,333 @@
+{
+  "@@locale": "hi",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "वर्तमान पॉइंट",
+  "goalLabel": "लक्ष्य: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "शेष: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 लक्ष्य प्राप्त!",
+  "startButtonText": "START",
+  "stressReductionMessage": "सकारात्मक बातों पर ध्यान देने का अभ्यास करें।",
+  "remainingTimeMinutes": "शेष समय: {minutes} मिनट {seconds} सेकंड",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "शेष समय: {seconds} सेकंड",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "स्कोर: {score} पॉइंट",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "छवियाँ तैयार की जा रही हैं...",
+  "noStimuliAvailable": "कोई उद्दीपक उपलब्ध नहीं है",
+  "invalidGridSize": "अमान्य ग्रिड आकार",
+  "unknown": "?",
+  "gettingStarted": "शुरू हो रहा है...",
+  "excellentPerformance": "उत्कृष्ट प्रदर्शन!",
+  "greatJob": "बहुत बढ़िया!",
+  "goodPerformance": "अच्छा प्रदर्शन",
+  "keepPracticingFeedback": "अभ्यास जारी रखें",
+  "takeYourTimeFeedback": "आराम से करें",
+  "happy": "खुश",
+  "angry": "गुस्सा",
+  "fear": "डर",
+  "sad": "उदास",
+  "historyPageTitle": "प्रशिक्षण इतिहास",
+  "dataLoading": "डेटा लोड हो रहा है...",
+  "pointsHistory": "पॉइंट इतिहास",
+  "weekly": "साप्ताहिक",
+  "monthly": "मासिक",
+  "noDataAvailable": "कोई डेटा उपलब्ध नहीं",
+  "goalAchievementRate": "लक्ष्य प्राप्ति दर",
+  "scoreStatistics": "स्कोर आँकड़े",
+  "bestScore": "सर्वश्रेष्ठ स्कोर",
+  "totalScore": "कुल स्कोर",
+  "trainingTime": "प्रशिक्षण समय",
+  "totalTrainingTime": "कुल प्रशिक्षण समय",
+  "detailedStatistics": "विस्तृत आँकड़े",
+  "averageScorePerMinute": "प्रति मिनट औसत स्कोर",
+  "pointsToGoal": "लक्ष्य तक शेष पॉइंट",
+  "goalSetting": "लक्ष्य निर्धारण",
+  "secondsUnit": "से",
+  "minutesUnit": "मि",
+  "hoursUnit": "घं",
+  "pointsUnit": "पॉइंट",
+  "monthSuffix": "",
+  "sundayShort": "रवि",
+  "mondayShort": "सोम",
+  "tuesdayShort": "मंगल",
+  "wednesdayShort": "बुध",
+  "thursdayShort": "गुरु",
+  "fridayShort": "शुक्र",
+  "saturdayShort": "शनि",
+  "settingsTitle": "सेटिंग्स",
+  "goalPointsSetting": "लक्ष्य पॉइंट सेटिंग",
+  "currentGoalPoints": "वर्तमान लक्ष्य: {points} पॉइंट",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "नए लक्ष्य पॉइंट",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "पॉइंट",
+  "saveGoalButton": "लक्ष्य सहेजें",
+  "goalSetTo": "लक्ष्य {points} पॉइंट पर सेट किया गया",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "कृपया लक्ष्य पॉइंट दर्ज करें",
+  "enterValidNumber": "कृपया मान्य संख्या दर्ज करें (1 से 99999999 तक)",
+  "saveFailed": "सहेजने में विफल",
+  "emailOpenFailed": "ईमेल ऐप नहीं खोला जा सका",
+  "pageOpenFailed": "पेज नहीं खोला जा सका",
+  "appInfoSupport": "ऐप जानकारी और सहायता",
+  "contactUs": "संपर्क करें",
+  "contactUsSubtitle": "अपनी प्रतिक्रिया और प्रश्न साझा करें",
+  "termsOfService": "सेवा की शर्तें",
+  "termsSubtitle": "ऐप की सेवा शर्तें देखें",
+  "privacyPolicy": "गोपनीयता नीति",
+  "privacySubtitle": "गोपनीयता जानकारी के प्रबंधन के बारे में",
+  "tutorialTitle": "ट्यूटोरियल",
+  "tutorialSubtitle": "ऐप का उपयोग करना सीखें",
+  "dataManagement": "डेटा प्रबंधन",
+  "deleteHistory": "इतिहास हटाएं",
+  "deleteHistorySubtitle": "केवल प्रशिक्षण इतिहास हटाएं (लक्ष्य पॉइंट सुरक्षित रहेंगे)",
+  "deleteHistoryAndGoal": "इतिहास और लक्ष्य हटाएं",
+  "deleteHistoryAndGoalSubtitle": "सारा इतिहास और लक्ष्य पॉइंट हटाएं",
+  "deleteHistoryConfirmTitle": "इतिहास हटाएं",
+  "deleteHistoryConfirmMessage": "क्या आप वाकई सारा प्रशिक्षण इतिहास हटाना चाहते हैं?\n\n*लक्ष्य पॉइंट सुरक्षित रहेंगे",
+  "deleteHistoryAndGoalConfirmTitle": "इतिहास और लक्ष्य हटाएं",
+  "deleteHistoryAndGoalConfirmMessage": "क्या आप वाकई सारा इतिहास और लक्ष्य पॉइंट हटाना चाहते हैं?\n\n*यह क्रिया पूर्ववत नहीं की जा सकती",
+  "cancel": "रद्द करें",
+  "delete": "हटाएं",
+  "historyDeleted": "इतिहास हटा दिया गया",
+  "historyAndGoalDeleted": "इतिहास और लक्ष्य हटा दिए गए",
+  "historyDeleteFailed": "इतिहास हटाने में विफल",
+  "historyAndGoalDeleteFailed": "इतिहास और लक्ष्य हटाने में विफल",
+  "tutorialDisplayFailed": "ट्यूटोरियल दिखाने में विफल",
+  "tips": "सुझाव",
+  "tipsContent": "• आपका लक्ष्य होम स्क्रीन के चार्ट में दिखता है\n• छोटे लक्ष्य से शुरू करें और अपनी गति से बढ़ाएँ\n• हर सही चुनाव पर अधिकतम 6 अंक मिलते हैं",
+  "backToHome": "होम पर वापस जाएं",
+  "tutorialSkip": "छोड़ें",
+  "tutorialGoalAndPoints": "लक्ष्य और वर्तमान पॉइंट",
+  "tutorialGoalDescription": "बाहरी वृत्त आपका लक्ष्य दिखाता है, भीतरी वृत्त कुल पॉइंट। लक्ष्य के करीब पहुंचने पर वृत्त भरता जाता है।",
+  "tutorialOneMinuteTraining": "1 मिनट का प्रशिक्षण",
+  "tutorialTrainingDescription": "1 मिनट का गेम शुरू करें। 4 विकल्पों में से सकारात्मक छवियाँ या अच्छी आदतें चुनें।",
+  "tutorialScoreProgress": "स्कोर प्रगति",
+  "tutorialScoreDescription": "अपने अर्जित स्कोर की विस्तृत जानकारी देखें।",
+  "tutorialSettingsAndData": "सेटिंग्स और डेटा प्रबंधन",
+  "tutorialSettingsDescription": "लक्ष्य मान बदलें, ऐप जानकारी देखें और डेटा रीसेट करें।",
+  "appIntroAttentionBiasTitle": "अटेंशन बायस के बारे में",
+  "appIntroAttentionBiasContent": "जब चिंता अधिक होती है, तो हम अनजाने में केवल नकारात्मक चीज़ों पर ध्यान देने लगते हैं।",
+  "appIntroFocusMintRoleTitle": "FocusMint की भूमिका",
+  "appIntroFocusMintRoleContent": "सकारात्मक तस्वीरों की ओर ध्यान मोड़ने के अभ्यास के लिए एक छोटा खेल।",
+  "appIntroScientificEvidenceTitle": "इस अभ्यास के बारे में",
+  "appIntroScientificEvidenceContent": "सकारात्मक तस्वीरें ढूँढने का अभ्यास करें। FocusMint अपनी देखभाल के लिए एक साधन है, कोई चिकित्सीय उपचार नहीं। परिणाम हर व्यक्ति के लिए अलग हो सकते हैं।",
+  "appIntroExpectedEffectsTitle": "आप क्या अभ्यास कर सकते हैं",
+  "appIntroEffect1": "सकारात्मक तस्वीरें ढूँढना",
+  "appIntroEffect2": "आसपास की मुस्कान पर ध्यान देना",
+  "appIntroEffect3": "रोज़ थोड़े समय का अभ्यास अपनाना",
+  "appIntroHowToUse": "उपयोग विधि देखें",
+  "pointsEarned": "पॉइंट मिले!",
+  "yourScore": "आपका स्कोर",
+  "totalPlayTime": "कुल खेल समय",
+  "imageManagement": "छवि प्रबंधन",
+  "hiddenImagesCount": "छिपी छवियाँ: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "आपके पास सहेजे नहीं गए परिवर्तन हैं",
+  "unsavedChangesMessage": "छवि प्रदर्शन सेटिंग्स में आपके {count} परिवर्तन सहेजे नहीं गए हैं।",
+  "unsavedChangesWarning": "अभी स्क्रीन बंद करने पर परिवर्तन खो जाएंगे।",
+  "discardChanges": "परिवर्तन त्यागें",
+  "saveAndExit": "सहेजें और बाहर निकलें",
+  "settingsSaved": "{count} सेटिंग्स सहेजी गईं",
+  "saveError": "सेटिंग्स सहेजते समय एक त्रुटि हुई",
+  "imageSettingsUpdated": "छवि सेटिंग्स अपडेट कर दी गई हैं",
+  "allImages": "सभी",
+  "positiveImages": "सकारात्मक",
+  "negativeImages": "नकारात्मक",
+  "smileImages": "मुस्कान",
+  "vegetableImages": "पौष्टिक भोजन",
+  "healthImages": "व्यायाम और मेलजोल",
+  "sadImages": "गुस्सा, उदासी और चिंता",
+  "badFoodImages": "फास्ट फूड और मिठाइयाँ",
+  "badImages": "अस्वस्थ आदतें",
+  "imageManagementHint": "छवि दिखाने/छिपाने के लिए टैप करें। आप अधिकतम 15 छवियाँ छिपा सकते हैं।",
+  "unsaved": "सहेजा नहीं गया",
+  "save": "सहेजें",
+  "hiddenImages": "छिपी हुई",
+  "noHiddenImages": "कोई छिपी छवि नहीं",
+  "settingsLoadFailed": "सेटिंग्स लोड करने में विफल",
+  "imagesAdded": "{count} छवियाँ जोड़ी गईं",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "छवियाँ जोड़ने में विफल",
+  "imageSelectionFailed": "छवियाँ चुनने में विफल",
+  "settingsChangeFailed": "सेटिंग्स बदलने में विफल",
+  "groupTitle": "समूह: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "प्रदर्शन टॉगल",
+  "imageCount": "{count} छवियाँ",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "महत्वपूर्ण जानकारी",
+  "notice1": "कस्टम छवि सुविधा जोड़ी गई है!",
+  "notice2": "आप सेटिंग्स स्क्रीन से अपनी छवियाँ जोड़ सकते हैं",
+  "notice3": "विवरण के लिए कृपया सेटिंग्स स्क्रीन देखें",
+  "customImageTitle": "कस्टम छवियाँ",
+  "customImageSubtitle": "अपनी छवियाँ जोड़ें और प्रबंधित करें",
+  "addCustomImages": "कस्टम छवियाँ जोड़ें",
+  "selectImages": "छवियाँ चुनें",
+  "unknownImage": "अज्ञात छवि",
+  "customImageSettings": "कस्टम छवि सेटिंग्स",
+  "useCustomImages": "कस्टम छवियाँ उपयोग करें",
+  "useCustomImagesDescription": "अभ्यास में अपनी तस्वीरों का उपयोग करें। ऐप की तस्वीरें भी शामिल करने के लिए नीचे मिलाने का विकल्प चालू करें।",
+  "groupSettings": "समूह सेटिंग्स",
+  "minOneGroupRequired": "कम से कम एक समूह सक्षम होना चाहिए",
+  "settingsLoadFailedMessage": "सेटिंग्स लोड करने में विफल",
+  "customImageNotice1": "समूह सक्षम होने पर प्रत्येक समूह के लिए छवियाँ यादृच्छिक रूप से दिखाई जाती हैं।",
+  "customImageNotice2": "उपयोगकर्ताओं द्वारा अपलोड और सेट की गई छवियाँ डेवलपर या किसी तीसरे पक्ष के साथ साझा नहीं की जातीं और केवल डिवाइस पर ऐप के क्षेत्र में संग्रहीत रहती हैं।",
+  "customImageNotice3": "इससे ऑफ़लाइन उपयोग संभव होता है।",
+  "customImageNotice4": "बहुत सारी तस्वीरें जोड़ने से स्टोरेज भरता है। समस्या होने पर सेटिंग में अपनी तस्वीरों का उपयोग बंद करें या अनुपयोगी तस्वीरें हटाएँ।",
+  "customImageNotice5": "ऐप हटाने पर सेट की गई छवियाँ भी हट जाएंगी।",
+  "customImageRequirementNotMet": "कस्टम छवियाँ उपयोग करने के लिए सक्षम समूहों में कम से कम 1 अच्छी छवि और 3 अच्छी-नहीं छवियाँ आवश्यक हैं।",
+  "customImageRequirement": "कस्टम छवियाँ उपयोग करने के लिए सक्षम समूहों में कम से कम 1 अच्छी छवि और 3 अच्छी-नहीं छवियाँ आवश्यक हैं।",
+  "sunnyWeather": "अच्छी",
+  "rainyWeather": "अच्छी नहीं",
+  "addImages": "छवियाँ जोड़ें",
+  "imageDeleted": "छवि हटा दी गई",
+  "imageDeleteFailed": "छवि हटाने में विफल",
+  "deleteImageTitle": "छवि हटाएं",
+  "deleteImageMessage": "क्या आप यह छवि हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।",
+  "groupImageTitle": "समूह {groupId} {weather} छवियाँ",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "पंजीकृत: {count} छवियाँ",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "कोई छवि पंजीकृत नहीं",
+  "imagePreview": "छवि पूर्वावलोकन",
+  "close": "बंद करें",
+  "contactEmailSubject": "FocusMint - संपर्क",
+  "contactEmailBody": "कृपया अपनी प्रतिक्रिया और प्रश्न साझा करें।",
+  "mixWithBuiltInImages": "ऐप की तस्वीरों के साथ मिलाएँ",
+  "mixWithBuiltInImagesDescription": "अपनी तस्वीरें और ऐप की तस्वीरें साथ में उपयोग करें",
+  "supportIntro": "अपनी पहचान बताए बिना डेवलपर से बात करें। सवाल और सुझाव भेज सकते हैं। रोज़ 3 संदेश भेजे जा सकते हैं। डेवलपर के हर जवाब के बाद उपलब्ध संदेशों की संख्या फिर से 3 हो जाती है।",
+  "supportReceived": "संदेश मिल गया। हम आम तौर पर 2–3 दिनों में जवाब देते हैं।",
+  "supportComposer": "संदेश लिखें",
+  "supportSend": "भेजें",
+  "supportRetry": "फिर कोशिश करें",
+  "supportSent": "भेज दिया गया",
+  "supportUnsent": "नहीं भेजा गया · इस डिवाइस पर सहेजा गया",
+  "supportAttach": "तस्वीर जोड़ें",
+  "supportRemoveImage": "तस्वीर हटाएँ",
+  "supportImage": "संलग्नक",
+  "supportClear": "बातचीत का इतिहास मिटाएँ",
+  "supportClearConfirm": "यह बातचीत मिटाएँ? न भेजे गए ड्राफ्ट और सर्वर पर मौजूद इतिहास भी मिट जाएगा। इससे संदेशों की सीमा रीसेट नहीं होगी।",
+  "supportQuota": "आज के 3 संदेश इस्तेमाल हो चुके हैं। कल या डेवलपर के जवाब के बाद फिर भेज सकते हैं।",
+  "supportConnectionError": "कनेक्ट नहीं हो सका। सहेजे गए ड्राफ्ट नहीं भेजे गए हैं।",
+  "supportSendError": "भेजा नहीं जा सका। संदेश इस डिवाइस पर सहेजा गया है। फिर कोशिश करें।",
+  "supportStorageError": "सहेजा नहीं जा सका। फिर कोशिश करें।",
+  "supportClearError": "इतिहास मिटाया नहीं जा सका। कनेक्शन जाँचकर फिर कोशिश करें।",
+  "supportImageError": "तस्वीर लोड नहीं हो सकी। 30 MB से छोटी तस्वीर चुनें।",
+  "supportRemaining": "आज उपलब्ध संदेश: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "बिना पढ़े जवाब: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "जानकारी",
+  "supportDeveloper": "डेवलपर",
+  "supportPrivacy": "सहायता अनुरोध के डेटा के बारे में",
+  "breathingTitle": "एक शांत साँस लें",
+  "breathingHint": "अपनी सहज गति से\nफेफड़ों की हल्की गति के साथ साँस लें।",
+  "breathingIn": "धीरे साँस अंदर लें",
+  "breathingOut": "धीरे साँस बाहर छोड़ें",
+  "breathingProgress": "श्वास अभ्यास की प्रगति",
+  "breathingResultHint": "समाप्त होने पर परिणाम अपने आप दिखेंगे।",
+  "breathingSkip": "सीधे परिणाम देखें"
+}

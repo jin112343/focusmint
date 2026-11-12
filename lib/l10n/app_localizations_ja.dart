@@ -32,7 +32,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get startButtonText => 'START';
 
   @override
-  String get stressReductionMessage => 'ストレスを軽減し、気分を向上させます。';
+  String get stressReductionMessage => 'ポジティブな画像を見つける練習をしましょう。';
 
   @override
   String remainingTimeMinutes(int minutes, int seconds) {
@@ -300,7 +300,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get tipsContent =>
-      '• 目標ポイントはホーム画面の円グラフに反映されます\n• 小さな目標から始めて、達成したら徐々に上げていきましょう\n• 1回のセッションで最大6ポイント獲得できます';
+      '• 目標はホーム画面のグラフに表示されます\n• 小さな目標から始め、自分のペースで増やしましょう\n• 正しい選択1回につき、最大6ポイント獲得できます';
 
   @override
   String get backToHome => 'ホームへ戻る';
@@ -344,27 +344,26 @@ class AppLocalizationsJa extends AppLocalizations {
   String get appIntroFocusMintRoleTitle => 'FocusMint の役割';
 
   @override
-  String get appIntroFocusMintRoleContent =>
-      'ポジティブな画像を選ぶ練習で、自然と良いほうに注意を向けられるようになります。';
+  String get appIntroFocusMintRoleContent => 'ポジティブな画像へ注意を向ける練習のための、短いゲームです。';
 
   @override
-  String get appIntroScientificEvidenceTitle => '科学的根拠';
+  String get appIntroScientificEvidenceTitle => 'この練習について';
 
   @override
   String get appIntroScientificEvidenceContent =>
-      '25分のトレーニングで不安・ストレスが大きく減少することが研究で確認されています。\n\n（例：Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin）';
+      'ポジティブな画像を見つける練習です。FocusMintはセルフケアのためのアプリであり、医療行為や治療を提供するものではありません。感じ方には個人差があります。';
 
   @override
-  String get appIntroExpectedEffectsTitle => '期待できる効果';
+  String get appIntroExpectedEffectsTitle => '練習できること';
 
   @override
-  String get appIntroEffect1 => '不安や緊張の軽減';
+  String get appIntroEffect1 => 'ポジティブな画像を探す';
 
   @override
-  String get appIntroEffect2 => '周囲の笑顔に気づきやすくなる';
+  String get appIntroEffect2 => '周囲の笑顔に目を向ける';
 
   @override
-  String get appIntroEffect3 => '人付き合いが楽になる';
+  String get appIntroEffect3 => '毎日の短い習慣をつくる';
 
   @override
   String get appIntroHowToUse => '使い方を見る';
@@ -544,7 +543,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get customImageNotice4 =>
-      'カスタマイズされた画像については責任は持てません。登録しすぎると端末の負荷が高まり、不具合や動作不良が発生する可能性があります。通常に動かなくなる場合はアンインストールしてください。';
+      '画像を多く追加すると端末の保存容量を使います。問題が起きた場合は、設定でカスタム画像をオフにするか、不要な画像を削除してください。';
 
   @override
   String get customImageNotice5 => 'アプリを消すと、セットされた画像は消去されます。';
@@ -695,11 +694,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get breathingOut => 'ゆっくり吐いて';
-
-  @override
-  String breathingRound(int current, int total) {
-    return '$current / $total 回';
-  }
 
   @override
   String get breathingProgress => '呼吸ガイドの進行状況';

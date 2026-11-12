@@ -1,0 +1,333 @@
+{
+  "@@locale": "fi",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Nykyiset pisteet",
+  "goalLabel": "Tavoite: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Jäljellä: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Tavoite saavutettu!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Harjoittele myönteisten asioiden huomaamista.",
+  "remainingTimeMinutes": "Aikaa jäljellä: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Aikaa jäljellä: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Tulos: {score} pistettä",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Valmistellaan kuvia...",
+  "noStimuliAvailable": "Ärsykkeitä ei ole saatavilla",
+  "invalidGridSize": "Virheellinen ruudukon koko",
+  "unknown": "?",
+  "gettingStarted": "Aloitetaan...",
+  "excellentPerformance": "Erinomainen suoritus!",
+  "greatJob": "Hienoa työtä!",
+  "goodPerformance": "Hyvä suoritus",
+  "keepPracticingFeedback": "Jatka harjoittelua",
+  "takeYourTimeFeedback": "Etene rauhassa",
+  "happy": "Iloinen",
+  "angry": "Vihainen",
+  "fear": "Pelko",
+  "sad": "Surullinen",
+  "historyPageTitle": "Harjoitteluhistoria",
+  "dataLoading": "Ladataan tietoja...",
+  "pointsHistory": "Pistehistoria",
+  "weekly": "Viikoittain",
+  "monthly": "Kuukausittain",
+  "noDataAvailable": "Tietoja ei ole saatavilla",
+  "goalAchievementRate": "Tavoitteen saavutusaste",
+  "scoreStatistics": "Pistetilastot",
+  "bestScore": "Paras tulos",
+  "totalScore": "Kokonaistulos",
+  "trainingTime": "Harjoitteluaika",
+  "totalTrainingTime": "Harjoitteluaika yhteensä",
+  "detailedStatistics": "Tarkat tilastot",
+  "averageScorePerMinute": "Keskimääräinen tulos minuutissa",
+  "pointsToGoal": "Pisteitä tavoitteeseen",
+  "goalSetting": "Tavoitteen asetus",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "pistettä",
+  "monthSuffix": "",
+  "sundayShort": "su",
+  "mondayShort": "ma",
+  "tuesdayShort": "ti",
+  "wednesdayShort": "ke",
+  "thursdayShort": "to",
+  "fridayShort": "pe",
+  "saturdayShort": "la",
+  "settingsTitle": "Asetukset",
+  "goalPointsSetting": "Tavoitepisteiden asetus",
+  "currentGoalPoints": "Nykyinen tavoite: {points} pistettä",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Uudet tavoitepisteet",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "pistettä",
+  "saveGoalButton": "Tallenna tavoite",
+  "goalSetTo": "Tavoitteeksi asetettiin {points} pistettä",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Anna tavoitepisteet",
+  "enterValidNumber": "Anna kelvollinen luku (1–99999999)",
+  "saveFailed": "Joidenkin asetusten tallennus epäonnistui",
+  "emailOpenFailed": "Sähköpostisovellusta ei voitu avata",
+  "pageOpenFailed": "Sivua ei voitu avata",
+  "appInfoSupport": "Sovellustiedot ja tuki",
+  "contactUs": "Ota yhteyttä",
+  "contactUsSubtitle": "Kerro palautteesi ja kysymyksesi",
+  "termsOfService": "Käyttöehdot",
+  "termsSubtitle": "Tutustu sovelluksen käyttöehtoihin",
+  "privacyPolicy": "Tietosuojakäytäntö",
+  "privacySubtitle": "Tietoa yksityisyystietojen käsittelystä",
+  "tutorialTitle": "Opastus",
+  "tutorialSubtitle": "Opi käyttämään sovellusta",
+  "dataManagement": "Tietojen hallinta",
+  "deleteHistory": "Poista historia",
+  "deleteHistorySubtitle": "Poistaa vain harjoitteluhistorian (tavoitepisteet säilyvät)",
+  "deleteHistoryAndGoal": "Poista historia ja tavoite",
+  "deleteHistoryAndGoalSubtitle": "Poistaa koko historian ja tavoitepisteet",
+  "deleteHistoryConfirmTitle": "Poista historia",
+  "deleteHistoryConfirmMessage": "Haluatko varmasti poistaa koko harjoitteluhistorian?\n\n*Tavoitepisteet säilyvät",
+  "deleteHistoryAndGoalConfirmTitle": "Poista historia ja tavoite",
+  "deleteHistoryAndGoalConfirmMessage": "Haluatko varmasti poistaa koko historian ja tavoitepisteet?\n\n*Tätä toimintoa ei voi kumota",
+  "cancel": "Peruuta",
+  "delete": "Poista",
+  "historyDeleted": "Historia poistettu",
+  "historyAndGoalDeleted": "Historia ja tavoite poistettu",
+  "historyDeleteFailed": "Historian poistaminen epäonnistui",
+  "historyAndGoalDeleteFailed": "Historian ja tavoitteen poistaminen epäonnistui",
+  "tutorialDisplayFailed": "Opastuksen näyttäminen epäonnistui",
+  "tips": "Vinkkejä",
+  "tipsContent": "• Tavoitteesi näkyy aloitusnäytön kaaviossa\n• Aloita pienestä ja kasvata tavoitetta omaan tahtiisi\n• Jokaisesta oikeasta valinnasta saa enintään 6 pistettä",
+  "backToHome": "Takaisin alkuun",
+  "tutorialSkip": "Ohita",
+  "tutorialGoalAndPoints": "Tavoite ja nykyiset pisteet",
+  "tutorialGoalDescription": "Ulompi ympyrä näyttää tavoitteesi, sisempi kokonaispisteesi. Ympyrä täyttyy sitä mukaa, kun lähestyt tavoitetta.",
+  "tutorialOneMinuteTraining": "Minuutin harjoitus",
+  "tutorialTrainingDescription": "Aloita minuutin peli. Valitse positiivisia kuvia tai hyviä tapoja neljästä vaihtoehdosta.",
+  "tutorialScoreProgress": "Pisteiden kehitys",
+  "tutorialScoreDescription": "Näet tarkat tiedot ansaitsemistasi pisteistä.",
+  "tutorialSettingsAndData": "Asetukset ja tietojen hallinta",
+  "tutorialSettingsDescription": "Muuta tavoitearvoja, katso sovellustietoja ja nollaa tiedot.",
+  "appIntroAttentionBiasTitle": "Tietoa tarkkaavaisuusvinoumasta",
+  "appIntroAttentionBiasContent": "Kun ahdistus on voimakasta, huomiomme kiinnittyy tiedostamatta helposti vain kielteisiin asioihin.",
+  "appIntroFocusMintRoleTitle": "FocusMintin rooli",
+  "appIntroFocusMintRoleContent": "Lyhyt peli, jossa harjoittelet huomion suuntaamista myönteisiin kuviin.",
+  "appIntroScientificEvidenceTitle": "Tietoa harjoituksesta",
+  "appIntroScientificEvidenceContent": "Harjoittele myönteisten kuvien löytämistä. FocusMint on itsehoitoa tukeva harjoitus, ei lääketieteellinen hoito. Tulokset vaihtelevat henkilöittäin.",
+  "appIntroExpectedEffectsTitle": "Mitä voit harjoitella",
+  "appIntroEffect1": "Myönteisten kuvien etsiminen",
+  "appIntroEffect2": "Ympärillä olevien hymyjen huomaaminen",
+  "appIntroEffect3": "Lyhyen päivittäisen rutiinin luominen",
+  "appIntroHowToUse": "Katso käyttöohjeet",
+  "pointsEarned": "Pisteitä ansaittu!",
+  "yourScore": "Sinun tuloksesi",
+  "totalPlayTime": "Peliaika yhteensä",
+  "imageManagement": "Kuvien hallinta",
+  "hiddenImagesCount": "Piilotetut kuvat: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Sinulla on tallentamattomia muutoksia",
+  "unsavedChangesMessage": "Kuvien näyttöasetuksissa on {count} tallentamatonta muutosta.",
+  "unsavedChangesWarning": "Muutokset menetetään, jos suljet näytön nyt.",
+  "discardChanges": "Hylkää muutokset",
+  "saveAndExit": "Tallenna ja poistu",
+  "settingsSaved": "{count} asetusta tallennettu",
+  "saveError": "Asetusten tallennuksessa tapahtui virhe",
+  "imageSettingsUpdated": "Kuva-asetukset on päivitetty",
+  "allImages": "Kaikki",
+  "positiveImages": "Positiiviset",
+  "negativeImages": "Negatiiviset",
+  "smileImages": "Hymyt",
+  "vegetableImages": "Ravitseva ruoka",
+  "healthImages": "Liikunta ja yhdessäolo",
+  "sadImages": "Viha, suru ja huoli",
+  "badFoodImages": "Pikaruoka ja makeiset",
+  "badImages": "Epäterveelliset tavat",
+  "imageManagementHint": "Näytä tai piilota kuva napauttamalla. Voit piilottaa enintään 15 kuvaa.",
+  "unsaved": "Tallentamaton",
+  "save": "Tallenna",
+  "hiddenImages": "Piilotetut",
+  "noHiddenImages": "Ei piilotettuja kuvia",
+  "settingsLoadFailed": "Asetusten lataaminen epäonnistui",
+  "imagesAdded": "{count} kuvaa lisätty",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Kuvien lisääminen epäonnistui",
+  "imageSelectionFailed": "Kuvien valinta epäonnistui",
+  "settingsChangeFailed": "Asetusten muuttaminen epäonnistui",
+  "groupTitle": "Ryhmä: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Näytön vaihto",
+  "imageCount": "{count} kuvaa",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Tärkeitä huomautuksia",
+  "notice1": "Omien kuvien toiminto on lisätty!",
+  "notice2": "Voit lisätä omia kuvia asetusnäytöltä",
+  "notice3": "Katso lisätiedot asetusnäytöltä",
+  "customImageTitle": "Omat kuvat",
+  "customImageSubtitle": "Lisää ja hallitse omia kuviasi",
+  "addCustomImages": "Lisää omia kuvia",
+  "selectImages": "Valitse kuvat",
+  "unknownImage": "Tuntematon kuva",
+  "customImageSettings": "Omien kuvien asetukset",
+  "useCustomImages": "Käytä omia kuvia",
+  "useCustomImagesDescription": "Käytä harjoituksessa omia kuviasi. Ota yhdistäminen käyttöön alla, jos haluat käyttää myös sovelluksen kuvia.",
+  "groupSettings": "Ryhmäasetukset",
+  "minOneGroupRequired": "Vähintään yhden ryhmän on oltava käytössä",
+  "settingsLoadFailedMessage": "Asetusten lataaminen epäonnistui",
+  "customImageNotice1": "Kun ryhmät ovat käytössä, kuvat näytetään satunnaisesti kussakin ryhmässä.",
+  "customImageNotice2": "Käyttäjän lataamia ja asettamia kuvia ei jaeta kehittäjille eikä kolmansille osapuolille, ja ne tallennetaan vain sovelluksen omaan tilaan laitteella.",
+  "customImageNotice3": "Siksi sovellusta voi käyttää myös ilman verkkoyhteyttä.",
+  "customImageNotice4": "Monien kuvien lisääminen vie tallennustilaa. Jos ongelmia ilmenee, poista omien kuvien käyttö käytöstä tai poista tarpeettomia kuvia asetuksissa.",
+  "customImageNotice5": "Kun poistat sovelluksen, asetetut kuvat poistetaan.",
+  "customImageRequirementNotMet": "Omien kuvien käyttö edellyttää, että käytössä olevissa ryhmissä on vähintään 1 hyvä kuva ja 3 ei niin hyvää kuvaa.",
+  "customImageRequirement": "Omien kuvien käyttö edellyttää, että käytössä olevissa ryhmissä on vähintään 1 hyvä kuva ja 3 ei niin hyvää kuvaa.",
+  "sunnyWeather": "Hyvä",
+  "rainyWeather": "Ei niin hyvä",
+  "addImages": "Lisää kuvia",
+  "imageDeleted": "Kuva poistettu",
+  "imageDeleteFailed": "Kuvan poistaminen epäonnistui",
+  "deleteImageTitle": "Poista kuva",
+  "deleteImageMessage": "Haluatko poistaa tämän kuvan? Tätä toimintoa ei voi kumota.",
+  "groupImageTitle": "Ryhmä {groupId} – kuvat: {weather}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Rekisteröity: {count} kuvaa",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Kuvia ei ole rekisteröity",
+  "imagePreview": "Kuvan esikatselu",
+  "close": "Sulje",
+  "contactEmailSubject": "FocusMint – Yhteydenotto",
+  "contactEmailBody": "Kerrothan palautteesi ja kysymyksesi.",
+  "mixWithBuiltInImages": "Yhdistä sovelluksen kuviin",
+  "mixWithBuiltInImagesDescription": "Käytä omia kuviasi ja sovelluksen kuvia yhdessä",
+  "supportIntro": "Keskustele nimettömästi kehittäjän kanssa. Kysymykset ja ehdotukset ovat tervetulleita. Voit lähettää 3 viestiä päivässä. Jokainen kehittäjän vastaus palauttaa kiintiöksi 3 viestiä.",
+  "supportReceived": "Viesti vastaanotettu. Vastaamme yleensä 2–3 päivän kuluessa.",
+  "supportComposer": "Kirjoita viesti",
+  "supportSend": "Lähetä",
+  "supportRetry": "Yritä uudelleen",
+  "supportSent": "Lähetetty",
+  "supportUnsent": "Ei lähetetty · tallennettu tälle laitteelle",
+  "supportAttach": "Liitä kuva",
+  "supportRemoveImage": "Poista kuva",
+  "supportImage": "Liite",
+  "supportClear": "Poista historia",
+  "supportClearConfirm": "Poistetaanko tämä keskustelu? Myös lähettämättömät luonnokset ja palvelimen historia poistetaan. Viestikiintiö ei palaudu.",
+  "supportQuota": "Olet käyttänyt tämän päivän 3 viestiä. Lähetä uusi huomenna tai kehittäjän vastauksen jälkeen.",
+  "supportConnectionError": "Yhteyttä ei voitu muodostaa. Tallennettuja luonnoksia ei ole lähetetty.",
+  "supportSendError": "Lähetys epäonnistui. Viestisi on tallennettu tälle laitteelle. Yritä uudelleen.",
+  "supportStorageError": "Tallennus epäonnistui. Yritä uudelleen.",
+  "supportClearError": "Historiaa ei voitu poistaa. Tarkista yhteys ja yritä uudelleen.",
+  "supportImageError": "Kuvaa ei voitu ladata. Valitse alle 30 Mt:n kuva.",
+  "supportRemaining": "Viestejä jäljellä tänään: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Lukemattomat vastaukset: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Tietoja",
+  "supportDeveloper": "Kehittäjä",
+  "supportPrivacy": "Tukipyyntöjen tiedot",
+  "breathingTitle": "Hengähdä hetki",
+  "breathingHint": "Seuraa keuhkojen rauhallista liikettä\nitsellesi sopivaan tahtiin.",
+  "breathingIn": "Hengitä rauhallisesti sisään",
+  "breathingOut": "Hengitä rauhallisesti ulos",
+  "breathingProgress": "Hengitysharjoituksen eteneminen",
+  "breathingResultHint": "Tuloksesi näytetään automaattisesti.",
+  "breathingSkip": "Siirry tuloksiin"
+}

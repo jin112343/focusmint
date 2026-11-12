@@ -339,15 +339,20 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
             color: AppColors.mintGreen.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(Icons.photo_library, color: AppColors.mintGreen, size: 24),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
+              Row(
+                children: [
+                  const Icon(
+                    Icons.photo_library,
+                    color: AppColors.mintGreen,
+                    size: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           AppLocalizations.of(context)!.imageManagement,
@@ -357,55 +362,40 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
                             color: AppColors.textPrimary,
                           ),
                         ),
-                        if (_pendingChanges.isNotEmpty) ...[
-                          const SizedBox(width: 8),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 2,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              AppLocalizations.of(context)!.unsaved,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                        const SizedBox(height: 4),
+                        Text(
+                          AppLocalizations.of(context)!
+                              .hiddenImagesCount(hiddenCount, maxHidden),
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: AppColors.textSecondary,
                           ),
-                        ],
+                        ),
                       ],
                     ),
-                    const SizedBox(height: 4),
-                    Text(
-                      AppLocalizations.of(context)!
-                          .hiddenImagesCount(hiddenCount, maxHidden),
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: AppColors.textSecondary,
+                  ),
+                ],
+              ),
+              if (_pendingChanges.isNotEmpty) ...[
+                const SizedBox(height: 8),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    Chip(label: Text(AppLocalizations.of(context)!.unsaved)),
+                    ElevatedButton.icon(
+                      onPressed: _isSaving ? null : _saveChanges,
+                      icon: const Icon(Icons.save, size: 16),
+                      label: Text(AppLocalizations.of(context)!.save),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.mintGreen,
+                        foregroundColor: Colors.white,
                       ),
                     ),
                   ],
                 ),
-              ),
-              if (_pendingChanges.isNotEmpty)
-                ElevatedButton.icon(
-                  onPressed: _isSaving ? null : _saveChanges,
-                  icon: const Icon(Icons.save, size: 16),
-                  label: Text(AppLocalizations.of(context)!.save),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.mintGreen,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 8,
-                    ),
-                  ),
-                ),
+              ],
             ],
           ),
         ),
@@ -419,7 +409,7 @@ class _ImageManagementWidgetState extends State<ImageManagementWidget> {
             children: _categoryOrder.map((category) {
               final isSelected = category == _selectedCategory;
               return Padding(
-                padding: const EdgeInsets.only(right: 8),
+                padding: const EdgeInsetsDirectional.only(end: 8),
                 child: FilterChip(
                   label: Text(_getCategoryDisplayName(category)),
                   selected: isSelected,

@@ -66,7 +66,7 @@ void main() {
     tester,
   ) async {
     await launch(tester, language: 'ja');
-    expect(find.text('ストレスを軽減し、気分を向上させます。'), findsOneWidget);
+    expect(find.text('ポジティブな画像を見つける練習をしましょう。'), findsOneWidget);
     expect(find.text('START'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });

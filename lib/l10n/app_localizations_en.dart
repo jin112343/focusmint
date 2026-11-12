@@ -32,7 +32,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get startButtonText => 'START';
 
   @override
-  String get stressReductionMessage => 'Reduce stress and improve your mood.';
+  String get stressReductionMessage => 'Practice noticing the positive.';
 
   @override
   String remainingTimeMinutes(int minutes, int seconds) {
@@ -302,7 +302,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tipsContent =>
-      '• Goal points are reflected in the pie chart on the home screen\n• Start with small goals and gradually increase them when achieved\n• You can earn up to 6 points in a single session';
+      '• Your goal appears in the home screen chart\n• Start small and increase your goal at your own pace\n• Each correct choice earns up to 6 points';
 
   @override
   String get backToHome => 'Back to Home';
@@ -350,26 +350,26 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appIntroFocusMintRoleContent =>
-      'By practicing selecting positive images, you\'ll naturally learn to focus your attention on the good side.';
+      'A short game for practicing how you direct your attention to positive images.';
 
   @override
-  String get appIntroScientificEvidenceTitle => 'Scientific Evidence';
+  String get appIntroScientificEvidenceTitle => 'About this exercise';
 
   @override
   String get appIntroScientificEvidenceContent =>
-      'Research has confirmed that 25 minutes of training significantly reduces anxiety and stress.\n\n(e.g., Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin)';
+      'Practice finding positive images. FocusMint is a self-care exercise, not a medical treatment. Results vary from person to person.';
 
   @override
-  String get appIntroExpectedEffectsTitle => 'Expected Effects';
+  String get appIntroExpectedEffectsTitle => 'What you can practice';
 
   @override
-  String get appIntroEffect1 => 'Reduction of anxiety and tension';
+  String get appIntroEffect1 => 'Looking for positive images';
 
   @override
-  String get appIntroEffect2 => 'Better awareness of smiles around you';
+  String get appIntroEffect2 => 'Noticing smiles around you';
 
   @override
-  String get appIntroEffect3 => 'Easier social interactions';
+  String get appIntroEffect3 => 'Making time for a short daily routine';
 
   @override
   String get appIntroHowToUse => 'See How to Use';
@@ -552,7 +552,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get customImageNotice4 =>
-      'We are not responsible for customized images. Registering too many images may increase device load and cause malfunctions or poor performance. Please uninstall if the app stops working normally.';
+      'Adding many images uses storage. If you have problems, turn off custom images or remove unused images in Settings.';
 
   @override
   String get customImageNotice5 =>
@@ -699,7 +699,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get supportDeveloper => 'Developer';
 
   @override
-  String get supportPrivacy => 'About contact data';
+  String get supportPrivacy => 'About support data';
 
   @override
   String get breathingTitle => 'Take a breath';
@@ -715,9 +715,2161 @@ class AppLocalizationsEn extends AppLocalizations {
   String get breathingOut => 'Breathe out';
 
   @override
-  String breathingRound(int current, int total) {
-    return 'Round $current of $total';
+  String get breathingProgress => 'Breathing progress';
+
+  @override
+  String get breathingResultHint => 'Your results will appear automatically.';
+
+  @override
+  String get breathingSkip => 'Skip to results';
+}
+
+/// The translations for English, as used in Australia (`en_AU`).
+class AppLocalizationsEnAu extends AppLocalizationsEn {
+  AppLocalizationsEnAu() : super('en_AU');
+
+  @override
+  String get focusMintTitle => 'FOCUS MINT';
+
+  @override
+  String get currentPoints => 'Current Points';
+
+  @override
+  String goalLabel(int goal) {
+    return 'Goal: $goal';
   }
+
+  @override
+  String remainingLabel(int remaining) {
+    return 'Remaining: $remaining';
+  }
+
+  @override
+  String get goalAchieved => '🎉 Goal Achieved!';
+
+  @override
+  String get startButtonText => 'START';
+
+  @override
+  String get stressReductionMessage => 'Practice noticing the positive.';
+
+  @override
+  String remainingTimeMinutes(int minutes, int seconds) {
+    return 'Time left: ${minutes}m ${seconds}s';
+  }
+
+  @override
+  String remainingTimeSeconds(int seconds) {
+    return 'Time left: ${seconds}s';
+  }
+
+  @override
+  String scoreLabel(String score) {
+    return 'Score: $score Points';
+  }
+
+  @override
+  String get imagePreparationMessage => 'Preparing images...';
+
+  @override
+  String get noStimuliAvailable => 'No stimuli available';
+
+  @override
+  String get invalidGridSize => 'Invalid grid size';
+
+  @override
+  String get unknown => '?';
+
+  @override
+  String get gettingStarted => 'Getting started...';
+
+  @override
+  String get excellentPerformance => 'Excellent performance!';
+
+  @override
+  String get greatJob => 'Great job!';
+
+  @override
+  String get goodPerformance => 'Good performance';
+
+  @override
+  String get keepPracticingFeedback => 'Keep practising';
+
+  @override
+  String get takeYourTimeFeedback => 'Take your time';
+
+  @override
+  String get happy => 'Happy';
+
+  @override
+  String get angry => 'Angry';
+
+  @override
+  String get fear => 'Fear';
+
+  @override
+  String get sad => 'Sad';
+
+  @override
+  String get historyPageTitle => 'Training History';
+
+  @override
+  String get dataLoading => 'Loading data...';
+
+  @override
+  String get pointsHistory => 'Points History';
+
+  @override
+  String get weekly => 'Weekly';
+
+  @override
+  String get monthly => 'Monthly';
+
+  @override
+  String get noDataAvailable => 'No data available';
+
+  @override
+  String get goalAchievementRate => 'Goal Achievement Rate';
+
+  @override
+  String get scoreStatistics => 'Score Statistics';
+
+  @override
+  String get bestScore => 'Best Score';
+
+  @override
+  String get totalScore => 'Total Score';
+
+  @override
+  String get trainingTime => 'Training Time';
+
+  @override
+  String get totalTrainingTime => 'Total Training Time';
+
+  @override
+  String get detailedStatistics => 'Detailed Statistics';
+
+  @override
+  String get averageScorePerMinute => 'Average score per minute';
+
+  @override
+  String get pointsToGoal => 'Points to goal';
+
+  @override
+  String get goalSetting => 'Goal setting';
+
+  @override
+  String get secondsUnit => 's';
+
+  @override
+  String get minutesUnit => 'm';
+
+  @override
+  String get hoursUnit => 'h';
+
+  @override
+  String get pointsUnit => 'points';
+
+  @override
+  String get monthSuffix => '';
+
+  @override
+  String get sundayShort => 'Sun';
+
+  @override
+  String get mondayShort => 'Mon';
+
+  @override
+  String get tuesdayShort => 'Tue';
+
+  @override
+  String get wednesdayShort => 'Wed';
+
+  @override
+  String get thursdayShort => 'Thu';
+
+  @override
+  String get fridayShort => 'Fri';
+
+  @override
+  String get saturdayShort => 'Sat';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get goalPointsSetting => 'Goal Points Setting';
+
+  @override
+  String currentGoalPoints(int points) {
+    return 'Current goal: $points points';
+  }
+
+  @override
+  String get newGoalPointsLabel => 'New goal points';
+
+  @override
+  String get goalPointsHint => '1000';
+
+  @override
+  String get pointsUnit2 => 'points';
+
+  @override
+  String get saveGoalButton => 'Save Goal';
+
+  @override
+  String goalSetTo(int points) {
+    return 'Goal set to $points points';
+  }
+
+  @override
+  String get enterGoalPoints => 'Please enter goal points';
+
+  @override
+  String get enterValidNumber => 'Please enter a valid number (1 to 99999999)';
+
+  @override
+  String get saveFailed => 'Failed to save some settings';
+
+  @override
+  String get emailOpenFailed => 'Could not open email app';
+
+  @override
+  String get pageOpenFailed => 'Could not open page';
+
+  @override
+  String get appInfoSupport => 'App Info & Support';
+
+  @override
+  String get contactUs => 'Contact Us';
+
+  @override
+  String get contactUsSubtitle => 'Share your feedback and questions';
+
+  @override
+  String get termsOfService => 'Terms of Service';
+
+  @override
+  String get termsSubtitle => 'Review the app\'s terms of service';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get privacySubtitle => 'About privacy information handling';
+
+  @override
+  String get tutorialTitle => 'Tutorial';
+
+  @override
+  String get tutorialSubtitle => 'Learn how to use the app';
+
+  @override
+  String get dataManagement => 'Data Management';
+
+  @override
+  String get deleteHistory => 'Delete History';
+
+  @override
+  String get deleteHistorySubtitle =>
+      'Delete training history only (goal points preserved)';
+
+  @override
+  String get deleteHistoryAndGoal => 'Delete History & Goal';
+
+  @override
+  String get deleteHistoryAndGoalSubtitle =>
+      'Delete all history and goal points';
+
+  @override
+  String get deleteHistoryConfirmTitle => 'Delete History';
+
+  @override
+  String get deleteHistoryConfirmMessage =>
+      'Are you sure you want to delete all training history?\n\n*Goal points will be preserved';
+
+  @override
+  String get deleteHistoryAndGoalConfirmTitle => 'Delete History & Goal';
+
+  @override
+  String get deleteHistoryAndGoalConfirmMessage =>
+      'Are you sure you want to delete all history and goal points?\n\n*This action cannot be undone';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get historyDeleted => 'History deleted';
+
+  @override
+  String get historyAndGoalDeleted => 'History and goal deleted';
+
+  @override
+  String get historyDeleteFailed => 'Failed to delete history';
+
+  @override
+  String get historyAndGoalDeleteFailed => 'Failed to delete history and goal';
+
+  @override
+  String get tutorialDisplayFailed => 'Failed to display tutorial';
+
+  @override
+  String get tips => 'Tips';
+
+  @override
+  String get tipsContent =>
+      '• Your goal appears in the home screen chart\n• Start small and increase your goal at your own pace\n• Each correct choice earns up to 6 points';
+
+  @override
+  String get backToHome => 'Back to Home';
+
+  @override
+  String get tutorialSkip => 'Skip';
+
+  @override
+  String get tutorialGoalAndPoints => 'Goal and Current Points';
+
+  @override
+  String get tutorialGoalDescription =>
+      'The outer circle shows your goal, the inner circle shows total points. The circle fills as you approach your goal.';
+
+  @override
+  String get tutorialOneMinuteTraining => '1-Minute Training';
+
+  @override
+  String get tutorialTrainingDescription =>
+      'Start a 1-minute game. Choose positive images or good habits from 4 options.';
+
+  @override
+  String get tutorialScoreProgress => 'Score Progress';
+
+  @override
+  String get tutorialScoreDescription =>
+      'View detailed information about your earned scores.';
+
+  @override
+  String get tutorialSettingsAndData => 'Settings and Data Management';
+
+  @override
+  String get tutorialSettingsDescription =>
+      'Change goal values, view app information, and reset data.';
+
+  @override
+  String get appIntroAttentionBiasTitle => 'About Attention Bias';
+
+  @override
+  String get appIntroAttentionBiasContent =>
+      'When anxiety is high, we unconsciously tend to focus only on negative things.';
+
+  @override
+  String get appIntroFocusMintRoleTitle => 'FocusMint\'s Role';
+
+  @override
+  String get appIntroFocusMintRoleContent =>
+      'A short game for practicing how you direct your attention to positive images.';
+
+  @override
+  String get appIntroScientificEvidenceTitle => 'About this exercise';
+
+  @override
+  String get appIntroScientificEvidenceContent =>
+      'Practice finding positive images. FocusMint is a self-care exercise, not a medical treatment. Results vary from person to person.';
+
+  @override
+  String get appIntroExpectedEffectsTitle => 'What you can practice';
+
+  @override
+  String get appIntroEffect1 => 'Looking for positive images';
+
+  @override
+  String get appIntroEffect2 => 'Noticing smiles around you';
+
+  @override
+  String get appIntroEffect3 => 'Making time for a short daily routine';
+
+  @override
+  String get appIntroHowToUse => 'See How to Use';
+
+  @override
+  String get pointsEarned => 'Points Earned!';
+
+  @override
+  String get yourScore => 'Your Score';
+
+  @override
+  String get totalPlayTime => 'Total Play Time';
+
+  @override
+  String get imageManagement => 'Image Management';
+
+  @override
+  String hiddenImagesCount(int count, int max) {
+    return 'Hidden images: $count/$max';
+  }
+
+  @override
+  String get unsavedChanges => 'You have unsaved changes';
+
+  @override
+  String unsavedChangesMessage(Object count) {
+    return 'You have $count unsaved changes to image display settings.';
+  }
+
+  @override
+  String get unsavedChangesWarning =>
+      'Changes will be lost if you close this screen now.';
+
+  @override
+  String get discardChanges => 'Discard Changes';
+
+  @override
+  String get saveAndExit => 'Save and Exit';
+
+  @override
+  String settingsSaved(Object count) {
+    return 'Saved $count settings';
+  }
+
+  @override
+  String get saveError => 'An error occurred while saving settings';
+
+  @override
+  String get imageSettingsUpdated => 'Image settings have been updated';
+
+  @override
+  String get allImages => 'All';
+
+  @override
+  String get positiveImages => 'Positive';
+
+  @override
+  String get negativeImages => 'Negative';
+
+  @override
+  String get smileImages => 'Smile';
+
+  @override
+  String get vegetableImages => 'Nourishing food';
+
+  @override
+  String get healthImages => 'Movement & connection';
+
+  @override
+  String get sadImages => 'Anger, sadness & worry';
+
+  @override
+  String get badFoodImages => 'Junk food & sweets';
+
+  @override
+  String get badImages => 'Unhealthy habits';
+
+  @override
+  String get imageManagementHint =>
+      'Tap to toggle image visibility. You can hide up to 15 images.';
+
+  @override
+  String get unsaved => 'Unsaved';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get hiddenImages => 'Hidden';
+
+  @override
+  String get noHiddenImages => 'No hidden images';
+
+  @override
+  String get settingsLoadFailed => 'Failed to load settings';
+
+  @override
+  String imagesAdded(int count) {
+    return 'Added $count images';
+  }
+
+  @override
+  String get imageAddFailed => 'Failed to add images';
+
+  @override
+  String get imageSelectionFailed => 'Failed to select images';
+
+  @override
+  String get settingsChangeFailed => 'Failed to change settings';
+
+  @override
+  String groupTitle(String name) {
+    return 'Group: $name';
+  }
+
+  @override
+  String get displayToggle => 'Display Toggle';
+
+  @override
+  String imageCount(int count) {
+    return '$count images';
+  }
+
+  @override
+  String get noticeTitle => 'Important Notes';
+
+  @override
+  String get notice1 => 'Custom image feature has been added!';
+
+  @override
+  String get notice2 => 'You can add your own images from the settings screen';
+
+  @override
+  String get notice3 => 'Please check the settings screen for details';
+
+  @override
+  String get customImageTitle => 'Custom Images';
+
+  @override
+  String get customImageSubtitle => 'Add and manage your own images';
+
+  @override
+  String get addCustomImages => 'Add Custom Images';
+
+  @override
+  String get selectImages => 'Select Images';
+
+  @override
+  String get unknownImage => 'Unknown Image';
+
+  @override
+  String get customImageSettings => 'Custom Image Settings';
+
+  @override
+  String get useCustomImages => 'Use Custom Images';
+
+  @override
+  String get useCustomImagesDescription =>
+      'Use your own images for training. Enable mixing below to include built-in images.';
+
+  @override
+  String get groupSettings => 'Group Settings';
+
+  @override
+  String get minOneGroupRequired => 'At least one group must be enabled';
+
+  @override
+  String get settingsLoadFailedMessage => 'Failed to load settings';
+
+  @override
+  String get customImageNotice1 =>
+      'When groups are enabled, images are displayed randomly for each group.';
+
+  @override
+  String get customImageNotice2 =>
+      'Images uploaded and set by users are not shared with developers or third parties and are stored only in the app\'s area on the device.';
+
+  @override
+  String get customImageNotice3 => 'This allows offline use.';
+
+  @override
+  String get customImageNotice4 =>
+      'Adding many images uses storage. If you have problems, turn off custom images or remove unused images in Settings.';
+
+  @override
+  String get customImageNotice5 =>
+      'When you delete the app, the set images will be deleted.';
+
+  @override
+  String get customImageRequirementNotMet =>
+      'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.';
+
+  @override
+  String get customImageRequirement =>
+      'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.';
+
+  @override
+  String get sunnyWeather => 'Good';
+
+  @override
+  String get rainyWeather => 'Not good';
+
+  @override
+  String get addImages => 'Add Images';
+
+  @override
+  String get imageDeleted => 'Image deleted';
+
+  @override
+  String get imageDeleteFailed => 'Failed to delete image';
+
+  @override
+  String get deleteImageTitle => 'Delete Image';
+
+  @override
+  String get deleteImageMessage =>
+      'Do you want to delete this image? This action cannot be undone.';
+
+  @override
+  String groupImageTitle(int groupId, String weather) {
+    return 'Group $groupId $weather Images';
+  }
+
+  @override
+  String registeredCount(int count) {
+    return 'Registered: $count images';
+  }
+
+  @override
+  String get noImagesRegistered => 'No images registered';
+
+  @override
+  String get imagePreview => 'Image Preview';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get contactEmailSubject => 'FocusMint - Contact';
+
+  @override
+  String get contactEmailBody => 'Please share your feedback and questions.';
+
+  @override
+  String get mixWithBuiltInImages => 'Mix with built-in images';
+
+  @override
+  String get mixWithBuiltInImagesDescription =>
+      'Use a mix of built-in images and your own images';
+
+  @override
+  String get supportIntro =>
+      'Chat anonymously with the developer. Questions and suggestions are welcome. You can send 3 messages per day. Each developer reply resets your allowance to 3.';
+
+  @override
+  String get supportReceived =>
+      'Message received. We usually reply within 2–3 days.';
+
+  @override
+  String get supportComposer => 'Type a message';
+
+  @override
+  String get supportSend => 'Send';
+
+  @override
+  String get supportRetry => 'Retry';
+
+  @override
+  String get supportSent => 'Sent';
+
+  @override
+  String get supportUnsent => 'Unsent · saved on this device';
+
+  @override
+  String get supportAttach => 'Attach image';
+
+  @override
+  String get supportRemoveImage => 'Remove image';
+
+  @override
+  String get supportImage => 'Attachment';
+
+  @override
+  String get supportClear => 'Delete history';
+
+  @override
+  String get supportClearConfirm =>
+      'Delete this conversation? Unsent drafts and server history will also be deleted. This does not reset your allowance.';
+
+  @override
+  String get supportQuota =>
+      'You have used today’s 3 messages. Send another tomorrow or after a developer reply.';
+
+  @override
+  String get supportConnectionError =>
+      'Could not connect. Saved drafts have not been sent.';
+
+  @override
+  String get supportSendError =>
+      'Could not send. Your message is saved on this device. Please retry.';
+
+  @override
+  String get supportStorageError => 'Could not save. Please try again.';
+
+  @override
+  String get supportClearError =>
+      'Could not delete history. Check your connection and retry.';
+
+  @override
+  String get supportImageError =>
+      'Could not load the image. Please choose an image under 30 MB.';
+
+  @override
+  String supportRemaining(int count) {
+    return '$count messages remaining today';
+  }
+
+  @override
+  String supportUnread(int count) {
+    return '$count unread replies';
+  }
+
+  @override
+  String get supportGuide => 'Information';
+
+  @override
+  String get supportDeveloper => 'Developer';
+
+  @override
+  String get supportPrivacy => 'About support data';
+
+  @override
+  String get breathingTitle => 'Take a breath';
+
+  @override
+  String get breathingHint =>
+      'Follow the gentle movement\nof the lungs at a comfortable pace.';
+
+  @override
+  String get breathingIn => 'Breathe in';
+
+  @override
+  String get breathingOut => 'Breathe out';
+
+  @override
+  String get breathingProgress => 'Breathing progress';
+
+  @override
+  String get breathingResultHint => 'Your results will appear automatically.';
+
+  @override
+  String get breathingSkip => 'Skip to results';
+}
+
+/// The translations for English, as used in Canada (`en_CA`).
+class AppLocalizationsEnCa extends AppLocalizationsEn {
+  AppLocalizationsEnCa() : super('en_CA');
+
+  @override
+  String get focusMintTitle => 'FOCUS MINT';
+
+  @override
+  String get currentPoints => 'Current Points';
+
+  @override
+  String goalLabel(int goal) {
+    return 'Goal: $goal';
+  }
+
+  @override
+  String remainingLabel(int remaining) {
+    return 'Remaining: $remaining';
+  }
+
+  @override
+  String get goalAchieved => '🎉 Goal Achieved!';
+
+  @override
+  String get startButtonText => 'START';
+
+  @override
+  String get stressReductionMessage => 'Practice noticing the positive.';
+
+  @override
+  String remainingTimeMinutes(int minutes, int seconds) {
+    return 'Time left: ${minutes}m ${seconds}s';
+  }
+
+  @override
+  String remainingTimeSeconds(int seconds) {
+    return 'Time left: ${seconds}s';
+  }
+
+  @override
+  String scoreLabel(String score) {
+    return 'Score: $score Points';
+  }
+
+  @override
+  String get imagePreparationMessage => 'Preparing images...';
+
+  @override
+  String get noStimuliAvailable => 'No stimuli available';
+
+  @override
+  String get invalidGridSize => 'Invalid grid size';
+
+  @override
+  String get unknown => '?';
+
+  @override
+  String get gettingStarted => 'Getting started...';
+
+  @override
+  String get excellentPerformance => 'Excellent performance!';
+
+  @override
+  String get greatJob => 'Great job!';
+
+  @override
+  String get goodPerformance => 'Good performance';
+
+  @override
+  String get keepPracticingFeedback => 'Keep practising';
+
+  @override
+  String get takeYourTimeFeedback => 'Take your time';
+
+  @override
+  String get happy => 'Happy';
+
+  @override
+  String get angry => 'Angry';
+
+  @override
+  String get fear => 'Fear';
+
+  @override
+  String get sad => 'Sad';
+
+  @override
+  String get historyPageTitle => 'Training History';
+
+  @override
+  String get dataLoading => 'Loading data...';
+
+  @override
+  String get pointsHistory => 'Points History';
+
+  @override
+  String get weekly => 'Weekly';
+
+  @override
+  String get monthly => 'Monthly';
+
+  @override
+  String get noDataAvailable => 'No data available';
+
+  @override
+  String get goalAchievementRate => 'Goal Achievement Rate';
+
+  @override
+  String get scoreStatistics => 'Score Statistics';
+
+  @override
+  String get bestScore => 'Best Score';
+
+  @override
+  String get totalScore => 'Total Score';
+
+  @override
+  String get trainingTime => 'Training Time';
+
+  @override
+  String get totalTrainingTime => 'Total Training Time';
+
+  @override
+  String get detailedStatistics => 'Detailed Statistics';
+
+  @override
+  String get averageScorePerMinute => 'Average score per minute';
+
+  @override
+  String get pointsToGoal => 'Points to goal';
+
+  @override
+  String get goalSetting => 'Goal setting';
+
+  @override
+  String get secondsUnit => 's';
+
+  @override
+  String get minutesUnit => 'm';
+
+  @override
+  String get hoursUnit => 'h';
+
+  @override
+  String get pointsUnit => 'points';
+
+  @override
+  String get monthSuffix => '';
+
+  @override
+  String get sundayShort => 'Sun';
+
+  @override
+  String get mondayShort => 'Mon';
+
+  @override
+  String get tuesdayShort => 'Tue';
+
+  @override
+  String get wednesdayShort => 'Wed';
+
+  @override
+  String get thursdayShort => 'Thu';
+
+  @override
+  String get fridayShort => 'Fri';
+
+  @override
+  String get saturdayShort => 'Sat';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get goalPointsSetting => 'Goal Points Setting';
+
+  @override
+  String currentGoalPoints(int points) {
+    return 'Current goal: $points points';
+  }
+
+  @override
+  String get newGoalPointsLabel => 'New goal points';
+
+  @override
+  String get goalPointsHint => '1000';
+
+  @override
+  String get pointsUnit2 => 'points';
+
+  @override
+  String get saveGoalButton => 'Save Goal';
+
+  @override
+  String goalSetTo(int points) {
+    return 'Goal set to $points points';
+  }
+
+  @override
+  String get enterGoalPoints => 'Please enter goal points';
+
+  @override
+  String get enterValidNumber => 'Please enter a valid number (1 to 99999999)';
+
+  @override
+  String get saveFailed => 'Failed to save some settings';
+
+  @override
+  String get emailOpenFailed => 'Could not open email app';
+
+  @override
+  String get pageOpenFailed => 'Could not open page';
+
+  @override
+  String get appInfoSupport => 'App Info & Support';
+
+  @override
+  String get contactUs => 'Contact Us';
+
+  @override
+  String get contactUsSubtitle => 'Share your feedback and questions';
+
+  @override
+  String get termsOfService => 'Terms of Service';
+
+  @override
+  String get termsSubtitle => 'Review the app\'s terms of service';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get privacySubtitle => 'About privacy information handling';
+
+  @override
+  String get tutorialTitle => 'Tutorial';
+
+  @override
+  String get tutorialSubtitle => 'Learn how to use the app';
+
+  @override
+  String get dataManagement => 'Data Management';
+
+  @override
+  String get deleteHistory => 'Delete History';
+
+  @override
+  String get deleteHistorySubtitle =>
+      'Delete training history only (goal points preserved)';
+
+  @override
+  String get deleteHistoryAndGoal => 'Delete History & Goal';
+
+  @override
+  String get deleteHistoryAndGoalSubtitle =>
+      'Delete all history and goal points';
+
+  @override
+  String get deleteHistoryConfirmTitle => 'Delete History';
+
+  @override
+  String get deleteHistoryConfirmMessage =>
+      'Are you sure you want to delete all training history?\n\n*Goal points will be preserved';
+
+  @override
+  String get deleteHistoryAndGoalConfirmTitle => 'Delete History & Goal';
+
+  @override
+  String get deleteHistoryAndGoalConfirmMessage =>
+      'Are you sure you want to delete all history and goal points?\n\n*This action cannot be undone';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get historyDeleted => 'History deleted';
+
+  @override
+  String get historyAndGoalDeleted => 'History and goal deleted';
+
+  @override
+  String get historyDeleteFailed => 'Failed to delete history';
+
+  @override
+  String get historyAndGoalDeleteFailed => 'Failed to delete history and goal';
+
+  @override
+  String get tutorialDisplayFailed => 'Failed to display tutorial';
+
+  @override
+  String get tips => 'Tips';
+
+  @override
+  String get tipsContent =>
+      '• Your goal appears in the home screen chart\n• Start small and increase your goal at your own pace\n• Each correct choice earns up to 6 points';
+
+  @override
+  String get backToHome => 'Back to Home';
+
+  @override
+  String get tutorialSkip => 'Skip';
+
+  @override
+  String get tutorialGoalAndPoints => 'Goal and Current Points';
+
+  @override
+  String get tutorialGoalDescription =>
+      'The outer circle shows your goal, the inner circle shows total points. The circle fills as you approach your goal.';
+
+  @override
+  String get tutorialOneMinuteTraining => '1-Minute Training';
+
+  @override
+  String get tutorialTrainingDescription =>
+      'Start a 1-minute game. Choose positive images or good habits from 4 options.';
+
+  @override
+  String get tutorialScoreProgress => 'Score Progress';
+
+  @override
+  String get tutorialScoreDescription =>
+      'View detailed information about your earned scores.';
+
+  @override
+  String get tutorialSettingsAndData => 'Settings and Data Management';
+
+  @override
+  String get tutorialSettingsDescription =>
+      'Change goal values, view app information, and reset data.';
+
+  @override
+  String get appIntroAttentionBiasTitle => 'About Attention Bias';
+
+  @override
+  String get appIntroAttentionBiasContent =>
+      'When anxiety is high, we unconsciously tend to focus only on negative things.';
+
+  @override
+  String get appIntroFocusMintRoleTitle => 'FocusMint\'s Role';
+
+  @override
+  String get appIntroFocusMintRoleContent =>
+      'A short game for practicing how you direct your attention to positive images.';
+
+  @override
+  String get appIntroScientificEvidenceTitle => 'About this exercise';
+
+  @override
+  String get appIntroScientificEvidenceContent =>
+      'Practice finding positive images. FocusMint is a self-care exercise, not a medical treatment. Results vary from person to person.';
+
+  @override
+  String get appIntroExpectedEffectsTitle => 'What you can practice';
+
+  @override
+  String get appIntroEffect1 => 'Looking for positive images';
+
+  @override
+  String get appIntroEffect2 => 'Noticing smiles around you';
+
+  @override
+  String get appIntroEffect3 => 'Making time for a short daily routine';
+
+  @override
+  String get appIntroHowToUse => 'See How to Use';
+
+  @override
+  String get pointsEarned => 'Points Earned!';
+
+  @override
+  String get yourScore => 'Your Score';
+
+  @override
+  String get totalPlayTime => 'Total Play Time';
+
+  @override
+  String get imageManagement => 'Image Management';
+
+  @override
+  String hiddenImagesCount(int count, int max) {
+    return 'Hidden images: $count/$max';
+  }
+
+  @override
+  String get unsavedChanges => 'You have unsaved changes';
+
+  @override
+  String unsavedChangesMessage(Object count) {
+    return 'You have $count unsaved changes to image display settings.';
+  }
+
+  @override
+  String get unsavedChangesWarning =>
+      'Changes will be lost if you close this screen now.';
+
+  @override
+  String get discardChanges => 'Discard Changes';
+
+  @override
+  String get saveAndExit => 'Save and Exit';
+
+  @override
+  String settingsSaved(Object count) {
+    return 'Saved $count settings';
+  }
+
+  @override
+  String get saveError => 'An error occurred while saving settings';
+
+  @override
+  String get imageSettingsUpdated => 'Image settings have been updated';
+
+  @override
+  String get allImages => 'All';
+
+  @override
+  String get positiveImages => 'Positive';
+
+  @override
+  String get negativeImages => 'Negative';
+
+  @override
+  String get smileImages => 'Smile';
+
+  @override
+  String get vegetableImages => 'Nourishing food';
+
+  @override
+  String get healthImages => 'Movement & connection';
+
+  @override
+  String get sadImages => 'Anger, sadness & worry';
+
+  @override
+  String get badFoodImages => 'Junk food & sweets';
+
+  @override
+  String get badImages => 'Unhealthy habits';
+
+  @override
+  String get imageManagementHint =>
+      'Tap to toggle image visibility. You can hide up to 15 images.';
+
+  @override
+  String get unsaved => 'Unsaved';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get hiddenImages => 'Hidden';
+
+  @override
+  String get noHiddenImages => 'No hidden images';
+
+  @override
+  String get settingsLoadFailed => 'Failed to load settings';
+
+  @override
+  String imagesAdded(int count) {
+    return 'Added $count images';
+  }
+
+  @override
+  String get imageAddFailed => 'Failed to add images';
+
+  @override
+  String get imageSelectionFailed => 'Failed to select images';
+
+  @override
+  String get settingsChangeFailed => 'Failed to change settings';
+
+  @override
+  String groupTitle(String name) {
+    return 'Group: $name';
+  }
+
+  @override
+  String get displayToggle => 'Display Toggle';
+
+  @override
+  String imageCount(int count) {
+    return '$count images';
+  }
+
+  @override
+  String get noticeTitle => 'Important Notes';
+
+  @override
+  String get notice1 => 'Custom image feature has been added!';
+
+  @override
+  String get notice2 => 'You can add your own images from the settings screen';
+
+  @override
+  String get notice3 => 'Please check the settings screen for details';
+
+  @override
+  String get customImageTitle => 'Custom Images';
+
+  @override
+  String get customImageSubtitle => 'Add and manage your own images';
+
+  @override
+  String get addCustomImages => 'Add Custom Images';
+
+  @override
+  String get selectImages => 'Select Images';
+
+  @override
+  String get unknownImage => 'Unknown Image';
+
+  @override
+  String get customImageSettings => 'Custom Image Settings';
+
+  @override
+  String get useCustomImages => 'Use Custom Images';
+
+  @override
+  String get useCustomImagesDescription =>
+      'Use your own images for training. Enable mixing below to include built-in images.';
+
+  @override
+  String get groupSettings => 'Group Settings';
+
+  @override
+  String get minOneGroupRequired => 'At least one group must be enabled';
+
+  @override
+  String get settingsLoadFailedMessage => 'Failed to load settings';
+
+  @override
+  String get customImageNotice1 =>
+      'When groups are enabled, images are displayed randomly for each group.';
+
+  @override
+  String get customImageNotice2 =>
+      'Images uploaded and set by users are not shared with developers or third parties and are stored only in the app\'s area on the device.';
+
+  @override
+  String get customImageNotice3 => 'This allows offline use.';
+
+  @override
+  String get customImageNotice4 =>
+      'Adding many images uses storage. If you have problems, turn off custom images or remove unused images in Settings.';
+
+  @override
+  String get customImageNotice5 =>
+      'When you delete the app, the set images will be deleted.';
+
+  @override
+  String get customImageRequirementNotMet =>
+      'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.';
+
+  @override
+  String get customImageRequirement =>
+      'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.';
+
+  @override
+  String get sunnyWeather => 'Good';
+
+  @override
+  String get rainyWeather => 'Not good';
+
+  @override
+  String get addImages => 'Add Images';
+
+  @override
+  String get imageDeleted => 'Image deleted';
+
+  @override
+  String get imageDeleteFailed => 'Failed to delete image';
+
+  @override
+  String get deleteImageTitle => 'Delete Image';
+
+  @override
+  String get deleteImageMessage =>
+      'Do you want to delete this image? This action cannot be undone.';
+
+  @override
+  String groupImageTitle(int groupId, String weather) {
+    return 'Group $groupId $weather Images';
+  }
+
+  @override
+  String registeredCount(int count) {
+    return 'Registered: $count images';
+  }
+
+  @override
+  String get noImagesRegistered => 'No images registered';
+
+  @override
+  String get imagePreview => 'Image Preview';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get contactEmailSubject => 'FocusMint - Contact';
+
+  @override
+  String get contactEmailBody => 'Please share your feedback and questions.';
+
+  @override
+  String get mixWithBuiltInImages => 'Mix with built-in images';
+
+  @override
+  String get mixWithBuiltInImagesDescription =>
+      'Use a mix of built-in images and your own images';
+
+  @override
+  String get supportIntro =>
+      'Chat anonymously with the developer. Questions and suggestions are welcome. You can send 3 messages per day. Each developer reply resets your allowance to 3.';
+
+  @override
+  String get supportReceived =>
+      'Message received. We usually reply within 2–3 days.';
+
+  @override
+  String get supportComposer => 'Type a message';
+
+  @override
+  String get supportSend => 'Send';
+
+  @override
+  String get supportRetry => 'Retry';
+
+  @override
+  String get supportSent => 'Sent';
+
+  @override
+  String get supportUnsent => 'Unsent · saved on this device';
+
+  @override
+  String get supportAttach => 'Attach image';
+
+  @override
+  String get supportRemoveImage => 'Remove image';
+
+  @override
+  String get supportImage => 'Attachment';
+
+  @override
+  String get supportClear => 'Delete history';
+
+  @override
+  String get supportClearConfirm =>
+      'Delete this conversation? Unsent drafts and server history will also be deleted. This does not reset your allowance.';
+
+  @override
+  String get supportQuota =>
+      'You have used today’s 3 messages. Send another tomorrow or after a developer reply.';
+
+  @override
+  String get supportConnectionError =>
+      'Could not connect. Saved drafts have not been sent.';
+
+  @override
+  String get supportSendError =>
+      'Could not send. Your message is saved on this device. Please retry.';
+
+  @override
+  String get supportStorageError => 'Could not save. Please try again.';
+
+  @override
+  String get supportClearError =>
+      'Could not delete history. Check your connection and retry.';
+
+  @override
+  String get supportImageError =>
+      'Could not load the image. Please choose an image under 30 MB.';
+
+  @override
+  String supportRemaining(int count) {
+    return '$count messages remaining today';
+  }
+
+  @override
+  String supportUnread(int count) {
+    return '$count unread replies';
+  }
+
+  @override
+  String get supportGuide => 'Information';
+
+  @override
+  String get supportDeveloper => 'Developer';
+
+  @override
+  String get supportPrivacy => 'About support data';
+
+  @override
+  String get breathingTitle => 'Take a breath';
+
+  @override
+  String get breathingHint =>
+      'Follow the gentle movement\nof the lungs at a comfortable pace.';
+
+  @override
+  String get breathingIn => 'Breathe in';
+
+  @override
+  String get breathingOut => 'Breathe out';
+
+  @override
+  String get breathingProgress => 'Breathing progress';
+
+  @override
+  String get breathingResultHint => 'Your results will appear automatically.';
+
+  @override
+  String get breathingSkip => 'Skip to results';
+}
+
+/// The translations for English, as used in the United Kingdom (`en_GB`).
+class AppLocalizationsEnGb extends AppLocalizationsEn {
+  AppLocalizationsEnGb() : super('en_GB');
+
+  @override
+  String get focusMintTitle => 'FOCUS MINT';
+
+  @override
+  String get currentPoints => 'Current Points';
+
+  @override
+  String goalLabel(int goal) {
+    return 'Goal: $goal';
+  }
+
+  @override
+  String remainingLabel(int remaining) {
+    return 'Remaining: $remaining';
+  }
+
+  @override
+  String get goalAchieved => '🎉 Goal Achieved!';
+
+  @override
+  String get startButtonText => 'START';
+
+  @override
+  String get stressReductionMessage => 'Practice noticing the positive.';
+
+  @override
+  String remainingTimeMinutes(int minutes, int seconds) {
+    return 'Time left: ${minutes}m ${seconds}s';
+  }
+
+  @override
+  String remainingTimeSeconds(int seconds) {
+    return 'Time left: ${seconds}s';
+  }
+
+  @override
+  String scoreLabel(String score) {
+    return 'Score: $score Points';
+  }
+
+  @override
+  String get imagePreparationMessage => 'Preparing images...';
+
+  @override
+  String get noStimuliAvailable => 'No stimuli available';
+
+  @override
+  String get invalidGridSize => 'Invalid grid size';
+
+  @override
+  String get unknown => '?';
+
+  @override
+  String get gettingStarted => 'Getting started...';
+
+  @override
+  String get excellentPerformance => 'Excellent performance!';
+
+  @override
+  String get greatJob => 'Great job!';
+
+  @override
+  String get goodPerformance => 'Good performance';
+
+  @override
+  String get keepPracticingFeedback => 'Keep practising';
+
+  @override
+  String get takeYourTimeFeedback => 'Take your time';
+
+  @override
+  String get happy => 'Happy';
+
+  @override
+  String get angry => 'Angry';
+
+  @override
+  String get fear => 'Fear';
+
+  @override
+  String get sad => 'Sad';
+
+  @override
+  String get historyPageTitle => 'Training History';
+
+  @override
+  String get dataLoading => 'Loading data...';
+
+  @override
+  String get pointsHistory => 'Points History';
+
+  @override
+  String get weekly => 'Weekly';
+
+  @override
+  String get monthly => 'Monthly';
+
+  @override
+  String get noDataAvailable => 'No data available';
+
+  @override
+  String get goalAchievementRate => 'Goal Achievement Rate';
+
+  @override
+  String get scoreStatistics => 'Score Statistics';
+
+  @override
+  String get bestScore => 'Best Score';
+
+  @override
+  String get totalScore => 'Total Score';
+
+  @override
+  String get trainingTime => 'Training Time';
+
+  @override
+  String get totalTrainingTime => 'Total Training Time';
+
+  @override
+  String get detailedStatistics => 'Detailed Statistics';
+
+  @override
+  String get averageScorePerMinute => 'Average score per minute';
+
+  @override
+  String get pointsToGoal => 'Points to goal';
+
+  @override
+  String get goalSetting => 'Goal setting';
+
+  @override
+  String get secondsUnit => 's';
+
+  @override
+  String get minutesUnit => 'm';
+
+  @override
+  String get hoursUnit => 'h';
+
+  @override
+  String get pointsUnit => 'points';
+
+  @override
+  String get monthSuffix => '';
+
+  @override
+  String get sundayShort => 'Sun';
+
+  @override
+  String get mondayShort => 'Mon';
+
+  @override
+  String get tuesdayShort => 'Tue';
+
+  @override
+  String get wednesdayShort => 'Wed';
+
+  @override
+  String get thursdayShort => 'Thu';
+
+  @override
+  String get fridayShort => 'Fri';
+
+  @override
+  String get saturdayShort => 'Sat';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get goalPointsSetting => 'Goal Points Setting';
+
+  @override
+  String currentGoalPoints(int points) {
+    return 'Current goal: $points points';
+  }
+
+  @override
+  String get newGoalPointsLabel => 'New goal points';
+
+  @override
+  String get goalPointsHint => '1000';
+
+  @override
+  String get pointsUnit2 => 'points';
+
+  @override
+  String get saveGoalButton => 'Save Goal';
+
+  @override
+  String goalSetTo(int points) {
+    return 'Goal set to $points points';
+  }
+
+  @override
+  String get enterGoalPoints => 'Please enter goal points';
+
+  @override
+  String get enterValidNumber => 'Please enter a valid number (1 to 99999999)';
+
+  @override
+  String get saveFailed => 'Failed to save some settings';
+
+  @override
+  String get emailOpenFailed => 'Could not open email app';
+
+  @override
+  String get pageOpenFailed => 'Could not open page';
+
+  @override
+  String get appInfoSupport => 'App Info & Support';
+
+  @override
+  String get contactUs => 'Contact Us';
+
+  @override
+  String get contactUsSubtitle => 'Share your feedback and questions';
+
+  @override
+  String get termsOfService => 'Terms of Service';
+
+  @override
+  String get termsSubtitle => 'Review the app\'s terms of service';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get privacySubtitle => 'About privacy information handling';
+
+  @override
+  String get tutorialTitle => 'Tutorial';
+
+  @override
+  String get tutorialSubtitle => 'Learn how to use the app';
+
+  @override
+  String get dataManagement => 'Data Management';
+
+  @override
+  String get deleteHistory => 'Delete History';
+
+  @override
+  String get deleteHistorySubtitle =>
+      'Delete training history only (goal points preserved)';
+
+  @override
+  String get deleteHistoryAndGoal => 'Delete History & Goal';
+
+  @override
+  String get deleteHistoryAndGoalSubtitle =>
+      'Delete all history and goal points';
+
+  @override
+  String get deleteHistoryConfirmTitle => 'Delete History';
+
+  @override
+  String get deleteHistoryConfirmMessage =>
+      'Are you sure you want to delete all training history?\n\n*Goal points will be preserved';
+
+  @override
+  String get deleteHistoryAndGoalConfirmTitle => 'Delete History & Goal';
+
+  @override
+  String get deleteHistoryAndGoalConfirmMessage =>
+      'Are you sure you want to delete all history and goal points?\n\n*This action cannot be undone';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get historyDeleted => 'History deleted';
+
+  @override
+  String get historyAndGoalDeleted => 'History and goal deleted';
+
+  @override
+  String get historyDeleteFailed => 'Failed to delete history';
+
+  @override
+  String get historyAndGoalDeleteFailed => 'Failed to delete history and goal';
+
+  @override
+  String get tutorialDisplayFailed => 'Failed to display tutorial';
+
+  @override
+  String get tips => 'Tips';
+
+  @override
+  String get tipsContent =>
+      '• Your goal appears in the home screen chart\n• Start small and increase your goal at your own pace\n• Each correct choice earns up to 6 points';
+
+  @override
+  String get backToHome => 'Back to Home';
+
+  @override
+  String get tutorialSkip => 'Skip';
+
+  @override
+  String get tutorialGoalAndPoints => 'Goal and Current Points';
+
+  @override
+  String get tutorialGoalDescription =>
+      'The outer circle shows your goal, the inner circle shows total points. The circle fills as you approach your goal.';
+
+  @override
+  String get tutorialOneMinuteTraining => '1-Minute Training';
+
+  @override
+  String get tutorialTrainingDescription =>
+      'Start a 1-minute game. Choose positive images or good habits from 4 options.';
+
+  @override
+  String get tutorialScoreProgress => 'Score Progress';
+
+  @override
+  String get tutorialScoreDescription =>
+      'View detailed information about your earned scores.';
+
+  @override
+  String get tutorialSettingsAndData => 'Settings and Data Management';
+
+  @override
+  String get tutorialSettingsDescription =>
+      'Change goal values, view app information, and reset data.';
+
+  @override
+  String get appIntroAttentionBiasTitle => 'About Attention Bias';
+
+  @override
+  String get appIntroAttentionBiasContent =>
+      'When anxiety is high, we unconsciously tend to focus only on negative things.';
+
+  @override
+  String get appIntroFocusMintRoleTitle => 'FocusMint\'s Role';
+
+  @override
+  String get appIntroFocusMintRoleContent =>
+      'A short game for practicing how you direct your attention to positive images.';
+
+  @override
+  String get appIntroScientificEvidenceTitle => 'About this exercise';
+
+  @override
+  String get appIntroScientificEvidenceContent =>
+      'Practice finding positive images. FocusMint is a self-care exercise, not a medical treatment. Results vary from person to person.';
+
+  @override
+  String get appIntroExpectedEffectsTitle => 'What you can practice';
+
+  @override
+  String get appIntroEffect1 => 'Looking for positive images';
+
+  @override
+  String get appIntroEffect2 => 'Noticing smiles around you';
+
+  @override
+  String get appIntroEffect3 => 'Making time for a short daily routine';
+
+  @override
+  String get appIntroHowToUse => 'See How to Use';
+
+  @override
+  String get pointsEarned => 'Points Earned!';
+
+  @override
+  String get yourScore => 'Your Score';
+
+  @override
+  String get totalPlayTime => 'Total Play Time';
+
+  @override
+  String get imageManagement => 'Image Management';
+
+  @override
+  String hiddenImagesCount(int count, int max) {
+    return 'Hidden images: $count/$max';
+  }
+
+  @override
+  String get unsavedChanges => 'You have unsaved changes';
+
+  @override
+  String unsavedChangesMessage(Object count) {
+    return 'You have $count unsaved changes to image display settings.';
+  }
+
+  @override
+  String get unsavedChangesWarning =>
+      'Changes will be lost if you close this screen now.';
+
+  @override
+  String get discardChanges => 'Discard Changes';
+
+  @override
+  String get saveAndExit => 'Save and Exit';
+
+  @override
+  String settingsSaved(Object count) {
+    return 'Saved $count settings';
+  }
+
+  @override
+  String get saveError => 'An error occurred while saving settings';
+
+  @override
+  String get imageSettingsUpdated => 'Image settings have been updated';
+
+  @override
+  String get allImages => 'All';
+
+  @override
+  String get positiveImages => 'Positive';
+
+  @override
+  String get negativeImages => 'Negative';
+
+  @override
+  String get smileImages => 'Smile';
+
+  @override
+  String get vegetableImages => 'Nourishing food';
+
+  @override
+  String get healthImages => 'Movement & connection';
+
+  @override
+  String get sadImages => 'Anger, sadness & worry';
+
+  @override
+  String get badFoodImages => 'Junk food & sweets';
+
+  @override
+  String get badImages => 'Unhealthy habits';
+
+  @override
+  String get imageManagementHint =>
+      'Tap to toggle image visibility. You can hide up to 15 images.';
+
+  @override
+  String get unsaved => 'Unsaved';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get hiddenImages => 'Hidden';
+
+  @override
+  String get noHiddenImages => 'No hidden images';
+
+  @override
+  String get settingsLoadFailed => 'Failed to load settings';
+
+  @override
+  String imagesAdded(int count) {
+    return 'Added $count images';
+  }
+
+  @override
+  String get imageAddFailed => 'Failed to add images';
+
+  @override
+  String get imageSelectionFailed => 'Failed to select images';
+
+  @override
+  String get settingsChangeFailed => 'Failed to change settings';
+
+  @override
+  String groupTitle(String name) {
+    return 'Group: $name';
+  }
+
+  @override
+  String get displayToggle => 'Display Toggle';
+
+  @override
+  String imageCount(int count) {
+    return '$count images';
+  }
+
+  @override
+  String get noticeTitle => 'Important Notes';
+
+  @override
+  String get notice1 => 'Custom image feature has been added!';
+
+  @override
+  String get notice2 => 'You can add your own images from the settings screen';
+
+  @override
+  String get notice3 => 'Please check the settings screen for details';
+
+  @override
+  String get customImageTitle => 'Custom Images';
+
+  @override
+  String get customImageSubtitle => 'Add and manage your own images';
+
+  @override
+  String get addCustomImages => 'Add Custom Images';
+
+  @override
+  String get selectImages => 'Select Images';
+
+  @override
+  String get unknownImage => 'Unknown Image';
+
+  @override
+  String get customImageSettings => 'Custom Image Settings';
+
+  @override
+  String get useCustomImages => 'Use Custom Images';
+
+  @override
+  String get useCustomImagesDescription =>
+      'Use your own images for training. Enable mixing below to include built-in images.';
+
+  @override
+  String get groupSettings => 'Group Settings';
+
+  @override
+  String get minOneGroupRequired => 'At least one group must be enabled';
+
+  @override
+  String get settingsLoadFailedMessage => 'Failed to load settings';
+
+  @override
+  String get customImageNotice1 =>
+      'When groups are enabled, images are displayed randomly for each group.';
+
+  @override
+  String get customImageNotice2 =>
+      'Images uploaded and set by users are not shared with developers or third parties and are stored only in the app\'s area on the device.';
+
+  @override
+  String get customImageNotice3 => 'This allows offline use.';
+
+  @override
+  String get customImageNotice4 =>
+      'Adding many images uses storage. If you have problems, turn off custom images or remove unused images in Settings.';
+
+  @override
+  String get customImageNotice5 =>
+      'When you delete the app, the set images will be deleted.';
+
+  @override
+  String get customImageRequirementNotMet =>
+      'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.';
+
+  @override
+  String get customImageRequirement =>
+      'To use custom images, you need at least 1 good image and 3 not good images in enabled groups.';
+
+  @override
+  String get sunnyWeather => 'Good';
+
+  @override
+  String get rainyWeather => 'Not good';
+
+  @override
+  String get addImages => 'Add Images';
+
+  @override
+  String get imageDeleted => 'Image deleted';
+
+  @override
+  String get imageDeleteFailed => 'Failed to delete image';
+
+  @override
+  String get deleteImageTitle => 'Delete Image';
+
+  @override
+  String get deleteImageMessage =>
+      'Do you want to delete this image? This action cannot be undone.';
+
+  @override
+  String groupImageTitle(int groupId, String weather) {
+    return 'Group $groupId $weather Images';
+  }
+
+  @override
+  String registeredCount(int count) {
+    return 'Registered: $count images';
+  }
+
+  @override
+  String get noImagesRegistered => 'No images registered';
+
+  @override
+  String get imagePreview => 'Image Preview';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get contactEmailSubject => 'FocusMint - Contact';
+
+  @override
+  String get contactEmailBody => 'Please share your feedback and questions.';
+
+  @override
+  String get mixWithBuiltInImages => 'Mix with built-in images';
+
+  @override
+  String get mixWithBuiltInImagesDescription =>
+      'Use a mix of built-in images and your own images';
+
+  @override
+  String get supportIntro =>
+      'Chat anonymously with the developer. Questions and suggestions are welcome. You can send 3 messages per day. Each developer reply resets your allowance to 3.';
+
+  @override
+  String get supportReceived =>
+      'Message received. We usually reply within 2–3 days.';
+
+  @override
+  String get supportComposer => 'Type a message';
+
+  @override
+  String get supportSend => 'Send';
+
+  @override
+  String get supportRetry => 'Retry';
+
+  @override
+  String get supportSent => 'Sent';
+
+  @override
+  String get supportUnsent => 'Unsent · saved on this device';
+
+  @override
+  String get supportAttach => 'Attach image';
+
+  @override
+  String get supportRemoveImage => 'Remove image';
+
+  @override
+  String get supportImage => 'Attachment';
+
+  @override
+  String get supportClear => 'Delete history';
+
+  @override
+  String get supportClearConfirm =>
+      'Delete this conversation? Unsent drafts and server history will also be deleted. This does not reset your allowance.';
+
+  @override
+  String get supportQuota =>
+      'You have used today’s 3 messages. Send another tomorrow or after a developer reply.';
+
+  @override
+  String get supportConnectionError =>
+      'Could not connect. Saved drafts have not been sent.';
+
+  @override
+  String get supportSendError =>
+      'Could not send. Your message is saved on this device. Please retry.';
+
+  @override
+  String get supportStorageError => 'Could not save. Please try again.';
+
+  @override
+  String get supportClearError =>
+      'Could not delete history. Check your connection and retry.';
+
+  @override
+  String get supportImageError =>
+      'Could not load the image. Please choose an image under 30 MB.';
+
+  @override
+  String supportRemaining(int count) {
+    return '$count messages remaining today';
+  }
+
+  @override
+  String supportUnread(int count) {
+    return '$count unread replies';
+  }
+
+  @override
+  String get supportGuide => 'Information';
+
+  @override
+  String get supportDeveloper => 'Developer';
+
+  @override
+  String get supportPrivacy => 'About support data';
+
+  @override
+  String get breathingTitle => 'Take a breath';
+
+  @override
+  String get breathingHint =>
+      'Follow the gentle movement\nof the lungs at a comfortable pace.';
+
+  @override
+  String get breathingIn => 'Breathe in';
+
+  @override
+  String get breathingOut => 'Breathe out';
 
   @override
   String get breathingProgress => 'Breathing progress';

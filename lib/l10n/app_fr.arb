@@ -1,0 +1,333 @@
+{
+  "@@locale": "fr",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Points actuels",
+  "goalLabel": "Objectif : {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Restant : {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Objectif atteint !",
+  "startButtonText": "DÉMARRER",
+  "stressReductionMessage": "Entraînez-vous à remarquer le positif.",
+  "remainingTimeMinutes": "Temps restant : {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Temps restant : {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Score : {score} points",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Préparation des images...",
+  "noStimuliAvailable": "Aucun stimulus disponible",
+  "invalidGridSize": "Taille de grille non valide",
+  "unknown": "?",
+  "gettingStarted": "Démarrage...",
+  "excellentPerformance": "Performance excellente !",
+  "greatJob": "Bravo !",
+  "goodPerformance": "Bonne performance",
+  "keepPracticingFeedback": "Continuez à vous entraîner",
+  "takeYourTimeFeedback": "Prenez votre temps",
+  "happy": "Joie",
+  "angry": "Colère",
+  "fear": "Peur",
+  "sad": "Tristesse",
+  "historyPageTitle": "Historique d’entraînement",
+  "dataLoading": "Chargement des données...",
+  "pointsHistory": "Historique des points",
+  "weekly": "Semaine",
+  "monthly": "Mois",
+  "noDataAvailable": "Aucune donnée disponible",
+  "goalAchievementRate": "Taux d’atteinte de l’objectif",
+  "scoreStatistics": "Statistiques de score",
+  "bestScore": "Meilleur score",
+  "totalScore": "Score total",
+  "trainingTime": "Temps d’entraînement",
+  "totalTrainingTime": "Temps d’entraînement total",
+  "detailedStatistics": "Statistiques détaillées",
+  "averageScorePerMinute": "Score moyen par minute",
+  "pointsToGoal": "Points restants avant l’objectif",
+  "goalSetting": "Définition de l’objectif",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "points",
+  "monthSuffix": "",
+  "sundayShort": "Dim",
+  "mondayShort": "Lun",
+  "tuesdayShort": "Mar",
+  "wednesdayShort": "Mer",
+  "thursdayShort": "Jeu",
+  "fridayShort": "Ven",
+  "saturdayShort": "Sam",
+  "settingsTitle": "Paramètres",
+  "goalPointsSetting": "Objectif de points",
+  "currentGoalPoints": "Objectif actuel : {points} points",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Nouvel objectif de points",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "points",
+  "saveGoalButton": "Enregistrer l’objectif",
+  "goalSetTo": "Objectif défini à {points} points",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Veuillez saisir un objectif de points",
+  "enterValidNumber": "Veuillez saisir un nombre valide (entre 1 et 99999999)",
+  "saveFailed": "Échec de l’enregistrement de certains paramètres",
+  "emailOpenFailed": "Impossible d’ouvrir l’application e-mail",
+  "pageOpenFailed": "Impossible d’ouvrir la page",
+  "appInfoSupport": "Informations et assistance",
+  "contactUs": "Nous contacter",
+  "contactUsSubtitle": "Partagez vos commentaires et vos questions",
+  "termsOfService": "Conditions d’utilisation",
+  "termsSubtitle": "Consultez les conditions d’utilisation de l’application",
+  "privacyPolicy": "Politique de confidentialité",
+  "privacySubtitle": "À propos du traitement des données personnelles",
+  "tutorialTitle": "Tutoriel",
+  "tutorialSubtitle": "Apprenez à utiliser l’application",
+  "dataManagement": "Gestion des données",
+  "deleteHistory": "Supprimer l’historique",
+  "deleteHistorySubtitle": "Supprime uniquement l’historique d’entraînement (l’objectif de points est conservé)",
+  "deleteHistoryAndGoal": "Supprimer l’historique et l’objectif",
+  "deleteHistoryAndGoalSubtitle": "Supprime tout l’historique et l’objectif de points",
+  "deleteHistoryConfirmTitle": "Supprimer l’historique",
+  "deleteHistoryConfirmMessage": "Voulez-vous vraiment supprimer tout l’historique d’entraînement ?\n\n*L’objectif de points sera conservé",
+  "deleteHistoryAndGoalConfirmTitle": "Supprimer l’historique et l’objectif",
+  "deleteHistoryAndGoalConfirmMessage": "Voulez-vous vraiment supprimer tout l’historique et l’objectif de points ?\n\n*Cette action est irréversible",
+  "cancel": "Annuler",
+  "delete": "Supprimer",
+  "historyDeleted": "Historique supprimé",
+  "historyAndGoalDeleted": "Historique et objectif supprimés",
+  "historyDeleteFailed": "Échec de la suppression de l’historique",
+  "historyAndGoalDeleteFailed": "Échec de la suppression de l’historique et de l’objectif",
+  "tutorialDisplayFailed": "Échec de l’affichage du tutoriel",
+  "tips": "Astuces",
+  "tipsContent": "• Votre objectif apparaît dans le graphique de l’accueil\n• Commencez modestement et augmentez votre objectif à votre rythme\n• Chaque bonne réponse rapporte jusqu’à 6 points",
+  "backToHome": "Retour à l’accueil",
+  "tutorialSkip": "Passer",
+  "tutorialGoalAndPoints": "Objectif et points actuels",
+  "tutorialGoalDescription": "Le cercle extérieur représente votre objectif, le cercle intérieur vos points cumulés. Le cercle se remplit à mesure que vous approchez de votre objectif.",
+  "tutorialOneMinuteTraining": "Entraînement d’une minute",
+  "tutorialTrainingDescription": "Lancez une partie d’une minute. Choisissez des images positives ou de bonnes habitudes parmi 4 options.",
+  "tutorialScoreProgress": "Évolution du score",
+  "tutorialScoreDescription": "Consultez le détail des scores que vous avez obtenus.",
+  "tutorialSettingsAndData": "Paramètres et gestion des données",
+  "tutorialSettingsDescription": "Modifiez votre objectif, consultez les informations de l’application et réinitialisez les données.",
+  "appIntroAttentionBiasTitle": "À propos du biais attentionnel",
+  "appIntroAttentionBiasContent": "Lorsque l’anxiété est forte, nous avons inconsciemment tendance à ne remarquer que les choses négatives.",
+  "appIntroFocusMintRoleTitle": "Le rôle de FocusMint",
+  "appIntroFocusMintRoleContent": "Un jeu court pour vous exercer à orienter votre attention vers des images positives.",
+  "appIntroScientificEvidenceTitle": "À propos de cet exercice",
+  "appIntroScientificEvidenceContent": "Exercez-vous à trouver des images positives. FocusMint est un outil de bien-être personnel, pas un traitement médical. Les effets varient selon les personnes.",
+  "appIntroExpectedEffectsTitle": "Ce que vous pouvez pratiquer",
+  "appIntroEffect1": "Chercher des images positives",
+  "appIntroEffect2": "Remarquer les sourires autour de vous",
+  "appIntroEffect3": "Créer une courte routine quotidienne",
+  "appIntroHowToUse": "Voir le mode d’emploi",
+  "pointsEarned": "Points gagnés !",
+  "yourScore": "Votre score",
+  "totalPlayTime": "Temps de jeu total",
+  "imageManagement": "Gestion des images",
+  "hiddenImagesCount": "Images masquées : {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Modifications non enregistrées",
+  "unsavedChangesMessage": "Vous avez {count} modifications non enregistrées des paramètres d’affichage des images.",
+  "unsavedChangesWarning": "Les modifications seront perdues si vous fermez cet écran maintenant.",
+  "discardChanges": "Abandonner les modifications",
+  "saveAndExit": "Enregistrer et quitter",
+  "settingsSaved": "{count} paramètres enregistrés",
+  "saveError": "Une erreur est survenue lors de l’enregistrement des paramètres",
+  "imageSettingsUpdated": "Les paramètres d’image ont été mis à jour",
+  "allImages": "Toutes",
+  "positiveImages": "Positives",
+  "negativeImages": "Négatives",
+  "smileImages": "Sourires",
+  "vegetableImages": "Aliments nourrissants",
+  "healthImages": "Mouvement et échanges",
+  "sadImages": "Colère, tristesse et inquiétude",
+  "badFoodImages": "Restauration rapide et sucreries",
+  "badImages": "Habitudes éprouvantes",
+  "imageManagementHint": "Touchez une image pour l’afficher ou la masquer. Vous pouvez masquer jusqu’à 15 images.",
+  "unsaved": "Non enregistré",
+  "save": "Enregistrer",
+  "hiddenImages": "Masquées",
+  "noHiddenImages": "Aucune image masquée",
+  "settingsLoadFailed": "Échec du chargement des paramètres",
+  "imagesAdded": "{count} images ajoutées",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Échec de l’ajout des images",
+  "imageSelectionFailed": "Échec de la sélection des images",
+  "settingsChangeFailed": "Échec de la modification des paramètres",
+  "groupTitle": "Groupe : {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Afficher/Masquer",
+  "imageCount": "{count} images",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Remarques importantes",
+  "notice1": "La fonctionnalité d’images personnalisées a été ajoutée !",
+  "notice2": "Vous pouvez ajouter vos propres images depuis l’écran des paramètres",
+  "notice3": "Consultez l’écran des paramètres pour plus de détails",
+  "customImageTitle": "Images personnalisées",
+  "customImageSubtitle": "Ajoutez et gérez vos propres images",
+  "addCustomImages": "Ajouter des images personnalisées",
+  "selectImages": "Sélectionner des images",
+  "unknownImage": "Image inconnue",
+  "customImageSettings": "Paramètres des images personnalisées",
+  "useCustomImages": "Utiliser des images personnalisées",
+  "useCustomImagesDescription": "Utilisez vos propres images pour vous entraîner. Activez le mélange ci-dessous pour inclure les images intégrées.",
+  "groupSettings": "Paramètres des groupes",
+  "minOneGroupRequired": "Au moins un groupe doit être activé",
+  "settingsLoadFailedMessage": "Échec du chargement des paramètres",
+  "customImageNotice1": "Lorsque des groupes sont activés, les images s’affichent de manière aléatoire pour chaque groupe.",
+  "customImageNotice2": "Les images ajoutées et configurées par l’utilisateur ne sont partagées ni avec les développeurs ni avec des tiers ; elles sont stockées uniquement dans l’espace de l’application sur l’appareil.",
+  "customImageNotice3": "Cela permet une utilisation hors ligne.",
+  "customImageNotice4": "Ajouter de nombreuses images utilise de l’espace de stockage. En cas de problème, désactivez les images personnelles ou supprimez les images inutilisées dans les réglages.",
+  "customImageNotice5": "Si vous supprimez l’application, les images configurées seront supprimées.",
+  "customImageRequirementNotMet": "Pour utiliser des images personnalisées, il faut au moins 1 image « Bien » et 3 images « Pas bien » dans les groupes activés.",
+  "customImageRequirement": "Pour utiliser des images personnalisées, il faut au moins 1 image « Bien » et 3 images « Pas bien » dans les groupes activés.",
+  "sunnyWeather": "Bien",
+  "rainyWeather": "Pas bien",
+  "addImages": "Ajouter des images",
+  "imageDeleted": "Image supprimée",
+  "imageDeleteFailed": "Échec de la suppression de l’image",
+  "deleteImageTitle": "Supprimer l’image",
+  "deleteImageMessage": "Voulez-vous supprimer cette image ? Cette action est irréversible.",
+  "groupImageTitle": "Groupe {groupId} – Images « {weather} »",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Enregistrées : {count} images",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Aucune image enregistrée",
+  "imagePreview": "Aperçu de l’image",
+  "close": "Fermer",
+  "contactEmailSubject": "FocusMint - Contact",
+  "contactEmailBody": "Partagez vos commentaires et vos questions.",
+  "mixWithBuiltInImages": "Mélanger avec les images intégrées",
+  "mixWithBuiltInImagesDescription": "Utiliser à la fois vos images et celles de l’application",
+  "supportIntro": "Échangez anonymement avec le développeur. Questions et suggestions sont les bienvenues. Vous pouvez envoyer 3 messages par jour. Chaque réponse du développeur rétablit votre quota à 3.",
+  "supportReceived": "Message reçu. Nous répondons généralement sous 2 à 3 jours.",
+  "supportComposer": "Écrivez un message",
+  "supportSend": "Envoyer",
+  "supportRetry": "Réessayer",
+  "supportSent": "Envoyé",
+  "supportUnsent": "Non envoyé · enregistré sur cet appareil",
+  "supportAttach": "Joindre une image",
+  "supportRemoveImage": "Retirer l’image",
+  "supportImage": "Pièce jointe",
+  "supportClear": "Supprimer l’historique",
+  "supportClearConfirm": "Supprimer cette conversation ? Les brouillons non envoyés et l’historique sur le serveur seront aussi supprimés. Votre quota ne sera pas réinitialisé.",
+  "supportQuota": "Vous avez utilisé les 3 messages d’aujourd’hui. Envoyez-en un autre demain ou après une réponse du développeur.",
+  "supportConnectionError": "Connexion impossible. Les brouillons enregistrés n’ont pas été envoyés.",
+  "supportSendError": "Envoi impossible. Votre message est enregistré sur cet appareil. Réessayez.",
+  "supportStorageError": "Enregistrement impossible. Réessayez.",
+  "supportClearError": "Impossible de supprimer l’historique. Vérifiez votre connexion et réessayez.",
+  "supportImageError": "Impossible de charger l’image. Choisissez une image de moins de 30 Mo.",
+  "supportRemaining": "Messages restants aujourd’hui : {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Réponses non lues : {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informations",
+  "supportDeveloper": "Développeur",
+  "supportPrivacy": "Données de l’assistance",
+  "breathingTitle": "Prenez le temps de respirer",
+  "breathingHint": "Suivez le mouvement doux des poumons\nà un rythme confortable.",
+  "breathingIn": "Inspirez doucement",
+  "breathingOut": "Expirez doucement",
+  "breathingProgress": "Progression de la respiration",
+  "breathingResultHint": "Vos résultats s’afficheront automatiquement.",
+  "breathingSkip": "Passer aux résultats"
+}

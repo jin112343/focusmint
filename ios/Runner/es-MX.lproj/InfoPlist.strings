@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "Esta app accede a la cámara para agregar imágenes personalizadas para el entrenamiento.";
+"NSPhotoLibraryUsageDescription" = "Selecciona fotos para añadirlas al entrenamiento o adjuntarlas a un mensaje de ayuda.";

@@ -20,7 +20,7 @@
   },
   "goalAchieved": "🎉 Goal Achieved!",
   "startButtonText": "START",
-  "stressReductionMessage": "Reduce stress and improve your mood.",
+  "stressReductionMessage": "Practice noticing the positive.",
   "remainingTimeMinutes": "Time left: {minutes}m {seconds}s",
   "@remainingTimeMinutes": {
     "placeholders": {
@@ -143,7 +143,7 @@
   "historyAndGoalDeleteFailed": "Failed to delete history and goal",
   "tutorialDisplayFailed": "Failed to display tutorial",
   "tips": "Tips",
-  "tipsContent": "• Goal points are reflected in the pie chart on the home screen\n• Start with small goals and gradually increase them when achieved\n• You can earn up to 6 points in a single session",
+  "tipsContent": "• Your goal appears in the home screen chart\n• Start small and increase your goal at your own pace\n• Each correct choice earns up to 6 points",
   "backToHome": "Back to Home",
   "tutorialSkip": "Skip",
   "tutorialGoalAndPoints": "Goal and Current Points",
@@ -157,13 +157,13 @@
   "appIntroAttentionBiasTitle": "About Attention Bias",
   "appIntroAttentionBiasContent": "When anxiety is high, we unconsciously tend to focus only on negative things.",
   "appIntroFocusMintRoleTitle": "FocusMint's Role",
-  "appIntroFocusMintRoleContent": "By practicing selecting positive images, you'll naturally learn to focus your attention on the good side.",
-  "appIntroScientificEvidenceTitle": "Scientific Evidence",
-  "appIntroScientificEvidenceContent": "Research has confirmed that 25 minutes of training significantly reduces anxiety and stress.\n\n(e.g., Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin)",
-  "appIntroExpectedEffectsTitle": "Expected Effects",
-  "appIntroEffect1": "Reduction of anxiety and tension",
-  "appIntroEffect2": "Better awareness of smiles around you",
-  "appIntroEffect3": "Easier social interactions",
+  "appIntroFocusMintRoleContent": "A short game for practicing how you direct your attention to positive images.",
+  "appIntroScientificEvidenceTitle": "About this exercise",
+  "appIntroScientificEvidenceContent": "Practice finding positive images. FocusMint is a self-care exercise, not a medical treatment. Results vary from person to person.",
+  "appIntroExpectedEffectsTitle": "What you can practice",
+  "appIntroEffect1": "Looking for positive images",
+  "appIntroEffect2": "Noticing smiles around you",
+  "appIntroEffect3": "Making time for a short daily routine",
   "appIntroHowToUse": "See How to Use",
   "pointsEarned": "Points Earned!",
   "yourScore": "Your Score",
@@ -249,7 +249,7 @@
   "customImageNotice1": "When groups are enabled, images are displayed randomly for each group.",
   "customImageNotice2": "Images uploaded and set by users are not shared with developers or third parties and are stored only in the app's area on the device.",
   "customImageNotice3": "This allows offline use.",
-  "customImageNotice4": "We are not responsible for customized images. Registering too many images may increase device load and cause malfunctions or poor performance. Please uninstall if the app stops working normally.",
+  "customImageNotice4": "Adding many images uses storage. If you have problems, turn off custom images or remove unused images in Settings.",
   "customImageNotice5": "When you delete the app, the set images will be deleted.",
   "customImageRequirementNotMet": "To use custom images, you need at least 1 good image and 3 not good images in enabled groups.",
   "customImageRequirement": "To use custom images, you need at least 1 good image and 3 not good images in enabled groups.",
@@ -322,23 +322,12 @@
   },
   "supportGuide": "Information",
   "supportDeveloper": "Developer",
-  "supportPrivacy": "About contact data",
+  "supportPrivacy": "About support data",
   "breathingTitle": "Take a breath",
   "breathingHint": "Follow the gentle movement\nof the lungs at a comfortable pace.",
   "breathingIn": "Breathe in",
   "breathingOut": "Breathe out",
-  "breathingRound": "Round {current} of {total}",
   "breathingProgress": "Breathing progress",
   "breathingResultHint": "Your results will appear automatically.",
-  "breathingSkip": "Skip to results",
-  "@breathingRound": {
-    "placeholders": {
-      "current": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  }
+  "breathingSkip": "Skip to results"
 }

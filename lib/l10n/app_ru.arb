@@ -1,0 +1,333 @@
+{
+  "@@locale": "ru",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Текущие баллы",
+  "goalLabel": "Цель: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Осталось: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Цель достигнута!",
+  "startButtonText": "СТАРТ",
+  "stressReductionMessage": "Учитесь замечать хорошее.",
+  "remainingTimeMinutes": "Осталось: {minutes} мин {seconds} с",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Осталось: {seconds} с",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Счёт: {score} баллов",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Подготовка изображений...",
+  "noStimuliAvailable": "Нет доступных стимулов",
+  "invalidGridSize": "Недопустимый размер сетки",
+  "unknown": "?",
+  "gettingStarted": "Начинаем...",
+  "excellentPerformance": "Отличный результат!",
+  "greatJob": "Отличная работа!",
+  "goodPerformance": "Хороший результат",
+  "keepPracticingFeedback": "Продолжайте тренироваться",
+  "takeYourTimeFeedback": "Не торопитесь",
+  "happy": "Радость",
+  "angry": "Гнев",
+  "fear": "Страх",
+  "sad": "Грусть",
+  "historyPageTitle": "История тренировок",
+  "dataLoading": "Загрузка данных...",
+  "pointsHistory": "История баллов",
+  "weekly": "По неделям",
+  "monthly": "По месяцам",
+  "noDataAvailable": "Нет данных",
+  "goalAchievementRate": "Процент достижения цели",
+  "scoreStatistics": "Статистика баллов",
+  "bestScore": "Лучший результат",
+  "totalScore": "Общий счёт",
+  "trainingTime": "Время тренировок",
+  "totalTrainingTime": "Общее время тренировок",
+  "detailedStatistics": "Подробная статистика",
+  "averageScorePerMinute": "Средний счёт в минуту",
+  "pointsToGoal": "Баллов до цели",
+  "goalSetting": "Настройка цели",
+  "secondsUnit": "с",
+  "minutesUnit": "мин",
+  "hoursUnit": "ч",
+  "pointsUnit": "баллов",
+  "monthSuffix": "",
+  "sundayShort": "Вс",
+  "mondayShort": "Пн",
+  "tuesdayShort": "Вт",
+  "wednesdayShort": "Ср",
+  "thursdayShort": "Чт",
+  "fridayShort": "Пт",
+  "saturdayShort": "Сб",
+  "settingsTitle": "Настройки",
+  "goalPointsSetting": "Целевые баллы",
+  "currentGoalPoints": "Текущая цель: {points} баллов",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Новая цель (баллы)",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "баллов",
+  "saveGoalButton": "Сохранить цель",
+  "goalSetTo": "Цель установлена: {points} баллов",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Введите целевые баллы",
+  "enterValidNumber": "Введите корректное число (от 1 до 99999999)",
+  "saveFailed": "Не удалось сохранить некоторые настройки",
+  "emailOpenFailed": "Не удалось открыть почтовое приложение",
+  "pageOpenFailed": "Не удалось открыть страницу",
+  "appInfoSupport": "О приложении и поддержка",
+  "contactUs": "Связаться с нами",
+  "contactUsSubtitle": "Поделитесь отзывами и вопросами",
+  "termsOfService": "Условия использования",
+  "termsSubtitle": "Ознакомьтесь с условиями использования приложения",
+  "privacyPolicy": "Политика конфиденциальности",
+  "privacySubtitle": "Об обращении с личными данными",
+  "tutorialTitle": "Обучение",
+  "tutorialSubtitle": "Узнайте, как пользоваться приложением",
+  "dataManagement": "Управление данными",
+  "deleteHistory": "Удалить историю",
+  "deleteHistorySubtitle": "Удаляется только история тренировок (целевые баллы сохраняются)",
+  "deleteHistoryAndGoal": "Удалить историю и цель",
+  "deleteHistoryAndGoalSubtitle": "Удаляются вся история и целевые баллы",
+  "deleteHistoryConfirmTitle": "Удалить историю",
+  "deleteHistoryConfirmMessage": "Вы действительно хотите удалить всю историю тренировок?\n\n*Целевые баллы будут сохранены",
+  "deleteHistoryAndGoalConfirmTitle": "Удалить историю и цель",
+  "deleteHistoryAndGoalConfirmMessage": "Вы действительно хотите удалить всю историю и целевые баллы?\n\n*Это действие нельзя отменить",
+  "cancel": "Отмена",
+  "delete": "Удалить",
+  "historyDeleted": "История удалена",
+  "historyAndGoalDeleted": "История и цель удалены",
+  "historyDeleteFailed": "Не удалось удалить историю",
+  "historyAndGoalDeleteFailed": "Не удалось удалить историю и цель",
+  "tutorialDisplayFailed": "Не удалось показать обучение",
+  "tips": "Советы",
+  "tipsContent": "• Цель отображается на диаграмме главного экрана\n• Начните с небольшой цели и повышайте её в своём темпе\n• Каждый правильный выбор приносит до 6 баллов",
+  "backToHome": "На главный экран",
+  "tutorialSkip": "Пропустить",
+  "tutorialGoalAndPoints": "Цель и текущие баллы",
+  "tutorialGoalDescription": "Внешний круг показывает цель, внутренний — сумму баллов. Круг заполняется по мере приближения к цели.",
+  "tutorialOneMinuteTraining": "Тренировка за 1 минуту",
+  "tutorialTrainingDescription": "Начните игру длительностью 1 минута. Выбирайте позитивные изображения или полезные привычки из 4 вариантов.",
+  "tutorialScoreProgress": "Динамика счёта",
+  "tutorialScoreDescription": "Просматривайте подробную информацию о набранных баллах.",
+  "tutorialSettingsAndData": "Настройки и управление данными",
+  "tutorialSettingsDescription": "Изменяйте цель, просматривайте информацию о приложении и сбрасывайте данные.",
+  "appIntroAttentionBiasTitle": "О смещении внимания",
+  "appIntroAttentionBiasContent": "При сильной тревоге мы неосознанно склонны замечать только негативное.",
+  "appIntroFocusMintRoleTitle": "Роль FocusMint",
+  "appIntroFocusMintRoleContent": "Короткая игра для тренировки внимания к позитивным изображениям.",
+  "appIntroScientificEvidenceTitle": "Об этом упражнении",
+  "appIntroScientificEvidenceContent": "Тренируйтесь находить позитивные изображения. FocusMint — инструмент заботы о себе, а не медицинское лечение. Результаты могут отличаться у разных людей.",
+  "appIntroExpectedEffectsTitle": "Что можно практиковать",
+  "appIntroEffect1": "Поиск позитивных изображений",
+  "appIntroEffect2": "Внимание к улыбкам вокруг",
+  "appIntroEffect3": "Короткая ежедневная привычка",
+  "appIntroHowToUse": "Как пользоваться",
+  "pointsEarned": "Баллы получены!",
+  "yourScore": "Ваш счёт",
+  "totalPlayTime": "Общее время игры",
+  "imageManagement": "Управление изображениями",
+  "hiddenImagesCount": "Скрытые изображения: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Есть несохранённые изменения",
+  "unsavedChangesMessage": "У вас {count} несохранённых изменений настроек отображения изображений.",
+  "unsavedChangesWarning": "Если закрыть этот экран сейчас, изменения будут потеряны.",
+  "discardChanges": "Отменить изменения",
+  "saveAndExit": "Сохранить и выйти",
+  "settingsSaved": "Сохранено настроек: {count}",
+  "saveError": "При сохранении настроек произошла ошибка",
+  "imageSettingsUpdated": "Настройки изображений обновлены",
+  "allImages": "Все",
+  "positiveImages": "Позитивные",
+  "negativeImages": "Негативные",
+  "smileImages": "Улыбки",
+  "vegetableImages": "Питательная еда",
+  "healthImages": "Движение и общение",
+  "sadImages": "Злость, грусть и беспокойство",
+  "badFoodImages": "Фастфуд и сладости",
+  "badImages": "Нездоровые привычки",
+  "imageManagementHint": "Нажмите, чтобы показать или скрыть изображение. Можно скрыть до 15 изображений.",
+  "unsaved": "Не сохранено",
+  "save": "Сохранить",
+  "hiddenImages": "Скрытые",
+  "noHiddenImages": "Нет скрытых изображений",
+  "settingsLoadFailed": "Не удалось загрузить настройки",
+  "imagesAdded": "Добавлено изображений: {count}",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Не удалось добавить изображения",
+  "imageSelectionFailed": "Не удалось выбрать изображения",
+  "settingsChangeFailed": "Не удалось изменить настройки",
+  "groupTitle": "Группа: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Показ/скрытие",
+  "imageCount": "Изображений: {count}",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Важные примечания",
+  "notice1": "Добавлена функция пользовательских изображений!",
+  "notice2": "Вы можете добавить свои изображения на экране настроек",
+  "notice3": "Подробности см. на экране настроек",
+  "customImageTitle": "Пользовательские изображения",
+  "customImageSubtitle": "Добавляйте свои изображения и управляйте ими",
+  "addCustomImages": "Добавить свои изображения",
+  "selectImages": "Выбрать изображения",
+  "unknownImage": "Неизвестное изображение",
+  "customImageSettings": "Настройки пользовательских изображений",
+  "useCustomImages": "Использовать свои изображения",
+  "useCustomImagesDescription": "Используйте свои изображения для тренировки. Включите смешивание ниже, чтобы добавить изображения приложения.",
+  "groupSettings": "Настройки групп",
+  "minOneGroupRequired": "Должна быть включена хотя бы одна группа",
+  "settingsLoadFailedMessage": "Не удалось загрузить настройки",
+  "customImageNotice1": "Если группы включены, изображения показываются случайным образом для каждой группы.",
+  "customImageNotice2": "Загруженные и установленные вами изображения не передаются разработчикам или третьим лицам и хранятся только в области приложения на устройстве.",
+  "customImageNotice3": "Благодаря этому приложение можно использовать офлайн.",
+  "customImageNotice4": "Большое количество изображений занимает память. При проблемах отключите свои изображения или удалите ненужные в настройках.",
+  "customImageNotice5": "При удалении приложения установленные изображения будут удалены.",
+  "customImageRequirementNotMet": "Чтобы использовать свои изображения, во включённых группах нужно минимум 1 изображение в категории «Хорошие» и 3 изображения в категории «Нехорошие».",
+  "customImageRequirement": "Чтобы использовать свои изображения, во включённых группах нужно минимум 1 изображение в категории «Хорошие» и 3 изображения в категории «Нехорошие».",
+  "sunnyWeather": "Хорошие",
+  "rainyWeather": "Нехорошие",
+  "addImages": "Добавить изображения",
+  "imageDeleted": "Изображение удалено",
+  "imageDeleteFailed": "Не удалось удалить изображение",
+  "deleteImageTitle": "Удалить изображение",
+  "deleteImageMessage": "Удалить это изображение? Это действие нельзя отменить.",
+  "groupImageTitle": "Группа {groupId} — изображения «{weather}»",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Добавлено: {count} изображений",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Нет добавленных изображений",
+  "imagePreview": "Просмотр изображения",
+  "close": "Закрыть",
+  "contactEmailSubject": "FocusMint - Обратная связь",
+  "contactEmailBody": "Пожалуйста, поделитесь отзывами и вопросами.",
+  "mixWithBuiltInImages": "Смешивать с изображениями приложения",
+  "mixWithBuiltInImagesDescription": "Использовать свои изображения вместе с изображениями приложения",
+  "supportIntro": "Общайтесь с разработчиком анонимно. Вопросы и предложения приветствуются. Можно отправить 3 сообщения в день. Каждый ответ разработчика восстанавливает доступное количество до 3.",
+  "supportReceived": "Сообщение получено. Обычно мы отвечаем в течение 2–3 дней.",
+  "supportComposer": "Введите сообщение",
+  "supportSend": "Отправить",
+  "supportRetry": "Повторить",
+  "supportSent": "Отправлено",
+  "supportUnsent": "Не отправлено · сохранено на этом устройстве",
+  "supportAttach": "Прикрепить изображение",
+  "supportRemoveImage": "Убрать изображение",
+  "supportImage": "Вложение",
+  "supportClear": "Удалить историю",
+  "supportClearConfirm": "Удалить этот разговор? Неотправленные черновики и история на сервере также будут удалены. Лимит сообщений не восстановится.",
+  "supportQuota": "Сегодняшние 3 сообщения использованы. Отправьте новое завтра или после ответа разработчика.",
+  "supportConnectionError": "Не удалось подключиться. Сохранённые черновики не отправлены.",
+  "supportSendError": "Не удалось отправить. Сообщение сохранено на этом устройстве. Повторите попытку.",
+  "supportStorageError": "Не удалось сохранить. Повторите попытку.",
+  "supportClearError": "Не удалось удалить историю. Проверьте подключение и повторите попытку.",
+  "supportImageError": "Не удалось загрузить изображение. Выберите изображение размером менее 30 МБ.",
+  "supportRemaining": "Осталось сообщений сегодня: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Непрочитанные ответы: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Информация",
+  "supportDeveloper": "Разработчик",
+  "supportPrivacy": "О данных обращения",
+  "breathingTitle": "Сделайте спокойный вдох",
+  "breathingHint": "Следуйте плавному движению лёгких\nв комфортном для вас темпе.",
+  "breathingIn": "Медленно вдохните",
+  "breathingOut": "Медленно выдохните",
+  "breathingProgress": "Ход дыхательного упражнения",
+  "breathingResultHint": "Результаты появятся автоматически.",
+  "breathingSkip": "Перейти к результатам"
+}

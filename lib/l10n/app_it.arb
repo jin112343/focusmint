@@ -1,0 +1,333 @@
+{
+  "@@locale": "it",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Punti attuali",
+  "goalLabel": "Obiettivo: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Rimanenti: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Obiettivo raggiunto!",
+  "startButtonText": "INIZIA",
+  "stressReductionMessage": "Esercitati a notare gli aspetti positivi.",
+  "remainingTimeMinutes": "Tempo rimanente: {minutes}m {seconds}s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Tempo rimanente: {seconds}s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Punteggio: {score} punti",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Preparazione delle immagini...",
+  "noStimuliAvailable": "Nessuno stimolo disponibile",
+  "invalidGridSize": "Dimensione della griglia non valida",
+  "unknown": "?",
+  "gettingStarted": "Avvio in corso...",
+  "excellentPerformance": "Prestazione eccellente!",
+  "greatJob": "Ottimo lavoro!",
+  "goodPerformance": "Buona prestazione",
+  "keepPracticingFeedback": "Continua ad allenarti",
+  "takeYourTimeFeedback": "Prenditi il tuo tempo",
+  "happy": "Felice",
+  "angry": "Arrabbiato",
+  "fear": "Paura",
+  "sad": "Triste",
+  "historyPageTitle": "Cronologia degli allenamenti",
+  "dataLoading": "Caricamento dei dati...",
+  "pointsHistory": "Cronologia punti",
+  "weekly": "Settimanale",
+  "monthly": "Mensile",
+  "noDataAvailable": "Nessun dato disponibile",
+  "goalAchievementRate": "Tasso di raggiungimento dell'obiettivo",
+  "scoreStatistics": "Statistiche del punteggio",
+  "bestScore": "Miglior punteggio",
+  "totalScore": "Punteggio totale",
+  "trainingTime": "Tempo di allenamento",
+  "totalTrainingTime": "Tempo totale di allenamento",
+  "detailedStatistics": "Statistiche dettagliate",
+  "averageScorePerMinute": "Punteggio medio al minuto",
+  "pointsToGoal": "Punti all'obiettivo",
+  "goalSetting": "Impostazione dell'obiettivo",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "punti",
+  "monthSuffix": "",
+  "sundayShort": "Dom",
+  "mondayShort": "Lun",
+  "tuesdayShort": "Mar",
+  "wednesdayShort": "Mer",
+  "thursdayShort": "Gio",
+  "fridayShort": "Ven",
+  "saturdayShort": "Sab",
+  "settingsTitle": "Impostazioni",
+  "goalPointsSetting": "Impostazione punti obiettivo",
+  "currentGoalPoints": "Obiettivo attuale: {points} punti",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Nuovi punti obiettivo",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "punti",
+  "saveGoalButton": "Salva obiettivo",
+  "goalSetTo": "Obiettivo impostato su {points} punti",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Inserisci i punti obiettivo",
+  "enterValidNumber": "Inserisci un numero valido (da 1 a 99999999)",
+  "saveFailed": "Salvataggio di alcune impostazioni non riuscito",
+  "emailOpenFailed": "Impossibile aprire l'app di posta",
+  "pageOpenFailed": "Impossibile aprire la pagina",
+  "appInfoSupport": "Info app e supporto",
+  "contactUs": "Contattaci",
+  "contactUsSubtitle": "Inviaci i tuoi commenti e le tue domande",
+  "termsOfService": "Termini di servizio",
+  "termsSubtitle": "Consulta i termini di servizio dell'app",
+  "privacyPolicy": "Informativa sulla privacy",
+  "privacySubtitle": "Sul trattamento delle informazioni personali",
+  "tutorialTitle": "Tutorial",
+  "tutorialSubtitle": "Scopri come usare l'app",
+  "dataManagement": "Gestione dei dati",
+  "deleteHistory": "Elimina cronologia",
+  "deleteHistorySubtitle": "Elimina solo la cronologia degli allenamenti (i punti obiettivo vengono conservati)",
+  "deleteHistoryAndGoal": "Elimina cronologia e obiettivo",
+  "deleteHistoryAndGoalSubtitle": "Elimina tutta la cronologia e i punti obiettivo",
+  "deleteHistoryConfirmTitle": "Elimina cronologia",
+  "deleteHistoryConfirmMessage": "Vuoi davvero eliminare tutta la cronologia degli allenamenti?\n\n*I punti obiettivo verranno conservati",
+  "deleteHistoryAndGoalConfirmTitle": "Elimina cronologia e obiettivo",
+  "deleteHistoryAndGoalConfirmMessage": "Vuoi davvero eliminare tutta la cronologia e i punti obiettivo?\n\n*Questa azione non può essere annullata",
+  "cancel": "Annulla",
+  "delete": "Elimina",
+  "historyDeleted": "Cronologia eliminata",
+  "historyAndGoalDeleted": "Cronologia e obiettivo eliminati",
+  "historyDeleteFailed": "Eliminazione della cronologia non riuscita",
+  "historyAndGoalDeleteFailed": "Eliminazione della cronologia e dell'obiettivo non riuscita",
+  "tutorialDisplayFailed": "Impossibile mostrare il tutorial",
+  "tips": "Suggerimenti",
+  "tipsContent": "• Il tuo obiettivo appare nel grafico della schermata iniziale\n• Inizia con un piccolo obiettivo e aumentalo al tuo ritmo\n• Ogni scelta corretta vale fino a 6 punti",
+  "backToHome": "Torna alla home",
+  "tutorialSkip": "Salta",
+  "tutorialGoalAndPoints": "Obiettivo e punti attuali",
+  "tutorialGoalDescription": "Il cerchio esterno mostra l'obiettivo, quello interno i punti totali. Il cerchio si riempie man mano che ti avvicini all'obiettivo.",
+  "tutorialOneMinuteTraining": "Allenamento di 1 minuto",
+  "tutorialTrainingDescription": "Avvia un gioco di 1 minuto. Scegli immagini positive o buone abitudini tra 4 opzioni.",
+  "tutorialScoreProgress": "Andamento del punteggio",
+  "tutorialScoreDescription": "Consulta informazioni dettagliate sui punteggi ottenuti.",
+  "tutorialSettingsAndData": "Impostazioni e gestione dei dati",
+  "tutorialSettingsDescription": "Modifica l'obiettivo, consulta le informazioni sull'app e reimposta i dati.",
+  "appIntroAttentionBiasTitle": "Il bias attentivo",
+  "appIntroAttentionBiasContent": "Quando l'ansia è alta, tendiamo inconsciamente a concentrarci solo sulle cose negative.",
+  "appIntroFocusMintRoleTitle": "Il ruolo di FocusMint",
+  "appIntroFocusMintRoleContent": "Un breve gioco per esercitarti a rivolgere l’attenzione alle immagini positive.",
+  "appIntroScientificEvidenceTitle": "Informazioni sull’esercizio",
+  "appIntroScientificEvidenceContent": "Esercitati a trovare immagini positive. FocusMint è uno strumento per il benessere personale, non un trattamento medico. I risultati variano da persona a persona.",
+  "appIntroExpectedEffectsTitle": "Cosa puoi esercitare",
+  "appIntroEffect1": "Cercare immagini positive",
+  "appIntroEffect2": "Notare i sorrisi intorno a te",
+  "appIntroEffect3": "Creare una breve abitudine quotidiana",
+  "appIntroHowToUse": "Scopri come si usa",
+  "pointsEarned": "Punti guadagnati!",
+  "yourScore": "Il tuo punteggio",
+  "totalPlayTime": "Tempo di gioco totale",
+  "imageManagement": "Gestione delle immagini",
+  "hiddenImagesCount": "Immagini nascoste: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Ci sono modifiche non salvate",
+  "unsavedChangesMessage": "Hai {count} modifiche non salvate alle impostazioni di visualizzazione delle immagini.",
+  "unsavedChangesWarning": "Se chiudi questa schermata ora, le modifiche andranno perse.",
+  "discardChanges": "Ignora modifiche",
+  "saveAndExit": "Salva ed esci",
+  "settingsSaved": "{count} impostazioni salvate",
+  "saveError": "Si è verificato un errore durante il salvataggio delle impostazioni",
+  "imageSettingsUpdated": "Le impostazioni delle immagini sono state aggiornate",
+  "allImages": "Tutte",
+  "positiveImages": "Positive",
+  "negativeImages": "Negative",
+  "smileImages": "Sorrisi",
+  "vegetableImages": "Alimenti nutrienti",
+  "healthImages": "Movimento e relazioni",
+  "sadImages": "Rabbia, tristezza e preoccupazione",
+  "badFoodImages": "Cibo da fast food e dolci",
+  "badImages": "Abitudini poco salutari",
+  "imageManagementHint": "Tocca per mostrare o nascondere un'immagine. Puoi nascondere fino a 15 immagini.",
+  "unsaved": "Non salvato",
+  "save": "Salva",
+  "hiddenImages": "Nascoste",
+  "noHiddenImages": "Nessuna immagine nascosta",
+  "settingsLoadFailed": "Caricamento delle impostazioni non riuscito",
+  "imagesAdded": "{count} immagini aggiunte",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Aggiunta delle immagini non riuscita",
+  "imageSelectionFailed": "Selezione delle immagini non riuscita",
+  "settingsChangeFailed": "Modifica delle impostazioni non riuscita",
+  "groupTitle": "Gruppo: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Mostra/nascondi",
+  "imageCount": "{count} immagini",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Note importanti",
+  "notice1": "È stata aggiunta la funzione immagini personalizzate!",
+  "notice2": "Puoi aggiungere le tue immagini dalla schermata delle impostazioni",
+  "notice3": "Consulta la schermata delle impostazioni per i dettagli",
+  "customImageTitle": "Immagini personalizzate",
+  "customImageSubtitle": "Aggiungi e gestisci le tue immagini",
+  "addCustomImages": "Aggiungi immagini personalizzate",
+  "selectImages": "Seleziona immagini",
+  "unknownImage": "Immagine sconosciuta",
+  "customImageSettings": "Impostazioni immagini personalizzate",
+  "useCustomImages": "Usa immagini personalizzate",
+  "useCustomImagesDescription": "Usa le tue immagini per esercitarti. Attiva la combinazione qui sotto per includere quelle dell’app.",
+  "groupSettings": "Impostazioni dei gruppi",
+  "minOneGroupRequired": "Almeno un gruppo deve essere attivo",
+  "settingsLoadFailedMessage": "Caricamento delle impostazioni non riuscito",
+  "customImageNotice1": "Quando i gruppi sono attivi, le immagini vengono mostrate in modo casuale per ciascun gruppo.",
+  "customImageNotice2": "Le immagini caricate e impostate dagli utenti non vengono condivise con gli sviluppatori o terze parti e vengono salvate solo nell'area dell'app sul dispositivo.",
+  "customImageNotice3": "Questo consente l'uso offline.",
+  "customImageNotice4": "Aggiungere molte immagini occupa spazio. In caso di problemi, disattiva le immagini personali o elimina quelle inutilizzate nelle impostazioni.",
+  "customImageNotice5": "Quando elimini l'app, le immagini impostate vengono eliminate.",
+  "customImageRequirementNotMet": "Per usare le immagini personalizzate servono almeno 1 immagine buona e 3 immagini non buone nei gruppi attivi.",
+  "customImageRequirement": "Per usare le immagini personalizzate servono almeno 1 immagine buona e 3 immagini non buone nei gruppi attivi.",
+  "sunnyWeather": "Buone",
+  "rainyWeather": "Non buone",
+  "addImages": "Aggiungi immagini",
+  "imageDeleted": "Immagine eliminata",
+  "imageDeleteFailed": "Eliminazione dell'immagine non riuscita",
+  "deleteImageTitle": "Elimina immagine",
+  "deleteImageMessage": "Vuoi eliminare questa immagine? Questa azione non può essere annullata.",
+  "groupImageTitle": "Immagini {weather} del gruppo {groupId}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Registrate: {count} immagini",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Nessuna immagine registrata",
+  "imagePreview": "Anteprima immagine",
+  "close": "Chiudi",
+  "contactEmailSubject": "FocusMint - Contatto",
+  "contactEmailBody": "Scrivi qui i tuoi commenti e le tue domande.",
+  "mixWithBuiltInImages": "Combina con le immagini dell’app",
+  "mixWithBuiltInImagesDescription": "Usa insieme le tue immagini e quelle dell’app",
+  "supportIntro": "Scrivi in forma anonima allo sviluppatore. Domande e suggerimenti sono benvenuti. Puoi inviare 3 messaggi al giorno. Ogni risposta dello sviluppatore riporta il limite disponibile a 3.",
+  "supportReceived": "Messaggio ricevuto. Di solito rispondiamo entro 2–3 giorni.",
+  "supportComposer": "Scrivi un messaggio",
+  "supportSend": "Invia",
+  "supportRetry": "Riprova",
+  "supportSent": "Inviato",
+  "supportUnsent": "Non inviato · salvato su questo dispositivo",
+  "supportAttach": "Allega immagine",
+  "supportRemoveImage": "Rimuovi immagine",
+  "supportImage": "Allegato",
+  "supportClear": "Elimina cronologia",
+  "supportClearConfirm": "Eliminare questa conversazione? Verranno eliminati anche le bozze non inviate e la cronologia sul server. Il limite disponibile non verrà ripristinato.",
+  "supportQuota": "Hai usato i 3 messaggi di oggi. Puoi scrivere domani o dopo una risposta dello sviluppatore.",
+  "supportConnectionError": "Connessione non riuscita. Le bozze salvate non sono state inviate.",
+  "supportSendError": "Invio non riuscito. Il messaggio è salvato su questo dispositivo. Riprova.",
+  "supportStorageError": "Salvataggio non riuscito. Riprova.",
+  "supportClearError": "Impossibile eliminare la cronologia. Controlla la connessione e riprova.",
+  "supportImageError": "Impossibile caricare l’immagine. Scegli un’immagine inferiore a 30 MB.",
+  "supportRemaining": "Messaggi disponibili oggi: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Risposte non lette: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informazioni",
+  "supportDeveloper": "Sviluppatore",
+  "supportPrivacy": "Informazioni sui dati di contatto",
+  "breathingTitle": "Prenditi un respiro",
+  "breathingHint": "Segui il movimento delicato dei polmoni\na un ritmo confortevole.",
+  "breathingIn": "Inspira lentamente",
+  "breathingOut": "Espira lentamente",
+  "breathingProgress": "Avanzamento della respirazione",
+  "breathingResultHint": "I risultati appariranno automaticamente.",
+  "breathingSkip": "Vai ai risultati"
+}

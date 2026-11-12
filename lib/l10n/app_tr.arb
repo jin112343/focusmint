@@ -1,0 +1,333 @@
+{
+  "@@locale": "tr",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Mevcut Puan",
+  "goalLabel": "Hedef: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Kalan: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Hedefe Ulaşıldı!",
+  "startButtonText": "BAŞLA",
+  "stressReductionMessage": "Olumlu şeyleri fark etmeyi çalışın.",
+  "remainingTimeMinutes": "Kalan süre: {minutes} dk {seconds} sn",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Kalan süre: {seconds} sn",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Skor: {score} Puan",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Görseller hazırlanıyor...",
+  "noStimuliAvailable": "Kullanılabilir uyaran yok",
+  "invalidGridSize": "Geçersiz ızgara boyutu",
+  "unknown": "?",
+  "gettingStarted": "Başlıyor...",
+  "excellentPerformance": "Mükemmel performans!",
+  "greatJob": "Harika iş!",
+  "goodPerformance": "İyi performans",
+  "keepPracticingFeedback": "Pratik yapmaya devam edin",
+  "takeYourTimeFeedback": "Acele etmeyin",
+  "happy": "Mutlu",
+  "angry": "Kızgın",
+  "fear": "Korku",
+  "sad": "Üzgün",
+  "historyPageTitle": "Antrenman Geçmişi",
+  "dataLoading": "Veriler yükleniyor...",
+  "pointsHistory": "Puan Geçmişi",
+  "weekly": "Haftalık",
+  "monthly": "Aylık",
+  "noDataAvailable": "Veri yok",
+  "goalAchievementRate": "Hedefe Ulaşma Oranı",
+  "scoreStatistics": "Skor İstatistikleri",
+  "bestScore": "En İyi Skor",
+  "totalScore": "Toplam Skor",
+  "trainingTime": "Antrenman Süresi",
+  "totalTrainingTime": "Toplam Antrenman Süresi",
+  "detailedStatistics": "Ayrıntılı İstatistikler",
+  "averageScorePerMinute": "Dakika başına ortalama skor",
+  "pointsToGoal": "Hedefe kalan puan",
+  "goalSetting": "Hedef belirleme",
+  "secondsUnit": "sn",
+  "minutesUnit": "dk",
+  "hoursUnit": "sa",
+  "pointsUnit": "puan",
+  "monthSuffix": "",
+  "sundayShort": "Paz",
+  "mondayShort": "Pzt",
+  "tuesdayShort": "Sal",
+  "wednesdayShort": "Çar",
+  "thursdayShort": "Per",
+  "fridayShort": "Cum",
+  "saturdayShort": "Cmt",
+  "settingsTitle": "Ayarlar",
+  "goalPointsSetting": "Hedef Puan Ayarı",
+  "currentGoalPoints": "Mevcut hedef: {points} puan",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Yeni hedef puanı",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "puan",
+  "saveGoalButton": "Hedefi Kaydet",
+  "goalSetTo": "Hedef {points} puan olarak ayarlandı",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Lütfen hedef puanı girin",
+  "enterValidNumber": "Lütfen geçerli bir sayı girin (1 ile 99999999 arası)",
+  "saveFailed": "Bazı ayarlar kaydedilemedi",
+  "emailOpenFailed": "E-posta uygulaması açılamadı",
+  "pageOpenFailed": "Sayfa açılamadı",
+  "appInfoSupport": "Uygulama Bilgisi ve Destek",
+  "contactUs": "Bize Ulaşın",
+  "contactUsSubtitle": "Görüş ve sorularınızı bizimle paylaşın",
+  "termsOfService": "Kullanım Koşulları",
+  "termsSubtitle": "Uygulamanın kullanım koşullarını inceleyin",
+  "privacyPolicy": "Gizlilik Politikası",
+  "privacySubtitle": "Gizlilik bilgilerinin işlenmesi hakkında",
+  "tutorialTitle": "Eğitim",
+  "tutorialSubtitle": "Uygulamanın nasıl kullanılacağını öğrenin",
+  "dataManagement": "Veri Yönetimi",
+  "deleteHistory": "Geçmişi Sil",
+  "deleteHistorySubtitle": "Yalnızca antrenman geçmişini siler (hedef puan korunur)",
+  "deleteHistoryAndGoal": "Geçmişi ve Hedefi Sil",
+  "deleteHistoryAndGoalSubtitle": "Tüm geçmişi ve hedef puanı siler",
+  "deleteHistoryConfirmTitle": "Geçmişi Sil",
+  "deleteHistoryConfirmMessage": "Tüm antrenman geçmişini silmek istediğinizden emin misiniz?\n\n*Hedef puan korunacaktır",
+  "deleteHistoryAndGoalConfirmTitle": "Geçmişi ve Hedefi Sil",
+  "deleteHistoryAndGoalConfirmMessage": "Tüm geçmişi ve hedef puanı silmek istediğinizden emin misiniz?\n\n*Bu işlem geri alınamaz",
+  "cancel": "İptal",
+  "delete": "Sil",
+  "historyDeleted": "Geçmiş silindi",
+  "historyAndGoalDeleted": "Geçmiş ve hedef silindi",
+  "historyDeleteFailed": "Geçmiş silinemedi",
+  "historyAndGoalDeleteFailed": "Geçmiş ve hedef silinemedi",
+  "tutorialDisplayFailed": "Eğitim görüntülenemedi",
+  "tips": "İpuçları",
+  "tipsContent": "• Hedefiniz ana ekrandaki grafikte görünür\n• Küçük bir hedefle başlayın ve kendi hızınızda artırın\n• Her doğru seçim en fazla 6 puan kazandırır",
+  "backToHome": "Ana Ekrana Dön",
+  "tutorialSkip": "Atla",
+  "tutorialGoalAndPoints": "Hedef ve Mevcut Puan",
+  "tutorialGoalDescription": "Dış daire hedefinizi, iç daire toplam puanınızı gösterir. Hedefinize yaklaştıkça daire dolar.",
+  "tutorialOneMinuteTraining": "1 Dakikalık Antrenman",
+  "tutorialTrainingDescription": "1 dakikalık bir oyun başlatın. 4 seçenek arasından pozitif görselleri veya iyi alışkanlıkları seçin.",
+  "tutorialScoreProgress": "Skor Gelişimi",
+  "tutorialScoreDescription": "Kazandığınız skorlarla ilgili ayrıntılı bilgileri görüntüleyin.",
+  "tutorialSettingsAndData": "Ayarlar ve Veri Yönetimi",
+  "tutorialSettingsDescription": "Hedef değerlerini değiştirin, uygulama bilgilerini görüntüleyin ve verileri sıfırlayın.",
+  "appIntroAttentionBiasTitle": "Dikkat Yanlılığı Hakkında",
+  "appIntroAttentionBiasContent": "Kaygı yüksek olduğunda, farkında olmadan yalnızca olumsuz şeylere odaklanma eğilimi gösteririz.",
+  "appIntroFocusMintRoleTitle": "FocusMint'in Rolü",
+  "appIntroFocusMintRoleContent": "Dikkatinizi olumlu görsellere yöneltmeyi çalışmak için kısa bir oyun.",
+  "appIntroScientificEvidenceTitle": "Bu alıştırma hakkında",
+  "appIntroScientificEvidenceContent": "Olumlu görselleri bulmayı çalışın. FocusMint bir kişisel bakım aracıdır, tıbbi tedavi değildir. Sonuçlar kişiden kişiye değişebilir.",
+  "appIntroExpectedEffectsTitle": "Neleri çalışabilirsiniz?",
+  "appIntroEffect1": "Olumlu görseller aramak",
+  "appIntroEffect2": "Çevrenizdeki gülümsemeleri fark etmek",
+  "appIntroEffect3": "Kısa bir günlük alışkanlık oluşturmak",
+  "appIntroHowToUse": "Nasıl Kullanılır",
+  "pointsEarned": "Puan Kazanıldı!",
+  "yourScore": "Skorunuz",
+  "totalPlayTime": "Toplam Oyun Süresi",
+  "imageManagement": "Görsel Yönetimi",
+  "hiddenImagesCount": "Gizlenen görseller: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Kaydedilmemiş değişiklikleriniz var",
+  "unsavedChangesMessage": "Görsel görüntüleme ayarlarında {count} kaydedilmemiş değişiklik var.",
+  "unsavedChangesWarning": "Bu ekranı şimdi kapatırsanız değişiklikler kaybolur.",
+  "discardChanges": "Değişiklikleri Yoksay",
+  "saveAndExit": "Kaydet ve Çık",
+  "settingsSaved": "{count} ayar kaydedildi",
+  "saveError": "Ayarlar kaydedilirken bir hata oluştu",
+  "imageSettingsUpdated": "Görsel ayarları güncellendi",
+  "allImages": "Tümü",
+  "positiveImages": "Pozitif",
+  "negativeImages": "Negatif",
+  "smileImages": "Gülümseme",
+  "vegetableImages": "Besleyici yiyecekler",
+  "healthImages": "Hareket ve sosyal bağlar",
+  "sadImages": "Öfke, üzüntü ve kaygı",
+  "badFoodImages": "Fast food ve tatlılar",
+  "badImages": "Sağlıksız alışkanlıklar",
+  "imageManagementHint": "Görselin görünürlüğünü değiştirmek için dokunun. En fazla 15 görseli gizleyebilirsiniz.",
+  "unsaved": "Kaydedilmedi",
+  "save": "Kaydet",
+  "hiddenImages": "Gizli",
+  "noHiddenImages": "Gizlenen görsel yok",
+  "settingsLoadFailed": "Ayarlar yüklenemedi",
+  "imagesAdded": "{count} görsel eklendi",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Görseller eklenemedi",
+  "imageSelectionFailed": "Görseller seçilemedi",
+  "settingsChangeFailed": "Ayarlar değiştirilemedi",
+  "groupTitle": "Grup: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Görünürlük Değiştirme",
+  "imageCount": "{count} görsel",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Önemli Notlar",
+  "notice1": "Özel görsel özelliği eklendi!",
+  "notice2": "Ayarlar ekranından kendi görsellerinizi ekleyebilirsiniz",
+  "notice3": "Ayrıntılar için lütfen ayarlar ekranını kontrol edin",
+  "customImageTitle": "Özel Görseller",
+  "customImageSubtitle": "Kendi görsellerinizi ekleyin ve yönetin",
+  "addCustomImages": "Özel Görsel Ekle",
+  "selectImages": "Görsel Seç",
+  "unknownImage": "Bilinmeyen Görsel",
+  "customImageSettings": "Özel Görsel Ayarları",
+  "useCustomImages": "Özel Görselleri Kullan",
+  "useCustomImagesDescription": "Alıştırmada kendi görsellerinizi kullanın. Uygulamanın görsellerini de eklemek için aşağıdaki karıştırma seçeneğini açın.",
+  "groupSettings": "Grup Ayarları",
+  "minOneGroupRequired": "En az bir grup etkin olmalıdır",
+  "settingsLoadFailedMessage": "Ayarlar yüklenemedi",
+  "customImageNotice1": "Gruplar etkinleştirildiğinde görseller her grup için rastgele görüntülenir.",
+  "customImageNotice2": "Kullanıcıların yüklediği ve ayarladığı görseller geliştiricilerle veya üçüncü taraflarla paylaşılmaz; yalnızca cihazdaki uygulama alanında saklanır.",
+  "customImageNotice3": "Bu sayede çevrimdışı kullanım mümkündür.",
+  "customImageNotice4": "Çok sayıda görsel eklemek depolama alanı kullanır. Sorun yaşarsanız ayarlardan özel görselleri kapatın veya kullanılmayanları kaldırın.",
+  "customImageNotice5": "Uygulamayı sildiğinizde ayarlanan görseller de silinir.",
+  "customImageRequirementNotMet": "Özel görselleri kullanmak için etkin gruplarda en az 1 iyi görsel ve 3 iyi olmayan görsel gerekir.",
+  "customImageRequirement": "Özel görselleri kullanmak için etkin gruplarda en az 1 iyi görsel ve 3 iyi olmayan görsel gerekir.",
+  "sunnyWeather": "İyi",
+  "rainyWeather": "İyi değil",
+  "addImages": "Görsel Ekle",
+  "imageDeleted": "Görsel silindi",
+  "imageDeleteFailed": "Görsel silinemedi",
+  "deleteImageTitle": "Görseli Sil",
+  "deleteImageMessage": "Bu görseli silmek istiyor musunuz? Bu işlem geri alınamaz.",
+  "groupImageTitle": "Grup {groupId} {weather} Görselleri",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Kayıtlı: {count} görsel",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Kayıtlı görsel yok",
+  "imagePreview": "Görsel Önizleme",
+  "close": "Kapat",
+  "contactEmailSubject": "FocusMint - İletişim",
+  "contactEmailBody": "Lütfen görüş ve sorularınızı paylaşın.",
+  "mixWithBuiltInImages": "Uygulamanın görselleriyle karıştır",
+  "mixWithBuiltInImagesDescription": "Kendi görsellerinizi ve uygulamanın görsellerini birlikte kullanın",
+  "supportIntro": "Geliştiriciyle anonim olarak görüşün. Soru ve önerilerinizi gönderebilirsiniz. Günde 3 mesaj gönderebilirsiniz. Geliştiricinin her yanıtı kullanılabilir mesaj hakkını 3’e çıkarır.",
+  "supportReceived": "Mesaj alındı. Genellikle 2–3 gün içinde yanıt veririz.",
+  "supportComposer": "Bir mesaj yazın",
+  "supportSend": "Gönder",
+  "supportRetry": "Yeniden dene",
+  "supportSent": "Gönderildi",
+  "supportUnsent": "Gönderilmedi · bu cihazda kayıtlı",
+  "supportAttach": "Görsel ekle",
+  "supportRemoveImage": "Görseli kaldır",
+  "supportImage": "Ek",
+  "supportClear": "Geçmişi sil",
+  "supportClearConfirm": "Bu görüşme silinsin mi? Gönderilmemiş taslaklar ve sunucudaki geçmiş de silinir. Bu işlem mesaj hakkınızı yenilemez.",
+  "supportQuota": "Bugünkü 3 mesaj hakkınızı kullandınız. Yarın veya geliştiricinin yanıtından sonra yeniden gönderebilirsiniz.",
+  "supportConnectionError": "Bağlanılamadı. Kayıtlı taslaklar gönderilmedi.",
+  "supportSendError": "Gönderilemedi. Mesajınız bu cihazda kayıtlı. Lütfen yeniden deneyin.",
+  "supportStorageError": "Kaydedilemedi. Lütfen yeniden deneyin.",
+  "supportClearError": "Geçmiş silinemedi. Bağlantınızı kontrol edip yeniden deneyin.",
+  "supportImageError": "Görsel yüklenemedi. 30 MB’tan küçük bir görsel seçin.",
+  "supportRemaining": "Bugün kalan mesaj hakkı: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Okunmamış yanıtlar: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Bilgi",
+  "supportDeveloper": "Geliştirici",
+  "supportPrivacy": "Destek verileri hakkında",
+  "breathingTitle": "Sakin bir nefes alın",
+  "breathingHint": "Akciğerlerin yumuşak hareketini\nrahat ettiğiniz bir hızda izleyin.",
+  "breathingIn": "Yavaşça nefes alın",
+  "breathingOut": "Yavaşça nefes verin",
+  "breathingProgress": "Nefes alıştırmasının ilerlemesi",
+  "breathingResultHint": "Sonuçlarınız otomatik olarak gösterilecek.",
+  "breathingSkip": "Sonuçlara geç"
+}

@@ -1,0 +1,333 @@
+{
+  "@@locale": "th",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "คะแนนปัจจุบัน",
+  "goalLabel": "เป้าหมาย: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "เหลืออีก: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 บรรลุเป้าหมายแล้ว!",
+  "startButtonText": "START",
+  "stressReductionMessage": "ฝึกสังเกตสิ่งดี ๆ รอบตัว",
+  "remainingTimeMinutes": "เวลาที่เหลือ: {minutes} นาที {seconds} วินาที",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "เวลาที่เหลือ: {seconds} วินาที",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "คะแนน: {score} แต้ม",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "กำลังเตรียมรูปภาพ...",
+  "noStimuliAvailable": "ไม่มีสิ่งเร้าที่ใช้ได้",
+  "invalidGridSize": "ขนาดตารางไม่ถูกต้อง",
+  "unknown": "?",
+  "gettingStarted": "กำลังเริ่ม...",
+  "excellentPerformance": "ผลงานยอดเยี่ยม!",
+  "greatJob": "เก่งมาก!",
+  "goodPerformance": "ผลงานดี",
+  "keepPracticingFeedback": "ฝึกฝนต่อไปนะ",
+  "takeYourTimeFeedback": "ค่อย ๆ ทำไปนะ",
+  "happy": "มีความสุข",
+  "angry": "โกรธ",
+  "fear": "กลัว",
+  "sad": "เศร้า",
+  "historyPageTitle": "ประวัติการฝึก",
+  "dataLoading": "กำลังโหลดข้อมูล...",
+  "pointsHistory": "ประวัติคะแนน",
+  "weekly": "รายสัปดาห์",
+  "monthly": "รายเดือน",
+  "noDataAvailable": "ไม่มีข้อมูล",
+  "goalAchievementRate": "อัตราการบรรลุเป้าหมาย",
+  "scoreStatistics": "สถิติคะแนน",
+  "bestScore": "คะแนนสูงสุด",
+  "totalScore": "คะแนนรวม",
+  "trainingTime": "เวลาฝึก",
+  "totalTrainingTime": "เวลาฝึกทั้งหมด",
+  "detailedStatistics": "สถิติโดยละเอียด",
+  "averageScorePerMinute": "คะแนนเฉลี่ยต่อนาที",
+  "pointsToGoal": "คะแนนที่เหลือถึงเป้าหมาย",
+  "goalSetting": "ตั้งค่าเป้าหมาย",
+  "secondsUnit": "วิ",
+  "minutesUnit": "น.",
+  "hoursUnit": "ชม.",
+  "pointsUnit": "แต้ม",
+  "monthSuffix": "",
+  "sundayShort": "อา.",
+  "mondayShort": "จ.",
+  "tuesdayShort": "อ.",
+  "wednesdayShort": "พ.",
+  "thursdayShort": "พฤ.",
+  "fridayShort": "ศ.",
+  "saturdayShort": "ส.",
+  "settingsTitle": "การตั้งค่า",
+  "goalPointsSetting": "ตั้งค่าคะแนนเป้าหมาย",
+  "currentGoalPoints": "เป้าหมายปัจจุบัน: {points} แต้ม",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "คะแนนเป้าหมายใหม่",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "แต้ม",
+  "saveGoalButton": "บันทึกเป้าหมาย",
+  "goalSetTo": "ตั้งเป้าหมายเป็น {points} แต้มแล้ว",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "กรุณากรอกคะแนนเป้าหมาย",
+  "enterValidNumber": "กรุณากรอกตัวเลขที่ถูกต้อง (1 ถึง 99999999)",
+  "saveFailed": "บันทึกการตั้งค่าบางรายการไม่สำเร็จ",
+  "emailOpenFailed": "ไม่สามารถเปิดแอปอีเมลได้",
+  "pageOpenFailed": "ไม่สามารถเปิดหน้าเว็บได้",
+  "appInfoSupport": "ข้อมูลแอปและการสนับสนุน",
+  "contactUs": "ติดต่อเรา",
+  "contactUsSubtitle": "แจ้งความคิดเห็นและข้อสงสัยของคุณ",
+  "termsOfService": "ข้อกำหนดการใช้งาน",
+  "termsSubtitle": "ดูข้อกำหนดการใช้งานของแอป",
+  "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+  "privacySubtitle": "เกี่ยวกับการจัดการข้อมูลส่วนบุคคล",
+  "tutorialTitle": "บทแนะนำ",
+  "tutorialSubtitle": "เรียนรู้วิธีใช้แอป",
+  "dataManagement": "การจัดการข้อมูล",
+  "deleteHistory": "ลบประวัติ",
+  "deleteHistorySubtitle": "ลบเฉพาะประวัติการฝึก (คะแนนเป้าหมายจะยังคงอยู่)",
+  "deleteHistoryAndGoal": "ลบประวัติและเป้าหมาย",
+  "deleteHistoryAndGoalSubtitle": "ลบประวัติทั้งหมดและคะแนนเป้าหมาย",
+  "deleteHistoryConfirmTitle": "ลบประวัติ",
+  "deleteHistoryConfirmMessage": "คุณแน่ใจหรือไม่ว่าต้องการลบประวัติการฝึกทั้งหมด?\n\n*คะแนนเป้าหมายจะยังคงอยู่",
+  "deleteHistoryAndGoalConfirmTitle": "ลบประวัติและเป้าหมาย",
+  "deleteHistoryAndGoalConfirmMessage": "คุณแน่ใจหรือไม่ว่าต้องการลบประวัติทั้งหมดและคะแนนเป้าหมาย?\n\n*การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+  "cancel": "ยกเลิก",
+  "delete": "ลบ",
+  "historyDeleted": "ลบประวัติแล้ว",
+  "historyAndGoalDeleted": "ลบประวัติและเป้าหมายแล้ว",
+  "historyDeleteFailed": "ลบประวัติไม่สำเร็จ",
+  "historyAndGoalDeleteFailed": "ลบประวัติและเป้าหมายไม่สำเร็จ",
+  "tutorialDisplayFailed": "แสดงบทแนะนำไม่สำเร็จ",
+  "tips": "เคล็ดลับ",
+  "tipsContent": "• เป้าหมายจะแสดงในกราฟบนหน้าหลัก\n• เริ่มจากเป้าหมายเล็ก ๆ แล้วค่อยเพิ่มตามจังหวะของคุณ\n• การเลือกถูกแต่ละครั้งได้สูงสุด 6 คะแนน",
+  "backToHome": "กลับหน้าหลัก",
+  "tutorialSkip": "ข้าม",
+  "tutorialGoalAndPoints": "เป้าหมายและคะแนนปัจจุบัน",
+  "tutorialGoalDescription": "วงกลมด้านนอกแสดงเป้าหมาย วงกลมด้านในแสดงคะแนนรวม วงกลมจะเต็มขึ้นเมื่อคุณเข้าใกล้เป้าหมาย",
+  "tutorialOneMinuteTraining": "การฝึก 1 นาที",
+  "tutorialTrainingDescription": "เริ่มเกม 1 นาที เลือกรูปภาพเชิงบวกหรือนิสัยที่ดีจาก 4 ตัวเลือก",
+  "tutorialScoreProgress": "ความคืบหน้าของคะแนน",
+  "tutorialScoreDescription": "ดูรายละเอียดคะแนนที่คุณได้รับ",
+  "tutorialSettingsAndData": "การตั้งค่าและการจัดการข้อมูล",
+  "tutorialSettingsDescription": "เปลี่ยนเป้าหมาย ดูข้อมูลแอป และรีเซ็ตข้อมูล",
+  "appIntroAttentionBiasTitle": "เกี่ยวกับอคติทางความสนใจ",
+  "appIntroAttentionBiasContent": "เมื่อมีความวิตกกังวลสูง เรามักจะจดจ่ออยู่กับสิ่งเชิงลบโดยไม่รู้ตัว",
+  "appIntroFocusMintRoleTitle": "บทบาทของ FocusMint",
+  "appIntroFocusMintRoleContent": "เกมสั้น ๆ สำหรับฝึกหันความสนใจไปยังภาพเชิงบวก",
+  "appIntroScientificEvidenceTitle": "เกี่ยวกับแบบฝึกนี้",
+  "appIntroScientificEvidenceContent": "ฝึกค้นหาภาพเชิงบวก FocusMint เป็นเครื่องมือดูแลตัวเอง ไม่ใช่การรักษาทางการแพทย์ ผลที่ได้รับแตกต่างกันในแต่ละคน",
+  "appIntroExpectedEffectsTitle": "สิ่งที่ฝึกได้",
+  "appIntroEffect1": "ค้นหาภาพเชิงบวก",
+  "appIntroEffect2": "สังเกตรอยยิ้มรอบตัว",
+  "appIntroEffect3": "สร้างกิจวัตรสั้น ๆ ในแต่ละวัน",
+  "appIntroHowToUse": "ดูวิธีใช้งาน",
+  "pointsEarned": "ได้รับคะแนนแล้ว!",
+  "yourScore": "คะแนนของคุณ",
+  "totalPlayTime": "เวลาเล่นทั้งหมด",
+  "imageManagement": "การจัดการรูปภาพ",
+  "hiddenImagesCount": "รูปภาพที่ซ่อน: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "มีการเปลี่ยนแปลงที่ยังไม่ได้บันทึก",
+  "unsavedChangesMessage": "มีการเปลี่ยนแปลงการตั้งค่าการแสดงรูปภาพ {count} รายการที่ยังไม่ได้บันทึก",
+  "unsavedChangesWarning": "หากปิดหน้านี้ตอนนี้ การเปลี่ยนแปลงจะหายไป",
+  "discardChanges": "ละทิ้งการเปลี่ยนแปลง",
+  "saveAndExit": "บันทึกและออก",
+  "settingsSaved": "บันทึกการตั้งค่า {count} รายการแล้ว",
+  "saveError": "เกิดข้อผิดพลาดขณะบันทึกการตั้งค่า",
+  "imageSettingsUpdated": "อัปเดตการตั้งค่ารูปภาพแล้ว",
+  "allImages": "ทั้งหมด",
+  "positiveImages": "เชิงบวก",
+  "negativeImages": "เชิงลบ",
+  "smileImages": "รอยยิ้ม",
+  "vegetableImages": "อาหารที่มีคุณค่าทางโภชนาการ",
+  "healthImages": "การเคลื่อนไหวและการพบปะ",
+  "sadImages": "โกรธ เศร้า และกังวล",
+  "badFoodImages": "อาหารจานด่วนและขนมหวาน",
+  "badImages": "พฤติกรรมที่ไม่ดีต่อสุขภาพ",
+  "imageManagementHint": "แตะเพื่อสลับการแสดง/ซ่อนรูปภาพ ซ่อนได้สูงสุด 15 รูป",
+  "unsaved": "ยังไม่ได้บันทึก",
+  "save": "บันทึก",
+  "hiddenImages": "ซ่อนอยู่",
+  "noHiddenImages": "ไม่มีรูปภาพที่ซ่อน",
+  "settingsLoadFailed": "โหลดการตั้งค่าไม่สำเร็จ",
+  "imagesAdded": "เพิ่มรูปภาพแล้ว {count} รูป",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "เพิ่มรูปภาพไม่สำเร็จ",
+  "imageSelectionFailed": "เลือกรูปภาพไม่สำเร็จ",
+  "settingsChangeFailed": "เปลี่ยนการตั้งค่าไม่สำเร็จ",
+  "groupTitle": "กลุ่ม: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "สลับการแสดงผล",
+  "imageCount": "{count} รูป",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "ข้อควรทราบ",
+  "notice1": "เพิ่มฟีเจอร์รูปภาพกำหนดเองแล้ว!",
+  "notice2": "คุณสามารถเพิ่มรูปภาพของตัวเองได้จากหน้าการตั้งค่า",
+  "notice3": "กรุณาดูรายละเอียดที่หน้าการตั้งค่า",
+  "customImageTitle": "รูปภาพกำหนดเอง",
+  "customImageSubtitle": "เพิ่มและจัดการรูปภาพของคุณเอง",
+  "addCustomImages": "เพิ่มรูปภาพกำหนดเอง",
+  "selectImages": "เลือกรูปภาพ",
+  "unknownImage": "รูปภาพไม่ทราบชื่อ",
+  "customImageSettings": "การตั้งค่ารูปภาพกำหนดเอง",
+  "useCustomImages": "ใช้รูปภาพกำหนดเอง",
+  "useCustomImagesDescription": "ใช้ภาพของคุณเองในการฝึก เปิดตัวเลือกผสมด้านล่างเพื่อใช้ภาพในแอปด้วย",
+  "groupSettings": "การตั้งค่ากลุ่ม",
+  "minOneGroupRequired": "ต้องเปิดใช้งานอย่างน้อยหนึ่งกลุ่ม",
+  "settingsLoadFailedMessage": "โหลดการตั้งค่าไม่สำเร็จ",
+  "customImageNotice1": "เมื่อเปิดใช้งานกลุ่ม รูปภาพจะแสดงแบบสุ่มตามแต่ละกลุ่ม",
+  "customImageNotice2": "รูปภาพที่ผู้ใช้อัปโหลดและตั้งค่าไว้จะไม่ถูกแชร์กับผู้พัฒนาหรือบุคคลที่สาม และจะถูกเก็บไว้เฉพาะในพื้นที่ของแอปบนอุปกรณ์เท่านั้น",
+  "customImageNotice3": "จึงสามารถใช้งานแบบออฟไลน์ได้",
+  "customImageNotice4": "การเพิ่มภาพจำนวนมากใช้พื้นที่จัดเก็บ หากพบปัญหา ให้ปิดการใช้ภาพส่วนตัวหรือลบภาพที่ไม่ใช้ในการตั้งค่า",
+  "customImageNotice5": "เมื่อลบแอป รูปภาพที่ตั้งค่าไว้จะถูกลบไปด้วย",
+  "customImageRequirementNotMet": "หากต้องการใช้รูปภาพกำหนดเอง ต้องมีรูปภาพที่ดีอย่างน้อย 1 รูป และรูปภาพที่ไม่ดีอย่างน้อย 3 รูปในกลุ่มที่เปิดใช้งาน",
+  "customImageRequirement": "หากต้องการใช้รูปภาพกำหนดเอง ต้องมีรูปภาพที่ดีอย่างน้อย 1 รูป และรูปภาพที่ไม่ดีอย่างน้อย 3 รูปในกลุ่มที่เปิดใช้งาน",
+  "sunnyWeather": "ดี",
+  "rainyWeather": "ไม่ดี",
+  "addImages": "เพิ่มรูปภาพ",
+  "imageDeleted": "ลบรูปภาพแล้ว",
+  "imageDeleteFailed": "ลบรูปภาพไม่สำเร็จ",
+  "deleteImageTitle": "ลบรูปภาพ",
+  "deleteImageMessage": "ต้องการลบรูปภาพนี้หรือไม่? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+  "groupImageTitle": "กลุ่ม {groupId} รูปภาพ{weather}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "ลงทะเบียนแล้ว: {count} รูป",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "ยังไม่มีรูปภาพที่ลงทะเบียน",
+  "imagePreview": "ดูตัวอย่างรูปภาพ",
+  "close": "ปิด",
+  "contactEmailSubject": "FocusMint - ติดต่อสอบถาม",
+  "contactEmailBody": "กรุณาแจ้งความคิดเห็นและข้อสงสัยของคุณ",
+  "mixWithBuiltInImages": "ผสมกับภาพในแอป",
+  "mixWithBuiltInImagesDescription": "ใช้ภาพในแอปและภาพของคุณร่วมกัน",
+  "supportIntro": "คุยกับผู้พัฒนาโดยไม่เปิดเผยตัวตน ส่งคำถามหรือข้อเสนอแนะได้ คุณส่งได้วันละ 3 ข้อความ และทุกครั้งที่ผู้พัฒนาตอบ จำนวนข้อความที่ส่งได้จะกลับเป็น 3",
+  "supportReceived": "ได้รับข้อความแล้ว โดยปกติเราจะตอบกลับภายใน 2–3 วัน",
+  "supportComposer": "พิมพ์ข้อความ",
+  "supportSend": "ส่ง",
+  "supportRetry": "ลองอีกครั้ง",
+  "supportSent": "ส่งแล้ว",
+  "supportUnsent": "ยังไม่ได้ส่ง · บันทึกในอุปกรณ์นี้แล้ว",
+  "supportAttach": "แนบภาพ",
+  "supportRemoveImage": "นำภาพออก",
+  "supportImage": "ไฟล์แนบ",
+  "supportClear": "ลบประวัติ",
+  "supportClearConfirm": "ลบการสนทนานี้หรือไม่? ร่างที่ยังไม่ได้ส่งและประวัติบนเซิร์ฟเวอร์จะถูกลบด้วย การลบจะไม่คืนจำนวนข้อความที่ส่งได้",
+  "supportQuota": "คุณใช้ครบ 3 ข้อความของวันนี้แล้ว ส่งอีกครั้งได้ในวันพรุ่งนี้หรือหลังจากผู้พัฒนาตอบกลับ",
+  "supportConnectionError": "เชื่อมต่อไม่ได้ ร่างที่บันทึกไว้ยังไม่ได้ถูกส่ง",
+  "supportSendError": "ส่งไม่ได้ ข้อความบันทึกอยู่ในอุปกรณ์นี้แล้ว โปรดลองอีกครั้ง",
+  "supportStorageError": "บันทึกไม่ได้ โปรดลองอีกครั้ง",
+  "supportClearError": "ลบประวัติไม่ได้ โปรดตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง",
+  "supportImageError": "โหลดภาพไม่ได้ โปรดเลือกภาพที่มีขนาดต่ำกว่า 30 MB",
+  "supportRemaining": "จำนวนข้อความที่เหลือวันนี้: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "คำตอบที่ยังไม่ได้อ่าน: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "ข้อมูล",
+  "supportDeveloper": "ผู้พัฒนา",
+  "supportPrivacy": "ข้อมูลการติดต่อฝ่ายช่วยเหลือ",
+  "breathingTitle": "พักหายใจสักครู่",
+  "breathingHint": "หายใจตามการเคลื่อนไหวเบา ๆ ของปอด\nในจังหวะที่คุณสบาย",
+  "breathingIn": "หายใจเข้าช้า ๆ",
+  "breathingOut": "หายใจออกช้า ๆ",
+  "breathingProgress": "ความคืบหน้าการฝึกหายใจ",
+  "breathingResultHint": "เมื่อจบแล้วจะแสดงผลโดยอัตโนมัติ",
+  "breathingSkip": "ข้ามไปดูผล"
+}

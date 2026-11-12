@@ -1,0 +1,333 @@
+{
+  "@@locale": "hu",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Jelenlegi pontok",
+  "goalLabel": "Cél: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Hátralévő: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Cél elérve!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Gyakorold a pozitív dolgok észrevételét.",
+  "remainingTimeMinutes": "Hátralévő idő: {minutes} p {seconds} mp",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Hátralévő idő: {seconds} mp",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Pontszám: {score} pont",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Képek előkészítése...",
+  "noStimuliAvailable": "Nincsenek elérhető ingerek",
+  "invalidGridSize": "Érvénytelen rácsméret",
+  "unknown": "?",
+  "gettingStarted": "Indítás...",
+  "excellentPerformance": "Kiváló teljesítmény!",
+  "greatJob": "Szép munka!",
+  "goodPerformance": "Jó teljesítmény",
+  "keepPracticingFeedback": "Gyakoroljon tovább",
+  "takeYourTimeFeedback": "Ne siessen",
+  "happy": "Öröm",
+  "angry": "Düh",
+  "fear": "Félelem",
+  "sad": "Szomorúság",
+  "historyPageTitle": "Edzéselőzmények",
+  "dataLoading": "Adatok betöltése...",
+  "pointsHistory": "Pontelőzmények",
+  "weekly": "Heti",
+  "monthly": "Havi",
+  "noDataAvailable": "Nincs elérhető adat",
+  "goalAchievementRate": "Célteljesítési arány",
+  "scoreStatistics": "Pontszám-statisztikák",
+  "bestScore": "Legjobb pontszám",
+  "totalScore": "Összpontszám",
+  "trainingTime": "Edzésidő",
+  "totalTrainingTime": "Teljes edzésidő",
+  "detailedStatistics": "Részletes statisztikák",
+  "averageScorePerMinute": "Átlagos pontszám percenként",
+  "pointsToGoal": "A célig hátralévő pontok",
+  "goalSetting": "Célbeállítás",
+  "secondsUnit": "mp",
+  "minutesUnit": "p",
+  "hoursUnit": "ó",
+  "pointsUnit": "pont",
+  "monthSuffix": "",
+  "sundayShort": "V",
+  "mondayShort": "H",
+  "tuesdayShort": "K",
+  "wednesdayShort": "Sze",
+  "thursdayShort": "Cs",
+  "fridayShort": "P",
+  "saturdayShort": "Szo",
+  "settingsTitle": "Beállítások",
+  "goalPointsSetting": "Célpontok beállítása",
+  "currentGoalPoints": "Jelenlegi cél: {points} pont",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Új célpontszám",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "pont",
+  "saveGoalButton": "Cél mentése",
+  "goalSetTo": "Cél beállítva: {points} pont",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Kérjük, adja meg a célpontszámot",
+  "enterValidNumber": "Kérjük, érvényes számot adjon meg (1 és 99999999 között)",
+  "saveFailed": "Néhány beállítást nem sikerült menteni",
+  "emailOpenFailed": "Nem sikerült megnyitni a levelezőalkalmazást",
+  "pageOpenFailed": "Nem sikerült megnyitni az oldalt",
+  "appInfoSupport": "Alkalmazásinformációk és támogatás",
+  "contactUs": "Kapcsolat",
+  "contactUsSubtitle": "Ossza meg velünk véleményét és kérdéseit",
+  "termsOfService": "Felhasználási feltételek",
+  "termsSubtitle": "Tekintse át az alkalmazás felhasználási feltételeit",
+  "privacyPolicy": "Adatvédelmi irányelvek",
+  "privacySubtitle": "A személyes adatok kezeléséről",
+  "tutorialTitle": "Útmutató",
+  "tutorialSubtitle": "Ismerje meg az alkalmazás használatát",
+  "dataManagement": "Adatkezelés",
+  "deleteHistory": "Előzmények törlése",
+  "deleteHistorySubtitle": "Csak az edzéselőzményeket törli (a célpontok megmaradnak)",
+  "deleteHistoryAndGoal": "Előzmények és cél törlése",
+  "deleteHistoryAndGoalSubtitle": "Az összes előzményt és a célpontokat is törli",
+  "deleteHistoryConfirmTitle": "Előzmények törlése",
+  "deleteHistoryConfirmMessage": "Biztosan törli az összes edzéselőzményt?\n\n*A célpontok megmaradnak",
+  "deleteHistoryAndGoalConfirmTitle": "Előzmények és cél törlése",
+  "deleteHistoryAndGoalConfirmMessage": "Biztosan törli az összes előzményt és a célpontokat?\n\n*Ez a művelet nem vonható vissza",
+  "cancel": "Mégse",
+  "delete": "Törlés",
+  "historyDeleted": "Előzmények törölve",
+  "historyAndGoalDeleted": "Előzmények és cél törölve",
+  "historyDeleteFailed": "Az előzmények törlése nem sikerült",
+  "historyAndGoalDeleteFailed": "Az előzmények és a cél törlése nem sikerült",
+  "tutorialDisplayFailed": "Az útmutató megjelenítése nem sikerült",
+  "tips": "Tippek",
+  "tipsContent": "• A célod a kezdőképernyő diagramján jelenik meg\n• Kezdj kis céllal, és emeld a saját tempódban\n• Minden helyes választás legfeljebb 6 pontot ér",
+  "backToHome": "Vissza a kezdőképernyőre",
+  "tutorialSkip": "Kihagyás",
+  "tutorialGoalAndPoints": "Cél és jelenlegi pontok",
+  "tutorialGoalDescription": "A külső kör a célt, a belső az összpontszámot mutatja. A kör a cél közeledtével telik meg.",
+  "tutorialOneMinuteTraining": "1 perces edzés",
+  "tutorialTrainingDescription": "Indítson egy 1 perces játékot. Válasszon pozitív képeket vagy jó szokásokat 4 lehetőség közül.",
+  "tutorialScoreProgress": "Pontszám alakulása",
+  "tutorialScoreDescription": "Tekintse meg a megszerzett pontszámok részletes adatait.",
+  "tutorialSettingsAndData": "Beállítások és adatkezelés",
+  "tutorialSettingsDescription": "Módosíthatja a célértékeket, megtekintheti az alkalmazás adatait, és visszaállíthatja az adatokat.",
+  "appIntroAttentionBiasTitle": "A figyelmi torzításról",
+  "appIntroAttentionBiasContent": "Erős szorongás esetén hajlamosak vagyunk öntudatlanul csak a negatív dolgokra figyelni.",
+  "appIntroFocusMintRoleTitle": "A FocusMint szerepe",
+  "appIntroFocusMintRoleContent": "Rövid játék, amellyel gyakorolhatod, hogyan irányítsd a figyelmedet pozitív képekre.",
+  "appIntroScientificEvidenceTitle": "A gyakorlatról",
+  "appIntroScientificEvidenceContent": "Gyakorold a pozitív képek megtalálását. A FocusMint az önmagadról való gondoskodás eszköze, nem orvosi kezelés. Az eredmények személyenként eltérhetnek.",
+  "appIntroExpectedEffectsTitle": "Mit gyakorolhatsz?",
+  "appIntroEffect1": "Pozitív képek keresése",
+  "appIntroEffect2": "A körülötted lévő mosolyok észrevétele",
+  "appIntroEffect3": "Rövid napi szokás kialakítása",
+  "appIntroHowToUse": "Használati útmutató megtekintése",
+  "pointsEarned": "Pontok megszerezve!",
+  "yourScore": "Az Ön pontszáma",
+  "totalPlayTime": "Teljes játékidő",
+  "imageManagement": "Képkezelés",
+  "hiddenImagesCount": "Rejtett képek: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Nem mentett módosításai vannak",
+  "unsavedChangesMessage": "{count} nem mentett módosítása van a képmegjelenítési beállításokban.",
+  "unsavedChangesWarning": "Ha most bezárja ezt a képernyőt, a módosítások elvesznek.",
+  "discardChanges": "Módosítások elvetése",
+  "saveAndExit": "Mentés és kilépés",
+  "settingsSaved": "{count} beállítás mentve",
+  "saveError": "Hiba történt a beállítások mentése közben",
+  "imageSettingsUpdated": "A képbeállítások frissítve",
+  "allImages": "Összes",
+  "positiveImages": "Pozitív",
+  "negativeImages": "Negatív",
+  "smileImages": "Mosoly",
+  "vegetableImages": "Tápláló ételek",
+  "healthImages": "Mozgás és kapcsolatok",
+  "sadImages": "Harag, szomorúság és aggodalom",
+  "badFoodImages": "Gyorsételek és édességek",
+  "badImages": "Egészségtelen szokások",
+  "imageManagementHint": "Koppintson a kép láthatóságának átkapcsolásához. Legfeljebb 15 képet rejthet el.",
+  "unsaved": "Nem mentett",
+  "save": "Mentés",
+  "hiddenImages": "Rejtett",
+  "noHiddenImages": "Nincsenek rejtett képek",
+  "settingsLoadFailed": "A beállítások betöltése nem sikerült",
+  "imagesAdded": "{count} kép hozzáadva",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "A képek hozzáadása nem sikerült",
+  "imageSelectionFailed": "A képek kiválasztása nem sikerült",
+  "settingsChangeFailed": "A beállítások módosítása nem sikerült",
+  "groupTitle": "Csoport: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Megjelenítés átkapcsolása",
+  "imageCount": "{count} kép",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Fontos tudnivalók",
+  "notice1": "Új funkció: egyéni képek!",
+  "notice2": "Saját képeit a beállítások képernyőn adhatja hozzá",
+  "notice3": "A részleteket a beállítások képernyőn találja",
+  "customImageTitle": "Egyéni képek",
+  "customImageSubtitle": "Saját képek hozzáadása és kezelése",
+  "addCustomImages": "Egyéni képek hozzáadása",
+  "selectImages": "Képek kiválasztása",
+  "unknownImage": "Ismeretlen kép",
+  "customImageSettings": "Egyéni képek beállításai",
+  "useCustomImages": "Egyéni képek használata",
+  "useCustomImagesDescription": "Használd a saját képeidet a gyakorláshoz. Az alkalmazás képeinek bevonásához kapcsold be az alábbi keverési lehetőséget.",
+  "groupSettings": "Csoportbeállítások",
+  "minOneGroupRequired": "Legalább egy csoportnak engedélyezve kell lennie",
+  "settingsLoadFailedMessage": "A beállítások betöltése nem sikerült",
+  "customImageNotice1": "Ha a csoportok engedélyezve vannak, a képek csoportonként véletlenszerűen jelennek meg.",
+  "customImageNotice2": "A felhasználók által feltöltött és beállított képek nem kerülnek megosztásra a fejlesztőkkel vagy harmadik felekkel, és csak az eszközön, az alkalmazás területén tárolódnak.",
+  "customImageNotice3": "Így az alkalmazás offline is használható.",
+  "customImageNotice4": "Sok kép hozzáadása tárhelyet foglal. Probléma esetén kapcsold ki a saját képeket, vagy töröld a nem használt képeket a beállításokban.",
+  "customImageNotice5": "Az alkalmazás törlésekor a beállított képek is törlődnek.",
+  "customImageRequirementNotMet": "Az egyéni képek használatához az engedélyezett csoportokban legalább 1 jó képre és 3 nem jó képre van szükség.",
+  "customImageRequirement": "Az egyéni képek használatához az engedélyezett csoportokban legalább 1 jó képre és 3 nem jó képre van szükség.",
+  "sunnyWeather": "Jó",
+  "rainyWeather": "Nem jó",
+  "addImages": "Képek hozzáadása",
+  "imageDeleted": "Kép törölve",
+  "imageDeleteFailed": "A kép törlése nem sikerült",
+  "deleteImageTitle": "Kép törlése",
+  "deleteImageMessage": "Törli ezt a képet? Ez a művelet nem vonható vissza.",
+  "groupImageTitle": "{groupId}. csoport – {weather} képek",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Regisztrálva: {count} kép",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Nincsenek regisztrált képek",
+  "imagePreview": "Kép előnézete",
+  "close": "Bezárás",
+  "contactEmailSubject": "FocusMint – Kapcsolatfelvétel",
+  "contactEmailBody": "Kérjük, írja meg véleményét és kérdéseit.",
+  "mixWithBuiltInImages": "Keverés az alkalmazás képeivel",
+  "mixWithBuiltInImagesDescription": "Saját képek és az alkalmazás képeinek együttes használata",
+  "supportIntro": "Írj névtelenül a fejlesztőnek. Kérdéseket és javaslatokat is küldhetsz. Naponta 3 üzenetet küldhetsz. A fejlesztő minden válasza után ismét 3 üzenet áll rendelkezésedre.",
+  "supportReceived": "Az üzenet megérkezett. Általában 2–3 napon belül válaszolunk.",
+  "supportComposer": "Írj üzenetet",
+  "supportSend": "Küldés",
+  "supportRetry": "Újrapróbálás",
+  "supportSent": "Elküldve",
+  "supportUnsent": "Nincs elküldve · ezen az eszközön mentve",
+  "supportAttach": "Kép csatolása",
+  "supportRemoveImage": "Kép eltávolítása",
+  "supportImage": "Melléklet",
+  "supportClear": "Előzmények törlése",
+  "supportClearConfirm": "Törlöd ezt a beszélgetést? Az el nem küldött piszkozatok és a szerveren tárolt előzmények is törlődnek. Az üzenetkeret nem áll vissza.",
+  "supportQuota": "A mai 3 üzenetet már felhasználtad. Holnap vagy a fejlesztő válasza után küldhetsz újra.",
+  "supportConnectionError": "Nem sikerült csatlakozni. A mentett piszkozatok nem lettek elküldve.",
+  "supportSendError": "Nem sikerült elküldeni. Az üzenet ezen az eszközön van mentve. Próbáld újra.",
+  "supportStorageError": "Nem sikerült menteni. Próbáld újra.",
+  "supportClearError": "Nem sikerült törölni az előzményeket. Ellenőrizd a kapcsolatot, és próbáld újra.",
+  "supportImageError": "Nem sikerült betölteni a képet. Válassz 30 MB-nál kisebb képet.",
+  "supportRemaining": "Ma még küldhető üzenetek: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Olvasatlan válaszok: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Információ",
+  "supportDeveloper": "Fejlesztő",
+  "supportPrivacy": "A kapcsolatfelvétel adatairól",
+  "breathingTitle": "Vegyél egy nyugodt lélegzetet",
+  "breathingHint": "Kövesd a tüdő finom mozgását\na számodra kényelmes tempóban.",
+  "breathingIn": "Lassan lélegezz be",
+  "breathingOut": "Lassan lélegezz ki",
+  "breathingProgress": "A légzőgyakorlat állapota",
+  "breathingResultHint": "Az eredmények automatikusan megjelennek.",
+  "breathingSkip": "Tovább az eredményekhez"
+}

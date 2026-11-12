@@ -1,0 +1,333 @@
+{
+  "@@locale": "ca",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Punts actuals",
+  "goalLabel": "Objectiu: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Restants: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Objectiu assolit!",
+  "startButtonText": "COMENÇA",
+  "stressReductionMessage": "Practica parar atenció a les coses positives.",
+  "remainingTimeMinutes": "Temps restant: {minutes}m {seconds}s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Temps restant: {seconds}s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Puntuació: {score} punts",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "S'estan preparant les imatges...",
+  "noStimuliAvailable": "No hi ha estímuls disponibles",
+  "invalidGridSize": "La mida de la quadrícula no és vàlida",
+  "unknown": "?",
+  "gettingStarted": "S'està començant...",
+  "excellentPerformance": "Rendiment excel·lent!",
+  "greatJob": "Molt bona feina!",
+  "goodPerformance": "Bon rendiment",
+  "keepPracticingFeedback": "Continua practicant",
+  "takeYourTimeFeedback": "Pren-t'ho amb calma",
+  "happy": "Content",
+  "angry": "Enfadat",
+  "fear": "Por",
+  "sad": "Trist",
+  "historyPageTitle": "Historial d'entrenament",
+  "dataLoading": "S'estan carregant les dades...",
+  "pointsHistory": "Historial de punts",
+  "weekly": "Setmanal",
+  "monthly": "Mensual",
+  "noDataAvailable": "No hi ha dades disponibles",
+  "goalAchievementRate": "Taxa d'assoliment de l'objectiu",
+  "scoreStatistics": "Estadístiques de puntuació",
+  "bestScore": "Millor puntuació",
+  "totalScore": "Puntuació total",
+  "trainingTime": "Temps d'entrenament",
+  "totalTrainingTime": "Temps total d'entrenament",
+  "detailedStatistics": "Estadístiques detallades",
+  "averageScorePerMinute": "Puntuació mitjana per minut",
+  "pointsToGoal": "Punts fins a l'objectiu",
+  "goalSetting": "Configuració de l'objectiu",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "punts",
+  "monthSuffix": "",
+  "sundayShort": "Dg",
+  "mondayShort": "Dl",
+  "tuesdayShort": "Dt",
+  "wednesdayShort": "Dc",
+  "thursdayShort": "Dj",
+  "fridayShort": "Dv",
+  "saturdayShort": "Ds",
+  "settingsTitle": "Configuració",
+  "goalPointsSetting": "Configuració dels punts objectiu",
+  "currentGoalPoints": "Objectiu actual: {points} punts",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Nous punts objectiu",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "punts",
+  "saveGoalButton": "Desa l'objectiu",
+  "goalSetTo": "Objectiu establert en {points} punts",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Introdueix els punts objectiu",
+  "enterValidNumber": "Introdueix un número vàlid (d'1 a 99999999)",
+  "saveFailed": "No s'han pogut desar alguns paràmetres",
+  "emailOpenFailed": "No s'ha pogut obrir l'aplicació de correu",
+  "pageOpenFailed": "No s'ha pogut obrir la pàgina",
+  "appInfoSupport": "Informació de l'aplicació i suport",
+  "contactUs": "Contacta amb nosaltres",
+  "contactUsSubtitle": "Fes-nos arribar els teus comentaris i preguntes",
+  "termsOfService": "Condicions del servei",
+  "termsSubtitle": "Consulta les condicions del servei de l'aplicació",
+  "privacyPolicy": "Política de privadesa",
+  "privacySubtitle": "Sobre el tractament de la informació personal",
+  "tutorialTitle": "Tutorial",
+  "tutorialSubtitle": "Aprèn a fer servir l'aplicació",
+  "dataManagement": "Gestió de dades",
+  "deleteHistory": "Suprimeix l'historial",
+  "deleteHistorySubtitle": "Suprimeix només l'historial d'entrenament (els punts objectiu es conserven)",
+  "deleteHistoryAndGoal": "Suprimeix l'historial i l'objectiu",
+  "deleteHistoryAndGoalSubtitle": "Suprimeix tot l'historial i els punts objectiu",
+  "deleteHistoryConfirmTitle": "Suprimeix l'historial",
+  "deleteHistoryConfirmMessage": "Segur que vols suprimir tot l'historial d'entrenament?\n\n*Els punts objectiu es conservaran",
+  "deleteHistoryAndGoalConfirmTitle": "Suprimeix l'historial i l'objectiu",
+  "deleteHistoryAndGoalConfirmMessage": "Segur que vols suprimir tot l'historial i els punts objectiu?\n\n*Aquesta acció no es pot desfer",
+  "cancel": "Cancel·la",
+  "delete": "Suprimeix",
+  "historyDeleted": "S'ha suprimit l'historial",
+  "historyAndGoalDeleted": "S'han suprimit l'historial i l'objectiu",
+  "historyDeleteFailed": "No s'ha pogut suprimir l'historial",
+  "historyAndGoalDeleteFailed": "No s'han pogut suprimir l'historial i l'objectiu",
+  "tutorialDisplayFailed": "No s'ha pogut mostrar el tutorial",
+  "tips": "Consells",
+  "tipsContent": "• L’objectiu apareix al gràfic de la pantalla d’inici\n• Comença amb un objectiu petit i augmenta’l al teu ritme\n• Cada tria correcta dona fins a 6 punts",
+  "backToHome": "Torna a l'inici",
+  "tutorialSkip": "Omet",
+  "tutorialGoalAndPoints": "Objectiu i punts actuals",
+  "tutorialGoalDescription": "El cercle exterior mostra l'objectiu i l'interior, els punts totals. El cercle s'omple a mesura que t'acostes a l'objectiu.",
+  "tutorialOneMinuteTraining": "Entrenament d'1 minut",
+  "tutorialTrainingDescription": "Comença un joc d'1 minut. Tria imatges positives o bons hàbits entre 4 opcions.",
+  "tutorialScoreProgress": "Evolució de la puntuació",
+  "tutorialScoreDescription": "Consulta informació detallada sobre les puntuacions obtingudes.",
+  "tutorialSettingsAndData": "Configuració i gestió de dades",
+  "tutorialSettingsDescription": "Canvia l'objectiu, consulta la informació de l'aplicació i restableix les dades.",
+  "appIntroAttentionBiasTitle": "Sobre el biaix atencional",
+  "appIntroAttentionBiasContent": "Quan l'ansietat és alta, tendim inconscientment a fixar-nos només en les coses negatives.",
+  "appIntroFocusMintRoleTitle": "El paper de FocusMint",
+  "appIntroFocusMintRoleContent": "Un joc breu per practicar com dirigir l’atenció cap a imatges positives.",
+  "appIntroScientificEvidenceTitle": "Sobre aquest exercici",
+  "appIntroScientificEvidenceContent": "Practica trobar imatges positives. FocusMint és una eina d’autocura, no un tractament mèdic. Els resultats varien segons la persona.",
+  "appIntroExpectedEffectsTitle": "Què pots practicar",
+  "appIntroEffect1": "Buscar imatges positives",
+  "appIntroEffect2": "Fixar-te en els somriures del teu voltant",
+  "appIntroEffect3": "Crear una petita rutina diària",
+  "appIntroHowToUse": "Mira com es fa servir",
+  "pointsEarned": "Punts guanyats!",
+  "yourScore": "La teva puntuació",
+  "totalPlayTime": "Temps total de joc",
+  "imageManagement": "Gestió d'imatges",
+  "hiddenImagesCount": "Imatges ocultes: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Tens canvis sense desar",
+  "unsavedChangesMessage": "Tens {count} canvis sense desar a la configuració de visualització d'imatges.",
+  "unsavedChangesWarning": "Si tanques aquesta pantalla ara, els canvis es perdran.",
+  "discardChanges": "Descarta els canvis",
+  "saveAndExit": "Desa i surt",
+  "settingsSaved": "S'han desat {count} paràmetres",
+  "saveError": "S'ha produït un error en desar la configuració",
+  "imageSettingsUpdated": "S'ha actualitzat la configuració d'imatges",
+  "allImages": "Totes",
+  "positiveImages": "Positives",
+  "negativeImages": "Negatives",
+  "smileImages": "Somriures",
+  "vegetableImages": "Aliments nutritius",
+  "healthImages": "Moviment i relacions",
+  "sadImages": "Ira, tristesa i preocupació",
+  "badFoodImages": "Menjar ràpid i dolços",
+  "badImages": "Hàbits poc saludables",
+  "imageManagementHint": "Toca per mostrar o amagar una imatge. Pots amagar fins a 15 imatges.",
+  "unsaved": "Sense desar",
+  "save": "Desa",
+  "hiddenImages": "Ocultes",
+  "noHiddenImages": "No hi ha imatges ocultes",
+  "settingsLoadFailed": "No s'ha pogut carregar la configuració",
+  "imagesAdded": "S'han afegit {count} imatges",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "No s'han pogut afegir les imatges",
+  "imageSelectionFailed": "No s'han pogut seleccionar les imatges",
+  "settingsChangeFailed": "No s'ha pogut canviar la configuració",
+  "groupTitle": "Grup: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Mostra/amaga",
+  "imageCount": "{count} imatges",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Notes importants",
+  "notice1": "S'ha afegit la funció d'imatges personalitzades!",
+  "notice2": "Pots afegir les teves pròpies imatges des de la pantalla de configuració",
+  "notice3": "Consulta la pantalla de configuració per a més detalls",
+  "customImageTitle": "Imatges personalitzades",
+  "customImageSubtitle": "Afegeix i gestiona les teves pròpies imatges",
+  "addCustomImages": "Afegeix imatges personalitzades",
+  "selectImages": "Selecciona imatges",
+  "unknownImage": "Imatge desconeguda",
+  "customImageSettings": "Configuració d'imatges personalitzades",
+  "useCustomImages": "Fes servir imatges personalitzades",
+  "useCustomImagesDescription": "Fes servir les teves imatges per practicar. Activa la barreja de sota per incloure les imatges de l’aplicació.",
+  "groupSettings": "Configuració de grups",
+  "minOneGroupRequired": "Com a mínim un grup ha d'estar activat",
+  "settingsLoadFailedMessage": "No s'ha pogut carregar la configuració",
+  "customImageNotice1": "Quan els grups estan activats, les imatges es mostren aleatòriament per a cada grup.",
+  "customImageNotice2": "Les imatges que puges i configures no es comparteixen amb els desenvolupadors ni amb tercers, i es desen només a l'àrea de l'aplicació del dispositiu.",
+  "customImageNotice3": "Això permet fer-la servir sense connexió.",
+  "customImageNotice4": "Afegir moltes imatges ocupa espai d’emmagatzematge. Si tens problemes, desactiva les imatges pròpies o elimina les que no utilitzes a la configuració.",
+  "customImageNotice5": "Quan suprimeixes l'aplicació, les imatges configurades se suprimeixen.",
+  "customImageRequirementNotMet": "Per fer servir imatges personalitzades, necessites com a mínim 1 imatge bona i 3 imatges no bones als grups activats.",
+  "customImageRequirement": "Per fer servir imatges personalitzades, necessites com a mínim 1 imatge bona i 3 imatges no bones als grups activats.",
+  "sunnyWeather": "Bones",
+  "rainyWeather": "No bones",
+  "addImages": "Afegeix imatges",
+  "imageDeleted": "S'ha suprimit la imatge",
+  "imageDeleteFailed": "No s'ha pogut suprimir la imatge",
+  "deleteImageTitle": "Suprimeix la imatge",
+  "deleteImageMessage": "Vols suprimir aquesta imatge? Aquesta acció no es pot desfer.",
+  "groupImageTitle": "Imatges {weather} del grup {groupId}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Registrades: {count} imatges",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "No hi ha imatges registrades",
+  "imagePreview": "Previsualització de la imatge",
+  "close": "Tanca",
+  "contactEmailSubject": "FocusMint - Contacte",
+  "contactEmailBody": "Escriu-nos els teus comentaris i preguntes.",
+  "mixWithBuiltInImages": "Barreja amb les imatges de l’aplicació",
+  "mixWithBuiltInImagesDescription": "Fes servir les teves imatges i les de l’aplicació juntes",
+  "supportIntro": "Parla anònimament amb el desenvolupador. Pots enviar preguntes i suggeriments. Tens 3 missatges al dia. Cada resposta del desenvolupador restableix el límit a 3.",
+  "supportReceived": "Missatge rebut. Normalment responem en 2–3 dies.",
+  "supportComposer": "Escriu un missatge",
+  "supportSend": "Envia",
+  "supportRetry": "Torna-ho a provar",
+  "supportSent": "Enviat",
+  "supportUnsent": "No enviat · desat en aquest dispositiu",
+  "supportAttach": "Adjunta una imatge",
+  "supportRemoveImage": "Treu la imatge",
+  "supportImage": "Fitxer adjunt",
+  "supportClear": "Suprimeix l’historial",
+  "supportClearConfirm": "Vols suprimir aquesta conversa? També se suprimiran els esborranys no enviats i l’historial del servidor. Això no restableix el límit.",
+  "supportQuota": "Ja has utilitzat els 3 missatges d’avui. Envia’n un altre demà o després d’una resposta del desenvolupador.",
+  "supportConnectionError": "No s’ha pogut connectar. Els esborranys desats no s’han enviat.",
+  "supportSendError": "No s’ha pogut enviar. El missatge està desat en aquest dispositiu. Torna-ho a provar.",
+  "supportStorageError": "No s’ha pogut desar. Torna-ho a provar.",
+  "supportClearError": "No s’ha pogut suprimir l’historial. Comprova la connexió i torna-ho a provar.",
+  "supportImageError": "No s’ha pogut carregar la imatge. Tria una imatge de menys de 30 MB.",
+  "supportRemaining": "Missatges disponibles avui: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Respostes sense llegir: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informació",
+  "supportDeveloper": "Desenvolupador",
+  "supportPrivacy": "Dades de les consultes",
+  "breathingTitle": "Pren-te un respir",
+  "breathingHint": "Segueix el moviment suau dels pulmons\na un ritme còmode.",
+  "breathingIn": "Inspira a poc a poc",
+  "breathingOut": "Expira a poc a poc",
+  "breathingProgress": "Progrés de la respiració",
+  "breathingResultHint": "Els resultats apareixeran automàticament.",
+  "breathingSkip": "Ves als resultats"
+}

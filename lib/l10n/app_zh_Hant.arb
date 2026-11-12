@@ -1,0 +1,333 @@
+{
+  "@@locale": "zh_Hant",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "目前點數",
+  "goalLabel": "目標：{goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "剩餘：{remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 達成目標！",
+  "startButtonText": "START",
+  "stressReductionMessage": "練習留意正向的事物。",
+  "remainingTimeMinutes": "剩餘時間：{minutes}分{seconds}秒",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "剩餘時間：{seconds}秒",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "分數：{score} 點",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "正在準備圖片...",
+  "noStimuliAvailable": "沒有可用的刺激素材",
+  "invalidGridSize": "無效的網格大小",
+  "unknown": "?",
+  "gettingStarted": "正在開始...",
+  "excellentPerformance": "表現非常出色！",
+  "greatJob": "做得好！",
+  "goodPerformance": "表現不錯",
+  "keepPracticingFeedback": "請繼續練習",
+  "takeYourTimeFeedback": "請慢慢來",
+  "happy": "開心",
+  "angry": "生氣",
+  "fear": "恐懼",
+  "sad": "悲傷",
+  "historyPageTitle": "訓練紀錄",
+  "dataLoading": "正在載入資料...",
+  "pointsHistory": "點數獲得紀錄",
+  "weekly": "每週",
+  "monthly": "每月",
+  "noDataAvailable": "沒有資料",
+  "goalAchievementRate": "目標達成率",
+  "scoreStatistics": "分數統計",
+  "bestScore": "最佳分數",
+  "totalScore": "總分",
+  "trainingTime": "訓練時間",
+  "totalTrainingTime": "累計訓練時間",
+  "detailedStatistics": "詳細統計",
+  "averageScorePerMinute": "每分鐘平均分數",
+  "pointsToGoal": "距離目標還差",
+  "goalSetting": "目標設定",
+  "secondsUnit": "秒",
+  "minutesUnit": "分",
+  "hoursUnit": "小時",
+  "pointsUnit": "點",
+  "monthSuffix": "月",
+  "sundayShort": "日",
+  "mondayShort": "一",
+  "tuesdayShort": "二",
+  "wednesdayShort": "三",
+  "thursdayShort": "四",
+  "fridayShort": "五",
+  "saturdayShort": "六",
+  "settingsTitle": "設定",
+  "goalPointsSetting": "目標點數設定",
+  "currentGoalPoints": "目前目標：{points} 點",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "新的目標點數",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "點",
+  "saveGoalButton": "儲存目標",
+  "goalSetTo": "目標已設為 {points} 點",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "請輸入目標點數",
+  "enterValidNumber": "請輸入有效數字（1 至 99999999）",
+  "saveFailed": "部分設定儲存失敗",
+  "emailOpenFailed": "無法開啟郵件 App",
+  "pageOpenFailed": "無法開啟頁面",
+  "appInfoSupport": "App 資訊與支援",
+  "contactUs": "聯絡我們",
+  "contactUsSubtitle": "歡迎提供您的意見與問題",
+  "termsOfService": "服務條款",
+  "termsSubtitle": "查看 App 的服務條款",
+  "privacyPolicy": "隱私權政策",
+  "privacySubtitle": "關於隱私資訊的處理方式",
+  "tutorialTitle": "教學",
+  "tutorialSubtitle": "了解 App 的使用方式",
+  "dataManagement": "資料管理",
+  "deleteHistory": "刪除紀錄",
+  "deleteHistorySubtitle": "僅刪除訓練紀錄（保留目標點數）",
+  "deleteHistoryAndGoal": "刪除紀錄與目標",
+  "deleteHistoryAndGoalSubtitle": "刪除所有紀錄和目標點數",
+  "deleteHistoryConfirmTitle": "刪除紀錄",
+  "deleteHistoryConfirmMessage": "確定要刪除所有訓練紀錄嗎？\n\n※目標點數將會保留",
+  "deleteHistoryAndGoalConfirmTitle": "刪除紀錄與目標",
+  "deleteHistoryAndGoalConfirmMessage": "確定要刪除所有紀錄和目標點數嗎？\n\n※此操作無法復原",
+  "cancel": "取消",
+  "delete": "刪除",
+  "historyDeleted": "已刪除紀錄",
+  "historyAndGoalDeleted": "已刪除紀錄與目標",
+  "historyDeleteFailed": "刪除紀錄失敗",
+  "historyAndGoalDeleteFailed": "刪除紀錄與目標失敗",
+  "tutorialDisplayFailed": "無法顯示教學",
+  "tips": "小提示",
+  "tipsContent": "• 目標會顯示在首頁圖表中\n• 從小目標開始，依自己的步調逐步提高\n• 每次正確選擇最多可獲得6分",
+  "backToHome": "回到主畫面",
+  "tutorialSkip": "略過",
+  "tutorialGoalAndPoints": "目標與目前點數",
+  "tutorialGoalDescription": "外圈代表目標，內圈代表總點數。越接近目標，圓環就越滿。",
+  "tutorialOneMinuteTraining": "1 分鐘訓練",
+  "tutorialTrainingDescription": "開始 1 分鐘的小遊戲。從 4 個選項中選出正向的圖片或好習慣。",
+  "tutorialScoreProgress": "分數變化",
+  "tutorialScoreDescription": "查看已獲得分數的詳細資訊。",
+  "tutorialSettingsAndData": "設定與資料管理",
+  "tutorialSettingsDescription": "可變更目標值、查看 App 資訊並重設資料。",
+  "appIntroAttentionBiasTitle": "關於注意力偏誤",
+  "appIntroAttentionBiasContent": "焦慮較強時，我們會不自覺地只注意負面的事物。",
+  "appIntroFocusMintRoleTitle": "FocusMint 的角色",
+  "appIntroFocusMintRoleContent": "透過簡短的遊戲，練習將注意力轉向正向的圖片。",
+  "appIntroScientificEvidenceTitle": "關於這項練習",
+  "appIntroScientificEvidenceContent": "練習尋找正向的圖片。FocusMint用於日常自我照顧，不提供醫療或治療服務。每個人的感受和效果可能不同。",
+  "appIntroExpectedEffectsTitle": "可以練習的內容",
+  "appIntroEffect1": "尋找正向的圖片",
+  "appIntroEffect2": "留意身邊的笑容",
+  "appIntroEffect3": "建立簡短的每日習慣",
+  "appIntroHowToUse": "查看使用方式",
+  "pointsEarned": "獲得點數！",
+  "yourScore": "您的分數",
+  "totalPlayTime": "總遊玩時間",
+  "imageManagement": "圖片管理",
+  "hiddenImagesCount": "已隱藏圖片：{count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "有尚未儲存的變更",
+  "unsavedChangesMessage": "圖片顯示設定中有 {count} 項尚未儲存的變更。",
+  "unsavedChangesWarning": "現在關閉此畫面將會遺失變更。",
+  "discardChanges": "捨棄變更",
+  "saveAndExit": "儲存並離開",
+  "settingsSaved": "已儲存 {count} 項設定",
+  "saveError": "儲存設定時發生錯誤",
+  "imageSettingsUpdated": "圖片設定已更新",
+  "allImages": "全部",
+  "positiveImages": "正向",
+  "negativeImages": "負向",
+  "smileImages": "笑容",
+  "vegetableImages": "營養食物",
+  "healthImages": "運動與交流",
+  "sadImages": "憤怒、悲傷與擔憂",
+  "badFoodImages": "速食與甜食",
+  "badImages": "不健康的習慣",
+  "imageManagementHint": "點一下即可切換圖片的顯示/隱藏。最多可隱藏 15 張圖片。",
+  "unsaved": "未儲存",
+  "save": "儲存",
+  "hiddenImages": "已隱藏",
+  "noHiddenImages": "沒有隱藏的圖片",
+  "settingsLoadFailed": "載入設定失敗",
+  "imagesAdded": "已加入 {count} 張圖片",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "加入圖片失敗",
+  "imageSelectionFailed": "選取圖片失敗",
+  "settingsChangeFailed": "變更設定失敗",
+  "groupTitle": "群組：{name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "顯示切換",
+  "imageCount": "{count} 張",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "注意事項",
+  "notice1": "新增了自訂圖片功能！",
+  "notice2": "您可以在設定畫面加入自己的圖片",
+  "notice3": "詳情請見設定畫面",
+  "customImageTitle": "自訂圖片",
+  "customImageSubtitle": "加入並管理自己的圖片",
+  "addCustomImages": "加入自訂圖片",
+  "selectImages": "選取圖片",
+  "unknownImage": "不明的圖片",
+  "customImageSettings": "自訂圖片設定",
+  "useCustomImages": "使用自訂圖片",
+  "useCustomImagesDescription": "使用自己的圖片進行練習。開啟下方的混合選項，即可同時使用應用程式內建圖片。",
+  "groupSettings": "群組設定",
+  "minOneGroupRequired": "至少需啟用一個群組",
+  "settingsLoadFailedMessage": "載入設定失敗",
+  "customImageNotice1": "啟用群組後，圖片會在各群組內隨機顯示。",
+  "customImageNotice2": "使用者上傳並設定的圖片不會與開發者或第三方分享，僅儲存在裝置上 App 的儲存空間內。",
+  "customImageNotice3": "因此可以離線使用。",
+  "customImageNotice4": "新增大量圖片會占用儲存空間。如遇問題，請在設定中關閉自訂圖片，或刪除不再使用的圖片。",
+  "customImageNotice5": "刪除 App 時，已設定的圖片也會一併刪除。",
+  "customImageRequirementNotMet": "若要使用自訂圖片，已啟用的群組中至少需要 1 張「好」圖片和 3 張「不好」圖片。",
+  "customImageRequirement": "若要使用自訂圖片，已啟用的群組中至少需要 1 張「好」圖片和 3 張「不好」圖片。",
+  "sunnyWeather": "好",
+  "rainyWeather": "不好",
+  "addImages": "加入圖片",
+  "imageDeleted": "已刪除圖片",
+  "imageDeleteFailed": "刪除圖片失敗",
+  "deleteImageTitle": "刪除圖片",
+  "deleteImageMessage": "確定要刪除這張圖片嗎？此操作無法復原。",
+  "groupImageTitle": "群組 {groupId} {weather}圖片",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "已註冊：{count} 張",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "尚未註冊任何圖片",
+  "imagePreview": "圖片預覽",
+  "close": "關閉",
+  "contactEmailSubject": "FocusMint - 聯絡我們",
+  "contactEmailBody": "請寫下您的意見或問題。",
+  "mixWithBuiltInImages": "與內建圖片混合使用",
+  "mixWithBuiltInImagesDescription": "同時使用內建圖片和自己的圖片",
+  "supportIntro": "匿名聯絡開發者，歡迎提出問題或建議。每天可傳送3則訊息。開發者每次回覆後，可傳送訊息數將恢復為3則。",
+  "supportReceived": "已收到訊息。我們通常會在2至3天內回覆。",
+  "supportComposer": "輸入訊息",
+  "supportSend": "傳送",
+  "supportRetry": "重試",
+  "supportSent": "已傳送",
+  "supportUnsent": "未傳送 · 已儲存在此裝置上",
+  "supportAttach": "附加圖片",
+  "supportRemoveImage": "移除圖片",
+  "supportImage": "附件",
+  "supportClear": "刪除紀錄",
+  "supportClearConfirm": "要刪除這段對話嗎？未傳送的草稿和伺服器上的紀錄也會刪除。此操作不會恢復可傳送訊息數。",
+  "supportQuota": "今天的3則訊息已用完。請明天或收到開發者回覆後再傳送。",
+  "supportConnectionError": "無法連線。已儲存的草稿尚未傳送。",
+  "supportSendError": "傳送失敗。訊息已儲存在此裝置上，請重試。",
+  "supportStorageError": "儲存失敗，請重試。",
+  "supportClearError": "無法刪除紀錄。請檢查網路連線後重試。",
+  "supportImageError": "無法載入圖片。請選擇小於30 MB的圖片。",
+  "supportRemaining": "今日剩餘訊息數：{count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "未讀回覆數：{count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "說明",
+  "supportDeveloper": "開發者",
+  "supportPrivacy": "關於諮詢資料",
+  "breathingTitle": "放慢步調，呼吸一下",
+  "breathingHint": "以舒適的步調，\n跟隨肺部的輕柔變化呼吸。",
+  "breathingIn": "慢慢吸氣",
+  "breathingOut": "慢慢吐氣",
+  "breathingProgress": "呼吸引導進度",
+  "breathingResultHint": "結束後將自動顯示結果。",
+  "breathingSkip": "略過並查看結果"
+}

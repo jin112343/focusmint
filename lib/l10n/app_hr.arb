@@ -1,0 +1,333 @@
+{
+  "@@locale": "hr",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Trenutačni bodovi",
+  "goalLabel": "Cilj: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Preostalo: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Cilj ostvaren!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Vježbajte primjećivanje pozitivnih stvari.",
+  "remainingTimeMinutes": "Preostalo vrijeme: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Preostalo vrijeme: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Rezultat: {score} bodova",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Priprema slika...",
+  "noStimuliAvailable": "Nema dostupnih podražaja",
+  "invalidGridSize": "Nevažeća veličina mreže",
+  "unknown": "?",
+  "gettingStarted": "Počinjemo...",
+  "excellentPerformance": "Izvrstan rezultat!",
+  "greatJob": "Odlično obavljeno!",
+  "goodPerformance": "Dobar rezultat",
+  "keepPracticingFeedback": "Nastavite vježbati",
+  "takeYourTimeFeedback": "Ne žurite",
+  "happy": "Radost",
+  "angry": "Ljutnja",
+  "fear": "Strah",
+  "sad": "Tuga",
+  "historyPageTitle": "Povijest treninga",
+  "dataLoading": "Učitavanje podataka...",
+  "pointsHistory": "Povijest bodova",
+  "weekly": "Tjedno",
+  "monthly": "Mjesečno",
+  "noDataAvailable": "Nema dostupnih podataka",
+  "goalAchievementRate": "Stopa ostvarenja cilja",
+  "scoreStatistics": "Statistika rezultata",
+  "bestScore": "Najbolji rezultat",
+  "totalScore": "Ukupni rezultat",
+  "trainingTime": "Vrijeme treninga",
+  "totalTrainingTime": "Ukupno vrijeme treninga",
+  "detailedStatistics": "Detaljna statistika",
+  "averageScorePerMinute": "Prosječan rezultat po minuti",
+  "pointsToGoal": "Bodovi do cilja",
+  "goalSetting": "Postavljanje cilja",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "bodova",
+  "monthSuffix": "",
+  "sundayShort": "Ned",
+  "mondayShort": "Pon",
+  "tuesdayShort": "Uto",
+  "wednesdayShort": "Sri",
+  "thursdayShort": "Čet",
+  "fridayShort": "Pet",
+  "saturdayShort": "Sub",
+  "settingsTitle": "Postavke",
+  "goalPointsSetting": "Postavljanje ciljnih bodova",
+  "currentGoalPoints": "Trenutačni cilj: {points} bodova",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Novi ciljni bodovi",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "bodova",
+  "saveGoalButton": "Spremi cilj",
+  "goalSetTo": "Cilj postavljen na {points} bodova",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Unesite ciljne bodove",
+  "enterValidNumber": "Unesite valjani broj (od 1 do 99999999)",
+  "saveFailed": "Neke postavke nisu se mogle spremiti",
+  "emailOpenFailed": "Aplikacija za e-poštu nije se mogla otvoriti",
+  "pageOpenFailed": "Stranica se nije mogla otvoriti",
+  "appInfoSupport": "Informacije o aplikaciji i podrška",
+  "contactUs": "Kontaktirajte nas",
+  "contactUsSubtitle": "Podijelite svoje mišljenje i pitanja",
+  "termsOfService": "Uvjeti korištenja",
+  "termsSubtitle": "Pregledajte uvjete korištenja aplikacije",
+  "privacyPolicy": "Pravila privatnosti",
+  "privacySubtitle": "O postupanju s osobnim podacima",
+  "tutorialTitle": "Vodič",
+  "tutorialSubtitle": "Naučite kako koristiti aplikaciju",
+  "dataManagement": "Upravljanje podacima",
+  "deleteHistory": "Izbriši povijest",
+  "deleteHistorySubtitle": "Briše samo povijest treninga (ciljni bodovi se zadržavaju)",
+  "deleteHistoryAndGoal": "Izbriši povijest i cilj",
+  "deleteHistoryAndGoalSubtitle": "Briše svu povijest i ciljne bodove",
+  "deleteHistoryConfirmTitle": "Izbriši povijest",
+  "deleteHistoryConfirmMessage": "Jeste li sigurni da želite izbrisati svu povijest treninga?\n\n*Ciljni bodovi bit će zadržani",
+  "deleteHistoryAndGoalConfirmTitle": "Izbriši povijest i cilj",
+  "deleteHistoryAndGoalConfirmMessage": "Jeste li sigurni da želite izbrisati svu povijest i ciljne bodove?\n\n*Ova se radnja ne može poništiti",
+  "cancel": "Odustani",
+  "delete": "Izbriši",
+  "historyDeleted": "Povijest je izbrisana",
+  "historyAndGoalDeleted": "Povijest i cilj su izbrisani",
+  "historyDeleteFailed": "Brisanje povijesti nije uspjelo",
+  "historyAndGoalDeleteFailed": "Brisanje povijesti i cilja nije uspjelo",
+  "tutorialDisplayFailed": "Prikaz vodiča nije uspio",
+  "tips": "Savjeti",
+  "tipsContent": "• Vaš se cilj prikazuje na grafikonu početnog zaslona\n• Počnite malim ciljem i povećavajte ga vlastitim tempom\n• Svaki točan odabir donosi do 6 bodova",
+  "backToHome": "Natrag na početni zaslon",
+  "tutorialSkip": "Preskoči",
+  "tutorialGoalAndPoints": "Cilj i trenutačni bodovi",
+  "tutorialGoalDescription": "Vanjski krug prikazuje vaš cilj, a unutarnji ukupne bodove. Krug se puni kako se približavate cilju.",
+  "tutorialOneMinuteTraining": "Trening od 1 minute",
+  "tutorialTrainingDescription": "Pokrenite igru od 1 minute. Od 4 ponuđene opcije birajte pozitivne slike ili dobre navike.",
+  "tutorialScoreProgress": "Kretanje rezultata",
+  "tutorialScoreDescription": "Pogledajte detaljne informacije o osvojenim rezultatima.",
+  "tutorialSettingsAndData": "Postavke i upravljanje podacima",
+  "tutorialSettingsDescription": "Promijenite ciljne vrijednosti, pregledajte informacije o aplikaciji i poništite podatke.",
+  "appIntroAttentionBiasTitle": "O pristranosti pažnje",
+  "appIntroAttentionBiasContent": "Kad je tjeskoba jaka, nesvjesno se usmjeravamo samo na negativne stvari.",
+  "appIntroFocusMintRoleTitle": "Uloga aplikacije FocusMint",
+  "appIntroFocusMintRoleContent": "Kratka igra za vježbanje usmjeravanja pozornosti na pozitivne slike.",
+  "appIntroScientificEvidenceTitle": "O ovoj vježbi",
+  "appIntroScientificEvidenceContent": "Vježbajte pronalaženje pozitivnih slika. FocusMint je alat za brigu o sebi, a ne medicinski tretman. Rezultati se mogu razlikovati od osobe do osobe.",
+  "appIntroExpectedEffectsTitle": "Što možete vježbati",
+  "appIntroEffect1": "Traženje pozitivnih slika",
+  "appIntroEffect2": "Primjećivanje osmijeha oko sebe",
+  "appIntroEffect3": "Stvaranje kratke svakodnevne navike",
+  "appIntroHowToUse": "Pogledajte upute za korištenje",
+  "pointsEarned": "Bodovi osvojeni!",
+  "yourScore": "Vaš rezultat",
+  "totalPlayTime": "Ukupno vrijeme igranja",
+  "imageManagement": "Upravljanje slikama",
+  "hiddenImagesCount": "Skrivene slike: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Imate nespremljene promjene",
+  "unsavedChangesMessage": "Imate {count} nespremljenih promjena postavki prikaza slika.",
+  "unsavedChangesWarning": "Ako sada zatvorite ovaj zaslon, promjene će biti izgubljene.",
+  "discardChanges": "Odbaci promjene",
+  "saveAndExit": "Spremi i izađi",
+  "settingsSaved": "Spremljeno {count} postavki",
+  "saveError": "Došlo je do pogreške pri spremanju postavki",
+  "imageSettingsUpdated": "Postavke slika su ažurirane",
+  "allImages": "Sve",
+  "positiveImages": "Pozitivne",
+  "negativeImages": "Negativne",
+  "smileImages": "Osmijeh",
+  "vegetableImages": "Hranjiva hrana",
+  "healthImages": "Kretanje i druženje",
+  "sadImages": "Ljutnja, tuga i zabrinutost",
+  "badFoodImages": "Brza hrana i slatkiši",
+  "badImages": "Nezdrave navike",
+  "imageManagementHint": "Dodirnite za promjenu vidljivosti slike. Možete sakriti do 15 slika.",
+  "unsaved": "Nespremljeno",
+  "save": "Spremi",
+  "hiddenImages": "Skrivene",
+  "noHiddenImages": "Nema skrivenih slika",
+  "settingsLoadFailed": "Učitavanje postavki nije uspjelo",
+  "imagesAdded": "Dodano {count} slika",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Dodavanje slika nije uspjelo",
+  "imageSelectionFailed": "Odabir slika nije uspio",
+  "settingsChangeFailed": "Promjena postavki nije uspjela",
+  "groupTitle": "Grupa: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Prebacivanje prikaza",
+  "imageCount": "{count} slika",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Važne napomene",
+  "notice1": "Dodana je značajka prilagođenih slika!",
+  "notice2": "Vlastite slike možete dodati na zaslonu postavki",
+  "notice3": "Pojedinosti potražite na zaslonu postavki",
+  "customImageTitle": "Prilagođene slike",
+  "customImageSubtitle": "Dodajte i upravljajte vlastitim slikama",
+  "addCustomImages": "Dodaj prilagođene slike",
+  "selectImages": "Odaberi slike",
+  "unknownImage": "Nepoznata slika",
+  "customImageSettings": "Postavke prilagođenih slika",
+  "useCustomImages": "Koristi prilagođene slike",
+  "useCustomImagesDescription": "Koristite vlastite slike za vježbu. Uključite kombiniranje u nastavku kako biste dodali i slike iz aplikacije.",
+  "groupSettings": "Postavke grupa",
+  "minOneGroupRequired": "Barem jedna grupa mora biti omogućena",
+  "settingsLoadFailedMessage": "Učitavanje postavki nije uspjelo",
+  "customImageNotice1": "Kada su grupe omogućene, slike se za svaku grupu prikazuju nasumično.",
+  "customImageNotice2": "Slike koje korisnici prenesu i postave ne dijele se s razvojnim programerima ni trećim stranama te se pohranjuju samo u području aplikacije na uređaju.",
+  "customImageNotice3": "Zato je moguće korištenje i bez interneta.",
+  "customImageNotice4": "Dodavanje mnogo slika zauzima prostor za pohranu. Ako imate poteškoća, isključite vlastite slike ili uklonite nekorištene slike u postavkama.",
+  "customImageNotice5": "Kada izbrišete aplikaciju, postavljene slike bit će izbrisane.",
+  "customImageRequirementNotMet": "Za korištenje prilagođenih slika potrebna vam je najmanje 1 dobra slika i 3 ne dobre slike u omogućenim grupama.",
+  "customImageRequirement": "Za korištenje prilagođenih slika potrebna vam je najmanje 1 dobra slika i 3 ne dobre slike u omogućenim grupama.",
+  "sunnyWeather": "Dobro",
+  "rainyWeather": "Nije dobro",
+  "addImages": "Dodaj slike",
+  "imageDeleted": "Slika je izbrisana",
+  "imageDeleteFailed": "Brisanje slike nije uspjelo",
+  "deleteImageTitle": "Izbriši sliku",
+  "deleteImageMessage": "Želite li izbrisati ovu sliku? Ova se radnja ne može poništiti.",
+  "groupImageTitle": "Grupa {groupId} – slike {weather}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Registrirano: {count} slika",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Nema registriranih slika",
+  "imagePreview": "Pregled slike",
+  "close": "Zatvori",
+  "contactEmailSubject": "FocusMint – Upit",
+  "contactEmailBody": "Napišite nam svoje mišljenje i pitanja.",
+  "mixWithBuiltInImages": "Kombiniraj sa slikama aplikacije",
+  "mixWithBuiltInImagesDescription": "Koristite vlastite slike zajedno sa slikama aplikacije",
+  "supportIntro": "Pišite razvojnom programeru anonimno. Pitanja i prijedlozi su dobrodošli. Možete poslati 3 poruke dnevno. Svaki odgovor razvojnog programera vraća raspoloživi broj poruka na 3.",
+  "supportReceived": "Poruka je primljena. Obično odgovaramo u roku od 2–3 dana.",
+  "supportComposer": "Napišite poruku",
+  "supportSend": "Pošalji",
+  "supportRetry": "Pokušaj ponovno",
+  "supportSent": "Poslano",
+  "supportUnsent": "Nije poslano · spremljeno na ovom uređaju",
+  "supportAttach": "Priloži sliku",
+  "supportRemoveImage": "Ukloni sliku",
+  "supportImage": "Privitak",
+  "supportClear": "Izbriši povijest",
+  "supportClearConfirm": "Želite li izbrisati ovaj razgovor? Izbrisat će se i neposlane skice te povijest na poslužitelju. Ograničenje poruka neće se poništiti.",
+  "supportQuota": "Iskoristili ste današnje 3 poruke. Novu možete poslati sutra ili nakon odgovora razvojnog programera.",
+  "supportConnectionError": "Povezivanje nije uspjelo. Spremljene skice nisu poslane.",
+  "supportSendError": "Slanje nije uspjelo. Poruka je spremljena na ovom uređaju. Pokušajte ponovno.",
+  "supportStorageError": "Spremanje nije uspjelo. Pokušajte ponovno.",
+  "supportClearError": "Povijest se nije mogla izbrisati. Provjerite vezu i pokušajte ponovno.",
+  "supportImageError": "Slika se nije mogla učitati. Odaberite sliku manju od 30 MB.",
+  "supportRemaining": "Preostale poruke danas: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Nepročitani odgovori: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informacije",
+  "supportDeveloper": "Razvojni programer",
+  "supportPrivacy": "O podacima upita za podršku",
+  "breathingTitle": "Uzmite trenutak za disanje",
+  "breathingHint": "Pratite nježno pomicanje pluća\nu tempu koji vam odgovara.",
+  "breathingIn": "Polako udahnite",
+  "breathingOut": "Polako izdahnite",
+  "breathingProgress": "Napredak vježbe disanja",
+  "breathingResultHint": "Rezultati će se prikazati automatski.",
+  "breathingSkip": "Prijeđi na rezultate"
+}

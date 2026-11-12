@@ -1,0 +1,333 @@
+{
+  "@@locale": "nl",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Huidige punten",
+  "goalLabel": "Doel: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Resterend: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Doel bereikt!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Oefen om het positieve op te merken.",
+  "remainingTimeMinutes": "Resterende tijd: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Resterende tijd: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Score: {score} punten",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Afbeeldingen voorbereiden...",
+  "noStimuliAvailable": "Geen stimuli beschikbaar",
+  "invalidGridSize": "Ongeldige rastergrootte",
+  "unknown": "?",
+  "gettingStarted": "Bezig met starten...",
+  "excellentPerformance": "Uitstekende prestatie!",
+  "greatJob": "Goed gedaan!",
+  "goodPerformance": "Goede prestatie",
+  "keepPracticingFeedback": "Blijf oefenen",
+  "takeYourTimeFeedback": "Neem de tijd",
+  "happy": "Blij",
+  "angry": "Boos",
+  "fear": "Angst",
+  "sad": "Verdrietig",
+  "historyPageTitle": "Trainingsgeschiedenis",
+  "dataLoading": "Gegevens laden...",
+  "pointsHistory": "Puntengeschiedenis",
+  "weekly": "Wekelijks",
+  "monthly": "Maandelijks",
+  "noDataAvailable": "Geen gegevens beschikbaar",
+  "goalAchievementRate": "Doelbereikingspercentage",
+  "scoreStatistics": "Scorestatistieken",
+  "bestScore": "Beste score",
+  "totalScore": "Totale score",
+  "trainingTime": "Trainingstijd",
+  "totalTrainingTime": "Totale trainingstijd",
+  "detailedStatistics": "Gedetailleerde statistieken",
+  "averageScorePerMinute": "Gemiddelde score per minuut",
+  "pointsToGoal": "Punten tot het doel",
+  "goalSetting": "Doel instellen",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "u",
+  "pointsUnit": "punten",
+  "monthSuffix": "",
+  "sundayShort": "Zo",
+  "mondayShort": "Ma",
+  "tuesdayShort": "Di",
+  "wednesdayShort": "Wo",
+  "thursdayShort": "Do",
+  "fridayShort": "Vr",
+  "saturdayShort": "Za",
+  "settingsTitle": "Instellingen",
+  "goalPointsSetting": "Doelpunten instellen",
+  "currentGoalPoints": "Huidig doel: {points} punten",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Nieuwe doelpunten",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "punten",
+  "saveGoalButton": "Doel opslaan",
+  "goalSetTo": "Doel ingesteld op {points} punten",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Voer doelpunten in",
+  "enterValidNumber": "Voer een geldig getal in (1 tot 99999999)",
+  "saveFailed": "Sommige instellingen konden niet worden opgeslagen",
+  "emailOpenFailed": "Kan de e-mailapp niet openen",
+  "pageOpenFailed": "Kan de pagina niet openen",
+  "appInfoSupport": "App-info en ondersteuning",
+  "contactUs": "Contact opnemen",
+  "contactUsSubtitle": "Deel je feedback en vragen",
+  "termsOfService": "Gebruiksvoorwaarden",
+  "termsSubtitle": "Bekijk de gebruiksvoorwaarden van de app",
+  "privacyPolicy": "Privacybeleid",
+  "privacySubtitle": "Over de omgang met privacygegevens",
+  "tutorialTitle": "Tutorial",
+  "tutorialSubtitle": "Leer hoe je de app gebruikt",
+  "dataManagement": "Gegevensbeheer",
+  "deleteHistory": "Geschiedenis verwijderen",
+  "deleteHistorySubtitle": "Alleen de trainingsgeschiedenis verwijderen (doelpunten blijven behouden)",
+  "deleteHistoryAndGoal": "Geschiedenis en doel verwijderen",
+  "deleteHistoryAndGoalSubtitle": "Alle geschiedenis en doelpunten verwijderen",
+  "deleteHistoryConfirmTitle": "Geschiedenis verwijderen",
+  "deleteHistoryConfirmMessage": "Weet je zeker dat je alle trainingsgeschiedenis wilt verwijderen?\n\n*Doelpunten blijven behouden",
+  "deleteHistoryAndGoalConfirmTitle": "Geschiedenis en doel verwijderen",
+  "deleteHistoryAndGoalConfirmMessage": "Weet je zeker dat je alle geschiedenis en doelpunten wilt verwijderen?\n\n*Deze actie kan niet ongedaan worden gemaakt",
+  "cancel": "Annuleren",
+  "delete": "Verwijderen",
+  "historyDeleted": "Geschiedenis verwijderd",
+  "historyAndGoalDeleted": "Geschiedenis en doel verwijderd",
+  "historyDeleteFailed": "Verwijderen van geschiedenis mislukt",
+  "historyAndGoalDeleteFailed": "Verwijderen van geschiedenis en doel mislukt",
+  "tutorialDisplayFailed": "Tutorial kon niet worden weergegeven",
+  "tips": "Tips",
+  "tipsContent": "• Je doel staat in de grafiek op het beginscherm\n• Begin met een klein doel en verhoog het in je eigen tempo\n• Elke juiste keuze levert maximaal 6 punten op",
+  "backToHome": "Terug naar start",
+  "tutorialSkip": "Overslaan",
+  "tutorialGoalAndPoints": "Doel en huidige punten",
+  "tutorialGoalDescription": "De buitenste cirkel toont je doel, de binnenste cirkel je totale punten. De cirkel vult zich naarmate je je doel nadert.",
+  "tutorialOneMinuteTraining": "Training van 1 minuut",
+  "tutorialTrainingDescription": "Start een spel van 1 minuut. Kies positieve afbeeldingen of goede gewoonten uit 4 opties.",
+  "tutorialScoreProgress": "Scoreverloop",
+  "tutorialScoreDescription": "Bekijk gedetailleerde informatie over je behaalde scores.",
+  "tutorialSettingsAndData": "Instellingen en gegevensbeheer",
+  "tutorialSettingsDescription": "Wijzig doelwaarden, bekijk app-informatie en reset gegevens.",
+  "appIntroAttentionBiasTitle": "Over aandachtsbias",
+  "appIntroAttentionBiasContent": "Bij veel angst zijn we onbewust geneigd om alleen op negatieve dingen te letten.",
+  "appIntroFocusMintRoleTitle": "De rol van FocusMint",
+  "appIntroFocusMintRoleContent": "Een kort spel om te oefenen je aandacht op positieve afbeeldingen te richten.",
+  "appIntroScientificEvidenceTitle": "Over deze oefening",
+  "appIntroScientificEvidenceContent": "Oefen met het vinden van positieve afbeeldingen. FocusMint is een hulpmiddel voor zelfzorg, geen medische behandeling. Resultaten verschillen per persoon.",
+  "appIntroExpectedEffectsTitle": "Wat je kunt oefenen",
+  "appIntroEffect1": "Positieve afbeeldingen zoeken",
+  "appIntroEffect2": "Een glimlach om je heen opmerken",
+  "appIntroEffect3": "Een korte dagelijkse routine opbouwen",
+  "appIntroHowToUse": "Bekijk hoe het werkt",
+  "pointsEarned": "Punten verdiend!",
+  "yourScore": "Jouw score",
+  "totalPlayTime": "Totale speeltijd",
+  "imageManagement": "Afbeeldingsbeheer",
+  "hiddenImagesCount": "Verborgen afbeeldingen: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Je hebt niet-opgeslagen wijzigingen",
+  "unsavedChangesMessage": "Je hebt {count} niet-opgeslagen wijzigingen in de weergave-instellingen van afbeeldingen.",
+  "unsavedChangesWarning": "Wijzigingen gaan verloren als je dit scherm nu sluit.",
+  "discardChanges": "Wijzigingen negeren",
+  "saveAndExit": "Opslaan en sluiten",
+  "settingsSaved": "{count} instellingen opgeslagen",
+  "saveError": "Er is een fout opgetreden bij het opslaan van de instellingen",
+  "imageSettingsUpdated": "Afbeeldingsinstellingen zijn bijgewerkt",
+  "allImages": "Alle",
+  "positiveImages": "Positief",
+  "negativeImages": "Negatief",
+  "smileImages": "Glimlach",
+  "vegetableImages": "Voedzame voeding",
+  "healthImages": "Beweging en contact",
+  "sadImages": "Boosheid, verdriet en zorgen",
+  "badFoodImages": "Fastfood en snoep",
+  "badImages": "Ongezonde gewoonten",
+  "imageManagementHint": "Tik om afbeeldingen te tonen of te verbergen. Je kunt maximaal 15 afbeeldingen verbergen.",
+  "unsaved": "Niet opgeslagen",
+  "save": "Opslaan",
+  "hiddenImages": "Verborgen",
+  "noHiddenImages": "Geen verborgen afbeeldingen",
+  "settingsLoadFailed": "Laden van instellingen mislukt",
+  "imagesAdded": "{count} afbeeldingen toegevoegd",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Toevoegen van afbeeldingen mislukt",
+  "imageSelectionFailed": "Selecteren van afbeeldingen mislukt",
+  "settingsChangeFailed": "Wijzigen van instellingen mislukt",
+  "groupTitle": "Groep: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Weergave wisselen",
+  "imageCount": "{count} afbeeldingen",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Belangrijke opmerkingen",
+  "notice1": "De functie voor eigen afbeeldingen is toegevoegd!",
+  "notice2": "Je kunt je eigen afbeeldingen toevoegen via het instellingenscherm",
+  "notice3": "Bekijk het instellingenscherm voor details",
+  "customImageTitle": "Eigen afbeeldingen",
+  "customImageSubtitle": "Voeg je eigen afbeeldingen toe en beheer ze",
+  "addCustomImages": "Eigen afbeeldingen toevoegen",
+  "selectImages": "Afbeeldingen selecteren",
+  "unknownImage": "Onbekende afbeelding",
+  "customImageSettings": "Instellingen voor eigen afbeeldingen",
+  "useCustomImages": "Eigen afbeeldingen gebruiken",
+  "useCustomImagesDescription": "Gebruik je eigen afbeeldingen om te oefenen. Schakel hieronder mengen in om ook de ingebouwde afbeeldingen te gebruiken.",
+  "groupSettings": "Groepsinstellingen",
+  "minOneGroupRequired": "Minstens één groep moet ingeschakeld zijn",
+  "settingsLoadFailedMessage": "Laden van instellingen mislukt",
+  "customImageNotice1": "Als groepen zijn ingeschakeld, worden afbeeldingen per groep willekeurig weergegeven.",
+  "customImageNotice2": "Afbeeldingen die je uploadt en instelt, worden niet gedeeld met ontwikkelaars of derden en worden alleen opgeslagen in het app-gedeelte van je apparaat.",
+  "customImageNotice3": "Hierdoor is offline gebruik mogelijk.",
+  "customImageNotice4": "Veel afbeeldingen toevoegen kost opslagruimte. Schakel bij problemen eigen afbeeldingen uit of verwijder ongebruikte afbeeldingen in Instellingen.",
+  "customImageNotice5": "Als je de app verwijdert, worden de ingestelde afbeeldingen gewist.",
+  "customImageRequirementNotMet": "Om eigen afbeeldingen te gebruiken heb je in de ingeschakelde groepen minstens 1 goede afbeelding en 3 niet-goede afbeeldingen nodig.",
+  "customImageRequirement": "Om eigen afbeeldingen te gebruiken heb je in de ingeschakelde groepen minstens 1 goede afbeelding en 3 niet-goede afbeeldingen nodig.",
+  "sunnyWeather": "Goed",
+  "rainyWeather": "Niet goed",
+  "addImages": "Afbeeldingen toevoegen",
+  "imageDeleted": "Afbeelding verwijderd",
+  "imageDeleteFailed": "Verwijderen van afbeelding mislukt",
+  "deleteImageTitle": "Afbeelding verwijderen",
+  "deleteImageMessage": "Wil je deze afbeelding verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+  "groupImageTitle": "Groep {groupId} – afbeeldingen ‘{weather}’",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Geregistreerd: {count} afbeeldingen",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Geen afbeeldingen geregistreerd",
+  "imagePreview": "Afbeeldingsvoorbeeld",
+  "close": "Sluiten",
+  "contactEmailSubject": "FocusMint - Contact",
+  "contactEmailBody": "Deel je feedback en vragen met ons.",
+  "mixWithBuiltInImages": "Mengen met ingebouwde afbeeldingen",
+  "mixWithBuiltInImagesDescription": "Je eigen en de ingebouwde afbeeldingen samen gebruiken",
+  "supportIntro": "Chat anoniem met de ontwikkelaar. Vragen en suggesties zijn welkom. Je kunt per dag 3 berichten sturen. Na elk antwoord van de ontwikkelaar kun je weer 3 berichten sturen.",
+  "supportReceived": "Bericht ontvangen. We antwoorden meestal binnen 2–3 dagen.",
+  "supportComposer": "Typ een bericht",
+  "supportSend": "Versturen",
+  "supportRetry": "Opnieuw proberen",
+  "supportSent": "Verstuurd",
+  "supportUnsent": "Niet verstuurd · opgeslagen op dit apparaat",
+  "supportAttach": "Afbeelding bijvoegen",
+  "supportRemoveImage": "Afbeelding verwijderen",
+  "supportImage": "Bijlage",
+  "supportClear": "Geschiedenis verwijderen",
+  "supportClearConfirm": "Dit gesprek verwijderen? Niet-verstuurde concepten en de geschiedenis op de server worden ook verwijderd. Je berichtenlimiet wordt niet hersteld.",
+  "supportQuota": "Je hebt de 3 berichten van vandaag gebruikt. Stuur morgen of na een antwoord van de ontwikkelaar een nieuw bericht.",
+  "supportConnectionError": "Geen verbinding. Opgeslagen concepten zijn niet verstuurd.",
+  "supportSendError": "Versturen mislukt. Je bericht is op dit apparaat opgeslagen. Probeer het opnieuw.",
+  "supportStorageError": "Opslaan mislukt. Probeer het opnieuw.",
+  "supportClearError": "De geschiedenis kon niet worden verwijderd. Controleer je verbinding en probeer het opnieuw.",
+  "supportImageError": "De afbeelding kon niet worden geladen. Kies een afbeelding van minder dan 30 MB.",
+  "supportRemaining": "Vandaag nog beschikbaar: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Ongelezen antwoorden: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informatie",
+  "supportDeveloper": "Ontwikkelaar",
+  "supportPrivacy": "Gegevens bij ondersteuning",
+  "breathingTitle": "Neem even een ademhaling",
+  "breathingHint": "Volg de rustige beweging van de longen\nin een comfortabel tempo.",
+  "breathingIn": "Adem rustig in",
+  "breathingOut": "Adem rustig uit",
+  "breathingProgress": "Voortgang van de ademhaling",
+  "breathingResultHint": "Je resultaten verschijnen automatisch.",
+  "breathingSkip": "Naar de resultaten"
+}

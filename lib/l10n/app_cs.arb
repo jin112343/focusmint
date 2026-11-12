@@ -1,0 +1,333 @@
+{
+  "@@locale": "cs",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Aktuální body",
+  "goalLabel": "Cíl: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Zbývá: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Cíl splněn!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Procvičujte vnímání pozitivních věcí.",
+  "remainingTimeMinutes": "Zbývající čas: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Zbývající čas: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Skóre: {score} bodů",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Příprava obrázků...",
+  "noStimuliAvailable": "Nejsou k dispozici žádné podněty",
+  "invalidGridSize": "Neplatná velikost mřížky",
+  "unknown": "?",
+  "gettingStarted": "Začínáme...",
+  "excellentPerformance": "Vynikající výkon!",
+  "greatJob": "Skvělá práce!",
+  "goodPerformance": "Dobrý výkon",
+  "keepPracticingFeedback": "Pokračujte v procvičování",
+  "takeYourTimeFeedback": "Nespěchejte",
+  "happy": "Radost",
+  "angry": "Vztek",
+  "fear": "Strach",
+  "sad": "Smutek",
+  "historyPageTitle": "Historie tréninků",
+  "dataLoading": "Načítání dat...",
+  "pointsHistory": "Historie bodů",
+  "weekly": "Týdně",
+  "monthly": "Měsíčně",
+  "noDataAvailable": "Žádná data k dispozici",
+  "goalAchievementRate": "Míra plnění cíle",
+  "scoreStatistics": "Statistiky skóre",
+  "bestScore": "Nejlepší skóre",
+  "totalScore": "Celkové skóre",
+  "trainingTime": "Doba tréninku",
+  "totalTrainingTime": "Celková doba tréninku",
+  "detailedStatistics": "Podrobné statistiky",
+  "averageScorePerMinute": "Průměrné skóre za minutu",
+  "pointsToGoal": "Body do cíle",
+  "goalSetting": "Nastavení cíle",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "bodů",
+  "monthSuffix": "",
+  "sundayShort": "ne",
+  "mondayShort": "po",
+  "tuesdayShort": "út",
+  "wednesdayShort": "st",
+  "thursdayShort": "čt",
+  "fridayShort": "pá",
+  "saturdayShort": "so",
+  "settingsTitle": "Nastavení",
+  "goalPointsSetting": "Nastavení cílových bodů",
+  "currentGoalPoints": "Aktuální cíl: {points} bodů",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Nové cílové body",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "bodů",
+  "saveGoalButton": "Uložit cíl",
+  "goalSetTo": "Cíl byl nastaven na {points} bodů",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Zadejte cílové body",
+  "enterValidNumber": "Zadejte platné číslo (1 až 99999999)",
+  "saveFailed": "Některá nastavení se nepodařilo uložit",
+  "emailOpenFailed": "Nepodařilo se otevřít e-mailovou aplikaci",
+  "pageOpenFailed": "Nepodařilo se otevřít stránku",
+  "appInfoSupport": "Informace o aplikaci a podpora",
+  "contactUs": "Kontaktujte nás",
+  "contactUsSubtitle": "Podělte se o své názory a dotazy",
+  "termsOfService": "Podmínky služby",
+  "termsSubtitle": "Přečtěte si podmínky služby aplikace",
+  "privacyPolicy": "Zásady ochrany osobních údajů",
+  "privacySubtitle": "O nakládání s osobními údaji",
+  "tutorialTitle": "Návod",
+  "tutorialSubtitle": "Naučte se aplikaci používat",
+  "dataManagement": "Správa dat",
+  "deleteHistory": "Smazat historii",
+  "deleteHistorySubtitle": "Smaže pouze historii tréninků (cílové body zůstanou zachovány)",
+  "deleteHistoryAndGoal": "Smazat historii a cíl",
+  "deleteHistoryAndGoalSubtitle": "Smaže veškerou historii a cílové body",
+  "deleteHistoryConfirmTitle": "Smazat historii",
+  "deleteHistoryConfirmMessage": "Opravdu chcete smazat veškerou historii tréninků?\n\n*Cílové body zůstanou zachovány",
+  "deleteHistoryAndGoalConfirmTitle": "Smazat historii a cíl",
+  "deleteHistoryAndGoalConfirmMessage": "Opravdu chcete smazat veškerou historii a cílové body?\n\n*Tuto akci nelze vrátit zpět",
+  "cancel": "Zrušit",
+  "delete": "Smazat",
+  "historyDeleted": "Historie byla smazána",
+  "historyAndGoalDeleted": "Historie a cíl byly smazány",
+  "historyDeleteFailed": "Historii se nepodařilo smazat",
+  "historyAndGoalDeleteFailed": "Historii a cíl se nepodařilo smazat",
+  "tutorialDisplayFailed": "Návod se nepodařilo zobrazit",
+  "tips": "Tipy",
+  "tipsContent": "• Váš cíl se zobrazuje v grafu na úvodní obrazovce\n• Začněte malým cílem a zvyšujte ho vlastním tempem\n• Každá správná volba přináší až 6 bodů",
+  "backToHome": "Zpět na domovskou obrazovku",
+  "tutorialSkip": "Přeskočit",
+  "tutorialGoalAndPoints": "Cíl a aktuální body",
+  "tutorialGoalDescription": "Vnější kruh ukazuje váš cíl, vnitřní kruh celkové body. Kruh se plní podle toho, jak se blížíte k cíli.",
+  "tutorialOneMinuteTraining": "Minutový trénink",
+  "tutorialTrainingDescription": "Spusťte minutovou hru. Vybírejte pozitivní obrázky nebo dobré návyky ze 4 možností.",
+  "tutorialScoreProgress": "Vývoj skóre",
+  "tutorialScoreDescription": "Zobrazte si podrobné informace o získaném skóre.",
+  "tutorialSettingsAndData": "Nastavení a správa dat",
+  "tutorialSettingsDescription": "Změňte cílové hodnoty, zobrazte informace o aplikaci a resetujte data.",
+  "appIntroAttentionBiasTitle": "O zkreslení pozornosti",
+  "appIntroAttentionBiasContent": "Když je úzkost silná, máme nevědomě sklon soustředit se pouze na negativní věci.",
+  "appIntroFocusMintRoleTitle": "Role aplikace FocusMint",
+  "appIntroFocusMintRoleContent": "Krátká hra pro procvičování zaměření pozornosti na pozitivní obrázky.",
+  "appIntroScientificEvidenceTitle": "O tomto cvičení",
+  "appIntroScientificEvidenceContent": "Procvičujte hledání pozitivních obrázků. FocusMint je pomůcka pro péči o sebe, nikoli lékařská léčba. Výsledky se mohou u jednotlivých lidí lišit.",
+  "appIntroExpectedEffectsTitle": "Co můžete procvičovat",
+  "appIntroEffect1": "Hledání pozitivních obrázků",
+  "appIntroEffect2": "Všímání si úsměvů kolem sebe",
+  "appIntroEffect3": "Vytváření krátkého každodenního návyku",
+  "appIntroHowToUse": "Zobrazit návod k použití",
+  "pointsEarned": "Body získány!",
+  "yourScore": "Vaše skóre",
+  "totalPlayTime": "Celková doba hraní",
+  "imageManagement": "Správa obrázků",
+  "hiddenImagesCount": "Skryté obrázky: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Máte neuložené změny",
+  "unsavedChangesMessage": "V nastavení zobrazení obrázků máte {count} neuložených změn.",
+  "unsavedChangesWarning": "Pokud nyní obrazovku zavřete, změny budou ztraceny.",
+  "discardChanges": "Zahodit změny",
+  "saveAndExit": "Uložit a ukončit",
+  "settingsSaved": "Uloženo nastavení: {count}",
+  "saveError": "Při ukládání nastavení došlo k chybě",
+  "imageSettingsUpdated": "Nastavení obrázků bylo aktualizováno",
+  "allImages": "Vše",
+  "positiveImages": "Pozitivní",
+  "negativeImages": "Negativní",
+  "smileImages": "Úsměv",
+  "vegetableImages": "Výživné jídlo",
+  "healthImages": "Pohyb a kontakt s lidmi",
+  "sadImages": "Hněv, smutek a obavy",
+  "badFoodImages": "Rychlé občerstvení a sladkosti",
+  "badImages": "Nezdravé návyky",
+  "imageManagementHint": "Klepnutím zobrazíte nebo skryjete obrázek. Skrýt můžete až 15 obrázků.",
+  "unsaved": "Neuloženo",
+  "save": "Uložit",
+  "hiddenImages": "Skryté",
+  "noHiddenImages": "Žádné skryté obrázky",
+  "settingsLoadFailed": "Nastavení se nepodařilo načíst",
+  "imagesAdded": "Přidáno obrázků: {count}",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Obrázky se nepodařilo přidat",
+  "imageSelectionFailed": "Obrázky se nepodařilo vybrat",
+  "settingsChangeFailed": "Nastavení se nepodařilo změnit",
+  "groupTitle": "Skupina: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Přepnout zobrazení",
+  "imageCount": "Obrázků: {count}",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Důležitá upozornění",
+  "notice1": "Byla přidána funkce vlastních obrázků!",
+  "notice2": "Vlastní obrázky můžete přidat na obrazovce nastavení",
+  "notice3": "Podrobnosti najdete na obrazovce nastavení",
+  "customImageTitle": "Vlastní obrázky",
+  "customImageSubtitle": "Přidávejte a spravujte vlastní obrázky",
+  "addCustomImages": "Přidat vlastní obrázky",
+  "selectImages": "Vybrat obrázky",
+  "unknownImage": "Neznámý obrázek",
+  "customImageSettings": "Nastavení vlastních obrázků",
+  "useCustomImages": "Používat vlastní obrázky",
+  "useCustomImagesDescription": "Používejte při cvičení vlastní obrázky. Zapnutím kombinování níže přidáte i obrázky z aplikace.",
+  "groupSettings": "Nastavení skupin",
+  "minOneGroupRequired": "Alespoň jedna skupina musí být zapnutá",
+  "settingsLoadFailedMessage": "Nastavení se nepodařilo načíst",
+  "customImageNotice1": "Když jsou skupiny zapnuté, obrázky se v každé skupině zobrazují náhodně.",
+  "customImageNotice2": "Obrázky nahrané a nastavené uživatelem se nesdílejí s vývojáři ani třetími stranami a ukládají se pouze do prostoru aplikace v zařízení.",
+  "customImageNotice3": "Díky tomu lze aplikaci používat i offline.",
+  "customImageNotice4": "Velké množství obrázků zabírá úložiště. Při potížích vypněte vlastní obrázky nebo odstraňte nepoužívané obrázky v nastavení.",
+  "customImageNotice5": "Při smazání aplikace budou nastavené obrázky odstraněny.",
+  "customImageRequirementNotMet": "K používání vlastních obrázků potřebujete v zapnutých skupinách alespoň 1 dobrý obrázek a 3 méně dobré obrázky.",
+  "customImageRequirement": "K používání vlastních obrázků potřebujete v zapnutých skupinách alespoň 1 dobrý obrázek a 3 méně dobré obrázky.",
+  "sunnyWeather": "Dobré",
+  "rainyWeather": "Méně dobré",
+  "addImages": "Přidat obrázky",
+  "imageDeleted": "Obrázek byl smazán",
+  "imageDeleteFailed": "Obrázek se nepodařilo smazat",
+  "deleteImageTitle": "Smazat obrázek",
+  "deleteImageMessage": "Chcete tento obrázek smazat? Tuto akci nelze vrátit zpět.",
+  "groupImageTitle": "Skupina {groupId} – obrázky: {weather}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Zaregistrováno obrázků: {count}",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Nejsou zaregistrovány žádné obrázky",
+  "imagePreview": "Náhled obrázku",
+  "close": "Zavřít",
+  "contactEmailSubject": "FocusMint – Kontakt",
+  "contactEmailBody": "Napište nám prosím své názory a dotazy.",
+  "mixWithBuiltInImages": "Kombinovat s obrázky aplikace",
+  "mixWithBuiltInImagesDescription": "Používat vlastní obrázky společně s obrázky aplikace",
+  "supportIntro": "Pište vývojáři anonymně. Dotazy a návrhy jsou vítány. Denně můžete poslat 3 zprávy. Každá odpověď vývojáře obnoví dostupný počet na 3.",
+  "supportReceived": "Zpráva byla přijata. Obvykle odpovídáme do 2–3 dnů.",
+  "supportComposer": "Napište zprávu",
+  "supportSend": "Odeslat",
+  "supportRetry": "Zkusit znovu",
+  "supportSent": "Odesláno",
+  "supportUnsent": "Neodesláno · uloženo v tomto zařízení",
+  "supportAttach": "Přiložit obrázek",
+  "supportRemoveImage": "Odebrat obrázek",
+  "supportImage": "Příloha",
+  "supportClear": "Smazat historii",
+  "supportClearConfirm": "Smazat tuto konverzaci? Smažou se i neodeslané koncepty a historie na serveru. Limit zpráv se neobnoví.",
+  "supportQuota": "Dnešní 3 zprávy už byly využity. Další můžete poslat zítra nebo po odpovědi vývojáře.",
+  "supportConnectionError": "Nepodařilo se připojit. Uložené koncepty nebyly odeslány.",
+  "supportSendError": "Odeslání se nezdařilo. Zpráva je uložená v tomto zařízení. Zkuste to znovu.",
+  "supportStorageError": "Uložení se nezdařilo. Zkuste to znovu.",
+  "supportClearError": "Historii se nepodařilo smazat. Zkontrolujte připojení a zkuste to znovu.",
+  "supportImageError": "Obrázek se nepodařilo načíst. Vyberte obrázek menší než 30 MB.",
+  "supportRemaining": "Zbývající zprávy dnes: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Nepřečtené odpovědi: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informace",
+  "supportDeveloper": "Vývojář",
+  "supportPrivacy": "O údajích podpory",
+  "breathingTitle": "Na chvíli se nadechněte",
+  "breathingHint": "Sledujte jemný pohyb plic\nv tempu, které vám vyhovuje.",
+  "breathingIn": "Pomalu se nadechněte",
+  "breathingOut": "Pomalu vydechněte",
+  "breathingProgress": "Průběh dechového cvičení",
+  "breathingResultHint": "Výsledky se zobrazí automaticky.",
+  "breathingSkip": "Přejít na výsledky"
+}

@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:focusmint/services/support_service.dart';
 import 'package:focusmint/pages/web_view_page.dart';
@@ -479,14 +478,16 @@ class _ContactPageState extends ConsumerState<ContactPage>
     VoidCallback? retry,
   }) {
     return Align(
-      alignment: user ? Alignment.centerRight : Alignment.centerLeft,
+      alignment: user
+          ? AlignmentDirectional.centerEnd
+          : AlignmentDirectional.centerStart,
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 420),
         child: Padding(
-          padding: EdgeInsets.only(
+          padding: EdgeInsetsDirectional.only(
             bottom: 16,
-            left: user ? 32 : 0,
-            right: user ? 0 : 32,
+            start: user ? 32 : 0,
+            end: user ? 0 : 32,
           ),
           child: Column(
             crossAxisAlignment: user
@@ -545,9 +546,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                 Padding(
                   padding: const EdgeInsets.only(top: 4),
                   child: Text(
-                    DateFormat.Md(Localizations.localeOf(context).languageCode)
-                        .add_Hm()
-                        .format(date.toLocal()),
+                    _messageDate(date),
                     style: Theme.of(context).textTheme.labelSmall,
                   ),
                 ),
@@ -561,6 +560,17 @@ class _ContactPageState extends ConsumerState<ContactPage>
         ),
       ),
     );
+  }
+
+  String _messageDate(DateTime date) {
+    final local = date.toLocal();
+    final material = MaterialLocalizations.of(context);
+    final day = material.formatShortDate(local);
+    final time = material.formatTimeOfDay(
+      TimeOfDay.fromDateTime(local),
+      alwaysUse24HourFormat: MediaQuery.alwaysUse24HourFormatOf(context),
+    );
+    return '$day $time';
   }
 
   @override

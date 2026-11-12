@@ -1,0 +1,333 @@
+{
+  "@@locale": "vi",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Điểm hiện tại",
+  "goalLabel": "Mục tiêu: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Còn lại: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Đã đạt mục tiêu!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Luyện cách chú ý đến điều tích cực.",
+  "remainingTimeMinutes": "Thời gian còn lại: {minutes} phút {seconds} giây",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Thời gian còn lại: {seconds} giây",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Điểm số: {score} điểm",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Đang chuẩn bị hình ảnh...",
+  "noStimuliAvailable": "Không có kích thích nào khả dụng",
+  "invalidGridSize": "Kích thước lưới không hợp lệ",
+  "unknown": "?",
+  "gettingStarted": "Đang bắt đầu...",
+  "excellentPerformance": "Thành tích xuất sắc!",
+  "greatJob": "Làm tốt lắm!",
+  "goodPerformance": "Thành tích tốt",
+  "keepPracticingFeedback": "Hãy tiếp tục luyện tập",
+  "takeYourTimeFeedback": "Cứ từ từ, đừng vội",
+  "happy": "Vui vẻ",
+  "angry": "Tức giận",
+  "fear": "Sợ hãi",
+  "sad": "Buồn bã",
+  "historyPageTitle": "Lịch sử luyện tập",
+  "dataLoading": "Đang tải dữ liệu...",
+  "pointsHistory": "Lịch sử điểm",
+  "weekly": "Theo tuần",
+  "monthly": "Theo tháng",
+  "noDataAvailable": "Không có dữ liệu",
+  "goalAchievementRate": "Tỷ lệ đạt mục tiêu",
+  "scoreStatistics": "Thống kê điểm số",
+  "bestScore": "Điểm cao nhất",
+  "totalScore": "Tổng điểm",
+  "trainingTime": "Thời gian luyện tập",
+  "totalTrainingTime": "Tổng thời gian luyện tập",
+  "detailedStatistics": "Thống kê chi tiết",
+  "averageScorePerMinute": "Điểm trung bình mỗi phút",
+  "pointsToGoal": "Số điểm còn thiếu để đạt mục tiêu",
+  "goalSetting": "Cài đặt mục tiêu",
+  "secondsUnit": "giây",
+  "minutesUnit": "phút",
+  "hoursUnit": "giờ",
+  "pointsUnit": "điểm",
+  "monthSuffix": "",
+  "sundayShort": "CN",
+  "mondayShort": "T2",
+  "tuesdayShort": "T3",
+  "wednesdayShort": "T4",
+  "thursdayShort": "T5",
+  "fridayShort": "T6",
+  "saturdayShort": "T7",
+  "settingsTitle": "Cài đặt",
+  "goalPointsSetting": "Cài đặt điểm mục tiêu",
+  "currentGoalPoints": "Mục tiêu hiện tại: {points} điểm",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Điểm mục tiêu mới",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "điểm",
+  "saveGoalButton": "Lưu mục tiêu",
+  "goalSetTo": "Đã đặt mục tiêu là {points} điểm",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Vui lòng nhập điểm mục tiêu",
+  "enterValidNumber": "Vui lòng nhập số hợp lệ (từ 1 đến 99999999)",
+  "saveFailed": "Không thể lưu một số cài đặt",
+  "emailOpenFailed": "Không thể mở ứng dụng email",
+  "pageOpenFailed": "Không thể mở trang",
+  "appInfoSupport": "Thông tin ứng dụng & Hỗ trợ",
+  "contactUs": "Liên hệ với chúng tôi",
+  "contactUsSubtitle": "Chia sẻ ý kiến và câu hỏi của bạn",
+  "termsOfService": "Điều khoản dịch vụ",
+  "termsSubtitle": "Xem điều khoản dịch vụ của ứng dụng",
+  "privacyPolicy": "Chính sách quyền riêng tư",
+  "privacySubtitle": "Về cách xử lý thông tin cá nhân",
+  "tutorialTitle": "Hướng dẫn",
+  "tutorialSubtitle": "Tìm hiểu cách sử dụng ứng dụng",
+  "dataManagement": "Quản lý dữ liệu",
+  "deleteHistory": "Xóa lịch sử",
+  "deleteHistorySubtitle": "Chỉ xóa lịch sử luyện tập (điểm mục tiêu được giữ lại)",
+  "deleteHistoryAndGoal": "Xóa lịch sử & mục tiêu",
+  "deleteHistoryAndGoalSubtitle": "Xóa toàn bộ lịch sử và điểm mục tiêu",
+  "deleteHistoryConfirmTitle": "Xóa lịch sử",
+  "deleteHistoryConfirmMessage": "Bạn có chắc muốn xóa toàn bộ lịch sử luyện tập không?\n\n*Điểm mục tiêu sẽ được giữ lại",
+  "deleteHistoryAndGoalConfirmTitle": "Xóa lịch sử & mục tiêu",
+  "deleteHistoryAndGoalConfirmMessage": "Bạn có chắc muốn xóa toàn bộ lịch sử và điểm mục tiêu không?\n\n*Thao tác này không thể hoàn tác",
+  "cancel": "Hủy",
+  "delete": "Xóa",
+  "historyDeleted": "Đã xóa lịch sử",
+  "historyAndGoalDeleted": "Đã xóa lịch sử và mục tiêu",
+  "historyDeleteFailed": "Xóa lịch sử không thành công",
+  "historyAndGoalDeleteFailed": "Xóa lịch sử và mục tiêu không thành công",
+  "tutorialDisplayFailed": "Không thể hiển thị hướng dẫn",
+  "tips": "Mẹo",
+  "tipsContent": "• Mục tiêu của bạn xuất hiện trên biểu đồ ở màn hình chính\n• Bắt đầu với mục tiêu nhỏ và tăng dần theo nhịp độ của bạn\n• Mỗi lựa chọn đúng mang lại tối đa 6 điểm",
+  "backToHome": "Về trang chính",
+  "tutorialSkip": "Bỏ qua",
+  "tutorialGoalAndPoints": "Mục tiêu và điểm hiện tại",
+  "tutorialGoalDescription": "Vòng tròn ngoài hiển thị mục tiêu, vòng tròn trong hiển thị tổng điểm. Vòng tròn sẽ đầy dần khi bạn tiến gần đến mục tiêu.",
+  "tutorialOneMinuteTraining": "Luyện tập 1 phút",
+  "tutorialTrainingDescription": "Bắt đầu trò chơi 1 phút. Chọn hình ảnh tích cực hoặc thói quen tốt từ 4 lựa chọn.",
+  "tutorialScoreProgress": "Tiến trình điểm số",
+  "tutorialScoreDescription": "Xem thông tin chi tiết về số điểm bạn đã đạt được.",
+  "tutorialSettingsAndData": "Cài đặt và quản lý dữ liệu",
+  "tutorialSettingsDescription": "Thay đổi mục tiêu, xem thông tin ứng dụng và đặt lại dữ liệu.",
+  "appIntroAttentionBiasTitle": "Về thiên kiến chú ý",
+  "appIntroAttentionBiasContent": "Khi lo âu tăng cao, chúng ta thường vô thức chỉ chú ý đến những điều tiêu cực.",
+  "appIntroFocusMintRoleTitle": "Vai trò của FocusMint",
+  "appIntroFocusMintRoleContent": "Một trò chơi ngắn để luyện hướng sự chú ý vào các hình ảnh tích cực.",
+  "appIntroScientificEvidenceTitle": "Về bài tập này",
+  "appIntroScientificEvidenceContent": "Luyện tìm hình ảnh tích cực. FocusMint là công cụ tự chăm sóc bản thân, không phải phương pháp điều trị y tế. Kết quả có thể khác nhau ở mỗi người.",
+  "appIntroExpectedEffectsTitle": "Những điều bạn có thể luyện tập",
+  "appIntroEffect1": "Tìm hình ảnh tích cực",
+  "appIntroEffect2": "Chú ý đến những nụ cười quanh bạn",
+  "appIntroEffect3": "Tạo một thói quen ngắn mỗi ngày",
+  "appIntroHowToUse": "Xem cách sử dụng",
+  "pointsEarned": "Đã nhận điểm!",
+  "yourScore": "Điểm của bạn",
+  "totalPlayTime": "Tổng thời gian chơi",
+  "imageManagement": "Quản lý hình ảnh",
+  "hiddenImagesCount": "Hình ảnh đã ẩn: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Có thay đổi chưa được lưu",
+  "unsavedChangesMessage": "Có {count} thay đổi chưa lưu trong cài đặt hiển thị hình ảnh.",
+  "unsavedChangesWarning": "Nếu đóng màn hình này bây giờ, các thay đổi sẽ bị mất.",
+  "discardChanges": "Bỏ thay đổi",
+  "saveAndExit": "Lưu và thoát",
+  "settingsSaved": "Đã lưu {count} cài đặt",
+  "saveError": "Đã xảy ra lỗi khi lưu cài đặt",
+  "imageSettingsUpdated": "Đã cập nhật cài đặt hình ảnh",
+  "allImages": "Tất cả",
+  "positiveImages": "Tích cực",
+  "negativeImages": "Tiêu cực",
+  "smileImages": "Nụ cười",
+  "vegetableImages": "Thực phẩm bổ dưỡng",
+  "healthImages": "Vận động và giao lưu",
+  "sadImages": "Tức giận, buồn bã và lo lắng",
+  "badFoodImages": "Đồ ăn nhanh và đồ ngọt",
+  "badImages": "Thói quen không lành mạnh",
+  "imageManagementHint": "Chạm để bật/tắt hiển thị hình ảnh. Bạn có thể ẩn tối đa 15 hình.",
+  "unsaved": "Chưa lưu",
+  "save": "Lưu",
+  "hiddenImages": "Đã ẩn",
+  "noHiddenImages": "Không có hình ảnh nào bị ẩn",
+  "settingsLoadFailed": "Không thể tải cài đặt",
+  "imagesAdded": "Đã thêm {count} hình ảnh",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Thêm hình ảnh không thành công",
+  "imageSelectionFailed": "Chọn hình ảnh không thành công",
+  "settingsChangeFailed": "Thay đổi cài đặt không thành công",
+  "groupTitle": "Nhóm: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Bật/tắt hiển thị",
+  "imageCount": "{count} hình ảnh",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Lưu ý quan trọng",
+  "notice1": "Đã thêm tính năng hình ảnh tùy chỉnh!",
+  "notice2": "Bạn có thể thêm hình ảnh của riêng mình từ màn hình cài đặt",
+  "notice3": "Vui lòng xem chi tiết tại màn hình cài đặt",
+  "customImageTitle": "Hình ảnh tùy chỉnh",
+  "customImageSubtitle": "Thêm và quản lý hình ảnh của riêng bạn",
+  "addCustomImages": "Thêm hình ảnh tùy chỉnh",
+  "selectImages": "Chọn hình ảnh",
+  "unknownImage": "Hình ảnh không xác định",
+  "customImageSettings": "Cài đặt hình ảnh tùy chỉnh",
+  "useCustomImages": "Sử dụng hình ảnh tùy chỉnh",
+  "useCustomImagesDescription": "Dùng ảnh của bạn để luyện tập. Bật tùy chọn kết hợp bên dưới để dùng cả ảnh có sẵn trong ứng dụng.",
+  "groupSettings": "Cài đặt nhóm",
+  "minOneGroupRequired": "Phải bật ít nhất một nhóm",
+  "settingsLoadFailedMessage": "Không thể tải cài đặt",
+  "customImageNotice1": "Khi nhóm được bật, hình ảnh sẽ được hiển thị ngẫu nhiên theo từng nhóm.",
+  "customImageNotice2": "Hình ảnh do người dùng tải lên và thiết lập sẽ không được chia sẻ với nhà phát triển hay bên thứ ba, và chỉ được lưu trong vùng dữ liệu của ứng dụng trên thiết bị.",
+  "customImageNotice3": "Nhờ đó có thể sử dụng ngoại tuyến.",
+  "customImageNotice4": "Thêm nhiều ảnh sẽ chiếm dung lượng lưu trữ. Nếu gặp vấn đề, hãy tắt ảnh cá nhân hoặc xóa ảnh không dùng trong phần Cài đặt.",
+  "customImageNotice5": "Khi xóa ứng dụng, các hình ảnh đã thiết lập cũng sẽ bị xóa.",
+  "customImageRequirementNotMet": "Để sử dụng hình ảnh tùy chỉnh, cần có ít nhất 1 hình ảnh tốt và 3 hình ảnh không tốt trong các nhóm được bật.",
+  "customImageRequirement": "Để sử dụng hình ảnh tùy chỉnh, cần có ít nhất 1 hình ảnh tốt và 3 hình ảnh không tốt trong các nhóm được bật.",
+  "sunnyWeather": "Tốt",
+  "rainyWeather": "Không tốt",
+  "addImages": "Thêm hình ảnh",
+  "imageDeleted": "Đã xóa hình ảnh",
+  "imageDeleteFailed": "Xóa hình ảnh không thành công",
+  "deleteImageTitle": "Xóa hình ảnh",
+  "deleteImageMessage": "Bạn có muốn xóa hình ảnh này không? Thao tác này không thể hoàn tác.",
+  "groupImageTitle": "Nhóm {groupId} - Hình ảnh {weather}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Đã đăng ký: {count} hình ảnh",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Chưa có hình ảnh nào được đăng ký",
+  "imagePreview": "Xem trước hình ảnh",
+  "close": "Đóng",
+  "contactEmailSubject": "FocusMint - Liên hệ",
+  "contactEmailBody": "Vui lòng chia sẻ ý kiến và câu hỏi của bạn.",
+  "mixWithBuiltInImages": "Kết hợp với ảnh có sẵn",
+  "mixWithBuiltInImagesDescription": "Dùng kết hợp ảnh có sẵn và ảnh của bạn",
+  "supportIntro": "Trò chuyện ẩn danh với nhà phát triển. Bạn có thể gửi câu hỏi và góp ý. Mỗi ngày được gửi 3 tin nhắn. Mỗi phản hồi từ nhà phát triển sẽ khôi phục số tin nhắn còn lại về 3.",
+  "supportReceived": "Đã nhận tin nhắn. Chúng tôi thường trả lời trong 2–3 ngày.",
+  "supportComposer": "Nhập tin nhắn",
+  "supportSend": "Gửi",
+  "supportRetry": "Thử lại",
+  "supportSent": "Đã gửi",
+  "supportUnsent": "Chưa gửi · đã lưu trên thiết bị này",
+  "supportAttach": "Đính kèm ảnh",
+  "supportRemoveImage": "Bỏ ảnh",
+  "supportImage": "Tệp đính kèm",
+  "supportClear": "Xóa lịch sử",
+  "supportClearConfirm": "Xóa cuộc trò chuyện này? Bản nháp chưa gửi và lịch sử trên máy chủ cũng sẽ bị xóa. Việc này không khôi phục hạn mức tin nhắn.",
+  "supportQuota": "Bạn đã dùng hết 3 tin nhắn hôm nay. Hãy gửi tiếp vào ngày mai hoặc sau khi nhà phát triển trả lời.",
+  "supportConnectionError": "Không thể kết nối. Các bản nháp đã lưu chưa được gửi.",
+  "supportSendError": "Không thể gửi. Tin nhắn đã được lưu trên thiết bị này. Vui lòng thử lại.",
+  "supportStorageError": "Không thể lưu. Vui lòng thử lại.",
+  "supportClearError": "Không thể xóa lịch sử. Hãy kiểm tra kết nối rồi thử lại.",
+  "supportImageError": "Không thể tải ảnh. Hãy chọn ảnh dưới 30 MB.",
+  "supportRemaining": "Tin nhắn còn lại hôm nay: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Phản hồi chưa đọc: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Thông tin",
+  "supportDeveloper": "Nhà phát triển",
+  "supportPrivacy": "Dữ liệu yêu cầu hỗ trợ",
+  "breathingTitle": "Dành một nhịp để thở",
+  "breathingHint": "Làm theo chuyển động nhẹ của phổi\nvới nhịp độ bạn thấy thoải mái.",
+  "breathingIn": "Hít vào chậm rãi",
+  "breathingOut": "Thở ra chậm rãi",
+  "breathingProgress": "Tiến trình bài tập thở",
+  "breathingResultHint": "Kết quả sẽ tự động hiển thị khi kết thúc.",
+  "breathingSkip": "Bỏ qua và xem kết quả"
+}

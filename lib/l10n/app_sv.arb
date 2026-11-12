@@ -1,0 +1,333 @@
+{
+  "@@locale": "sv",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Aktuella poäng",
+  "goalLabel": "Mål: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Återstår: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Mål uppnått!",
+  "startButtonText": "START",
+  "stressReductionMessage": "Öva på att lägga märke till det positiva.",
+  "remainingTimeMinutes": "Tid kvar: {minutes} min {seconds} s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Tid kvar: {seconds} s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Resultat: {score} poäng",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Förbereder bilder...",
+  "noStimuliAvailable": "Inga stimuli tillgängliga",
+  "invalidGridSize": "Ogiltig rutnätsstorlek",
+  "unknown": "?",
+  "gettingStarted": "Startar...",
+  "excellentPerformance": "Utmärkt prestation!",
+  "greatJob": "Bra jobbat!",
+  "goodPerformance": "Bra prestation",
+  "keepPracticingFeedback": "Fortsätt öva",
+  "takeYourTimeFeedback": "Ta den tid du behöver",
+  "happy": "Glad",
+  "angry": "Arg",
+  "fear": "Rädsla",
+  "sad": "Ledsen",
+  "historyPageTitle": "Träningshistorik",
+  "dataLoading": "Läser in data...",
+  "pointsHistory": "Poänghistorik",
+  "weekly": "Veckovis",
+  "monthly": "Månadsvis",
+  "noDataAvailable": "Ingen data tillgänglig",
+  "goalAchievementRate": "Måluppfyllelse",
+  "scoreStatistics": "Poängstatistik",
+  "bestScore": "Bästa resultat",
+  "totalScore": "Totalt resultat",
+  "trainingTime": "Träningstid",
+  "totalTrainingTime": "Total träningstid",
+  "detailedStatistics": "Detaljerad statistik",
+  "averageScorePerMinute": "Genomsnittligt resultat per minut",
+  "pointsToGoal": "Poäng kvar till målet",
+  "goalSetting": "Målinställning",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "poäng",
+  "monthSuffix": "",
+  "sundayShort": "sön",
+  "mondayShort": "mån",
+  "tuesdayShort": "tis",
+  "wednesdayShort": "ons",
+  "thursdayShort": "tors",
+  "fridayShort": "fre",
+  "saturdayShort": "lör",
+  "settingsTitle": "Inställningar",
+  "goalPointsSetting": "Inställning av målpoäng",
+  "currentGoalPoints": "Nuvarande mål: {points} poäng",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Nya målpoäng",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "poäng",
+  "saveGoalButton": "Spara mål",
+  "goalSetTo": "Målet är satt till {points} poäng",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Ange målpoäng",
+  "enterValidNumber": "Ange ett giltigt tal (1 till 99999999)",
+  "saveFailed": "Det gick inte att spara vissa inställningar",
+  "emailOpenFailed": "Det gick inte att öppna e-postappen",
+  "pageOpenFailed": "Det gick inte att öppna sidan",
+  "appInfoSupport": "Appinfo och support",
+  "contactUs": "Kontakta oss",
+  "contactUsSubtitle": "Dela dina synpunkter och frågor",
+  "termsOfService": "Användarvillkor",
+  "termsSubtitle": "Läs appens användarvillkor",
+  "privacyPolicy": "Integritetspolicy",
+  "privacySubtitle": "Om hantering av integritetsuppgifter",
+  "tutorialTitle": "Handledning",
+  "tutorialSubtitle": "Lär dig hur appen används",
+  "dataManagement": "Datahantering",
+  "deleteHistory": "Radera historik",
+  "deleteHistorySubtitle": "Raderar endast träningshistoriken (målpoängen behålls)",
+  "deleteHistoryAndGoal": "Radera historik och mål",
+  "deleteHistoryAndGoalSubtitle": "Raderar all historik och alla målpoäng",
+  "deleteHistoryConfirmTitle": "Radera historik",
+  "deleteHistoryConfirmMessage": "Vill du verkligen radera all träningshistorik?\n\n*Målpoängen behålls",
+  "deleteHistoryAndGoalConfirmTitle": "Radera historik och mål",
+  "deleteHistoryAndGoalConfirmMessage": "Vill du verkligen radera all historik och alla målpoäng?\n\n*Den här åtgärden kan inte ångras",
+  "cancel": "Avbryt",
+  "delete": "Radera",
+  "historyDeleted": "Historiken har raderats",
+  "historyAndGoalDeleted": "Historik och mål har raderats",
+  "historyDeleteFailed": "Det gick inte att radera historiken",
+  "historyAndGoalDeleteFailed": "Det gick inte att radera historik och mål",
+  "tutorialDisplayFailed": "Det gick inte att visa handledningen",
+  "tips": "Tips",
+  "tipsContent": "• Ditt mål visas i diagrammet på startskärmen\n• Börja med ett litet mål och öka det i din egen takt\n• Varje rätt val ger upp till 6 poäng",
+  "backToHome": "Tillbaka till start",
+  "tutorialSkip": "Hoppa över",
+  "tutorialGoalAndPoints": "Mål och aktuella poäng",
+  "tutorialGoalDescription": "Den yttre cirkeln visar ditt mål, den inre visar dina totala poäng. Cirkeln fylls i takt med att du närmar dig målet.",
+  "tutorialOneMinuteTraining": "1-minutsträning",
+  "tutorialTrainingDescription": "Starta ett 1-minutsspel. Välj positiva bilder eller goda vanor bland 4 alternativ.",
+  "tutorialScoreProgress": "Poängutveckling",
+  "tutorialScoreDescription": "Se detaljerad information om dina intjänade poäng.",
+  "tutorialSettingsAndData": "Inställningar och datahantering",
+  "tutorialSettingsDescription": "Ändra målvärden, visa appinformation och återställ data.",
+  "appIntroAttentionBiasTitle": "Om uppmärksamhetsbias",
+  "appIntroAttentionBiasContent": "När oron är stark tenderar vi omedvetet att bara fokusera på det negativa.",
+  "appIntroFocusMintRoleTitle": "FocusMints roll",
+  "appIntroFocusMintRoleContent": "Ett kort spel där du övar på att rikta uppmärksamheten mot positiva bilder.",
+  "appIntroScientificEvidenceTitle": "Om den här övningen",
+  "appIntroScientificEvidenceContent": "Öva på att hitta positiva bilder. FocusMint är ett verktyg för egenvård, inte en medicinsk behandling. Resultaten varierar mellan olika personer.",
+  "appIntroExpectedEffectsTitle": "Det här kan du öva på",
+  "appIntroEffect1": "Leta efter positiva bilder",
+  "appIntroEffect2": "Lägga märke till leenden omkring dig",
+  "appIntroEffect3": "Skapa en kort daglig rutin",
+  "appIntroHowToUse": "Se hur appen används",
+  "pointsEarned": "Poäng intjänade!",
+  "yourScore": "Ditt resultat",
+  "totalPlayTime": "Total speltid",
+  "imageManagement": "Bildhantering",
+  "hiddenImagesCount": "Dolda bilder: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Du har osparade ändringar",
+  "unsavedChangesMessage": "Du har {count} osparade ändringar i bildvisningsinställningarna.",
+  "unsavedChangesWarning": "Ändringarna går förlorade om du stänger skärmen nu.",
+  "discardChanges": "Ignorera ändringar",
+  "saveAndExit": "Spara och avsluta",
+  "settingsSaved": "{count} inställningar har sparats",
+  "saveError": "Ett fel uppstod när inställningarna sparades",
+  "imageSettingsUpdated": "Bildinställningarna har uppdaterats",
+  "allImages": "Alla",
+  "positiveImages": "Positiva",
+  "negativeImages": "Negativa",
+  "smileImages": "Leenden",
+  "vegetableImages": "Näringsrik mat",
+  "healthImages": "Rörelse och gemenskap",
+  "sadImages": "Ilska, sorg och oro",
+  "badFoodImages": "Snabbmat och sötsaker",
+  "badImages": "Ohälsosamma vanor",
+  "imageManagementHint": "Tryck för att visa eller dölja en bild. Du kan dölja upp till 15 bilder.",
+  "unsaved": "Osparad",
+  "save": "Spara",
+  "hiddenImages": "Dolda",
+  "noHiddenImages": "Inga dolda bilder",
+  "settingsLoadFailed": "Det gick inte att läsa in inställningarna",
+  "imagesAdded": "{count} bilder har lagts till",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Det gick inte att lägga till bilder",
+  "imageSelectionFailed": "Det gick inte att välja bilder",
+  "settingsChangeFailed": "Det gick inte att ändra inställningarna",
+  "groupTitle": "Grupp: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Växla visning",
+  "imageCount": "{count} bilder",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Viktig information",
+  "notice1": "Funktionen för egna bilder har lagts till!",
+  "notice2": "Du kan lägga till egna bilder från inställningsskärmen",
+  "notice3": "Se inställningsskärmen för mer information",
+  "customImageTitle": "Egna bilder",
+  "customImageSubtitle": "Lägg till och hantera egna bilder",
+  "addCustomImages": "Lägg till egna bilder",
+  "selectImages": "Välj bilder",
+  "unknownImage": "Okänd bild",
+  "customImageSettings": "Inställningar för egna bilder",
+  "useCustomImages": "Använd egna bilder",
+  "useCustomImagesDescription": "Använd dina egna bilder i övningen. Aktivera blandning nedan för att även använda appens bilder.",
+  "groupSettings": "Gruppinställningar",
+  "minOneGroupRequired": "Minst en grupp måste vara aktiverad",
+  "settingsLoadFailedMessage": "Det gick inte att läsa in inställningarna",
+  "customImageNotice1": "När grupper är aktiverade visas bilderna slumpmässigt för varje grupp.",
+  "customImageNotice2": "Bilder som användaren laddar upp och ställer in delas inte med utvecklare eller tredje part och lagras endast i appens område på enheten.",
+  "customImageNotice3": "Därför kan appen användas offline.",
+  "customImageNotice4": "Många bilder tar lagringsutrymme. Om du får problem kan du stänga av egna bilder eller ta bort oanvända bilder i Inställningar.",
+  "customImageNotice5": "När du tar bort appen raderas de inställda bilderna.",
+  "customImageRequirementNotMet": "För att använda egna bilder behöver du minst 1 bra bild och 3 mindre bra bilder i aktiverade grupper.",
+  "customImageRequirement": "För att använda egna bilder behöver du minst 1 bra bild och 3 mindre bra bilder i aktiverade grupper.",
+  "sunnyWeather": "Bra",
+  "rainyWeather": "Mindre bra",
+  "addImages": "Lägg till bilder",
+  "imageDeleted": "Bilden har raderats",
+  "imageDeleteFailed": "Det gick inte att radera bilden",
+  "deleteImageTitle": "Radera bild",
+  "deleteImageMessage": "Vill du radera den här bilden? Den här åtgärden kan inte ångras.",
+  "groupImageTitle": "Grupp {groupId} – {weather} bilder",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Registrerade: {count} bilder",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Inga bilder registrerade",
+  "imagePreview": "Förhandsgranskning av bild",
+  "close": "Stäng",
+  "contactEmailSubject": "FocusMint – Kontakt",
+  "contactEmailBody": "Dela gärna dina synpunkter och frågor.",
+  "mixWithBuiltInImages": "Blanda med appens bilder",
+  "mixWithBuiltInImagesDescription": "Använd dina egna bilder och appens bilder tillsammans",
+  "supportIntro": "Skriv anonymt till utvecklaren. Frågor och förslag är välkomna. Du kan skicka 3 meddelanden per dag. Varje svar från utvecklaren ger dig 3 nya meddelanden.",
+  "supportReceived": "Meddelandet har tagits emot. Vi svarar vanligtvis inom 2–3 dagar.",
+  "supportComposer": "Skriv ett meddelande",
+  "supportSend": "Skicka",
+  "supportRetry": "Försök igen",
+  "supportSent": "Skickat",
+  "supportUnsent": "Inte skickat · sparat på den här enheten",
+  "supportAttach": "Bifoga bild",
+  "supportRemoveImage": "Ta bort bild",
+  "supportImage": "Bilaga",
+  "supportClear": "Radera historik",
+  "supportClearConfirm": "Vill du radera den här konversationen? Även oskickade utkast och historiken på servern raderas. Din meddelandegräns återställs inte.",
+  "supportQuota": "Du har använt dagens 3 meddelanden. Skicka ett nytt i morgon eller efter ett svar från utvecklaren.",
+  "supportConnectionError": "Kunde inte ansluta. Sparade utkast har inte skickats.",
+  "supportSendError": "Kunde inte skicka. Ditt meddelande är sparat på den här enheten. Försök igen.",
+  "supportStorageError": "Kunde inte spara. Försök igen.",
+  "supportClearError": "Kunde inte radera historiken. Kontrollera anslutningen och försök igen.",
+  "supportImageError": "Kunde inte läsa in bilden. Välj en bild som är mindre än 30 MB.",
+  "supportRemaining": "Meddelanden kvar i dag: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Olästa svar: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Information",
+  "supportDeveloper": "Utvecklare",
+  "supportPrivacy": "Uppgifter i supportärenden",
+  "breathingTitle": "Ta ett lugnt andetag",
+  "breathingHint": "Följ lungornas mjuka rörelse\ni en behaglig takt.",
+  "breathingIn": "Andas in långsamt",
+  "breathingOut": "Andas ut långsamt",
+  "breathingProgress": "Andningsövningens förlopp",
+  "breathingResultHint": "Dina resultat visas automatiskt.",
+  "breathingSkip": "Gå till resultat"
+}

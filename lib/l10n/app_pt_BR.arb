@@ -1,0 +1,333 @@
+{
+  "@@locale": "pt_BR",
+  "focusMintTitle": "FOCUS MINT",
+  "currentPoints": "Pontos atuais",
+  "goalLabel": "Meta: {goal}",
+  "@goalLabel": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingLabel": "Restantes: {remaining}",
+  "@remainingLabel": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "goalAchieved": "🎉 Meta alcançada!",
+  "startButtonText": "COMEÇAR",
+  "stressReductionMessage": "Pratique perceber o que é positivo.",
+  "remainingTimeMinutes": "Tempo restante: {minutes}m {seconds}s",
+  "@remainingTimeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "remainingTimeSeconds": "Tempo restante: {seconds}s",
+  "@remainingTimeSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreLabel": "Pontuação: {score} pontos",
+  "@scoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "imagePreparationMessage": "Preparando imagens...",
+  "noStimuliAvailable": "Nenhum estímulo disponível",
+  "invalidGridSize": "Tamanho de grade inválido",
+  "unknown": "?",
+  "gettingStarted": "Começando...",
+  "excellentPerformance": "Desempenho excelente!",
+  "greatJob": "Muito bem!",
+  "goodPerformance": "Bom desempenho",
+  "keepPracticingFeedback": "Continue praticando",
+  "takeYourTimeFeedback": "Vá com calma",
+  "happy": "Feliz",
+  "angry": "Irritado",
+  "fear": "Medo",
+  "sad": "Triste",
+  "historyPageTitle": "Histórico de treinamento",
+  "dataLoading": "Carregando dados...",
+  "pointsHistory": "Histórico de pontos",
+  "weekly": "Semanal",
+  "monthly": "Mensal",
+  "noDataAvailable": "Nenhum dado disponível",
+  "goalAchievementRate": "Taxa de conclusão da meta",
+  "scoreStatistics": "Estatísticas de pontuação",
+  "bestScore": "Melhor pontuação",
+  "totalScore": "Pontuação total",
+  "trainingTime": "Tempo de treinamento",
+  "totalTrainingTime": "Tempo total de treinamento",
+  "detailedStatistics": "Estatísticas detalhadas",
+  "averageScorePerMinute": "Pontuação média por minuto",
+  "pointsToGoal": "Pontos até a meta",
+  "goalSetting": "Configuração da meta",
+  "secondsUnit": "s",
+  "minutesUnit": "min",
+  "hoursUnit": "h",
+  "pointsUnit": "pontos",
+  "monthSuffix": "",
+  "sundayShort": "Dom",
+  "mondayShort": "Seg",
+  "tuesdayShort": "Ter",
+  "wednesdayShort": "Qua",
+  "thursdayShort": "Qui",
+  "fridayShort": "Sex",
+  "saturdayShort": "Sáb",
+  "settingsTitle": "Configurações",
+  "goalPointsSetting": "Configuração de pontos da meta",
+  "currentGoalPoints": "Meta atual: {points} pontos",
+  "@currentGoalPoints": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "newGoalPointsLabel": "Novos pontos da meta",
+  "goalPointsHint": "1000",
+  "pointsUnit2": "pontos",
+  "saveGoalButton": "Salvar meta",
+  "goalSetTo": "Meta definida em {points} pontos",
+  "@goalSetTo": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "enterGoalPoints": "Insira os pontos da meta",
+  "enterValidNumber": "Insira um número válido (de 1 a 99999999)",
+  "saveFailed": "Falha ao salvar algumas configurações",
+  "emailOpenFailed": "Não foi possível abrir o aplicativo de e-mail",
+  "pageOpenFailed": "Não foi possível abrir a página",
+  "appInfoSupport": "Informações do aplicativo e suporte",
+  "contactUs": "Fale conosco",
+  "contactUsSubtitle": "Compartilhe seus comentários e dúvidas",
+  "termsOfService": "Termos de serviço",
+  "termsSubtitle": "Veja os termos de serviço do aplicativo",
+  "privacyPolicy": "Política de privacidade",
+  "privacySubtitle": "Sobre o tratamento das informações pessoais",
+  "tutorialTitle": "Tutorial",
+  "tutorialSubtitle": "Aprenda a usar o aplicativo",
+  "dataManagement": "Gerenciamento de dados",
+  "deleteHistory": "Excluir histórico",
+  "deleteHistorySubtitle": "Exclui apenas o histórico de treinamento (os pontos da meta são mantidos)",
+  "deleteHistoryAndGoal": "Excluir histórico e meta",
+  "deleteHistoryAndGoalSubtitle": "Exclui todo o histórico e os pontos da meta",
+  "deleteHistoryConfirmTitle": "Excluir histórico",
+  "deleteHistoryConfirmMessage": "Tem certeza de que deseja excluir todo o histórico de treinamento?\n\n*Os pontos da meta serão mantidos",
+  "deleteHistoryAndGoalConfirmTitle": "Excluir histórico e meta",
+  "deleteHistoryAndGoalConfirmMessage": "Tem certeza de que deseja excluir todo o histórico e os pontos da meta?\n\n*Esta ação não pode ser desfeita",
+  "cancel": "Cancelar",
+  "delete": "Excluir",
+  "historyDeleted": "Histórico excluído",
+  "historyAndGoalDeleted": "Histórico e meta excluídos",
+  "historyDeleteFailed": "Falha ao excluir o histórico",
+  "historyAndGoalDeleteFailed": "Falha ao excluir o histórico e a meta",
+  "tutorialDisplayFailed": "Falha ao exibir o tutorial",
+  "tips": "Dicas",
+  "tipsContent": "• Sua meta aparece no gráfico da tela inicial\n• Comece com uma meta pequena e aumente no seu ritmo\n• Cada escolha correta vale até 6 pontos",
+  "backToHome": "Voltar para o início",
+  "tutorialSkip": "Pular",
+  "tutorialGoalAndPoints": "Meta e pontos atuais",
+  "tutorialGoalDescription": "O círculo externo mostra a meta e o interno mostra o total de pontos. O círculo vai se preenchendo conforme você se aproxima da meta.",
+  "tutorialOneMinuteTraining": "Treinamento de 1 minuto",
+  "tutorialTrainingDescription": "Inicie um jogo de 1 minuto. Escolha imagens positivas ou bons hábitos entre 4 opções.",
+  "tutorialScoreProgress": "Progresso da pontuação",
+  "tutorialScoreDescription": "Veja informações detalhadas sobre as pontuações obtidas.",
+  "tutorialSettingsAndData": "Configurações e gerenciamento de dados",
+  "tutorialSettingsDescription": "Altere a meta, veja as informações do aplicativo e redefina os dados.",
+  "appIntroAttentionBiasTitle": "Sobre o viés de atenção",
+  "appIntroAttentionBiasContent": "Quando a ansiedade está alta, tendemos inconscientemente a nos concentrar apenas nas coisas negativas.",
+  "appIntroFocusMintRoleTitle": "O papel do FocusMint",
+  "appIntroFocusMintRoleContent": "Um jogo breve para praticar como direcionar a atenção para imagens positivas.",
+  "appIntroScientificEvidenceTitle": "Sobre este exercício",
+  "appIntroScientificEvidenceContent": "Pratique encontrar imagens positivas. O FocusMint é uma ferramenta de autocuidado, não um tratamento médico. Os resultados variam de pessoa para pessoa.",
+  "appIntroExpectedEffectsTitle": "O que você pode praticar",
+  "appIntroEffect1": "Procurar imagens positivas",
+  "appIntroEffect2": "Perceber os sorrisos ao seu redor",
+  "appIntroEffect3": "Criar uma pequena rotina diária",
+  "appIntroHowToUse": "Ver como usar",
+  "pointsEarned": "Pontos ganhos!",
+  "yourScore": "Sua pontuação",
+  "totalPlayTime": "Tempo total de jogo",
+  "imageManagement": "Gerenciamento de imagens",
+  "hiddenImagesCount": "Imagens ocultas: {count}/{max}",
+  "@hiddenImagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "unsavedChanges": "Você tem alterações não salvas",
+  "unsavedChangesMessage": "Você tem {count} alterações não salvas nas configurações de exibição de imagens.",
+  "unsavedChangesWarning": "Se você fechar esta tela agora, as alterações serão perdidas.",
+  "discardChanges": "Descartar alterações",
+  "saveAndExit": "Salvar e sair",
+  "settingsSaved": "{count} configurações salvas",
+  "saveError": "Ocorreu um erro ao salvar as configurações",
+  "imageSettingsUpdated": "As configurações de imagens foram atualizadas",
+  "allImages": "Todas",
+  "positiveImages": "Positivas",
+  "negativeImages": "Negativas",
+  "smileImages": "Sorrisos",
+  "vegetableImages": "Alimentos nutritivos",
+  "healthImages": "Movimento e convivência",
+  "sadImages": "Raiva, tristeza e preocupação",
+  "badFoodImages": "Fast-food e doces",
+  "badImages": "Hábitos pouco saudáveis",
+  "imageManagementHint": "Toque para mostrar ou ocultar uma imagem. Você pode ocultar até 15 imagens.",
+  "unsaved": "Não salvo",
+  "save": "Salvar",
+  "hiddenImages": "Ocultas",
+  "noHiddenImages": "Nenhuma imagem oculta",
+  "settingsLoadFailed": "Falha ao carregar as configurações",
+  "imagesAdded": "{count} imagens adicionadas",
+  "@imagesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageAddFailed": "Falha ao adicionar imagens",
+  "imageSelectionFailed": "Falha ao selecionar imagens",
+  "settingsChangeFailed": "Falha ao alterar as configurações",
+  "groupTitle": "Grupo: {name}",
+  "@groupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "displayToggle": "Mostrar/ocultar",
+  "imageCount": "{count} imagens",
+  "@imageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noticeTitle": "Avisos importantes",
+  "notice1": "O recurso de imagens personalizadas foi adicionado!",
+  "notice2": "Você pode adicionar suas próprias imagens na tela de configurações",
+  "notice3": "Confira a tela de configurações para mais detalhes",
+  "customImageTitle": "Imagens personalizadas",
+  "customImageSubtitle": "Adicione e gerencie suas próprias imagens",
+  "addCustomImages": "Adicionar imagens personalizadas",
+  "selectImages": "Selecionar imagens",
+  "unknownImage": "Imagem desconhecida",
+  "customImageSettings": "Configurações de imagens personalizadas",
+  "useCustomImages": "Usar imagens personalizadas",
+  "useCustomImagesDescription": "Use suas próprias imagens para praticar. Ative a mistura abaixo para incluir as imagens do aplicativo.",
+  "groupSettings": "Configurações de grupos",
+  "minOneGroupRequired": "Pelo menos um grupo deve estar ativado",
+  "settingsLoadFailedMessage": "Falha ao carregar as configurações",
+  "customImageNotice1": "Quando os grupos estão ativados, as imagens são exibidas aleatoriamente para cada grupo.",
+  "customImageNotice2": "As imagens enviadas e definidas pelos usuários não são compartilhadas com os desenvolvedores nem com terceiros e são armazenadas apenas na área do aplicativo no dispositivo.",
+  "customImageNotice3": "Isso permite o uso offline.",
+  "customImageNotice4": "Adicionar muitas imagens ocupa espaço de armazenamento. Se tiver problemas, desative as imagens pessoais ou remova as que não usa nas configurações.",
+  "customImageNotice5": "Quando você exclui o aplicativo, as imagens definidas são excluídas.",
+  "customImageRequirementNotMet": "Para usar imagens personalizadas, você precisa de pelo menos 1 imagem boa e 3 imagens não boas nos grupos ativados.",
+  "customImageRequirement": "Para usar imagens personalizadas, você precisa de pelo menos 1 imagem boa e 3 imagens não boas nos grupos ativados.",
+  "sunnyWeather": "Boas",
+  "rainyWeather": "Não boas",
+  "addImages": "Adicionar imagens",
+  "imageDeleted": "Imagem excluída",
+  "imageDeleteFailed": "Falha ao excluir a imagem",
+  "deleteImageTitle": "Excluir imagem",
+  "deleteImageMessage": "Deseja excluir esta imagem? Esta ação não pode ser desfeita.",
+  "groupImageTitle": "Imagens {weather} do grupo {groupId}",
+  "@groupImageTitle": {
+    "placeholders": {
+      "groupId": {
+        "type": "int"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "registeredCount": "Cadastradas: {count} imagens",
+  "@registeredCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noImagesRegistered": "Nenhuma imagem cadastrada",
+  "imagePreview": "Prévia da imagem",
+  "close": "Fechar",
+  "contactEmailSubject": "FocusMint - Contato",
+  "contactEmailBody": "Escreva seus comentários e dúvidas.",
+  "mixWithBuiltInImages": "Misturar com imagens do aplicativo",
+  "mixWithBuiltInImagesDescription": "Usar suas imagens e as imagens do aplicativo juntas",
+  "supportIntro": "Converse anonimamente com o desenvolvedor. Perguntas e sugestões são bem-vindas. Você pode enviar 3 mensagens por dia. Cada resposta do desenvolvedor restaura seu limite para 3.",
+  "supportReceived": "Mensagem recebida. Normalmente respondemos em 2–3 dias.",
+  "supportComposer": "Digite uma mensagem",
+  "supportSend": "Enviar",
+  "supportRetry": "Tentar novamente",
+  "supportSent": "Enviada",
+  "supportUnsent": "Não enviada · salva neste dispositivo",
+  "supportAttach": "Anexar imagem",
+  "supportRemoveImage": "Remover imagem",
+  "supportImage": "Anexo",
+  "supportClear": "Excluir histórico",
+  "supportClearConfirm": "Excluir esta conversa? Os rascunhos não enviados e o histórico no servidor também serão excluídos. Isso não restaura seu limite.",
+  "supportQuota": "Você usou as 3 mensagens de hoje. Envie outra amanhã ou após uma resposta do desenvolvedor.",
+  "supportConnectionError": "Não foi possível conectar. Os rascunhos salvos não foram enviados.",
+  "supportSendError": "Não foi possível enviar. Sua mensagem está salva neste dispositivo. Tente novamente.",
+  "supportStorageError": "Não foi possível salvar. Tente novamente.",
+  "supportClearError": "Não foi possível excluir o histórico. Confira sua conexão e tente novamente.",
+  "supportImageError": "Não foi possível carregar a imagem. Escolha uma imagem com menos de 30 MB.",
+  "supportRemaining": "Mensagens disponíveis hoje: {count}",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "Respostas não lidas: {count}",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Informações",
+  "supportDeveloper": "Desenvolvedor",
+  "supportPrivacy": "Dados de suporte",
+  "breathingTitle": "Faça uma pausa para respirar",
+  "breathingHint": "Acompanhe o movimento suave dos pulmões\nem um ritmo confortável.",
+  "breathingIn": "Inspire devagar",
+  "breathingOut": "Expire devagar",
+  "breathingProgress": "Progresso da respiração",
+  "breathingResultHint": "Seus resultados aparecerão automaticamente.",
+  "breathingSkip": "Ir para os resultados"
+}

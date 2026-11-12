@@ -20,7 +20,7 @@
   },
   "goalAchieved": "🎉 目標達成！",
   "startButtonText": "START",
-  "stressReductionMessage": "ストレスを軽減し、気分を向上させます。",
+  "stressReductionMessage": "ポジティブな画像を見つける練習をしましょう。",
   "remainingTimeMinutes": "残り時間: {minutes}分{seconds}秒",
   "@remainingTimeMinutes": {
     "placeholders": {
@@ -143,7 +143,7 @@
   "historyAndGoalDeleteFailed": "履歴と目標の削除に失敗しました",
   "tutorialDisplayFailed": "チュートリアルの表示に失敗しました",
   "tips": "ヒント",
-  "tipsContent": "• 目標ポイントはホーム画面の円グラフに反映されます\n• 小さな目標から始めて、達成したら徐々に上げていきましょう\n• 1回のセッションで最大6ポイント獲得できます",
+  "tipsContent": "• 目標はホーム画面のグラフに表示されます\n• 小さな目標から始め、自分のペースで増やしましょう\n• 正しい選択1回につき、最大6ポイント獲得できます",
   "backToHome": "ホームへ戻る",
   "tutorialSkip": "スキップ",
   "tutorialGoalAndPoints": "目標と現在のポイント",
@@ -157,13 +157,13 @@
   "appIntroAttentionBiasTitle": "注意バイアスについて",
   "appIntroAttentionBiasContent": "不安が強いと、無意識にネガティブなものばかりに目がいきやすくなります。",
   "appIntroFocusMintRoleTitle": "FocusMint の役割",
-  "appIntroFocusMintRoleContent": "ポジティブな画像を選ぶ練習で、自然と良いほうに注意を向けられるようになります。",
-  "appIntroScientificEvidenceTitle": "科学的根拠",
-  "appIntroScientificEvidenceContent": "25分のトレーニングで不安・ストレスが大きく減少することが研究で確認されています。\n\n（例：Amir et al., 2009 Journal of Abnormal Psychology / Hakamata et al., 2010 Psychological Bulletin）",
-  "appIntroExpectedEffectsTitle": "期待できる効果",
-  "appIntroEffect1": "不安や緊張の軽減",
-  "appIntroEffect2": "周囲の笑顔に気づきやすくなる",
-  "appIntroEffect3": "人付き合いが楽になる",
+  "appIntroFocusMintRoleContent": "ポジティブな画像へ注意を向ける練習のための、短いゲームです。",
+  "appIntroScientificEvidenceTitle": "この練習について",
+  "appIntroScientificEvidenceContent": "ポジティブな画像を見つける練習です。FocusMintはセルフケアのためのアプリであり、医療行為や治療を提供するものではありません。感じ方には個人差があります。",
+  "appIntroExpectedEffectsTitle": "練習できること",
+  "appIntroEffect1": "ポジティブな画像を探す",
+  "appIntroEffect2": "周囲の笑顔に目を向ける",
+  "appIntroEffect3": "毎日の短い習慣をつくる",
   "appIntroHowToUse": "使い方を見る",
   "pointsEarned": "ポイント獲得！",
   "yourScore": "あなたのスコア",
@@ -249,7 +249,7 @@
   "customImageNotice1": "各グループでオンの場合はそのグループごとにランダムで表示される。",
   "customImageNotice2": "ユーザーがアップロードしてセットした画像は開発者や第三者に共有されず、端末のアプリ領域にのみ保存される。",
   "customImageNotice3": "そのためオフラインでも使えます。",
-  "customImageNotice4": "カスタマイズされた画像については責任は持てません。登録しすぎると端末の負荷が高まり、不具合や動作不良が発生する可能性があります。通常に動かなくなる場合はアンインストールしてください。",
+  "customImageNotice4": "画像を多く追加すると端末の保存容量を使います。問題が起きた場合は、設定でカスタム画像をオフにするか、不要な画像を削除してください。",
   "customImageNotice5": "アプリを消すと、セットされた画像は消去されます。",
   "customImageRequirementNotMet": "カスタム画像を使用するには、有効なグループに良い画像1枚以上、よくない画像3枚以上が必要です。",
   "customImageRequirement": "カスタム画像を使用するには、有効なグループに良い画像1枚以上、よくない画像3枚以上が必要です。",
@@ -327,18 +327,7 @@
   "breathingHint": "無理のないペースで、\n肺の動きに合わせて呼吸しましょう。",
   "breathingIn": "ゆっくり吸って",
   "breathingOut": "ゆっくり吐いて",
-  "breathingRound": "{current} / {total} 回",
   "breathingProgress": "呼吸ガイドの進行状況",
   "breathingResultHint": "終わると自動で結果を表示します",
-  "breathingSkip": "スキップして結果へ",
-  "@breathingRound": {
-    "placeholders": {
-      "current": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  }
+  "breathingSkip": "スキップして結果へ"
 }
