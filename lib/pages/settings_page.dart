@@ -9,7 +9,7 @@ import 'package:focusmint/widgets/image_management_widget.dart';
 import 'package:focusmint/pages/settings/customize_settings_page.dart';
 import 'package:focusmint/l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:focusmint/pages/contact_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -69,7 +69,7 @@ class _SettingsPageState extends State<SettingsPage> {
       setState(() {
         _currentGoalPoints = newGoal;
       });
-      
+
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -77,7 +77,7 @@ class _SettingsPageState extends State<SettingsPage> {
             backgroundColor: AppColors.mintGreen,
           ),
         );
-        
+
         // 自動でホーム画面に遷移
         Navigator.of(context).popUntil((route) => route.isFirst);
       }
@@ -91,51 +91,25 @@ class _SettingsPageState extends State<SettingsPage> {
   void _showErrorMessage(String message) {
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(message),
-          backgroundColor: Colors.red,
-        ),
+        SnackBar(content: Text(message), backgroundColor: Colors.red),
       );
     }
   }
 
-  Future<void> _launchEmail() async {
-    const String email = 'mizoijin.0201@gmail.com';
-    final String subject = AppLocalizations.of(context)!.contactEmailSubject;
-    final String body = AppLocalizations.of(context)!.contactEmailBody;
-    
-    final Uri emailUri = Uri(
-      scheme: 'mailto',
-      path: email,
-      query: 'subject=${Uri.encodeComponent(subject)}&body=${Uri.encodeComponent(body)}',
-    );
-
-    try {
-      if (!await launchUrl(emailUri)) {
-        if (!mounted) return;
-        _showErrorMessage(AppLocalizations.of(context)!.emailOpenFailed);
-      }
-    } catch (e, stackTrace) {
-      _logger.e('Failed to launch email', 
-          error: e, stackTrace: stackTrace);
-      if (!mounted) return;
-      _showErrorMessage(AppLocalizations.of(context)!.emailOpenFailed);
-    }
+  void _openContact() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => const ContactPage()));
   }
 
   void _openWebView(String url, String title) {
     try {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => WebViewPage(
-            url: url,
-            title: title,
-          ),
+          builder: (context) => WebViewPage(url: url, title: title),
         ),
       );
     } catch (e, stackTrace) {
-      _logger.e('Failed to open WebView', 
-          error: e, stackTrace: stackTrace);
+      _logger.e('Failed to open WebView', error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
     }
   }
@@ -148,9 +122,7 @@ class _SettingsPageState extends State<SettingsPage> {
         return AlertDialog(
           title: Text(
             AppLocalizations.of(context)!.dataManagement,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -159,7 +131,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ListTile(
                 leading: const Icon(Icons.history, color: Colors.orange),
                 title: Text(AppLocalizations.of(context)!.deleteHistory),
-                subtitle: Text(AppLocalizations.of(context)!.deleteHistorySubtitle),
+                subtitle: Text(
+                  AppLocalizations.of(context)!.deleteHistorySubtitle,
+                ),
                 onTap: () {
                   Navigator.of(context).pop();
                   _showDeleteConfirmDialog(isHistoryOnly: true);
@@ -170,7 +144,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ListTile(
                 leading: const Icon(Icons.delete_forever, color: Colors.red),
                 title: Text(AppLocalizations.of(context)!.deleteHistoryAndGoal),
-                subtitle: Text(AppLocalizations.of(context)!.deleteHistoryAndGoalSubtitle),
+                subtitle: Text(
+                  AppLocalizations.of(context)!.deleteHistoryAndGoalSubtitle,
+                ),
                 onTap: () {
                   Navigator.of(context).pop();
                   _showDeleteConfirmDialog(isHistoryOnly: false);
@@ -182,9 +158,7 @@ class _SettingsPageState extends State<SettingsPage> {
             TextButton(
               child: Text(
                 AppLocalizations.of(context)!.cancel,
-                style: const TextStyle(
-                  color: AppColors.textSecondary,
-                ),
+                style: const TextStyle(color: AppColors.textSecondary),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -205,26 +179,22 @@ class _SettingsPageState extends State<SettingsPage> {
           title: Text(
             isHistoryOnly
                 ? AppLocalizations.of(context)!.deleteHistoryConfirmTitle
-                : AppLocalizations.of(context)!.deleteHistoryAndGoalConfirmTitle,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+                : AppLocalizations.of(context)!
+                      .deleteHistoryAndGoalConfirmTitle,
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           content: Text(
             isHistoryOnly
                 ? AppLocalizations.of(context)!.deleteHistoryConfirmMessage
-                : AppLocalizations.of(context)!.deleteHistoryAndGoalConfirmMessage,
-            style: const TextStyle(
-              fontSize: 16,
-            ),
+                : AppLocalizations.of(context)!
+                      .deleteHistoryAndGoalConfirmMessage,
+            style: const TextStyle(fontSize: 16),
           ),
           actions: <Widget>[
             TextButton(
               child: Text(
                 AppLocalizations.of(context)!.cancel,
-                style: const TextStyle(
-                  color: AppColors.textSecondary,
-                ),
+                style: const TextStyle(color: AppColors.textSecondary),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -276,8 +246,11 @@ class _SettingsPageState extends State<SettingsPage> {
         );
       }
     } catch (e, stackTrace) {
-      _logger.e('Failed to delete history data',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'Failed to delete history data',
+        error: e,
+        stackTrace: stackTrace,
+      );
       if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.historyDeleteFailed);
     }
@@ -309,10 +282,15 @@ class _SettingsPageState extends State<SettingsPage> {
         );
       }
     } catch (e, stackTrace) {
-      _logger.e('Failed to delete history and goal data',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'Failed to delete history and goal data',
+        error: e,
+        stackTrace: stackTrace,
+      );
       if (!mounted) return;
-      _showErrorMessage(AppLocalizations.of(context)!.historyAndGoalDeleteFailed);
+      _showErrorMessage(
+        AppLocalizations.of(context)!.historyAndGoalDeleteFailed,
+      );
     }
   }
 
@@ -324,8 +302,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
       // 設定ページから戻る際に'show_tutorial'を返すことで、ホーム画面でチュートリアルを表示
     } catch (e, stackTrace) {
-      _logger.e('Failed to show tutorial', 
-          error: e, stackTrace: stackTrace);
+      _logger.e('Failed to show tutorial', error: e, stackTrace: stackTrace);
       _showErrorMessage(AppLocalizations.of(context)!.tutorialDisplayFailed);
     }
   }
@@ -348,10 +325,12 @@ class _SettingsPageState extends State<SettingsPage> {
 
       // 画像管理画面から戻った時にImageServiceのキャッシュをクリア
       _imageService.refreshCache();
-
     } catch (e, stackTrace) {
-      _logger.e('Failed to show image management',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'Failed to show image management',
+        error: e,
+        stackTrace: stackTrace,
+      );
       if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
     }
@@ -361,13 +340,14 @@ class _SettingsPageState extends State<SettingsPage> {
   void _showCustomizeSettings() async {
     try {
       await Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => const CustomizeSettingsPage(),
-        ),
+        MaterialPageRoute(builder: (context) => const CustomizeSettingsPage()),
       );
     } catch (e, stackTrace) {
-      _logger.e('Failed to show customize settings',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'Failed to show customize settings',
+        error: e,
+        stackTrace: stackTrace,
+      );
       if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.pageOpenFailed);
     }
@@ -390,8 +370,8 @@ class _SettingsPageState extends State<SettingsPage> {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: isDestructive 
-                    ? Colors.red.shade50 
+                color: isDestructive
+                    ? Colors.red.shade50
                     : AppColors.mintGreen.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -425,11 +405,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 ],
               ),
             ),
-            Icon(
-              Icons.chevron_right,
-              color: AppColors.textSecondary,
-              size: 20,
-            ),
+            Icon(Icons.chevron_right, color: AppColors.textSecondary, size: 20),
           ],
         ),
       ),
@@ -464,301 +440,322 @@ class _SettingsPageState extends State<SettingsPage> {
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.all(24.0),
                   child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                  // 目標ポイント設定セクション
-                  Card(
-                    elevation: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.flag,
-                                color: AppColors.mintGreen,
-                                size: 24,
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                AppLocalizations.of(context)!.goalPointsSetting,
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.textPrimary,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 16),
-                          Text(
-                            AppLocalizations.of(context)!.currentGoalPoints(_currentGoalPoints),
-                            style: const TextStyle(
-                              fontSize: 16,
-                              color: AppColors.textSecondary,
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-                          TextField(
-                            controller: _goalPointsController,
-                            decoration: InputDecoration(
-                              labelText: AppLocalizations.of(context)!.newGoalPointsLabel,
-                              hintText: AppLocalizations.of(context)!.goalPointsHint,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              suffixText: AppLocalizations.of(context)!.pointsUnit2,
-                            ),
-                            keyboardType: TextInputType.number,
-                            inputFormatters: [
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
-                          ),
-                          const SizedBox(height: 20),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: _saveGoalPoints,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.mintGreen,
-                                padding: const EdgeInsets.symmetric(vertical: 16),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                              ),
-                              child: Text(
-                                AppLocalizations.of(context)!.saveGoalButton,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  
-                  const SizedBox(height: 24),
-                  
-                  // アプリ情報・サポートセクション
-                  Card(
-                    elevation: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.info_outline,
-                                color: AppColors.mintGreen,
-                                size: 24,
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                AppLocalizations.of(context)!.appInfoSupport,
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.textPrimary,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 16),
-                          
-                          // お問い合わせボタン
-                          _buildSettingItem(
-                            icon: Icons.email_outlined,
-                            title: AppLocalizations.of(context)!.contactUs,
-                            subtitle: AppLocalizations.of(context)!.contactUsSubtitle,
-                            onTap: _launchEmail,
-                          ),
-                          
-                          const Divider(height: 24),
-                          
-                          // 利用規約
-                          _buildSettingItem(
-                            icon: Icons.description_outlined,
-                            title: AppLocalizations.of(context)!.termsOfService,
-                            subtitle: AppLocalizations.of(context)!.termsSubtitle,
-                            onTap: () => _openWebView(
-                              'https://jinpost.wordpress.com/2025/08/28/focusmint-%e5%88%a9%e7%94%a8%e8%a6%8f%e7%b4%84/',
-                              AppLocalizations.of(context)!.termsOfService,
-                            ),
-                          ),
-                          
-                          const Divider(height: 24),
-                          
-                          // プライバシーポリシー
-                          _buildSettingItem(
-                            icon: Icons.privacy_tip_outlined,
-                            title: AppLocalizations.of(context)!.privacyPolicy,
-                            subtitle: AppLocalizations.of(context)!.privacySubtitle,
-                            onTap: () => _openWebView(
-                              'https://jinpost.wordpress.com/2025/08/28/focusmint-%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc/',
-                              AppLocalizations.of(context)!.privacyPolicy,
-                            ),
-                          ),
-                          
-                          const Divider(height: 24),
-                          
-                          // チュートリアル
-                          _buildSettingItem(
-                            icon: Icons.help_outline,
-                            title: AppLocalizations.of(context)!.tutorialTitle,
-                            subtitle: AppLocalizations.of(context)!.tutorialSubtitle,
-                            onTap: _showTutorial,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  
-                  const SizedBox(height: 24),
-                  
-                  // データ管理セクション
-                  Card(
-                    elevation: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.storage_outlined,
-                                color: Colors.orange,
-                                size: 24,
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                AppLocalizations.of(context)!.dataManagement,
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.textPrimary,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 16),
-                          
-                          // 画像管理ボタン
-                          _buildSettingItem(
-                            icon: Icons.photo_library_outlined,
-                            title: AppLocalizations.of(context)!.imageManagement,
-                            subtitle: AppLocalizations.of(context)!.imageManagementHint,
-                            onTap: _showImageManagement,
-                          ),
-
-                          const Divider(height: 24),
-
-                          // カスタム画像設定ボタン
-                          _buildSettingItem(
-                            icon: Icons.image_outlined,
-                            title: AppLocalizations.of(context)!.customImageTitle,
-                            subtitle: AppLocalizations.of(context)!.customImageSubtitle,
-                            onTap: _showCustomizeSettings,
-                          ),
-
-                          const Divider(height: 24),
-                          
-                          // データ削除ボタン
-                          _buildSettingItem(
-                            icon: Icons.delete_outline,
-                            title: AppLocalizations.of(context)!.deleteHistory,
-                            subtitle: AppLocalizations.of(context)!.deleteHistorySubtitle,
-                            onTap: _showDeleteOptionsDialog,
-                            isDestructive: true,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  
-                  const SizedBox(height: 24),
-                  
-                  // 使い方のヒント
-                  Card(
-                    elevation: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.lightbulb_outline,
-                                color: Colors.orange,
-                                size: 20,
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                AppLocalizations.of(context)!.tips,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.textPrimary,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          Text(
-                            AppLocalizations.of(context)!.tipsContent,
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: AppColors.textSecondary,
-                              height: 1.5,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  
-                  const SizedBox(height: 24),
-                  
-                  // ホームへ戻るボタン
-                  SizedBox(
-                    width: double.infinity,
-                    height: 56,
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        Navigator.of(context).popUntil((route) => route.isFirst);
-                      },
-                      icon: const Icon(
-                        Icons.home,
-                        color: Colors.white,
-                      ),
-                      label: Text(
-                        AppLocalizations.of(context)!.backToHome,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.textPrimary,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(28),
-                        ),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // 目標ポイント設定セクション
+                      Card(
                         elevation: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.flag,
+                                    color: AppColors.mintGreen,
+                                    size: 24,
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    AppLocalizations.of(context)!
+                                        .goalPointsSetting,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.textPrimary,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+                              Text(
+                                AppLocalizations.of(context)!
+                                    .currentGoalPoints(_currentGoalPoints),
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
+                              const SizedBox(height: 16),
+                              TextField(
+                                controller: _goalPointsController,
+                                decoration: InputDecoration(
+                                  labelText: AppLocalizations.of(context)!
+                                      .newGoalPointsLabel,
+                                  hintText: AppLocalizations.of(context)!
+                                      .goalPointsHint,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  suffixText: AppLocalizations.of(context)!
+                                      .pointsUnit2,
+                                ),
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly,
+                                ],
+                              ),
+                              const SizedBox(height: 20),
+                              SizedBox(
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                  onPressed: _saveGoalPoints,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.mintGreen,
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 16,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    AppLocalizations.of(context)!
+                                        .saveGoalButton,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  ],
+
+                      const SizedBox(height: 24),
+
+                      // アプリ情報・サポートセクション
+                      Card(
+                        elevation: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.info_outline,
+                                    color: AppColors.mintGreen,
+                                    size: 24,
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    AppLocalizations.of(context)!
+                                        .appInfoSupport,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.textPrimary,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+
+                              // お問い合わせボタン
+                              _buildSettingItem(
+                                icon: Icons.chat_bubble_outline,
+                                title: AppLocalizations.of(context)!.contactUs,
+                                subtitle: AppLocalizations.of(context)!
+                                    .contactUsSubtitle,
+                                onTap: _openContact,
+                              ),
+
+                              const Divider(height: 24),
+
+                              // 利用規約
+                              _buildSettingItem(
+                                icon: Icons.description_outlined,
+                                title: AppLocalizations.of(context)!
+                                    .termsOfService,
+                                subtitle: AppLocalizations.of(context)!
+                                    .termsSubtitle,
+                                onTap: () => _openWebView(
+                                  'https://jinpost.wordpress.com/2025/08/28/focusmint-%e5%88%a9%e7%94%a8%e8%a6%8f%e7%b4%84/',
+                                  AppLocalizations.of(context)!.termsOfService,
+                                ),
+                              ),
+
+                              const Divider(height: 24),
+
+                              // プライバシーポリシー
+                              _buildSettingItem(
+                                icon: Icons.privacy_tip_outlined,
+                                title: AppLocalizations.of(context)!
+                                    .privacyPolicy,
+                                subtitle: AppLocalizations.of(context)!
+                                    .privacySubtitle,
+                                onTap: () => _openWebView(
+                                  'https://focusmint-support.mizoijin-0201.workers.dev/support-privacy',
+                                  AppLocalizations.of(context)!.privacyPolicy,
+                                ),
+                              ),
+
+                              const Divider(height: 24),
+
+                              // チュートリアル
+                              _buildSettingItem(
+                                icon: Icons.help_outline,
+                                title: AppLocalizations.of(context)!
+                                    .tutorialTitle,
+                                subtitle: AppLocalizations.of(context)!
+                                    .tutorialSubtitle,
+                                onTap: _showTutorial,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(height: 24),
+
+                      // データ管理セクション
+                      Card(
+                        elevation: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.storage_outlined,
+                                    color: Colors.orange,
+                                    size: 24,
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    AppLocalizations.of(context)!
+                                        .dataManagement,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.textPrimary,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+
+                              // 画像管理ボタン
+                              _buildSettingItem(
+                                icon: Icons.photo_library_outlined,
+                                title: AppLocalizations.of(context)!
+                                    .imageManagement,
+                                subtitle: AppLocalizations.of(context)!
+                                    .imageManagementHint,
+                                onTap: _showImageManagement,
+                              ),
+
+                              const Divider(height: 24),
+
+                              // カスタム画像設定ボタン
+                              _buildSettingItem(
+                                icon: Icons.image_outlined,
+                                title: AppLocalizations.of(context)!
+                                    .customImageTitle,
+                                subtitle: AppLocalizations.of(context)!
+                                    .customImageSubtitle,
+                                onTap: _showCustomizeSettings,
+                              ),
+
+                              const Divider(height: 24),
+
+                              // データ削除ボタン
+                              _buildSettingItem(
+                                icon: Icons.delete_outline,
+                                title: AppLocalizations.of(context)!
+                                    .deleteHistory,
+                                subtitle: AppLocalizations.of(context)!
+                                    .deleteHistorySubtitle,
+                                onTap: _showDeleteOptionsDialog,
+                                isDestructive: true,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(height: 24),
+
+                      // 使い方のヒント
+                      Card(
+                        elevation: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.lightbulb_outline,
+                                    color: Colors.orange,
+                                    size: 20,
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    AppLocalizations.of(context)!.tips,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.textPrimary,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 12),
+                              Text(
+                                AppLocalizations.of(context)!.tipsContent,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: AppColors.textSecondary,
+                                  height: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(height: 24),
+
+                      // ホームへ戻るボタン
+                      SizedBox(
+                        width: double.infinity,
+                        height: 56,
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.of(context)
+                                .popUntil((route) => route.isFirst);
+                          },
+                          icon: const Icon(Icons.home, color: Colors.white),
+                          label: Text(
+                            AppLocalizations.of(context)!.backToHome,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.textPrimary,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(28),
+                            ),
+                            elevation: 2,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                    ],
                   ),
                 ),
               ),

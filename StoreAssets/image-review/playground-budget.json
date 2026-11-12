@@ -1,0 +1,141 @@
+{
+  "method": "OpenAI Images Playground UI",
+  "model": "gpt-image-2",
+  "quality": "medium",
+  "size": "1024x1024",
+  "n": 1,
+  "budgetCents": 10000,
+  "priorSampleAllowanceCents": 500,
+  "reservationPerJobCents": 30,
+  "jobs": [
+    {
+      "id": "smile_01",
+      "out": "smile_01_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Japanese woman aged 28, straight black shoulder-length hair, wearing a plain muted teal top, against a warm grey studio backdrop. The subject has a clear warm relaxed smile with gently raised cheeks and friendly eyes. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:38:35.747Z",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_01_v2.webp"
+    },
+    {
+      "id": "smile_02",
+      "out": "smile_02_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Japanese man aged 36, short black hair, wearing a plain soft blue top, against a pale beige studio backdrop. The subject has a clear natural joyful smile showing a little teeth, eyes warmly engaged. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:42:31.569Z",
+      "tab": "1192132790",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_02_v2.webp"
+    },
+    {
+      "id": "smile_03",
+      "out": "smile_03_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Korean woman aged 44, short dark bob, wearing a plain warm grey top, against a soft grey-green studio backdrop. The subject has a clear friendly closed-mouth smile with visibly lifted mouth corners. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:42:31.570Z",
+      "tab": "1192132801",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_03_v2.webp"
+    },
+    {
+      "id": "smile_04",
+      "out": "smile_04_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Chinese man aged 55, short salt-and-pepper hair, wearing a plain dusty rose top, against a light stone studio backdrop. The subject has a clear warm relaxed smile with gently raised cheeks and friendly eyes. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:42:31.571Z",
+      "tab": "1192132804",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_04_v2.webp"
+    },
+    {
+      "id": "smile_06",
+      "out": "smile_06_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional South Asian man aged 48, short dark hair and neatly trimmed beard, wearing a plain sand top, against a pale beige studio backdrop. The subject has a clear friendly closed-mouth smile with visibly lifted mouth corners. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:42:31.571Z",
+      "tab": "1192132810",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_06_v2.webp"
+    },
+    {
+      "id": "smile_07",
+      "out": "smile_07_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Black woman aged 38, natural short curls, wearing a plain muted teal top, against a soft grey-green studio backdrop. The subject has a clear warm relaxed smile with gently raised cheeks and friendly eyes. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:42:31.572Z",
+      "tab": "1192132813",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_07_v2.webp"
+    },
+    {
+      "id": "smile_05",
+      "out": "smile_05_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional South Asian woman aged 32, wavy dark hair, wearing a plain olive top, against a warm grey studio backdrop. The subject has a clear natural joyful smile showing a little teeth, eyes warmly engaged. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:42:31.573Z",
+      "tab": "1192132807",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_05_v2.webp"
+    },
+    {
+      "id": "smile_08",
+      "out": "smile_08_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Black man aged 27, close-cropped hair, wearing a plain soft blue top, against a light stone studio backdrop. The subject has a clear natural joyful smile showing a little teeth, eyes warmly engaged. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:43:45.616Z",
+      "tab": "1192132790",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_08_v2.webp"
+    },
+    {
+      "id": "smile_09",
+      "out": "smile_09_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional White woman aged 52, auburn shoulder-length hair, wearing a plain warm grey top, against a warm grey studio backdrop. The subject has a clear friendly closed-mouth smile with visibly lifted mouth corners. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:43:46.315Z",
+      "tab": "1192132801",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_09_v2.webp"
+    },
+    {
+      "id": "smile_10",
+      "out": "smile_10_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional White man aged 41, short brown hair, wearing a plain dusty rose top, against a pale beige studio backdrop. The subject has a clear warm relaxed smile with gently raised cheeks and friendly eyes. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:43:46.725Z",
+      "tab": "1192132804",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_10_v2.webp"
+    },
+    {
+      "id": "smile_11",
+      "out": "smile_11_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Latina woman aged 34, curly dark hair, wearing a plain olive top, against a soft grey-green studio backdrop. The subject has a clear natural joyful smile showing a little teeth, eyes warmly engaged. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:43:47.142Z",
+      "tab": "1192132807",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_11_v2.webp"
+    },
+    {
+      "id": "smile_12",
+      "out": "smile_12_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Latino man aged 59, short grey hair, wearing a plain sand top, against a light stone studio backdrop. The subject has a clear friendly closed-mouth smile with visibly lifted mouth corners. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:43:47.555Z",
+      "tab": "1192132810",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_12_v2.webp"
+    },
+    {
+      "id": "smile_13",
+      "out": "smile_13_v2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset: one square mobile visual-search training photograph. Create a single coherent realistic photograph, never a collage or a contact sheet. Use soft even daylight, balanced midtone exposure, natural colors, realistic proportions and a clean unobtrusive background. Keep the main subject centered with generous safe margins on every edge; it must read clearly as a small square thumbnail. No text, letters, numbers, logos, labels, recognizable brands, frames, watermarks or graphic symbols. A fictional Southeast Asian woman aged 46, dark hair tied back, wearing a plain muted teal top, against a warm grey studio backdrop. The subject has a clear warm relaxed smile with gently raised cheeks and friendly eyes. Eye-level head-and-shoulders portrait, face front-facing or very slightly turned. The entire head including hair and chin is visible with an 8 percent margin, both eyes clear, hands outside the frame. Natural facial anatomy and skin texture, ordinary appearance. No sunglasses, hats, crying, tears, screaming, aggression or children.",
+      "reservationCents": 30,
+      "state": "downloaded-unreviewed",
+      "submittedAt": "2026-11-12T03:43:47.977Z",
+      "tab": "1192132813",
+      "path": "/Users/jin/Documents/Codex/2026-11-12/focusmint-images/playground/smile_13_v2.webp"
+    }
+  ]
+}

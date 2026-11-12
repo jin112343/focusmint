@@ -1,0 +1,36 @@
+{
+  "removedUnusedAndroidIcons": [
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "bytes": 442
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "bytes": 544
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "bytes": 1443
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "bytes": 1031
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "bytes": 721
+    }
+  ],
+  "movedSourceIcon": "assets/branding/app_icon.png",
+  "excludedSourceIconFromBundleBytes": 642039,
+  "runtimeReferencesChecked": [
+    "Dart source",
+    "pubspec.yaml",
+    "Android resources and manifests",
+    "iOS resources"
+  ],
+  "removedOldTrainingImages": 291,
+  "removedOldTrainingBytes": 43368029,
+  "replacedProvisionalWebP": 291,
+  "finalTrainingBytes": 10325582
+}

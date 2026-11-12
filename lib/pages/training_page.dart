@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:focusmint/pages/result_page.dart';
@@ -34,22 +35,23 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
   String? _selectedStimulusId; // 選択されたボタンのID
   bool _gameInputLocked = false; // ゲーム入力のロック状態
   static const int maxTrainingTimeSeconds = 60; // 1分 = 60秒
-  
+
   @override
   void initState() {
     super.initState();
     _imageService = ImageService();
+    _imageService.refreshCache();
     _speedScoreService = SpeedScoreService();
     _generateNewStimuliSet();
   }
-  
+
   void _startTimer() {
     if (_timer != null || _sessionEnded) return;
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         _remainingSeconds--;
       });
-      
+
       // 残り時間が0になったら結果画面に遷移
       if (_remainingSeconds <= 0) {
         timer.cancel();
@@ -61,11 +63,8 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
       }
     });
   }
-  
+
   void _generateNewStimuliSet() async {
-    // ImageServiceのキャッシュをクリアして最新の非表示設定を反映
-    _imageService.refreshCache();
-    
     final randomGroup = _imageService.getRandomGroup();
     final stimuli = await _imageService.getRandomStimuliSet(randomGroup);
     if (!mounted || _sessionEnded) return;
@@ -144,25 +143,32 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                       onComplete: _onPointOverlayComplete,
                     )
                   : _currentStimuli.isNotEmpty
-                      ? StimulusGrid(
-                          stimuli: _currentStimuli,
-                          onStimulusSelected: _gameInputLocked ? null : _onStimulusSelected, // 入力ロック時はnullを渡す
-                          showPlaceholders: false, // 実際の画像を表示
-                          selectedStimulusId: _selectedStimulusId, // 選択状態を渡す
-                          inputLocked: _gameInputLocked, // 入力ロック状態を渡す
-                        )
-                      : Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              if (!_imageLoadFailed) const CircularProgressIndicator(),
-                              const SizedBox(height: 16),
-                              Text(_imageLoadFailed
-                                  ? AppLocalizations.of(context)!.noStimuliAvailable
-                                  : AppLocalizations.of(context)!.imagePreparationMessage),
-                            ],
+                  ? StimulusGrid(
+                      stimuli: _currentStimuli,
+                      onStimulusSelected: _gameInputLocked
+                          ? null
+                          : _onStimulusSelected, // 入力ロック時はnullを渡す
+                      showPlaceholders: false, // 実際の画像を表示
+                      selectedStimulusId: _selectedStimulusId, // 選択状態を渡す
+                      inputLocked: _gameInputLocked, // 入力ロック状態を渡す
+                    )
+                  : Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (!_imageLoadFailed)
+                            const CircularProgressIndicator(),
+                          const SizedBox(height: 16),
+                          Text(
+                            _imageLoadFailed
+                                ? AppLocalizations.of(context)!
+                                      .noStimuliAvailable
+                                : AppLocalizations.of(context)!
+                                      .imagePreparationMessage,
                           ),
-                        ),
+                        ],
+                      ),
+                    ),
             ),
           ),
           // フッター情報バー
@@ -174,10 +180,7 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
               decoration: const BoxDecoration(
                 color: AppColors.backgroundColor,
                 border: Border(
-                  top: BorderSide(
-                    color: AppColors.textDisabled,
-                    width: 0.5,
-                  ),
+                  top: BorderSide(color: AppColors.textDisabled, width: 0.5),
                 ),
               ),
               child: Wrap(
@@ -186,9 +189,13 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                 runSpacing: 8,
                 children: [
                   Text(
-                    _remainingSeconds >= 60 
-                        ? AppLocalizations.of(context)!.remainingTimeMinutes(_remainingSeconds ~/ 60, _remainingSeconds % 60)
-                        : AppLocalizations.of(context)!.remainingTimeSeconds(_remainingSeconds),
+                    _remainingSeconds >= 60
+                        ? AppLocalizations.of(context)!.remainingTimeMinutes(
+                            _remainingSeconds ~/ 60,
+                            _remainingSeconds % 60,
+                          )
+                        : AppLocalizations.of(context)!
+                              .remainingTimeSeconds(_remainingSeconds),
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -196,7 +203,8 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
                     ),
                   ),
                   Text(
-                    AppLocalizations.of(context)!.scoreLabel(_currentPoints.toStringAsFixed(2)),
+                    AppLocalizations.of(context)!
+                        .scoreLabel(_currentPoints.toStringAsFixed(2)),
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -217,30 +225,30 @@ class _TrainingPageState extends ConsumerState<TrainingPage> {
     if (_gameInputLocked || _sessionEnded) {
       return;
     }
-    
+
     // 最初のボタンが押された時点で入力をロック
     setState(() {
       _gameInputLocked = true;
     });
-    
+
     // 現在の刺激リストから選択された画像を見つける
     final selectedStimulus = _currentStimuli.firstWhere(
       (stimulus) => stimulus.id == stimulusId,
       orElse: () => throw Exception('Selected stimulus not found'),
     );
-    
+
     // 良い画像（positive）が選択されたかチェック
     final isCorrect = selectedStimulus.valence == Valence.positive;
     // スピードベースのスコア計算を使用
     final pointsToAdd = _speedScoreService.calculateScore(isCorrect);
-    
+
     // まず選択されたボタンを緑色にする
     setState(() {
       _selectedStimulusId = stimulusId;
       // タップの時点で確定し、終了直前の回答も保存する。
       _currentPoints += pointsToAdd;
     });
-    
+
     // 短時間待ってからポイント獲得画面を表示
     _selectionTimer = Timer(const Duration(milliseconds: 150), () {
       if (mounted && !_sessionEnded) {

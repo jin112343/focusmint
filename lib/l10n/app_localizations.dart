@@ -1213,6 +1213,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Use a mix of built-in images and your own images'**
   String get mixWithBuiltInImagesDescription;
+
+  /// No description provided for @supportIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat anonymously with the developer. Questions and suggestions are welcome. You can send 3 messages per day. Each developer reply resets your allowance to 3.'**
+  String get supportIntro;
+
+  /// No description provided for @supportReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Message received. We usually reply within 2–3 days.'**
+  String get supportReceived;
+
+  /// No description provided for @supportComposer.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a message'**
+  String get supportComposer;
+
+  /// No description provided for @supportSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get supportSend;
+
+  /// No description provided for @supportRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get supportRetry;
+
+  /// No description provided for @supportSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent'**
+  String get supportSent;
+
+  /// No description provided for @supportUnsent.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsent · saved on this device'**
+  String get supportUnsent;
+
+  /// No description provided for @supportAttach.
+  ///
+  /// In en, this message translates to:
+  /// **'Attach image'**
+  String get supportAttach;
+
+  /// No description provided for @supportRemoveImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove image'**
+  String get supportRemoveImage;
+
+  /// No description provided for @supportImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Attachment'**
+  String get supportImage;
+
+  /// No description provided for @supportClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete history'**
+  String get supportClear;
+
+  /// No description provided for @supportClearConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this conversation? Unsent drafts and server history will also be deleted. This does not reset your allowance.'**
+  String get supportClearConfirm;
+
+  /// No description provided for @supportQuota.
+  ///
+  /// In en, this message translates to:
+  /// **'You have used today’s 3 messages. Send another tomorrow or after a developer reply.'**
+  String get supportQuota;
+
+  /// No description provided for @supportConnectionError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not connect. Saved drafts have not been sent.'**
+  String get supportConnectionError;
+
+  /// No description provided for @supportSendError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not send. Your message is saved on this device. Please retry.'**
+  String get supportSendError;
+
+  /// No description provided for @supportStorageError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Please try again.'**
+  String get supportStorageError;
+
+  /// No description provided for @supportClearError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not delete history. Check your connection and retry.'**
+  String get supportClearError;
+
+  /// No description provided for @supportImageError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load the image. Please choose an image under 30 MB.'**
+  String get supportImageError;
+
+  /// No description provided for @supportRemaining.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} messages remaining today'**
+  String supportRemaining(int count);
+
+  /// No description provided for @supportUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread replies'**
+  String supportUnread(int count);
+
+  /// No description provided for @supportGuide.
+  ///
+  /// In en, this message translates to:
+  /// **'Information'**
+  String get supportGuide;
+
+  /// No description provided for @supportDeveloper.
+  ///
+  /// In en, this message translates to:
+  /// **'Developer'**
+  String get supportDeveloper;
+
+  /// No description provided for @supportPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'About contact data'**
+  String get supportPrivacy;
 }
 
 class _AppLocalizationsDelegate

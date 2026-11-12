@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/constants/training_constants.dart';
@@ -16,7 +17,8 @@ class ImageService {
   final Map<ImageGroup, List<String>> _positiveImageCache = {};
   final Map<ImageGroup, List<String>> _negativeImageCache = {};
   final HiddenImageService _hiddenImageService = HiddenImageService();
-  final CustomImageRepository _customImageRepository = CustomImageRepository.instance;
+  final CustomImageRepository _customImageRepository =
+      CustomImageRepository.instance;
   final Logger _logger = Logger();
 
   ImageService._internal() {
@@ -32,15 +34,21 @@ class ImageService {
       final imagePaths = manifest
           .listAssets()
           .where((String key) => key.startsWith('assets/images/'))
-          .where((String key) => key.toLowerCase().endsWith('.jpg') || 
-                                key.toLowerCase().endsWith('.jpeg') || 
-                                key.toLowerCase().endsWith('.png'))
+          .where(
+            (String key) =>
+                key.toLowerCase().endsWith('.jpg') ||
+                key.toLowerCase().endsWith('.jpeg') ||
+                key.toLowerCase().endsWith('.png') ||
+                key.toLowerCase().endsWith('.webp'),
+          )
           .where((String key) => key.split('/').last.startsWith('${prefix}_'))
           .toList();
-      
+
       _logger.d('_loadImageFilenames: Prefix: $prefix');
-      _logger.d('_loadImageFilenames: Found ${imagePaths.length} images: $imagePaths');
-      
+      _logger.d(
+        '_loadImageFilenames: Found ${imagePaths.length} images: $imagePaths',
+      );
+
       return imagePaths;
     } catch (e) {
       _logger.e('_loadImageFilenames: Error', error: e);
@@ -54,17 +62,23 @@ class ImageService {
       _logger.d('_getPositiveImages: Using cached images for ${group.name}');
       return _positiveImageCache[group]!;
     }
-    
+
     final prefix = _getPositivePrefix(group);
     final images = await _loadImageFilenames(prefix);
     final hiddenImages = await _hiddenImageService.getHiddenImages();
-    _logger.d('_getPositiveImages: Group: ${group.name}, Total images: ${images.length}, Hidden: ${hiddenImages.length}');
+    _logger.d(
+      '_getPositiveImages: Group: ${group.name}, Total images: ${images.length}, Hidden: ${hiddenImages.length}',
+    );
     _logger.d('_getPositiveImages: Hidden images: $hiddenImages');
-    
-    final availableImages = images.where((image) => !hiddenImages.contains(image)).toList();
-    _logger.d('_getPositiveImages: Available images after filtering: ${availableImages.length}');
+
+    final availableImages = images
+        .where((image) => !hiddenImages.contains(image))
+        .toList();
+    _logger.d(
+      '_getPositiveImages: Available images after filtering: ${availableImages.length}',
+    );
     _logger.d('_getPositiveImages: Available images: $availableImages');
-    
+
     _positiveImageCache[group] = availableImages;
     return availableImages;
   }
@@ -75,37 +89,49 @@ class ImageService {
       _logger.d('_getNegativeImages: Using cached images for ${group.name}');
       return _negativeImageCache[group]!;
     }
-    
+
     final prefix = _getNegativePrefix(group);
     final images = await _loadImageFilenames(prefix);
     final hiddenImages = await _hiddenImageService.getHiddenImages();
-    _logger.d('_getNegativeImages: Group: ${group.name}, Total images: ${images.length}, Hidden: ${hiddenImages.length}');
+    _logger.d(
+      '_getNegativeImages: Group: ${group.name}, Total images: ${images.length}, Hidden: ${hiddenImages.length}',
+    );
     _logger.d('_getNegativeImages: Hidden images: $hiddenImages');
-    
-    final availableImages = images.where((image) => !hiddenImages.contains(image)).toList();
-    _logger.d('_getNegativeImages: Available images after filtering: ${availableImages.length}');
+
+    final availableImages = images
+        .where((image) => !hiddenImages.contains(image))
+        .toList();
+    _logger.d(
+      '_getNegativeImages: Available images after filtering: ${availableImages.length}',
+    );
     _logger.d('_getNegativeImages: Available images: $availableImages');
-    
+
     _negativeImageCache[group] = availableImages;
     return availableImages;
   }
-
 
   /// カスタム画像が利用可能かチェック（最低枚数制約を含む）
   Future<bool> _canUseCustomImages() async {
     try {
       final settings = await _customImageRepository.getSettings();
-      _logger.d('_canUseCustomImages: settings.useCustomImages = ${settings.useCustomImages}');
+      _logger.d(
+        '_canUseCustomImages: settings.useCustomImages = ${settings.useCustomImages}',
+      );
 
       if (!settings.useCustomImages) {
-        _logger.d('_canUseCustomImages: useCustomImages is false, returning false');
+        _logger.d(
+          '_canUseCustomImages: useCustomImages is false, returning false',
+        );
         return false;
       }
 
       return settings.canUseCustomImages;
     } catch (e, stackTrace) {
-      _logger.e('_canUseCustomImages: Error checking custom images availability',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        '_canUseCustomImages: Error checking custom images availability',
+        error: e,
+        stackTrace: stackTrace,
+      );
       return false;
     }
   }
@@ -121,18 +147,26 @@ class ImageService {
 
       // 有効なグループを取得
       final enabledGroups = <CustomImageGroup>[];
-      for (final group in settings.groups.where((group) => group.enabled && group.hasValidImageCount)) {
+      for (final group in settings.groups.where(
+        (group) => group.enabled && group.hasValidImageCount,
+      )) {
         final existingPaths = <WeatherType, List<String>>{};
         for (final weather in WeatherType.values) {
           existingPaths[weather] = [];
           for (final path in group.imagePaths[weather] ?? <String>[]) {
-            if (await File(path).exists()) existingPaths[weather]!.add(path);
+            if (await File(path).exists()) {
+              existingPaths[weather]!.add(path);
+            }
           }
         }
         final availableGroup = group.copyWith(imagePaths: existingPaths);
-        if (availableGroup.hasValidImageCount) enabledGroups.add(availableGroup);
+        if (availableGroup.hasValidImageCount) {
+          enabledGroups.add(availableGroup);
+        }
       }
-      _logger.d('_getCustomStimuliSet: Enabled groups: ${enabledGroups.map((g) => g.id).toList()}');
+      _logger.d(
+        '_getCustomStimuliSet: Enabled groups: ${enabledGroups.map((g) => g.id).toList()}',
+      );
 
       if (enabledGroups.isEmpty) {
         _logger.w('_getCustomStimuliSet: No enabled groups found');
@@ -140,12 +174,16 @@ class ImageService {
       }
 
       // グループをランダムに選択
-      final selectedGroup = enabledGroups[_random.nextInt(enabledGroups.length)];
+      final selectedGroup =
+          enabledGroups[_random.nextInt(enabledGroups.length)];
       _logger.d('_getCustomStimuliSet: Selected group: ${selectedGroup.id}');
 
       // 選択されたグループのよくない画像から3枚をランダム選択（負の刺激として使用）
-      final groupRainyImages = selectedGroup.imagePaths[WeatherType.rainy] ?? [];
-      _logger.d('_getCustomStimuliSet: Group ${selectedGroup.id} not good images: ${groupRainyImages.length}');
+      final groupRainyImages =
+          selectedGroup.imagePaths[WeatherType.rainy] ?? [];
+      _logger.d(
+        '_getCustomStimuliSet: Group ${selectedGroup.id} not good images: ${groupRainyImages.length}',
+      );
 
       if (groupRainyImages.length >= 3) {
         final rainyShuffled = List<String>.from(groupRainyImages);
@@ -154,44 +192,60 @@ class ImageService {
 
         for (int i = 0; i < selectedRainy.length; i++) {
           final imagePath = selectedRainy.elementAt(i);
-          _logger.d('_getCustomStimuliSet: Adding not good image from group ${selectedGroup.id}: $imagePath');
-          stimuliSet.add(ImageStimulus(
-            id: 'custom_group${selectedGroup.id}_rainy_${i + 1}',
-            assetPath: imagePath,
-            valence: Valence.negative,
-            emotion: Emotion.sadness,
-            isCustomImage: true,
-          ));
+          _logger.d(
+            '_getCustomStimuliSet: Adding not good image from group ${selectedGroup.id}: $imagePath',
+          );
+          stimuliSet.add(
+            ImageStimulus(
+              id: 'custom_group${selectedGroup.id}_rainy_${i + 1}',
+              assetPath: imagePath,
+              valence: Valence.negative,
+              emotion: Emotion.sadness,
+              isCustomImage: true,
+            ),
+          );
         }
       }
 
       // 選択されたグループの良い画像から1枚をランダム選択（正の刺激として使用）
-      final groupSunnyImages = selectedGroup.imagePaths[WeatherType.sunny] ?? [];
-      _logger.d('_getCustomStimuliSet: Group ${selectedGroup.id} good images: ${groupSunnyImages.length}');
+      final groupSunnyImages =
+          selectedGroup.imagePaths[WeatherType.sunny] ?? [];
+      _logger.d(
+        '_getCustomStimuliSet: Group ${selectedGroup.id} good images: ${groupSunnyImages.length}',
+      );
 
       if (groupSunnyImages.isNotEmpty) {
         final sunnyShuffled = List<String>.from(groupSunnyImages);
         sunnyShuffled.shuffle(_random);
         final selectedSunny = sunnyShuffled.first;
 
-        _logger.d('_getCustomStimuliSet: Adding good image from group ${selectedGroup.id}: $selectedSunny');
-        stimuliSet.add(ImageStimulus(
-          id: 'custom_group${selectedGroup.id}_sunny_1',
-          assetPath: selectedSunny,
-          valence: Valence.positive,
-          emotion: Emotion.happiness,
-          isCustomImage: true,
-        ));
+        _logger.d(
+          '_getCustomStimuliSet: Adding good image from group ${selectedGroup.id}: $selectedSunny',
+        );
+        stimuliSet.add(
+          ImageStimulus(
+            id: 'custom_group${selectedGroup.id}_sunny_1',
+            assetPath: selectedSunny,
+            valence: Valence.positive,
+            emotion: Emotion.happiness,
+            isCustomImage: true,
+          ),
+        );
       }
 
       // 全体をシャッフルして位置をランダム化
       stimuliSet.shuffle(_random);
 
-      _logger.d('_getCustomStimuliSet: Final custom stimuli count: ${stimuliSet.length}');
+      _logger.d(
+        '_getCustomStimuliSet: Final custom stimuli count: ${stimuliSet.length}',
+      );
       return stimuliSet;
     } catch (e, stackTrace) {
-      _logger.e('_getCustomStimuliSet: Error generating custom stimuli set',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        '_getCustomStimuliSet: Error generating custom stimuli set',
+        error: e,
+        stackTrace: stackTrace,
+      );
       return [];
     }
   }
@@ -205,9 +259,13 @@ class ImageService {
     _logger.d('getRandomStimuliSet: canUseCustomImages = $canUseCustomImages');
 
     if (canUseCustomImages) {
-      _logger.d('getRandomStimuliSet: Using custom images only mode (no asset images)');
+      _logger.d(
+        'getRandomStimuliSet: Using custom images only mode (no asset images)',
+      );
       final customStimuli = await _getCustomStimuliSet();
-      _logger.d('getRandomStimuliSet: Custom stimuli count: ${customStimuli.length}');
+      _logger.d(
+        'getRandomStimuliSet: Custom stimuli count: ${customStimuli.length}',
+      );
       if (customStimuli.length == 4) {
         final settings = await _customImageRepository.getSettings();
         if (!settings.mixWithOriginalImages) return customStimuli;
@@ -220,26 +278,35 @@ class ImageService {
     // 従来のアセット画像を使用
     _logger.d('getRandomStimuliSet: Using asset images');
     final assetStimuli = await _getAssetStimuliSet(group);
-    _logger.d('getRandomStimuliSet: Asset stimuli count: ${assetStimuli.length}');
+    _logger.d(
+      'getRandomStimuliSet: Asset stimuli count: ${assetStimuli.length}',
+    );
     return assetStimuli;
   }
-
 
   List<ImageStimulus> _mixStimuli(
     List<ImageStimulus> customStimuli,
     List<ImageStimulus> assetStimuli,
   ) {
-    final positives = [...customStimuli, ...assetStimuli]
-        .where((s) => s.valence == Valence.positive).toList()..shuffle(_random);
-    final customNegatives = customStimuli
-        .where((s) => s.valence == Valence.negative).toList()..shuffle(_random);
-    final assetNegatives = assetStimuli
-        .where((s) => s.valence == Valence.negative).toList()..shuffle(_random);
+    final positives = [
+      ...customStimuli,
+      ...assetStimuli,
+    ].where((s) => s.valence == Valence.positive).toList()..shuffle(_random);
+    final customNegatives =
+        customStimuli.where((s) => s.valence == Valence.negative).toList()
+          ..shuffle(_random);
+    final assetNegatives =
+        assetStimuli.where((s) => s.valence == Valence.negative).toList()
+          ..shuffle(_random);
     final remaining = [...customNegatives.skip(1), ...assetNegatives.skip(1)]
-        ..shuffle(_random);
+      ..shuffle(_random);
     // 正解1枚・不正解3枚を保ち、両方の画像を含める。
-    return [positives.first, customNegatives.first, assetNegatives.first,
-        remaining.first]..shuffle(_random);
+    return [
+      positives.first,
+      customNegatives.first,
+      assetNegatives.first,
+      remaining.first,
+    ]..shuffle(_random);
   }
 
   /// アセット画像から刺激セットを生成（既存のロジック）
@@ -250,7 +317,9 @@ class ImageService {
 
     // 負の画像から3枚をランダム選択
     final negativeImages = await _getNegativeImages(group);
-    _logger.d('_getAssetStimuliSet: Available negative images: ${negativeImages.length}');
+    _logger.d(
+      '_getAssetStimuliSet: Available negative images: ${negativeImages.length}',
+    );
 
     if (negativeImages.isNotEmpty) {
       final negativeShuffled = List<String>.from(negativeImages);
@@ -260,35 +329,47 @@ class ImageService {
       for (int i = 0; i < selectedNegative.length; i++) {
         final imagePath = selectedNegative.elementAt(i);
         _logger.d('_getAssetStimuliSet: Adding negative image: $imagePath');
-        stimuliSet.add(ImageStimulus(
-          id: 'negative_${group.name}_${i + 1}',
-          assetPath: imagePath,
-          valence: Valence.negative,
-          emotion: _getEmotionFromGroup(group, false),
-        ));
+        stimuliSet.add(
+          ImageStimulus(
+            id: 'negative_${group.name}_${i + 1}',
+            assetPath: imagePath,
+            valence: Valence.negative,
+            emotion: _getEmotionFromGroup(group, false),
+          ),
+        );
       }
     } else {
-      _logger.w('_getAssetStimuliSet: WARNING - No negative images available for group ${group.name}');
+      _logger.w(
+        '_getAssetStimuliSet: WARNING - No negative images available for group ${group.name}',
+      );
     }
 
     // 正の画像から1枚をランダム選択
     final positiveImages = await _getPositiveImages(group);
-    _logger.d('_getAssetStimuliSet: Available positive images: ${positiveImages.length}');
+    _logger.d(
+      '_getAssetStimuliSet: Available positive images: ${positiveImages.length}',
+    );
 
     if (positiveImages.isNotEmpty) {
       final positiveShuffled = List<String>.from(positiveImages);
       positiveShuffled.shuffle(_random);
       final selectedPositive = positiveShuffled.first;
 
-      _logger.d('_getAssetStimuliSet: Adding positive image: $selectedPositive');
-      stimuliSet.add(ImageStimulus(
-        id: 'positive_${group.name}_1',
-        assetPath: selectedPositive,
-        valence: Valence.positive,
-        emotion: _getEmotionFromGroup(group, true),
-      ));
+      _logger.d(
+        '_getAssetStimuliSet: Adding positive image: $selectedPositive',
+      );
+      stimuliSet.add(
+        ImageStimulus(
+          id: 'positive_${group.name}_1',
+          assetPath: selectedPositive,
+          valence: Valence.positive,
+          emotion: _getEmotionFromGroup(group, true),
+        ),
+      );
     } else {
-      _logger.w('_getAssetStimuliSet: WARNING - No positive images available for group ${group.name}');
+      _logger.w(
+        '_getAssetStimuliSet: WARNING - No positive images available for group ${group.name}',
+      );
     }
 
     // 全体をシャッフルして位置をランダム化
@@ -297,7 +378,7 @@ class ImageService {
     _logger.d('_getAssetStimuliSet: Final stimuli count: ${stimuliSet.length}');
     return stimuliSet;
   }
-  
+
   /// 正の画像のプレフィックスを取得
   String _getPositivePrefix(ImageGroup group) {
     switch (group) {
@@ -309,7 +390,7 @@ class ImageService {
         return 'health';
     }
   }
-  
+
   /// 負の画像のプレフィックスを取得
   String _getNegativePrefix(ImageGroup group) {
     switch (group) {
@@ -321,7 +402,7 @@ class ImageService {
         return 'bad';
     }
   }
-  
+
   /// グループから適切な感情を取得
   Emotion _getEmotionFromGroup(ImageGroup group, bool isPositive) {
     switch (group) {
@@ -332,7 +413,7 @@ class ImageService {
         return isPositive ? Emotion.happiness : Emotion.anger;
     }
   }
-  
+
   /// ランダムなグループを選択
   ImageGroup getRandomGroup() {
     final groups = ImageGroup.values;
@@ -344,10 +425,12 @@ class ImageService {
     _positiveImageCache.clear();
     _negativeImageCache.clear();
   }
-  
+
   /// 非表示画像設定が変更された時にキャッシュをクリア
   void refreshCache() {
     clearCache();
-    _logger.d('ImageService: Cache cleared, hidden images will be re-evaluated');
+    _logger.d(
+      'ImageService: Cache cleared, hidden images will be re-evaluated',
+    );
   }
 }

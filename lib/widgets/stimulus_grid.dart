@@ -1,5 +1,7 @@
-import 'dart:io';
+import 'package:focusmint/widgets/training_image.dart';
+
 import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:focusmint/models/image_stimulus.dart';
 import 'package:focusmint/constants/training_constants.dart';
@@ -12,7 +14,7 @@ class StimulusGrid extends StatelessWidget {
   final bool showPlaceholders;
   final String? selectedStimulusId; // 選択されたボタンのID
   final bool inputLocked; // 入力ロック状態
-  
+
   const StimulusGrid({
     super.key,
     required this.stimuli,
@@ -33,52 +35,55 @@ class StimulusGrid extends StatelessWidget {
 
     final gridLayout = TrainingLayouts.gridLayouts[stimuli.length];
     if (gridLayout == null) {
-      return Center(
-        child: Text(AppLocalizations.of(context)!.invalidGridSize),
-      );
+      return Center(child: Text(AppLocalizations.of(context)!.invalidGridSize));
     }
 
     final columns = gridLayout['columns'] as int;
     final aspectRatio = gridLayout['aspectRatio'] as double;
-    
-    final effectiveGridSize = gridSize ?? 
-        (MediaQuery.of(context).size.width * 0.95);
 
-    return LayoutBuilder(builder: (context, constraints) {
-      final side = math.min(effectiveGridSize,
-          math.min(constraints.maxWidth, constraints.maxHeight));
-      return Center(
-      child: Container(
-        width: side,
-        height: side,
-        padding: const EdgeInsets.all(8),
-        child: AspectRatio(
-          aspectRatio: aspectRatio,
-          child: GridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: columns,
-              mainAxisSpacing: 6,
-              crossAxisSpacing: 6,
-              childAspectRatio: 1.0,
+    final effectiveGridSize =
+        gridSize ?? (MediaQuery.of(context).size.width * 0.95);
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final side = math.min(
+          effectiveGridSize,
+          math.min(constraints.maxWidth, constraints.maxHeight),
+        );
+        return Center(
+          child: Container(
+            width: side,
+            height: side,
+            padding: const EdgeInsets.all(8),
+            child: AspectRatio(
+              aspectRatio: aspectRatio,
+              child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: columns,
+                  mainAxisSpacing: 6,
+                  crossAxisSpacing: 6,
+                  childAspectRatio: 1.0,
+                ),
+                itemCount: stimuli.length,
+                itemBuilder: (context, index) {
+                  return StimulusItem(
+                    stimulus: stimuli[index],
+                    onTap: onStimulusSelected != null
+                        ? () => onStimulusSelected!(stimuli[index].id)
+                        : null,
+                    showPlaceholder: showPlaceholders,
+                    isSelected:
+                        selectedStimulusId == stimuli[index].id, // 選択状態を渡す
+                    inputLocked: inputLocked,
+                  );
+                },
+              ),
             ),
-            itemCount: stimuli.length,
-            itemBuilder: (context, index) {
-              return StimulusItem(
-                stimulus: stimuli[index],
-                onTap: onStimulusSelected != null 
-                    ? () => onStimulusSelected!(stimuli[index].id)
-                    : null,
-                showPlaceholder: showPlaceholders,
-                isSelected: selectedStimulusId == stimuli[index].id, // 選択状態を渡す
-                inputLocked: inputLocked,
-              );
-            },
           ),
-        ),
-      ),
+        );
+      },
     );
-    });
   }
 }
 
@@ -88,7 +93,7 @@ class StimulusItem extends StatefulWidget {
   final bool showPlaceholder;
   final bool isSelected; // 選択状態
   final bool inputLocked; // 入力ロック状態
-  
+
   const StimulusItem({
     super.key,
     required this.stimulus,
@@ -104,7 +109,6 @@ class StimulusItem extends StatefulWidget {
 
 class _StimulusItemState extends State<StimulusItem>
     with SingleTickerProviderStateMixin {
-  
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
   bool _isPressed = false;
@@ -112,19 +116,16 @@ class _StimulusItemState extends State<StimulusItem>
   @override
   void initState() {
     super.initState();
-    
+
     _controller = AnimationController(
       duration: const Duration(milliseconds: 100),
       vsync: this,
     );
-    
+
     _scaleAnimation = Tween<double>(
       begin: 1.0,
       end: 0.95,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOut,
-    ));
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -170,7 +171,7 @@ class _StimulusItemState extends State<StimulusItem>
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: widget.isSelected 
+                  color: widget.isSelected
                       ? Colors.green.withValues(alpha: 0.8)
                       : Colors.grey.withValues(alpha: 0.3),
                   width: widget.isSelected ? 3 : 1,
@@ -210,9 +211,13 @@ class _StimulusItemState extends State<StimulusItem>
 
   Widget _buildPlaceholderFace() {
     final isPositive = widget.stimulus.valence == Valence.positive;
-    final backgroundColor = isPositive ? Colors.yellow.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3);
-    final iconColor = widget.inputLocked && !widget.isSelected 
-        ? (isPositive ? Colors.orange.withValues(alpha: 0.4) : Colors.red.withValues(alpha: 0.4))
+    final backgroundColor = isPositive
+        ? Colors.yellow.withValues(alpha: 0.3)
+        : Colors.red.withValues(alpha: 0.3);
+    final iconColor = widget.inputLocked && !widget.isSelected
+        ? (isPositive
+              ? Colors.orange.withValues(alpha: 0.4)
+              : Colors.red.withValues(alpha: 0.4))
         : (isPositive ? Colors.orange : Colors.red);
     final icon = _getEmotionIcon();
 
@@ -222,11 +227,7 @@ class _StimulusItemState extends State<StimulusItem>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
-              size: 32,
-              color: iconColor,
-            ),
+            Icon(icon, size: 32, color: iconColor),
             const SizedBox(height: 4),
             Text(
               _getEmotionLabel(context),
@@ -243,29 +244,11 @@ class _StimulusItemState extends State<StimulusItem>
   }
 
   Widget _buildImageFace() {
-    if (widget.stimulus.isCustomImage) {
-      // カスタム画像の場合はFile.imageを使用
-      return Image.file(
-        File(widget.stimulus.assetPath),
-        fit: BoxFit.cover,
-        width: double.infinity,
-        height: double.infinity,
-        errorBuilder: (context, error, stackTrace) {
-          return _buildPlaceholderFace();
-        },
-      );
-    } else {
-      // アセット画像の場合はImage.assetを使用
-      return Image.asset(
-        widget.stimulus.assetPath,
-        fit: BoxFit.cover,
-        width: double.infinity,
-        height: double.infinity,
-        errorBuilder: (context, error, stackTrace) {
-          return _buildPlaceholderFace();
-        },
-      );
-    }
+    return TrainingImage(
+      path: widget.stimulus.assetPath,
+      isFile: widget.stimulus.isCustomImage,
+      errorBuilder: (context, error, stackTrace) => _buildPlaceholderFace(),
+    );
   }
 
   IconData _getEmotionIcon() {
@@ -299,12 +282,8 @@ class _StimulusItemState extends State<StimulusItem>
 class GridPreview extends StatelessWidget {
   final int gridSize;
   final double size;
-  
-  const GridPreview({
-    super.key,
-    required this.gridSize,
-    this.size = 120,
-  });
+
+  const GridPreview({super.key, required this.gridSize, this.size = 120});
 
   @override
   Widget build(BuildContext context) {
@@ -343,14 +322,14 @@ class GridPreview extends StatelessWidget {
           final isTarget = index == 0; // First item is target
           return Container(
             decoration: BoxDecoration(
-              color: isTarget 
-                  ? Colors.yellow.withValues(alpha: 0.5) 
+              color: isTarget
+                  ? Colors.yellow.withValues(alpha: 0.5)
                   : Colors.red.withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(2),
             ),
             child: Icon(
-              isTarget 
-                  ? Icons.sentiment_very_satisfied 
+              isTarget
+                  ? Icons.sentiment_very_satisfied
                   : Icons.sentiment_very_dissatisfied,
               size: (size / columns) * 0.6,
               color: isTarget ? Colors.orange : Colors.red,

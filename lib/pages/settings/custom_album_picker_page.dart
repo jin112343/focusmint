@@ -1,4 +1,7 @@
+import 'package:focusmint/widgets/training_image.dart';
+
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:focusmint/constants/app_colors.dart';
@@ -39,15 +42,17 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
 
   Future<void> _loadImages() async {
     try {
-      final imagePaths = await _repository.getImagePaths(widget.groupId, widget.weather);
+      final imagePaths = await _repository.getImagePaths(
+        widget.groupId,
+        widget.weather,
+      );
       if (!mounted) return;
       setState(() {
         _imagePaths = imagePaths;
         _isLoading = false;
       });
     } catch (e, stackTrace) {
-      _logger.e('画像の読み込みに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e('画像の読み込みに失敗しました', error: e, stackTrace: stackTrace);
       if (!mounted) return;
       setState(() {
         _isLoading = false;
@@ -58,9 +63,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
 
   Future<void> _addImages() async {
     try {
-      final List<XFile> images = await _picker.pickMultiImage(
-        imageQuality: 80,
-      );
+      final List<XFile> images = await _picker.pickMultiImage(imageQuality: 80);
 
       if (!mounted || images.isEmpty) return;
 
@@ -90,13 +93,18 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
           hasSuccessful = true;
           successCount++;
         } catch (e, stackTrace) {
-          _logger.e('画像の追加に失敗しました: ${image.path}',
-              error: e, stackTrace: stackTrace);
+          _logger.e(
+            '画像の追加に失敗しました: ${image.path}',
+            error: e,
+            stackTrace: stackTrace,
+          );
         }
       }
 
       if (hasSuccessful) {
-        _showSuccessMessage(AppLocalizations.of(context)!.imagesAdded(successCount));
+        _showSuccessMessage(
+          AppLocalizations.of(context)!.imagesAdded(successCount),
+        );
       } else {
         _showErrorMessage(AppLocalizations.of(context)!.imageAddFailed);
       }
@@ -105,8 +113,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
         _isLoading = false;
       });
     } catch (e, stackTrace) {
-      _logger.e('画像選択でエラーが発生しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e('画像選択でエラーが発生しました', error: e, stackTrace: stackTrace);
       if (!mounted) return;
       setState(() {
         _isLoading = false;
@@ -129,21 +136,16 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
 
       _showSuccessMessage(AppLocalizations.of(context)!.imageDeleted);
     } catch (e, stackTrace) {
-      _logger.e('画像の削除に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e('画像の削除に失敗しました', error: e, stackTrace: stackTrace);
       if (!mounted) return;
       _showErrorMessage(AppLocalizations.of(context)!.imageDeleteFailed);
     }
   }
 
-
   void _showErrorMessage(String message) {
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(message),
-          backgroundColor: Colors.red,
-        ),
+        SnackBar(content: Text(message), backgroundColor: Colors.red),
       );
     }
   }
@@ -151,10 +153,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
   void _showSuccessMessage(String message) {
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(message),
-          backgroundColor: AppColors.mintGreen,
-        ),
+        SnackBar(content: Text(message), backgroundColor: AppColors.mintGreen),
       );
     }
   }
@@ -172,9 +171,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
   }
 
   Color get _weatherColor {
-    return widget.weather == WeatherType.sunny
-        ? Colors.orange
-        : Colors.blue;
+    return widget.weather == WeatherType.sunny ? Colors.orange : Colors.blue;
   }
 
   @override
@@ -186,7 +183,10 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
           children: [
             Icon(_weatherIcon, color: _weatherColor, size: 20),
             const SizedBox(width: 8),
-            Text(AppLocalizations.of(context)!.groupImageTitle(widget.groupId, _weatherDisplayName)),
+            Text(
+              AppLocalizations.of(context)!
+                  .groupImageTitle(widget.groupId, _weatherDisplayName),
+            ),
           ],
         ),
         backgroundColor: AppColors.mintGreen,
@@ -219,7 +219,10 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                           Icon(_weatherIcon, color: _weatherColor, size: 24),
                           const SizedBox(width: 8),
                           Text(
-                            AppLocalizations.of(context)!.groupImageTitle(widget.groupId, _weatherDisplayName),
+                            AppLocalizations.of(context)!.groupImageTitle(
+                              widget.groupId,
+                              _weatherDisplayName,
+                            ),
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -230,7 +233,8 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        AppLocalizations.of(context)!.registeredCount(_imagePaths.length),
+                        AppLocalizations.of(context)!
+                            .registeredCount(_imagePaths.length),
                         style: const TextStyle(
                           fontSize: 14,
                           color: AppColors.textSecondary,
@@ -254,7 +258,8 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                               ),
                               const SizedBox(height: 16),
                               Text(
-                                AppLocalizations.of(context)!.noImagesRegistered,
+                                AppLocalizations.of(context)!
+                                    .noImagesRegistered,
                                 style: const TextStyle(
                                   fontSize: 16,
                                   color: AppColors.textSecondary,
@@ -264,7 +269,9 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                               ElevatedButton.icon(
                                 onPressed: _addImages,
                                 icon: const Icon(Icons.add_photo_alternate),
-                                label: Text(AppLocalizations.of(context)!.addImages),
+                                label: Text(
+                                  AppLocalizations.of(context)!.addImages,
+                                ),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: AppColors.mintGreen,
                                   foregroundColor: Colors.white,
@@ -276,12 +283,13 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                       : Padding(
                           padding: const EdgeInsets.all(16),
                           child: GridView.builder(
-                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3,
-                              crossAxisSpacing: 8,
-                              mainAxisSpacing: 8,
-                              childAspectRatio: 1,
-                            ),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3,
+                                  crossAxisSpacing: 8,
+                                  mainAxisSpacing: 8,
+                                  childAspectRatio: 1,
+                                ),
                             itemCount: _imagePaths.length,
                             itemBuilder: (context, index) {
                               final imagePath = _imagePaths[index];
@@ -308,21 +316,16 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: AppColors.textDisabled,
-            width: 1,
-          ),
+          border: Border.all(color: AppColors.textDisabled, width: 1),
         ),
         child: Stack(
           children: [
             // 画像表示
             ClipRRect(
               borderRadius: BorderRadius.circular(7),
-              child: Image.file(
-                File(imagePath),
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: double.infinity,
+              child: TrainingImage(
+                path: imagePath,
+                isFile: true,
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
                     color: AppColors.textDisabled.withValues(alpha: 0.3),
@@ -348,11 +351,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Icon(
-                    Icons.close,
-                    color: Colors.white,
-                    size: 16,
-                  ),
+                  child: const Icon(Icons.close, color: Colors.white, size: 16),
                 ),
               ),
             ),
@@ -382,10 +381,7 @@ class _CustomAlbumPickerPageState extends State<CustomAlbumPickerPage> {
             ),
             Flexible(
               child: InteractiveViewer(
-                child: Image.file(
-                  File(imagePath),
-                  fit: BoxFit.contain,
-                ),
+                child: Image.file(File(imagePath), fit: BoxFit.contain),
               ),
             ),
             Padding(

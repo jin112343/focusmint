@@ -1,6 +1,5 @@
 {
   "@@locale": "en",
-  
   "focusMintTitle": "FOCUS MINT",
   "currentPoints": "Current Points",
   "goalLabel": "Goal: {goal}",
@@ -50,23 +49,19 @@
     }
   },
   "imagePreparationMessage": "Preparing images...",
-  
   "noStimuliAvailable": "No stimuli available",
   "invalidGridSize": "Invalid grid size",
   "unknown": "?",
-  
   "gettingStarted": "Getting started...",
   "excellentPerformance": "Excellent performance!",
   "greatJob": "Great job!",
   "goodPerformance": "Good performance",
   "keepPracticingFeedback": "Keep practicing",
   "takeYourTimeFeedback": "Take your time",
-  
   "happy": "Happy",
   "angry": "Angry",
   "fear": "Fear",
   "sad": "Sad",
-  
   "historyPageTitle": "Training History",
   "dataLoading": "Loading data...",
   "pointsHistory": "Points History",
@@ -95,7 +90,6 @@
   "thursdayShort": "Thu",
   "fridayShort": "Fri",
   "saturdayShort": "Sat",
-  
   "settingsTitle": "Settings",
   "goalPointsSetting": "Goal Points Setting",
   "currentGoalPoints": "Current goal: {points} points",
@@ -120,7 +114,7 @@
   },
   "enterGoalPoints": "Please enter goal points",
   "enterValidNumber": "Please enter a valid number (1 to 99999999)",
-  "saveFailed": "Failed to save",
+  "saveFailed": "Failed to save some settings",
   "emailOpenFailed": "Could not open email app",
   "pageOpenFailed": "Could not open page",
   "appInfoSupport": "App Info & Support",
@@ -151,7 +145,6 @@
   "tips": "Tips",
   "tipsContent": "• Goal points are reflected in the pie chart on the home screen\n• Start with small goals and gradually increase them when achieved\n• You can earn up to 6 points in a single session",
   "backToHome": "Back to Home",
-  
   "tutorialSkip": "Skip",
   "tutorialGoalAndPoints": "Goal and Current Points",
   "tutorialGoalDescription": "The outer circle shows your goal, the inner circle shows total points. The circle fills as you approach your goal.",
@@ -161,7 +154,6 @@
   "tutorialScoreDescription": "View detailed information about your earned scores.",
   "tutorialSettingsAndData": "Settings and Data Management",
   "tutorialSettingsDescription": "Change goal values, view app information, and reset data.",
-  
   "appIntroAttentionBiasTitle": "About Attention Bias",
   "appIntroAttentionBiasContent": "When anxiety is high, we unconsciously tend to focus only on negative things.",
   "appIntroFocusMintRoleTitle": "FocusMint's Role",
@@ -173,15 +165,9 @@
   "appIntroEffect2": "Better awareness of smiles around you",
   "appIntroEffect3": "Easier social interactions",
   "appIntroHowToUse": "See How to Use",
-  
   "pointsEarned": "Points Earned!",
   "yourScore": "Your Score",
-  "bestScore": "Best Score",
-  "totalScore": "Total Score",
   "totalPlayTime": "Total Play Time",
-  "backToHome": "Back to Home",
-  "dataLoading": "Loading data...",
-  
   "imageManagement": "Image Management",
   "hiddenImagesCount": "Hidden images: {count}/{max}",
   "@hiddenImagesCount": {
@@ -197,11 +183,9 @@
   "unsavedChanges": "You have unsaved changes",
   "unsavedChangesMessage": "You have {count} unsaved changes to image display settings.",
   "unsavedChangesWarning": "Changes will be lost if you close this screen now.",
-  "cancel": "Cancel",
   "discardChanges": "Discard Changes",
   "saveAndExit": "Save and Exit",
   "settingsSaved": "Saved {count} settings",
-  "saveFailed": "Failed to save some settings",
   "saveError": "An error occurred while saving settings",
   "imageSettingsUpdated": "Image settings have been updated",
   "allImages": "All",
@@ -218,7 +202,6 @@
   "save": "Save",
   "hiddenImages": "Hidden",
   "noHiddenImages": "No hidden images",
-
   "settingsLoadFailed": "Failed to load settings",
   "imagesAdded": "Added {count} images",
   "@imagesAdded": {
@@ -258,13 +241,11 @@
   "selectImages": "Select Images",
   "unknownImage": "Unknown Image",
   "customImageSettings": "Custom Image Settings",
-
   "useCustomImages": "Use Custom Images",
   "useCustomImagesDescription": "Use your own images for training. Enable mixing below to include built-in images.",
   "groupSettings": "Group Settings",
   "minOneGroupRequired": "At least one group must be enabled",
   "settingsLoadFailedMessage": "Failed to load settings",
-
   "customImageNotice1": "When groups are enabled, images are displayed randomly for each group.",
   "customImageNotice2": "Images uploaded and set by users are not shared with developers or third parties and are stored only in the app's area on the device.",
   "customImageNotice3": "This allows offline use.",
@@ -272,7 +253,6 @@
   "customImageNotice5": "When you delete the app, the set images will be deleted.",
   "customImageRequirementNotMet": "To use custom images, you need at least 1 good image and 3 not good images in enabled groups.",
   "customImageRequirement": "To use custom images, you need at least 1 good image and 3 not good images in enabled groups.",
-
   "sunnyWeather": "Good",
   "rainyWeather": "Not good",
   "addImages": "Add Images",
@@ -302,9 +282,45 @@
   "noImagesRegistered": "No images registered",
   "imagePreview": "Image Preview",
   "close": "Close",
-  
   "contactEmailSubject": "FocusMint - Contact",
   "contactEmailBody": "Please share your feedback and questions.",
   "mixWithBuiltInImages": "Mix with built-in images",
-  "mixWithBuiltInImagesDescription": "Use a mix of built-in images and your own images"
+  "mixWithBuiltInImagesDescription": "Use a mix of built-in images and your own images",
+  "supportIntro": "Chat anonymously with the developer. Questions and suggestions are welcome. You can send 3 messages per day. Each developer reply resets your allowance to 3.",
+  "supportReceived": "Message received. We usually reply within 2–3 days.",
+  "supportComposer": "Type a message",
+  "supportSend": "Send",
+  "supportRetry": "Retry",
+  "supportSent": "Sent",
+  "supportUnsent": "Unsent · saved on this device",
+  "supportAttach": "Attach image",
+  "supportRemoveImage": "Remove image",
+  "supportImage": "Attachment",
+  "supportClear": "Delete history",
+  "supportClearConfirm": "Delete this conversation? Unsent drafts and server history will also be deleted. This does not reset your allowance.",
+  "supportQuota": "You have used today’s 3 messages. Send another tomorrow or after a developer reply.",
+  "supportConnectionError": "Could not connect. Saved drafts have not been sent.",
+  "supportSendError": "Could not send. Your message is saved on this device. Please retry.",
+  "supportStorageError": "Could not save. Please try again.",
+  "supportClearError": "Could not delete history. Check your connection and retry.",
+  "supportImageError": "Could not load the image. Please choose an image under 30 MB.",
+  "supportRemaining": "{count} messages remaining today",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "{count} unread replies",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "Information",
+  "supportDeveloper": "Developer",
+  "supportPrivacy": "About contact data"
 }

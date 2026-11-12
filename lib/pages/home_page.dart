@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:focusmint/pages/contact_page.dart';
+import 'package:focusmint/services/support_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:focusmint/pages/training_page.dart';
 import 'package:focusmint/pages/settings_page.dart';
@@ -17,19 +19,20 @@ class HomePage extends ConsumerStatefulWidget {
   ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver {
+class _HomePageState extends ConsumerState<HomePage>
+    with WidgetsBindingObserver {
   final SpeedScoreService _speedScoreService = SpeedScoreService();
   final ImageService _imageService = ImageService();
   double _totalScore = 0.0;
   int _goalPoints = 1000;
   bool _isLoading = true;
-  
+
   // チュートリアル用のキー
   final GlobalKey _startButtonKey = GlobalKey();
   final GlobalKey _statsButtonKey = GlobalKey();
   final GlobalKey _settingsButtonKey = GlobalKey();
   final GlobalKey _chartKey = GlobalKey();
-  
+
   // チュートリアル状態管理
   bool _isTutorialMode = false;
 
@@ -38,7 +41,8 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _loadData();
-    
+    ref.read(supportProvider).refresh(statusOnly: true);
+
     // セッション追跡は削除（初回ダウンロードのみ）
   }
 
@@ -55,6 +59,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
     // アプリがフォアグラウンドに戻った際にデータを再読み込み
     if (state == AppLifecycleState.resumed) {
       _loadData();
+      ref.read(supportProvider).refresh(statusOnly: true);
     }
   }
 
@@ -67,11 +72,11 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
       _goalPoints = goalPoints;
       _isLoading = false;
     });
-    
+
     // データ読み込み完了後にチュートリアルをチェック
     _checkAndShowTutorial();
   }
-  
+
   /// チュートリアルが初回かチェックして表示
   Future<void> _checkAndShowTutorial() async {
     final isCompleted = await TutorialServiceNew.isTutorialCompleted();
@@ -83,13 +88,13 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
       }
     }
   }
-  
+
   /// チュートリアルを表示
   void _showTutorial() {
     setState(() {
       _isTutorialMode = true;
     });
-    
+
     final targets = TutorialServiceNew.createHomeTutorialTargets(
       startButtonKey: _startButtonKey,
       statsButtonKey: _statsButtonKey,
@@ -97,7 +102,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
       chartKey: _chartKey,
       context: context,
     );
-    
+
     TutorialServiceNew.showFullTutorial(
       context: context,
       targets: targets,
@@ -111,7 +116,6 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -120,12 +124,14 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
           IconButton(
             key: _statsButtonKey,
             icon: const Icon(Icons.bar_chart),
-            onPressed: () => _isTutorialMode ? null : _showStatsPage(context, ref),
+            onPressed: () =>
+                _isTutorialMode ? null : _showStatsPage(context, ref),
           ),
           IconButton(
             key: _settingsButtonKey,
             icon: const Icon(Icons.settings),
-            onPressed: () => _isTutorialMode ? null : _showSettingsDialog(context),
+            onPressed: () =>
+                _isTutorialMode ? null : _showSettingsDialog(context),
           ),
         ],
       ),
@@ -137,50 +143,65 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
           children: [
             // メインコンテンツ：円グラフ
             Expanded(
-              child: Center(
-                child: SingleChildScrollView(
-                  child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // 合計得点円グラフ
-                    _isLoading
-                        ? const CircularProgressIndicator()
-                        : Container(
-                            key: _chartKey,
-                            child: _buildTotalScoreChart(),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final gap = constraints.maxHeight >= 460 ? 60.0 : 24.0;
+                  final chartSide = (constraints.maxHeight - 120 - gap).clamp(
+                    140.0,
+                    280.0,
+                  );
+                  return Center(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // 合計得点円グラフ
+                          _isLoading
+                              ? const CircularProgressIndicator()
+                              : SizedBox(
+                                  key: _chartKey,
+                                  width: chartSide,
+                                  height: chartSide,
+                                  child: FittedBox(
+                                    child: _buildTotalScoreChart(),
+                                  ),
+                                ),
+                          SizedBox(height: gap),
+                          // STARTボタン
+                          SizedBox(
+                            key: _startButtonKey,
+                            width: 120,
+                            height: 120,
+                            child: ElevatedButton(
+                              onPressed: () => _isTutorialMode
+                                  ? null
+                                  : _startTraining(context, ref),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.mintGreen,
+                                foregroundColor: Colors.white,
+                                shape: const CircleBorder(),
+                                elevation: 6,
+                                shadowColor: AppColors.shadowColor,
+                              ),
+                              child: Text(
+                                AppLocalizations.of(context)!.startButtonText,
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.2,
+                                ),
+                              ),
+                            ),
                           ),
-                    const SizedBox(height: 60),
-                    // STARTボタン
-                    SizedBox(
-                      key: _startButtonKey,
-                      width: 120,
-                      height: 120,
-                      child: ElevatedButton(
-                        onPressed: () => _isTutorialMode ? null : _startTraining(context, ref),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.mintGreen,
-                          foregroundColor: Colors.white,
-                          shape: const CircleBorder(),
-                          elevation: 6,
-                          shadowColor: AppColors.shadowColor,
-                        ),
-                        child: Text(
-                          AppLocalizations.of(context)!.startButtonText,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.2,
-                          ),
-                        ),
+                        ],
                       ),
                     ),
-                  ],
-                  ),
-                ),
+                  );
+                },
               ),
             ),
-            // 
+            //
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: Text(
@@ -193,6 +214,46 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
                 textAlign: TextAlign.center,
               ),
             ),
+            SafeArea(
+              top: false,
+              child: TextButton.icon(
+                key: const ValueKey('home.contact'),
+                onPressed: _isTutorialMode
+                    ? null
+                    : () async {
+                        await Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const ContactPage(),
+                          ),
+                        );
+                        if (mounted) {
+                          ref.read(supportProvider).refresh(statusOnly: true);
+                        }
+                      },
+                icon: const Icon(Icons.chat_bubble_outline, size: 18),
+                label: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(
+                      child: Text(AppLocalizations.of(context)!.contactUs),
+                    ),
+                    if (ref.watch(supportProvider).unreadCount > 0) ...[
+                      const SizedBox(width: 8),
+                      Badge(
+                        label: Text(
+                          '${ref.watch(supportProvider).unreadCount}',
+                        ),
+                        child: Semantics(
+                          label: AppLocalizations.of(context)!.supportUnread(
+                            ref.watch(supportProvider).unreadCount,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -200,17 +261,14 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
   }
 
   void _showSettingsDialog(BuildContext context) async {
-    final result = await Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const SettingsPage(),
-      ),
-    );
-    
+    final result = await Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const SettingsPage()));
+
     // 設定画面から戻ってきたときの処理
     if (mounted) {
       // 設定画面から戻った時にImageServiceのキャッシュをクリア
       _imageService.refreshCache();
-      
+
       if (result == 'show_tutorial') {
         // チュートリアル表示の要求があった場合
         await Future.delayed(const Duration(milliseconds: 300));
@@ -225,11 +283,8 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
   }
 
   void _showStatsPage(BuildContext context, WidgetRef ref) async {
-    await Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const HistoryPage(),
-      ),
-    );
+    await Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const HistoryPage()));
     // 履歴画面から戻った際にデータを再読み込み
     if (mounted) {
       _loadData();
@@ -239,12 +294,9 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
   void _startTraining(BuildContext context, WidgetRef ref) async {
     // トレーニング開始前にImageServiceのキャッシュをクリア
     _imageService.refreshCache();
-    
-    await Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const TrainingPage(),
-      ),
-    );
+
+    await Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const TrainingPage()));
     // トレーニング画面から戻った際にデータを再読み込み
     if (mounted) {
       _loadData();
@@ -254,7 +306,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
   Widget _buildTotalScoreChart() {
     final int totalScoreInt = _totalScore.toInt();
     final int remainingScore = _goalPoints - totalScoreInt;
-    
+
     return SizedBox(
       width: 280,
       height: 280,
@@ -316,10 +368,7 @@ class _HomePageState extends ConsumerState<HomePage> with WidgetsBindingObserver
               if (remainingScore > 0)
                 Text(
                   AppLocalizations.of(context)!.remainingLabel(remainingScore),
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                 )
               else
                 Text(

@@ -1,0 +1,4390 @@
+{
+  "count": 291,
+  "targetWidth": 576,
+  "method": "One alternating cold-codec pass, excluding file reads; original full size versus new tile decode. Test-host timing only.",
+  "original": {
+    "totalDecodeMicroseconds": 627583,
+    "p50Microseconds": 975,
+    "p95Microseconds": 1536,
+    "p99Microseconds": 39031,
+    "maxMicroseconds": 99710,
+    "totalDecodedRgbaBytes": 480144440,
+    "maxDecodedRgbaBytes": 67699984
+  },
+  "optimized": {
+    "totalDecodeMicroseconds": 584147,
+    "p50Microseconds": 1810,
+    "p95Microseconds": 3479,
+    "p99Microseconds": 4638,
+    "maxMicroseconds": 4895,
+    "totalDecodedRgbaBytes": 305135616,
+    "maxDecodedRgbaBytes": 1048576
+  },
+  "images": [
+    {
+      "filename": "smile_01_v2.webp",
+      "original": {
+        "microseconds": 8247,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2337,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_02_v2.webp",
+      "original": {
+        "microseconds": 1168,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1572,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_03_v2.webp",
+      "original": {
+        "microseconds": 1309,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1648,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_04_v2.webp",
+      "original": {
+        "microseconds": 1182,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1807,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_05_v2.webp",
+      "original": {
+        "microseconds": 1172,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1779,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_06_v2.webp",
+      "original": {
+        "microseconds": 1315,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1596,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_07_v2.webp",
+      "original": {
+        "microseconds": 1225,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1528,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_08_v2.webp",
+      "original": {
+        "microseconds": 1415,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2006,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_09_v2.webp",
+      "original": {
+        "microseconds": 1266,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2104,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_10_v2.webp",
+      "original": {
+        "microseconds": 1212,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1420,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_11_v2.webp",
+      "original": {
+        "microseconds": 1188,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1856,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_12_v2.webp",
+      "original": {
+        "microseconds": 1264,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1769,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_13_v2.webp",
+      "original": {
+        "microseconds": 1489,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1526,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_14_v2.webp",
+      "original": {
+        "microseconds": 1190,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1513,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_15_v2.webp",
+      "original": {
+        "microseconds": 1269,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1751,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_16_v2.webp",
+      "original": {
+        "microseconds": 1281,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1906,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_17_v2.webp",
+      "original": {
+        "microseconds": 479,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1536,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_18_v2.webp",
+      "original": {
+        "microseconds": 668,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1663,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_19_v2.webp",
+      "original": {
+        "microseconds": 1316,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1600,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_20_v2.webp",
+      "original": {
+        "microseconds": 932,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1691,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_21_v2.webp",
+      "original": {
+        "microseconds": 1219,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1374,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_22_v2.webp",
+      "original": {
+        "microseconds": 837,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1604,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_23_v2.webp",
+      "original": {
+        "microseconds": 927,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1708,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_24_v2.webp",
+      "original": {
+        "microseconds": 889,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2003,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_25_v2.webp",
+      "original": {
+        "microseconds": 882,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1619,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_26_v2.webp",
+      "original": {
+        "microseconds": 846,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2200,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_27_v2.webp",
+      "original": {
+        "microseconds": 720,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2130,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_28_v2.webp",
+      "original": {
+        "microseconds": 795,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1493,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_29_v2.webp",
+      "original": {
+        "microseconds": 702,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1751,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "smile_30_v2.webp",
+      "original": {
+        "microseconds": 792,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1703,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_01_v2.webp",
+      "original": {
+        "microseconds": 59820,
+        "width": 3527,
+        "height": 3527,
+        "rgbaBytes": 49758916
+      },
+      "optimized": {
+        "microseconds": 3313,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_02_v2.webp",
+      "original": {
+        "microseconds": 1304,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 3706,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_03_v2.webp",
+      "original": {
+        "microseconds": 10408,
+        "width": 1510,
+        "height": 1510,
+        "rgbaBytes": 9120400
+      },
+      "optimized": {
+        "microseconds": 3486,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_04_v2.webp",
+      "original": {
+        "microseconds": 99710,
+        "width": 3810,
+        "height": 4128,
+        "rgbaBytes": 62910720
+      },
+      "optimized": {
+        "microseconds": 3812,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_05_v2.webp",
+      "original": {
+        "microseconds": 52187,
+        "width": 4114,
+        "height": 4114,
+        "rgbaBytes": 67699984
+      },
+      "optimized": {
+        "microseconds": 4043,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_06_v2.webp",
+      "original": {
+        "microseconds": 39031,
+        "width": 3017,
+        "height": 3017,
+        "rgbaBytes": 36409156
+      },
+      "optimized": {
+        "microseconds": 3160,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_07_v2.webp",
+      "original": {
+        "microseconds": 35415,
+        "width": 2737,
+        "height": 2737,
+        "rgbaBytes": 29964676
+      },
+      "optimized": {
+        "microseconds": 3983,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_08_v2.webp",
+      "original": {
+        "microseconds": 12391,
+        "width": 1876,
+        "height": 1876,
+        "rgbaBytes": 14077504
+      },
+      "optimized": {
+        "microseconds": 4718,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_09_v2.webp",
+      "original": {
+        "microseconds": 1367,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 3516,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_10_v2.webp",
+      "original": {
+        "microseconds": 1284,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1314,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_11_v2.webp",
+      "original": {
+        "microseconds": 1171,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 4759,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_12_v2.webp",
+      "original": {
+        "microseconds": 1459,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 3086,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_13_v2.webp",
+      "original": {
+        "microseconds": 1243,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 4638,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_14_v2.webp",
+      "original": {
+        "microseconds": 1144,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1351,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_15_v2.webp",
+      "original": {
+        "microseconds": 1213,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1561,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_16_v2.webp",
+      "original": {
+        "microseconds": 1228,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 3339,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_17_v2.webp",
+      "original": {
+        "microseconds": 1445,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1437,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_18_v2.webp",
+      "original": {
+        "microseconds": 1120,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 4606,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_19_v2.webp",
+      "original": {
+        "microseconds": 1279,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 3261,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_20_v2.webp",
+      "original": {
+        "microseconds": 592,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2699,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_21_v2.webp",
+      "original": {
+        "microseconds": 544,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1493,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_22_v2.webp",
+      "original": {
+        "microseconds": 727,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3439,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_23_v2.webp",
+      "original": {
+        "microseconds": 701,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3092,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_24_v2.webp",
+      "original": {
+        "microseconds": 874,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1443,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_25_v2.webp",
+      "original": {
+        "microseconds": 823,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3479,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_26_v2.webp",
+      "original": {
+        "microseconds": 831,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3368,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_27_v2.webp",
+      "original": {
+        "microseconds": 763,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1495,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_28_v2.webp",
+      "original": {
+        "microseconds": 815,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3842,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_29_v2.webp",
+      "original": {
+        "microseconds": 885,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2017,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_30_v2.webp",
+      "original": {
+        "microseconds": 830,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 4895,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_31_v2.webp",
+      "original": {
+        "microseconds": 797,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1530,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_32_v2.webp",
+      "original": {
+        "microseconds": 841,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3660,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_33_v2.webp",
+      "original": {
+        "microseconds": 780,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1308,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_34_v2.webp",
+      "original": {
+        "microseconds": 900,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3056,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_35_v2.webp",
+      "original": {
+        "microseconds": 920,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1952,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_36_v2.webp",
+      "original": {
+        "microseconds": 798,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2368,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_37_v2.webp",
+      "original": {
+        "microseconds": 831,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1398,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_38_v2.webp",
+      "original": {
+        "microseconds": 831,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 4245,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_39_v2.webp",
+      "original": {
+        "microseconds": 801,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1267,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_40_v2.webp",
+      "original": {
+        "microseconds": 872,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3022,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "health_41_v2.webp",
+      "original": {
+        "microseconds": 844,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 3410,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_01_v2.webp",
+      "original": {
+        "microseconds": 1393,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2899,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_02_v2.webp",
+      "original": {
+        "microseconds": 1296,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2358,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_03_v2.webp",
+      "original": {
+        "microseconds": 19830,
+        "width": 1825,
+        "height": 1825,
+        "rgbaBytes": 13322500
+      },
+      "optimized": {
+        "microseconds": 3283,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_04_v2.webp",
+      "original": {
+        "microseconds": 1420,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2082,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_05_v2.webp",
+      "original": {
+        "microseconds": 1292,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 3306,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_06_v2.webp",
+      "original": {
+        "microseconds": 1258,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2152,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_07_v2.webp",
+      "original": {
+        "microseconds": 12914,
+        "width": 1727,
+        "height": 1727,
+        "rgbaBytes": 11930116
+      },
+      "optimized": {
+        "microseconds": 1844,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_08_v2.webp",
+      "original": {
+        "microseconds": 901,
+        "width": 355,
+        "height": 355,
+        "rgbaBytes": 504100
+      },
+      "optimized": {
+        "microseconds": 2437,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_09_v2.webp",
+      "original": {
+        "microseconds": 1508,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 3046,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_10_v2.webp",
+      "original": {
+        "microseconds": 1481,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 3151,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_11_v2.webp",
+      "original": {
+        "microseconds": 1462,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2461,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_12_v2.webp",
+      "original": {
+        "microseconds": 2140,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2650,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_13_v2.webp",
+      "original": {
+        "microseconds": 1152,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2106,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_14_v2.webp",
+      "original": {
+        "microseconds": 974,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2523,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_15_v2.webp",
+      "original": {
+        "microseconds": 954,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2909,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "vegetables_16_v2.webp",
+      "original": {
+        "microseconds": 978,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2285,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_01_v2.webp",
+      "original": {
+        "microseconds": 1077,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1535,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_02_v2.webp",
+      "original": {
+        "microseconds": 1080,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1411,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_03_v2.webp",
+      "original": {
+        "microseconds": 1480,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1332,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_04_v2.webp",
+      "original": {
+        "microseconds": 1317,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1810,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_05_v2.webp",
+      "original": {
+        "microseconds": 1188,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1752,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_06_v2.webp",
+      "original": {
+        "microseconds": 1260,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1386,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_07_v2.webp",
+      "original": {
+        "microseconds": 1261,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1395,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_08_v2.webp",
+      "original": {
+        "microseconds": 1360,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2075,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_09_v2.webp",
+      "original": {
+        "microseconds": 1292,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2009,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_10_v2.webp",
+      "original": {
+        "microseconds": 1271,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1328,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_11_v2.webp",
+      "original": {
+        "microseconds": 975,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1792,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_12_v2.webp",
+      "original": {
+        "microseconds": 1433,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1601,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_13_v2.webp",
+      "original": {
+        "microseconds": 1190,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1294,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_14_v2.webp",
+      "original": {
+        "microseconds": 1226,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1344,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_15_v2.webp",
+      "original": {
+        "microseconds": 1206,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1496,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_16_v2.webp",
+      "original": {
+        "microseconds": 1268,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1966,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_17_v2.webp",
+      "original": {
+        "microseconds": 1332,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1409,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_18_v2.webp",
+      "original": {
+        "microseconds": 1204,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1563,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_19_v2.webp",
+      "original": {
+        "microseconds": 1412,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1598,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_20_v2.webp",
+      "original": {
+        "microseconds": 1479,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1627,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_21_v2.webp",
+      "original": {
+        "microseconds": 1174,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1288,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_22_v2.webp",
+      "original": {
+        "microseconds": 1302,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1759,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_23_v2.webp",
+      "original": {
+        "microseconds": 1392,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2072,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_24_v2.webp",
+      "original": {
+        "microseconds": 1348,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1918,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_25_v2.webp",
+      "original": {
+        "microseconds": 1265,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1276,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_26_v2.webp",
+      "original": {
+        "microseconds": 1449,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1699,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_27_v2.webp",
+      "original": {
+        "microseconds": 1325,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1890,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_28_v2.webp",
+      "original": {
+        "microseconds": 1355,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1610,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_29_v2.webp",
+      "original": {
+        "microseconds": 1166,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1979,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_30_v2.webp",
+      "original": {
+        "microseconds": 1087,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1726,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_31_v2.webp",
+      "original": {
+        "microseconds": 1175,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1581,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_32_v2.webp",
+      "original": {
+        "microseconds": 1108,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1442,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_33_v2.webp",
+      "original": {
+        "microseconds": 1213,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1988,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_34_v2.webp",
+      "original": {
+        "microseconds": 1012,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1599,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_35_v2.webp",
+      "original": {
+        "microseconds": 1075,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1491,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_36_v2.webp",
+      "original": {
+        "microseconds": 1249,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1791,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_37_v2.webp",
+      "original": {
+        "microseconds": 1092,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1412,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_38_v2.webp",
+      "original": {
+        "microseconds": 1136,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1504,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_39_v2.webp",
+      "original": {
+        "microseconds": 1041,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1391,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_40_v2.webp",
+      "original": {
+        "microseconds": 1005,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1700,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_41_v2.webp",
+      "original": {
+        "microseconds": 1145,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1559,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_42_v2.webp",
+      "original": {
+        "microseconds": 988,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1910,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_43_v2.webp",
+      "original": {
+        "microseconds": 1103,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1632,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_44_v2.webp",
+      "original": {
+        "microseconds": 1003,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1314,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_45_v2.webp",
+      "original": {
+        "microseconds": 1074,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1660,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_46_v2.webp",
+      "original": {
+        "microseconds": 1030,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1710,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_47_v2.webp",
+      "original": {
+        "microseconds": 1081,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1491,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_48_v2.webp",
+      "original": {
+        "microseconds": 1026,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1705,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_49_v2.webp",
+      "original": {
+        "microseconds": 1046,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1347,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_50_v2.webp",
+      "original": {
+        "microseconds": 1095,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1574,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_51_v2.webp",
+      "original": {
+        "microseconds": 1134,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1646,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_52_v2.webp",
+      "original": {
+        "microseconds": 758,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1405,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_53_v2.webp",
+      "original": {
+        "microseconds": 701,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1192,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_54_v2.webp",
+      "original": {
+        "microseconds": 856,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2213,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_55_v2.webp",
+      "original": {
+        "microseconds": 759,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1323,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_56_v2.webp",
+      "original": {
+        "microseconds": 756,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1277,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_57_v2.webp",
+      "original": {
+        "microseconds": 743,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1402,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_58_v2.webp",
+      "original": {
+        "microseconds": 699,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1379,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_59_v2.webp",
+      "original": {
+        "microseconds": 893,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1734,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_60_v2.webp",
+      "original": {
+        "microseconds": 716,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1873,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_61_v2.webp",
+      "original": {
+        "microseconds": 827,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1473,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_62_v2.webp",
+      "original": {
+        "microseconds": 789,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1589,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_63_v2.webp",
+      "original": {
+        "microseconds": 849,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1763,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_64_v2.webp",
+      "original": {
+        "microseconds": 763,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1297,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_65_v2.webp",
+      "original": {
+        "microseconds": 780,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1790,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_66_v2.webp",
+      "original": {
+        "microseconds": 891,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1880,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_67_v2.webp",
+      "original": {
+        "microseconds": 878,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1217,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_68_v2.webp",
+      "original": {
+        "microseconds": 722,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1234,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_69_v2.webp",
+      "original": {
+        "microseconds": 738,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1806,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_70_v2.webp",
+      "original": {
+        "microseconds": 663,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1268,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_71_v2.webp",
+      "original": {
+        "microseconds": 772,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1403,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "sad_72_v2.webp",
+      "original": {
+        "microseconds": 738,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1699,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_01_v2.webp",
+      "original": {
+        "microseconds": 1536,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1830,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_02_v2.webp",
+      "original": {
+        "microseconds": 1358,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1568,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_03_v2.webp",
+      "original": {
+        "microseconds": 1334,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2161,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_04_v2.webp",
+      "original": {
+        "microseconds": 1231,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1484,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_05_v2.webp",
+      "original": {
+        "microseconds": 1100,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2096,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_06_v2.webp",
+      "original": {
+        "microseconds": 1223,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2534,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_07_v2.webp",
+      "original": {
+        "microseconds": 1139,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2158,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_08_v2.webp",
+      "original": {
+        "microseconds": 1276,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1641,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_09_v2.webp",
+      "original": {
+        "microseconds": 1469,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2470,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_10_v2.webp",
+      "original": {
+        "microseconds": 1643,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1990,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_11_v2.webp",
+      "original": {
+        "microseconds": 1545,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1813,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_12_v2.webp",
+      "original": {
+        "microseconds": 1495,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2623,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_13_v2.webp",
+      "original": {
+        "microseconds": 1683,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1434,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_14_v2.webp",
+      "original": {
+        "microseconds": 1188,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1990,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_15_v2.webp",
+      "original": {
+        "microseconds": 1170,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2265,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_16_v2.webp",
+      "original": {
+        "microseconds": 1154,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2075,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_17_v2.webp",
+      "original": {
+        "microseconds": 1146,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1923,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_18_v2.webp",
+      "original": {
+        "microseconds": 1383,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2444,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_19_v2.webp",
+      "original": {
+        "microseconds": 867,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2291,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_20_v2.webp",
+      "original": {
+        "microseconds": 1031,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1925,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_21_v2.webp",
+      "original": {
+        "microseconds": 993,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1972,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_22_v2.webp",
+      "original": {
+        "microseconds": 945,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2012,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_23_v2.webp",
+      "original": {
+        "microseconds": 1027,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2115,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_24_v2.webp",
+      "original": {
+        "microseconds": 907,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1910,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_25_v2.webp",
+      "original": {
+        "microseconds": 1323,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1496,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_26_v2.webp",
+      "original": {
+        "microseconds": 984,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1931,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_27_v2.webp",
+      "original": {
+        "microseconds": 1043,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1988,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_28_v2.webp",
+      "original": {
+        "microseconds": 1033,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1902,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_29_v2.webp",
+      "original": {
+        "microseconds": 1310,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1645,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_30_v2.webp",
+      "original": {
+        "microseconds": 1135,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2430,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_31_v2.webp",
+      "original": {
+        "microseconds": 1309,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1598,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_32_v2.webp",
+      "original": {
+        "microseconds": 1221,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1882,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_33_v2.webp",
+      "original": {
+        "microseconds": 1069,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2276,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_34_v2.webp",
+      "original": {
+        "microseconds": 1114,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 2049,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_35_v2.webp",
+      "original": {
+        "microseconds": 496,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1707,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_36_v2.webp",
+      "original": {
+        "microseconds": 461,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2224,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_37_v2.webp",
+      "original": {
+        "microseconds": 434,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1464,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_38_v2.webp",
+      "original": {
+        "microseconds": 445,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1906,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_39_v2.webp",
+      "original": {
+        "microseconds": 781,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2217,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_40_v2.webp",
+      "original": {
+        "microseconds": 777,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2061,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_41_v2.webp",
+      "original": {
+        "microseconds": 692,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2267,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_42_v2.webp",
+      "original": {
+        "microseconds": 698,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2323,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_43_v2.webp",
+      "original": {
+        "microseconds": 670,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1735,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_44_v2.webp",
+      "original": {
+        "microseconds": 729,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1711,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_45_v2.webp",
+      "original": {
+        "microseconds": 706,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2404,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_46_v2.webp",
+      "original": {
+        "microseconds": 794,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1546,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_47_v2.webp",
+      "original": {
+        "microseconds": 682,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1935,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_48_v2.webp",
+      "original": {
+        "microseconds": 728,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2103,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_49_v2.webp",
+      "original": {
+        "microseconds": 713,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2392,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_50_v2.webp",
+      "original": {
+        "microseconds": 746,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2205,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_51_v2.webp",
+      "original": {
+        "microseconds": 696,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1977,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_52_v2.webp",
+      "original": {
+        "microseconds": 815,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2246,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_53_v2.webp",
+      "original": {
+        "microseconds": 898,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2422,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_54_v2.webp",
+      "original": {
+        "microseconds": 711,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2726,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_55_v2.webp",
+      "original": {
+        "microseconds": 761,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1573,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_56_v2.webp",
+      "original": {
+        "microseconds": 606,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2064,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_57_v2.webp",
+      "original": {
+        "microseconds": 684,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2384,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_58_v2.webp",
+      "original": {
+        "microseconds": 664,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1513,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_59_v2.webp",
+      "original": {
+        "microseconds": 683,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2149,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_60_v2.webp",
+      "original": {
+        "microseconds": 609,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2326,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_61_v2.webp",
+      "original": {
+        "microseconds": 672,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1360,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_62_v2.webp",
+      "original": {
+        "microseconds": 471,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2140,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_63_v2.webp",
+      "original": {
+        "microseconds": 606,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2075,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_64_v2.webp",
+      "original": {
+        "microseconds": 669,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2205,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_65_v2.webp",
+      "original": {
+        "microseconds": 753,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1869,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_66_v2.webp",
+      "original": {
+        "microseconds": 788,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2043,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_67_v2.webp",
+      "original": {
+        "microseconds": 766,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2200,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_68_v2.webp",
+      "original": {
+        "microseconds": 751,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2553,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_69_v2.webp",
+      "original": {
+        "microseconds": 835,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2391,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_70_v2.webp",
+      "original": {
+        "microseconds": 788,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1426,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_71_v2.webp",
+      "original": {
+        "microseconds": 644,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1766,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_72_v2.webp",
+      "original": {
+        "microseconds": 633,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2139,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_73_v2.webp",
+      "original": {
+        "microseconds": 728,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1323,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_74_v2.webp",
+      "original": {
+        "microseconds": 782,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1748,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_75_v2.webp",
+      "original": {
+        "microseconds": 724,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2406,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_76_v2.webp",
+      "original": {
+        "microseconds": 686,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1631,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_77_v2.webp",
+      "original": {
+        "microseconds": 707,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1972,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_78_v2.webp",
+      "original": {
+        "microseconds": 739,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2315,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_79_v2.webp",
+      "original": {
+        "microseconds": 719,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1439,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_80_v2.webp",
+      "original": {
+        "microseconds": 863,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2387,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_81_v2.webp",
+      "original": {
+        "microseconds": 807,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2662,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_82_v2.webp",
+      "original": {
+        "microseconds": 888,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2159,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_83_v2.webp",
+      "original": {
+        "microseconds": 795,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1543,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_84_v2.webp",
+      "original": {
+        "microseconds": 780,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2164,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_85_v2.webp",
+      "original": {
+        "microseconds": 693,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2002,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_86_v2.webp",
+      "original": {
+        "microseconds": 786,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1626,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_87_v2.webp",
+      "original": {
+        "microseconds": 705,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2028,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_88_v2.webp",
+      "original": {
+        "microseconds": 725,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1569,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "badfood_89_v2.webp",
+      "original": {
+        "microseconds": 722,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2628,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_01_v2.webp",
+      "original": {
+        "microseconds": 1317,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1681,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_02_v2.webp",
+      "original": {
+        "microseconds": 972,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1545,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_03_v2.webp",
+      "original": {
+        "microseconds": 1100,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1628,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_04_v2.webp",
+      "original": {
+        "microseconds": 1089,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1883,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_05_v2.webp",
+      "original": {
+        "microseconds": 1278,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1590,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_06_v2.webp",
+      "original": {
+        "microseconds": 1034,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1762,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_07_v2.webp",
+      "original": {
+        "microseconds": 1060,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1597,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_08_v2.webp",
+      "original": {
+        "microseconds": 1082,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1781,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_09_v2.webp",
+      "original": {
+        "microseconds": 1261,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1704,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_10_v2.webp",
+      "original": {
+        "microseconds": 1219,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1683,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_11_v2.webp",
+      "original": {
+        "microseconds": 1036,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1947,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_12_v2.webp",
+      "original": {
+        "microseconds": 1058,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1959,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_13_v2.webp",
+      "original": {
+        "microseconds": 1353,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1662,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_14_v2.webp",
+      "original": {
+        "microseconds": 760,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1591,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_15_v2.webp",
+      "original": {
+        "microseconds": 1117,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1614,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_16_v2.webp",
+      "original": {
+        "microseconds": 989,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      "optimized": {
+        "microseconds": 1664,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_17_v2.webp",
+      "original": {
+        "microseconds": 523,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1821,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_18_v2.webp",
+      "original": {
+        "microseconds": 783,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2082,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_19_v2.webp",
+      "original": {
+        "microseconds": 634,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1421,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_20_v2.webp",
+      "original": {
+        "microseconds": 735,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1723,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_21_v2.webp",
+      "original": {
+        "microseconds": 850,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1564,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_22_v2.webp",
+      "original": {
+        "microseconds": 926,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2180,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_23_v2.webp",
+      "original": {
+        "microseconds": 838,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2152,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_24_v2.webp",
+      "original": {
+        "microseconds": 695,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1396,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_25_v2.webp",
+      "original": {
+        "microseconds": 698,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2091,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_26_v2.webp",
+      "original": {
+        "microseconds": 690,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1487,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_27_v2.webp",
+      "original": {
+        "microseconds": 656,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2107,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_28_v2.webp",
+      "original": {
+        "microseconds": 789,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1795,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_29_v2.webp",
+      "original": {
+        "microseconds": 872,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2353,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_30_v2.webp",
+      "original": {
+        "microseconds": 741,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1583,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_31_v2.webp",
+      "original": {
+        "microseconds": 871,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1852,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_32_v2.webp",
+      "original": {
+        "microseconds": 906,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1343,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_33_v2.webp",
+      "original": {
+        "microseconds": 863,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1658,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_34_v2.webp",
+      "original": {
+        "microseconds": 757,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1896,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_35_v2.webp",
+      "original": {
+        "microseconds": 724,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1492,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_36_v2.webp",
+      "original": {
+        "microseconds": 881,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1769,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_37_v2.webp",
+      "original": {
+        "microseconds": 681,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1587,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_38_v2.webp",
+      "original": {
+        "microseconds": 610,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1812,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_39_v2.webp",
+      "original": {
+        "microseconds": 705,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 2080,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_40_v2.webp",
+      "original": {
+        "microseconds": 570,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1521,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_41_v2.webp",
+      "original": {
+        "microseconds": 771,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1669,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_42_v2.webp",
+      "original": {
+        "microseconds": 778,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1547,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    },
+    {
+      "filename": "bad_43_v2.webp",
+      "original": {
+        "microseconds": 759,
+        "width": 250,
+        "height": 250,
+        "rgbaBytes": 250000
+      },
+      "optimized": {
+        "microseconds": 1749,
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      }
+    }
+  ]
+}

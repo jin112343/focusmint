@@ -608,4 +608,79 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get mixWithBuiltInImagesDescription => '既存の画像と自分の画像を混ぜて使用します';
+
+  @override
+  String get supportIntro =>
+      '匿名でやりとりできます。お問い合わせや改善案を気軽にどうぞ。送信は1日3回までです。開発者から返信が届くたびに、送れる回数が3回に戻ります。';
+
+  @override
+  String get supportReceived => 'メッセージを受け付けました。確認して、通常2〜3日を目安に返信します。';
+
+  @override
+  String get supportComposer => 'メッセージを入力';
+
+  @override
+  String get supportSend => '送信';
+
+  @override
+  String get supportRetry => '再試行';
+
+  @override
+  String get supportSent => '送信済み';
+
+  @override
+  String get supportUnsent => '未送信・この端末に保存';
+
+  @override
+  String get supportAttach => '画像を添付';
+
+  @override
+  String get supportRemoveImage => '画像を外す';
+
+  @override
+  String get supportImage => '添付画像';
+
+  @override
+  String get supportClear => '履歴を削除';
+
+  @override
+  String get supportClearConfirm =>
+      'この端末のお問い合わせ履歴を削除しますか？未送信の内容とサーバー上の履歴も削除します。送信できる回数は戻りません。';
+
+  @override
+  String get supportQuota => '今日は3回までです。明日、または開発者からの返信後にお送りください。';
+
+  @override
+  String get supportConnectionError => '接続できませんでした。保存した内容はまだ送信されていません。';
+
+  @override
+  String get supportSendError => '送信できませんでした。内容はこの端末に保存しています。再試行してください。';
+
+  @override
+  String get supportStorageError => '保存できませんでした。もう一度お試しください。';
+
+  @override
+  String get supportClearError => '履歴を削除できませんでした。接続を確認して再試行してください。';
+
+  @override
+  String get supportImageError => '画像を読み込めませんでした。30MB以下の画像をお選びください。';
+
+  @override
+  String supportRemaining(int count) {
+    return '今日あと$count回';
+  }
+
+  @override
+  String supportUnread(int count) {
+    return '未読の返信 $count件';
+  }
+
+  @override
+  String get supportGuide => 'ご案内';
+
+  @override
+  String get supportDeveloper => '開発者';
+
+  @override
+  String get supportPrivacy => 'お問い合わせのデータについて';
 }

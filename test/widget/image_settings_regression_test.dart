@@ -76,7 +76,8 @@ void main() {
   ) async {
     await openImages(tester);
     final image = tester.widget<Image>(find.byType(Image).first);
-    final asset = (image.image as AssetImage).assetName;
+    final resized = image.image as ResizeImage;
+    final asset = (resized.imageProvider as AssetImage).assetName;
     await tester.tap(find.byType(Image).first);
     await tester.pump();
     await tester.pageBack();

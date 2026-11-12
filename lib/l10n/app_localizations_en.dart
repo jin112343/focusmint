@@ -619,4 +619,85 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get mixWithBuiltInImagesDescription =>
       'Use a mix of built-in images and your own images';
+
+  @override
+  String get supportIntro =>
+      'Chat anonymously with the developer. Questions and suggestions are welcome. You can send 3 messages per day. Each developer reply resets your allowance to 3.';
+
+  @override
+  String get supportReceived =>
+      'Message received. We usually reply within 2–3 days.';
+
+  @override
+  String get supportComposer => 'Type a message';
+
+  @override
+  String get supportSend => 'Send';
+
+  @override
+  String get supportRetry => 'Retry';
+
+  @override
+  String get supportSent => 'Sent';
+
+  @override
+  String get supportUnsent => 'Unsent · saved on this device';
+
+  @override
+  String get supportAttach => 'Attach image';
+
+  @override
+  String get supportRemoveImage => 'Remove image';
+
+  @override
+  String get supportImage => 'Attachment';
+
+  @override
+  String get supportClear => 'Delete history';
+
+  @override
+  String get supportClearConfirm =>
+      'Delete this conversation? Unsent drafts and server history will also be deleted. This does not reset your allowance.';
+
+  @override
+  String get supportQuota =>
+      'You have used today’s 3 messages. Send another tomorrow or after a developer reply.';
+
+  @override
+  String get supportConnectionError =>
+      'Could not connect. Saved drafts have not been sent.';
+
+  @override
+  String get supportSendError =>
+      'Could not send. Your message is saved on this device. Please retry.';
+
+  @override
+  String get supportStorageError => 'Could not save. Please try again.';
+
+  @override
+  String get supportClearError =>
+      'Could not delete history. Check your connection and retry.';
+
+  @override
+  String get supportImageError =>
+      'Could not load the image. Please choose an image under 30 MB.';
+
+  @override
+  String supportRemaining(int count) {
+    return '$count messages remaining today';
+  }
+
+  @override
+  String supportUnread(int count) {
+    return '$count unread replies';
+  }
+
+  @override
+  String get supportGuide => 'Information';
+
+  @override
+  String get supportDeveloper => 'Developer';
+
+  @override
+  String get supportPrivacy => 'About contact data';
 }

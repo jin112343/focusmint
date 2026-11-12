@@ -1,14 +1,48 @@
 import 'dart:io';
 import 'dart:convert';
-import 'dart:typed_data';
+
+import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:logger/logger.dart';
 import 'package:image/image.dart' as img;
+
 import '../models/custom_image_models.dart';
+import '../constants/training_image_policy.dart';
+
+// Run expensive phone-photo decoding and resizing away from the UI isolate.
+Uint8List _normalizeImageBytes(Uint8List bytes) {
+  final original = img.decodeImage(bytes);
+  if (original == null) {
+    throw const FormatException('画像のデコードに失敗しました');
+  }
+  final oriented = img.bakeOrientation(original);
+  final side = oriented.width < oriented.height
+      ? oriented.width
+      : oriented.height;
+  final cropped = img.copyCrop(
+    oriented,
+    x: (oriented.width - side) ~/ 2,
+    y: (oriented.height - side) ~/ 2,
+    width: side,
+    height: side,
+  );
+  final target = side.clamp(1, TrainingImagePolicy.maxSide);
+  final resized = img.copyResize(
+    cropped,
+    width: target,
+    height: target,
+    interpolation: img.Interpolation.average,
+  );
+  // The Dart image package decodes WebP but does not encode it.
+  return Uint8List.fromList(
+    img.encodeJpg(resized, quality: TrainingImagePolicy.importJpegQuality),
+  );
+}
 
 class CustomImageRepository {
-  static final CustomImageRepository _instance = CustomImageRepository._internal();
+  static final CustomImageRepository _instance =
+      CustomImageRepository._internal();
   static CustomImageRepository get instance => _instance;
 
   CustomImageRepository._internal();
@@ -37,8 +71,11 @@ class CustomImageRepository {
       _logger.d('CustomImageRepository.getSettings: 設定を取得しました');
       return settings;
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.getSettings: 設定の取得に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.getSettings: 設定の取得に失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       return CustomImageSettings.defaultSettings();
     }
   }
@@ -56,8 +93,11 @@ class CustomImageRepository {
 
       _logger.d('CustomImageRepository._saveSettings: 設定を保存しました');
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository._saveSettings: 設定の保存に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository._saveSettings: 設定の保存に失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
@@ -65,81 +105,67 @@ class CustomImageRepository {
   /// カスタム画像のベースディレクトリを取得
   Future<Directory> _getCustomImagesDirectory() async {
     final appDir = await getApplicationDocumentsDirectory();
-    final customImagesDir = Directory('${appDir.path}/$_customImagesFolderName');
+    final customImagesDir = Directory(
+      '${appDir.path}/$_customImagesFolderName',
+    );
 
     if (!await customImagesDir.exists()) {
       await customImagesDir.create(recursive: true);
-      _logger.d('CustomImageRepository._getCustomImagesDirectory: カスタム画像ディレクトリを作成しました');
+      _logger.d(
+        'CustomImageRepository._getCustomImagesDirectory: カスタム画像ディレクトリを作成しました',
+      );
     }
 
     return customImagesDir;
   }
 
   /// グループ×天気別のディレクトリを取得
-  Future<Directory> _getGroupWeatherDirectory(int groupId, WeatherType weather) async {
+  Future<Directory> _getGroupWeatherDirectory(
+    int groupId,
+    WeatherType weather,
+  ) async {
     final baseDir = await _getCustomImagesDirectory();
-    final groupWeatherDir = Directory('${baseDir.path}/group_$groupId/${weather.value}');
+    final groupWeatherDir = Directory(
+      '${baseDir.path}/group_$groupId/${weather.value}',
+    );
 
     if (!await groupWeatherDir.exists()) {
       await groupWeatherDir.create(recursive: true);
-      _logger.d('CustomImageRepository._getGroupWeatherDirectory: グループ$groupId/${weather.value}ディレクトリを作成しました');
+      _logger.d(
+        'CustomImageRepository._getGroupWeatherDirectory: グループ$groupId/${weather.value}ディレクトリを作成しました',
+      );
     }
 
     return groupWeatherDir;
   }
 
-  /// 画像を250px正方形にトリミングする
+  /// 向きを補正し、拡大せず共通の最大寸法で正方形にする。
   Future<Uint8List> _cropImageToSquare(String sourceImagePath) async {
     try {
       final sourceFile = File(sourceImagePath);
       final bytes = await sourceFile.readAsBytes();
 
-      // 画像をデコード
-      final originalImage = img.decodeImage(bytes);
-      if (originalImage == null) {
-        throw Exception('画像のデコードに失敗しました: $sourceImagePath');
-      }
-
-      // 正方形の短辺を決定（元画像の短い方の辺）
-      final minDimension = originalImage.width < originalImage.height
-          ? originalImage.width
-          : originalImage.height;
-
-      // 中央部分を正方形にクロップ
-      final centerX = originalImage.width ~/ 2;
-      final centerY = originalImage.height ~/ 2;
-      final halfSize = minDimension ~/ 2;
-
-      final croppedImage = img.copyCrop(
-        originalImage,
-        x: centerX - halfSize,
-        y: centerY - halfSize,
-        width: minDimension,
-        height: minDimension,
+      return await compute(
+        _normalizeImageBytes,
+        bytes,
+        debugLabel: 'Normalize custom training image',
       );
-
-      // 250pxにリサイズ
-      final resizedImage = img.copyResize(
-        croppedImage,
-        width: 250,
-        height: 250,
-        interpolation: img.Interpolation.linear,
-      );
-
-      // JPEGとしてエンコード（品質90%）
-      final processedBytes = img.encodeJpg(resizedImage, quality: 90);
-
-      _logger.d('CustomImageRepository._cropImageToSquare: 画像を250px正方形にトリミングしました');
-      return Uint8List.fromList(processedBytes);
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository._cropImageToSquare: 画像のトリミングに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository._cropImageToSquare: 画像のトリミングに失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
 
   /// 画像を追加
-  Future<String> addImage(int groupId, WeatherType weather, String sourceImagePath) async {
+  Future<String> addImage(
+    int groupId,
+    WeatherType weather,
+    String sourceImagePath,
+  ) async {
     try {
       final sourceFile = File(sourceImagePath);
       if (!await sourceFile.exists()) {
@@ -147,10 +173,11 @@ class CustomImageRepository {
       }
 
       final targetDir = await _getGroupWeatherDirectory(groupId, weather);
-      final fileName = '${DateTime.now().millisecondsSinceEpoch}.jpg'; // JPEGで保存
+      final fileName =
+          '${DateTime.now().millisecondsSinceEpoch}.jpg'; // JPEGで保存
       final targetPath = '${targetDir.path}/$fileName';
 
-      // 画像を250px正方形にトリミング
+      // 同梱画像と共通の寸法・縦横比で保存
       final processedImageBytes = await _cropImageToSquare(sourceImagePath);
 
       // トリミング済み画像を保存
@@ -161,36 +188,52 @@ class CustomImageRepository {
       final settings = await getSettings();
       final group = settings.getGroup(groupId);
       if (group != null) {
-        final newImagePaths = Map<WeatherType, List<String>>.from(group.imagePaths);
-        newImagePaths[weather] = List<String>.from(newImagePaths[weather] ?? [])..add(targetPath);
+        final newImagePaths = Map<WeatherType, List<String>>.from(
+          group.imagePaths,
+        );
+        newImagePaths[weather] = List<String>.from(newImagePaths[weather] ?? [])
+          ..add(targetPath);
 
         final updatedGroup = group.copyWith(imagePaths: newImagePaths);
         await saveSettings(settings.updateGroup(updatedGroup));
       }
 
-      _logger.i('CustomImageRepository.addImage: 画像を追加しました（250px正方形にトリミング済み） - グループ$groupId/${weather.value}: $targetPath');
+      _logger.i(
+        'CustomImageRepository.addImage: 画像を追加しました - グループ$groupId/${weather.value}: $targetPath',
+      );
       return targetPath;
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.addImage: 画像の追加に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.addImage: 画像の追加に失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
 
   /// 画像を削除
-  Future<void> removeImage(int groupId, WeatherType weather, String imagePath) async {
+  Future<void> removeImage(
+    int groupId,
+    WeatherType weather,
+    String imagePath,
+  ) async {
     try {
       final imageFile = File(imagePath);
       if (await imageFile.exists()) {
         await imageFile.delete();
-        _logger.d('CustomImageRepository.removeImage: 画像ファイルを削除しました: $imagePath');
+        _logger.d(
+          'CustomImageRepository.removeImage: 画像ファイルを削除しました: $imagePath',
+        );
       }
 
       // 設定を更新
       final settings = await getSettings();
       final group = settings.getGroup(groupId);
       if (group != null) {
-        final newImagePaths = Map<WeatherType, List<String>>.from(group.imagePaths);
+        final newImagePaths = Map<WeatherType, List<String>>.from(
+          group.imagePaths,
+        );
         newImagePaths[weather] = List<String>.from(newImagePaths[weather] ?? [])
           ..remove(imagePath);
 
@@ -198,10 +241,15 @@ class CustomImageRepository {
         await saveSettings(settings.updateGroup(updatedGroup));
       }
 
-      _logger.i('CustomImageRepository.removeImage: 画像を削除しました - グループ$groupId/${weather.value}: $imagePath');
+      _logger.i(
+        'CustomImageRepository.removeImage: 画像を削除しました - グループ$groupId/${weather.value}: $imagePath',
+      );
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.removeImage: 画像の削除に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.removeImage: 画像の削除に失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
@@ -222,7 +270,9 @@ class CustomImageRepository {
             .toList();
 
         if (otherEnabledGroups.isEmpty) {
-          _logger.w('CustomImageRepository.toggleGroupEnabled: 最後の有効グループを無効にしようとしました: グループ$groupId');
+          _logger.w(
+            'CustomImageRepository.toggleGroupEnabled: 最後の有効グループを無効にしようとしました: グループ$groupId',
+          );
           return false; // 最後の有効グループは無効にできない
         }
       }
@@ -230,11 +280,16 @@ class CustomImageRepository {
       final updatedGroup = group.copyWith(enabled: !group.enabled);
       await saveSettings(settings.updateGroup(updatedGroup));
 
-      _logger.i('CustomImageRepository.toggleGroupEnabled: グループ$groupIdの有効状態を切り替えました: ${updatedGroup.enabled}');
+      _logger.i(
+        'CustomImageRepository.toggleGroupEnabled: グループ$groupIdの有効状態を切り替えました: ${updatedGroup.enabled}',
+      );
       return true;
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.toggleGroupEnabled: グループの有効状態切り替えに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.toggleGroupEnabled: グループの有効状態切り替えに失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
@@ -246,18 +301,27 @@ class CustomImageRepository {
 
       // オンにしようとした場合、条件を満たしているかチェック
       if (!settings.useCustomImages && !settings.canUseCustomImages) {
-        _logger.w('CustomImageRepository.toggleUseCustomImages: カスタム画像の条件を満たしていないためオンにできません');
+        _logger.w(
+          'CustomImageRepository.toggleUseCustomImages: カスタム画像の条件を満たしていないためオンにできません',
+        );
         return false; // 条件を満たしていない場合はオンにできない
       }
 
-      final updatedSettings = settings.copyWith(useCustomImages: !settings.useCustomImages);
+      final updatedSettings = settings.copyWith(
+        useCustomImages: !settings.useCustomImages,
+      );
       await saveSettings(updatedSettings);
 
-      _logger.i('CustomImageRepository.toggleUseCustomImages: カスタム画像の使用を切り替えました: ${updatedSettings.useCustomImages}');
+      _logger.i(
+        'CustomImageRepository.toggleUseCustomImages: カスタム画像の使用を切り替えました: ${updatedSettings.useCustomImages}',
+      );
       return true;
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.toggleUseCustomImages: カスタム画像の使用切り替えに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.toggleUseCustomImages: カスタム画像の使用切り替えに失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
@@ -269,18 +333,27 @@ class CustomImageRepository {
 
       // オンにしようとした場合、条件を満たしているかチェック
       if (!settings.useOriginalImagesOnly && !settings.canUseCustomImages) {
-        _logger.w('CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像の条件を満たしていないためオンにできません');
+        _logger.w(
+          'CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像の条件を満たしていないためオンにできません',
+        );
         return false; // 条件を満たしていない場合はオンにできない
       }
 
-      final updatedSettings = settings.copyWith(useOriginalImagesOnly: !settings.useOriginalImagesOnly);
+      final updatedSettings = settings.copyWith(
+        useOriginalImagesOnly: !settings.useOriginalImagesOnly,
+      );
       await saveSettings(updatedSettings);
 
-      _logger.i('CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像のみ使用を切り替えました: ${updatedSettings.useOriginalImagesOnly}');
+      _logger.i(
+        'CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像のみ使用を切り替えました: ${updatedSettings.useOriginalImagesOnly}',
+      );
       return true;
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像のみ使用切り替えに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.toggleUseOriginalImagesOnly: オリジナル画像のみ使用切り替えに失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
@@ -292,18 +365,27 @@ class CustomImageRepository {
 
       // オンにしようとした場合、条件を満たしているかチェック
       if (!settings.mixWithOriginalImages && !settings.canUseCustomImages) {
-        _logger.w('CustomImageRepository.toggleMixWithOriginalImages: ミックス使用の条件を満たしていないためオンにできません');
+        _logger.w(
+          'CustomImageRepository.toggleMixWithOriginalImages: ミックス使用の条件を満たしていないためオンにできません',
+        );
         return false; // 条件を満たしていない場合はオンにできない
       }
 
-      final updatedSettings = settings.copyWith(mixWithOriginalImages: !settings.mixWithOriginalImages);
+      final updatedSettings = settings.copyWith(
+        mixWithOriginalImages: !settings.mixWithOriginalImages,
+      );
       await saveSettings(updatedSettings);
 
-      _logger.i('CustomImageRepository.toggleMixWithOriginalImages: ミックス使用を切り替えました: ${updatedSettings.mixWithOriginalImages}');
+      _logger.i(
+        'CustomImageRepository.toggleMixWithOriginalImages: ミックス使用を切り替えました: ${updatedSettings.mixWithOriginalImages}',
+      );
       return true;
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.toggleMixWithOriginalImages: ミックス使用切り替えに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.toggleMixWithOriginalImages: ミックス使用切り替えに失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
@@ -328,7 +410,9 @@ class CustomImageRepository {
 
       // 存在しないファイルがある場合は設定を更新
       if (existingPaths.length != imagePaths.length) {
-        final newImagePaths = Map<WeatherType, List<String>>.from(group.imagePaths);
+        final newImagePaths = Map<WeatherType, List<String>>.from(
+          group.imagePaths,
+        );
         newImagePaths[weather] = existingPaths;
         final updatedGroup = group.copyWith(imagePaths: newImagePaths);
         await saveSettings(settings.updateGroup(updatedGroup));
@@ -338,8 +422,11 @@ class CustomImageRepository {
 
       return existingPaths;
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.getImagePaths: 画像パスの取得に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.getImagePaths: 画像パスの取得に失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       return [];
     }
   }
@@ -356,20 +443,27 @@ class CustomImageRepository {
       final customImagesDir = await _getCustomImagesDirectory();
       if (await customImagesDir.exists()) {
         await customImagesDir.delete(recursive: true);
-        _logger.i('CustomImageRepository.clearAllCustomImages: すべてのカスタム画像を削除しました');
+        _logger.i(
+          'CustomImageRepository.clearAllCustomImages: すべてのカスタム画像を削除しました',
+        );
       }
 
       // 設定もリセット
       await saveSettings(CustomImageSettings.defaultSettings());
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.clearAllCustomImages: カスタム画像のクリアに失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.clearAllCustomImages: カスタム画像のクリアに失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }
 
   /// 表示用のランダム画像パスを取得（学習・表示システムで使用）
-  Future<List<String>> getRandomImagePathsForDisplay(WeatherType weatherType) async {
+  Future<List<String>> getRandomImagePathsForDisplay(
+    WeatherType weatherType,
+  ) async {
     try {
       final settings = await getSettings();
 
@@ -379,8 +473,11 @@ class CustomImageRepository {
 
       return settings.getRandomImagePaths(weatherType);
     } catch (e, stackTrace) {
-      _logger.e('CustomImageRepository.getRandomImagePathsForDisplay: 表示用画像パスの取得に失敗しました',
-          error: e, stackTrace: stackTrace);
+      _logger.e(
+        'CustomImageRepository.getRandomImagePathsForDisplay: 表示用画像パスの取得に失敗しました',
+        error: e,
+        stackTrace: stackTrace,
+      );
       return [];
     }
   }

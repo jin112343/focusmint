@@ -1,6 +1,5 @@
 {
   "@@locale": "ja",
-  
   "focusMintTitle": "FOCUS MINT",
   "currentPoints": "現在のポイント",
   "goalLabel": "目標: {goal}",
@@ -50,23 +49,19 @@
     }
   },
   "imagePreparationMessage": "画像を準備中...",
-  
   "noStimuliAvailable": "刺激が利用できません",
   "invalidGridSize": "無効なグリッドサイズ",
   "unknown": "?",
-  
   "gettingStarted": "スタート中...",
   "excellentPerformance": "素晴らしいパフォーマンス！",
   "greatJob": "よくできました！",
   "goodPerformance": "良いパフォーマンス",
   "keepPracticingFeedback": "練習を続けてください",
   "takeYourTimeFeedback": "ゆっくり確実に",
-  
   "happy": "Happy",
   "angry": "Angry",
   "fear": "Fear",
   "sad": "Sad",
-  
   "historyPageTitle": "これまでの記録",
   "dataLoading": "データを読み込み中...",
   "pointsHistory": "ポイント獲得履歴",
@@ -76,7 +71,7 @@
   "goalAchievementRate": "目標達成率",
   "scoreStatistics": "スコア統計",
   "bestScore": "ベストスコア",
-  "totalScore": "合計スコア",
+  "totalScore": "総合スコア",
   "trainingTime": "トレーニング時間",
   "totalTrainingTime": "累計トレーニング時間",
   "detailedStatistics": "詳細統計",
@@ -95,7 +90,6 @@
   "thursdayShort": "木",
   "fridayShort": "金",
   "saturdayShort": "土",
-  
   "settingsTitle": "設定",
   "goalPointsSetting": "目標ポイント設定",
   "currentGoalPoints": "現在の目標: {points} ポイント",
@@ -120,7 +114,7 @@
   },
   "enterGoalPoints": "目標ポイントを入力してください",
   "enterValidNumber": "正しい数値を入力してください（1から99999999の範囲）",
-  "saveFailed": "保存に失敗しました",
+  "saveFailed": "一部の設定の保存に失敗しました",
   "emailOpenFailed": "メールアプリを開けませんでした",
   "pageOpenFailed": "ページを開けませんでした",
   "appInfoSupport": "アプリ情報・サポート",
@@ -151,7 +145,6 @@
   "tips": "ヒント",
   "tipsContent": "• 目標ポイントはホーム画面の円グラフに反映されます\n• 小さな目標から始めて、達成したら徐々に上げていきましょう\n• 1回のセッションで最大6ポイント獲得できます",
   "backToHome": "ホームへ戻る",
-  
   "tutorialSkip": "スキップ",
   "tutorialGoalAndPoints": "目標と現在のポイント",
   "tutorialGoalDescription": "外側が目標、内側が合計ポイント。目標に近づくほど円が満ちていきます。",
@@ -161,7 +154,6 @@
   "tutorialScoreDescription": "これまでの獲得スコアの詳細を確認できます。",
   "tutorialSettingsAndData": "設定とデータ管理",
   "tutorialSettingsDescription": "目標値の変更、アプリ情報やデータリセットができます。",
-  
   "appIntroAttentionBiasTitle": "注意バイアスについて",
   "appIntroAttentionBiasContent": "不安が強いと、無意識にネガティブなものばかりに目がいきやすくなります。",
   "appIntroFocusMintRoleTitle": "FocusMint の役割",
@@ -173,15 +165,9 @@
   "appIntroEffect2": "周囲の笑顔に気づきやすくなる",
   "appIntroEffect3": "人付き合いが楽になる",
   "appIntroHowToUse": "使い方を見る",
-  
   "pointsEarned": "ポイント獲得！",
   "yourScore": "あなたのスコア",
-  "bestScore": "ベストスコア",
-  "totalScore": "総合スコア",
   "totalPlayTime": "総プレイ時間",
-  "backToHome": "ホームへ戻る",
-  "dataLoading": "データを読み込み中...",
-  
   "imageManagement": "画像管理",
   "hiddenImagesCount": "非表示画像: {count}/{max}",
   "@hiddenImagesCount": {
@@ -197,11 +183,9 @@
   "unsavedChanges": "未保存の変更があります",
   "unsavedChangesMessage": "画像の表示設定に{count}件の未保存の変更があります。",
   "unsavedChangesWarning": "このまま画面を閉じると変更が失われます。",
-  "cancel": "キャンセル",
   "discardChanges": "変更を破棄",
   "saveAndExit": "保存して終了",
   "settingsSaved": "{count}件の設定を保存しました",
-  "saveFailed": "一部の設定の保存に失敗しました",
   "saveError": "設定の保存中にエラーが発生しました",
   "imageSettingsUpdated": "画像設定が更新されました",
   "allImages": "全て",
@@ -218,7 +202,6 @@
   "save": "保存",
   "hiddenImages": "非表示",
   "noHiddenImages": "非表示にした画像はありません",
-
   "settingsLoadFailed": "設定の読み込みに失敗しました",
   "imagesAdded": "{count}枚の画像を追加しました",
   "@imagesAdded": {
@@ -258,13 +241,11 @@
   "selectImages": "画像を選択",
   "unknownImage": "不明な画像",
   "customImageSettings": "カスタム画像設定",
-
   "useCustomImages": "自分のカスタム画像を使う",
   "useCustomImagesDescription": "自分の画像をトレーニングに使用します。下のミックス設定で既存の画像も使用できます。",
   "groupSettings": "グループ別設定",
   "minOneGroupRequired": "最低1つのグループは有効にしておく必要があります",
   "settingsLoadFailedMessage": "設定の読み込みに失敗しました",
-
   "customImageNotice1": "各グループでオンの場合はそのグループごとにランダムで表示される。",
   "customImageNotice2": "ユーザーがアップロードしてセットした画像は開発者や第三者に共有されず、端末のアプリ領域にのみ保存される。",
   "customImageNotice3": "そのためオフラインでも使えます。",
@@ -272,7 +253,6 @@
   "customImageNotice5": "アプリを消すと、セットされた画像は消去されます。",
   "customImageRequirementNotMet": "カスタム画像を使用するには、有効なグループに良い画像1枚以上、よくない画像3枚以上が必要です。",
   "customImageRequirement": "カスタム画像を使用するには、有効なグループに良い画像1枚以上、よくない画像3枚以上が必要です。",
-
   "sunnyWeather": "良い",
   "rainyWeather": "よくない",
   "addImages": "画像を追加",
@@ -302,9 +282,45 @@
   "noImagesRegistered": "画像が登録されていません",
   "imagePreview": "画像プレビュー",
   "close": "閉じる",
-  
   "contactEmailSubject": "FocusMint-お問い合わせ",
   "contactEmailBody": "ご意見・お問い合わせをお書きください。",
   "mixWithBuiltInImages": "既存の画像とミックス使用",
-  "mixWithBuiltInImagesDescription": "既存の画像と自分の画像を混ぜて使用します"
+  "mixWithBuiltInImagesDescription": "既存の画像と自分の画像を混ぜて使用します",
+  "supportIntro": "匿名でやりとりできます。お問い合わせや改善案を気軽にどうぞ。送信は1日3回までです。開発者から返信が届くたびに、送れる回数が3回に戻ります。",
+  "supportReceived": "メッセージを受け付けました。確認して、通常2〜3日を目安に返信します。",
+  "supportComposer": "メッセージを入力",
+  "supportSend": "送信",
+  "supportRetry": "再試行",
+  "supportSent": "送信済み",
+  "supportUnsent": "未送信・この端末に保存",
+  "supportAttach": "画像を添付",
+  "supportRemoveImage": "画像を外す",
+  "supportImage": "添付画像",
+  "supportClear": "履歴を削除",
+  "supportClearConfirm": "この端末のお問い合わせ履歴を削除しますか？未送信の内容とサーバー上の履歴も削除します。送信できる回数は戻りません。",
+  "supportQuota": "今日は3回までです。明日、または開発者からの返信後にお送りください。",
+  "supportConnectionError": "接続できませんでした。保存した内容はまだ送信されていません。",
+  "supportSendError": "送信できませんでした。内容はこの端末に保存しています。再試行してください。",
+  "supportStorageError": "保存できませんでした。もう一度お試しください。",
+  "supportClearError": "履歴を削除できませんでした。接続を確認して再試行してください。",
+  "supportImageError": "画像を読み込めませんでした。30MB以下の画像をお選びください。",
+  "supportRemaining": "今日あと{count}回",
+  "@supportRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportUnread": "未読の返信 {count}件",
+  "@supportUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "supportGuide": "ご案内",
+  "supportDeveloper": "開発者",
+  "supportPrivacy": "お問い合わせのデータについて"
 }

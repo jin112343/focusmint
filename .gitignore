@@ -44,3 +44,15 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Local image-generation controller state locks and Python caches
+/StoreAssets/image-review/*.lock
+**/__pycache__/
+
+# Local support server state and credentials
+Backend/.wrangler/
+Backend/node_modules/
+Backend/.dev.vars*
+
+# Account billing observations stay local
+StoreAssets/image-review/usage-check*.json

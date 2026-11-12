@@ -1,0 +1,40 @@
+{
+  "name": "focusmint-support",
+  "main": "src/worker.mjs",
+  "account_id": "1aa7425fdad94f2fec18e5dd97b551fb",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "focusmint-support-db",
+      "database_id": "e38e5662-0b69-4208-b0a6-7f3ea9b222c2",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "IMAGES",
+      "bucket_name": "focusmint-support-images"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "17 3 * * *",
+      "* * * * *"
+    ]
+  },
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_destination_addresses": [
+        "support@mizoi.app"
+      ]
+    }
+  ]
+}
