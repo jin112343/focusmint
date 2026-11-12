@@ -1,176 +1,47 @@
-# FocusMint - ABMポジティブ検索トレーニングアプリ
+# FocusMint
 
-心理学エビデンスに基づく「注意バイアス修正（ABM）」のポジティブ検索トレーニングを提供する5分間のトレーニングアプリです。
+複数の画像からポジティブな画像を探してタップする、1分間のトレーニングアプリです。セルフケアの練習を目的としており、医療行為や治療を提供するものではありません。
 
-## 🎯 アプリの目的
+## 現在の機能
 
-ネガティブ刺激よりもポジティブ刺激へ注意を向けるクセを反復で鍛える「笑顔を群衆から素早く見つける」型の視覚探索トレーニングです。
-不安傾向のセルフケアを目的とし、医療行為ではありません。
+- 表情・生活・食べ物のトレーニングと成績・履歴の表示。
+- 同梱画像291枚、画像の非表示設定、自分の写真の追加。
+- 縦横比を保つ共通の画像表示と、表示寸法に合わせたデコード。
+- ホーム最下部・設定画面から利用できる匿名のお問い合わせトーク。本文・画像、再試行、未読表示、履歴削除に対応。
+- 問い合わせ受信時に開発者へメール通知。
 
-## ⚙️ 主要機能
+1.3.5では同梱画像をすべて新しい512×512のWebPへ置き換え、画像の合計容量を43.4MBから10.3MBへ減らしました。詳細は[画像の確認・軽量化記録](StoreAssets/image-review/README.md)、問い合わせの仕様は[Backend/README.md](Backend/README.md)、提出状態は[1.3.5の提出記録](StoreAssets/1.3.5/release.md)にあります。
 
-- **5分間トレーニングセッション**: 120-160試行の自動ループ
-- **適応的難易度調整**: 1-up/2-down階段法による自動調整
-- **エビデンスベースのスコアリング**: BIS（Balanced Integration Score）による評価
-- **データ永続化**: 試行ログとセッション履歴の保存
-- **視覚探索パラダイム**: 笑顔（1つ）vs 怒り/恐怖/悲しみ（複数）
+## 開発と検証
 
-## 🏗️ プロジェクト構造
+検証に使用した環境はFlutter 3.47.8です。
 
-```
-lib/
-├── main.dart
-├── pages/
-│   ├── home_page.dart          # ホーム画面
-│   ├── training_page.dart      # トレーニング実施画面
-│   └── result_page.dart        # 結果表示画面
-├── widgets/
-│   ├── stimulus_grid.dart      # 刺激提示グリッド
-│   ├── fixation_point.dart     # 注視点表示
-│   └── session_timer.dart      # タイマー表示
-├── models/
-│   ├── image_stimulus.dart     # 画像刺激モデル
-│   ├── trial_log.dart          # 試行ログモデル
-│   └── session_summary.dart    # セッション要約モデル
-├── services/
-│   ├── score_calculator.dart   # BISスコア計算
-│   ├── difficulty_manager.dart # 難易度調整
-│   ├── session_service.dart    # セッション管理
-│   ├── database_service.dart   # データ永続化
-│   └── image_service.dart      # 画像管理とランダム選択
-└── constants/
-    └── training_constants.dart  # 定数定義
-```
-
-## 📋 実装やることリスト
-
-### フェーズ1: 基盤構築
-- [x] プロジェクト構造確認
-- [x] pubspec.yamlに必要なパッケージ追加
-- [x] プロジェクト構造作成（フォルダ作成）
-- [x] 基本データモデル実装
-- [x] トレーニング定数とenum定義
-
-### フェーズ2: コアロジック
-- [x] スコア計算サービス（BIS、RT処理、外れ値処理）実装
-- [x] 難易度調整サービス（1-up/2-downステアケース）実装
-- [ ] Driftデータベーススキーマとサービス実装
-- [ ] セッション管理サービス実装
-
-### フェーズ3: UI実装
-- [x] 画像管理サービス実装（ImageService）
-- [x] ランダム画像選択ロジック（悪い画像3枚 + 良い画像1枚）
-- [x] トレーニング画面の日本語化対応
-- [x] フィードバックメッセージの日本語化
-- [ ] Driftデータベーススキーマとサービス実装
-- [ ] セッション管理サービス実装
-- [ ] 結果表示画面実装
-- [ ] メイン画面とナビゲーション実装
-
-## 🔬 エビデンスベースの設計
-
-### スコア計算（BIS）
-- RT外れ値処理: 300-3000ms クランプ
-- エラーペナルティ: +600ms（IAT準拠）
-- BIS = z(正答率) - z(RT中央値)
-- 表示スコア: 0-100に変換
-
-### 難易度調整
-- 1-up/2-down階段法
-- グリッドサイズ: 2×2 → 3×3 → 4×4
-- 刺激提示時間: 2000ms → 1500ms → 1200ms
-- 目標正答率: 70-80%
-
-### セッション仕様
-- 1セッション: 5分間
-- 試行数: 120-160試行
-- 1試行の構成:
-  - 注視点表示: 400-600ms
-  - 刺激提示: 最大2000ms
-  - 試行間間隔: 300-500ms
-
-## 📦 使用パッケージ
-
-```yaml
-dependencies:
-  flutter_riverpod: ^2.5.1    # 状態管理
-  drift: ^2.16.0               # データベース
-  sqlite3_flutter_libs: ^0.5.20
-  path_provider: ^2.1.2
-  logger: ^2.0.2+1             # ログ出力
-```
-
-## 🚀 開発・実行
-
-```bash
-# 依存関係のインストール
+```sh
 flutter pub get
-
-# コード生成（Drift使用）
-dart run build_runner build
-
-# アプリ実行（開発用）
 flutter run
+flutter test
+flutter analyze
 ```
 
-## 📦 ビルドコマンド
+問い合わせサーバーのテストは、Node.js 22以降で`Backend`内から`npm test`を実行します。ネイティブ連携の検証は、起動済みの端末を指定して実行します。
 
-### 開発用（自分でテスト）
-```bash
-flutter run
+```sh
+flutter test integration_test/support_flow_test.dart -d DEVICE_ID
 ```
-→ データ送信なし
 
-### テスター配布用（TestFlightや内部テスト）
-```bash
-# Android
-flutter build apk --release
-flutter build appbundle --release  # Google Play内部テスト用
+Androidのリリース署名には、リポジトリ外で管理するアップロード用キーストアと`KEYSTORE_PASSWORD`・`KEY_PASSWORD`・`KEY_ALIAS`の環境変数が必要です。iOSにはApp Store配布用の署名設定が必要です。
 
-# iOS
-flutter build ios --release
+```sh
+flutter build appbundle --release
+flutter build ipa --release
 ```
-→ データ送信なし（テスターのインストールはカウントされません）
 
-### ストア配布用（本番リリース）
-```bash
-# Android（Google Play）
-flutter build appbundle --release --dart-define=PRODUCTION=true
+生成したバイナリ・中間ビルド・署名情報・APIキーはコミットしません。画像の生成元データも配布用WebPとは別に保管します。
 
-# iOS（App Store）
-flutter build ios --release --dart-define=PRODUCTION=true
-```
-→ データ送信あり（実際のユーザーのインストール数のみカウント）
+## データの扱い
 
-詳細は `FIREBASE_SETUP.md` を参照してください。
+トレーニングの履歴・設定・カスタム画像は端末内に保存します。任意のお問い合わせでは本文・添付画像などを専用のCloudflareバックエンドへ送信します。画像の非表示設定に関する統計はFirestore、アプリの利用統計はFirebase Analyticsを使用します。広告は表示しません。
 
-## 🎨 画像管理機能
+`PRODUCTION=true`は独自の初回起動イベントを送る条件です。Firebase Analyticsやお問い合わせ全体の通信を停止する設定ではありません。
 
-### 現在の実装
-- **ImageService**: 画像の管理とランダム選択を担当
-- **画像グループ化**: よい画像（笑顔）5枚、よくない画像（怒り・恐怖・悲しみ）6枚
-- **ランダム表示ロジック**: 自動で悪い画像3枚 + 良い画像1枚を選択
-- **位置ランダム化**: 2x2グリッド内で位置をシャッフル
-- **絵文字表示**: 現在は絵文字、後で実際の画像に変更可能
-
-### 実際の画像に変更する方法
-詳細は `IMAGE_SETUP.md` を参照してください。
-
-## 🌐 多言語対応
-
-- **日本語化完了**: UIテキスト、フィードバックメッセージを日本語に対応
-- **既存の国際化システム**: `AppLocalizations` を使用した多言語対応基盤
-- **フォント対応**: 日本語表示に最適化
-
-## 📝 注意事項
-
-- 画像素材は後から追加予定（現在は絵文字で表示）
-- 医療効果は謳わず、セルフケア目的であることを明記
-- エビデンスに基づく設計だが、効果は個人差があることを説明
-
-## 📚 参考文献
-
-- dandeneau.uqam.ca - 視覚探索ABM研究
-- PubMed - 複数セッションでのオンライン訓練検証
-- Mental Health Journal - モバイルABMの有望性
-- その他心理学・認知科学論文多数
+[FocusMintプライバシーポリシー](https://focusmint-support.mizoijin-0201.workers.dev/support-privacy)
